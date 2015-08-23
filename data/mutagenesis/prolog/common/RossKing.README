@@ -1,0 +1,76 @@
+DATASET FOR MACHINE LEARNING - MUTAGENESIS DATA
+
+This dataset is particularly suitable for Inductive Logic Programming (ILP).
+
+
+********************************************************************************
+
+This data can be freely distributed as long as appropriate references 
+are given to the papers mentioned.
+
+
+********************************************************************************
+
+
+MACHINE LEARNING STUDIES
+
+This data has been studied using a number of machine learning and 
+statistical methods: 
+Progol			- an ILP method
+Foil			- an ILP method
+Backpropagation		- a neural network method
+CART			- a propositional tree learner
+Linear regression	- a statistical method
+Quadratic regression	- a statistical method
+
+
+Srinivasan, A., Muggleton, S., King, R.D., & Sternberg, M.J.E. (1994) 
+Mutagenesis: ILP experiments in a non-determinate biological domain. In: 
+Proceedings of the Inductive Logic Programming 1994 Workshop.
+(Initial work)
+
+King, R.D., Srinivasan, A., & Sternberg, M.J.E. (1995) Relating chemical 
+activity to structure: an examination of ILP successes. 
+New Gen. Computing (in press).
+(An analysis and review of ILP and propositional learners for drug design)
+
+King, R.D., Sternberg, M.J.E., Srinivasan, A., and  Muggleton, S.H. (1995)
+Knowledge discovery in a database of mutagenic chemicals MLnet familiarisation Workshop: Statistics, machine learning and Knowledge Discovery (to appear).
+(A summary of results)
+
+King, R.D., Muggleton, S.H., Srinivasan, A., & Sternberg, M.J.E. (1995)
+Representing molecular structure in structure activity relationships: The use 
+of atoms and their bond connectivities to predict mutagenicity using inductive logic programming. J. Am. Chem. Soc. (submitted).  
+(A chemistry based view of the work)
+
+Srinivasan, A., Muggleton, S.H., Sternberg, M.J.E., & King, R.D., (1995)
+Theories for mutagenicity: a study of first-order and feature based induction. 
+A.I. Journal (submitted).
+(Progol v propositional and statistical learners)
+
+Srinivasan, A., Muggleton, S.H., Sternberg, M.J.E., and King, R.D. (1995)
+The effect of background knowledge in Inductive Logic Programing: 
+a case study. JAIR (submitted)
+(Progol v Foil with variable amounts of background knowledge)
+         
+
+********************************************************************************
+For any enquiries please contact:
+
+Ross D. King
+Biomolecular Modelling Laboratory, Imperial Cancer Research Fund
+P.O. Box 123, 44 Lincoln's Inn Fields, London WC2A 3PX, U.K.
+Tel +44-171-269-3023 or +44-171-242-0200
+Fax +44-171-269-3479
+rd_king@icrf.ac.uk
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: 2.6
+
+mQCNAi74cr4AAAEEAJUvxVCNrcjlfvkwb0z8fa9S3FnTk4ZgvjbKqxVCKjbQ7Kib
+0yS8nsc/r5GfOEGKaWP10t0o2D3bB/WWLp72D8DFgP/QlEYZuE4qRleIucw3nK+i
+BiTNOGJAfiXjU9CPbxWU7C5FD3KMJmuim3/QQYJOs1zcoDg+GeQricsZmiNRAAUR
+tCFSb3NzIEQuIEtpbmcgPHJkX2tpbmdAaWNyZi5hYy51az4=
+=4bZT
+-----END PGP PUBLIC KEY BLOCK-----
+********************************************************************************
