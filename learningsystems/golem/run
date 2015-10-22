@@ -1,0 +1,87 @@
+#!/usr/bin/env python
+
+import logging
+import os
+import subprocess
+import sys
+import tempfile
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+data_dir_name = 'data'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.pl'
+neg_file_name = 'neg.pl'
+
+if len(sys.argv) < 3:
+    _log.error('ERROR: Not enough arguments! Learning task and learning '
+               'problem ID exprected')
+    sys.exit(1)
+
+
+def find_golem():
+    exec_file_name = 'golem'
+
+    if os.path.isfile(os.path.join(os.getcwd(), exec_file_name)):
+        # golem executable resides in the same directory
+        return os.path.join(os.getcwd(), exec_file_name)
+
+    else:
+        # golem executable resides somewhere else; it is assumed that it can be
+        # found somewhere in the system path
+        return exec_file_name
+
+
+def copy_files_around(task_id, lp_id, target_dir, file_name_base):
+    """Finds all the files necessary to run golem:
+    - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.b
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+                            --> <target_dir>/<file_name_base>.f
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
+                            --> <target_dir>/<file_name_base>.n
+    """
+    # <file_name_base>.b (background knowledge)
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            prolog_dir_name, data_dir_name)
+
+    # merge all kb files into one
+    with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
+        for f_name in os.listdir(data_dir):
+            # FIXME: resolve errors with files excluded here
+            if f_name.endswith('.pl') and not f_name == 'mode.pl' and \
+                    not f_name == 'ring_theory.pl':
+                subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+
+    pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
+                                 prolog_dir_name, lp_dir_name, lp_id,
+                                 pos_file_name)
+    pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
+    subprocess.call(['cp', pos_file_path, pos_target_file_path])
+
+    neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
+                                 prolog_dir_name, lp_dir_name, lp_id,
+                                 neg_file_name)
+    neg_target_file = os.path.join(target_dir, file_name_base+'.n')
+    subprocess.call(['cp', neg_file_path, neg_target_file])
+
+learning_task_id = sys.argv[1]
+learning_problem_id = sys.argv[2]
+_log.debug('Running learning task %s with learning problem %s' % (
+    learning_task_id, learning_problem_id))
+
+file_name_base = learning_task_id + '_' + learning_problem_id
+target_dir = tempfile.mkdtemp()
+_log.debug('Target dir is %s' % target_dir)
+
+copy_files_around(learning_task_id, learning_problem_id, target_dir, file_name_base)
+
+golem_executable = find_golem()
+subprocess.check_call([golem_executable, file_name_base], cwd=target_dir)
+
+# TODO: validation
+# FIXME: remove this dummy result copying
+subprocess.call(['cp', os.path.join(target_dir, file_name_base+'.r'), '.'])
