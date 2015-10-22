@@ -12,10 +12,11 @@
 hs_err_pid*
 /target/
 
-# eclipse
+# ide-related
 .classpath
 .project
 .settings/
+.idea/
 
 # tmp files
 *.swp
