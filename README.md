@@ -2,7 +2,7 @@
 
 **Description**
 
-SML (Structured Machine Learning Bench is a benchmark for machine learning from structured data. It provides datasets, which contain structured knowledge (beyond plain feature vectors) in languages such as the Web Ontology Language (OWL) or the logic programming language Prolog. For those datasets, SML-Bench defines a number of machine learning tasks, e.g. the prediction of diseases. 
+SML-Bench (Structured Machine Learning Benchmark) is a benchmark for machine learning from structured data. It provides datasets, which contain structured knowledge (beyond plain feature vectors) in languages such as the Web Ontology Language (OWL) or the logic programming language Prolog. For those datasets, SML-Bench defines a number of machine learning tasks, e.g. the prediction of diseases. 
 
 **Mission**
 
