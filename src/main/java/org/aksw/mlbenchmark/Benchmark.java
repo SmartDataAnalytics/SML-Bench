@@ -3,16 +3,17 @@
  */
 package org.aksw.mlbenchmark;
 
-import java.io.File;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.List;
-
-import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.List;
 
 /**
  * @author Lorenz Buehmann
@@ -23,7 +24,7 @@ public class Benchmark {
 	private static final String LEARNING_SYSTEMS_PATH = "learningsystems/aleph/";
 	
 	
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		
 		String file = "";
 		
@@ -46,11 +47,22 @@ public class Benchmark {
 		
 		
 		File dir = new File(LEARNING_SYSTEMS_PATH);
-		URL url = new File(LEARNING_SYSTEMS_PATH).toURI().toURL();
+		URL url = null;
+		try {
+			url = new File(LEARNING_SYSTEMS_PATH).toURI().toURL();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
 		URLClassLoader loader = URLClassLoader.newInstance(new URL[]{url});
-		
-		loader.loadClass("AlephLearningSystem");
-		loader.close();
+
+		try {
+			loader.loadClass("AlephLearningSystem");
+			loader.close();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 //		Benchmark.class.getClassLoader().loadClass(LEARNING_SYSTEMS_PATH + "AlephLearningSystem");
 		
 		

@@ -7,3 +7,12 @@ SML-Bench (Structured Machine Learning Benchmark) is a benchmark for machine lea
 **Mission**
 
 The ultimate goal of SML-Bench is to foster research in machine learning from structured data as well as increase the reproducibility and comparability of algorithms in that area. This is important, since a) the preparation of machine learning tasks in that area involves a significant amount of work and b) there are hardly any cross comparisions across languages as this requires data conversion processes.
+
+
+**Requirements**
+
+For Golem:
+- golem binary in `learningsystems/golem/golem`
+- SWI Prolog as `swipl`
+- Python 2 as `python`
+
