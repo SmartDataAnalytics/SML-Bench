@@ -1,6 +1,8 @@
-config
-
-learningsystems = aleph, dllearner
-
-
-learningtasks.trains.lp = 5,6
+{config = 1;
+learningsystems = ( aleph, dllearner );
+learningtask = {
+  trains = {
+    lp = ( 5, 6 )
+ }
+}
+}

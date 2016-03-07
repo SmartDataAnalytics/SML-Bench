@@ -1,0 +1,23 @@
+<assembly>
+	<id>archive</id>
+	<formats>
+		<format>zip</format>
+		<format>tar.gz</format>
+	</formats>
+	<fileSets>
+		<fileSet>
+			<directory>
+				${project.build.directory}/dist
+			</directory>
+			<outputDirectory></outputDirectory>
+		</fileSet>
+		<fileSet>
+			<directory>${project.build.directory}/..</directory>
+			<outputDirectory></outputDirectory>
+			<includes>
+				<include>learning*/**</include>
+				<include>doc/**</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>
