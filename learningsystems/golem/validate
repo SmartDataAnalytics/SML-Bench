@@ -1,0 +1,220 @@
+#!/usr/bin/env python
+
+import logging
+import os
+import stat
+import subprocess
+from subprocess import CalledProcessError
+import sys
+import tempfile
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+data_dir_name = 'data'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.pl'
+neg_file_name = 'neg.pl'
+exec_file_name = 'golem'
+validation_file_template = """#!/usr/bin/env swipl
+
+:- initialization main.
+
+%(match)s
+
+main :-
+        consult('%(file_b)s'),
+        consult('%(file_ex)s'),
+        match,
+        halt.
+main :-
+        halt(1).
+"""
+
+if len(sys.argv) != 5:
+    _log.error('ERROR: Syntax: validate <learning task> <learning problem> <result input file> <validation output file>')
+    sys.exit(1)
+
+
+def copy_files_around(task_id, lp_id, target_dir, file_name_base):
+    """Finds all the files necessary to run golem:
+    - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.b
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+                            --> <target_dir>/<file_name_base>.f
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
+                            --> <target_dir>/<file_name_base>.n
+    """
+    # <file_name_base>.b (background knowledge)
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            prolog_dir_name, data_dir_name)
+
+    # merge all kb files into one
+    with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
+        for f_name in os.listdir(data_dir):
+            # FIXME: resolve errors with files excluded here
+            if f_name.endswith('.pl') and not f_name == 'mode.pl' and \
+                    not f_name == 'ring_theory.pl':
+                subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+
+    pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
+                                 prolog_dir_name, lp_dir_name, lp_id,
+                                 pos_file_name)
+    pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
+    subprocess.call(['cp', pos_file_path, pos_target_file_path])
+
+    neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
+                                 prolog_dir_name, lp_dir_name, lp_id,
+                                 neg_file_name)
+    neg_target_file = os.path.join(target_dir, file_name_base+'.n')
+    subprocess.call(['cp', neg_file_path, neg_target_file])
+
+
+def read_examples(file_path):
+    with open(file_path) as f:
+        lines = [l.strip() for l in f.readlines()]
+
+    lines = [l for l in ''.join(lines).split('.') if not l == '']
+    return lines
+
+
+def get_vars_from_head(head):
+    open_paren_pos = head.find('(')
+    head_pred = head[:open_paren_pos]
+    vars_str = head[open_paren_pos+1:-1]
+    vars = vars_str.split(',')
+
+    return [head_pred] + vars
+
+
+def build_match_body_parts(results):
+    """
+      active(A) :- phenanthrene(A,[B,C]), atm(A,B,c,T,U)                    (1)
+
+    should become
+
+      {
+        'head': 'active(A)',                                                (2)
+        'head_pred': 'active',
+        'head_vars': ['A'],
+        'conj': active(A), phenanthrene(A,[B,C]), atm(A,B,c,T,U)
+      }
+
+    FIXME: most of entries in the dict above are not needed!
+
+    :param results: list of strings containing rule like (1)
+    :return: list of strings containing conjunctions like (2)
+    """
+    ret = []
+    for res in results:
+        head, body = res.split(':-')
+        head = head.strip()
+        body = body.strip()[:-1]  # [:-1] --> strip off trailing dot
+        head_parts = get_vars_from_head(head)
+
+        for p in head_parts[1:]:  # first part (i.e. the predicate) skipped
+            body += ', write(' + p + ')'
+        body += '.'
+
+        ret.append({
+            'head': head,
+            'head_pred': head_parts[0],
+            'head_vars': head_parts[1:],
+            'conj': head + ', ' + body
+        })
+
+    return ret
+
+
+def validate(results, res_dir, file_name_base):
+    pos_examples = read_examples(os.path.join(res_dir, file_name_base + '.f'))
+    neg_examples = read_examples(os.path.join(res_dir, file_name_base + '.n'))
+
+    match_body_parts = build_match_body_parts(results)
+    fp = pos_examples[:]
+    fn = []
+    tn = neg_examples[:]
+    tp = []
+
+    # FIXME: remove code copy of this for loop
+    for pos_ex in pos_examples:
+        match_lines = []
+        for p in match_body_parts:
+            # TODO: maybe some checking is needed here, first
+            match_lines.append('match :- ' + pos_ex + ' = ' + p['conj'])
+
+        content = validation_file_template % {
+            'match': '\n'.join(match_lines),
+            'file_b': file_name_base + '.b',
+            'file_ex': file_name_base + '.f'}
+
+        validate_file_path = os.path.join(res_dir, 'validate.pl')
+        with open(validate_file_path, 'w') as f:
+            f.write(content)
+        os.chmod(validate_file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
+        try:
+            output = subprocess.check_output(validate_file_path, cwd=target_dir,
+                                             stderr=open(os.devnull, 'w'))
+            tp.append(pos_ex)
+            fp.remove(pos_ex)
+
+        except CalledProcessError as e:
+            if e.returncode != 1:
+                raise e
+
+    for neg_ex in neg_examples:
+        match_lines = []
+        for p in match_body_parts:
+            # TODO: maybe some checking is needed here, first
+            match_lines.append('match :- ' + neg_ex + ' = ' + p['conj'])
+
+        content = validation_file_template % {
+            'match': '\n'.join(match_lines),
+            'file_b': file_name_base + '.b',
+            'file_ex': file_name_base + '.n'}
+
+        validate_file_path = os.path.join(res_dir, 'validate.pl')
+        with open(validate_file_path, 'w') as f:
+            f.write(content)
+        os.chmod(validate_file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
+        try:
+            output = subprocess.check_output(validate_file_path, cwd=target_dir,
+                                             stderr=open(os.devnull, 'w'))
+            fn.append(neg_ex)
+            tn.remove(neg_ex)
+
+        except CalledProcessError as e:
+            if e.returncode != 1:
+                raise e
+    return len(tp), len(fp), len(tn), len(fn)
+
+
+if __name__ == '__main__':
+    learning_task_id = sys.argv[1]
+    learning_problem_id = sys.argv[2]
+    input_file = sys.argv[3]
+    output_file_name = sys.argv[4]
+    _log.debug('Validating solution learning task %s with learning problem %s' % (
+        learning_task_id, learning_problem_id))
+
+    results = []
+    with open(input_file) as res:
+        for line in res.readlines():
+            results.append(line.strip())
+
+    file_name_base = learning_task_id + '_' + learning_problem_id
+    target_dir = tempfile.mkdtemp()
+    _log.debug('Target dir is %s' % target_dir)
+
+    copy_files_around(learning_task_id, learning_problem_id, target_dir,
+                      file_name_base)
+
+    num_tp, num_fp, num_tn, num_fn = validate(results, target_dir,
+                                              file_name_base)
+    with open(output_file_name, 'w') as f:
+        f.write('tp: ' + str(num_tp) + os.linesep +
+                'fp: ' + str(num_fp) + os.linesep +
+                'tn: ' + str(num_tn) + os.linesep +
+                'fn: ' + str(num_fn) + os.linesep)
