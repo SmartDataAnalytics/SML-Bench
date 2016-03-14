@@ -155,8 +155,8 @@ def get_and_clean_results(results_dir):
     return result_lines
 
 
-def clean_up(dir):
-    shutil.rmtree(dir)
+def clean_up(tmp_dir):
+    shutil.rmtree(tmp_dir)
 
 
 if __name__ == '__main__':

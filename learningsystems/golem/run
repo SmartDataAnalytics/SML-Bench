@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
+import argparse
 import logging
 import os
-import stat
 import subprocess
-from subprocess import CalledProcessError
-import sys
 import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -19,11 +17,6 @@ pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
 output_file_name = 'results.txt'
 exec_file_name = 'golem'
-
-
-if len(sys.argv) != 4:
-    _log.error('ERROR: Syntax: run <learning task> <learning problem> <result output file>')
-    sys.exit(1)
 
 
 def find_golem():
@@ -94,9 +87,15 @@ def get_and_clean_results(results_dir, f_name_base):
 
 
 if __name__ == '__main__':
-    learning_task_id = sys.argv[1]
-    learning_problem_id = sys.argv[2]
-    output_file = sys.argv[3]
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_output_file')
+    args = argparser.parse_args()
+
+    learning_task_id = args.learning_task
+    learning_problem_id = args.learning_problem
+    output_file = args.result_output_file
     _log.debug('Running learning task %s with learning problem %s' % (
         learning_task_id, learning_problem_id))
 
