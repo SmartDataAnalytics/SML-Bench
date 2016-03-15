@@ -15,6 +15,7 @@ _log = logging.getLogger()
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
 data_dir_name = 'data'
+tool_specific_data_dir = 'aleph'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
@@ -44,7 +45,9 @@ class NoAlephScriptFound(Exception):
 
 def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     """Finds all the files necessary to run golem:
-    - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/aleph/*.pl
+                            --> <target_dir>/<file_name_base>.b
+    - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
     - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
                             --> <target_dir>/<file_name_base>.f
@@ -54,11 +57,19 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
                             prolog_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        lp_dir_name, lp_id, tool_specific_data_dir)
 
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
+        if os.path.isdir(tool_specific_dir):
+            for f_name in os.listdir(tool_specific_dir):
+                if f_name.endswith('.pl'):
+                    subprocess.call(['cat', f_name], cwd=tool_specific_dir,
+                                    stdout=out)
+
         for f_name in os.listdir(data_dir):
-            # FIXME: resolve errors with files excluded here
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
 
@@ -140,10 +151,11 @@ def get_and_clean_results(results_dir):
         for line in res.readlines():
             result_lines.append(line.strip())
 
+    # FIXME: This split-at-').'-and-join-again approach is too weak
     # remove all line breaks and spit again one rule per line
-    result_lines = ''.join(result_lines).split('.')
+    result_lines = ''.join(result_lines).split(').')
     # add dots (removed in previous line) to rules again
-    result_lines = [l + '.' for l in result_lines if l != '']
+    result_lines = [l + ').' for l in result_lines if l != '']
 
     # remove all pos examples that could not be generalized
     with open(os.path.join(target_dir, file_name_base + '.f')) as examples:

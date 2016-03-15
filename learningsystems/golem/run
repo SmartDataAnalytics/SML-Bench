@@ -3,6 +3,7 @@
 import argparse
 import logging
 import os
+import shutil
 import subprocess
 import tempfile
 
@@ -46,9 +47,7 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
         for f_name in os.listdir(data_dir):
-            # FIXME: resolve errors with files excluded here
-            if f_name.endswith('.pl') and not f_name == 'mode.pl' and \
-                    not f_name == 'ring_theory.pl':
+            if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
 
     pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -71,10 +70,11 @@ def get_and_clean_results(results_dir, f_name_base):
         for line in res.readlines():
             result_lines.append(line.strip())
 
+    # FIXME: This split-at-').'-and-join-again approach is too weak
     # remove all line breaks and spit again one rule per line
-    result_lines = ''.join(result_lines).split('.')
+    result_lines = ''.join(result_lines).split(').')
     # add dots (removed in previous line) to rules again
-    result_lines = [l + '.' for l in result_lines if l != '']
+    result_lines = [l + ').' for l in result_lines if l != '']
 
     # remove all pos examples that could not be generalized
     with open(os.path.join(target_dir, f_name_base + '.f')) as examples:
@@ -84,6 +84,10 @@ def get_and_clean_results(results_dir, f_name_base):
                 result_lines.remove(line)
 
     return result_lines
+
+
+def clean_up(tmp_dir):
+    shutil.rmtree(tmp_dir)
 
 
 if __name__ == '__main__':
@@ -107,6 +111,7 @@ if __name__ == '__main__':
                       file_name_base)
 
     golem_executable = find_golem()
+    _log.debug('Runnig Golem')
     subprocess.check_call([golem_executable, file_name_base], cwd=target_dir)
 
     results = get_and_clean_results(target_dir, file_name_base)
@@ -114,3 +119,7 @@ if __name__ == '__main__':
     with open(output_file, 'w') as out:
         for line in results:
             out.write(line + "\n")
+
+    _log.debug('Golem run finished. Cleaning up.')
+    clean_up(target_dir)
+    _log.debug('Done. Results written to %s' % output_file)
