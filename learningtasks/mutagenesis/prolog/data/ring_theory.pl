@@ -1,35 +1,27 @@
-/* Prolog theory for nitro aromatic and heteroaromatic compounds
-It expects the Quintus libraries. Quanta bond type 7 is aromatic. */
-
-:- [library(basics)].
-:- [library(sets)].
-
-%****************************************************************************
-
 % Three benzene rings connected linearly
 anthracene(Drug,[Ring1,Ring2,Ring3]) :-
    benzene(Drug,Ring1),
    benzene(Drug,Ring2),
-   Ring1 @> Ring2,
+   compare(>,Ring1,Ring2),
    interjoin(Ring1,Ring2,Join1),
    benzene(Drug,Ring3),
-   Ring1 @> Ring3,
-   Ring2 @> Ring3,
+   compare(>,Ring1,Ring3),
+   compare(>,Ring2,Ring3),
    interjoin(Ring2,Ring3,Join2),
-   \+ interjoin(Join1,Join2,_),
-   \+ members_bonded(Drug,Join1,Join2).
+   not interjoin(Join1,Join2,_),
+   not members_bonded(Drug,Join1,Join2).
 
 % Three benzene rings connected in a curve
 phenanthrene(Drug,[Ring1,Ring2,Ring3]) :-
    benzene(Drug,Ring1),
    benzene(Drug,Ring2),
-   Ring1 @> Ring2,
+   compare(>,Ring1,Ring2),
    interjoin(Ring1,Ring2,Join1),
    benzene(Drug,Ring3),
-   Ring1 @> Ring3,
-   Ring2 @> Ring3,
+   compare(>,Ring1,Ring3),
+   compare(>,Ring2,Ring3),
    interjoin(Ring2,Ring3,Join2),
-   \+ interjoin(Join1,Join2,_),
+   not interjoin(Join1,Join2,_),
    members_bonded(Drug,Join1,Join2).
 
 
@@ -37,11 +29,11 @@ phenanthrene(Drug,[Ring1,Ring2,Ring3]) :-
 ball3(Drug,[Ring1,Ring2,Ring3]) :-
    benzene(Drug,Ring1),
    benzene(Drug,Ring2),
-   Ring1 @> Ring2,
+   compare(>,Ring1,Ring2),
    interjoin(Ring1,Ring2,Join1),
    benzene(Drug,Ring3),
-   Ring1 @> Ring3,
-   Ring2 @> Ring3,
+   compare(>,Ring1,Ring3),
+   compare(>,Ring2,Ring3),
    interjoin(Ring2,Ring3,Join2),
    interjoin(Join1,Join2,_).
 
@@ -135,7 +127,7 @@ atoms(Drug,N1,[Atom1|[Atom2|List_a]],[T1|[T2|List_t]]) :-
    N2 is N1 - 1,
    atoms(Drug,N2,[Atom2|List_a],[T2|List_t]),
    atm(Drug,Atom1,T1,_,_),
-   Atom1 @> Atom2,
+   compare(>,Atom1,Atom2),
    T1 \== h.
 
 
@@ -147,7 +139,7 @@ ring6(Drug,[Atom1|List],[Atom1,Atom2,Atom4,Atom6,Atom5,Atom3],
    memberchk(Atom2,[Atom1|List]),
    bondd(Drug,Atom1,Atom3,Type2),
    memberchk(Atom3,[Atom1|List]),
-   Atom3 @> Atom2,
+   compare(>,Atom3,Atom2),
    bondd(Drug,Atom2,Atom4,Type3),
    Atom4 \== Atom1,
    memberchk(Atom4,[Atom1|List]),
@@ -167,7 +159,7 @@ ring5(Drug,[Atom1|List],[Atom1,Atom2,Atom4,Atom5,Atom3],
    memberchk(Atom2,[Atom1|List]),
    bondd(Drug,Atom1,Atom3,Type2),
    memberchk(Atom3,[Atom1|List]),
-   Atom3 @> Atom2,
+   compare(>,Atom3,Atom2),
    bondd(Drug,Atom2,Atom4,Type3),
    Atom4 \== Atom1,
    memberchk(Atom4,[Atom1|List]),
@@ -189,7 +181,7 @@ nitro(Drug,[Atom0,Atom1,Atom2,Atom3]) :-
    bondd(Drug,Atom1,Atom2,2),
    atm(Drug,Atom2,o,40,_),
    bondd(Drug,Atom1,Atom3,2),
-   Atom3 @> Atom2,
+   compare(>,Atom3,Atom2),
    atm(Drug,Atom3,o,40,_).
 
 %****************************************************************************
@@ -203,10 +195,10 @@ methyl(Drug,[Atom0,Atom1,Atom2,Atom3,Atom4]) :-
    bondd(Drug,Atom1,Atom2,1),
    atm(Drug,Atom2,h,3,_), 
    bondd(Drug,Atom1,Atom3,1),
-   Atom3 @> Atom2,
+   compare(>,Atom3,Atom2),
    atm(Drug,Atom3,h,3,_), 
    bondd(Drug,Atom1,Atom4,1),
-   Atom4 @> Atom3,
+   compare(>,Atom4,Atom3),
    atm(Drug,Atom4,h,3,_).
 
 
