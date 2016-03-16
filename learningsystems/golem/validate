@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
+import argparse
 import logging
 import os
 import stat
 import subprocess
 from subprocess import CalledProcessError
-import sys
 import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -13,6 +13,7 @@ _log = logging.getLogger()
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
+tool_specific_data_dir = 'golem'
 data_dir_name = 'data'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
@@ -33,13 +34,11 @@ main :-
         halt(1).
 """
 
-if len(sys.argv) != 5:
-    _log.error('ERROR: Syntax: validate <learning task> <learning problem> <result input file> <validation output file>')
-    sys.exit(1)
-
 
 def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     """Finds all the files necessary to run golem:
+    - ../../../learningtasks/<task_id>/prolog/data/golem
+                            --> <target_dir>/<file_name_base>.b
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
     - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
@@ -50,13 +49,19 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
                             prolog_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        data_dir_name, tool_specific_data_dir)
 
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
+        if os.path.isdir(tool_specific_dir):
+            for f_name in os.listdir(data_dir):
+                if f_name.endswith('.pl'):
+                    subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+
         for f_name in os.listdir(data_dir):
-            # FIXME: resolve errors with files excluded here
-            if f_name.endswith('.pl') and not f_name == 'mode.pl' and \
-                    not f_name == 'ring_theory.pl':
+            if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
 
     pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -89,7 +94,7 @@ def get_vars_from_head(head):
     return [head_pred] + vars
 
 
-def build_match_body_parts(results):
+def build_rule_dicts(results):
     """
       active(A) :- phenanthrene(A,[B,C]), atm(A,B,c,T,U)                    (1)
 
@@ -105,7 +110,7 @@ def build_match_body_parts(results):
     FIXME: most of entries in the dict above are not needed!
 
     :param results: list of strings containing rule like (1)
-    :return: list of strings containing conjunctions like (2)
+    :return: a rule dict as shown above (2)
     """
     ret = []
     for res in results:
@@ -115,7 +120,7 @@ def build_match_body_parts(results):
         head_parts = get_vars_from_head(head)
 
         for p in head_parts[1:]:  # first part (i.e. the predicate) skipped
-            body += ', write(' + p + ')'
+            body += ', write(' + p + '), write(\'\n\')'
         body += '.'
 
         ret.append({
@@ -128,76 +133,112 @@ def build_match_body_parts(results):
     return ret
 
 
-def validate(results, res_dir, file_name_base):
-    pos_examples = read_examples(os.path.join(res_dir, file_name_base + '.f'))
-    neg_examples = read_examples(os.path.join(res_dir, file_name_base + '.n'))
+def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
+                                     results_dir):
+    """should create something like this:
 
-    match_body_parts = build_match_body_parts(results)
-    fp = pos_examples[:]
-    fn = []
-    tn = neg_examples[:]
-    tp = []
+    '''
+    #!/usr/bin/env swipl
 
-    # FIXME: remove code copy of this for loop
-    for pos_ex in pos_examples:
+    :- initialization main.
+
+    match :- active(d190) = active(A), nitro(A,[B,C,D,E]), atm(A,B,c,21,F),
+            write(A).
+    match :- active(d190) = active(A),
+            phenanthrene(A,[[B,C,D,E,F,G],[H,I,J,K,L,M],[N,O,P,Q,R,S]]),
+            atm(A,B,c,T,U), atm(A,C,c,T,U), atm(A,F,c,V,W), atm(A,K,c,V,X),
+            write(A).
+
+    main :-
+            consult('mutagenesis_42.b'),
+            consult('mutagenesis_42.f'),
+            match,
+            halt.
+    main :-
+            halt(1).
+    '''
+
+    for every example (active(d190) in the above case) and execute it. In
+    essence, whenever one of these equations '<example> = <learned rule>'
+    can be matched:
+    - the example is output
+    - SWI Prolog will exit with return value 0
+
+    otherwise:
+    - nothing is output
+    - SWI Prolog will exit with return value 1 which raises a
+      CalledProcessError exception which is caught
+
+    :param rule_dicts: list of dictionaries created by build_rule_dicts(.)
+    :param exmpls: list of either positive or negative examples
+    :param true_set:  list of either true positives or true negatives
+    :param false_set: list of either false positives or false negatives
+    :param results_dir: the temporary directory where all the prepared files
+        were copied
+    """
+    for ex in exmpls:
+        _log.debug('Validating %s' % ex)
         match_lines = []
-        for p in match_body_parts:
+        for rule in rule_dicts:
             # TODO: maybe some checking is needed here, first
-            match_lines.append('match :- ' + pos_ex + ' = ' + p['conj'])
+            match_lines.append('match :- ' + ex + ' = ' + rule['conj'])
 
         content = validation_file_template % {
             'match': '\n'.join(match_lines),
             'file_b': file_name_base + '.b',
             'file_ex': file_name_base + '.f'}
 
-        validate_file_path = os.path.join(res_dir, 'validate.pl')
+        validate_file_path = os.path.join(results_dir, 'validate.pl')
+
         with open(validate_file_path, 'w') as f:
             f.write(content)
+
+        # make script executable (chmod 700)
         os.chmod(validate_file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
+
         try:
-            output = subprocess.check_output(validate_file_path, cwd=target_dir,
-                                             stderr=open(os.devnull, 'w'))
-            tp.append(pos_ex)
-            fp.remove(pos_ex)
+            subprocess.check_call(validate_file_path, cwd=target_dir,
+                                  stderr=open(os.devnull, 'w'))
+            # in case the example could be unified, this line won't be reached
+            # but a CalledProcessError exception is thrown
+            true_set.append(ex)
+            false_set.remove(ex)
 
         except CalledProcessError as e:
             if e.returncode != 1:
                 raise e
 
-    for neg_ex in neg_examples:
-        match_lines = []
-        for p in match_body_parts:
-            # TODO: maybe some checking is needed here, first
-            match_lines.append('match :- ' + neg_ex + ' = ' + p['conj'])
 
-        content = validation_file_template % {
-            'match': '\n'.join(match_lines),
-            'file_b': file_name_base + '.b',
-            'file_ex': file_name_base + '.n'}
+def validate(results, res_dir, file_name_base):
+    pos_examples = read_examples(os.path.join(res_dir, file_name_base + '.f'))
+    neg_examples = read_examples(os.path.join(res_dir, file_name_base + '.n'))
 
-        validate_file_path = os.path.join(res_dir, 'validate.pl')
-        with open(validate_file_path, 'w') as f:
-            f.write(content)
-        os.chmod(validate_file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
-        try:
-            output = subprocess.check_output(validate_file_path, cwd=target_dir,
-                                             stderr=open(os.devnull, 'w'))
-            fn.append(neg_ex)
-            tn.remove(neg_ex)
+    rule_dicts = build_rule_dicts(results)
+    fp = pos_examples[:]
+    fn = []
+    tn = neg_examples[:]
+    tp = []
 
-        except CalledProcessError as e:
-            if e.returncode != 1:
-                raise e
+    create_and_run_validation_script(rule_dicts, pos_examples, tp, fp, res_dir)
+    create_and_run_validation_script(rule_dicts, neg_examples, tn, fn, res_dir)
+
     return len(tp), len(fp), len(tn), len(fn)
 
 
 if __name__ == '__main__':
-    learning_task_id = sys.argv[1]
-    learning_problem_id = sys.argv[2]
-    input_file = sys.argv[3]
-    output_file_name = sys.argv[4]
-    _log.debug('Validating solution learning task %s with learning problem %s' % (
-        learning_task_id, learning_problem_id))
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_input_file')
+    argparser.add_argument('validation_output_file')
+    args = argparser.parse_args()
+
+    learning_task_id = args.learning_task
+    learning_problem_id = args.learning_problem
+    input_file = args.result_input_file
+    output_file_name = args.validation_output_file
+    _log.debug('Validating solution learning task %s with learning '
+               'problem %s' % (learning_task_id, learning_problem_id))
 
     results = []
     with open(input_file) as res:
