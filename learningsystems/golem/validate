@@ -3,9 +3,9 @@
 import argparse
 import logging
 import os
+import shutil
 import stat
 import subprocess
-from subprocess import CalledProcessError
 import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -56,7 +56,7 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
         if os.path.isdir(tool_specific_dir):
-            for f_name in os.listdir(data_dir):
+            for f_name in os.listdir(tool_specific_dir):
                 if f_name.endswith('.pl'):
                     subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
 
@@ -120,7 +120,7 @@ def build_rule_dicts(results):
         head_parts = get_vars_from_head(head)
 
         for p in head_parts[1:]:  # first part (i.e. the predicate) skipped
-            body += ', write(' + p + '), write(\'\n\')'
+            body += ', write(' + p + '), write(\'\\n\')'
         body += '.'
 
         ret.append({
@@ -134,7 +134,7 @@ def build_rule_dicts(results):
 
 
 def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
-                                     results_dir):
+                                     results_dir, exmpl_file_suffix):
     """should create something like this:
 
     '''
@@ -186,7 +186,7 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
         content = validation_file_template % {
             'match': '\n'.join(match_lines),
             'file_b': file_name_base + '.b',
-            'file_ex': file_name_base + '.f'}
+            'file_ex': file_name_base + exmpl_file_suffix}
 
         validate_file_path = os.path.join(results_dir, 'validate.pl')
 
@@ -204,7 +204,7 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
             true_set.append(ex)
             false_set.remove(ex)
 
-        except CalledProcessError as e:
+        except subprocess.CalledProcessError as e:
             if e.returncode != 1:
                 raise e
 
@@ -219,10 +219,16 @@ def validate(results, res_dir, file_name_base):
     tn = neg_examples[:]
     tp = []
 
-    create_and_run_validation_script(rule_dicts, pos_examples, tp, fp, res_dir)
-    create_and_run_validation_script(rule_dicts, neg_examples, tn, fn, res_dir)
+    create_and_run_validation_script(
+        rule_dicts, pos_examples, tp, fp, res_dir, '.f')
+    create_and_run_validation_script(
+        rule_dicts, neg_examples, fn, tn, res_dir, '.n')
 
     return len(tp), len(fp), len(tn), len(fn)
+
+
+def clean_up(tmp_dir):
+    shutil.rmtree(tmp_dir)
 
 
 if __name__ == '__main__':
@@ -259,3 +265,7 @@ if __name__ == '__main__':
                 'fp: ' + str(num_fp) + os.linesep +
                 'tn: ' + str(num_tn) + os.linesep +
                 'fn: ' + str(num_fn) + os.linesep)
+
+    _log.debug('Golem validation finished. Cleaning up.')
+    clean_up(target_dir)
+    _log.debug('Done. Results written to %s' % output_file_name)
