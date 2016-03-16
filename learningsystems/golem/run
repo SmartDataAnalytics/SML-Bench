@@ -5,6 +5,8 @@ import logging
 import os
 import shutil
 import subprocess
+import sys
+import platform
 import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -21,9 +23,10 @@ exec_file_name = 'golem'
 
 
 def find_golem():
-    if os.path.isfile(os.path.join(os.getcwd(), exec_file_name)):
+    gen_path = os.path.join(os.getcwd(), ("%s-%s") % (platform.system(), platform.machine()), exec_file_name)
+    if os.path.isfile(gen_path):
         # golem executable resides in the same directory
-        return os.path.join(os.getcwd(), exec_file_name)
+        return gen_path
 
     else:
         # golem executable resides somewhere else; it is assumed that it can be
