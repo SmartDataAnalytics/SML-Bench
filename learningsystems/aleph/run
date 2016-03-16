@@ -6,7 +6,6 @@ import os
 import shutil
 import stat
 import subprocess
-import sys
 import platform
 import tempfile
 
@@ -88,14 +87,21 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     neg_target_file = os.path.join(target_dir, file_name_base+'.n')
     subprocess.call(['cp', neg_file_path, neg_target_file])
 
-    gen_path = os.path.join(os.getcwd(), ("%s-%s") % (platform.system(), platform.machine()), yap_data_name)
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            yap_data_name)
+
     if os.path.isfile(gen_path):
         # yap executable resides in the same directory
-        subprocess.call(['cp', gen_path, os.path.join(target_dir, yap_data_name)])
+        subprocess.call(
+            ['cp', gen_path, os.path.join(target_dir, yap_data_name)])
 
 
 def find_yap():
-    gen_path = os.path.join(os.getcwd(), ("%s-%s") % (platform.system(), platform.machine()), yap_executable_name)
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            yap_executable_name)
+
     if os.path.isfile(gen_path):
         # yap executable resides in the same directory
         return gen_path
