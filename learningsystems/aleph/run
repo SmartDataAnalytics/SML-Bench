@@ -213,7 +213,7 @@ if __name__ == '__main__':
     script_path = os.path.join(target_dir, train_script_file_name)
 
     _log.debug('Runnig Aleph')
-    output = subprocess.check_output([script_path], cwd=target_dir)
+    subprocess.check_call([script_path], cwd=target_dir)
 
     results = get_and_clean_results(target_dir)
 
