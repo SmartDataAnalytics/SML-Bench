@@ -59,7 +59,7 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
                             prolog_dir_name, data_dir_name)
     tool_specific_dir = os.path.join(
         '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
-        lp_dir_name, lp_id, tool_specific_data_dir)
+        data_dir_name, tool_specific_data_dir)
 
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
