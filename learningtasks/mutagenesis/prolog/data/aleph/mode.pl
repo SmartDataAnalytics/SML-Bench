@@ -106,17 +106,17 @@ ringlist(X):-
 
 
 
-element(br).
-element(c).
-element(cl).
-element(f).
-element(h).
-element(i).
-element(n).
-element(o).
-element(s).
-
-
+% element(br).
+% element(c).
+% element(cl).
+% element(f).
+% element(h).
+% element(i).
+% element(n).
+% element(o).
+% element(s).
+% 
+% 
 % background knowledge 
 
 gteq(X,Y):-
@@ -136,10 +136,10 @@ lteq(X,X):-
 	float(X).
 
 
-:- set(i,2).
-:- set(nodes,20000).
-:- set(noise,5).
-:- set(c,3).
-:- set(verbose,0).
-:- noreductive.
-:- nosplit.
+% :- set(i,2).
+% :- set(nodes,20000).
+% :- set(noise,5).
+% :- set(c,3).
+% :- set(verbose,0).
+% :- noreductive.
+% :- nosplit.
