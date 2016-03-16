@@ -14,6 +14,7 @@ _log = logging.getLogger()
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
 data_dir_name = 'data'
+tool_specific_data_dir = 'golem'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
@@ -48,9 +49,17 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
                             prolog_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        data_dir_name, tool_specific_data_dir)
 
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
+        if os.path.isdir(tool_specific_dir):
+            for f_name in os.listdir(tool_specific_dir):
+                if f_name.endswith('.pl'):
+                    subprocess.call(['cat', f_name], cwd=tool_specific_dir,
+                                    stdout=out)
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
