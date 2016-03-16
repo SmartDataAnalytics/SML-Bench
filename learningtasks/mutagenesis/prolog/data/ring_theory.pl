@@ -8,8 +8,8 @@ anthracene(Drug,[Ring1,Ring2,Ring3]) :-
    compare(>,Ring1,Ring3),
    compare(>,Ring2,Ring3),
    interjoin(Ring2,Ring3,Join2),
-   not interjoin(Join1,Join2,_),
-   not members_bonded(Drug,Join1,Join2).
+   not(interjoin(Join1,Join2,_)),
+   not(members_bonded(Drug,Join1,Join2)).
 
 % Three benzene rings connected in a curve
 phenanthrene(Drug,[Ring1,Ring2,Ring3]) :-
@@ -21,7 +21,7 @@ phenanthrene(Drug,[Ring1,Ring2,Ring3]) :-
    compare(>,Ring1,Ring3),
    compare(>,Ring2,Ring3),
    interjoin(Ring2,Ring3,Join2),
-   not interjoin(Join1,Join2,_),
+   not(interjoin(Join1,Join2,_)),
    members_bonded(Drug,Join1,Join2).
 
 
