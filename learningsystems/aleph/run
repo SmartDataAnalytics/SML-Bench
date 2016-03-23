@@ -22,7 +22,6 @@ pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
 output_file_name = 'results.txt'
 yap_executable_name = 'yap'
-yap_data_name = 'startup.yss'
 aleph_script_name = 'aleph.pl'
 aleph_rules_output_file_name = 'rules'
 train_script_file_name = 'train.pl'
@@ -86,15 +85,6 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
                                  neg_file_name)
     neg_target_file = os.path.join(target_dir, file_name_base+'.n')
     subprocess.call(['cp', neg_file_path, neg_target_file])
-
-    gen_path = os.path.join(os.getcwd(),
-                            '%s-%s' % (platform.system(), platform.machine()),
-                            yap_data_name)
-
-    if os.path.isfile(gen_path):
-        # yap executable resides in the same directory
-        subprocess.call(
-            ['cp', gen_path, os.path.join(target_dir, yap_data_name)])
 
 
 def find_yap():
@@ -203,7 +193,6 @@ if __name__ == '__main__':
     target_dir = tempfile.mkdtemp()
     _log.debug('Target dir is %s' % target_dir)
 
-    aleph_script_path = find_aleph_script()
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
                       file_name_base)
 
