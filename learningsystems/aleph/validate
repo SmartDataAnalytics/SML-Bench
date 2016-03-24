@@ -19,6 +19,7 @@ lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
 yap_executable_name = 'yap'
+# TODO: will we also have to consult the negative examples?
 validation_file_template = """#!%(yap)s -L --
 
 :- initialization main.
@@ -133,12 +134,12 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
     essence, whenever one of these equations '<example> = <learned rule>'
     can be matched:
     - the example is output
-    - SWI Prolog will exit with return value 0
+    - YAP will exit with return value 0
 
     otherwise:
     - nothing is output
-    - SWI Prolog will exit with return value 1 which raises a
-      CalledProcessError exception which is caught
+    - YAP will exit with return value 1 which raises a CalledProcessError
+      exception which is caught
 
     :param rule_dicts: list of dictionaries created by build_rule_dicts(.)
     :param exmpls: list of either positive or negative examples
