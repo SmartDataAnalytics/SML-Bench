@@ -50,8 +50,8 @@ class NoYapInstallationFoundException(Exception):
     """Raised when no installed Yap could be found."""
 
 
-class NoGilpsScriptFound(Exception):
-    """Raised when no Aleph script could be found"""
+class NoGILPSScriptFound(Exception):
+    """Raised when no ProGolem script could be found"""
 
 
 def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base):
@@ -159,7 +159,7 @@ def find_gilps_script():
             msg = 'No gilps.pl script could be found. Please download it ' \
                   'from http://www.doc.ic.ac.uk/~jcs06/GILPS/GILPS.tar.bz2 ' \
                   'and put it into the learning system\'s directory'
-            raise NoGilpsScriptFound(msg)
+            raise NoGILPSScriptFound(msg)
 
         return gilps_script_name
 
