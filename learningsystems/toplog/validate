@@ -1,0 +1,303 @@
+#!/usr/bin/env python
+
+import argparse
+import logging
+import os
+import shutil
+import stat
+import subprocess
+import tempfile
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+tool_specific_data_dir = 'toplog'
+data_dir_name = 'data'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.pl'
+neg_file_name = 'neg.pl'
+yap_executable_name = 'yap'
+validation_file_template = """#!%(yap)s -L --
+
+:- initialization main.
+
+%(match)s
+
+main :-
+        consult('%(file_b)s'),
+        match,
+        halt.
+main :-
+        halt(1).
+"""
+
+
+class NoYapInstallationFoundException(Exception):
+    """Raised when no installed Yap could be found."""
+
+
+class NoGILPSScriptFound(Exception):
+    """Raised when no GILPS script could be found"""
+
+
+def copy_files_around_and_get_examples(task_id, lp_id, target_dir,
+                                       file_name_base):
+    """Finds all the files necessary to run TopLog:
+    - ../../../learningtasks/<task_id>/prolog/data/toplog
+                            --> <target_dir>/<file_name_base>.b
+    - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.b
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+                            --> <target_dir>/<file_name_base>.f
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
+                            --> <target_dir>/<file_name_base>.n
+    """
+    # <file_name_base>.b (background knowledge)
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            prolog_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        data_dir_name, tool_specific_data_dir)
+
+    pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
+                                 prolog_dir_name, lp_dir_name, lp_id,
+                                 pos_file_name)
+
+    neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
+                                 prolog_dir_name, lp_dir_name, lp_id,
+                                 neg_file_name)
+
+    # merge all kb and example files into one
+    with open(os.path.join(target_dir, file_name_base+'.pl'), 'w') as out:
+        if os.path.isdir(tool_specific_dir):
+            for f_name in os.listdir(tool_specific_dir):
+                if f_name.endswith('.pl'):
+                    # FIXME: some of the files loaded here might cause errors
+                    # since GILPS was not loaded
+                    subprocess.call(['cat', f_name], cwd=tool_specific_dir,
+                                    stdout=out)
+
+        for f_name in os.listdir(data_dir):
+            if f_name.endswith('.pl'):
+                subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+
+        subprocess.call(['cat', pos_file_path], stdout=out)
+
+    pos_examples = read_examples(pos_file_path)
+    neg_examples = read_examples(neg_file_path)
+
+    return pos_examples, neg_examples
+
+
+def read_examples(file_path):
+    with open(file_path) as f:
+        lines = [l.strip() for l in f.readlines()]
+
+    lines = [l for l in ''.join(lines).split('.') if not l == '']
+    return lines
+
+
+def get_vars_from_head(head):
+    open_paren_pos = head.find('(')
+    head_pred = head[:open_paren_pos]
+    vars_str = head[open_paren_pos+1:-1]
+    vars = vars_str.split(',')
+
+    return [head_pred] + vars
+
+
+def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
+                                     results_dir, exmpl_file_suffix, yap):
+    """should create something like this:
+
+    '''
+    #!/usr/bin/yap -L --
+
+    :- initialization main.
+
+    match :- active(d190) = active(A), atm(A,B,c,21,C), gteq(C,-0.108),
+        bond(A,B,D,7), write(A), write('\n').
+    match :- active(d190) = active(A), atm(A,B,c,27,C), lteq(C,-0.084),
+        write(A), write('\n').
+
+    main :-
+            consult('mutagenesis_42.pl'),
+            match,
+            halt.
+    main :-
+            halt(1).
+
+    '''
+
+    for every example (active(d190) in the above case) and execute it. In
+    essence, whenever one of these equations '<example> = <learned rule>'
+    can be matched:
+    - the example is output
+    - YAP will exit with return value 0
+
+    otherwise:
+    - nothing is output
+    - YAP will exit with return value 1 which raises a CalledProcessError
+      exception which is caught
+
+    :param rule_dicts: list of dictionaries created by build_rule_dicts(.)
+    :param exmpls: list of either positive or negative examples
+    :param true_set:  list of either true positives or true negatives
+    :param false_set: list of either false positives or false negatives
+    :param results_dir: the temporary directory where all the prepared files
+        were copied
+    """
+    for ex in exmpls:
+        _log.debug('Validating %s' % ex)
+        match_lines = []
+        for rule in rule_dicts:
+            # TODO: maybe some checking is needed here, first
+            match_lines.append('match :- ' + ex + ' = ' + rule['conj'])
+
+        content = validation_file_template % {
+            'yap': yap,
+            'match': '\n'.join(match_lines),
+            'file_b': file_name_base + '.pl',
+            # 'file_ex': file_name_base + exmpl_file_suffix
+        }
+
+        validate_file_path = os.path.join(results_dir, 'validate.pl')
+
+        with open(validate_file_path, 'w') as f:
+            f.write(content)
+
+        # make script executable (chmod 700)
+        os.chmod(validate_file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
+        try:
+            subprocess.check_call(validate_file_path, cwd=target_dir,
+                                  stderr=open(os.devnull, 'w'))
+            # in case the example could be unified, this line won't be reached
+            # but a CalledProcessError exception is thrown
+            true_set.append(ex)
+            false_set.remove(ex)
+
+        except subprocess.CalledProcessError as e:
+            if e.returncode != 1:
+                raise e
+
+
+def build_rule_dicts(results):
+    """
+      active(A),phenanthrene(A,[B,C]), atm(A,B,c,T,U)                    (1)
+
+    should become
+
+      {
+        'head': 'active(A)',                                                (2)
+        'head_pred': 'active',
+        'head_vars': ['A'],
+        'conj': active(A), phenanthrene(A,[B,C]), atm(A,B,c,T,U)
+      }
+
+    FIXME: most of entries in the dict above are not needed!
+
+    :param results: list of strings containing rule like (1)
+    :return: a rule dict as shown above (2)
+    """
+    ret = []
+    for res in results:
+        head, body = res.split(',', 1)
+        head = head.strip()
+        body = body.strip()
+        head_parts = get_vars_from_head(head)
+
+        for p in head_parts[1:]:  # first part (i.e. the predicate) skipped
+            body += ', write(' + p + '), write(\'\\n\')'
+        body += '.'
+
+        ret.append({
+            'head': head,
+            'head_pred': head_parts[0],
+            'head_vars': head_parts[1:],
+            'conj': head + ', ' + body
+        })
+
+    return ret
+
+
+def find_yap():
+    if os.path.isfile(os.path.join(os.getcwd(), yap_executable_name)):
+        # yap executable resides in the same directory
+        return os.path.join(os.getcwd(), yap_executable_name)
+
+    else:
+        yap_exec_path = subprocess.check_output(['which', yap_executable_name])
+        yap_exec_path = yap_exec_path.strip()
+
+        if yap_exec_path == '':
+            msg = 'No Yap installation could be found. Please make sure you ' \
+                  'have Yap installed via your package manager or download ' \
+                  'and manually install it ' \
+                  'from https://www.dcc.fc.up.pt/~vsc/Yap/'
+            raise NoYapInstallationFoundException(msg)
+
+        return yap_exec_path
+
+
+def validate(results, res_dir, pos_examples, neg_examples):
+    yap = find_yap()
+
+    rule_dicts = build_rule_dicts(results)
+    fp = pos_examples[:]
+    fn = []
+    tn = neg_examples[:]
+    tp = []
+
+    create_and_run_validation_script(
+        rule_dicts, pos_examples, tp, fp, res_dir, '.f', yap)
+    create_and_run_validation_script(
+        rule_dicts, neg_examples, fn, tn, res_dir, '.n', yap)
+
+    return len(tp), len(fp), len(tn), len(fn)
+
+
+def clean_up(tmp_dir):
+    shutil.rmtree(tmp_dir)
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_input_file')
+    argparser.add_argument('validation_output_file')
+    args = argparser.parse_args()
+
+    learning_task_id = args.learning_task
+    learning_problem_id = args.learning_problem
+    input_file = args.result_input_file
+    output_file_name = args.validation_output_file
+    _log.debug('Validating solution learning task %s with learning '
+               'problem %s' % (learning_task_id, learning_problem_id))
+
+    results = []
+    with open(input_file) as res:
+        for line in res.readlines():
+            results.append(line.strip())
+
+    file_name_base = learning_task_id + '_' + learning_problem_id
+    target_dir = tempfile.mkdtemp()
+    _log.debug('Target dir is %s' % target_dir)
+
+    pos_examples, neg_examples = copy_files_around_and_get_examples(
+        learning_task_id, learning_problem_id, target_dir, file_name_base)
+
+    num_tp, num_fp, num_tn, num_fn = validate(
+        results, target_dir, pos_examples, neg_examples)
+
+    with open(output_file_name, 'w') as f:
+        f.write('tp: ' + str(num_tp) + os.linesep +
+                'fp: ' + str(num_fp) + os.linesep +
+                'tn: ' + str(num_tn) + os.linesep +
+                'fn: ' + str(num_fn) + os.linesep)
+
+    _log.debug('TopLog validation finished. Cleaning up.')
+    clean_up(target_dir)
+    _log.debug('Done. Results written to %s' % output_file_name)

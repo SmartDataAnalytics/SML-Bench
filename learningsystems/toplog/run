@@ -1,0 +1,280 @@
+#!/usr/bin/env python
+
+import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
+import logging
+import os
+import shutil
+import stat
+import subprocess
+import tempfile
+
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+data_dir_name = 'data'
+tool_specific_data_dir = 'toplog'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.pl'
+neg_file_name = 'neg.pl'
+config_file_name = 'toplog.conf'
+output_file_name = 'results.txt'
+yap_executable_name = 'yap'
+gilps_script_name = 'gilps.pl'
+toplog_engine_name = 'toplog'
+toplog_rules_output_file_name = 'rules'
+pos_example_pattern = 'example(%s,1).'
+neg_example_pattern = 'example(%s,-1).'
+train_script_file_name = 'train.pl'
+train_script_file_template = """#!%(yap)s -L --
+
+:- use_module(library(lists), [member/2, memberchk/2, reverse/2, append/3, intersection/3]).
+:- use_module('%(gilps_script)s', [read_problem/1, build_theory/0, modeh/1, modeh/2, modeb/2, modeb/3, set/2]).
+
+:-
+%(settings)s
+    read_problem('%(bg_kb_file)s'),
+    build_theory,
+    halt.
+"""
+
+
+class NoYapInstallationFoundException(Exception):
+    """Raised when no installed Yap could be found."""
+
+
+class NoGILPSScriptFound(Exception):
+    """Raised when no GILPS script could be found"""
+
+
+def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base):
+    """Finds all the files necessary to run toplog:
+    - ../../learningtasks/<task_id>/prolog/data/toplog/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.pl
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+                            --> <target_dir>/<file_name_base>.pl
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
+                            --> <target_dir>/<filename_base>.pl
+    - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.b
+    """
+    with open(os.path.join(target_dir, file_name_base+'.pl'), 'w') as out:
+
+        # ../../learningtasks/<task_id>/prolog/data/toplog/*.pl  # merged!
+        #       --> <target_dir>/<file_name_base>.pl
+        tool_specific_dir = os.path.join(
+            '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+            data_dir_name, tool_specific_data_dir)
+
+        if os.path.isdir(tool_specific_dir):
+            for f_name in os.listdir(tool_specific_dir):
+                if f_name.endswith('.pl'):
+                    subprocess.call(['cat', f_name], cwd=tool_specific_dir,
+                                    stdout=out)
+
+        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+        #       --> <target_dir>/<file_name_base>.pl
+        pos_file_path = os.path.join(
+            '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+            lp_dir_name, lp_id, pos_file_name)
+        with open(pos_file_path) as posfile:
+            for line in posfile:
+                # example(active(d190), 1).
+                line = line.strip()[:-1]  # remove trailing point
+                example_line = pos_example_pattern % line
+                out.write(example_line + os.linesep)
+
+        neg_file_path = os.path.join(
+            '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+            lp_dir_name, lp_id, neg_file_name)
+
+        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
+        #       --> <target_dir>/<filename_base>.pl
+        with open(neg_file_path) as negfile:
+            for line in negfile:
+                # example(active(d190), -1).
+                line = line.strip()[:-1]  # remove trailing point
+                example_line = neg_example_pattern % line
+                out.write(example_line + os.linesep)
+        out.flush()
+
+        # ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+        #       --> <target_dir>/<file_name_base>.b
+        data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                                prolog_dir_name, data_dir_name)
+
+        for f_name in os.listdir(data_dir):
+            if f_name.endswith('.pl'):
+                subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+
+    return
+
+
+def find_yap():
+    yap_path = os.path.join(os.getcwd(), yap_executable_name)
+
+    if os.path.isfile(yap_path):
+        # yap executable resides in the same directory
+        return yap_path
+
+    else:
+        yap_exec_path = subprocess.check_output(['which', yap_executable_name])
+        yap_exec_path = yap_exec_path.strip()
+
+        if yap_exec_path == '':
+            msg = 'No Yap installation could be found. Please make sure you ' \
+                  'have Yap installed via your package manager or download ' \
+                  'and manually install it ' \
+                  'from https://www.dcc.fc.up.pt/~vsc/Yap/'
+            raise NoYapInstallationFoundException(msg)
+
+        return yap_exec_path
+
+
+def find_gilps_script():
+    if os.path.isfile(os.path.join(os.getcwd(), gilps_script_name)):
+        # gilps script resides in the same directory
+        return os.path.join(os.getcwd(), gilps_script_name)
+
+    elif os.path.isfile(os.path.join(os.getcwd(), 'source', gilps_script_name)):
+        # gilps script resides in ./source/
+        return os.path.join(os.getcwd(), 'source', gilps_script_name)
+
+    else:
+        try:
+            gilps_script_path = subprocess.check_output(
+                ['locate', gilps_script_name])
+
+        except subprocess.CalledProcessError:
+            gilps_script_path = ''
+
+        if gilps_script_path == '':
+            msg = 'No gilps.pl script could be found. Please download it ' \
+                  'from http://www.doc.ic.ac.uk/~jcs06/GILPS/GILPS.tar.bz2 ' \
+                  'and put it into the learning system\'s directory'
+            raise NoGILPSScriptFound(msg)
+
+        return gilps_script_name
+
+
+def get_settings(learning_task, lp_id):
+    config_file_path = os.path.join('..', '..', learning_task_dir_name,
+                                    learning_task, prolog_dir_name,
+                                    lp_dir_name, lp_id, config_file_name)
+    conf = configparser.ConfigParser()
+    conf.read(config_file_path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    return settings
+
+
+def create_pl_script(yap_executable, gilps_script_path, out_dir, kb_file_path,
+                     settings):
+    settings_str = ''
+
+    for option, val in settings.items():
+        settings_str += '    set(%s, %s),\n' % (option, val)
+
+    # mapping for filling the train script template
+    m = {
+        'yap': yap_executable,
+        'gilps_script': gilps_script_path,
+        'bg_kb_file': kb_file_path,
+        'settings': settings_str,
+    }
+
+    # write the train script
+    script_path = os.path.join(out_dir, train_script_file_name)
+    with open(script_path, 'w') as f:
+        f.write(train_script_file_template % m)
+
+    # make the train script executable
+    os.chmod(script_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
+
+    return
+
+
+def get_and_clean_results(results_dir):
+    result_lines = []
+    # get all result lines from results file
+    with open(os.path.join(results_dir, toplog_rules_output_file_name)) as res:
+        for line in res.readlines():
+            result_lines.append(line.strip())
+
+    # result lines should be something like this:
+    # [
+    #   'theory_clause([class(A,fish),has_gills(A)],_249123)',
+    #   'theory_clause([class(A,mammal),has_milk(A)],_249152)',
+    #   'theory_clause([class(A,reptile),has_legs(A,4),has_eggs(A)],_249186)',
+    #   'theory_clause([class(A,bird),has_covering(A,feathers)],_249216)',
+    #   'theory_clause([class(A,reptile),has_covering(A,scales),habitat(A,land)],_249251)'
+    # ]
+
+    rules = []
+    for line in result_lines:
+        start = line.find('([') + 2
+        end = line.rfind('],')
+        rule = line[start:end]
+        rules.append(rule)
+
+    return rules
+
+
+def clean_up(tmp_dir):
+    shutil.rmtree(tmp_dir)
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_output_file')
+    args = argparser.parse_args()
+
+    learning_task_id = args.learning_task
+    learning_problem_id = args.learning_problem
+    output_file = args.result_output_file
+    _log.debug('Running learning task %s with learning problem %s' % (
+        learning_task_id, learning_problem_id))
+
+    file_name_base = learning_task_id + '_' + learning_problem_id
+    target_dir = tempfile.mkdtemp()
+    _log.debug('Target dir is %s' % target_dir)
+
+    copy_files_and_create_examples(learning_task_id,
+                                   learning_problem_id,
+                                   target_dir, file_name_base)
+
+    yap_executable = find_yap()
+    gilps_script_path = find_gilps_script()
+    settings = get_settings(learning_task_id, learning_problem_id)
+    settings['output_theory_file'] = toplog_rules_output_file_name
+    settings['engine'] = toplog_engine_name
+    create_pl_script(yap_executable, gilps_script_path, target_dir,
+                     file_name_base + '.pl', settings)
+    script_path = os.path.join(target_dir, train_script_file_name)
+
+    _log.debug('Runnig TopLog')
+    subprocess.check_call([script_path], cwd=target_dir)
+
+    results = get_and_clean_results(target_dir)
+
+    with open(output_file, 'w') as out:
+        for line in results:
+            out.write(line + "\n")
+
+    _log.debug('TopLog run finished. Cleaning up.')
+    clean_up(target_dir)
+    _log.debug('Done. Results written to %s' % output_file)
