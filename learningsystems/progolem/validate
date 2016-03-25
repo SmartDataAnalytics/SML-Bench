@@ -299,5 +299,5 @@ if __name__ == '__main__':
                 'fn: ' + str(num_fn) + os.linesep)
 
     _log.debug('ProGolem validation finished. Cleaning up.')
-    # clean_up(target_dir)
+    clean_up(target_dir)
     _log.debug('Done. Results written to %s' % output_file_name)
