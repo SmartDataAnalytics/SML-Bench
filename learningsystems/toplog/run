@@ -273,7 +273,7 @@ if __name__ == '__main__':
 
     with open(output_file, 'w') as out:
         for line in results:
-            out.write(line + "\n")
+            out.write(line + os.linesep)
 
     _log.debug('TopLog run finished. Cleaning up.')
     clean_up(target_dir)
