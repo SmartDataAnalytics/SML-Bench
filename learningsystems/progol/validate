@@ -1,0 +1,276 @@
+#!/usr/bin/env python
+
+import argparse
+import logging
+import os
+import shutil
+import stat
+import subprocess
+import tempfile
+
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+data_dir_name = 'data'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.pl'
+
+validation_file_template = """#!/usr/bin/env swipl
+
+:- initialization main.
+
+%(match)s
+
+main :-
+        consult('%(file_b)s'),
+        match,
+        halt.
+main :-
+        halt(1).
+"""
+
+
+def copy_files_around(task_id, lp_id, target_dir, file_name_base):
+    """Compiles the knowledge base to validate the learning results
+
+    - ../../learningtasks/<task_id>/prolog/data/*.pl
+                        --> <target_dir>/<file_name_base>.pl  # merged
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+                        --> <target_dir>/<file_name_base>.pl
+    """
+    output_file_path = os.path.join(target_dir, file_name_base + '.pl')
+
+    with open(output_file_path, 'w') as out:
+        # ../../learningtasks/<task_id>/prolog/data/*.pl
+        #                --> <target_dir>/<file_name_base>.pl  # merged
+        data_dir = os.path.join(
+            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
+            prolog_dir_name, data_dir_name)
+        for f_name in os.listdir(data_dir):
+            if f_name.endswith('.pl'):
+                with open(os.path.join(data_dir, f_name)) as tmp:
+                    for line in tmp:
+                        out.write(line)
+        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+        #                --> <target_dir>/<file_name_base>.pl
+        pos_file_path = os.path.join(
+            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
+            prolog_dir_name, lp_dir_name, lp_id, pos_file_name)
+        with open(pos_file_path) as p:
+            for line in p:
+                out.write(line)
+    return
+
+
+def read_examples(file_path):
+    with open(file_path) as f:
+        lines = [l.strip() for l in f.readlines()]
+
+    lines = [l + ')' for l in ''.join(lines).split(').') if not l == '']
+    return lines
+
+
+def get_vars_from_head(head):
+    open_paren_pos = head.find('(')
+    head_pred = head[:open_paren_pos]
+    vars_str = head[open_paren_pos+1:-1]
+    vars = vars_str.split(',')
+
+    cleaned_vars = []
+    tmp = ''
+    nesting_level = 0
+    for var in vars:
+        tmp += var
+        num_open = var.count('(')
+        num_close = var.count(')')
+        nesting_level += num_open - num_close
+
+        if nesting_level == 0:
+            cleaned_vars.append(tmp)
+            tmp = ''
+        else:
+            tmp += ','
+
+    return [head_pred] + cleaned_vars
+
+
+def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
+                                     results_dir, exmpl_file_suffix):
+    """should create something like this:
+
+    '''
+    #!/usr/bin/env swipl
+
+    :- initialization main.
+
+    match :- active(d190) = active(A), nitro(A,[B,C,D,E]), atm(A,B,c,21,F),
+            write(A).
+    match :- active(d190) = active(A),
+            phenanthrene(A,[[B,C,D,E,F,G],[H,I,J,K,L,M],[N,O,P,Q,R,S]]),
+            atm(A,B,c,T,U), atm(A,C,c,T,U), atm(A,F,c,V,W), atm(A,K,c,V,X),
+            write(A).
+
+    main :-
+            consult('mutagenesis_42.pl'),
+            match,
+            halt.
+    main :-
+            halt(1).
+    '''
+
+    for every example (active(d190) in the above case) and execute it. In
+    essence, whenever one of these equations '<example> = <learned rule>'
+    can be matched:
+    - the example is output
+    - SWI Prolog will exit with return value 0
+
+    otherwise:
+    - nothing is output
+    - SWI Prolog will exit with return value 1 which raises a
+      CalledProcessError exception which is caught
+
+    :param rule_dicts: list of dictionaries created by build_rule_dicts(.)
+    :param exmpls: list of either positive or negative examples
+    :param true_set:  list of either true positives or true negatives
+    :param false_set: list of either false positives or false negatives
+    :param results_dir: the temporary directory where all the prepared files
+        were copied
+    """
+    for ex in exmpls:
+        _log.debug('Validating %s' % ex)
+        match_lines = []
+        for rule in rule_dicts:
+            # TODO: maybe some checking is needed here, first
+            match_lines.append('match :- ' + ex + ' = ' + rule['conj'])
+
+        content = validation_file_template % {
+            'match': '\n'.join(match_lines),
+            'file_b': file_name_base + '.pl',
+            'file_ex': file_name_base + exmpl_file_suffix}
+
+        validate_file_path = os.path.join(results_dir, 'validate.pl')
+
+        with open(validate_file_path, 'w') as f:
+            f.write(content)
+
+        # make script executable (chmod 700)
+        os.chmod(validate_file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
+
+        try:
+            subprocess.check_call(validate_file_path, cwd=target_dir,
+                                  stderr=open(os.devnull, 'w'))
+            # in case the example could be unified, this line won't be reached
+            # but a CalledProcessError exception is thrown
+            true_set.append(ex)
+            false_set.remove(ex)
+
+        except subprocess.CalledProcessError as e:
+            if e.returncode != 1:
+                raise e
+
+
+def build_rule_dicts(results):
+    """
+      active(A) :- phenanthrene(A,[B,C]), atm(A,B,c,T,U)                    (1)
+
+    should become
+
+      {
+        'head': 'active(A)',                                                (2)
+        'head_pred': 'active',
+        'head_vars': ['A'],
+        'conj': active(A), phenanthrene(A,[B,C]), atm(A,B,c,T,U)
+      }
+
+    FIXME: most of entries in the dict above are not needed!
+
+    :param results: list of strings containing rule like (1)
+    :return: a rule dict as shown above (2)
+    """
+    ret = []
+    for res in results:
+        head, body = res.split(':-')
+        head = head.strip()
+        body = body.strip()[:-1]  # [:-1] --> strip off trailing dot
+        head_parts = get_vars_from_head(head)
+
+        for p in head_parts[1:]:  # first part (i.e. the predicate) skipped
+            body += ', write(' + p + '), nl'
+        body += '.'
+
+        ret.append({
+            'head': head,
+            'head_pred': head_parts[0],
+            'head_vars': head_parts[1:],
+            'conj': head + ', ' + body
+        })
+
+    return ret
+
+
+def validate(results, res_dir, examples_dir):
+    pos_examples = read_examples(os.path.join(examples_dir, pos_file_name))
+    neg_examples = read_examples(os.path.join(examples_dir, pos_file_name))
+
+    rule_dicts = build_rule_dicts(results)
+    fp = pos_examples[:]
+    fn = []
+    tn = neg_examples[:]
+    tp = []
+
+    create_and_run_validation_script(
+        rule_dicts, pos_examples, tp, fp, res_dir, '.f')
+    create_and_run_validation_script(
+        rule_dicts, neg_examples, fn, tn, res_dir, '.n')
+
+    return len(tp), len(fp), len(tn), len(fn)
+
+
+def clean_up(tmp_dir):
+    shutil.rmtree(tmp_dir)
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_input_file')
+    argparser.add_argument('validation_output_file')
+    args = argparser.parse_args()
+
+    learning_task_id = args.learning_task
+    learning_problem_id = args.learning_problem
+    input_file = args.result_input_file
+    output_file_name = args.validation_output_file
+    _log.debug('Validating solution learning task %s with learning '
+               'problem %s' % (learning_task_id, learning_problem_id))
+
+    results = []
+    with open(input_file) as res:
+        for line in res.readlines():
+            results.append(line.strip())
+
+    file_name_base = learning_task_id + '_' + learning_problem_id
+    target_dir = tempfile.mkdtemp()
+    _log.debug('Target dir is %s' % target_dir)
+
+    copy_files_around(learning_task_id, learning_problem_id, target_dir,
+                      file_name_base)
+
+    examples_dir = os.path.join(
+        os.path.pardir, os.path.pardir, learning_task_dir_name,
+        learning_task_id, prolog_dir_name, lp_dir_name, learning_problem_id)
+    num_tp, num_fp, num_tn, num_fn = validate(results, target_dir,
+                                              examples_dir)
+    with open(output_file_name, 'w') as f:
+        f.write('tp: ' + str(num_tp) + os.linesep +
+                'fp: ' + str(num_fp) + os.linesep +
+                'tn: ' + str(num_tn) + os.linesep +
+                'fn: ' + str(num_fn) + os.linesep)
+
+    _log.debug('Progol validation finished. Cleaning up.')
+    clean_up(target_dir)
+    _log.debug('Done. Results written to %s' % output_file_name)
