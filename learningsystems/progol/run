@@ -1,0 +1,244 @@
+#!/usr/bin/env python
+
+import argparse
+import logging
+import os
+import shutil
+import subprocess
+import tempfile
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+data_dir_name = 'data'
+tool_specific_data_dir = 'progol'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.pl'
+neg_file_name = 'neg.pl'
+progol_executable_name = 'progol'
+output_token_end = '[Total number of clauses'
+output_token_start = ']\n'
+output_token_start_len = len(output_token_start)
+
+
+class NoProgolInstallationFounc(Exception):
+    """Raised when no installed Progol could be found"""
+
+
+def copy_files_and_get_pos_exmpls(task_id, lp_id, target_dir, file_name_base):
+    """Finds all the files necessary to run Progol and compiles one Prolog file
+    that is fed to Progol.
+
+    - ../../learningtasks/<task_id>/prolog/data/progol/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.pl
+    - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.pl
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+                            --> <target_dir>/<file_name_base>.pl
+    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
+                            --> <target_dir>/<file_name_base>.pl
+    """
+    output_file_path = os.path.join(target_dir, file_name_base+'.pl')
+    pos_examples = []
+    with open(output_file_path, 'w') as out:
+        # ../../learningtasks/<task_id>/prolog/data/progol/*.pl  # merged!
+        #                   --> <target_dir>/<file_name_base>.pl
+        tool_specfc_data_dir = os.path.join(
+            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
+            prolog_dir_name, data_dir_name, tool_specific_data_dir)
+        if os.path.isdir(tool_specfc_data_dir):
+            for f_name in os.listdir(tool_specfc_data_dir):
+                if f_name.endswith('.pl'):
+                    file_path = os.path.join(tool_specfc_data_dir, f_name)
+                    with open(file_path) as tmp:
+                        for line in tmp:
+                            out.write(line)
+
+        # ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+        #                   --> <target_dir>/<file_name_base>.pl
+        data_dir = os.path.join(
+            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
+            prolog_dir_name, data_dir_name)
+        for f_name in os.listdir(data_dir):
+            if f_name.endswith('.pl'):
+                file_path = os.path.join(data_dir, f_name)
+                with open(file_path) as tmp:
+                    for line in tmp:
+                        out.write(line)
+
+        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
+        #                   --> <target_dir>/<file_name_base>.pl
+        pos_file_path = os.path.join(
+            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
+            prolog_dir_name, lp_dir_name, lp_id, pos_file_name)
+        with open(pos_file_path) as p:
+            for line in p:
+                if line.strip() != '':
+                    pos_examples.append(line.strip())
+                # (Pdb) line
+                # 'eastbound(east1).\n'
+                out.write(line)
+
+        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
+        #                   --> <target_dir>/<file_name_base>.pl
+        neg_file_path = os.path.join(
+            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
+            prolog_dir_name, lp_dir_name, lp_id, neg_file_name)
+        if os.path.isfile(neg_file_path):
+            with open(neg_file_path) as n:
+                for line in n:
+                    if line.strip() != '':
+                        out.write(':- ' + line)
+
+    return pos_examples
+
+
+def find_progol():
+    progol_exec_path = os.path.join(os.getcwd(), progol_executable_name)
+
+    if os.path.isfile(progol_exec_path):
+        return progol_exec_path
+
+    else:
+        # FIXME: platform specific
+        which_failed = False
+        try:
+            progol_exec_path = subprocess.check_output(
+                ['which', progol_executable_name])
+        except subprocess.CalledProcessError:
+            which_failed = True
+        progol_exec_path = progol_exec_path.strip()
+
+        if which_failed or progol_exec_path == '':
+            msg = 'No Progol installation could be found. Please make sure ' \
+                  'you have Progol installed via your package manager or ' \
+                  'download and manually install it from ' \
+                  'http://www.doc.ic.ac.uk/~shm/progol.html'
+            raise NoProgolInstallationFounc(msg)
+
+        return progol_exec_path
+
+
+def get_and_clean_results(output_str, pos_examples):
+    """
+    :param output_str: sth like this:
+    ''''
+    [...]
+    [Result of search is]
+
+    defn(q1,[[A|B],C,[D,A|E]]).
+
+    [2 redundant clauses retracted]
+
+    defn(q1,[A,B,[B|A]]).
+    defn(q1,[[A|B],C,[A,D|E]]).
+    defn(q1,[[A|B],C,[D,A|E]]).
+
+    [Total number of clauses = 3]
+
+    [Time taken 0.00s]
+    '''
+    """
+    tmp = output_str
+    end_pos = output_str.rfind(output_token_end)
+    output_str = output_str[:end_pos]
+    start_pos = output_str.rfind(output_token_start) + \
+                (output_token_start_len + 1)
+    output_str = output_str[start_pos:]
+    res_lines = [l.strip() for l in output_str.split('\n') if l.strip() != '']
+    # (Pdb) pp(res_lines)
+    # ['move(knight,pos(f,7),pos(e,5)).',
+    #  'move(knight,pos(e,4),pos(d,2)).',
+    #  'move(knight,pos(g,6),pos(f,8)).',
+    #  'move(knight,pos(d,2),pos(b,3)).',
+    #  'move(knight,pos(c,2),pos(b,4)).',
+    #  'move(knight,pos(f,1),pos(d,2)).',
+    #  'move(knight,pos(d,8),pos(b,7)).',
+    #  'move(knight,pos(b,5),pos(a,3)).',
+    #  'move(knight,pos(f,6),pos(d,5)).',
+    #  'move(knight,pos(d,1),pos(b,2)).',
+    #  'move(knight,pos(c,1),pos(d,3)).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(B,D,E), fdiff(C,A,F),',
+    #  'rdiff(E,F,F).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(D,B,E), fdiff(C,A,F),',
+    #  'rdiff(B,F,G), rdiff(E,G,H).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(B,D,E), fdiff(C,A,F),',
+    #  'rdiff(F,E,E).']
+
+    res_lines = [l + ').' for l in ''.join(res_lines).split(').')
+                 if l.strip() != '']
+    # (Pdb) pp(res_lines)
+    # ['move(knight,pos(f,7),pos(e,5)).',
+    #  'move(knight,pos(e,4),pos(d,2)).',
+    #  'move(knight,pos(g,6),pos(f,8)).',
+    #  'move(knight,pos(d,2),pos(b,3)).',
+    #  'move(knight,pos(c,2),pos(b,4)).',
+    #  'move(knight,pos(f,1),pos(d,2)).',
+    #  'move(knight,pos(d,8),pos(b,7)).',
+    #  'move(knight,pos(b,5),pos(a,3)).',
+    #  'move(knight,pos(f,6),pos(d,5)).',
+    #  'move(knight,pos(d,1),pos(b,2)).',
+    #  'move(knight,pos(c,1),pos(d,3)).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(B,D,E), fdiff(C,A,F),rdiff(E,F,F).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(D,B,E), fdiff(C,A,F),rdiff(B,F,G), rdiff(E,G,H).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(B,D,E), fdiff(C,A,F),rdiff(F,E,E).']
+
+    res_lines = [l for l in res_lines if l not in pos_examples]
+    # (Pdb) pp(res_lines)
+    # ['move(knight,pos(A,B),pos(C,D)) :- rdiff(B,D,E), fdiff(C,A,F),rdiff(E,F,F).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(D,B,E), fdiff(C,A,F),rdiff(B,F,G), rdiff(E,G,H).',
+    #  'move(knight,pos(A,B),pos(C,D)) :- rdiff(B,D,E), fdiff(C,A,F),rdiff(F,E,E).']
+
+    return res_lines
+
+
+def clean_up(tmp_dir):
+    shutil.rmtree(tmp_dir)
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_output_file')
+    args = argparser.parse_args()
+
+    learning_task_id = args.learning_task
+    learning_problem_id = args.learning_problem
+    output_file = args.result_output_file
+
+    _log.debug('Running Progol with learning task %s and learning problem %s'
+               % (learning_task_id, learning_problem_id))
+
+    file_name_base = learning_task_id + '_' + learning_problem_id
+    target_dir = tempfile.mkdtemp()
+    _log.debug('Target dir is %s' % target_dir)
+
+    # TODO: add config handling
+    pos_examples = copy_files_and_get_pos_exmpls(
+        learning_task_id, learning_problem_id, target_dir, file_name_base)
+    progol_executable = find_progol()
+
+    try:
+        output = subprocess.check_output([progol_executable, file_name_base],
+                                         cwd=target_dir)
+    except subprocess.CalledProcessError as e:
+        # since Progol returns 1 instead of 0 the above call usually fails
+        # ending up here
+        if e.returncode == 1:
+            output = e.output
+        else:
+            raise e
+
+    results = get_and_clean_results(output, pos_examples)
+
+    with open(output_file, 'w') as out:
+        for line in results:
+            out.write(line + os.linesep)
+
+    _log.debug('Progol run finished. Cleaning up.')
+    clean_up(target_dir)
+    _log.debug('Done. Results written to %s' % output_file)
