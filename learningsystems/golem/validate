@@ -81,7 +81,7 @@ def read_examples(file_path):
     with open(file_path) as f:
         lines = [l.strip() for l in f.readlines()]
 
-    lines = [l for l in ''.join(lines).split('.') if not l == '']
+    lines = [l + ')' for l in ''.join(lines).split(').') if not l == '']
     return lines
 
 
@@ -91,7 +91,22 @@ def get_vars_from_head(head):
     vars_str = head[open_paren_pos+1:-1]
     vars = vars_str.split(',')
 
-    return [head_pred] + vars
+    cleaned_vars = []
+    tmp = ''
+    nesting_level = 0
+    for var in vars:
+        tmp += var
+        num_open = var.count('(')
+        num_close = var.count(')')
+        nesting_level += num_open - num_close
+
+        if nesting_level == 0:
+            cleaned_vars.append(tmp)
+            tmp = ''
+        else:
+            tmp += ','
+
+    return [head_pred] + cleaned_vars
 
 
 def build_rule_dicts(results):

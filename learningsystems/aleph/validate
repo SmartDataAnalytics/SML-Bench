@@ -103,7 +103,22 @@ def get_vars_from_head(head):
     vars_str = head[open_paren_pos+1:-1]
     vars = vars_str.split(',')
 
-    return [head_pred] + vars
+    cleaned_vars = []
+    tmp = ''
+    nesting_level = 0
+    for var in vars:
+        tmp += var
+        num_open = var.count('(')
+        num_close = var.count(')')
+        nesting_level += num_open - num_close
+
+        if nesting_level == 0:
+            cleaned_vars.append(tmp)
+            tmp = ''
+        else:
+            tmp += ','
+
+    return [head_pred] + cleaned_vars
 
 
 def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
@@ -298,5 +313,5 @@ if __name__ == '__main__':
                 'fn: ' + str(num_fn) + os.linesep)
 
     _log.debug('Aleph validation finished. Cleaning up.')
-    # clean_up(target_dir)
+    clean_up(target_dir)
     _log.debug('Done. Results written to %s' % output_file_name)
