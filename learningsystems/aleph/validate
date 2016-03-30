@@ -6,6 +6,7 @@ import os
 import shutil
 import stat
 import subprocess
+import platform
 import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -236,9 +237,13 @@ def build_rule_dicts(results):
 
 
 def find_yap():
-    if os.path.isfile(os.path.join(os.getcwd(), yap_executable_name)):
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            yap_executable_name)
+
+    if os.path.isfile(gen_path):
         # yap executable resides in the same directory
-        return os.path.join(os.getcwd(), yap_executable_name)
+        return gen_path
 
     else:
         yap_exec_path = subprocess.check_output(['which', yap_executable_name])
