@@ -218,13 +218,15 @@ def build_rule_dicts(results):
     """
     ret = []
     for res in results:
-        head, body = res.split(',', 1)
+        head_tmp, body_tmp = res.split(')', 1)
+        head = head_tmp + ')'
+        body = body_tmp.strip()[1:].strip()  # strip off leading comma
         head = head.strip()
         body = body.strip()
         head_parts = get_vars_from_head(head)
 
         for p in head_parts[1:]:  # first part (i.e. the predicate) skipped
-            body += ', write(' + p + '), write(\'\\n\')'
+            body += ', write(' + p + '), nl'
         body += '.'
 
         ret.append({
