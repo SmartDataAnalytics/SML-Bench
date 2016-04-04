@@ -12,7 +12,12 @@ The ultimate goal of SML-Bench is to foster research in machine learning from st
 **Requirements**
 
 For Golem:
-- golem binary in `learningsystems/golem/golem`
+- golem binary in PATH or `learningsystems/golem/Linux-x86_64`
 - SWI Prolog as `swipl`
+- Python 2 as `python`
+
+For Aleph:
+- yap in PATH or `learningsystems/aleph/Linux-x86_64`
+- aleph.pl in `learningsystems/aleph`
 - Python 2 as `python`
 
