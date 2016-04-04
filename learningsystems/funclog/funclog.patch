@@ -1,0 +1,14 @@
+diff --git a/engine/funclog.pl b/engine/funclog.pl
+index 4a6f915..93f8568 100644
+--- a/engine/funclog.pl
++++ b/engine/funclog.pl
+@@ -86,7 +86,8 @@ genHypFromExample_global(ExampleID, _TPosEIDs, _APosEIDs, _ANegEIDs, MaxHypothes
+   reduceToHeadOutputVars(Bottom, BottomSig, MaxHypothesesPerExample, TReducedClauses),
+   %length(TReducedClauses, N), format("~w hypotheses reduced from it~n", [N]),
+ % TReducedClauses has clauses represented as a list of literals and has their signatures
+-  maplist(reducedClauseToHypothesis, TReducedClauses, Hypotheses).
++%  maplist(reducedClauseToHypothesis, TReducedClauses, Hypotheses).
++  Hypotheses=TReducedClauses.
+ 
+ %reducedClauseToHypothesis(+(ReducedClauseAsLiterals, ReducedClauseSignature), -Hypothesis)
+ reducedClauseToHypothesis((ReducedClauseAsLiterals, _), ReducedClauseAsLiterals).
