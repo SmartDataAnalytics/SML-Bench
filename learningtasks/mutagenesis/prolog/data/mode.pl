@@ -6,16 +6,16 @@ drug(D):-
 
 atomid(A):-
 	name(A,[_|X]),
-	append(Z,[95|Y],X),
+	appnd(Z,[95|Y],X),
 	name(N1,Y),
 	name(N2,Z),
 	int(N1), int(N2),
 	N2 >= 1, N2 =< 230,
 	N1 =< 500, !.
 
-append([],A,A).
-append([H|T],A,[H|T1]):-
-        append(T,A,T1).
+appnd([],A,A).
+appnd([H|T],A,[H|T1]):-
+        appnd(T,A,T1).
 
 
 

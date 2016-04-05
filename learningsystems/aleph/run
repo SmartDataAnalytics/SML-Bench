@@ -107,6 +107,10 @@ def get_settings(learning_task, lp_id):
     config_file_path = os.path.join('..', '..', learning_task_dir_name,
                                     learning_task, prolog_dir_name,
                                     lp_dir_name, lp_id, config_file_name)
+
+    if not os.path.isfile(config_file_path):
+        return {}
+
     conf = configparser.ConfigParser()
     conf.read(config_file_path)
 
