@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
 import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
 import logging
 import os
 import shutil
@@ -20,6 +26,7 @@ tool_specific_data_dir = 'aleph'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
+config_file_name = 'aleph.conf'
 output_file_name = 'results.txt'
 yap_executable_name = 'yap'
 aleph_script_name = 'aleph.pl'
@@ -29,6 +36,7 @@ train_script_file_template = """#!%(yap)s -L --
 
 :-
     consult('%(aleph_script)s'),
+    %(settings)s
     read_all(%(base_file_name)s),
     induce,
     write_rules(rules),
@@ -95,6 +103,21 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     subprocess.call(['cp', neg_file_path, neg_target_file])
 
 
+def get_settings(learning_task, lp_id):
+    config_file_path = os.path.join('..', '..', learning_task_dir_name,
+                                    learning_task, prolog_dir_name,
+                                    lp_dir_name, lp_id, config_file_name)
+    conf = configparser.ConfigParser()
+    conf.read(config_file_path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    return settings
+
+
 def find_yap():
     gen_path = os.path.join(os.getcwd(),
                             '%s-%s' % (platform.system(), platform.machine()),
@@ -140,13 +163,21 @@ def find_aleph_script():
         return aleph_script_name
 
 
-def create_pl_script(yap_executable, aleph_script_path, dir):
+def create_pl_script(yap_executable, aleph_script_path, dir, settings):
     file_path = os.path.join(dir, train_script_file_name)
+
+    settings_str = ''
+
+    for key, val in settings.items():
+        settings_str += 'set(%s,%s),' % (key, val)
+        settings_str += os.linesep
+
     # mapping for filling the train script template
     m = {
         'yap': yap_executable,
         'aleph_script': aleph_script_path,
-        'base_file_name': file_name_base
+        'base_file_name': file_name_base,
+        'settings': settings_str
     }
 
     # write the train script
@@ -204,9 +235,10 @@ if __name__ == '__main__':
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
                       file_name_base)
 
+    settings = get_settings(learning_task_id, learning_problem_id)
     yap_executable = find_yap()
     aleph_script_path = find_aleph_script()
-    create_pl_script(yap_executable, aleph_script_path, target_dir)
+    create_pl_script(yap_executable, aleph_script_path, target_dir, settings)
     script_path = os.path.join(target_dir, train_script_file_name)
 
     _log.debug('Running Aleph')
