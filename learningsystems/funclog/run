@@ -63,8 +63,8 @@ class NotAHeadOutputConnectedProblem(Exception):
 
 
 def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base):
-    """Finds all the files necessary to run golem:
-    - ../../learningtasks/<task_id>/prolog/data/golem/*.pl  # merged!
+    """Finds all the files necessary to run FuncLog:
+    - ../../learningtasks/<task_id>/prolog/data/funclog/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.pl
     - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
                             --> <target_dir>/<file_name_base>.pl
@@ -96,7 +96,7 @@ def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base):
             with open(pos_file_path) as posfile:
                 for line in posfile:
                     # example(active(d190), 1).
-                    line = line.strip()[:-1]  # remove trailing point
+                    line = line.strip()[:-1]  # remove trailing dot
                     example_line = pos_example_pattern % line
                     out.write(example_line + os.linesep)
 
@@ -110,7 +110,7 @@ def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base):
             with open(neg_file_path) as negfile:
                 for line in negfile:
                     # example(active(d190), -1).
-                    line = line.strip()[:-1]  # remove trailing point
+                    line = line.strip()[:-1]  # remove trailing dot
                     example_line = neg_example_pattern % line
                     out.write(example_line + os.linesep)
         out.flush()
@@ -178,6 +178,10 @@ def get_settings(learning_task, lp_id):
     config_file_path = os.path.join('..', '..', learning_task_dir_name,
                                     learning_task, prolog_dir_name,
                                     lp_dir_name, lp_id, config_file_name)
+
+    if not os.path.isfile(config_file_path):
+        return {}
+
     conf = configparser.ConfigParser()
     conf.read(config_file_path)
 
@@ -194,7 +198,8 @@ def create_pl_script(yap_executable, gilps_script_path, out_dir, kb_file_path,
     settings_str = ''
 
     for option, val in settings.items():
-        settings_str += '    set(%s, %s),\n' % (option, val)
+        settings_str += '    set(%s, %s),' % (option, val)
+        settings_str += os.linesep
 
     # mapping for filling the train script template
     m = {
@@ -271,8 +276,11 @@ if __name__ == '__main__':
     settings = get_settings(learning_task_id, learning_problem_id)
     settings['output_theory_file'] = funclog_rules_output_file_name
     settings['engine'] = 'funclog'
-    # set(clause_evaluation, left_to_right)
+    # add set(clause_evaluation, left_to_right) since this is the only
+    # supported clause evaluation mode
     settings['clause_evaluation'] = 'left_to_right'
+    _log.debug('settings: %s' % settings)
+
     create_pl_script(yap_executable, gilps_script_path, target_dir,
                      file_name_base + '.pl', settings)
     script_path = os.path.join(target_dir, train_script_file_name)
@@ -282,19 +290,14 @@ if __name__ == '__main__':
     try:
         subprocess.check_call([script_path], cwd=target_dir)
     except subprocess.CalledProcessError as e:
-        if e.returncode == 1:
-            # FIXME: return value check far too general for msg below
-            msg = 'Seems, this is not a Head Output Connected (HOC) ' \
-                  'learning problem. FuncLog can only be applied on HOC ' \
-                  'problems, though! Exiting'
-            clean_up(target_dir)
-            raise NotAHeadOutputConnectedProblem(msg)
+        clean_up(target_dir)
+        raise e
 
     results = get_and_clean_results(target_dir)
 
     with open(output_file, 'w') as out:
         for line in results:
-            out.write(line + '\n')
+            out.write(line + os.linesep)
 
     _log.debug('FuncLog run finished. Cleaning up.')
     clean_up(target_dir)

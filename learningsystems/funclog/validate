@@ -13,7 +13,7 @@ _log = logging.getLogger()
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
-tool_specific_data_dir = 'progolem'
+tool_specific_data_dir = 'funclog'
 data_dir_name = 'data'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
@@ -44,8 +44,8 @@ class NoGILPSScriptFound(Exception):
 
 def copy_files_around_and_get_examples(task_id, lp_id, target_dir,
                                        file_name_base):
-    """Finds all the files necessary to run ProGolem:
-    - ../../../learningtasks/<task_id>/prolog/data/progolem
+    """Finds all the files necessary to run FuncLog:
+    - ../../../learningtasks/<task_id>/prolog/data/funclog
                             --> <target_dir>/<file_name_base>.b
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
@@ -128,7 +128,7 @@ def get_vars_from_head(head):
 
 
 def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
-                                     results_dir, exmpl_file_suffix, yap):
+                                     results_dir, yap):
     """should create something like this:
 
     '''
@@ -137,9 +137,9 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
     :- initialization main.
 
     match :- active(d190) = active(A), atm(A,B,c,21,C), gteq(C,-0.108),
-        bond(A,B,D,7), write(A), write('\n').
+        bond(A,B,D,7), write(A), nl.
     match :- active(d190) = active(A), atm(A,B,c,27,C), lteq(C,-0.084),
-        write(A), write('\n').
+        write(A), nl.
 
     main :-
             consult('mutagenesis_42.pl'),
@@ -177,9 +177,8 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
 
         content = validation_file_template % {
             'yap': yap,
-            'match': '\n'.join(match_lines),
-            'file_b': file_name_base + '.pl',
-            # 'file_ex': file_name_base + exmpl_file_suffix
+            'match': os.linesep.join(match_lines),
+            'file_b': file_name_base + '.pl'
         }
 
         validate_file_path = os.path.join(results_dir, 'validate.pl')
@@ -272,9 +271,9 @@ def validate(results, res_dir, pos_examples, neg_examples):
     tp = []
 
     create_and_run_validation_script(
-        rule_dicts, pos_examples, tp, fp, res_dir, '.f', yap)
+        rule_dicts, pos_examples, tp, fp, res_dir, yap)
     create_and_run_validation_script(
-        rule_dicts, neg_examples, fn, tn, res_dir, '.n', yap)
+        rule_dicts, neg_examples, fn, tn, res_dir, yap)
 
     return len(tp), len(fp), len(tn), len(fn)
 
@@ -319,6 +318,6 @@ if __name__ == '__main__':
                 'tn: ' + str(num_tn) + os.linesep +
                 'fn: ' + str(num_fn) + os.linesep)
 
-    _log.debug('ProGolem validation finished. Cleaning up.')
+    _log.debug('FuncLog validation finished. Cleaning up.')
     clean_up(target_dir)
     _log.debug('Done. Results written to %s' % output_file_name)
