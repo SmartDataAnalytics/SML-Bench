@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
 import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
 import logging
 import os
 import shutil
@@ -18,6 +24,8 @@ tool_specific_data_dir = 'golem'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
+settings_pattern = '!- set(%s,%s).'
+config_file_name = 'golem.conf'
 output_file_name = 'results.txt'
 exec_file_name = 'golem'
 
@@ -35,6 +43,25 @@ def find_golem():
         # golem executable resides somewhere else; it is assumed that it can be
         # found somewhere in the system path
         return exec_file_name
+
+
+def get_settings(learning_task, lp_id):
+    config_file_path = os.path.join('..', '..', learning_task_dir_name,
+                                    learning_task, prolog_dir_name,
+                                    lp_dir_name, lp_id, config_file_name)
+
+    if not os.path.isfile(config_file_path):
+        return {}
+
+    conf = configparser.ConfigParser()
+    conf.read(config_file_path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    return settings
 
 
 def copy_files_around(task_id, lp_id, target_dir, file_name_base):
@@ -63,6 +90,13 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+        out.flush()
+
+        settings = get_settings(task_id, lp_id)
+
+        for k, v in settings.items():
+            out.write(settings_pattern % (k, v))
+            out.write(os.linesep)
 
     pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
                                  prolog_dir_name, lp_dir_name, lp_id,
@@ -75,6 +109,10 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
                                  neg_file_name)
     neg_target_file = os.path.join(target_dir, file_name_base+'.n')
     subprocess.call(['cp', neg_file_path, neg_target_file])
+
+    # Create the <file_name_base>.r results file
+    # (just to avoid the Golem message [Cannot find <file_name_base>.r])
+    open(os.path.join(target_dir, file_name_base+'.r'), 'a').close()
 
 
 def get_and_clean_results(results_dir, f_name_base):
