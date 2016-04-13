@@ -1,7 +1,9 @@
 package org.aksw.mlbenchmark;
 
 /**
- * Created by Simon Bin on 16-4-13.
+ * A configloader exception
  */
-public class ConfigLoaderException {
+public class ConfigLoaderException extends Exception {
+	public ConfigLoaderException(String message, Throwable cause) { super(message, cause); }
+	public ConfigLoaderException(String message) { super(message); }
 }
