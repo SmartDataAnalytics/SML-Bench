@@ -27,7 +27,7 @@ public class BenchmarkRunner {
 
 	public BenchmarkRunner(String configFilename) throws ConfigLoaderException {
 		// load the properties file
-		this(new ConfigLoader(configFilename).load().getConfig());
+		this(new ConfigLoader(configFilename).load().config());
 	}
 
 	public void run() {

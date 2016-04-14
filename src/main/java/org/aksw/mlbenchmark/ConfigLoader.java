@@ -1,7 +1,8 @@
 package org.aksw.mlbenchmark;
 
-import org.apache.commons.configuration2.FileBasedConfiguration;
-import org.apache.commons.configuration2.HierarchicalConfiguration;
+import org.aksw.mlbenchmark.config.INIConfigurationWriteDotkeys;
+import org.aksw.mlbenchmark.config.PropertiesConfigurationFromDotkeys;
+import org.apache.commons.configuration2.*;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
 import org.apache.commons.configuration2.ex.ConfigurationException;
@@ -10,6 +11,9 @@ import org.apache.commons.configuration2.plist.XMLPropertyListConfiguration;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * Loading of config files
@@ -25,23 +29,43 @@ public class ConfigLoader {
 
 	public final ConfigLoader load() throws ConfigLoaderException {
 		if (filename.endsWith(".plist")) {
-			loadFile(PropertyListConfiguration.class);
+			config = loadFile(PropertyListConfiguration.class);
 		} else if (filename.endsWith(".xml")) {
-			loadFile(XMLPropertyListConfiguration.class);
-		/* } else if (filename.endsWith(".ini")) {
-			loadFile(INIConfiguration.class); */
+			config = loadFile(XMLPropertyListConfiguration.class);
+		} else if (filename.endsWith(".ini") || filename.endsWith(".conf")) {
+			config = loadINIFile();
+		} else if (filename.endsWith(".prop") || filename.endsWith(".properties")) {
+			CombinedConfiguration config2 = new CombinedConfiguration();
+			config2.addConfiguration(loadFile(PropertiesConfiguration.class));
+			config = config2;
 		} else {
 			throw new ConfigLoaderException("Loading of config type not implemented yet.");
 		}
 		return this;
 	}
 
-	public HierarchicalConfiguration<ImmutableNode> getConfig() {
+	private HierarchicalConfiguration<ImmutableNode> loadINIFile() throws ConfigLoaderException {
+		final String MAIN_SECTION = "main";
+		HierarchicalConfiguration<ImmutableNode> ini = loadFile(INIConfiguration.class);
+		CombinedConfiguration comb = new CombinedConfiguration();
+		comb.addConfiguration(ini);
+		Configuration subset = ini.subset(MAIN_SECTION);
+
+		if (subset.isEmpty()) {
+			comb.addConfiguration(ini, MAIN_SECTION, MAIN_SECTION);
+		} else {
+			comb.addConfiguration(subset);
+		}
+
+		return comb;
+	}
+
+	public HierarchicalConfiguration<ImmutableNode> config() {
 		return config;
 	}
 
-	private <T extends HierarchicalConfiguration<ImmutableNode> & FileBasedConfiguration>
-	void loadFile(Class<T> type) throws ConfigLoaderException {
+	private <T extends FileBasedConfiguration>
+	T loadFile(Class<T> type) throws ConfigLoaderException {
 		Parameters params = new Parameters();
 		FileBasedConfigurationBuilder<T> builder =
 		    new FileBasedConfigurationBuilder<T>(type)
@@ -53,8 +77,9 @@ public class ConfigLoader {
 
 		try
 		{
-			config = builder.getConfiguration();
+			T config2 = builder.getConfiguration();
 			logger.info("Loaded config file " + builder.getFileHandler().getPath());
+			return config2;
 		}
 		catch(ConfigurationException cex)
 		{
@@ -64,7 +89,7 @@ public class ConfigLoader {
 
 	/*
 	public static void main(String[] args) throws ConfigLoaderException, IOException, ConfigurationException {
-		XMLPropertyListConfiguration xml = new XMLPropertyListConfiguration(cl.getConfig());
+		XMLPropertyListConfiguration xml = new XMLPropertyListConfiguration(cl.config());
 		xml.initFileLocator(FileLocatorUtils.fileLocator().create());
 		xml.write(new FileWriter("out.xml"));
 	}
