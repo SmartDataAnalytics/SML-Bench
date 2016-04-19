@@ -213,13 +213,12 @@ def get_and_clean_results(results_dir):
     result_lines = []
     # get all result lines from results file
     res_file_path = os.path.join(results_dir, progolem_rules_output_file_name)
-    if os.path.isfile(res_file_path):
-        with open(res_file_path) as res:
-            for line in res.readlines():
-                result_lines.append(line.strip())
-
-    else:
+    if not os.path.isfile(res_file_path):
         return []
+
+    with open(res_file_path) as res:
+        for line in res.readlines():
+            result_lines.append(line.strip())
 
     # result lines should be something like this:
     # [
