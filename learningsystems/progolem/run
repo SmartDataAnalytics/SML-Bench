@@ -168,6 +168,10 @@ def get_settings(learning_task, lp_id):
     config_file_path = os.path.join('..', '..', learning_task_dir_name,
                                     learning_task, prolog_dir_name,
                                     lp_dir_name, lp_id, config_file_name)
+
+    if not os.path.isfile(config_file_path):
+        return {}
+
     conf = configparser.ConfigParser()
     conf.read(config_file_path)
 
@@ -208,9 +212,14 @@ def create_pl_script(yap_executable, gilps_script_path, out_dir, kb_file_path,
 def get_and_clean_results(results_dir):
     result_lines = []
     # get all result lines from results file
-    with open(os.path.join(results_dir, progolem_rules_output_file_name)) as res:
-        for line in res.readlines():
-            result_lines.append(line.strip())
+    res_file_path = os.path.join(results_dir, progolem_rules_output_file_name)
+    if os.path.isfile(res_file_path):
+        with open(res_file_path) as res:
+            for line in res.readlines():
+                result_lines.append(line.strip())
+
+    else:
+        return []
 
     # result lines should be something like this:
     # [
