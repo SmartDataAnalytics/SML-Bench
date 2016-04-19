@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
 import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
 import logging
 import os
 import shutil
@@ -18,17 +24,51 @@ tool_specific_data_dir = 'progol'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
+config_file_name = 'progol.conf'
+flag_set_template = ':- set(%s)?'
+flag_unset_template = ':- unset(%s)?'
+setting_set_template = ':- set(%s, %s)?'
 progol_executable_name = 'progol'
 output_token_end = '[Total number of clauses'
 output_token_start = ']\n'
 output_token_start_len = len(output_token_start)
+no_results_token = '[No contradictions found]'
+
+true_tokens_lowercase = ['on', 'true']
+false_tokens_lowercase = ['off', 'false']
 
 
 class NoProgolInstallationFounc(Exception):
     """Raised when no installed Progol could be found"""
 
 
-def copy_files_and_get_pos_exmpls(task_id, lp_id, target_dir, file_name_base):
+def get_settings(learning_task, lp_id):
+    config_file_path = os.path.join('..', '..', learning_task_dir_name,
+                                    learning_task, prolog_dir_name,
+                                    lp_dir_name, lp_id, config_file_name)
+
+    if not os.path.isfile(config_file_path):
+        return {}
+
+    conf = configparser.ConfigParser()
+    conf.read(config_file_path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+
+        if raw_value.lower() in true_tokens_lowercase:
+            settings[setting] = True
+        elif raw_value.lower() in false_tokens_lowercase:
+            settings[setting] = False
+        else:
+            settings[setting] = raw_value
+
+    return settings
+
+
+def copy_files_and_get_pos_exmpls(
+        task_id, lp_id, target_dir, file_name_base, settings):
     """Finds all the files necessary to run Progol and compiles one Prolog file
     that is fed to Progol.
 
@@ -44,6 +84,17 @@ def copy_files_and_get_pos_exmpls(task_id, lp_id, target_dir, file_name_base):
     output_file_path = os.path.join(target_dir, file_name_base+'.pl')
     pos_examples = []
     with open(output_file_path, 'w') as out:
+        # config
+        for key, val in settings.items():
+            if type(val) is bool:
+                if val:
+                    out.write(flag_set_template % key)
+                else:
+                    out.write(flag_unset_template % key)
+            else:
+                out.write(setting_set_template % (key, val))
+            out.write(os.linesep)
+
         # ../../learningtasks/<task_id>/prolog/data/progol/*.pl  # merged!
         #                   --> <target_dir>/<file_name_base>.pl
         tool_specfc_data_dir = os.path.join(
@@ -143,11 +194,14 @@ def get_and_clean_results(output_str, pos_examples):
     '''
     """
     tmp = output_str
+
+    if tmp.strip().endswith(no_results_token):
+        return []
+
     end_pos = output_str.rfind(output_token_end)
     output_str = output_str[:end_pos]
-    start_pos = output_str.rfind(output_token_start) + \
-                (output_token_start_len + 1)
-    output_str = output_str[start_pos:]
+    start_pos = output_str.rfind(output_token_start) + output_token_start_len
+    output_str = output_str[start_pos:].strip()
     res_lines = [l.strip() for l in output_str.split('\n') if l.strip() != '']
     # (Pdb) pp(res_lines)
     # ['move(knight,pos(f,7),pos(e,5)).',
@@ -217,9 +271,10 @@ if __name__ == '__main__':
     target_dir = tempfile.mkdtemp()
     _log.debug('Target dir is %s' % target_dir)
 
-    # TODO: add config handling
+    settings = get_settings(learning_task_id, learning_problem_id)
     pos_examples = copy_files_and_get_pos_exmpls(
-        learning_task_id, learning_problem_id, target_dir, file_name_base)
+        learning_task_id, learning_problem_id, target_dir, file_name_base,
+        settings)
     progol_executable = find_progol()
 
     try:
