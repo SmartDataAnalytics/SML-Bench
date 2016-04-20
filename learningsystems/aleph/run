@@ -194,17 +194,22 @@ def create_pl_script(yap_executable, aleph_script_path, dir, settings):
 
 def get_and_clean_results(results_dir):
     result_lines = []
+
     # get all result lines from results file
     with open(os.path.join(results_dir, aleph_rules_output_file_name)) as res:
         for line in res.readlines():
             result_lines.append(line.strip())
 
-    # FIXME: This split-at-').'-and-join-again approach is too weak
-    # remove all line breaks and spit again one rule per line
-    result_lines = ''.join(result_lines).split(').')
-    # add dots (removed in previous line) to rules again
-    result_lines = [l + ').' for l in result_lines if l != '']
+    tmp_lines = []
+    tmp_line = ''
 
+    for line in result_lines:
+        tmp_line += line
+        if line.strip().endswith('.'):
+            tmp_lines.append(tmp_line)
+            tmp_line = ''
+
+    result_lines = tmp_lines
     # remove all pos examples that could not be generalized
     with open(os.path.join(target_dir, file_name_base + '.f')) as examples:
         for line in examples.readlines():
