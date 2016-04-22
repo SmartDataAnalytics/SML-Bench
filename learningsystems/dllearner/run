@@ -23,6 +23,10 @@ add_conf() {
     echo "$@" >>"$conf"
 }
 
+remove_blanks() {
+    grep -v '^\s*\(;\|\s*$\)'
+}
+
 quote_examples() {
     sed $prefix_sed_cmd -e 's.^.".' -e 's.$.",.' | sed -e '$ s/.$//'
 }
@@ -100,13 +104,13 @@ add_conf lp.type '=' '"posNegStandard"'
 
 # load positive examples
 add_conf lp.positiveExamples '=' '{'
-cat ../../"$lp_dir"/"$pos_file_name" | quote_examples >> "$conf"
+cat ../../"$lp_dir"/"$pos_file_name" | remove_blanks | quote_examples >> "$conf"
 add_conf '}'
 add_conf
 
 # load negative examples
 add_conf lp.negativeExamples '=' '{'
-cat ../../"$lp_dir"/"$neg_file_name" | quote_examples >> "$conf"
+cat ../../"$lp_dir"/"$neg_file_name" | remove_blanks | quote_examples >> "$conf"
 add_conf '}'
 
 add_conf
@@ -121,4 +125,4 @@ $dllearner_file "$conf" | tee "$tmpdir"/output.log
 sed '0,/^solutions:/d' "$tmpdir"/output.log | grep '^1: ' \
    | sed -e 's,^1: ,,' -e 's, ([^)]*)$,,' > "$result_output_file"
 
-cat "$conf"
+#cat "$conf"
