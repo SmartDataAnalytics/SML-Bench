@@ -21,3 +21,6 @@ For Aleph:
 - aleph.pl in `learningsystems/aleph`
 - Python 2 as `python`
 
+**Supported Tools**
+
+An overview of the currently supported tools and a brief description of how to add additional tools is given [here](learningsystems/README.md).
