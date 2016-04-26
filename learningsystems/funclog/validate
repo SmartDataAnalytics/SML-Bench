@@ -175,6 +175,9 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
             # TODO: maybe some checking is needed here, first
             match_lines.append('match :- ' + ex + ' = ' + rule['conj'])
 
+        if len(match_lines) == 0:
+            match_lines.append('match :- halt(1).')
+
         content = validation_file_template % {
             'yap': yap,
             'match': os.linesep.join(match_lines),

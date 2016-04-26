@@ -18,6 +18,7 @@ data_dir_name = 'data'
 tool_specific_data_dir = 'progol'
 lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
+neg_file_name = 'neg.pl'
 
 validation_file_template = """#!/usr/bin/env swipl
 
@@ -156,6 +157,9 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
             # TODO: maybe some checking is needed here, first
             match_lines.append('match :- ' + ex + ' = ' + rule['conj'])
 
+        if len(match_lines) == 0:
+            match_lines.append('match :- halt(1).')
+
         content = validation_file_template % {
             'match': '\n'.join(match_lines),
             'file_b': file_name_base + '.pl',
@@ -223,7 +227,7 @@ def build_rule_dicts(results):
 
 def validate(results, res_dir, examples_dir):
     pos_examples = read_examples(os.path.join(examples_dir, pos_file_name))
-    neg_examples = read_examples(os.path.join(examples_dir, pos_file_name))
+    neg_examples = read_examples(os.path.join(examples_dir, neg_file_name))
 
     rule_dicts = build_rule_dicts(results)
     fp = pos_examples[:]

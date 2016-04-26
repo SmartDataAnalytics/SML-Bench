@@ -132,9 +132,9 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
     :- initialization main.
 
     match :- active(d190) = active(A), atm(A,B,c,21,C), gteq(C,-0.108),
-        bond(A,B,D,7), write(A), write('\n').
+        bond(A,B,D,7), write(A), nl.
     match :- active(d190) = active(A), atm(A,B,c,27,C), lteq(C,-0.084),
-        write(A), write('\n').
+        write(A), nl.
 
     main :-
             consult('mutagenesis_42.b'),
@@ -170,6 +170,9 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
         for rule in rule_dicts:
             # TODO: maybe some checking is needed here, first
             match_lines.append('match :- ' + ex + ' = ' + rule['conj'])
+
+        if len(match_lines) == 0:
+            match_lines.append('match :- halt(1).')
 
         content = validation_file_template % {
             'yap': yap,
@@ -223,7 +226,7 @@ def build_rule_dicts(results):
         head_parts = get_vars_from_head(head)
 
         for p in head_parts[1:]:  # first part (i.e. the predicate) skipped
-            body += ', write(' + p + '), write(\'\\n\')'
+            body += ', write(' + p + '), nl'
         body += '.'
 
         ret.append({
