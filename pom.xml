@@ -150,6 +150,8 @@
 					<verbose>true</verbose>
 					<fork>true</fork>
 					<compilerVersion>${compiler.version}</compilerVersion>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 			<plugin>

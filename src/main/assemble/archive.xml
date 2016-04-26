@@ -18,6 +18,9 @@
 				<include>learning*/**</include>
 				<include>doc/**</include>
 			</includes>
+			<excludes>
+				<exclude>learningsystems/dllearner/dllearner*/**</exclude>
+			</excludes>
 		</fileSet>
 	</fileSets>
 </assembly>
