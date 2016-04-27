@@ -1,8 +1,8 @@
-{config = 1;
-learningsystems = ( aleph, dllearner );
-learningtask = {
-  trains = {
-    lp = ( 5, 6 )
- }
-}
+{
+  config = 1;
+  learningsystems = ( aleph, dllearner );
+  scenarios = ( carcinogenesis/1, mutagenesis/42 );
+  framework = {
+    crossValidationFolds = 3;
+  };
 }
