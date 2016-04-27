@@ -1,7 +1,6 @@
 package org.aksw.mlbenchmark.config;
 
 import org.apache.commons.configuration2.HierarchicalConfiguration;
-import org.apache.commons.configuration2.INIConfiguration;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.configuration2.tree.DefaultExpressionEngine;
 import org.apache.commons.configuration2.tree.DefaultExpressionEngineSymbols;
@@ -14,7 +13,7 @@ import java.io.Writer;
 /**
  * A custom INIConfiguration where the write method removes the "double escaping" dot
  */
-public class INIConfigurationWriteDotkeys extends INIConfiguration {
+public class INIConfigurationWriteDotkeys extends INIConfigurationWriteLists {
 	static final DefaultExpressionEngine dotkeysWritingEngine = new DefaultExpressionEngine(
 				new DefaultExpressionEngineSymbols.Builder()
 				.setPropertyDelimiter(DefaultExpressionEngineSymbols.DEFAULT_PROPERTY_DELIMITER)
