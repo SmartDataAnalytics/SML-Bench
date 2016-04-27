@@ -5,11 +5,15 @@ import org.aksw.mlbenchmark.ConfigLoaderException;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
 import org.apache.commons.configuration2.INIConfiguration;
+import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.convert.DefaultListDelimiterHandler;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.configuration2.plist.PropertyListConfiguration;
 import org.apache.commons.configuration2.tree.DefaultExpressionEngine;
 import org.apache.commons.configuration2.tree.ExpressionEngine;
 import org.apache.commons.configuration2.tree.ImmutableNode;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -23,6 +27,7 @@ import java.util.regex.Pattern;
  * Convert property files to hierarchical config layout (like HierarchicalConfigurationConverter)
  */
 public class FlatConfigHierarchicalConverter {
+	final static Logger logger = LoggerFactory.getLogger(FlatConfigHierarchicalConverter.class);
 	static void process(Configuration in, HierarchicalConfiguration<ImmutableNode> out) {
 		ExpressionEngine ee = out.getExpressionEngine();
 		out.setExpressionEngine(DefaultExpressionEngine.INSTANCE);
@@ -31,10 +36,10 @@ public class FlatConfigHierarchicalConverter {
 			String key = keys.next();
 			String qkey = key.replaceAll(Pattern.quote(".."), ".");
 			int idx = qkey.lastIndexOf(".");
-			System.err.println("converting: " + key + ": "+ idx);
+			logger.trace("converting: " + key + ": "+ idx);
 			String rootKey = idx >= 0 ? qkey.substring(0, idx) : "";
 			String lastPart = qkey.substring(idx + 1);
-			System.err.println("--> [" + rootKey + "|" + lastPart +"]");
+			logger.trace("--> [" + rootKey + "|" + lastPart +"]");
 			Object p = out.getProperty(qkey);
 			Object ip = in.getProperty(key);
 			out.clearProperty(qkey);
@@ -77,6 +82,13 @@ public class FlatConfigHierarchicalConverter {
 		c2.write(new FileWriter("c2.plist"));
 		c3.write(new FileWriter("c3.plist"));
 		//new INIConfigurationWriteDotkeys(c3).write(new FileWriter("c3.ini"));
+		INIConfigurationWriteLists listIni = new INIConfigurationWriteLists(c3);
+		listIni.setListDelimiterHandler(new DefaultListDelimiterHandler(','));
+		listIni.write(new FileWriter("c3a.ini"));
 		new INIConfiguration(c3).write(new FileWriter("c3b.ini"));
+		PropertiesConfiguration listProps = new PropertiesConfiguration();
+		listProps.copy(c3);
+		listProps.setListDelimiterHandler(new DefaultListDelimiterHandler(','));
+		listProps.write(new FileWriter("c3a.prop"));
 	}
 }
