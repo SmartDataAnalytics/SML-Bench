@@ -7,4 +7,7 @@ public class Constants {
 	public static final String LEARNINGSYSTEMS = "learningsystems";
 	public static final String LEARNINGTASKS = "learningtasks";
 	public static final String LEARNINGPROBLEMS = "lp";
+	public enum LANGUAGES {
+		OWL, PROLOG
+	};
 }

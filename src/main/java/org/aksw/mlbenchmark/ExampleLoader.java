@@ -10,11 +10,11 @@ import org.apache.commons.lang3.NotImplementedException;
  */
 public class ExampleLoader {
 	static ExampleLoaderBase forLanguage(String language) {
-		switch (language.toLowerCase()) {
+		switch (Constants.LANGUAGES.valueOf(language.toUpperCase())) {
 
-			case "owl": return new OwlExampleLoader();
+			case OWL: return new OwlExampleLoader();
 
-			case "prolog": return new PrologExampleLoader();
+			case PROLOG: return new PrologExampleLoader();
 
 			default: throw new NotImplementedException("No Example Loader for " + language);
 
