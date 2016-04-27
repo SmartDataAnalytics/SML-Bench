@@ -10,4 +10,8 @@ public class Constants {
 	public enum LANGUAGES {
 		OWL, PROLOG
 	};
+
+	public enum ExType {
+		POS, NEG
+	}
 }

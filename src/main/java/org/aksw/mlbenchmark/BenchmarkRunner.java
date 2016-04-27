@@ -193,7 +193,7 @@ public class BenchmarkRunner {
 			if (failedLang.contains(lang)) { continue; }
 			try {
 				CrossValidation crossValidation = languageFolds.get(lang);
-				for (CrossValidation.ExType ex : CrossValidation.ExType.values()) {
+				for (Constants.ExType ex : Constants.ExType.values()) {
 					BufferedWriter writer = new BufferedWriter(new FileWriter(new File(dir + "/" + "folds-" + lang + "-" + ex.name().toLowerCase() + LanguageInfo.forLanguage(lang).exampleExtension())));
 					for (int i = 0; i < folds; ++i) {
 						writer.write("; fold " + i); writer.newLine();
