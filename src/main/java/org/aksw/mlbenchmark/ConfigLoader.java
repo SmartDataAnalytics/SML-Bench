@@ -11,6 +11,7 @@ import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
 import org.apache.commons.configuration2.convert.DefaultListDelimiterHandler;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.apache.commons.configuration2.io.FileLocatorUtils;
 import org.apache.commons.configuration2.plist.PropertyListConfiguration;
 import org.apache.commons.configuration2.plist.XMLPropertyListConfiguration;
 import org.apache.commons.configuration2.tree.ImmutableNode;
@@ -79,7 +80,9 @@ public class ConfigLoader {
 		if (filename.endsWith(".plist")) {
 			out = conf;
 		} else if (filename.endsWith(".xml")) {
-			out = new XMLPropertyListConfiguration(conf);
+			XMLPropertyListConfiguration xml = new XMLPropertyListConfiguration(conf);
+			xml.initFileLocator(FileLocatorUtils.fileLocator().create());
+			out = xml;
 		} else if (filename.endsWith(".ini") || filename.endsWith(".conf")) {
 			CombinedConfiguration cc = new CombinedConfiguration();
 			cc.setNodeCombiner(new MergeCombiner());

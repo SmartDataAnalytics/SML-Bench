@@ -15,7 +15,7 @@ public class ExampleLoaderBase {
 		BufferedReader reader = new BufferedReader(new FileReader(input));
 		String line;
 		while ((line = reader.readLine()) != null) {
-			if (line.matches("^\\s*$") || line.matches("^\\s*")) {
+			if (line.matches("^\\s*$") || line.matches("^\\s*;")) {
 				// skip, it is blank or comment
 				continue;
 			}

@@ -7,6 +7,6 @@
     crossValidationFolds = 3;
     threads = 2; // not implemented yet
   };
-  resultOutput = testResult.prop;
-  // resultOutput = testResult.xml;
+  //resultOutput = testResult.prop;
+  resultOutput = testResult.xml;
 }

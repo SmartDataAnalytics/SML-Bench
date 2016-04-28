@@ -3,6 +3,7 @@ package org.aksw.mlbenchmark.systemrunner;
 import org.aksw.mlbenchmark.*;
 import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
 import org.aksw.mlbenchmark.process.ProcessRunner;
+import org.aksw.mlbenchmark.resultloader.ResultLoaderBase;
 import org.aksw.mlbenchmark.validation.measures.MeasureMethodTwoValued;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.CombinedConfiguration;
@@ -32,7 +33,7 @@ public class CrossValidationRunner {
 	private final Map<String, CrossValidation> languageFolds = new HashMap<>();
 	private final String task;
 	private final String problem;
-	private final Configuration parentConf;
+	private final Configuration parentConf; // the partial scenario config from the parent
 
 	public CrossValidationRunner(BenchmarkRunner benchmarkRunner, String task, String problem, Configuration baseConf) {
 		this.parent = benchmarkRunner;
@@ -160,6 +161,16 @@ public class CrossValidationRunner {
 		}
 		String resultKey =  task + "." + problem + "." + "fold-" + fold + "." + system;
 		getResultset().setProperty(resultKey + "." + "duration", duration / 1000000000); // nanoseconds -> seconds
+
+		ResultLoaderBase resultLoader = new ResultLoaderBase();
+		try {
+			resultLoader.loadResults(outputFileFile);
+			getResultset().setProperty(resultKey + "." + "raw", resultLoader.getResults());
+		} catch (IOException e) {
+			logger.warn("learning system " + system + " result cannot be read: " + e.getMessage());
+			state = state.ERROR;
+		}
+
 		getResultset().setProperty(resultKey + "." + "trainingResult", state.toString().toLowerCase());
 
 		if (!state.equals(State.OK)) {
@@ -228,7 +239,7 @@ public class CrossValidationRunner {
 				getResultset().setProperty(resultKey + "." + "raw" + "." + key, result.getProperty(key));
 			}
 		}
-		List<String> measures = parentConf.getList(String.class, "framework.measure", Arrays.asList("pred_acc"));
+		List<String> measures = parent.getConfig().getList(String.class, "framework.measure", Arrays.asList("pred_acc"));
 		try {
 			int tp = result.getInt("tp");
 			int fn = result.getInt("fn");
