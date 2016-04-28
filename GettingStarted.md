@@ -14,7 +14,7 @@ run `smlbench configfile` script (provided in the `bin` folder of final built pa
 
 use `mvn -e exec:java -Dexec.mainClass=org.aksw.mlbenchmark.Benchmark -Dexec.args=configfile`
 
-### Config file
+#### Config file
 
 The config file describes the benchmark you want to run.
 
@@ -38,7 +38,7 @@ framework.crossValidationFolds = 5
 - `resultOutput`: filename wheree to store the result of the benchmark run
   - default: config file name + `.result`
 
-### Learning system config file
+##### Learning system config file
 
 The learning systems can use a specific config file called `system`, see for example [learningsystems/dllearner/system.ini](learningsystems/dllearner/system.ini)
 
@@ -46,3 +46,31 @@ The learning systems can use a specific config file called `system`, see for exa
 - `families`: List of additional families config files, background knowledge bases, to load
 - `configFormat`: format of configuration file passed to run script (prop, conf, plist, xml)
 
+##### Program input config file
+
+When executing the run scripts, important information is given in the config files passed to them:
+
+```
+data.workdir = working directory where the script can also place knowledge base etc.
+learningtask = the learning task 
+learningproblem = the learning problem inside the task
+step = train
+filename.pos = file name containing the positive examples sed for training
+filename.neg = file name containing the negative examples sed for training
+output = file name where the run script must place the output for the validation script
+maxExecutionTime = current desired maxExecutionTime in seconds of the framework
+```
+
+for the validate script, additionally:
+
+```
+step = validate
+input = file name where to read input from (as output by the run script)
+output = file name where the validate script must place the output
+```
+
+##### validate output format
+
+see [learningsystems](learningsystems)
+
+Additional output may be optionally present in the file
