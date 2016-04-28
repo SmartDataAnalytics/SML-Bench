@@ -9,6 +9,7 @@ import org.apache.commons.configuration2.CombinedConfiguration;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.apache.commons.configuration2.ex.ConversionException;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.exec.ExecuteException;
@@ -207,13 +208,19 @@ public class CrossValidationRunner {
 		}
 		String resultKey =  task + "." + problem + "." + "fold-" + fold + "." + system;
 		HierarchicalConfiguration<ImmutableNode> result = null;
-		try {
-			result = new ConfigLoader(outputFile).load().config();
-		} catch (ConfigLoaderException e) {
-			logger.warn("could not load validation result: " + e.getMessage());
-			state = State.FAILURE;
+		if (state.equals(State.OK)) {
+			try {
+				result = new ConfigLoader(outputFile).load().config();
+			} catch (ConfigLoaderException e) {
+				logger.warn("could not load validation result: " + e.getMessage());
+				state = State.FAILURE;
+			}
 		}
 		getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
+		if (!state.equals(State.OK)) {
+			return state;
+		}
+
 		if (result != null) {
 			Iterator<String> keys = result.getKeys();
 			while (keys.hasNext()) {
@@ -222,10 +229,20 @@ public class CrossValidationRunner {
 			}
 		}
 		List<String> measures = parentConf.getList(String.class, "framework.measure", Arrays.asList("pred_acc"));
-		for (String m : measures) {
-			MeasureMethodTwoValued method = MeasureMethod.create(m);
-			double measure = method.getMeasure(result.getInt("tp"), result.getInt("fn"), result.getInt("fp"), result.getInt("tn"));
-			getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
+		try {
+			int tp = result.getInt("tp");
+			int fn = result.getInt("fn");
+			int fp = result.getInt("fp");
+			int tn = result.getInt("tn");
+			for (String m : measures) {
+				MeasureMethodTwoValued method = MeasureMethod.create(m);
+				double measure = method.getMeasure(tp, fn, fp, tn);
+				getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
+			}
+		} catch (ConversionException | NoSuchElementException e) {
+			logger.warn("invalid validation results: " + e.getMessage());
+			state = State.ERROR;
+			getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
 		}
 		return state;
 	}

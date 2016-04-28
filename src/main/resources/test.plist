@@ -1,8 +1,10 @@
 {
   config = 1;
-  learningsystems = ( aleph, dllearner );
+  learningsystems = ( aleph, golem, dllearner );
   scenarios = ( carcinogenesis/1, mutagenesis/42 );
+  measures = ( ameasure, pred_acc, fmeasure );
   framework = {
     crossValidationFolds = 3;
+    threads = 2; // not implemented yet
   };
 }
