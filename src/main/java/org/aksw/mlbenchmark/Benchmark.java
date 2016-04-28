@@ -36,23 +36,5 @@ public class Benchmark {
 
 		runner.run();
 
-/*
-		List<Object> systems = config.getList("learningsystems");
-
-		DefaultExecutor e = new DefaultExecutor();
-		try {
-			e.setStreamHandler(new PumpStreamHandler(new FileOutputStream("lsoutput.log")));
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
-		e.setWorkingDirectory(new File(LEARNING_SYSTEMS_PATH));
-		CommandLine cmd = new CommandLine("./run");
-		try {
-			int rc = e.execute(cmd);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-
-*/
 	}
 }
