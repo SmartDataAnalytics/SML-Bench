@@ -44,9 +44,12 @@ public class BenchmarkRunner {
 		logger.info("source dir = " + sourceDir);
 		rootDir = new File(sourceDir.getFile() + "/../..").getAbsolutePath();
 		logger.info("root = " + rootDir);
-		for (File file : new File(rootDir + "/" + Constants.LEARNINGSYSTEMS).listFiles()) {
-			if (file.isDirectory()) {
-				availableLearningSystems.add(file.getName());
+		File[] files = new File(getLearningSystemsDir()).listFiles();
+		if (files != null) {
+			for (File file : files) {
+				if (file.isDirectory()) {
+					availableLearningSystems.add(file.getName());
+				}
 			}
 		}
 		logger.info("available learning systems:" + availableLearningSystems);
@@ -146,9 +149,12 @@ public class BenchmarkRunner {
 				LinkedHashSet<String> expansion = new LinkedHashSet<>();
 				String[] split = scn.split("/");
 				for (String lang : desiredLanguages) {
-					for (File f : new File(getLearningProblemsDir(split[0], lang)).listFiles()) {
-						if (f.isDirectory()) {
-							expansion.add(split[0] + "/" + f.getName());
+					File[] files = new File(getLearningProblemsDir(split[0], lang)).listFiles();
+					if (files != null) {
+						for (File f : files) {
+							if (f.isDirectory()) {
+								expansion.add(split[0] + "/" + f.getName());
+							}
 						}
 					}
 				}
