@@ -8,7 +8,6 @@ SML-Bench (Structured Machine Learning Benchmark) is a benchmark for machine lea
 
 The ultimate goal of SML-Bench is to foster research in machine learning from structured data as well as increase the reproducibility and comparability of algorithms in that area. This is important, since a) the preparation of machine learning tasks in that area involves a significant amount of work and b) there are hardly any cross comparisions across languages as this requires data conversion processes.
 
-
 **Requirements**
 
 For Golem:
@@ -21,6 +20,6 @@ For Aleph:
 - aleph.pl in `learningsystems/aleph`
 - Python 2 as `python`
 
-**Supported Tools**
+**Supported Tools & Adding your own Tool**
 
 An overview of the currently supported tools and a brief description of how to add additional tools is given [here](learningsystems/README.md).
