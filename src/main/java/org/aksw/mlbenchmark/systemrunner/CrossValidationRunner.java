@@ -239,7 +239,7 @@ public class CrossValidationRunner {
 				getResultset().setProperty(resultKey + "." + "raw" + "." + key, result.getProperty(key));
 			}
 		}
-		List<String> measures = parent.getConfig().getList(String.class, "framework.measure", Arrays.asList("pred_acc"));
+		List<String> measures = parent.getConfig().getList(String.class, "measures", Arrays.asList("pred_acc"));
 		try {
 			int tp = result.getInt("tp");
 			int fn = result.getInt("fn");
