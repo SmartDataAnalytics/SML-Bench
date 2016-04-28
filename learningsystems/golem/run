@@ -13,9 +13,26 @@ import shutil
 import subprocess
 import platform
 import tempfile
+import atexit
+import signal
+import ctypes
+libc = ctypes.CDLL("libc.so.6")
+def set_pdeathsig(sig = signal.SIGTERM):
+    def callable():
+        return libc.prctl(1, sig)
+    return callable
+
+procs = []
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
+
+@atexit.register
+def kill_subprocesses():
+    for proc in procs:
+        _log.debug('killing %s at exit', proc)
+        proc.kill()
+        proc.terminate()
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
@@ -161,6 +178,7 @@ def clean_up(tmp_dir):
 
 
 if __name__ == '__main__':
+    os.setpgrp()
     argparser = argparse.ArgumentParser()
     argparser.add_argument('config_file')
     args = argparser.parse_args()
@@ -182,7 +200,10 @@ if __name__ == '__main__':
 
     golem_executable = find_golem()
     _log.debug('Runnig Golem')
-    subprocess.check_call([golem_executable, file_name_base], cwd=target_dir)
+    pp = subprocess.Popen([golem_executable, file_name_base], cwd=target_dir, preexec_fn=set_pdeathsig(signal.SIGTERM))
+    procs.append(pp)
+    if pp.wait():
+        raise CalledProcessError(retcode, golem_executable)
 
     results = get_and_clean_results(target_dir, file_name_base)
 
