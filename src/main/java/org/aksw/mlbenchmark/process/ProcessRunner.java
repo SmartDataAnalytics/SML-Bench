@@ -45,7 +45,7 @@ public class ProcessRunner {
 		if (timeout > 0) {
 			e.setWatchdog(new ExecuteWatchdog(timeout * 1000)); // seconds -> milliseconds
 		}
-		CommandLine cmd = new CommandLine("./run");
+		CommandLine cmd = new CommandLine(command);
 		if (args != null) {
 			cmd.addArguments(args.toArray(new String[0]));
 		}

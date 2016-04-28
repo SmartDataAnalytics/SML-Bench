@@ -174,13 +174,13 @@ public class ConfigLoader {
 		propertiesConfiguration.copy(conf);
 		propertiesConfiguration.write(new FileWriter("test2.prop"));
 		//new Hierarchicalconfigurationcon
-		Testing testing = new Testing();
-		testing.conf(conf);
+		//Testing testing = new Testing();
+		//testing.conf(conf);
 
 		new PropertyListConfiguration(conf).write(new FileWriter("test-from-ini.plist"));
 		logger.info("---- testing plist ----");
 		HierarchicalConfiguration<ImmutableNode> config1 = new ConfigLoader("test.plist").load().config();
-		testing.conf(config1);
+		//testing.conf(config1);
 		PropertyListConfiguration plc = new PropertyListConfiguration(config1);
 		plc.write(new FileWriter("test-copy.plist"));
 	}
