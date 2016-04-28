@@ -9,7 +9,7 @@ import org.apache.commons.lang3.NotImplementedException;
  * Load input examples.
  */
 public class ExampleLoader {
-	static ExampleLoaderBase forLanguage(String language) {
+	public static ExampleLoaderBase forLanguage(String language) {
 		switch (Constants.LANGUAGES.valueOf(language.toUpperCase())) {
 
 			case OWL: return new OwlExampleLoader();

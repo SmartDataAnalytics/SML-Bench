@@ -8,4 +8,19 @@ public class PrologLanguageInfo extends LanguageInfoBase {
 	public String exampleExtension() {
 		return ".pl";
 	}
+
+	@Override
+	public String getBaseFilename() {
+		return "data.b";
+	}
+
+	@Override
+	public String getPosFilename() {
+		return "data.f";
+	}
+
+	@Override
+	public String getNegFilename() {
+		return "data.n";
+	}
 }

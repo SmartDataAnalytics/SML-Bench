@@ -26,11 +26,15 @@ public class ExampleLoaderBase {
 
 	public void writeExamples(File output) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(output));
+		writeExamples(writer);
+		writer.close();
+	}
+
+	public void writeExamples(BufferedWriter writer) throws IOException {
 		for (String ex : examples) {
 			writer.write(ex);
 			writer.newLine();
 		}
-		writer.close();
 	}
 
 	public void setExamples(Collection<String> newExamples) {

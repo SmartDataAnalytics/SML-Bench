@@ -9,7 +9,7 @@ import org.apache.commons.lang3.NotImplementedException;
  * Created by Simon Bin on 16-4-28.
  */
 public class LanguageInfo {
-	static LanguageInfoBase forLanguage(String language) {
+	public static LanguageInfoBase forLanguage(String language) {
 		switch (Constants.LANGUAGES.valueOf(language.toUpperCase())) {
 
 			case OWL: return new OwlLanguageInfo();
