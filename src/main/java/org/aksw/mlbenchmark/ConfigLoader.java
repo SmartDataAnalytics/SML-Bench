@@ -2,7 +2,9 @@ package org.aksw.mlbenchmark;
 
 import org.aksw.mlbenchmark.config.FlatConfigHierarchicalConverter;
 import org.aksw.mlbenchmark.config.INIConfigurationWriteDotkeys;
+import org.aksw.mlbenchmark.config.INIConfigurationWriteLists;
 import org.aksw.mlbenchmark.config.PropertiesConfigurationFromDotkeys;
+import org.apache.commons.collections.IteratorUtils;
 import org.apache.commons.configuration2.*;
 import org.apache.commons.configuration2.builder.BuilderParameters;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
@@ -12,9 +14,11 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.configuration2.plist.PropertyListConfiguration;
 import org.apache.commons.configuration2.plist.XMLPropertyListConfiguration;
 import org.apache.commons.configuration2.tree.ImmutableNode;
+import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -65,6 +69,46 @@ public class ConfigLoader {
 			throw new ConfigLoaderException("Loading of config type not implemented yet.");
 		}
 		return this;
+	}
+
+	public static void write(Configuration config, File output) throws IOException, ConfigurationException, ConfigLoaderException {
+		String filename = output.getAbsolutePath();
+		PropertyListConfiguration conf = FlatConfigHierarchicalConverter.convert(config);
+		DefaultListDelimiterHandler delim = new DefaultListDelimiterHandler(',');
+		FileBasedConfiguration out;
+		if (filename.endsWith(".plist")) {
+			out = conf;
+		} else if (filename.endsWith(".xml")) {
+			out = new XMLPropertyListConfiguration(conf);
+		} else if (filename.endsWith(".ini") || filename.endsWith(".conf")) {
+			CombinedConfiguration cc = new CombinedConfiguration();
+			cc.setNodeCombiner(new MergeCombiner());
+			cc.addConfiguration(conf);
+			BaseConfiguration main = new BaseConfiguration();
+			for (ImmutableHierarchicalConfiguration x : cc.immutableChildConfigurationsAt("")) {
+				if (x.size() == 1) {
+					List list = IteratorUtils.toList(x.getKeys());
+					if ("".equals(list.get(0))) {
+						main.setProperty(x.getRootElementName(), x.get(Object.class, ""));
+						//System.err.println("adding "+x.getRootElementName() + " => "+x.get(Object.class,""));
+					}
+				}
+			}
+			cc.addConfiguration(main, null, "main");
+			INIConfiguration iniConfiguration = new INIConfigurationWriteLists(cc);
+
+			iniConfiguration.setListDelimiterHandler(delim);
+			out = iniConfiguration;
+		} else if (filename.endsWith(".prop") || filename.endsWith(".properties")) {
+			PropertiesConfiguration propertiesConfiguration = new PropertiesConfigurationFromDotkeys();
+			propertiesConfiguration.copy(conf);
+			propertiesConfiguration.setListDelimiterHandler(delim);
+			out = propertiesConfiguration;
+		} else {
+			throw new ConfigLoaderException("Writing of config type not implemented yet.");
+		}
+		out.write(new FileWriter(output));
+
 	}
 
 	private HierarchicalConfiguration<ImmutableNode> loadINIFile() throws ConfigLoaderException {
