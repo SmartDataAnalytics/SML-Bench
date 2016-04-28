@@ -3,8 +3,12 @@
  */
 package org.aksw.mlbenchmark;
 
+import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * @author Lorenz Buehmann
@@ -35,6 +39,13 @@ public class Benchmark {
 		}
 
 		runner.run();
-
+		try {
+			String resultOutput = runner.getConfig().getString("resultOutput", args[0].replaceAll("[.][^.]*$", "") + ".result.plist");
+			File file = new File(resultOutput);
+			logger.info("writing results to " + file.getAbsolutePath());
+			ConfigLoader.write(runner.getResultset(), file);
+		} catch (IOException | ConfigurationException | ConfigLoaderException e) {
+			logger.error("Could not write results: " + e.getMessage());
+		}
 	}
 }

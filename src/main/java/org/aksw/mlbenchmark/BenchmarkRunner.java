@@ -4,6 +4,7 @@ import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
+import org.apache.commons.configuration2.plist.PropertyListConfiguration;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.commons.lang3.NotImplementedException;
 import org.slf4j.Logger;
@@ -34,9 +35,11 @@ public class BenchmarkRunner {
 	private final Map<String, String> systemLanguage = new HashMap<>();
 	private final int folds;
 	private List<String> availableLearningSystems = new LinkedList<>();
+	private Map<String, LearningSystemInfo> systemInfos = new HashMap<>();
 	private ExecutorService executorService;
 	private Path tempDirectory;
 	private long seed;
+	private PropertyListConfiguration resultset = new PropertyListConfiguration();
 
 	public BenchmarkRunner(HierarchicalConfiguration<ImmutableNode> config) {
 		currentDir = new File(".").getAbsolutePath();
@@ -213,6 +216,15 @@ public class BenchmarkRunner {
 	}
 
 	public LearningSystemInfo getSystemInfo(String system) {
-		return new LearningSystemInfo(this, system);
+		if (!systemInfos.containsKey(system)) {
+			LearningSystemInfo lsi = new LearningSystemInfo(this, system);
+			systemInfos.put(system, lsi);
+			return lsi;
+		}
+		return systemInfos.get(system);
+	}
+
+	public Configuration getResultset() {
+		return resultset;
 	}
 }

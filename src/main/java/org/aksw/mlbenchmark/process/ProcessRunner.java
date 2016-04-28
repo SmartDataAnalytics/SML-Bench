@@ -3,6 +3,7 @@ package org.aksw.mlbenchmark.process;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.ExecuteWatchdog;
 import org.apache.commons.exec.PumpStreamHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +29,7 @@ public class ProcessRunner {
 
 	}*/
 
-	public ProcessRunner(String learningSystemDir, String command, List<String> args, Configuration configuration) throws IOException {
+	public ProcessRunner(String learningSystemDir, String command, List<String> args, Configuration configuration, long timeout) throws IOException {
 		DefaultExecutor e = new DefaultExecutor();
 
 		e.setWorkingDirectory(new File(learningSystemDir));
@@ -40,6 +41,9 @@ public class ProcessRunner {
 				logger.warn("could not set log file output");
 			}
 			updateEnvironment(environment, configuration);
+		}
+		if (timeout > 0) {
+			e.setWatchdog(new ExecuteWatchdog(timeout * 1000)); // seconds -> milliseconds
 		}
 		CommandLine cmd = new CommandLine("./run");
 		if (args != null) {
@@ -73,6 +77,6 @@ public class ProcessRunner {
 	}
 
 	public ProcessRunner(String learningSystemDir, String s) throws IOException {
-		this(learningSystemDir, s, null, null);
+		this(learningSystemDir, s, null, null, 0);
 	}
 }

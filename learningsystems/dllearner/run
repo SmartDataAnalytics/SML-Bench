@@ -1,5 +1,5 @@
 #!/bin/sh -e
-
+#export
 tool_name=dllearner
 
 learning_task_dir_name=learningtasks
@@ -32,16 +32,16 @@ quote_examples() {
 }
 
 
-if [ "$#" -ne 3 ]; then
-    echo usage: "$(basename "$0")" learning_task learning_problem result_output_file
+if [ "$#" -ne 1 ]; then
+    echo usage: "$(basename "$0")" config.prop
     exit 1
 fi
 
 
 # save parameters to variables
-learning_task="$1" && shift
-learning_problem="$1" && shift
-result_output_file="$1" && shift
+learning_task="$SMLB_LEARNINGTASK"
+learning_problem="$SMLB_LEARNINGPROBLEM"
+result_output_file="$SMLB_OUTPUT"
 
 # define directory names
 task_dir="$learning_task_dir_name"/"$learning_task"
@@ -72,9 +72,9 @@ if [ ! -d ../../"$lp_dir" ]; then
 fi
 
 # create working directory
-tmpdir="$(mktemp -d)"
+tmpdir="$SMLB_DATA_WORKDIR"
 conf="$tmpdir"/run.conf
-trap 'rm -rf "$TMPDIR"' 0
+#trap 'rm -rf "$TMPDIR"' 0
 
 : > "$conf"
 prefix=
@@ -104,20 +104,20 @@ add_conf lp.type '=' '"posNegStandard"'
 
 # load positive examples
 add_conf lp.positiveExamples '=' '{'
-cat ../../"$lp_dir"/"$pos_file_name" | remove_blanks | quote_examples >> "$conf"
+cat "$SMLB_FILENAME_POS" | remove_blanks | quote_examples >> "$conf"
 add_conf '}'
 add_conf
 
 # load negative examples
 add_conf lp.negativeExamples '=' '{'
-cat ../../"$lp_dir"/"$neg_file_name" | remove_blanks | quote_examples >> "$conf"
+cat "$SMLB_FILENAME_NEG" | remove_blanks | quote_examples >> "$conf"
 add_conf '}'
 
 add_conf
 add_conf acc.type '=' '"gen_fmeasure"'
 add_conf alg.type '=' '"celoe"'
 add_conf alg.writeSearchTree '=' false
-add_conf alg.maxExecutionTimeInSeconds '=' 60
+add_conf alg.maxExecutionTimeInSeconds '=' "$(($SMLB_MAXEXECUTIONTIME/2))"
 
 $dllearner_file "$conf" | tee "$tmpdir"/output.log
 #cp "$tmpdir"/output.log test.log
