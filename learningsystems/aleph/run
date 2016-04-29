@@ -9,11 +9,9 @@ except ImportError:
 
 import logging
 import os
-import shutil
 import stat
 import subprocess
 import platform
-import tempfile
 
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -24,8 +22,6 @@ prolog_dir_name = 'prolog'
 data_dir_name = 'data'
 tool_specific_data_dir = 'aleph'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 config_file_name = 'aleph.conf'
 output_file_name = 'results.txt'
 yap_executable_name = 'yap'
@@ -52,16 +48,15 @@ class NoAlephScriptFound(Exception):
     """Raised when no Aleph script could be found"""
 
 
-def copy_files_around(task_id, lp_id, target_dir, file_name_base):
+def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos,
+                      file_neg):
     """Finds all the files necessary to run golem:
     - ../../learningtasks/<task_id>/prolog/data/aleph/*.pl
                             --> <target_dir>/<file_name_base>.b
     - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                            --> <target_dir>/<file_name_base>.f
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-                            --> <target_dir>/<file_name_base>.n
+    - file_pos              --> <target_dir>/<file_name_base>.f
+    - file_neg              --> <target_dir>/<file_name_base>.n
     """
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -80,27 +75,27 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
 
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
+        # ../../learningtasks/<task_id>/prolog/data/aleph/*.pl
+        #                    --> <target_dir>/<file_name_base>.b
         if os.path.isdir(tool_specific_dir):
             for f_name in os.listdir(tool_specific_dir):
                 if f_name.endswith('.pl'):
                     subprocess.call(['cat', f_name], cwd=tool_specific_dir,
                                     stdout=out)
 
+        # ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+        #                    --> <target_dir>/<file_name_base>.b
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
 
-    pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                 prolog_dir_name, lp_dir_name, lp_id,
-                                 pos_file_name)
+    # file_pos --> <target_dir>/<file_name_base>.f
     pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
-    subprocess.call(['cp', pos_file_path, pos_target_file_path])
+    subprocess.call(['cp', file_pos, pos_target_file_path])
 
-    neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                 prolog_dir_name, lp_dir_name, lp_id,
-                                 neg_file_name)
+    # file_neg --> <target_dir>/<file_name_base>.n
     neg_target_file = os.path.join(target_dir, file_name_base+'.n')
-    subprocess.call(['cp', neg_file_path, neg_target_file])
+    subprocess.call(['cp', file_neg, neg_target_file])
 
 
 def get_settings(learning_task, lp_id):
@@ -220,29 +215,45 @@ def get_and_clean_results(results_dir):
     return result_lines
 
 
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.'+setting] = raw_value
+
+    return settings
 
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('learning_task')
-    argparser.add_argument('learning_problem')
-    argparser.add_argument('result_output_file')
+    argparser.add_argument('config_file')
     args = argparser.parse_args()
 
-    learning_task_id = args.learning_task
-    learning_problem_id = args.learning_problem
-    output_file = args.result_output_file
+    cfg = read_config(args.config_file)
+
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    output_file = cfg['output']
     _log.debug('Running learning task %s with learning problem %s' % (
         learning_task_id, learning_problem_id))
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    target_dir = tempfile.mkdtemp()
+    target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
-                      file_name_base)
+                      file_name_base, cfg['filename.pos'], cfg['filename.neg'])
 
     settings = get_settings(learning_task_id, learning_problem_id)
     yap_executable = find_yap()
@@ -259,6 +270,5 @@ if __name__ == '__main__':
         for line in results:
             out.write(line + "\n")
 
-    _log.debug('Aleph run finished. Cleaning up.')
-    clean_up(target_dir)
-    _log.debug('Done. Results written to %s' % output_file)
+    _log.debug('Aleph run finished.')
+    _log.debug('Results written to %s' % output_file)

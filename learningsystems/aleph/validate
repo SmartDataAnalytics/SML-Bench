@@ -1,9 +1,14 @@
 #!/usr/bin/env python
 
 import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
 import logging
 import os
-import shutil
 import stat
 import subprocess
 import platform
@@ -20,7 +25,6 @@ lp_dir_name = 'lp'
 pos_file_name = 'pos.pl'
 neg_file_name = 'neg.pl'
 yap_executable_name = 'yap'
-# TODO: will we also have to consult the negative examples?
 validation_file_template = """#!%(yap)s -L --
 
 :- initialization main.
@@ -29,7 +33,6 @@ validation_file_template = """#!%(yap)s -L --
 
 main :-
         consult('%(file_b)s'),
-        consult('%(file_ex)s'),
         match,
         halt.
 main :-
@@ -177,8 +180,8 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
         content = validation_file_template % {
             'yap': yap,
             'match': '\n'.join(match_lines),
-            'file_b': file_name_base + '.b',
-            'file_ex': file_name_base + exmpl_file_suffix}
+            'file_b': file_name_base + '.b'
+        }
 
         validate_file_path = os.path.join(results_dir, 'validate.pl')
 
@@ -281,22 +284,37 @@ def validate(results, res_dir, file_name_base):
     return len(tp), len(fp), len(tn), len(fn)
 
 
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.'+setting] = raw_value
+
+    return settings
 
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('learning_task')
-    argparser.add_argument('learning_problem')
-    argparser.add_argument('result_input_file')
-    argparser.add_argument('validation_output_file')
+    argparser.add_argument('config_file')
     args = argparser.parse_args()
 
-    learning_task_id = args.learning_task
-    learning_problem_id = args.learning_problem
-    input_file = args.result_input_file
-    output_file_name = args.validation_output_file
+    cfg = read_config(args.config_file)
+
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    input_file = cfg['input']
+    output_file_name = cfg['output']
     _log.debug('Validating solution learning task %s with learning '
                'problem %s' % (learning_task_id, learning_problem_id))
 
@@ -320,6 +338,5 @@ if __name__ == '__main__':
                 'tn: ' + str(num_tn) + os.linesep +
                 'fn: ' + str(num_fn) + os.linesep)
 
-    _log.debug('Aleph validation finished. Cleaning up.')
-    clean_up(target_dir)
-    _log.debug('Done. Results written to %s' % output_file_name)
+    _log.debug('Aleph validation finished.')
+    _log.debug('Results written to %s' % output_file_name)
