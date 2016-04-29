@@ -28,11 +28,16 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
 
 @atexit.register
-def kill_subprocesses():
+def kill_subprocesses(*args, **kwargs):
     for proc in procs:
         _log.debug('killing %s at exit', proc)
-        proc.kill()
-        proc.terminate()
+        try:
+            proc.kill()
+            proc.terminate()
+        except:
+            pass
+
+signal.signal(signal.SIGTERM, kill_subprocesses)
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
@@ -200,10 +205,11 @@ if __name__ == '__main__':
 
     golem_executable = find_golem()
     _log.debug('Runnig Golem')
-    pp = subprocess.Popen([golem_executable, file_name_base], cwd=target_dir, preexec_fn=set_pdeathsig(signal.SIGTERM))
+    pp = subprocess.Popen([golem_executable, file_name_base], cwd=target_dir)
     procs.append(pp)
-    if pp.wait():
-        raise CalledProcessError(retcode, golem_executable)
+    retcode = pp.wait()
+    if retcode:
+        raise subprocess.CalledProcessError(retcode, golem_executable)
 
     results = get_and_clean_results(target_dir, file_name_base)
 
