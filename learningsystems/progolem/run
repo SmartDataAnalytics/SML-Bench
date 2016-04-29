@@ -56,7 +56,7 @@ def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base,
     - ../../learningtasks/<task_id>/prolog/data/golem/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.pl
     - file_pos              --> <target_dir>/<file_name_base>.pl
-    - file_neg              --> <target_dir>/<filename_base>.pl
+    - file_neg              --> <target_dir>/<file_name_base>.pl
     - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
     """
