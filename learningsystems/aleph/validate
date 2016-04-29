@@ -12,7 +12,6 @@ import os
 import stat
 import subprocess
 import platform
-import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
@@ -306,7 +305,7 @@ if __name__ == '__main__':
             results.append(line.strip())
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    target_dir = tempfile.mkdtemp()
+    target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
