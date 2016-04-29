@@ -42,10 +42,11 @@ public class BenchmarkRunner {
 	private PropertyListConfiguration resultset = new PropertyListConfiguration();
 
 	public BenchmarkRunner(HierarchicalConfiguration<ImmutableNode> config) {
-		currentDir = new File(".").getAbsolutePath();
+		File file1 = new File(new File(".").getAbsolutePath());
+		currentDir = (file1.getName().equals(".") ? file1.getParentFile() : file1).getAbsolutePath();
 		sourceDir = BenchmarkRunner.class.getProtectionDomain().getCodeSource().getLocation();
 		logger.info("source dir = " + sourceDir);
-		rootDir = new File(sourceDir.getFile() + "/../..").getAbsolutePath();
+		rootDir = new File(sourceDir.getPath()).getParentFile().getParentFile().getAbsolutePath();
 		logger.info("root = " + rootDir);
 		File[] files = new File(getLearningSystemsDir()).listFiles();
 		if (files != null) {
