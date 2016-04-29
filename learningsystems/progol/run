@@ -9,9 +9,7 @@ except ImportError:
 
 import logging
 import os
-import shutil
 import subprocess
-import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
@@ -22,8 +20,6 @@ prolog_dir_name = 'prolog'
 data_dir_name = 'data'
 tool_specific_data_dir = 'progol'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 config_file_name = 'progol.conf'
 flag_set_template = ':- set(%s)?'
 flag_unset_template = ':- unset(%s)?'
@@ -67,8 +63,8 @@ def get_settings(learning_task, lp_id):
     return settings
 
 
-def copy_files_and_get_pos_exmpls(
-        task_id, lp_id, target_dir, file_name_base, settings):
+def copy_files_and_get_pos_exmpls(task_id, lp_id, target_dir, file_name_base,
+                                  settings, file_pos, file_neg):
     """Finds all the files necessary to run Progol and compiles one Prolog file
     that is fed to Progol.
 
@@ -76,10 +72,8 @@ def copy_files_and_get_pos_exmpls(
                             --> <target_dir>/<file_name_base>.pl
     - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.pl
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                            --> <target_dir>/<file_name_base>.pl
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-                            --> <target_dir>/<file_name_base>.pl
+    - file_pos              --> <target_dir>/<file_name_base>.pl
+    - file_neg              --> <target_dir>/<file_name_base>.pl
     """
     output_file_path = os.path.join(target_dir, file_name_base+'.pl')
     pos_examples = []
@@ -120,12 +114,8 @@ def copy_files_and_get_pos_exmpls(
                     for line in tmp:
                         out.write(line)
 
-        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-        #                   --> <target_dir>/<file_name_base>.pl
-        pos_file_path = os.path.join(
-            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
-            prolog_dir_name, lp_dir_name, lp_id, pos_file_name)
-        with open(pos_file_path) as p:
+        # file_pos --> <target_dir>/<file_name_base>.pl
+        with open(file_pos) as p:
             for line in p:
                 if line.strip() != '':
                     pos_examples.append(line.strip())
@@ -133,13 +123,9 @@ def copy_files_and_get_pos_exmpls(
                 # 'eastbound(east1).\n'
                 out.write(line)
 
-        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-        #                   --> <target_dir>/<file_name_base>.pl
-        neg_file_path = os.path.join(
-            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
-            prolog_dir_name, lp_dir_name, lp_id, neg_file_name)
-        if os.path.isfile(neg_file_path):
-            with open(neg_file_path) as n:
+        # file_neg --> <target_dir>/<file_name_base>.pl
+        if os.path.isfile(file_neg):
+            with open(file_neg) as n:
                 for line in n:
                     if line.strip() != '':
                         out.write(':- ' + line)
@@ -249,32 +235,48 @@ def get_and_clean_results(output_str, pos_examples):
     return res_lines
 
 
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.'+setting] = raw_value
+
+    return settings
 
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('learning_task')
-    argparser.add_argument('learning_problem')
-    argparser.add_argument('result_output_file')
+    argparser.add_argument('config_file')
     args = argparser.parse_args()
 
-    learning_task_id = args.learning_task
-    learning_problem_id = args.learning_problem
-    output_file = args.result_output_file
-
+    cfg = read_config(args.config_file)
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    output_file = cfg['output']
     _log.debug('Running Progol with learning task %s and learning problem %s'
                % (learning_task_id, learning_problem_id))
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    target_dir = tempfile.mkdtemp()
+    target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
     settings = get_settings(learning_task_id, learning_problem_id)
+
     pos_examples = copy_files_and_get_pos_exmpls(
         learning_task_id, learning_problem_id, target_dir, file_name_base,
-        settings)
+        settings, cfg['filename.pos'], cfg['filename.neg'])
+
     progol_executable = find_progol()
 
     try:
@@ -294,6 +296,5 @@ if __name__ == '__main__':
         for line in results:
             out.write(line + os.linesep)
 
-    _log.debug('Progol run finished. Cleaning up.')
-    clean_up(target_dir)
-    _log.debug('Done. Results written to %s' % output_file)
+    _log.debug('Progol run finished.')
+    _log.debug('Results written to %s' % output_file)

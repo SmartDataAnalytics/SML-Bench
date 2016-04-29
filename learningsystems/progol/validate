@@ -1,13 +1,16 @@
 #!/usr/bin/env python
 
 import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
 import logging
 import os
-import shutil
 import stat
 import subprocess
-import tempfile
-
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
@@ -17,8 +20,6 @@ prolog_dir_name = 'prolog'
 data_dir_name = 'data'
 tool_specific_data_dir = 'progol'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 
 validation_file_template = """#!/usr/bin/env swipl
 
@@ -37,19 +38,22 @@ main :-
 
 def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     """Compiles the knowledge base to validate the learning results
-
+    - ../../learningtasks/<task_id>/prolog/data/progol/*.pl
+                        --> <target_dir>/<file_name_base>.pl  # merged
     - ../../learningtasks/<task_id>/prolog/data/*.pl
                         --> <target_dir>/<file_name_base>.pl  # merged
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                        --> <target_dir>/<file_name_base>.pl
     """
     output_file_path = os.path.join(target_dir, file_name_base + '.pl')
 
-    tool_specific_dir = os.path.join(
-        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
-        data_dir_name, tool_specific_data_dir)
+
 
     with open(output_file_path, 'w') as out:
+        # ../../learningtasks/<task_id>/prolog/data/progol/*.pl
+        #                --> <target_dir>/<file_name_base>.pl  # merged
+        tool_specific_dir = os.path.join(
+            '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+            data_dir_name, tool_specific_data_dir)
+
         if os.path.isdir(tool_specific_dir):
             for f_name in os.listdir(tool_specific_dir):
                 if f_name.endswith('.pl'):
@@ -60,19 +64,13 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
         data_dir = os.path.join(
             os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
             prolog_dir_name, data_dir_name)
+
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 with open(os.path.join(data_dir, f_name)) as tmp:
                     for line in tmp:
                         out.write(line)
-        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-        #                --> <target_dir>/<file_name_base>.pl
-        pos_file_path = os.path.join(
-            os.path.pardir, os.path.pardir, learning_task_dir_name, task_id,
-            prolog_dir_name, lp_dir_name, lp_id, pos_file_name)
-        with open(pos_file_path) as p:
-            for line in p:
-                out.write(line)
+
     return
 
 
@@ -162,8 +160,8 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
 
         content = validation_file_template % {
             'match': '\n'.join(match_lines),
-            'file_b': file_name_base + '.pl',
-            'file_ex': file_name_base + exmpl_file_suffix}
+            'file_b': file_name_base + '.pl'
+        }
 
         validate_file_path = os.path.join(results_dir, 'validate.pl')
 
@@ -225,9 +223,9 @@ def build_rule_dicts(results):
     return ret
 
 
-def validate(results, res_dir, examples_dir):
-    pos_examples = read_examples(os.path.join(examples_dir, pos_file_name))
-    neg_examples = read_examples(os.path.join(examples_dir, neg_file_name))
+def validate(results, res_dir, file_pos, file_neg):
+    pos_examples = read_examples(file_pos)
+    neg_examples = read_examples(file_neg)
 
     rule_dicts = build_rule_dicts(results)
     fp = pos_examples[:]
@@ -243,22 +241,37 @@ def validate(results, res_dir, examples_dir):
     return len(tp), len(fp), len(tn), len(fn)
 
 
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.'+setting] = raw_value
+
+    return settings
 
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('learning_task')
-    argparser.add_argument('learning_problem')
-    argparser.add_argument('result_input_file')
-    argparser.add_argument('validation_output_file')
+    argparser.add_argument('config_file')
     args = argparser.parse_args()
 
-    learning_task_id = args.learning_task
-    learning_problem_id = args.learning_problem
-    input_file = args.result_input_file
-    output_file_name = args.validation_output_file
+    cfg = read_config(args.config_file)
+
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    input_file = cfg['input']
+    output_file_name = cfg['output']
     _log.debug('Validating solution learning task %s with learning '
                'problem %s' % (learning_task_id, learning_problem_id))
 
@@ -268,23 +281,20 @@ if __name__ == '__main__':
             results.append(line.strip())
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    target_dir = tempfile.mkdtemp()
+    target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
                       file_name_base)
 
-    examples_dir = os.path.join(
-        os.path.pardir, os.path.pardir, learning_task_dir_name,
-        learning_task_id, prolog_dir_name, lp_dir_name, learning_problem_id)
     num_tp, num_fp, num_tn, num_fn = validate(results, target_dir,
-                                              examples_dir)
+                                              cfg['filename.pos'],
+                                              cfg['filename.neg'])
     with open(output_file_name, 'w') as f:
-        f.write('tp: ' + str(num_tp) + os.linesep +
-                'fp: ' + str(num_fp) + os.linesep +
-                'tn: ' + str(num_tn) + os.linesep +
-                'fn: ' + str(num_fn) + os.linesep)
+        f.write('tp: %i' % num_tp + os.linesep +
+                'fp: %i' % num_fp + os.linesep +
+                'tn: %i' % num_tn + os.linesep +
+                'fn: %i' % num_fn + os.linesep)
 
-    _log.debug('Progol validation finished. Cleaning up.')
-    clean_up(target_dir)
-    _log.debug('Done. Results written to %s' % output_file_name)
+    _log.debug('Progol validation finished.')
+    _log.debug('Results written to %s' % output_file_name)
