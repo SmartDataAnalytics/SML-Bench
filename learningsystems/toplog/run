@@ -9,10 +9,8 @@ except ImportError:
 
 import logging
 import os
-import shutil
 import stat
 import subprocess
-import tempfile
 
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
@@ -23,8 +21,6 @@ prolog_dir_name = 'prolog'
 data_dir_name = 'data'
 tool_specific_data_dir = 'toplog'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 config_file_name = 'toplog.conf'
 output_file_name = 'results.txt'
 yap_executable_name = 'yap'
@@ -55,14 +51,13 @@ class NoGILPSScriptFound(Exception):
     """Raised when no GILPS script could be found"""
 
 
-def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base):
+def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base,
+                                   file_pos, file_neg):
     """Finds all the files necessary to run toplog:
     - ../../learningtasks/<task_id>/prolog/data/toplog/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.pl
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                            --> <target_dir>/<file_name_base>.pl
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-                            --> <target_dir>/<filename_base>.pl
+    - file_pos              --> <target_dir>/<file_name_base>.pl
+    - file_neg              --> <target_dir>/<file_name_base>.pl
     - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
     """
@@ -80,30 +75,22 @@ def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base):
                     subprocess.call(['cat', f_name], cwd=tool_specific_dir,
                                     stdout=out)
 
-        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-        #       --> <target_dir>/<file_name_base>.pl
-        pos_file_path = os.path.join(
-            '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
-            lp_dir_name, lp_id, pos_file_name)
-        with open(pos_file_path) as posfile:
+        # file_pos --> <target_dir>/<file_name_base>.pl
+        with open(file_pos) as posfile:
             for line in posfile:
                 # example(active(d190), 1).
                 line = line.strip()[:-1]  # remove trailing point
                 example_line = pos_example_pattern % line
                 out.write(example_line + os.linesep)
 
-        neg_file_path = os.path.join(
-            '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
-            lp_dir_name, lp_id, neg_file_name)
-
-        # ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-        #       --> <target_dir>/<filename_base>.pl
-        with open(neg_file_path) as negfile:
-            for line in negfile:
-                # example(active(d190), -1).
-                line = line.strip()[:-1]  # remove trailing point
-                example_line = neg_example_pattern % line
-                out.write(example_line + os.linesep)
+        # file_neg --> <target_dir>/<file_name_base>.pl
+        if os.path.isfile(file_neg):
+            with open(file_neg) as negfile:
+                for line in negfile:
+                    # example(active(d190), -1).
+                    line = line.strip()[:-1]  # remove trailing point
+                    example_line = neg_example_pattern % line
+                    out.write(example_line + os.linesep)
         out.flush()
 
         # ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
@@ -240,30 +227,46 @@ def get_and_clean_results(results_dir):
     return rules
 
 
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.'+setting] = raw_value
+
+    return settings
 
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('learning_task')
-    argparser.add_argument('learning_problem')
-    argparser.add_argument('result_output_file')
+    argparser.add_argument('config_file')
     args = argparser.parse_args()
 
-    learning_task_id = args.learning_task
-    learning_problem_id = args.learning_problem
-    output_file = args.result_output_file
+    cfg = read_config(args.config_file)
+
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    output_file = cfg['output']
     _log.debug('Running learning task %s with learning problem %s' % (
         learning_task_id, learning_problem_id))
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    target_dir = tempfile.mkdtemp()
+    target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
-    copy_files_and_create_examples(learning_task_id,
-                                   learning_problem_id,
-                                   target_dir, file_name_base)
+    copy_files_and_create_examples(learning_task_id, learning_problem_id,
+                                   target_dir, file_name_base,
+                                   cfg['filename.neg'], cfg['filename.pos'])
 
     yap_executable = find_yap()
     gilps_script_path = find_gilps_script()
@@ -283,6 +286,5 @@ if __name__ == '__main__':
         for line in results:
             out.write(line + os.linesep)
 
-    _log.debug('TopLog run finished. Cleaning up.')
-    clean_up(target_dir)
-    _log.debug('Done. Results written to %s' % output_file)
+    _log.debug('TopLog run finished.')
+    _log.debug('Results written to %s' % output_file)
