@@ -9,14 +9,14 @@ except ImportError:
 
 import logging
 import os
-import shutil
 import subprocess
 import platform
-import tempfile
 import atexit
 import signal
 import ctypes
 libc = ctypes.CDLL("libc.so.6")
+
+
 def set_pdeathsig(sig = signal.SIGTERM):
     def callable():
         return libc.prctl(1, sig)
@@ -26,6 +26,7 @@ procs = []
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
+
 
 @atexit.register
 def kill_subprocesses(*args, **kwargs):
@@ -38,6 +39,7 @@ def kill_subprocesses(*args, **kwargs):
             pass
 
 signal.signal(signal.SIGTERM, kill_subprocesses)
+
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
@@ -108,12 +110,12 @@ def read_config(path):
 
 def copy_files_around(task_id, lp_id, target_dir, file_name_base, config):
     """Finds all the files necessary to run golem:
+    - ../../../learningtasks/<task_id>/prolog/data/golem/*.pl  # merged!
+                             --> <target_dir>/<file_name_base>.b
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
-                            --> <target_dir>/<file_name_base>.b
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                            --> <target_dir>/<file_name_base>.f
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-                            --> <target_dir>/<file_name_base>.n
+                             --> <target_dir>/<file_name_base>.b
+    - config['filename.pos'] --> <target_dir>/<file_name_base>.f
+    - config['filename.neg'] --> <target_dir>/<file_name_base>.n
     """
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -124,11 +126,16 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, config):
 
     # merge all kb files into one
     with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
+        # ../../../learningtasks/<task_id>/prolog/data/golem/*.pl
+        #                      --> <target_dir>/<file_name_base>.b
         if os.path.isdir(tool_specific_dir):
             for f_name in os.listdir(tool_specific_dir):
                 if f_name.endswith('.pl'):
                     subprocess.call(['cat', f_name], cwd=tool_specific_dir,
                                     stdout=out)
+
+        # ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+        #                     --> <target_dir>/<file_name_base>.b
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
@@ -140,10 +147,12 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, config):
             out.write(settings_pattern % (k, v))
             out.write(os.linesep)
 
+    # config['filename.pos'] --> <target_dir>/<file_name_base>.f
     pos_file_path = config['filename.pos']
     pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
     subprocess.call(['cp', pos_file_path, pos_target_file_path])
 
+    # config['filename.neg'] --> <target_dir>/<file_name_base>.n
     neg_file_path = config['filename.neg']
     neg_target_file = os.path.join(target_dir, file_name_base+'.n')
     subprocess.call(['cp', neg_file_path, neg_target_file])
@@ -174,10 +183,6 @@ def get_and_clean_results(results_dir, f_name_base):
                 result_lines.remove(line)
 
     return result_lines
-
-
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
 
 
 if __name__ == '__main__':
@@ -216,5 +221,4 @@ if __name__ == '__main__':
             out.write(line + os.linesep)
 
     _log.debug('Golem run finished. Cleaning up.')
-    #clean_up(target_dir)
     _log.debug('Done. Results written to %s' % output_file)
