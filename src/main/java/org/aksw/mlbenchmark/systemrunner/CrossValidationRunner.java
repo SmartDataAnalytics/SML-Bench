@@ -165,7 +165,7 @@ public class CrossValidationRunner {
 		ResultLoaderBase resultLoader = new ResultLoaderBase();
 		try {
 			resultLoader.loadResults(outputFileFile);
-			getResultset().setProperty(resultKey + "." + "raw", resultLoader.getResults());
+			getResultset().setProperty(resultKey + "." + "trainingRaw", resultLoader.getResults());
 		} catch (IOException e) {
 			logger.warn("learning system " + system + " result cannot be read: " + e.getMessage());
 			state = state.ERROR;
@@ -236,7 +236,7 @@ public class CrossValidationRunner {
 			Iterator<String> keys = result.getKeys();
 			while (keys.hasNext()) {
 				String key = keys.next();
-				getResultset().setProperty(resultKey + "." + "raw" + "." + key, result.getProperty(key));
+				getResultset().setProperty(resultKey + "." + "ValidationRaw" + "." + key, result.getProperty(key));
 			}
 		}
 		List<String> measures = parent.getConfig().getList(String.class, "measures", Arrays.asList("pred_acc"));

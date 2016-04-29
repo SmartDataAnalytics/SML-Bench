@@ -7,18 +7,19 @@ program_dir="$(pwd)"
 
 . ./common.sh
 
+add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
+add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'"'
+add_conf
+
 common_config
 
 add_conf
 add_conf acc.type '=' '"gen_fmeasure"'
-add_conf alg.type '=' '"celoe"'
-add_conf alg.writeSearchTree '=' false
-add_conf alg.maxExecutionTimeInSeconds '=' "$(($SMLB_MAXEXECUTIONTIME/2))"
 
 $dllearner_file "$conf" | tee "$tmpdir"/output.log
 #cp "$tmpdir"/output.log test.log
 # we only check the first result for the benchmark
-sed '0,/^solutions:/d' "$tmpdir"/output.log | grep '^1: ' \
-   | sed -e 's,^1: ,,' -e 's, ([^)]*)$,,' > "$result_output_file"
+grep '#EVAL#' "$tmpdir"/output.log \
+   | sed -e 's,^#EVAL# ,,' > "$result_output_file"
 
 #cat "$conf"
