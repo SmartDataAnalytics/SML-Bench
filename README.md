@@ -20,6 +20,11 @@ For Aleph:
 - aleph.pl in `learningsystems/aleph`
 - Python 2 as `python`
 
+For DL-Learner:
+- Version 1.3-SNAPSHOT or higher
+
 **Supported Tools & Adding your own Tool**
 
 An overview of the currently supported tools and a brief description of how to add additional tools is given [here](learningsystems/README.md).
+
+Quick intro for running the base framework is given in [Getting Started](GettingStarted.md) document.
