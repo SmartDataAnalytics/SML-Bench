@@ -280,14 +280,13 @@ if __name__ == '__main__':
     # add set(clause_evaluation, left_to_right) since this is the only
     # supported clause evaluation mode
     settings['clause_evaluation'] = 'left_to_right'
-    _log.debug('settings: %s' % settings)
+    # _log.debug('settings: %s' % settings)
 
     create_pl_script(yap_executable, gilps_script_path, target_dir,
                      file_name_base + '.pl', settings)
     script_path = os.path.join(target_dir, train_script_file_name)
 
     _log.debug('Runnig FuncLog')
-
     subprocess.check_call([script_path], cwd=target_dir)
 
     results = get_and_clean_results(target_dir)

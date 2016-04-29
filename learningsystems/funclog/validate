@@ -44,8 +44,7 @@ class NoGILPSScriptFound(Exception):
     """Raised when no GILPS script could be found"""
 
 
-def copy_files_around(task_id, lp_id, target_dir,
-                                       file_name_base):
+def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     """Finds all the files necessary to run FuncLog:
     - ../../../learningtasks/<task_id>/prolog/data/funclog/*.pl
                             --> <target_dir>/<file_name_base>.b
@@ -318,10 +317,10 @@ if __name__ == '__main__':
                                               pos_examples, neg_examples)
 
     with open(output_file_name, 'w') as f:
-        f.write('tp: ' + str(num_tp) + os.linesep +
-                'fp: ' + str(num_fp) + os.linesep +
-                'tn: ' + str(num_tn) + os.linesep +
-                'fn: ' + str(num_fn) + os.linesep)
+        f.write('tp: %i' % num_tp + os.linesep +
+                'fp: %i' % num_fp + os.linesep +
+                'tn: %i' % num_tn + os.linesep +
+                'fn: %i' % num_fn + os.linesep)
 
     _log.debug('FuncLog validation finished.')
     _log.debug('Results written to %s' % output_file_name)
