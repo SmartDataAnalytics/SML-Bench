@@ -84,7 +84,7 @@ def read_config(path):
     return settings
 
 
-def copy_files_around(task_id, lp_id, target_dir, file_name_base):
+def copy_files_around(task_id, lp_id, target_dir, file_name_base, config):
     """Finds all the files necessary to run golem:
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
@@ -118,15 +118,11 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
             out.write(settings_pattern % (k, v))
             out.write(os.linesep)
 
-    pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                 prolog_dir_name, lp_dir_name, lp_id,
-                                 pos_file_name)
+    pos_file_path = config['filename.pos']
     pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
     subprocess.call(['cp', pos_file_path, pos_target_file_path])
 
-    neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                prolog_dir_name, lp_dir_name, lp_id,
-                                neg_file_name)
+    neg_file_path = config['filename.neg']
     neg_target_file = os.path.join(target_dir, file_name_base+'.n')
     subprocess.call(['cp', neg_file_path, neg_target_file])
 
@@ -180,7 +176,7 @@ if __name__ == '__main__':
     _log.debug('Target dir is %s' % target_dir)
 
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
-                      file_name_base)
+                      file_name_base, cfg)
 
     golem_executable = find_golem()
     _log.debug('Runnig Golem')
