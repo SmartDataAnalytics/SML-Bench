@@ -1,7 +1,9 @@
 :- modeh(1,hepatitisb(+patient)).
 :- modeb(1,patient(+patient)).
 :- modeb(1,has_sex(+patient,-sex)).
+:- modeb(1,has_biopsy(+patient,-biopsy)).
 :- modeb(1,fibrosis_level(+biopsy,#int)).
+:- modeb(1,activity_level(+biopsy,#int)).
 :- modeb(1,screening(+screening)).
 :- modeb(1,glutamic_oxaloacetic_transaminase_level(+screening,#int)).
 :- modeb(1,glutamic_pyruvic_transaminase_level(+screening,#int)).
@@ -15,4 +17,3 @@
 :- modeb(1,total_protein_level(+screening,#int)).
 :- modeb(1,has_screening(+patient,-screening)).
 :- modeb(1,dur(+patient,#int)).
-:- modeb(1,has_biopsy(+patient,-biopsy)).
