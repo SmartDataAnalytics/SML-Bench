@@ -46,8 +46,6 @@ prolog_dir_name = 'prolog'
 data_dir_name = 'data'
 tool_specific_data_dir = 'golem'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 settings_pattern = '!- set(%s,%s).'
 config_file_name = 'golem.conf'
 output_file_name = 'results.txt'
@@ -108,14 +106,15 @@ def read_config(path):
     return settings
 
 
-def copy_files_around(task_id, lp_id, target_dir, file_name_base, config):
+def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos,
+                      file_neg):
     """Finds all the files necessary to run golem:
     - ../../../learningtasks/<task_id>/prolog/data/golem/*.pl  # merged!
                              --> <target_dir>/<file_name_base>.b
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                              --> <target_dir>/<file_name_base>.b
-    - config['filename.pos'] --> <target_dir>/<file_name_base>.f
-    - config['filename.neg'] --> <target_dir>/<file_name_base>.n
+    - file_pos               --> <target_dir>/<file_name_base>.f
+    - file_neg               --> <target_dir>/<file_name_base>.n
     """
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -147,15 +146,13 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, config):
             out.write(settings_pattern % (k, v))
             out.write(os.linesep)
 
-    # config['filename.pos'] --> <target_dir>/<file_name_base>.f
-    pos_file_path = config['filename.pos']
+    # file_pos --> <target_dir>/<file_name_base>.f
     pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
-    subprocess.call(['cp', pos_file_path, pos_target_file_path])
+    subprocess.call(['cp', file_pos, pos_target_file_path])
 
-    # config['filename.neg'] --> <target_dir>/<file_name_base>.n
-    neg_file_path = config['filename.neg']
+    # file_neg --> <target_dir>/<file_name_base>.n
     neg_target_file = os.path.join(target_dir, file_name_base+'.n')
-    subprocess.call(['cp', neg_file_path, neg_target_file])
+    subprocess.call(['cp', file_neg, neg_target_file])
 
     # Create the <file_name_base>.r results file
     # (just to avoid the Golem message [Cannot find <file_name_base>.r])
@@ -199,12 +196,12 @@ if __name__ == '__main__':
         learning_task_id, learning_problem_id))
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    file_name_base = 'data'
+    # file_name_base = 'data'
     target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
-                      file_name_base, cfg)
+                      file_name_base, cfg['filename.neg'], cfg['filename.pos'])
 
     golem_executable = find_golem()
     _log.debug('Runnig Golem')
@@ -220,5 +217,4 @@ if __name__ == '__main__':
         for line in results:
             out.write(line + os.linesep)
 
-    _log.debug('Golem run finished. Cleaning up.')
     _log.debug('Done. Results written to %s' % output_file)

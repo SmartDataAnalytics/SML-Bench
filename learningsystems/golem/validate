@@ -9,10 +9,8 @@ except ImportError:
 
 import logging
 import os
-import shutil
 import stat
 import subprocess
-import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
@@ -22,8 +20,6 @@ prolog_dir_name = 'prolog'
 tool_specific_data_dir = 'golem'
 data_dir_name = 'data'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 exec_file_name = 'golem'
 validation_file_template = """#!/usr/bin/env swipl
 
@@ -33,7 +29,6 @@ validation_file_template = """#!/usr/bin/env swipl
 
 main :-
         consult('%(file_b)s'),
-        consult('%(file_ex)s'),
         match,
         halt.
 main :-
@@ -47,10 +42,6 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
                             --> <target_dir>/<file_name_base>.b
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                            --> <target_dir>/<file_name_base>.f
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-                            --> <target_dir>/<file_name_base>.n
     """
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -70,18 +61,6 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
-
-    #pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-    #                             prolog_dir_name, lp_dir_name, lp_id,
-    #                             pos_file_name)
-    #pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
-    #subprocess.call(['cp', pos_file_path, pos_target_file_path])
-
-    #neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-    #                             prolog_dir_name, lp_dir_name, lp_id,
-    #                             neg_file_name)
-    #neg_target_file = os.path.join(target_dir, file_name_base+'.n')
-    #subprocess.call(['cp', neg_file_path, neg_target_file])
 
 
 def read_examples(file_path):
@@ -213,8 +192,8 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
 
         content = validation_file_template % {
             'match': '\n'.join(match_lines),
-            'file_b': file_name_base + '.b',
-            'file_ex': file_name_base + exmpl_file_suffix}
+            'file_b': file_name_base + '.b'
+        }
 
         validate_file_path = os.path.join(results_dir, 'validate.pl')
 
@@ -237,9 +216,9 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
                 raise e
 
 
-def validate(results, res_dir, file_name_base):
-    pos_examples = read_examples(os.path.join(res_dir, file_name_base + '.f'))
-    neg_examples = read_examples(os.path.join(res_dir, file_name_base + '.n'))
+def validate(results, res_dir, file_pos, file_neg):
+    pos_examples = read_examples(file_pos)
+    neg_examples = read_examples(file_neg)
 
     rule_dicts = build_rule_dicts(results)
     fp = pos_examples[:]
@@ -254,9 +233,6 @@ def validate(results, res_dir, file_name_base):
 
     return len(tp), len(fp), len(tn), len(fn)
 
-
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
 
 def read_config(path):
     conf = configparser.ConfigParser()
@@ -277,12 +253,14 @@ def read_config(path):
 
     return settings
 
+
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument('config_file')
     args = argparser.parse_args()
 
     cfg = read_config(args.config_file)
+
     learning_task_id = cfg['learningtask']
     learning_problem_id = cfg['learningproblem']
     input_file = cfg['input']
@@ -296,7 +274,6 @@ if __name__ == '__main__':
             results.append(line.strip())
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    file_name_base = 'data'
     target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
@@ -304,13 +281,13 @@ if __name__ == '__main__':
                       file_name_base)
 
     num_tp, num_fp, num_tn, num_fn = validate(results, target_dir,
-                                              file_name_base)
+                                              cfg['filename.pos'],
+                                              cfg['filename.neg'])
     with open(output_file_name, 'w') as f:
-        f.write('tp: ' + str(num_tp) + os.linesep +
-                'fp: ' + str(num_fp) + os.linesep +
-                'tn: ' + str(num_tn) + os.linesep +
-                'fn: ' + str(num_fn) + os.linesep)
+        f.write('tp: %i' % num_tp + os.linesep +
+                'fp: %i' % num_fp + os.linesep +
+                'tn: %i' % num_tn + os.linesep +
+                'fn: %i' % num_fn + os.linesep)
 
-    _log.debug('Golem validation finished. Cleaning up.')
-    #clean_up(target_dir)
-    _log.debug('Done. Results written to %s' % output_file_name)
+    _log.debug('Golem validation finished.')
+    _log.debug('Results written to %s' % output_file_name)
