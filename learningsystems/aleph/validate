@@ -22,8 +22,6 @@ prolog_dir_name = 'prolog'
 tool_specific_data_dir = 'aleph'
 data_dir_name = 'data'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 yap_executable_name = 'yap'
 validation_file_template = """#!%(yap)s -L --
 
@@ -54,10 +52,6 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
                             --> <target_dir>/<file_name_base>.b
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                            --> <target_dir>/<file_name_base>.f
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-                            --> <target_dir>/<file_name_base>.n
     """
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -79,18 +73,6 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
-
-    pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                 prolog_dir_name, lp_dir_name, lp_id,
-                                 pos_file_name)
-    pos_target_file_path = os.path.join(target_dir, file_name_base+'.f')
-    subprocess.call(['cp', pos_file_path, pos_target_file_path])
-
-    neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                 prolog_dir_name, lp_dir_name, lp_id,
-                                 neg_file_name)
-    neg_target_file = os.path.join(target_dir, file_name_base+'.n')
-    subprocess.call(['cp', neg_file_path, neg_target_file])
 
 
 def read_examples(file_path):
@@ -265,9 +247,9 @@ def find_yap():
         return yap_exec_path
 
 
-def validate(results, res_dir, file_name_base):
-    pos_examples = read_examples(os.path.join(res_dir, file_name_base + '.f'))
-    neg_examples = read_examples(os.path.join(res_dir, file_name_base + '.n'))
+def validate(results, res_dir, file_pos, file_neg):
+    pos_examples = read_examples(file_pos)
+    neg_examples = read_examples(file_neg)
     yap = find_yap()
 
     rule_dicts = build_rule_dicts(results)
@@ -331,12 +313,13 @@ if __name__ == '__main__':
                       file_name_base)
 
     num_tp, num_fp, num_tn, num_fn = validate(results, target_dir,
-                                              file_name_base)
+                                              cfg['filename.pos'],
+                                              cfg['filename.neg'])
     with open(output_file_name, 'w') as f:
-        f.write('tp: ' + str(num_tp) + os.linesep +
-                'fp: ' + str(num_fp) + os.linesep +
-                'tn: ' + str(num_tn) + os.linesep +
-                'fn: ' + str(num_fn) + os.linesep)
+        f.write('tp: %i' % num_tp + os.linesep +
+                'fp: %i' % num_fp + os.linesep +
+                'tn: %i' % num_tn + os.linesep +
+                'fn: %i' % num_fn + os.linesep)
 
     _log.debug('Aleph validation finished.')
     _log.debug('Results written to %s' % output_file_name)
