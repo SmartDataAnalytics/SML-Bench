@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 
 import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
 import logging
 import os
-import shutil
 import stat
 import subprocess
-import tempfile
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
@@ -16,8 +20,6 @@ prolog_dir_name = 'prolog'
 tool_specific_data_dir = 'progolem'
 data_dir_name = 'data'
 lp_dir_name = 'lp'
-pos_file_name = 'pos.pl'
-neg_file_name = 'neg.pl'
 yap_executable_name = 'yap'
 validation_file_template = """#!%(yap)s -L --
 
@@ -42,17 +44,12 @@ class NoGILPSScriptFound(Exception):
     """Raised when no GILPS script could be found"""
 
 
-def copy_files_around_and_get_examples(task_id, lp_id, target_dir,
-                                       file_name_base):
+def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     """Finds all the files necessary to run ProGolem:
-    - ../../../learningtasks/<task_id>/prolog/data/progolem
+    - ../../../learningtasks/<task_id>/prolog/data/progolem/*pl
                             --> <target_dir>/<file_name_base>.b
     - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/pos.pl
-                            --> <target_dir>/<file_name_base>.f
-    - ../../learningtasks/<task_id>/prolog/lp/<lp_id>/neg.pl
-                            --> <target_dir>/<file_name_base>.n
     """
     # <file_name_base>.b (background knowledge)
     data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
@@ -61,16 +58,10 @@ def copy_files_around_and_get_examples(task_id, lp_id, target_dir,
         '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
         data_dir_name, tool_specific_data_dir)
 
-    pos_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                 prolog_dir_name, lp_dir_name, lp_id,
-                                 pos_file_name)
-
-    neg_file_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                                 prolog_dir_name, lp_dir_name, lp_id,
-                                 neg_file_name)
-
     # merge all kb and example files into one
     with open(os.path.join(target_dir, file_name_base+'.pl'), 'w') as out:
+        # ../../../learningtasks/<task_id>/prolog/data/progolem/*pl
+        #                    --> <target_dir>/<file_name_base>.b
         if os.path.isdir(tool_specific_dir):
             for f_name in os.listdir(tool_specific_dir):
                 if f_name.endswith('.pl'):
@@ -79,16 +70,13 @@ def copy_files_around_and_get_examples(task_id, lp_id, target_dir,
                     subprocess.call(['cat', f_name], cwd=tool_specific_dir,
                                     stdout=out)
 
+        # ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+        #                    --> <target_dir>/<file_name_base>.b
         for f_name in os.listdir(data_dir):
             if f_name.endswith('.pl'):
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
 
-        subprocess.call(['cat', pos_file_path], stdout=out)
-
-    pos_examples = read_examples(pos_file_path)
-    neg_examples = read_examples(neg_file_path)
-
-    return pos_examples, neg_examples
+    return
 
 
 def read_examples(file_path):
@@ -278,22 +266,37 @@ def validate(results, res_dir, pos_examples, neg_examples):
     return len(tp), len(fp), len(tn), len(fn)
 
 
-def clean_up(tmp_dir):
-    shutil.rmtree(tmp_dir)
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.'+setting] = raw_value
+
+    return settings
 
 
 if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('learning_task')
-    argparser.add_argument('learning_problem')
-    argparser.add_argument('result_input_file')
-    argparser.add_argument('validation_output_file')
+    argparser.add_argument('config_file')
     args = argparser.parse_args()
 
-    learning_task_id = args.learning_task
-    learning_problem_id = args.learning_problem
-    input_file = args.result_input_file
-    output_file_name = args.validation_output_file
+    cfg = read_config(args.config_file)
+
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    input_file = cfg['input']
+    output_file_name = cfg['output']
     _log.debug('Validating solution learning task %s with learning '
                'problem %s' % (learning_task_id, learning_problem_id))
 
@@ -303,21 +306,22 @@ if __name__ == '__main__':
             results.append(line.strip())
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    target_dir = tempfile.mkdtemp()
+    target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
-    pos_examples, neg_examples = copy_files_around_and_get_examples(
-        learning_task_id, learning_problem_id, target_dir, file_name_base)
+    pos_examples = read_examples(cfg['filename.pos'])
+    neg_examples = read_examples(cfg['filename.neg'])
+    copy_files_around(learning_task_id, learning_problem_id, target_dir,
+                      file_name_base)
 
-    num_tp, num_fp, num_tn, num_fn = validate(
-        results, target_dir, pos_examples, neg_examples)
+    num_tp, num_fp, num_tn, num_fn = validate(results, target_dir,
+                                              pos_examples, neg_examples)
 
     with open(output_file_name, 'w') as f:
-        f.write('tp: ' + str(num_tp) + os.linesep +
-                'fp: ' + str(num_fp) + os.linesep +
-                'tn: ' + str(num_tn) + os.linesep +
-                'fn: ' + str(num_fn) + os.linesep)
+        f.write('tp: %i' % num_tp + os.linesep +
+                'fp: %i' % num_fp + os.linesep +
+                'tn: %i' % num_tn + os.linesep +
+                'fn: %i' % num_fn + os.linesep)
 
-    _log.debug('ProGolem validation finished. Cleaning up.')
-    clean_up(target_dir)
-    _log.debug('Done. Results written to %s' % output_file_name)
+    _log.debug('ProGolem validation finished.')
+    _log.debug('Results written to %s' % output_file_name)
