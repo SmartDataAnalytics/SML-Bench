@@ -13,7 +13,7 @@ add_conf
 add_conf acc.type '=' '"gen_fmeasure"'
 add_conf alg.type '=' '"celoe"'
 add_conf alg.writeSearchTree '=' false
-add_conf alg.maxExecutionTimeInSeconds '=' "$(($SMLB_MAXEXECUTIONTIME-15))"
+add_conf alg.maxExecutionTimeInSeconds '=' "$(($SMLB_MAXEXECUTIONTIME-10))"
 
 $dllearner_file "$conf" | tee "$tmpdir"/output.log
 #cp "$tmpdir"/output.log test.log

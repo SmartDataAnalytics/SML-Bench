@@ -9,6 +9,7 @@ except ImportError:
 
 import logging
 import os
+import platform
 import stat
 import subprocess
 
@@ -57,6 +58,14 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base):
     tool_specific_dir = os.path.join(
         '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
         data_dir_name, tool_specific_data_dir)
+
+    # install yap startup.yss if present
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            'startup.yss')
+    if os.path.isfile(gen_path):
+        # yap startup file resides in the same directory
+        subprocess.call(['cp', gen_path, os.path.join(target_dir, 'startup.yss')])
 
     # merge all kb and example files into one
     with open(os.path.join(target_dir, file_name_base+'.pl'), 'w') as out:
@@ -231,9 +240,13 @@ def build_rule_dicts(results):
 
 
 def find_yap():
-    if os.path.isfile(os.path.join(os.getcwd(), yap_executable_name)):
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            yap_executable_name)
+
+    if os.path.isfile(gen_path):
         # yap executable resides in the same directory
-        return os.path.join(os.getcwd(), yap_executable_name)
+        return gen_path
 
     else:
         yap_exec_path = subprocess.check_output(['which', yap_executable_name])
