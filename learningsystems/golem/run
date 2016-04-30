@@ -217,4 +217,5 @@ if __name__ == '__main__':
         for line in results:
             out.write(line + os.linesep)
 
-    _log.debug('Done. Results written to %s' % output_file)
+    _log.debug('Golem run finished.')
+    _log.debug('Results written to %s' % output_file)
