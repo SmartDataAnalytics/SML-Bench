@@ -253,15 +253,15 @@ def validate(results, res_dir, pos_examples, neg_examples):
     yap = find_yap()
 
     rule_dicts = build_rule_dicts(results)
-    fp = pos_examples[:]
-    fn = []
+    fp = []
+    fn = pos_examples[:]
     tn = neg_examples[:]
     tp = []
 
     create_and_run_validation_script(
-        rule_dicts, pos_examples, tp, fp, res_dir, '.f', yap)
+        rule_dicts, pos_examples, tp, fn, res_dir, '.f', yap)
     create_and_run_validation_script(
-        rule_dicts, neg_examples, fn, tn, res_dir, '.n', yap)
+        rule_dicts, neg_examples, fp, tn, res_dir, '.n', yap)
 
     return len(tp), len(fp), len(tn), len(fn)
 
