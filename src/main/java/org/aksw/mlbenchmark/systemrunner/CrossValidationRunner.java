@@ -139,7 +139,7 @@ public class CrossValidationRunner {
 		final long now = System.nanoTime();
 		State state = State.RUNNING;
 		try {
-			ProcessRunner processRunner = new ProcessRunner(parent.getLearningSystemDir(system), "./run", args, cc, cc.getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime));
+			ProcessRunner processRunner = new ProcessRunner(parent.getLearningSystemDir(system), "./run", args, cc, parent.getConfig().getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime));
 			state = State.OK;
 		} catch (ExecuteException e) {
 			if (e.getExitValue() == 143) {
