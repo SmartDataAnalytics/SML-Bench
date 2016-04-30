@@ -10,6 +10,11 @@ program_dir="$(pwd)"
 if [ -z "$SMLB_LOADINGTIME" ]; then
     SMLB_LOADINGTIME=10
 fi
+if [ -n "$SMLB_TOOL_MAXEXECUTIONTIME" ]; then
+    maxExecutionTime="$SMLB_TOOL_MAXEXECUTIONTIME"
+else
+    maxExecutionTime="$(($SMLB_MAXEXECUTIONTIME-$SMLB_LOADINGTIME))"
+fi
 
 common_config
 
@@ -18,7 +23,7 @@ add_conf acc.type '=' '"gen_fmeasure"'
 add_conf alg.type '=' '"celoe"'
 add_conf alg.writeSearchTree '=' false
 
-add_conf alg.maxExecutionTimeInSeconds '=' "$(($SMLB_MAXEXECUTIONTIME-$SMLB_LOADINGTIME))"
+add_conf alg.maxExecutionTimeInSeconds '=' "$maxExecutionTime"
 
 $dllearner_file "$conf" | tee "$tmpdir"/output.log
 #cp "$tmpdir"/output.log test.log

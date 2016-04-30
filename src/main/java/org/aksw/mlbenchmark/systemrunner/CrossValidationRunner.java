@@ -332,6 +332,7 @@ public class CrossValidationRunner {
 		}
 		cc.addConfiguration(scnRuntimeConfig);
 		cc.addConfiguration(lsi.getConfig());
+		cc.addConfiguration(parent.getConfig());
 		BaseConfiguration defaultConfig = new BaseConfiguration();
 		defaultConfig.setProperty("maxExecutionTime", (long)(cc.getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime)*0.86));
 		cc.addConfiguration(defaultConfig);
