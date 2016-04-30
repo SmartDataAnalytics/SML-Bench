@@ -12,10 +12,46 @@ import os
 import stat
 import subprocess
 import platform
+import atexit
+import signal
+import ctypes
+libc = ctypes.CDLL("libc.so.6")
 
+
+def set_pdeathsig(sig = signal.SIGTERM):
+    def callable():
+        return libc.prctl(1, sig)
+    return callable
+
+procs = []
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
+
+@atexit.register
+def kill_subprocesses(*args, **kwargs):
+    for proc in procs:
+        if proc.returncode == None:
+            _log.debug('killing %s at exit', proc)
+        try:
+            proc.kill()
+            proc.terminate()
+        except:
+            pass
+
+def sig_term(*args, **kwargs):
+#    kill_subprocesses()
+    sys.exit(signal.SIGTERM | 0x80)
+
+signal.signal(signal.SIGTERM, sig_term)
+
+def check_call_and_terminate(*args, **kwargs):
+    pp = subprocess.Popen(*args, **kwargs)
+    procs.append(pp)
+    retcode = pp.wait()
+    if retcode:
+        raise subprocess.CalledProcessError(retcode, args[0])
+    return retcode
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
@@ -262,7 +298,7 @@ if __name__ == '__main__':
     script_path = os.path.join(target_dir, train_script_file_name)
 
     _log.debug('Running Aleph')
-    subprocess.check_call([script_path], cwd=target_dir)
+    check_call_and_terminate([script_path], cwd=target_dir)
 
     results = get_and_clean_results(target_dir)
 

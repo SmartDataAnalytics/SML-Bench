@@ -10,10 +10,49 @@ except ImportError:
 import logging
 import os
 import subprocess
+import sys
+import atexit
+import signal
+import ctypes
+libc = ctypes.CDLL("libc.so.6")
+
+
+def set_pdeathsig(sig = signal.SIGTERM):
+    def callable():
+        return libc.prctl(1, sig)
+    return callable
+
+procs = []
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
 
+
+@atexit.register
+def kill_subprocesses(*args, **kwargs):
+    for proc in procs:
+        if proc.returncode == None:
+            _log.debug('killing %s at exit', proc)
+        try:
+            proc.kill()
+            proc.terminate()
+        except:
+            pass
+
+def sig_term(*args, **kwargs):
+#    kill_subprocesses()
+    sys.exit(signal.SIGTERM | 0x80)
+
+signal.signal(signal.SIGTERM, sig_term)
+
+def check_output_and_terminate(*args, **kwargs):
+    pp = subprocess.Popen(stdout=subprocess.PIPE, *args, **kwargs)
+    procs.append(pp)
+    output, unused_err = pp.communicate()
+    retcode = pp.poll()
+    if retcode:
+        raise subprocess.CalledProcessError(retcode, args[0], output=output)
+    return output
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
@@ -280,7 +319,7 @@ if __name__ == '__main__':
     progol_executable = find_progol()
 
     try:
-        output = subprocess.check_output([progol_executable, file_name_base],
+        output = check_output_and_terminate([progol_executable, file_name_base],
                                          cwd=target_dir)
     except subprocess.CalledProcessError as e:
         # since Progol returns 1 instead of 0 the above call usually fails

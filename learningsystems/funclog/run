@@ -12,9 +12,49 @@ import os
 import stat
 import subprocess
 
+import platform
+import sys
+import atexit
+import signal
+import ctypes
+libc = ctypes.CDLL("libc.so.6")
+
+
+def set_pdeathsig(sig = signal.SIGTERM):
+    def callable():
+        return libc.prctl(1, sig)
+    return callable
+
+procs = []
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
+
+
+@atexit.register
+def kill_subprocesses(*args, **kwargs):
+    for proc in procs:
+        if proc.returncode == None:
+            _log.debug('killing %s at exit', proc)
+        try:
+            proc.kill()
+            proc.terminate()
+        except:
+            pass
+
+def sig_term(*args, **kwargs):
+#    kill_subprocesses()
+    sys.exit(signal.SIGTERM | 0x80)
+
+signal.signal(signal.SIGTERM, sig_term)
+
+def check_call_and_terminate(*args, **kwargs):
+    pp = subprocess.Popen(*args, **kwargs)
+    procs.append(pp)
+    retcode = pp.wait()
+    if retcode:
+        raise subprocess.CalledProcessError(retcode, args[0])
+    return retcode
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
@@ -68,6 +108,14 @@ def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base,
     - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
                             --> <target_dir>/<file_name_base>.b
     """
+    # install yap startup.yss if present
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            'startup.yss')
+    if os.path.isfile(gen_path):
+        # yap startup file resides in the same directory
+        subprocess.call(['cp', gen_path, os.path.join(target_dir, 'startup.yss')])
+
     with open(os.path.join(target_dir, file_name_base+'.pl'), 'w') as out:
 
         # ../../learningtasks/<task_id>/prolog/data/funclog/*.pl  # merged!
@@ -113,11 +161,13 @@ def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base,
 
 
 def find_yap():
-    yap_path = os.path.join(os.getcwd(), yap_executable_name)
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            yap_executable_name)
 
-    if os.path.isfile(yap_path):
+    if os.path.isfile(gen_path):
         # yap executable resides in the same directory
-        return yap_path
+        return gen_path
 
     else:
         yap_exec_path = subprocess.check_output(['which', yap_executable_name])
@@ -287,7 +337,7 @@ if __name__ == '__main__':
     script_path = os.path.join(target_dir, train_script_file_name)
 
     _log.debug('Runnig FuncLog')
-    subprocess.check_call([script_path], cwd=target_dir)
+    check_call_and_terminate([script_path], cwd=target_dir)
 
     results = get_and_clean_results(target_dir)
 

@@ -1,0 +1,9 @@
+active(cpd0).
+active(cpd1).
+active(cpd2).
+active(cpd3).
+active(cpd5).
+active(cpd6).
+active(cpd13).
+active(cpd15).
+active(cpd16).

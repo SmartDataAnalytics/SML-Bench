@@ -28,3 +28,6 @@ learningsystems/aleph/aleph.pl
 learningsystems/dllearner/dllearner-*/
 learningsystems/golem/Linux-x86_64/
 sml-temp*
+learningsystems/progolem/source/*
+learningsystems/dllearner/log
+learningsystems/progol/progol
