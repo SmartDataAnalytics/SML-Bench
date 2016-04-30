@@ -9,6 +9,7 @@ except ImportError:
 
 import logging
 import os
+import sys
 import stat
 import subprocess
 import platform
