@@ -1,0 +1,148 @@
+#!/usr/bin/env python
+
+import argparse
+import sys
+import os
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
+from sklearn.cross_validation import train_test_split
+from sklearn.datasets import load_svmlight_file
+from sklearn.externals import joblib
+from sklearn import svm
+
+learning_tasks_dir_name = 'learningtasks'
+owl_dir_name = 'owl'
+owl_file_format = 'owl'
+data_dir_name = 'data'
+tool_specific_data_dir = 'graphshingling'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.txt'
+neg_file_name = 'neg.txt'
+config_file_name = tool_specific_data_dir + '.conf'
+output_file_name = 'model'
+source_config_file_name = 'graphshingling.conf'
+
+def find_tool_location():
+    conf = configparser.ConfigParser()
+    conf.read(source_config_file_name)
+    return conf.get('main', 'source_path')
+
+def find_files(task_id, lp_id):
+    '''Finds all the files necessary to run graphshingling:
+    - ../../<learning_tasks_dir_name>/<task_id>/<owl_dir_name>/<data_dir_name>/<task_id>.<owl_file_format>
+    - ../../<learning_tasks_dir_name>/<task_id>/<owl_dir_name>/<lp_dir_name>/<lp_id>/<pos_file_name>
+    - ../../<learning_tasks_dir_name>/<task_id>/<owl_dir_name>/<lp_dir_name>/<lp_id>/<neg_file_name>
+    '''
+    task_path = "../../{0}/{1}/{2}/".format(learning_tasks_dir_name, task_id, owl_dir_name)
+    lp_path = task_path + "{0}/{1}/".format(lp_dir_name, lp_id)
+    
+    data_file = task_path + "{0}/{1}.{2}".format(data_dir_name, task_id, owl_file_format)
+    pos_file = lp_path + pos_file_name
+    neg_file = lp_path + neg_file_name
+    
+    # create temp dir
+    temp_dir = "temp/{0}/{1}/".format(task_id, lp_id)
+    if not os.path.exists(temp_dir):
+        os.makedirs(temp_dir)
+    
+    return ([data_file], pos_file, neg_file, temp_dir)
+
+def check_shingling_state(temp_dir, wl_iterations, window_size):
+    '''Check if the feature vectors have already been calculated for the same
+    parameter setting. If yes, we do not calculate them again.
+    '''
+    shingling_state_file = temp_dir + "shingling_state"
+    
+    if os.path.exists(shingling_state_file):
+        with open(shingling_state_file) as sh_f:
+            state_wl_iter = -1
+            state_window_size = -1
+            line = sh_f.readline()
+            if line:
+                state_wl_iter = int(line[:-1].split("=")[1])
+            line = sh_f.readline()
+            if line:
+                state_window_size = int(line[:-1].split("=")[1])
+            if state_wl_iter == wl_iterations and state_window_size == window_size:
+                # do not calculate feature vectors again
+                return False
+    
+    with open(shingling_state_file, "w") as sh_f:
+        sh_f.write("wl_iterations={0}\n".format(wl_iterations))
+        sh_f.write("window_size={0}\n".format(window_size))
+        
+    return True
+
+def load_config(task_id, lp_id):
+    config_file_path = os.path.join('..', '..', learning_tasks_dir_name,
+                                    task_id, owl_dir_name,
+                                    lp_dir_name, lp_id, config_file_name)
+
+    if not os.path.isfile(config_file_path):
+        return {}
+
+    conf = configparser.ConfigParser()
+    conf.read(config_file_path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    return settings
+
+def svm_rbf_train(input_data_file, output_model_file, gamma, cost, data_split_random_seed):
+    X, y = load_svmlight_file(input_data_file)
+    # TODO: the data split should be done outside of this file
+    # split data into training and validation subsets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=data_split_random_seed)
+    clf = svm.SVC(C=cost, gamma=gamma)
+    clf.fit(X_train, y_train)
+    joblib.dump(clf, output_model_file, compress=True)
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_output_file')
+    args = argparser.parse_args()
+    
+    learning_task = args.learning_task
+    learning_problem = args.learning_problem
+    result_output_file = args.result_output_file
+    
+    # config
+    settings = load_config(learning_task, learning_problem)
+    wl_iterations = int(settings["wl_iterations"])
+    window_size = int(settings["window_size"])
+    gamma = float(settings["gamma"])
+    cost = float(settings["cost"])
+    # TODO: this will not be needed in future when the validation set will be defined from outside
+    data_split_random_seed = int(settings["data_split_random_seed"])
+    
+    # find task files
+    in_files, pos_file, neg_file, temp_dir = find_files(learning_task, learning_problem)
+    
+    need_to_compute_shingles = check_shingling_state(temp_dir, wl_iterations, window_size)
+    
+    svm_data_file = temp_dir + "svm_in_data"
+    
+    # extract features
+    if need_to_compute_shingles:
+        print "Building feature vectors..."
+        tool_location = find_tool_location()
+        sys.path.insert(0, tool_location)
+        from ivanov.graph import dataset_manager
+        dataset_manager.build_sml_bench_vectors_from_rdf_chemical_data(in_files, wl_iterations,
+                        svm_data_file, pos_file, neg_file, window_size=window_size)
+    else:
+        print "Feature vectors for wl_iterations={0} and window_size={1} already built.".format(wl_iterations, window_size)
+    
+    # train SVM
+    svm_rbf_train(svm_data_file, result_output_file, gamma, cost, data_split_random_seed)
+    
+    print "Result saved to file `{0}`.".format(result_output_file)

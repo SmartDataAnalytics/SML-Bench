@@ -1,0 +1,112 @@
+#!/usr/bin/env python
+
+import argparse
+import os
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
+from sklearn.cross_validation import train_test_split
+from sklearn.datasets import load_svmlight_file
+from sklearn.metrics import confusion_matrix
+from sklearn.externals import joblib
+from sklearn import svm
+
+learning_tasks_dir_name = 'learningtasks'
+owl_dir_name = 'owl'
+owl_file_format = 'owl'
+data_dir_name = 'data'
+tool_specific_data_dir = 'graphshingling'
+lp_dir_name = 'lp'
+pos_file_name = 'pos.txt'
+neg_file_name = 'neg.txt'
+config_file_name = tool_specific_data_dir + '.conf'
+output_file_name = 'model'
+
+def load_config(task_id, lp_id):
+    config_file_path = os.path.join('..', '..', learning_tasks_dir_name,
+                                    task_id, owl_dir_name,
+                                    lp_dir_name, lp_id, config_file_name)
+
+    if not os.path.isfile(config_file_path):
+        return {}
+
+    conf = configparser.ConfigParser()
+    conf.read(config_file_path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    return settings
+
+def check_feature_vectors(temp_dir, wl_iterations, window_size):
+    '''Check if the feature vectors have already been calculated for the same
+    parameter setting. If no, validation is not possible.
+    '''
+    shingling_state_file = temp_dir + "shingling_state"
+    
+    if os.path.exists(shingling_state_file):
+        with open(shingling_state_file) as sh_f:
+            state_wl_iter = int(sh_f.readline()[:-1].split("=")[1])
+            state_window_size = int(sh_f.readline()[:-1].split("=")[1])
+            if state_wl_iter == wl_iterations and state_window_size == window_size:
+                # we can continue with validation
+                return True
+    
+    print "Could not validate for parameters wl_iterations={0} and window_size={1}. Please, execute `run` first.".format(wl_iterations, window_size)
+    
+    return False
+
+def svm_rbf_predict(input_data_file, result_input_file, validation_output_file, data_split_random_seed):
+    X, y = load_svmlight_file(input_data_file)
+    # TODO: the data split should be done outside of this file
+    # split data into training and validation subsets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=data_split_random_seed)
+    clf = joblib.load(result_input_file)
+    y_pred = clf.predict(X_test)
+    cm = confusion_matrix(y_test, y_pred)
+    tp = cm[0][0]
+    fp = cm[0][1]
+    fn = cm[1][0]
+    tn = cm[1][1]
+    
+    # save validation results
+    with open(validation_output_file, "w") as val_f:
+        val_f.write("tp: {0}\n".format(tp))
+        val_f.write("fp: {0}\n".format(fp))
+        val_f.write("tn: {0}\n".format(tn))
+        val_f.write("fn: {0}\n".format(fn))
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('learning_task')
+    argparser.add_argument('learning_problem')
+    argparser.add_argument('result_input_file')
+    argparser.add_argument('validation_output_file')
+    args = argparser.parse_args()
+    
+    learning_task = args.learning_task
+    learning_problem = args.learning_problem
+    result_input_file = args.result_input_file
+    validation_output_file = args.validation_output_file
+    
+    # config
+    settings = load_config(learning_task, learning_problem)
+    wl_iterations = int(settings["wl_iterations"])
+    window_size = int(settings["window_size"])
+    # TODO: this will not be needed in future when the validation set will be defined from outside
+    data_split_random_seed = int(settings["data_split_random_seed"])
+    
+    temp_dir = "temp/{0}/{1}/".format(learning_task, learning_problem)
+    can_proceed = check_feature_vectors(temp_dir, wl_iterations, window_size)
+    
+    svm_data_file = temp_dir + "svm_in_data"
+    
+    if can_proceed:
+        # SVM predict
+        svm_rbf_predict(svm_data_file, result_input_file, validation_output_file, data_split_random_seed)
+        print "Validation results saved to file `{0}`.".format(validation_output_file)
