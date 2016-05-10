@@ -1,0 +1,29 @@
+@prefix : <http://sml-bench.aksw.org/datasets/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mexc: <http://mex.aksw.org/mex-core#> .
+@prefix sbo: <http://sml-bench.aksw.org/ont#> .
+
+:hepatitis_pl
+    a
+        void:Dataset ,
+        mexc:Dataset ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sbo:expressedInKRLanguage ;
+            owl:someValuesFrom sbo:Prolog
+        ] ;
+    dcterms:title "Hepatitis" ;
+    dcterms:description "Dataset for prediction of the Hepatitis type based on patient data" ;
+    dcterms:source <https://relational.fit.cvut.cz/dataset/Hepatitis> ;
+    dcterms:issued "2016-04-30"^^xsd:date ;
+    dcterms:subject <http://dbpedia.org/page/Hepatitis> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Hepatitis> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Inflammations> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Healthcare-associated_infections> ;
+    dcat:byteSize "3030956"^^xsd:decimal ;
+    owl:versionInfo "0.1"^^xsd:string .
+
