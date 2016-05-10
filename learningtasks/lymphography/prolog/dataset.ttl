@@ -1,0 +1,28 @@
+@prefix : <http://sml-bench.aksw.org/datasets/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mexc: <http://mex.aksw.org/mex-core#> .
+@prefix sbo: <http://sml-bench.aksw.org/ont#> .
+
+:lymphography_pl
+    a
+        void:Dataset ,
+        mexc:Dataset ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sbo:expressedInKRLanguage ;
+            owl:someValuesFrom sbo:Prolog
+        ] ;
+    dcterms:title "Lymphography" ;
+    dcterms:description "Dataset for prediction of a diagnosis class based on lymphography patient data" ;
+    dcterms:source <http://github.com/AKSW/DL-Learner> ;
+    dcterms:issued "2016-04-30"^^xsd:date ;
+    dcterms:subject <http://dbpedia.org/resource/Lymphography> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Projectional_radiography> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Lymphology> ;
+    dcat:byteSize "41169"^^xsd:decimal ;
+    owl:versionInfo "0.1"^^xsd:string .
+
