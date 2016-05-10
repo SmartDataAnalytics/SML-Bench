@@ -47,5 +47,7 @@ public class Benchmark {
 		} catch (IOException | ConfigurationException | ConfigLoaderException e) {
 			logger.error("Could not write results: " + e.getMessage());
 		}
+		runner.cleanTemp();
+
 	}
 }
