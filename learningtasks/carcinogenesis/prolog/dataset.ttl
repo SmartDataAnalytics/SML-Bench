@@ -1,0 +1,29 @@
+@prefix : <http://sml-bench.aksw.org/datasets/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mexc: <http://mex.aksw.org/mex-core#> .
+@prefix sbo: <http://sml-bench.aksw.org/ont#> .
+
+:carcinogenesis_pl
+    a
+        void:Dataset ,
+        mexc:Dataset ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sbo:expressedInKRLanguage ;
+            owl:someValuesFrom sbo:Prolog
+        ] ;
+    dcterms:title "Carcinogenesis" ;
+    dcterms:description "Dataset for predicting carcinogenic drugs";
+    dcterms:source <http://github.com/AKSW/DL-Learner> ;
+    dcterms:issued "2016-04-20"^^xsd:date ;
+    dcterms:subject <http://dbpedia.org/resource/Carcinogenesis> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Carcinogenesis> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Carcinogens> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Radiation_health_effects> ;
+    dcat:byteSize "798316"^^xsd:decimal ;
+    owl:versionInfo "0.1"^^xsd:string.
+
