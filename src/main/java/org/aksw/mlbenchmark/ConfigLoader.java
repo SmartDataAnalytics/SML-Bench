@@ -32,6 +32,7 @@ public class ConfigLoader {
 	static final Logger logger = LoggerFactory.getLogger(ConfigLoader.class);
 	private final String filename;
 	private HierarchicalConfiguration<ImmutableNode> config;
+	private boolean loadLogInfo;
 
 	public ConfigLoader(String filename) {
 		this.filename = filename;
@@ -52,6 +53,11 @@ public class ConfigLoader {
 			}
 		}
 		return null;
+	}
+
+	public final ConfigLoader loadWithInfo() throws ConfigLoaderException {
+		loadLogInfo = true;
+		return load();
 	}
 
 	public final ConfigLoader load() throws ConfigLoaderException {
@@ -151,7 +157,11 @@ public class ConfigLoader {
 		try
 		{
 			T config2 = builder.getConfiguration();
-			logger.info("Loaded config file " + builder.getFileHandler().getPath());
+			if (loadLogInfo) {
+				logger.info("Loaded config file " + builder.getFileHandler().getPath());
+			} else if (logger.isDebugEnabled()) {
+				logger.debug("Loaded config file (internal) " + builder.getFileHandler().getPath());
+			}
 			return config2;
 		}
 		catch(ConfigurationException cex)

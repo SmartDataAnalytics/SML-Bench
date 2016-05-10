@@ -37,6 +37,8 @@ framework.crossValidationFolds = 5
   - default: 35 seconds
 - `resultOutput`: filename wheree to store the result of the benchmark run
   - default: config file name + `.result`
+- `deleteWorkDir`: if the temporary directory with all the intermediate outputs should be automatically removed after clean SML-Bench exit
+  - default: false
 
 ##### Learning system config file
 

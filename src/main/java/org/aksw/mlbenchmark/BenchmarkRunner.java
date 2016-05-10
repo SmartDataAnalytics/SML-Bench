@@ -6,6 +6,7 @@ import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
 import org.apache.commons.configuration2.plist.PropertyListConfiguration;
 import org.apache.commons.configuration2.tree.ImmutableNode;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.NotImplementedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -74,7 +75,7 @@ public class BenchmarkRunner {
 
 	public BenchmarkRunner(String configFilename) throws ConfigLoaderException {
 		// load the properties file
-		this(new ConfigLoader(configFilename).load().config());
+		this(new ConfigLoader(configFilename).loadWithInfo().config());
 	}
 
 	public ExecutorService getExecutorService() {
@@ -227,5 +228,19 @@ public class BenchmarkRunner {
 
 	public Configuration getResultset() {
 		return resultset;
+	}
+
+	public void cleanTemp() {
+		if (getConfig().getBoolean("deleteWorkDir", false)) {
+			Path tempDirectory = getTempDirectory();
+			if (tempDirectory != null) {
+				logger.debug("deleting working directory: " + tempDirectory);
+				try {
+					FileUtils.forceDeleteOnExit(tempDirectory.toFile());
+				} catch (IOException e) {
+					logger.debug("could not remove working directory: " + e.getMessage());
+				}
+			}
+		}
 	}
 }
