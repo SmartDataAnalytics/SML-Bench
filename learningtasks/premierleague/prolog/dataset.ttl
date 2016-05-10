@@ -1,0 +1,30 @@
+@prefix : <http://sml-bench.aksw.org/datasets/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mexc: <http://mex.aksw.org/mex-core#> .
+@prefix sbo: <http://sml-bench.aksw.org/ont#> .
+
+:premierleague_pl
+    a
+        void:Dataset ,
+        mexc:Dataset ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sbo:expressedInKRLanguage ;
+            owl:someValuesFrom sbo:Prolog
+        ] ;
+        dcterms:title "Premier League" ;
+        dcterms:description "Dataset for finding a predictive description of goal keepers based on player statistics in soccer matches" ;
+        dcterms:source <https://relational.fit.cvut.cz/dataset/PremiereLeague> ;
+        dcterms:issued "2016-04-25"^^xsd:date ;
+        dcterms:subject <http://dbpedia.org/resource/Premier_League> ;
+        dcterms:subject <http://dbpedia.org/resource/Category:Premier_League> ;
+        dcterms:subject <http://dbpedia.org/resource/Category:Football_leagues_in_England> ;
+        dcterms:subject <http://dbpedia.org/resource/Category:Professional_sports_leagues_in_the_United_Kingdom> ;
+        dcterms:subject <http://dbpedia.org/resource/Category:Top_level_football_leagues_in_Europe> ;
+        dcat:byteSize "83294400"^^xsd:decimal ;
+        owl:versionInfo "0.1"^^xsd:string .
+
