@@ -20,7 +20,7 @@
     dcterms:description "Dataset for prediction of the Hepatitis type based on patient data" ;
     dcterms:source <https://relational.fit.cvut.cz/dataset/Hepatitis> ;
     dcterms:issued "2016-04-30"^^xsd:date ;
-    dcterms:subject <http://dbpedia.org/page/Hepatitis> ;
+    dcterms:subject <http://dbpedia.org/resource/Hepatitis> ;
     dcterms:subject <http://dbpedia.org/resource/Category:Hepatitis> ;
     dcterms:subject <http://dbpedia.org/resource/Category:Inflammations> ;
     dcterms:subject <http://dbpedia.org/resource/Category:Healthcare-associated_infections> ;
