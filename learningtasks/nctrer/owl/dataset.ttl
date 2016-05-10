@@ -1,0 +1,28 @@
+@prefix : <http://sml-bench.aksw.org/datasets/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mexc: <http://mex.aksw.org/mex-core#> .
+@prefix sbo: <http://sml-bench.aksw.org/ont#> .
+
+:nctrer_owl
+    a
+        void:Dataset ,
+        mexc:Dataset ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sbo:expressedInKRLanguage ;
+            owl:someValuesFrom sbo:OWL
+        ] ;
+    dcterms:title "NCTRER" ;
+    dcterms:description "Dataset for prediction of a molecule's estrogen receptor binding activity" ;
+    dcterms:source <ftp://ftp.epa.gov/dsstoxftp/DSSTox_Archive_20150930/NCTRER_DownloadFiles/> ;
+    dcterms:issued "2016-04-30"^^xsd:date ;
+    dcterms:subject <http://dbpedia.org/resource/Estrogen_receptor> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Intracellular_receptors> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Transcription_factors> ;
+    dcat:byteSize "25184914"^^xsd:decimal ;
+    owl:versionInfo "0.1"^^xsd:string .
+
