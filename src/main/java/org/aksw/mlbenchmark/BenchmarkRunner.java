@@ -1,5 +1,24 @@
 package org.aksw.mlbenchmark;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+import org.aksw.mlbenchmark.mex.MEXWriter;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
@@ -10,16 +29,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.NotImplementedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Simon Bin on 16-4-13.
@@ -41,8 +50,13 @@ public class BenchmarkRunner {
 	private Path tempDirectory;
 	private long seed;
 	private PropertyListConfiguration resultset = new PropertyListConfiguration();
+	private BenchmarkLog benchmarkLog;
+	private String mexOutputFilePath = null;
 
 	public BenchmarkRunner(HierarchicalConfiguration<ImmutableNode> config) {
+		benchmarkLog = new BenchmarkLog();
+		benchmarkLog.saveBenchmarkConfig(config);
+
 		File file1 = new File(new File(".").getAbsolutePath());
 		currentDir = (file1.getName().equals(".") ? file1.getParentFile() : file1).getAbsolutePath();
 		sourceDir = BenchmarkRunner.class.getProtectionDomain().getCodeSource().getLocation();
@@ -65,12 +79,18 @@ public class BenchmarkRunner {
 		initTemp();
 		folds = config.getInt("framework.crossValidationFolds", 1);
 		threads = config.getInt("framework.threads", 1);
+		if (config.containsKey("mex.outputFile")) {
+			mexOutputFilePath = config.getString("mex.outputFile");
+		}
 
 		if (threads == 1) {
 			executorService = Executors.newSingleThreadExecutor();
 		} else {
 			executorService = Executors.newFixedThreadPool(threads);
 		}
+
+		benchmarkLog.saveDirs(rootDir, getLearningTasksDir(),
+				getLearningSystemsDir(), tempDirectory.toAbsolutePath().toString());
 	}
 
 	public BenchmarkRunner(String configFilename) throws ConfigLoaderException {
@@ -182,6 +202,18 @@ public class BenchmarkRunner {
 		}
 
 		finalizeExecutor();
+
+		if (mexOutputFilePath != null) {
+			MEXWriter mexWriter = new MEXWriter();
+
+			try {
+				mexWriter.write(benchmarkLog, mexOutputFilePath);
+				logger.info("wrote MEX file to " + mexOutputFilePath + ".ttl");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
 		//Testing testing = new Testing();
 		//testing.conf(config);
 	}
@@ -242,5 +274,9 @@ public class BenchmarkRunner {
 				}
 			}
 		}
+	}
+
+	public BenchmarkLog getBenchmarkLog() {
+		return benchmarkLog;
 	}
 }

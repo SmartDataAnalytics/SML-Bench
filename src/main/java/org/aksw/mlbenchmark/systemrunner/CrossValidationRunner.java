@@ -1,6 +1,29 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import org.aksw.mlbenchmark.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Set;
+
+import org.aksw.mlbenchmark.BenchmarkRunner;
+import org.aksw.mlbenchmark.ConfigLoader;
+import org.aksw.mlbenchmark.ConfigLoaderException;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.CrossValidation;
+import org.aksw.mlbenchmark.ExampleLoader;
+import org.aksw.mlbenchmark.LanguageInfo;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.MeasureMethod;
 import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
 import org.aksw.mlbenchmark.process.ProcessRunner;
 import org.aksw.mlbenchmark.resultloader.ResultLoaderBase;
@@ -16,12 +39,6 @@ import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.exec.ExecuteException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.*;
 
 /**
  * Execute Cross Validation scenario
@@ -97,12 +114,15 @@ public class CrossValidationRunner {
 				continue;
 			}
 
-/*			parent.getExecutorService().submit(
+			/*			parent.getExecutorService().submit(
 					new Runnable() {
 						@Override
 						public void run() { */
 			ConfigLoader lpCL = ConfigLoader.findConfig(parent.getLearningProblemDir(task, problem, lang) + "/" + system);
 			LearningSystemInfo lsi = parent.getSystemInfo(system);
+
+			parent.getBenchmarkLog().saveLearningSystemInfo(system, lsi);
+
 			for (int fold = 0; fold < parent.getFolds(); ++fold) {
 				logger.info("executing scenario " + task + "/" + problem + " with " + system + ", fold " + fold);
 
@@ -110,7 +130,7 @@ public class CrossValidationRunner {
 
 			}
 
-/*						}
+			/*						}
 					}); */
 		}
 	}
@@ -135,6 +155,7 @@ public class CrossValidationRunner {
 
 		List<String> args = new LinkedList<>();
 		args.add(configFile);
+		parent.getBenchmarkLog().saveLearningSystemConfig(system, task, problem, fold, configFile);
 
 		final long now = System.nanoTime();
 		State state = State.RUNNING;
@@ -229,6 +250,7 @@ public class CrossValidationRunner {
 		}
 		getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
 		if (!state.equals(State.OK)) {
+			parent.getBenchmarkLog().saveResultSet(system, task, problem, fold, getResultset());
 			return state;
 		}
 
@@ -255,6 +277,8 @@ public class CrossValidationRunner {
 			state = State.ERROR;
 			getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
 		}
+
+		parent.getBenchmarkLog().saveResultSet(system, task, problem, fold, getResultset());
 		return state;
 	}
 
