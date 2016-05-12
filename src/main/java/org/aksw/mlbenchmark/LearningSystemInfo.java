@@ -17,6 +17,7 @@ public class LearningSystemInfo {
 		this.learningSystem = learningSystem;
 		this.br = parent;
 		Configuration defaultConfig = new BaseConfiguration();
+		// FIXME: we need to find a generic way to determine the language
 		defaultConfig.setProperty("language", learningSystem.toLowerCase().equals("dllearner") ? "owl" : "prolog");
 		Configuration runtimeConfig = br.getConfig();
 		Configuration lsRuntimeConfig = runtimeConfig.subset("learningsystems." + learningSystem);
