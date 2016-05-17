@@ -11,7 +11,8 @@ TopLog makes use of [Top Directed Hypothesis Derivation](http://www.doc.ic.ac.uk
 
 To make use of the GILPS an installed [YAP](http://www.dcc.fc.up.pt/~vsc/Yap/downloads.html) system is required.
 There are YAP software packages for the most common Linux distributions as well als binary and source distributions
-on the [YAP web page](http://www.dcc.fc.up.pt/~vsc/Yap/downloads.html).
+on the [YAP web page](http://www.dcc.fc.up.pt/~vsc/Yap/downloads.html). In any case you should make sure that the YAP
+executable is in your `$PATH`.
 
 Having installed YAP, the actual GILPS can be downloaded at http://www.doc.ic.ac.uk/~jcs06/GILPS/GILPS.tar.bz2 .
 The tar archive contains the GILPS Prolog sources which need to be extracted to `SML-Bench/learningsystems/toplog`.
