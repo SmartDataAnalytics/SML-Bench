@@ -39,3 +39,5 @@ CProgol Version 5.0
 A promt (`|-`) should be shown then, which can be exited pressing `Cntl` + `d`.
 
 The `progol` executable should be copied to `SML-Bench/learningsystems/progol/` to be found by the provided `run` script.
+
+The provided `validate` script for Progol (doing the validation of the learned hypotheses) requires to have [SWI Prolog](http://www.swi-prolog.org/) installed on your system which is already packaged for the most common Linux distributions and also available for download at http://www.swi-prolog.org/Download.html .
