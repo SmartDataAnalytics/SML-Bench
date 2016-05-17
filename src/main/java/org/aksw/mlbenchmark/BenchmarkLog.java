@@ -173,7 +173,7 @@ public class BenchmarkLog {
 		String path = tempDir + File.separator + learningTask +
 				File.separator + learningProblem + File.separator + "fold-" +
 				fold + File.separator + learningSystem + File.separator +
-				"validate" + File.separator + posNegFileName;
+				"train" + File.separator + posNegFileName;
 
 		exLoader.loadExamples(new File(path));
 
@@ -274,7 +274,13 @@ public class BenchmarkLog {
 
 		Configuration getResult(String learningSystem, String learningTask,
 				String learningProblem, int fold) {
-			return res.get(learningSystem).get(learningTask).get(learningProblem).get(fold);
+			Configuration result;
+			try {
+				result = res.get(learningSystem).get(learningTask).get(learningProblem).get(fold);
+			} catch (NullPointerException e) {
+				result = new BaseConfiguration();
+			}
+			return result;
 		}
 	}
 
