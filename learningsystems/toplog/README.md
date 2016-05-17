@@ -16,11 +16,11 @@ executable is in your `$PATH`.
 
 Having installed YAP, the actual GILPS can be downloaded at http://www.doc.ic.ac.uk/~jcs06/GILPS/GILPS.tar.bz2 .
 The tar archive contains the GILPS Prolog sources which need to be extracted to `SML-Bench/learningsystems/toplog`.
-The directory should then contain the following files:
+The directory should then contain at least the following files:
 
 ```bash
 SML-Bench/learningsystems/toplog $ ls -F
-GILPS.tar.bz2  Makefile  README.md  run*  source/  validate*
+Makefile  README.md  run*  source/  validate*
 ```
 
 No further steps are required. In particular there is **no** need to call `make`.
