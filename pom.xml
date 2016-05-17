@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.aksw.mlbenchmark</groupId>
-	<artifactId>mlbenchmark-core</artifactId>
-	<version>0.1-SNAPSHOT</version>
-	<name>ML-Benchmark</name>
-	<description>Machine Learning Benchmark</description>
-	<url>https://github.com/AKSW/DL-Learning-Benchmark</url>
+	<groupId>org.aksw.sml-bench</groupId>
+	<artifactId>sml-bench-core</artifactId>
+	<version>0.1</version>
+	<name>SML-Bench</name>
+	<description>Structured Machine Learning Benchmark</description>
+	<url>https://github.com/AKSW/SML-Bench</url>
 	<organization>
 		<name>AKSW</name>
 		<url>http://aksw.org</url>
@@ -40,15 +40,15 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:git@github.com:AKSW/DL-Learning-Benchmark.git</connection>
-		<url>https://github.com/AKSW/DL-Learning-Benchmark</url>
+		<connection>scm:git:git@github.com:AKSW/SML-Bench.git</connection>
+		<url>https://github.com/AKSW/SML-Bench</url>
 		<tag>0.1</tag>
-		<developerConnection>scm:git:git@github.com:AKSW/DL-Learning-Benchmark.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:AKSW/SML-Bench.git</developerConnection>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/AKSW/DL-Learning-Benchmark/issues</url>
+		<url>https://github.com/AKSW/SML-Bench/issues</url>
 	</issueManagement>
 
 	<licenses>
