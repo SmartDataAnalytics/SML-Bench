@@ -7,14 +7,14 @@ Currently supported learning systems
 
 We currently support the following learning systems:
 
-- [Aleph](http://www.cs.ox.ac.uk/activities/machinelearning/Aleph/)
-- [DL-Learner](http://dl-learner.org)
+- [Aleph](aleph/README.md)
+- [DL-Learner](dllearner/README.md)
 - the [GILPS](http://www.doc.ic.ac.uk/~jcs06/GILPS/) tools, i.e.
-  - FuncLog
-  - ProGolem
-  - TopLog
-- [Golem](http://www.doc.ic.ac.uk/~shm/golem.html)
-- [Progol](http://www.doc.ic.ac.uk/~shm/progol.html)
+  - [FuncLog](funclog/README.md)
+  - [ProGolem](progolem/README.md)
+  - [TopLog](toplog/README.md)
+- [Golem](golem/README.md)
+- [Progol](progol/README.md)
 
 
 How to add your own tool
