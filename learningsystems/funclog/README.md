@@ -10,7 +10,7 @@ FuncLog was designed to learn on [Head Output Connected learning problems](http:
 ## Installation
 
 To make use of the GILPS an installed [YAP](http://www.dcc.fc.up.pt/~vsc/Yap/downloads.html) system is required.
-There are YAP software packages for the most common Linux distributions as well als binary and source distributions
+There are YAP software packages for the most common Linux distributions as well as binary and source distributions
 on the [YAP web page](http://www.dcc.fc.up.pt/~vsc/Yap/downloads.html). In any case you should make sure that the YAP
 executable is in your `$PATH`.
 
