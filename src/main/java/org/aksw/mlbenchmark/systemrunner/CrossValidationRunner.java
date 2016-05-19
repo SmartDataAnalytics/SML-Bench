@@ -15,15 +15,8 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-import org.aksw.mlbenchmark.BenchmarkRunner;
-import org.aksw.mlbenchmark.ConfigLoader;
-import org.aksw.mlbenchmark.ConfigLoaderException;
-import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.CrossValidation;
-import org.aksw.mlbenchmark.ExampleLoader;
-import org.aksw.mlbenchmark.LanguageInfo;
-import org.aksw.mlbenchmark.LearningSystemInfo;
-import org.aksw.mlbenchmark.MeasureMethod;
+import org.aksw.mlbenchmark.*;
+import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
 import org.aksw.mlbenchmark.process.ProcessRunner;
 import org.aksw.mlbenchmark.resultloader.ResultLoaderBase;
@@ -48,17 +41,15 @@ public class CrossValidationRunner {
 	private final BenchmarkRunner parent;
 	private final Set<String> failedLang = new HashSet<>();
 	private final Map<String, CrossValidation> languageFolds = new HashMap<>();
-	private final String task;
-	private final String problem;
 	private final Configuration parentConf; // the partial scenario config from the parent
+	private final Scenario scn;
 
-	public CrossValidationRunner(BenchmarkRunner benchmarkRunner, String task, String problem, Configuration baseConf) {
+	public CrossValidationRunner(BenchmarkRunner benchmarkRunner, Scenario scn, Configuration baseConf) {
 		this.parent = benchmarkRunner;
-		this.task = task;
-		this.problem = problem;
+		this.scn = scn;
 		this.parentConf = baseConf;
 		for (final String lang : parent.getDesiredLanguages()) {
-			String lpDir = parent.getLearningProblemDir(task, problem, lang);
+			String lpDir = parent.getLearningProblemDir(scn, lang);
 			try {
 				ExampleLoaderBase elPos = ExampleLoader.forLanguage(lang);
 				elPos.loadExamples(new File(lpDir+"/"+"pos"+ LanguageInfo.forLanguage(lang).exampleExtension()));
@@ -77,13 +68,12 @@ public class CrossValidationRunner {
 			}
 		}
 
-		writeAllFolds(task, problem, languageFolds, failedLang);
-
+		writeAllFolds(languageFolds, failedLang);
 
 	}
 
-	private void writeAllFolds(String task, String problem, Map<String, CrossValidation> languageFolds, Set<String> failedLang) {
-		File dir = new File(parent.getTempDirectory() + "/" + task + "/" + problem);
+	private void writeAllFolds(Map<String, CrossValidation> languageFolds, Set<String> failedLang) {
+		File dir = new File(parent.getTempDirectory() + "/" + scn.getTask() + "/" + scn.getProblem());
 		dir.mkdirs();
 		for (final String lang: parent.getDesiredLanguages()) {
 			if (failedLang.contains(lang)) { continue; }
@@ -118,15 +108,18 @@ public class CrossValidationRunner {
 					new Runnable() {
 						@Override
 						public void run() { */
-			ConfigLoader lpCL = ConfigLoader.findConfig(parent.getLearningProblemDir(task, problem, lang) + "/" + system);
+			ConfigLoader lpCL = ConfigLoader.findConfig(parent.getLearningProblemDir(scn, lang) + "/" + system);
 			LearningSystemInfo lsi = parent.getSystemInfo(system);
 
 			parent.getBenchmarkLog().saveLearningSystemInfo(system, lsi);
 
 			for (int fold = 0; fold < parent.getFolds(); ++fold) {
-				logger.info("executing scenario " + task + "/" + problem + " with " + system + ", fold " + fold);
+				logger.info("executing scenario " + scn.getTask() + "/" + scn.getProblem() + " with " + system + ", fold " + fold);
 
 				State state = trainingStep(system, lang, lpCL, lsi, fold);
+				if (state.equals(State.OK)) {
+					state = validateStep(outputFileFile, system, lang, lpCL, lsi, fold);
+				}
 
 			}
 
@@ -314,8 +307,8 @@ public class CrossValidationRunner {
 		BaseConfiguration baseConfig = new BaseConfiguration();
 		baseConfig.setProperty("data.workdir", dir.getAbsolutePath());
 		baseConfig.setProperty("framework.currentFold", fold);
-		baseConfig.setProperty("learningtask", task);
-		baseConfig.setProperty("learningproblem", problem);
+		baseConfig.setProperty("learningtask", scn.getTask());
+		baseConfig.setProperty("learningproblem", scn.getProblem());
 		baseConfig.setProperty("step", "train");
 
 		baseConfig.setProperty("filename.pos", posFilename);
@@ -332,10 +325,10 @@ public class CrossValidationRunner {
 	}
 
 	private Configuration collectConfig(String system, String lang, File dir, BaseConfiguration baseConfig, ConfigLoader lpCL, LearningSystemInfo lsi) {
-		Configuration runtimeConfig = parent.getConfig();
+		BenchmarkConfig runtimeConfig = parent.getConfig();
 		// Configuration stepConfig = parentConf;
-		Configuration scnRuntimeConfig = runtimeConfig.subset("learningtask." + task);
-		Configuration lpRuntimeConfig = runtimeConfig.subset("learningproblem." + task + "." + problem);
+		Configuration scnRuntimeConfig = runtimeConfig.getLearningTaskConfiguration(scn.getTask());
+		Configuration lpRuntimeConfig = runtimeConfig.getLearningProblemConfiguration(scn);
 
 		CombinedConfiguration cc = new CombinedConfiguration();
 		cc.setNodeCombiner(new MergeCombiner());
@@ -345,18 +338,18 @@ public class CrossValidationRunner {
 		if (lpCL != null) {
 			cc.addConfiguration(lpCL.config());
 		}
-		List<String> families = lsi.getConfig().getList(String.class, "families");
+		List<String> families = lsi.getFamilies();
 		if (families != null) {
 			for (String family : families) {
-				ConfigLoader famLpCL = ConfigLoader.findConfig(parent.getLearningProblemDir(task, problem, lang) + "/" + family);
+				ConfigLoader famLpCL = ConfigLoader.findConfig(parent.getLearningProblemDir(scn, lang) + "/" + family);
 				if (famLpCL != null) {
 					cc.addConfiguration(famLpCL.config());
 				}
 			}
 		}
 		cc.addConfiguration(scnRuntimeConfig);
-		cc.addConfiguration(lsi.getConfig());
-		cc.addConfiguration(parent.getConfig());
+		cc.addConfiguration(lsi.getCommonsConfig());
+		cc.addConfiguration(parent.getCommonsConfig());
 		BaseConfiguration defaultConfig = new BaseConfiguration();
 		defaultConfig.setProperty("maxExecutionTime", (long)(cc.getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime)*0.86));
 		cc.addConfiguration(defaultConfig);
