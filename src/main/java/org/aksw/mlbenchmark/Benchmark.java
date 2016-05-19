@@ -40,7 +40,7 @@ public class Benchmark {
 
 		runner.run();
 		try {
-			String resultOutput = runner.getConfig().getString("resultOutput", args[0].replaceAll("[.][^.]*$", "") + ".result.plist");
+			String resultOutput = runner.getConfig().getResultOutputFile(args[0].replaceAll("[.][^.]*$", "") + ".result.plist");
 			File file = new File(resultOutput);
 			logger.info("writing results to " + file.getAbsolutePath());
 			ConfigLoader.write(runner.getResultset(), file);

@@ -1,23 +1,6 @@
 package org.aksw.mlbenchmark;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
-
+import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.mex.MEXWriter;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.apache.commons.configuration2.BaseConfiguration;
@@ -30,15 +13,25 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 /**
- * Created by Simon Bin on 16-4-13.
+ * The main runner for the SMLBench framework, will execute one benchmark configuration (without saving of results)
  */
 public class BenchmarkRunner {
 	static final Logger logger = LoggerFactory.getLogger(BenchmarkRunner.class);
 	private final String currentDir;
 	private final URL sourceDir;
 	private final String rootDir;
-	private final HierarchicalConfiguration<ImmutableNode> config;
+	private final BenchmarkConfig config;
 	private final List<String> desiredSystems;
 	private final int threads;
 	private final Set<String> desiredLanguages = new HashSet<>();
@@ -54,6 +47,10 @@ public class BenchmarkRunner {
 	private String mexOutputFilePath = null;
 
 	public BenchmarkRunner(HierarchicalConfiguration<ImmutableNode> config) {
+		this(new BenchmarkConfig(config));
+	}
+
+	public BenchmarkRunner(BenchmarkConfig config) {
 		benchmarkLog = new BenchmarkLog();
 		benchmarkLog.saveBenchmarkConfig(config);
 
@@ -73,14 +70,14 @@ public class BenchmarkRunner {
 		}
 		logger.info("available learning systems:" + availableLearningSystems);
 		this.config = config;
-		desiredSystems = config.getList(String.class, "learningsystems");
-		seed = config.getLong("framework.seed", new Random().nextLong());
+		desiredSystems = config.getLearningSystems();
+		seed = config.getSeed();
 		initLanguages();
 		initTemp();
-		folds = config.getInt("framework.crossValidationFolds", 1);
-		threads = config.getInt("framework.threads", 1);
+		folds = config.getCrossValidationFolds();
+		threads = config.getThreadsCount();
 		if (config.containsKey("mex.outputFile")) {
-			mexOutputFilePath = config.getString("mex.outputFile");
+			mexOutputFilePath = config.getMexOutputFile();
 		}
 
 		if (threads == 1) {
@@ -163,7 +160,7 @@ public class BenchmarkRunner {
 		return getLearningProblemsDir(learningTask, languageType) + "/" + learningProblem;
 	}
 
-	public Configuration getConfig() {
+	public BenchmarkConfig getConfig() {
 		return config;
 	}
 
@@ -194,7 +191,7 @@ public class BenchmarkRunner {
 	public void run() {
 		logger.info("benchmarking systems: " + desiredSystems);
 
-		List<String> scenarios = expandScenarios(config.getList(String.class, "scenarios"));
+		List<String> scenarios = expandScenarios(config.getScenarios());
 
 		logger.info("requested scenarios: " + scenarios);
 		for (final String scn : scenarios) {
@@ -263,7 +260,7 @@ public class BenchmarkRunner {
 	}
 
 	public void cleanTemp() {
-		if (getConfig().getBoolean("deleteWorkDir", false)) {
+	if (config.isDeleteWorkDir()) {
 			Path tempDirectory = getTempDirectory();
 			if (tempDirectory != null) {
 				logger.debug("deleting working directory: " + tempDirectory);

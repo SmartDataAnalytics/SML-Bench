@@ -1,19 +1,14 @@
 package org.aksw.mlbenchmark;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
+import com.google.common.collect.Sets;
+import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
-import org.apache.commons.configuration2.HierarchicalConfiguration;
-import org.apache.commons.configuration2.tree.ImmutableNode;
 
-import com.google.common.collect.Sets;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 public class BenchmarkLog {
 	public static final String tp = "tp";
@@ -30,7 +25,7 @@ public class BenchmarkLog {
 	 * - learning scenarios (e.g. suramin/1) ["scenarios"]
 	 * - max. execution time ["framework.maxExecutionTime"]
 	 */
-	private HierarchicalConfiguration<ImmutableNode> benchmarkConfig;
+	private BenchmarkConfig benchmarkConfig;
 	/**
 	 * Each learning system info object contains the following informations:
 	 * - learning system ID (String)
@@ -59,7 +54,7 @@ public class BenchmarkLog {
 		results = new ResultsStore();
 	}
 
-	public void saveBenchmarkConfig(HierarchicalConfiguration<ImmutableNode> config) {
+	public void saveBenchmarkConfig(BenchmarkConfig config) {
 		benchmarkConfig = config;
 	}
 
@@ -101,9 +96,9 @@ public class BenchmarkLog {
 	public Set<String> getLearningTasks() {
 		Set<String> learningTasks = new HashSet<String>();
 
-		String[] scnenarios = benchmarkConfig.getStringArray("scenarios");
+		List<String> scenarios = benchmarkConfig.getScenarios();
 
-		for (String scenario : scnenarios) {
+		for (String scenario : scenarios) {
 			String learningTask = scenario.split("/")[0];
 			learningTasks.add(learningTask);
 		}
@@ -112,7 +107,7 @@ public class BenchmarkLog {
 	}
 
 	public Set<String> getLearningSystems() {
-		return Sets.newHashSet(benchmarkConfig.getStringArray("learningsystems"));
+		return Sets.newHashSet(benchmarkConfig.getLearningSystems());
 	}
 
 	public String getLearningTaskPath(String learningTask, String learningSystem) {
@@ -126,7 +121,7 @@ public class BenchmarkLog {
 		if (learningProblemsCache == null) {
 			learningProblemsCache = new HashMap<String,Set<String>>();
 
-			for (String scenario : benchmarkConfig.getStringArray("scenarios")) {
+			for (String scenario : benchmarkConfig.getScenarios()) {
 				String[] tmpParts = scenario.split("/");
 
 				String task = tmpParts[0];
@@ -156,7 +151,7 @@ public class BenchmarkLog {
 	}
 
 	public int getNumFolds() {
-		return benchmarkConfig.getInt("framework.crossValidationFolds");
+		return benchmarkConfig.getCrossValidationFolds();
 	}
 
 	public Set<String> getExamples(String learningTask, String learningProblem,
