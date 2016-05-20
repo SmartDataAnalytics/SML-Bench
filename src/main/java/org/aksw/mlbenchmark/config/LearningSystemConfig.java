@@ -20,7 +20,7 @@ public class LearningSystemConfig {
 	public LearningSystemConfig(BenchmarkRunner br, LearningSystemInfo lsi) {
 		Configuration defaultConfig = new BaseConfiguration();
 		// FIXME: we need to find a generic way to determine the language
-		defaultConfig.setProperty(LANGUAGEKEY, "dllearner".equals(lsi.asString()) ? "owl" : "prolog");
+		defaultConfig.setProperty(LANGUAGEKEY, lsi.hasType("dllearner") ? "owl" : "prolog");
 		BenchmarkConfig runtimeConfig = br.getConfig();
 		Configuration lsRuntimeConfig = runtimeConfig.getLearningSystemConfiguration(lsi);
 		ConfigLoader systemCL = ConfigLoader.findConfig(lsi.getDir()+"/"+ Constants.LEARNINGSYSTEMCONFIG);
@@ -56,7 +56,8 @@ public class LearningSystemConfig {
 	}
 
 	public Constants.LANGUAGES getLanguage() {
-		return Constants.LANGUAGES.valueOf(config.getString(LANGUAGEKEY).toUpperCase());
+		return Constants.LANGUAGES.valueOf(
+				config.getString(LANGUAGEKEY).toUpperCase());
 	}
 
 	public String getConfigFormat() {

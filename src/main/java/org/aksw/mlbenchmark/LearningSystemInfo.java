@@ -75,4 +75,9 @@ public class LearningSystemInfo {
 	public String getConfigFormat() {
 		return config.getConfigFormat();
 	}
+
+	public boolean hasType(String learningSystem) {
+		// TODO: query config.parent
+		return learningSystem.equals(asString());
+	}
 }

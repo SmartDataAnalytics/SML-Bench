@@ -1,27 +1,23 @@
 package org.aksw.mlbenchmark.mex;
 
-import java.io.File;
-
-import org.aksw.mex.log4mex.MEXSerializer;
-import org.aksw.mex.log4mex.MyMEX;
-import org.aksw.mex.util.MEXConstant;
-import org.aksw.mex.util.MEXEnum.EnumAlgorithmsClasses;
-import org.aksw.mex.util.MEXEnum.EnumExecutionsType;
-import org.aksw.mex.util.MEXEnum.EnumMeasures;
-import org.aksw.mex.util.MEXEnum.EnumPhases;
-import org.aksw.mex.util.MEXEnum.EnumSamplingMethods;
-import org.aksw.mex.util.MEXEnum.EnumTools;
-import org.aksw.mlbenchmark.BenchmarkLog;
-import org.apache.commons.configuration2.Configuration;
-import org.apache.jena.riot.RDFDataMgr;
-import org.apache.jena.riot.RiotNotFoundException;
-
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.NodeIterator;
 import com.hp.hpl.jena.rdf.model.ResIterator;
 import com.hp.hpl.jena.rdf.model.impl.PropertyImpl;
 import com.hp.hpl.jena.rdf.model.impl.ResourceImpl;
 import com.hp.hpl.jena.vocabulary.RDF;
+import org.aksw.mex.log4mex.MEXSerializer;
+import org.aksw.mex.log4mex.MyMEX;
+import org.aksw.mex.util.MEXConstant;
+import org.aksw.mex.util.MEXEnum.*;
+import org.aksw.mlbenchmark.BenchmarkLog;
+import org.aksw.mlbenchmark.Scenario;
+import org.aksw.mlbenchmark.container.ScenarioSystem;
+import org.apache.commons.configuration2.Configuration;
+import org.apache.jena.riot.RDFDataMgr;
+import org.apache.jena.riot.RiotNotFoundException;
+
+import java.io.File;
 
 public class MEXWriter {
 	private String authorName = "SML-Bench";
@@ -37,7 +33,10 @@ public class MEXWriter {
 				for (String tool : log.getLearningSystems()) {
 					int numFolds = log.getNumFolds();
 					for (int fold=0; fold<numFolds; fold++) {
-						addResults(mex, dataset, learningProblem, tool, fold, numFolds, log);
+						addResults(mex,
+								new Scenario(dataset, learningProblem)
+										.addSystem(log.getLearningSystemInfo(tool)),
+								fold, numFolds, log);
 					}
 				}
 			}
@@ -47,8 +46,7 @@ public class MEXWriter {
 				"http://sml-bench.aksw.org/res/", mex, MEXConstant.EnumRDFFormats.TTL);
 	}
 
-	private void addResults(MyMEX mex, String dataset, String learningProblem,
-			String tool, int fold, int numFolds, BenchmarkLog log) throws Exception {
+	private void addResults(MyMEX mex, ScenarioSystem scenarioSystem, int fold, int numFolds, BenchmarkLog log) throws Exception {
 
 		// ----------------------------- mex-core -----------------------------
 		// mex-core:ExperimentConfiguration
@@ -68,7 +66,7 @@ public class MEXWriter {
 
 		// mex-core:Dataset
 		DatasetInfo datasetInfo = buildDatasetInfo(
-				log.getLearningTaskPath(dataset, tool));
+				log.getLearningTaskPath(scenarioSystem));
 
 		mex.Configuration(conf).setDataSet(datasetInfo.landingPageURI,
 				datasetInfo.description, datasetInfo.name);
@@ -77,14 +75,14 @@ public class MEXWriter {
 		long datasetRow = 0;
 		long datasetColumn = 0;
 
-		for (String example : log.getPosExamples(dataset, learningProblem, tool, fold)) {
+		for (String example : log.getPosExamples(scenarioSystem, fold)) {
 			String id = "+" + example;
 			String value = example;
 			mex.Configuration(conf).Execution(exec).addDatasetExample(id,
 					value, datasetRow, datasetColumn);
 		}
 
-		for (String example : log.getNegExamples(dataset, learningProblem, tool, fold)) {
+		for (String example : log.getNegExamples(scenarioSystem, fold)) {
 			String id = "-" + example;
 			String value = example;
 			mex.Configuration(conf).Execution(exec).addDatasetExample(id,
@@ -100,7 +98,7 @@ public class MEXWriter {
 		// ----------------------------- mex-algo -----------------------------
 		// mex-algo:Algorithm
 		// TODO: Add algorithm to MEX ontology
-		String algorithmId = tool + "-alg";
+		String algorithmId = scenarioSystem.getLearningSystem() + "-alg";
 		mex.Configuration(conf).addAlgorithm(algorithmId,
 				EnumAlgorithmsClasses.NOT_INFORMED);
 
@@ -115,7 +113,7 @@ public class MEXWriter {
 
 		// mex-algo:Tool
 		// TODO: add the ILP tools to MEX ontology
-		if (tool.equals("dllearner"))
+		if (scenarioSystem.getLearningSystemInfo().hasType("dllearner"))
 			mex.Configuration(conf).setTool(EnumTools.DL_LEARNER, "1.3");
 
 		// mex-algo:ToolParameter
@@ -134,7 +132,7 @@ public class MEXWriter {
 		// --------------------------------------------------------
 
 		// ----------------------- mex-perf -----------------------
-		Configuration res = log.getValidationResults(tool, dataset, learningProblem, fold);
+		Configuration res = log.getValidationResults(scenarioSystem, fold);
 
 		if (res.containsKey(BenchmarkLog.tp) &&
 				res.containsKey(BenchmarkLog.fp) &&

@@ -107,11 +107,14 @@ public class BenchmarkLog {
 		return Sets.newHashSet(benchmarkConfig.getLearningSystems());
 	}
 
-	public String getLearningTaskPath(String learningTask, String learningSystem) {
-		LearningSystemInfo lsi = lsis.get(learningSystem);
-		Constants.LANGUAGES lang = lsi.getLanguage();
+	public String getLearningTaskPath(ScenarioSystem scenarioSystem) {
+		Constants.LANGUAGES lang = scenarioSystem.getLanguage();
 
-		return learningTasksDir + File.separator + learningTask + File.separator + lang.asString();
+		return learningTasksDir + File.separator + scenarioSystem.getTask() + File.separator + lang.asString();
+	}
+
+	public LearningSystemInfo getLearningSystemInfo(String learningSystem) {
+		return lsis.get(learningSystem);
 	}
 
 	public Set<String> getLearningProblems(String learningTask) {
