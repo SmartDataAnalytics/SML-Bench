@@ -21,7 +21,7 @@ Machine-readable descriptions of the actual datasets are provided as turtle file
 ## How to Add an Own Learning Task and Learning Problem
 
 The SML-Bench benchmark runner expects learning tasks to reside under the `learningtasks` directory.
-To add new learning task, e.g. `mytask`, a folder `SML-Bench/learningtasks/mytask` needs to be created.
+To add a new learning task, e.g. `mytask`, a folder `SML-Bench/learningtasks/mytask` needs to be created.
 Additionally there should be a sub-folder for each supported KR language (currently `owl` and `prolog`).
 The actual datasets in the given KR languages should then be put into the folder `SML-Bench/learningtasks/mytask/<krlanguage>/data/`.
 Accordingly a Prolog representation `mydataset.pl` of our learning task should then reside in the folder `SML-Bench/learningtasks/mytask/prolog/data/mydataset.pl`.
@@ -30,9 +30,9 @@ A concrete *learning problem* defines the positive and negative examples and opt
 Learning problems are usually put into the directories `SML-Bench/learningtasks/<learningtask>/lp/<learningproblem>`.
 Given we want to define a learning problem `firstlearningproblem` for the Prolog representation of our learning task `mytask` it will reside at `SML-Bench/learningtasks/mytask/prolog/lp/firstlearningproblem`.
 Inside this directory there will be files called `pos.pl` and `neg.pl` containing Prolog expressions of the positive and negative examples, respectively.
-In case of a learning problem for an OWL representations the files should be named `pos.txt` and `neg.txt`.
+In case of a learning problem for an OWL representation the files should be named `pos.txt` and `neg.txt`.
 Dedicated learning system configurations are declared in files named as the learning system with a file suffix `.conf`.
-Accordingly a Aleph configuration file for the given learning problem could be found at `SML-Bench/learningtasks/mytask/prolog/lp/firstlearningproblem/aleph.conf`.
+Accordingly an Aleph configuration file for the given learning problem could be found at `SML-Bench/learningtasks/mytask/prolog/lp/firstlearningproblem/aleph.conf`.
 
 
 ## Candidate Datasets
