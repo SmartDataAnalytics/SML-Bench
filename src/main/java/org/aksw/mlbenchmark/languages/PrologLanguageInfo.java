@@ -1,7 +1,10 @@
 package org.aksw.mlbenchmark.languages;
 
+import org.aksw.mlbenchmark.Constants;
+import org.apache.commons.lang3.NotImplementedException;
+
 /**
- * Created by Simon Bin on 16-4-28.
+ * Framework values specific to prolog language
  */
 public class PrologLanguageInfo extends LanguageInfoBase {
 	@Override
@@ -14,13 +17,20 @@ public class PrologLanguageInfo extends LanguageInfoBase {
 		return "data.b";
 	}
 
-	@Override
 	public String getPosFilename() {
 		return "data.f";
 	}
 
-	@Override
 	public String getNegFilename() {
 		return "data.n";
+	}
+
+	@Override
+	public String getFilename(Constants.ExType type) {
+		switch (type) {
+			case POS: return getPosFilename();
+			case NEG: return getNegFilename();
+			default: throw new NotImplementedException("Missing case in switch ExType!");
+		}
 	}
 }

@@ -6,7 +6,11 @@ import org.apache.commons.configuration2.Configuration;
 import java.util.List;
 
 /**
- * Created by Simon Bin on 16-4-27.
+ * All useful information about a LearningSystem in the context of a BenchmarkRunner
+ * - name
+ * - language
+ * - families
+ * - filenames for file generation
  */
 public class LearningSystemInfo {
 	final String learningSystem;
@@ -35,6 +39,10 @@ public class LearningSystemInfo {
 		return br.getLearningSystemDir(learningSystem);
 	}
 
+	public Constants.LANGUAGES getLanguage() {
+		return config.getLanguage();
+	}
+
 	/**
 	 * @return the system specific configuration
 	 */
@@ -43,17 +51,10 @@ public class LearningSystemInfo {
 	}
 
 	/**
-	 * @return the filename to use when generating positive examples folds for this learning system
+	 * @return the filename to use when generating examples folds for this learning system
 	 */
-	public String getPosFilename() {
-		return config.getPosFilename();
-	}
-
-	/**
-	 * @return the filename to use when generating negative examples folds for this learning system
-	 */
-	public String getNegFilename() {
-		return config.getNegFilename();
+	public String getFilename(Constants.ExType type) {
+		return config.getFilename(type);
 	}
 
 	/**
@@ -69,5 +70,9 @@ public class LearningSystemInfo {
 
 	public Configuration getCommonsConfig() {
 		return config.getConfig();
+	}
+
+	public String getConfigFormat() {
+		return config.getConfigFormat();
 	}
 }

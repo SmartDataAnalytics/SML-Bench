@@ -1,9 +1,13 @@
 package org.aksw.mlbenchmark;
 
+import org.aksw.mlbenchmark.container.ScenarioAttributes;
+import org.aksw.mlbenchmark.container.ScenarioLang;
+import org.aksw.mlbenchmark.container.ScenarioSystem;
+
 /**
- * Created by Simon Bin on 16-5-19.
+ * Container for scenario (task + problem)
  */
-public class Scenario {
+public class Scenario implements ScenarioAttributes {
 	private final String task;
 	private final String problem;
 
@@ -20,4 +24,18 @@ public class Scenario {
 		return task;
 	}
 
+	public ScenarioLang addLanguage(Constants.LANGUAGES lang) {
+		return new ScenarioLang(this, lang);
+	}
+
+	public static Scenario fromString(String scn) {
+		final String[] split = scn.split("/");
+		final String task = split[0];
+		final String problem = split[1];
+		return new Scenario(task, problem);
+	}
+
+	public ScenarioSystem addSystem(LearningSystemInfo system) {
+		return new ScenarioSystem(this, system);
+	}
 }

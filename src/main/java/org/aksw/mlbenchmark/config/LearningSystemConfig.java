@@ -1,6 +1,7 @@
 package org.aksw.mlbenchmark.config;
 
 import org.aksw.mlbenchmark.*;
+import org.aksw.mlbenchmark.languages.LanguageInfoBase;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.CombinedConfiguration;
 import org.apache.commons.configuration2.Configuration;
@@ -9,7 +10,7 @@ import org.apache.commons.configuration2.tree.MergeCombiner;
 import java.util.List;
 
 /**
- * Configuration specific to LearningSystems
+ * Configuration specific to LearningSystems (wrapping the underlying key-value config)
  */
 public class LearningSystemConfig {
 	private final Configuration config;
@@ -30,23 +31,20 @@ public class LearningSystemConfig {
 			cc.addConfiguration(systemCL.config());
 		}
 		cc.addConfiguration(defaultConfig);
-		defaultConfig.setProperty("configFormat", "owl".equals(cc.getString(LANGUAGEKEY)) ? "prop" : "conf");
+		defaultConfig.setProperty("configFormat", Constants.LANGUAGES.OWL.equals(getLanguage()) ? "prop" : "conf");
 		this.config = cc;
 	}
 
-	public String getPosFilename() {
-		return config.getString(FILENAMEKEY+".pos",
-				LanguageInfo.forLanguage(config.getString(LANGUAGEKEY)).getPosFilename());
+	public LanguageInfoBase getLanguageInfo() {
+		return LanguageInfo.forLanguage(getLanguage());
 	}
 
-	public String getNegFilename() {
-		return config.getString(FILENAMEKEY+".neg",
-				LanguageInfo.forLanguage(config.getString(LANGUAGEKEY)).getNegFilename());
+	public String getFilename(Constants.ExType type) {
+		return config.getString(FILENAMEKEY+"."+type.asString(), getLanguageInfo().getFilename(type));
 	}
 
 	public String getBaseFilename() {
-		return config.getString(FILENAMEKEY+".base",
-				LanguageInfo.forLanguage(config.getString(LANGUAGEKEY)).getBaseFilename());
+		return config.getString(FILENAMEKEY+".base", getLanguageInfo().getBaseFilename());
 	}
 
 	public List<String> getFamilies() {
@@ -55,5 +53,13 @@ public class LearningSystemConfig {
 
 	public Configuration getConfig() {
 		return config;
+	}
+
+	public Constants.LANGUAGES getLanguage() {
+		return Constants.LANGUAGES.valueOf(config.getString(LANGUAGEKEY).toUpperCase());
+	}
+
+	public String getConfigFormat() {
+		return config.getString("configFormat");
 	}
 }

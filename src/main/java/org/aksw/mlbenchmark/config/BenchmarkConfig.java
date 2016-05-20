@@ -1,11 +1,13 @@
 package org.aksw.mlbenchmark.config;
 
+import org.aksw.mlbenchmark.Constants;
 import org.aksw.mlbenchmark.LearningSystemInfo;
-import org.aksw.mlbenchmark.Scenario;
+import org.aksw.mlbenchmark.container.ScenarioAttributes;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -62,15 +64,17 @@ public class BenchmarkConfig {
 	 * @param s a config key
 	 * @return whether the config contains this key
 	 */
+/*
 	public boolean containsKey(String s) {
 		return config.containsKey(s);
 	}
+*/
 
 	/**
 	 * @return output file name for mex
 	 */
 	public String getMexOutputFile() {
-		return config.getString("mex.outputFile");
+		return config.getString("mex.outputFile", null);
 	}
 
 	/**
@@ -127,7 +131,21 @@ public class BenchmarkConfig {
 	 * @param scn the scenario
 	 * @return an apache commons config subconfiguration for the learning problem
 	 */
-	public Configuration getLearningProblemConfiguration(Scenario scn) {
+	public Configuration getLearningProblemConfiguration(ScenarioAttributes scn) {
 		return config.subset("learningproblem." + scn.getTask() + "." + scn.getProblem());
+	}
+
+	/**
+	 * @return list of desired measures in validation
+	 */
+	public List<String> getMeasures() {
+		return config.getList(String.class, "measures", Arrays.asList("pred_acc"));
+	}
+
+	/**
+	 * @return the configures maximum execution time in seconds for each training step
+	 */
+	public long getMaxExecutionTime() {
+		return config.getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime);
 	}
 }

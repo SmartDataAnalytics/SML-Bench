@@ -1,5 +1,7 @@
 package org.aksw.mlbenchmark;
 
+import org.aksw.mlbenchmark.languages.LanguageInfoBase;
+
 /**
  * Created by Simon Bin on 16-4-26.
  */
@@ -19,11 +21,22 @@ public class Constants {
 
 	/** Supported knowledge representation languages */
 	public enum LANGUAGES {
-		OWL, PROLOG
+		OWL, PROLOG, language, lang;
+
+		public String asString() {
+			return name().toLowerCase();
+		}
+		public LanguageInfoBase getInfo() {
+			return LanguageInfo.forLanguage(this);
+		}
 	}
 
 	/** example types for example based learning */
 	public enum ExType {
-		POS, NEG
+		POS, NEG;
+
+		public String asString() {
+			return name().toLowerCase();
+		}
 	}
 }
