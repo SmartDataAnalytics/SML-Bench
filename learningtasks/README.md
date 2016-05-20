@@ -1,8 +1,41 @@
-# learning tasks
+# Learning Tasks
 
-## candidate datasets
+## Available Learning Tasks
 
-### ILP Conferences
+The main datasets provided so far are the following:
+
+- Carcinogenesis: Prediction of carcinogenic drugs
+- Hepatitis: Prediction of the Hepatitis type based on patient data
+- Lymphography: Prediction of diagnosis class based on lymphography patient data
+- Mammographic: Prediction of breast cancer severity based on screening data
+- Mutagenesis: Prediction of the mutagenicity of chemical compounds
+- NCTRER: Prediction of a molecule’s estrogen receptor binding activity
+- Premier League: Find a predictive description of goal keepers based on player statistics in soccer matches
+- Pyrimidine: Prediction of the inhibition activity of pyrimidines and the DHFR enzyme
+- Suramin: Find a predictive description of suramin analogues for cancer treatment
+
+(Besides this there are further datasets mainly added for debugging purposes.)
+
+Machine-readable descriptions of the actual datasets are provided as turtle file (`dataset.ttl`) in the corresponding `owl` and `prolog` directories. The turtle file for the Carcinogenesis OWL knowledge base resides for example at [`SML-Bench/learningtasks/carcinogenesis/owl/dataset.ttl`](carcinogenesis/owl/dataset.ttl).
+
+## How to Add an Own Learning Task and Learning Problem
+
+The SML-Bench benchmark runner expects learning tasks to reside under the `learningtasks` directory.
+To add new learning task, e.g. `mytask`, a folder `SML-Bench/learningtasks/mytask` needs to be created.
+Additionally there should be a sub-folder for each supported KR language (currently `owl` and `prolog`).
+The actual datasets in the given KR languages should then be put into the folder `SML-Bench/learningtasks/mytask/<krlanguage>/data/`.
+Accordingly a Prolog representation `mydataset.pl` of our learning task should then reside in the folder `SML-Bench/learningtasks/mytask/prolog/data/mydataset.pl`.
+
+A concrete *learning problem* defines the positive and negative examples and optional configurations for the learning systems.
+Learning problems are usually put into the directories `SML-Bench/learningtasks/<learningtask>/lp/<learningproblem>`.
+Given we want to define a learning problem `firstlearningproblem` for the Prolog representation of our learning task `mytask` it will reside at `SML-Bench/learningtasks/mytask/prolog/lp/firstlearningproblem`.
+Inside this directory there will be files called `pos.pl` and `neg.pl` containing Prolog expressions of the positive and negative examples, respectively.
+In case of a learning problem for an OWL representations the files should be named `pos.txt` and `neg.txt`.
+Dedicated learning system configurations are declared in files named as the learning system with a file suffix `.conf`.
+Accordingly a Aleph configuration file for the given learning problem could be found at `SML-Bench/learningtasks/mytask/prolog/lp/firstlearningproblem/aleph.conf`.
+
+
+## Candidate Datasets
 
 - DBPCAN [Rui Camacho, Ruy Ramos and Nuno Fonseca: 'AND Parallelism for ILP: the APIS system', 2013]
 - Crime statistics dataset [Dalal Alrajeh, Paul Gill and Duangtida Athakravi: 'Learning Characteristics and Antecedent Behaviours of Lone-Actor Terrorists', 2014]
@@ -18,31 +51,10 @@
 - Alzheimers [Cristiano Grijó Pitangui and Gerson Zaverucha: 'Learning Theories Using Estimation Distribution Algorithms and (Reduced) Bottom Clauses', 2011]
 - [Sebastian Fröhler, Stefan Kramer: 'Inductive logic programming for gene regulation prediction', 2008]
 - [Fabrizio Riguzzi: 'ALLPAD: approximate learning of logic programs with annotated disjunctions', 2008]
-
-### Machine Learning Journal Issues
-
-TODO
-
-### Journal of Machine Learning Research Issues
-
-TODO
-
-### ECML PKDD
-
-TODO
-
-
-### International Conference on Machine Learning
-
-TODO
-
-
-### Relational Dataset Repository
-
-- PTE
-- StudentLoan
-- UW-CSE
-- elti
-- Genes
-- NBA
+- [PTE](https://relational.fit.cvut.cz/dataset/PTE) (Relational Dataset Repository)
+- [StudentLoan](https://relational.fit.cvut.cz/dataset/StudentLoan) (Relational Dataset Repository)
+- [UW-CSE](https://relational.fit.cvut.cz/dataset/UW-CSE) (Relational Dataset Repository)
+- [elti](https://relational.fit.cvut.cz/dataset/Elti) (Relational Dataset Repository)
+- [Genes](https://relational.fit.cvut.cz/dataset/Genes) (Relational Dataset Repository)
+- [NBA](https://relational.fit.cvut.cz/dataset/NBA) (Relational Dataset Repository)
 
