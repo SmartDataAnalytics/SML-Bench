@@ -77,8 +77,17 @@ public class BenchmarkLog {
 		learningSystemConfigs.addConfig(scenarioSystem, fold, configFilePath);
 	}
 
+	public void saveAbsoluteLearningSystemConfig(ScenarioSystem scenarioSystem, String configFilePath) {
+
+		learningSystemConfigs.addConfig(scenarioSystem, 0, configFilePath);
+	}
+
 	public void saveResultSet(ScenarioSystem scenarioSystem, int fold, Configuration res) {
 		results.addResult(scenarioSystem, fold, res);
+	}
+
+	public void saveAbsoluteResultSet(ScenarioSystem ss, Configuration resultset) {
+		saveResultSet(ss, 0, resultset);
 	}
 
 	public Configuration getValidationResults(ScenarioSystem scenarioSystem, int fold) {
