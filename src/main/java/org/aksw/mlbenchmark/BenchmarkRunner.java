@@ -4,7 +4,9 @@ import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioLangAttributes;
 import org.aksw.mlbenchmark.mex.MEXWriter;
+import org.aksw.mlbenchmark.systemrunner.AccuracyRunner;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
+import org.aksw.mlbenchmark.systemrunner.SystemRunner;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
@@ -51,6 +53,7 @@ public class BenchmarkRunner {
 	private PropertyListConfiguration resultset = new PropertyListConfiguration();
 	private BenchmarkLog benchmarkLog;
 	private String mexOutputFilePath = null;
+	private boolean leaveOneOut;
 
 	/**
 	 * create a BenchmarkRunner
@@ -81,6 +84,7 @@ public class BenchmarkRunner {
 		initLanguages();
 		initTemp();
 		folds = config.getCrossValidationFolds();
+		leaveOneOut = config.isLeaveOneOut();
 		threads = config.getThreadsCount();
 		mexOutputFilePath = config.getMexOutputFile();
 
@@ -342,13 +346,15 @@ public class BenchmarkRunner {
 
 		baseConf.setProperty("framework.currentSeed", seed);
 
+		SystemRunner runner;
 		if (folds > 1) {
-			CrossValidationRunner crossValidationRunner = new CrossValidationRunner(this, scn, baseConf);
-			crossValidationRunner.run();
+			runner = new CrossValidationRunner(this, scn, baseConf);
+		} else if (leaveOneOut) {
+			throw new NotImplementedException("Leave 1 out not yet implemented");
 		} else {
-			throw new NotImplementedException("Absolute measure not yet implemented");
+			runner = new AccuracyRunner(this, scn, baseConf);
 		}
-
+		runner.run();
 	}
 
 	/**

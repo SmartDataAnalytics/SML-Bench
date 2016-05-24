@@ -39,4 +39,6 @@ public class Constants {
 			return name().toLowerCase();
 		}
 	}
+
+	public enum State { RUNNING, OK, TIMEOUT, FAILURE, ERROR }
 }
