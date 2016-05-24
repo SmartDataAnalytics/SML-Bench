@@ -31,8 +31,8 @@ public class LearningSystemConfig {
 			cc.addConfiguration(systemCL.config());
 		}
 		cc.addConfiguration(defaultConfig);
+                this.config = cc;
 		defaultConfig.setProperty("configFormat", Constants.LANGUAGES.OWL.equals(getLanguage()) ? "prop" : "conf");
-		this.config = cc;
 	}
 
 	public LanguageInfoBase getLanguageInfo() {
