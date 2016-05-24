@@ -35,6 +35,10 @@ public class LearningSystemConfig {
 		defaultConfig.setProperty("configFormat", Constants.LANGUAGES.OWL.equals(getLanguage()) ? "prop" : "conf");
 	}
 
+	public LearningSystemConfig(BenchmarkRunner br, String learningSystem) {
+		this(br, br.getSystemInfo(learningSystem));
+	}
+
 	public LanguageInfoBase getLanguageInfo() {
 		return LanguageInfo.forLanguage(getLanguage());
 	}
