@@ -54,6 +54,13 @@ public class BenchmarkConfig {
 	}
 
 	/**
+	 * @return whether to use leave 1 out cross validation
+	 */
+	public boolean isLeaveOneOut() {
+		return config.getBoolean("framework.leaveOneOut", false);
+	}
+
+	/**
 	 * @return number of threads to use for parallelisation
 	 */
 	public int getThreadsCount() {
@@ -148,4 +155,5 @@ public class BenchmarkConfig {
 	public long getMaxExecutionTime() {
 		return config.getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime);
 	}
+
 }
