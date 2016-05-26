@@ -22,6 +22,9 @@ public class LearningSystemConfig {
 		// FIXME: we need to find a generic way to determine the language
 		defaultConfig.setProperty(LANGUAGEKEY, lsi.hasType("dllearner") ? "owl" : "prolog");
 		BenchmarkConfig runtimeConfig = br.getConfig();
+                // Extract a subconfiguration from the configuration passed by the user.
+                // The extracted subconfiguration should contain information about 
+                // learning system
 		Configuration lsRuntimeConfig = runtimeConfig.getLearningSystemConfiguration(lsi);
 		ConfigLoader systemCL = ConfigLoader.findConfig(lsi.getDir()+"/"+ Constants.LEARNINGSYSTEMCONFIG);
 		CombinedConfiguration cc = new CombinedConfiguration();

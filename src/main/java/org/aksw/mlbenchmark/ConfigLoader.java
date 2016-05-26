@@ -151,7 +151,7 @@ public class ConfigLoader {
 			config.add(params.basic().setListDelimiterHandler(new DefaultListDelimiterHandler(',')));
 		}
 		FileBasedConfigurationBuilder<T> builder =
-				new FileBasedConfigurationBuilder<T>(type)
+				new FileBasedConfigurationBuilder<>(type)
 						.configure(config.toArray(new BuilderParameters[0]));
 
 		try

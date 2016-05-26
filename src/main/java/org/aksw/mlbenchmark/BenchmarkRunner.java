@@ -159,7 +159,7 @@ public class BenchmarkRunner {
 	}
 
 	/**
-	 * create workind directory
+	 * create working directory
 	 */
 	private void initTemp() {
 		try {

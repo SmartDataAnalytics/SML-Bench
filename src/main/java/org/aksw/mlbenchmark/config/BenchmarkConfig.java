@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Random;
 
 /**
+ * This class is a wrapper for the benchmark root configuration. It provides
+ * convenience methods and constants.
  * Convenience and constants for the benchmark root config
  */
 public class BenchmarkConfig {
@@ -19,21 +21,21 @@ public class BenchmarkConfig {
 
 	/**
 	 * create a new BenchmarkConfig which configures a SMLBench run
-	 * @param config the apache commons config
+	 * @param config the apache commons configuration
 	 */
 	public BenchmarkConfig(HierarchicalConfiguration<ImmutableNode> config) {
 		this.config = config;
 	}
 
 	/**
-	 * @return the unterlying apache commons config object
+	 * @return the underlying apache commons configuration object
 	 */
 	public HierarchicalConfiguration<ImmutableNode> getConfig() {
 		return config;
 	}
 
 	/**
-	 * @return the learning systems that should be trialed
+	 * @return the learning systems that should be executed
 	 */
 	public List<String> getLearningSystems() {
 		return config.getList(String.class, "learningsystems");
@@ -68,8 +70,8 @@ public class BenchmarkConfig {
 	}
 
 	/**
-	 * @param s a config key
-	 * @return whether the config contains this key
+	 * @param s a configuration key
+	 * @return whether the configuration contains this key
 	 */
 /*
 	public boolean containsKey(String s) {
