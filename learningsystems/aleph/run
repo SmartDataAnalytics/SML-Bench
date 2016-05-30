@@ -60,6 +60,7 @@ data_dir_name = 'data'
 tool_specific_data_dir = 'aleph'
 lp_dir_name = 'lp'
 config_file_name = 'aleph.conf'
+# UNUSED!
 output_file_name = 'results.txt'
 yap_executable_name = 'yap'
 aleph_script_name = 'aleph.pl'
@@ -196,7 +197,7 @@ def find_aleph_script():
                   'system\'s directory'
             raise NoAlephScriptFound(msg)
 
-        return aleph_script_name
+        return aleph_script_path
 
 
 def create_pl_script(yap_executable, aleph_script_path, dir, settings):
@@ -228,8 +229,8 @@ def get_and_clean_results(results_dir):
     result_lines = []
 
     # get all result lines from results file
-    with open(os.path.join(results_dir, aleph_rules_output_file_name)) as res:
         for line in res.readlines():
+    with open(os.path.join(results_dir, aleph_rules_output_file_name)) as res:
             result_lines.append(line.strip())
 
     tmp_lines = []
