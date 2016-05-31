@@ -14,7 +14,7 @@ import java.util.*;
 class CrossValidationStep extends CommonStep {
 	protected CrossValidationRunner parent;
 	private final int fold;
-	private String trainingResultFile;
+	//private String trainingResultFile;
 
 	public CrossValidationStep(CrossValidationRunner parent, ScenarioSystem ss, ConfigLoader learningProblemConfigLoader, int fold) {
 		super(parent, ss, learningProblemConfigLoader);
