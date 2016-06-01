@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import argparse
-from hgext.color import stdout
 
 try:
     import configparser
@@ -66,7 +65,7 @@ swipl_executable_name = 'swipl'
 slipcover_script_name = 'slipcover.pl'
 slipcover_rules_output_file_name = 'rules'
 train_script_file_name = 'train.pl'
-extract_inter_script = "extract_interpretations.pl"
+extract_inter_script = "extract_facts.pl"
 
 class NoSwiplInstallationFoundException(Exception):
     """Raised when no installed SWI-Prolog could be found."""
@@ -316,4 +315,3 @@ if __name__ == '__main__':
     _log.debug('Postprocessing finished')
     
     _log.debug('Results written to %s' % output_file)
-
