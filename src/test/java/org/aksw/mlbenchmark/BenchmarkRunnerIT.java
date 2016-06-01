@@ -34,10 +34,8 @@ public class BenchmarkRunnerIT {
     }
 
     @BeforeClass
-    public static void setUpClass() throws ConfigLoaderException {
+    public static void setUpClass() {
         System.out.println("Current directory: " + System.getProperty("user.dir"));
-        String configFile = "src/main/resources/test.plist";
-        instance = new BenchmarkRunner(configFile);
     }
 
     @AfterClass
@@ -55,9 +53,20 @@ public class BenchmarkRunnerIT {
     /**
      * Test of run method, of class BenchmarkRunner.
      */
-    @Test
-    public void testRun() {
+    //@Test
+    public void testRun1() throws ConfigLoaderException {
         System.out.println("run (without any final test)");
+        String configFile = "src/main/resources/test.plist";
+        instance = new BenchmarkRunner(configFile);
+        instance.run();
+        fail();
+    }
+
+    @Test
+    public void testRun2() throws ConfigLoaderException {
+        System.out.println("run (without any final test)");
+        String configFile = "src/main/resources/test_2.plist";
+        instance = new BenchmarkRunner(configFile);
         instance.run();
         fail();
     }

@@ -16,6 +16,7 @@ import subprocess
 import atexit
 import signal
 import ctypes
+import shlex
 libc = ctypes.CDLL("libc.so.6")
 
 
@@ -109,18 +110,26 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos,
     temp_kb.close()
     
     # open the file that will be taken as input by SLIPCOVER
-    out = open(os.path.join(target_dir, file_name_base + '.pl'), 'w')  
+    out = open(os.path.join(target_dir, file_name_base + '.pl'), 'w')
+    _log.debug("Converting the dataset in a supported format by SLIPCOVER.")
     out.write(":- sc.\n")
     # Extract the interpretations and save the new kb.
     # A prolog script will be used, therefore it should be checked if we have SWI-Prolog installed
     out.write(":- begin_bg.\n")
+    out.flush()
     extract_inter_script_path = os.path.join(os.getcwd(),extract_inter_script)
     # extracted interpretations file path 
     inter_temp_path = os.path.join(target_dir,"output_interpretations.pl")
-    subprocess.call([prolog,"-l " + extract_inter_script_path, 
-                      "-g extract(%s,%s,%s,%s)." % (bg_temp_path,file_pos,file_neg,inter_temp_path)],
-                     cwd=tool_specific_dir, stdout=out)
+    command = prolog + " --quiet -l " + extract_inter_script_path + " -g "
+    #subprocess.call([prolog,"-l " + extract_inter_script_path, 
+    #                  "-g extract(%s,%s,%s,%s)." % (bg_temp_path,file_pos,file_neg,inter_temp_path)],
+    #                 cwd=tool_specific_dir, stdout=out)
+    args = shlex.split(command)
+    args.append("extract(\'%s\',\'%s\',\'%s\',\'%s\'),halt." % (bg_temp_path,file_pos,file_neg,inter_temp_path))
+    
+    subprocess.call(args, cwd=tool_specific_dir, stdout=out)
     out.write(":- end_bg.\n")
+    out.flush()
     # remove the old kb
     os.remove(bg_temp_path)
     # add the language biases
@@ -135,10 +144,13 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos,
     subprocess.call(['cat', inter_temp_path], stdout=out)
     # remove file containing the extracted interpretations
     os.remove(inter_temp_path)
+    # all examples in one fold
+    out.write("fold(all,F) :- findall(I,int(I),F).")
     # close the final file 
     out.close()
+    _log.debug("Conversion completed")
     # return the final file
-    return os.path.join(target_dir, file_name_base + '.pl')
+    return os.path.join(target_dir, file_name_base + ".pl")
 
 
 def get_settings(learning_task, lp_id):
@@ -208,17 +220,18 @@ def create_exec_script(swipl_executable, slipcover_script_path, input_file_path,
     settings_str = ''
 
     for key, val in settings.items():
-        settings_str += ':- set_sc(%s,%s)' % (key, val)
+        settings_str += 'set_sc(%s,%s)' % (key, val)
         settings_str += ','
 
     settings_str = settings_str[:-1]
     
-    cmd = ("echo \"%s,%s,induce([all],P),write(P),halt.\" | %s %s 1> %s" %  
+    cmd = ("echo \"consult('%s'),%s,induce([all],P),writeln(P),halt.\" | %s %s 1> %s\n" %  
         (input_file_path,settings_str,swipl_executable,slipcover_script_path,slipcover_rules_path))
 
 
     # write the train script
     with open(file_path, 'w') as f:
+        f.write("#!/bin/bash\n\n")
         f.write(cmd)
 
     # make the train script executable
@@ -293,13 +306,13 @@ if __name__ == '__main__':
     target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
     swipl_executable = find_swipl()
-    copy_files_around(learning_task_id, learning_problem_id, target_dir,
+    input_file_path = copy_files_around(learning_task_id, learning_problem_id, target_dir,
                       file_name_base, cfg['filename.pos'], cfg['filename.neg'],prolog=swipl_executable)
 
     settings = get_settings(learning_task_id, learning_problem_id)
     
     slipcover_script_path = find_slipcover_script()
-    script_path,learned_rules_path = create_exec_script(swipl_executable, slipcover_script_path, target_dir, settings)
+    script_path,learned_rules_path = create_exec_script(swipl_executable, slipcover_script_path, input_file_path, target_dir, settings)
     # script_path = os.path.join(target_dir, train_script_file_name)
 
     _log.debug('Running SLIPCOVER')

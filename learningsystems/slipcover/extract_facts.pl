@@ -17,7 +17,6 @@
 extract(KBPath,PosPath,NegPath,OutPath) :-
 	open(KBPath,read,InputKB),
 	% read the file and get the set of all facts
-	gtrace,
 	extract_facts_from_KB(InputKB,Facts),
 	% close the InputKB
 	close(InputKB),
@@ -85,6 +84,8 @@ write_pos_examples(PosExStream,Output) :-
 	read(PosExStream,Example),
 	(Example \== end_of_file ->
 		write(Output,Example),writeln(Output,'.'),
+		Example =.. [_,FirstTerm|_OtherTerms],
+		write(Output,int(FirstTerm)),writeln(Output,'.'),
 		write_pos_examples(PosExStream,Output)
 	;
 		!
@@ -99,6 +100,8 @@ write_neg_examples(NegExStream,Output) :-
 	read(NegExStream,Example),
 	(Example \== end_of_file ->
 		write(Output,neg(Example)),writeln(Output,'.'),
+		Example =.. [_,FirstTerm|_OtherTerms],
+		write(Output,int(FirstTerm)),writeln(Output,'.'),
 		write_neg_examples(NegExStream,Output)
 	;
 		!
