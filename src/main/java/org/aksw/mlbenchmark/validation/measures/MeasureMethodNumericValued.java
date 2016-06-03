@@ -24,5 +24,5 @@ import java.util.List;
 public interface MeasureMethodNumericValued {
     public List<? extends Point> getListMeasures(List<ClassificationResult> results);
     
-    public double getArea(List<? extends Point> points);
+    public double getAUC(List<? extends Point> points);
 }

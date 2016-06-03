@@ -26,30 +26,31 @@ import org.aksw.mlbenchmark.Constants;
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
 public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumericValued {
+
     // total number of positive examples
     protected int nPos;
     // total number of negative examples
     protected int nNeg;
-    
+
     public AbstractMeasureMethodNumeric(int nPos, int nNeg) {
         this.nPos = nPos;
         this.nNeg = nNeg;
     }
-    
+
     public List<CurvePoint> convertIntoCurvePoints(List<ClassificationResult> results) throws CurvePointGenerationException {
         List<CurvePoint> curvePoints = new LinkedList<>();
-        Collections.sort(results,Collections.reverseOrder());
+        Collections.sort(results, Collections.reverseOrder());
         int truePos = 0;
         int falsePos = 0;
         double fPrev = Double.MAX_VALUE;
-        for(ClassificationResult res : results) {
-            if (res.getProb() < fPrev ) {
+        for (ClassificationResult res : results) {
+            if (res.getProb() < fPrev) {
                 curvePoints.add(new CurvePoint(truePos, falsePos));
                 fPrev = res.getProb();
             } else {
-                if (res.getProb() > fPrev){
-                    throw new CurvePointGenerationException("current score: " + res.getProb() +
-                    " is greater than previous one: " + fPrev);
+                if (res.getProb() > fPrev) {
+                    throw new CurvePointGenerationException("current score: " + res.getProb()
+                            + " is greater than previous one: " + fPrev);
                 }
             }
             if (res.getClassification() == Constants.ExType.POS) {
@@ -59,5 +60,36 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
             }
         }
         return curvePoints;
+    }
+
+    /**
+     * It returns the area under the curve.
+     *
+     * @param points
+     * @return
+     */
+    @Override
+    public double getAUC(List<? extends Point> points) {
+        double area = 0;
+        double x = 0;
+        double y = 0;
+        for (Point p : points) {
+            area += trapezoidArea(p.getY(), y, (p.getX() - x));
+            x = p.getX();
+            y = p.getY();
+        }
+        return area;
+    }
+
+    /**
+     * It computes the area of a trapezoid.
+     * 
+     * @param base1
+     * @param base2
+     * @param height
+     * @return 
+     */
+    private double trapezoidArea(double base1, double base2, double height) {
+        return (base1 + base2) * height / 2;
     }
 }

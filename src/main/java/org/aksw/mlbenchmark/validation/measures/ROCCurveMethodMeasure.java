@@ -20,7 +20,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * This class compute the Receiver-Operating Characteristics (ROC) points in the ROC 
+ * This class computes the Receiver-Operating Characteristics (ROC) points in the ROC 
  * curve and the area under the curve (AUC). 
  * It uses the method of Tom Fawcett. "An introduction to ROC analysis".  
  * Pattern recognition letters 27.8 (2006): 861-874.
@@ -42,7 +42,7 @@ public class ROCCurveMethodMeasure extends AbstractMeasureMethodNumeric {
     public List<? extends Point> getListMeasures(List<ClassificationResult> results) {
         List<ROCPoint> rocPoints = new LinkedList<>();
         try {
-            rocPoints.add(new ROCPoint(0.0, 0.0));
+            //rocPoints.add(new ROCPoint(0.0, 0.0));
             List<CurvePoint> points = convertIntoCurvePoints(results);
 
             for (CurvePoint p : points) {
@@ -54,27 +54,6 @@ public class ROCCurveMethodMeasure extends AbstractMeasureMethodNumeric {
             throw new RuntimeException(e);
         }
         return rocPoints;
-    }
-
-    /**
-     * It returns the area under the Receiver-Operating Characteristics curve.
-     * @param rocPoints
-     * @return 
-     */
-    @Override
-    public double getArea(List<? extends Point> rocPoints) {
-        double area = 0;
-        double fprPrev = 0;
-        double tprPrev = 0;
-        for (Point p : rocPoints) {
-            ROCPoint rp = (ROCPoint) p;
-            area += trapezoidArea(rp.getTPR(), tprPrev, (rp.getFPR() - fprPrev));
-        }
-        return area;
-    }
-
-    private double trapezoidArea(double base1, double base2, double height) {
-        return (base1 + base2) * height / 2;
     }
 
     /**
