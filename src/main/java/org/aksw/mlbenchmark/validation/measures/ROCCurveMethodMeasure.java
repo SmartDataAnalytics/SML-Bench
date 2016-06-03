@@ -15,6 +15,7 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import org.aksw.mlbenchmark.validation.measures.exceptions.CurvePointGenerationException;
 import java.util.LinkedList;
 import java.util.List;
 
