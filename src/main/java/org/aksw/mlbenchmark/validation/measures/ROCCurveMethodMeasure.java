@@ -20,67 +20,41 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * This class computes the Receiver-Operating Characteristics (ROC) points in the ROC 
- * curve and the area under the curve (AUC). 
- * It uses the method of Tom Fawcett. "An introduction to ROC analysis".  
- * Pattern recognition letters 27.8 (2006): 861-874.
- * 
+ * This class computes the Receiver-Operating Characteristics (ROC) points in
+ * the ROC curve and the area under the curve (AUC). It uses the method of Tom
+ * Fawcett. "An introduction to ROC analysis". Pattern recognition letters 27.8
+ * (2006): 861-874.
+ *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
 public class ROCCurveMethodMeasure extends AbstractMeasureMethodNumeric {
 
-    public ROCCurveMethodMeasure(int nPos, int nNeg) {
-        super(nPos, nNeg);
+    public ROCCurveMethodMeasure(int nPos, int nNeg, List<ClassificationResult> results) {
+        super(nPos, nNeg, results);
     }
 
     /**
-     * It returns the points of the Receiver-Operating Characteristics curve 
-     * @param results
+     * It returns the points of the Receiver-Operating Characteristics curve
+     *
      * @return points of the ROC curve
      */
     @Override
-    public List<? extends Point> getListMeasures(List<ClassificationResult> results) {
+    public List<? extends Point> getCurvePoints() {
         List<ROCPoint> rocPoints = new LinkedList<>();
-        try {
+
             //rocPoints.add(new ROCPoint(0.0, 0.0));
-            List<CurvePoint> points = convertIntoCurvePoints(results);
-
-            for (CurvePoint p : points) {
-                rocPoints.add(new ROCPoint((double) p.getFP() / nNeg, (double) p.getTP() / nPos));
-            }
-            rocPoints.add(new ROCPoint(1.0, 1.0));
-
-        } catch (CurvePointGenerationException e) {
-            throw new RuntimeException(e);
+        for (ConfusionPoint p : this.curvePoints) {
+            rocPoints.add(new ROCPoint((double) p.getFP() / nNeg, (double) p.getTP() / nPos));
         }
+        rocPoints.add(new ROCPoint(1.0, 1.0));
+
         return rocPoints;
     }
 
-    /**
-     * This class represents a point in the Receiver-Operating Characteristics curve. 
-     */
-    private class ROCPoint extends Point {
-
-        ROCPoint(double fpr, double tpr) {
-            super(fpr, tpr);
-        }
-
-        /**
-         * It returns the false positive rate
-         * @return False positive rate
-         */
-        double getFPR() {
-            return getX();
-        }
-
-        /**
-         * It returns the true positive rate
-         * @return True positive rate
-         */
-        double getTPR() {
-            return getY();
-        }
-
+    @Override
+    public double getAUC() {
+        List<? extends Point> rocPoints = getCurvePoints();
+        return getAUC(rocPoints);
     }
 
 }

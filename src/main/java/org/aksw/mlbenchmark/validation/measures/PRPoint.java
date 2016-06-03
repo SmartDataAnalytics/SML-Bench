@@ -16,29 +16,21 @@
 package org.aksw.mlbenchmark.validation.measures;
 
 /**
- * This class contains information for the confusion matrix associated to each
- * point of the curve.
  *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
-public class CurvePoint extends Point{
+public class PRPoint extends Point {
 
-//    // Count of true positive examples
-//    private int tp;
-//    // Count of false negative examples
-//    private int fp;
+        PRPoint(double recall, double precision) {
+            super(recall, precision);
+        }
 
-    public CurvePoint(int fp, int tp) {
-        super(fp,tp);
+        double getRecall() {
+            return getX();
+        }
+
+        double getPrecision() {
+            return getY();
+        }
+
     }
-    
-    public int getFP() {
-        return Integer.parseInt(""+getX());
-    }
-    
-    public int getTP() {
-        return Integer.parseInt(""+getY());
-    }
-
-}
-

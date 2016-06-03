@@ -29,19 +29,68 @@ import org.aksw.mlbenchmark.validation.measures.exceptions.CurvePointGenerationE
  */
 public class PRCurveMethodMeasure extends AbstractMeasureMethodNumeric {
 
-    public PRCurveMethodMeasure(int nPos, int nNeg) {
-        super(nPos, nNeg);
+    public PRCurveMethodMeasure(int nPos, int nNeg, List<ClassificationResult> results) {
+        super(nPos, nNeg, results);
     }
 
     @Override
-    public List<? extends Point> getListMeasures(List<ClassificationResult> results) {
+    public List<? extends Point> getCurvePoints() {
         List<PRPoint> prPoints = new LinkedList<>();
         try {
-            List<CurvePoint> points = convertIntoCurvePoints(results);
-            CurvePoint a = points.get(0);
-            prPoints.add(new PRPoint((double) a.getTP() / nPos,
-                    (double) a.getTP() / (a.getTP() + a.getFP())));
-            for (CurvePoint b : points.subList(1, points.size())) {
+
+            ConfusionPoint a = curvePoints.get(0); // (0,0)
+            ConfusionPoint next = curvePoints.get(1);
+
+            // 
+            if (next.getTP() == 1 && next.getFP() == 0) {
+                prPoints.add(new PRPoint(0.0, 1.0));
+            } else if (next.getTP() == 0 && next.getFP() == 1) {
+                prPoints.add(new PRPoint(0.0, 0.0));
+            } else { // Unknown condition!
+                throw new CurvePointGenerationException("Impossible condition: "
+                        + "First point TP=" + next.getTP() + " FP=" + next.getFP());
+            }
+
+            for (ConfusionPoint b : curvePoints.subList(1, curvePoints.size())) {
+//                int tpB = b.getTP();
+//                int fpB = b.getFP();
+
+                if (b.getTP() == a.getTP() && b.getFP() <= a.getFP()) {
+                    throw new CurvePointGenerationException("Impossible condition: "
+                            + "tpB==tpA && fpB <= fpA");
+                }
+
+                a = b;
+                prPoints.add(new PRPoint((double) b.getTP() / nPos,
+                        (double) b.getTP() / (b.getTP() + b.getFP())));
+            }
+            prPoints.add(new PRPoint(1.0, (double) nPos / (nPos + nNeg)));
+        } catch (CurvePointGenerationException e) {
+            throw new RuntimeException(e);
+        }
+
+        return prPoints;
+    }
+
+    @Override
+    public double getAUC() {
+        List<PRPoint> prPoints = new LinkedList<>();
+        try {
+
+            ConfusionPoint a = curvePoints.get(0); // (0,0)
+            ConfusionPoint next = curvePoints.get(1);
+
+            // 
+            if (next.getTP() == 1 && next.getFP() == 0) {
+                prPoints.add(new PRPoint(0.0, 1.0));
+            } else if (next.getTP() == 0 && next.getFP() == 1) {
+                prPoints.add(new PRPoint(0.0, 0.0));
+            } else { // Unknown condition!
+                throw new CurvePointGenerationException("Impossible condition: "
+                        + "First point TP=" + next.getTP() + " FP=" + next.getFP());
+            }
+
+            for (ConfusionPoint b : curvePoints.subList(1, curvePoints.size())) {
 //                int tpB = b.getTP();
 //                int fpB = b.getFP();
                 if (b.getTP() == a.getTP()) {
@@ -62,10 +111,11 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumeric {
             throw new RuntimeException(e);
         }
 
-        return prPoints;
+        return getAUC(prPoints);
+
     }
 
-    private List<PRPoint> interpolate(CurvePoint a, CurvePoint b) throws CurvePointGenerationException {
+    private List<PRPoint> interpolate(ConfusionPoint a, ConfusionPoint b) throws CurvePointGenerationException {
         List<PRPoint> interPoints = new LinkedList<>();
         double tpA = a.getTP();
         double tpB = b.getTP();
@@ -78,29 +128,13 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumeric {
         if (tpB < tpA) {
             throw new CurvePointGenerationException("Impossible condition during interpolation: tpB < tpA");
         }
-        for (int i = 1; i < d1; i++) {
-            double recall = (tpA + i) / nPos;
-            double precision = (tpA + i) / (tpA + i + fpA + (fpB - fpA) / d1 * i);
+        for (int x = 1; x <= d1; x++) {
+            double recall = (tpA + x) / nPos;
+            double precision = (tpA + x) / (tpA + x + fpA + (fpB - fpA) / d1 * x);
             interPoints.add(new PRPoint(recall, precision));
         }
 
         return interPoints;
-    }
-
-    private class PRPoint extends Point {
-
-        PRPoint(double recall, double precision) {
-            super(recall, precision);
-        }
-
-        double getRecall() {
-            return getX();
-        }
-
-        double getPrecision() {
-            return getY();
-        }
-
     }
 
 }

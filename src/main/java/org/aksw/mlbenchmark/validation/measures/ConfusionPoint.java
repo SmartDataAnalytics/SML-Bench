@@ -15,14 +15,32 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
-import java.util.List;
-
 /**
+ * This class contains information for the confusion matrix associated to each
+ * point of the curve.
  *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
-public interface MeasureMethodNumericValued {
-    public List<? extends Point> getCurvePoints();
+public class ConfusionPoint extends Point{
+
+//    // Count of true positive examples
+//    private int tp;
+//    // Count of false negative examples
+//    private int fp;
+
+    public ConfusionPoint(int fp, int tp) {
+        super(fp,tp);
+    }
     
-    public double getAUC();
+    public int getFP() {
+        Double d = getX();
+        return d.intValue();
+    }
+    
+    public int getTP() {
+        Double d = getY();
+        return d.intValue();
+    }
+
 }
+

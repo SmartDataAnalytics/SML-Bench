@@ -47,4 +47,9 @@ public class Point {
         return y;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return ((Point) o).x==this.x && ((Point)o).y == this.y;
+    }
+
 }

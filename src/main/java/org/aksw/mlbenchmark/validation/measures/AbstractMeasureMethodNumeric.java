@@ -32,20 +32,27 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
     // total number of negative examples
     protected int nNeg;
 
-    public AbstractMeasureMethodNumeric(int nPos, int nNeg) {
+    protected List<ConfusionPoint> curvePoints;
+
+    public AbstractMeasureMethodNumeric(int nPos, int nNeg, List<ClassificationResult> results) {
         this.nPos = nPos;
         this.nNeg = nNeg;
+        try {
+            this.curvePoints = convertIntoCurvePoints(results);
+        } catch (CurvePointGenerationException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    public List<CurvePoint> convertIntoCurvePoints(List<ClassificationResult> results) throws CurvePointGenerationException {
-        List<CurvePoint> curvePoints = new LinkedList<>();
+    private List<ConfusionPoint> convertIntoCurvePoints(List<ClassificationResult> results) throws CurvePointGenerationException {
+        List<ConfusionPoint> curvePoints = new LinkedList<>();
         Collections.sort(results, Collections.reverseOrder());
         int truePos = 0;
         int falsePos = 0;
         double fPrev = Double.MAX_VALUE;
         for (ClassificationResult res : results) {
             if (res.getProb() < fPrev) {
-                curvePoints.add(new CurvePoint(truePos, falsePos));
+                curvePoints.add(new ConfusionPoint(falsePos, truePos));
                 fPrev = res.getProb();
             } else {
                 if (res.getProb() > fPrev) {
@@ -68,12 +75,11 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
      * @param points
      * @return
      */
-    @Override
-    public double getAUC(List<? extends Point> points) {
+    protected double getAUC(List<? extends Point> points) {
         double area = 0;
-        double x = 0;
-        double y = 0;
-        for (Point p : points) {
+        double x = points.get(0).getX();
+        double y = points.get(0).getY();
+        for (Point p : points.subList(1, points.size())) {
             area += trapezoidArea(p.getY(), y, (p.getX() - x));
             x = p.getX();
             y = p.getY();
@@ -83,11 +89,11 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
 
     /**
      * It computes the area of a trapezoid.
-     * 
+     *
      * @param base1
      * @param base2
      * @param height
-     * @return 
+     * @return
      */
     private double trapezoidArea(double base1, double base2, double height) {
         return (base1 + base2) * height / 2;
