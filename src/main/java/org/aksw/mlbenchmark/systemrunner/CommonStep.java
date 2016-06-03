@@ -212,6 +212,9 @@ public abstract class CommonStep {
 				parent.getResultset().setProperty(resultKey + "." + "ValidationRaw" + "." + key, result.getProperty(key));
 			}
 		}
+                // Here all the measures are computed
+                // This works only for binary classifier, for scoring classifier
+                // we can use ROC, PR curves and their areas  
 		List<String> measures = parent.getBenchmarkRunner().getConfig().getMeasures();
 		try {
 			int tp = result.getInt("tp");

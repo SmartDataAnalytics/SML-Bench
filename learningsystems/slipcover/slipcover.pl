@@ -200,7 +200,7 @@ induce_rules(Folds,R):-
   ),
   (M:local_setting(specialization,bottom)->
     M:local_setting(megaex_bottom,MB),
-	gtrace,
+	%gtrace,
     deduct(MB,M,DB,[],InitialTheory),   
     length(InitialTheory,_LI),  
     remove_duplicates(InitialTheory,R1)
@@ -1289,7 +1289,7 @@ generate_head([(A,G,D)|T],M,Mod,H0,H1):-!,
   generate_head(T,M,Mod,H2,H1).
 
 generate_head([A|T],M,Mod,H0,H1):-
-  gtrace,
+  %gtrace,
   functor(A,F,N),    
   functor(F1,F,N),   
   F1=..[F|Arg],

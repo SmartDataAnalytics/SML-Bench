@@ -65,7 +65,7 @@ config_file_name = 'slipcover.conf'
 swipl_executable_name = 'swipl'
 slipcover_script_name = 'slipcover.pl'
 slipcover_rules_output_file_name = 'rules'
-train_script_file_name = 'train.pl'
+train_script_file_name = 'train.sh'
 extract_inter_script = "extract_facts.pl"
 
 class NoSwiplInstallationFoundException(Exception):

@@ -53,13 +53,12 @@ public class BenchmarkRunnerIT {
     /**
      * Test of run method, of class BenchmarkRunner.
      */
-    //@Test
+    @Test
     public void testRun1() throws ConfigLoaderException {
         System.out.println("run (without any final test)");
         String configFile = "src/main/resources/test.plist";
         instance = new BenchmarkRunner(configFile);
         instance.run();
-        fail();
     }
 
     @Test
@@ -68,7 +67,6 @@ public class BenchmarkRunnerIT {
         String configFile = "src/main/resources/test_2.plist";
         instance = new BenchmarkRunner(configFile);
         instance.run();
-        fail();
     }
 
 }

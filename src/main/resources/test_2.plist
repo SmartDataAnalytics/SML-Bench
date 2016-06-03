@@ -1,0 +1,12 @@
+{
+  config = 1;
+  learningsystems = ( slipcover );
+  scenarios = ( hepatitis/1);
+  measures = ( ameasure, pred_acc, fmeasure );
+  framework = {
+    crossValidationFolds = 2;
+    threads = 2; // not implemented yet
+  };
+  //resultOutput = testResult.prop;
+  resultOutput = testResult.xml;
+}
