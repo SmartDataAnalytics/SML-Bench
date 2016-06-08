@@ -1,5 +1,32 @@
-:- module(extract_facts,[extract/4]).
+:- module(extract_facts,[extract/4,extract/2,extract_neg_examples/2,extract_pos_examples/2]).
 
+extract(KBPath,OutPath) :-
+	open(KBPath,read,InputKB),
+	% read the file and get the set of all facts
+	extract_facts_from_KB(InputKB,Facts),
+	% close the InputKB
+	close(InputKB),
+	% open the output file
+	open(OutPath,write,Output),
+	% write all the extracted facts
+	write_facts(Facts,Output),
+	close(Output).
+
+extract_neg_examples(NegPath,OutPath) :- 
+	open(NegPath,read,NegExStream),
+	% open the output file
+	open(OutPath,write,Output),
+	write_neg_examples(NegExStream,Output),
+	close(NegExStream),
+	close(Output).
+	
+extract_pos_examples(PosPath,OutPath) :- 
+	open(PosPath,read,PosExStream),
+	% open the output file
+	open(OutPath,write,Output),
+	write_pos_examples(PosExStream,Output),
+	close(PosExStream),
+	close(Output).
 
 /**
 *	extract(+KBPath:path_background_knowledge,+PosPath:path_positive_examples,+NegPath:path_negative_examples,+OutPath:path_extactet_facts) is det
@@ -20,7 +47,7 @@ extract(KBPath,PosPath,NegPath,OutPath) :-
 	extract_facts_from_KB(InputKB,Facts),
 	% close the InputKB
 	close(InputKB),
-	% opent the output file
+	% open the output file
 	open(OutPath,write,Output),
 	% write all the extracted facts
 	write_facts(Facts,Output),

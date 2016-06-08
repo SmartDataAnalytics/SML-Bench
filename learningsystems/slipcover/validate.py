@@ -12,75 +12,34 @@ import os
 import sys
 import stat
 import subprocess
-#import platform
+# import platform
 import atexit
 import signal
 import ctypes
 import shlex
-"""
-libc = ctypes.CDLL("libc.so.6")
-
-def set_pdeathsig(sig=signal.SIGTERM):
-    def callable():
-        return libc.prctl(1, sig)
-    return callable
-"""
-procs = []
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 _log = logging.getLogger()
-
-@atexit.register
-def kill_subprocesses(*args, **kwargs):
-    for proc in procs:
-        if proc.returncode == None:
-            _log.debug('killing %s at exit', proc)
-        try:
-            proc.kill()
-            proc.terminate()
-        except:
-            pass
-
-def sig_term(*args, **kwargs):
-#    kill_subprocesses()
-    sys.exit(signal.SIGTERM | 0x80)
-
-signal.signal(signal.SIGTERM, sig_term)
-
-def check_call_and_terminate(*args, **kwargs):
-    pp = subprocess.Popen(*args, **kwargs)
-    procs.append(pp)
-    retcode = pp.wait()
-    if retcode:
-        raise subprocess.CalledProcessError(retcode, args[0])
-    return retcode
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
 data_dir_name = 'data'
 tool_specific_data_dir = 'slipcover'
 lp_dir_name = 'lp'
-config_file_name = 'slipcover.conf'
-#output_file_name = 'results.txt'
 swipl_executable_name = 'swipl'
 slipcover_script_name = 'slipcover.pl'
-slipcover_rules_output_file_name = 'rules'
-train_script_file_name = 'train.sh'
 extract_inter_script = "extract_facts.pl"
 
 class NoSwiplInstallationFoundException(Exception):
     """Raised when no installed SWI-Prolog could be found."""
 
-
 class NoSLIPCOVERScriptFound(Exception):
     """Raised when no SLIPCOVER script could be found"""
-
-
+    
 def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
                       file_neg_path, file_knowledge_path, prolog):
     """
     """
-    
     extract_inter_script_path = os.path.join(os.getcwd(),extract_inter_script)
     
     # copy the file that will be taken as input by SLIPCOVER
@@ -121,25 +80,15 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
     return os.path.join(target_dir, file_name_base + ".pl")
 
 
-def get_settings(learning_task, lp_id):
-    config_file_path = os.path.join('..', '..', learning_task_dir_name,
-                                    learning_task, prolog_dir_name,
-                                    lp_dir_name, lp_id, config_file_name)
-
-    if not os.path.isfile(config_file_path):
-        return {}
-
-    conf = configparser.ConfigParser()
-    conf.read(config_file_path)
-
-    settings = {}
-    for item in conf.items('main'):
-        setting, raw_value = item
-        settings[setting] = raw_value
-
-    return settings
-
-# It finds the executable of SWI-Prolog
+def validate(swipl_executable, learned_clauses, target_dir, knowledge_file_path):
+    command = swipl_executable + " --quiet -l " +  + " -g "
+    args = shlex.split(command)
+    args.append("consult(%s),test(),halt." % (knowledge_file_path,))
+    
+    subprocess.call(args, cwd=tool_specific_dir, stdout=out)
+    cmd = ""
+    
+    
 def find_swipl():
     swipl_exec_path = subprocess.check_output(['which', swipl_executable_name])
     swipl_exec_path = swipl_exec_path.strip()
@@ -177,66 +126,6 @@ def find_slipcover_script():
 
         return slipcover_script_path
 
-# create the executable that shall be launched to run SLIPCOVER
-def create_exec_script(swipl_executable, slipcover_script_path, knowledge_file_path, target_dir, settings):
-    """ create the executable that shall be launched to run SLIPCOVER
-        :returns: two values: the path of the executable and the path of the file containing the learned rules
-    """
-    file_path = os.path.join(target_dir, train_script_file_name)
-    slipcover_rules_path = os.path.join(target_dir, slipcover_rules_output_file_name)
-
-    settings_str = ''
-
-    for key, val in settings.items():
-        settings_str += 'set_sc(%s,%s)' % (key, val)
-        settings_str += ','
-
-    settings_str = settings_str[:-1]
-    
-    cmd = ("echo \"consult('%s'),%s,induce([all],P),writeln(P),halt.\" | %s %s 1> %s\n" %  
-        (knowledge_file_path,settings_str,swipl_executable,slipcover_script_path,slipcover_rules_path))
-
-
-    # write the train script
-    with open(file_path, 'w') as f:
-        f.write("#!/bin/bash\n\n")
-        f.write(cmd)
-
-    # make the train script executable
-    os.chmod(file_path, stat.S_IRWXU)
-    
-    return file_path,slipcover_rules_path
-
-
-def get_and_clean_results(results_file):
-    result_lines = []
-
-    # get all result lines from results file
-    #with open(os.path.join(results_dir, aleph_rules_output_file_name)) as res:
-    with open(results_file) as res:
-        for line in res.readlines():
-            result_lines.append(line.strip())
-    """
-    tmp_lines = []
-    tmp_line = ''
-
-    for line in result_lines:
-        tmp_line += line
-        if line.strip().endswith('.'):
-            tmp_lines.append(tmp_line)
-            tmp_line = ''
-
-    result_lines = tmp_lines
-    # remove all pos examples that could not be generalized
-    with open(os.path.join(target_dir, file_name_base + '.f')) as examples:
-        for line in examples.readlines():
-            line = line.strip()
-            if line in result_lines:
-                result_lines.remove(line)
-    """
-    return result_lines
-
-
 def read_config(path):
     conf = configparser.ConfigParser()
     conf.read(path)
@@ -253,11 +142,10 @@ def read_config(path):
     for item in conf.items('data'):
         setting, raw_value = item
         settings['data.' + setting] = raw_value
-        
-#    if conf.has_section('preprocessing'):
-    for item in conf.items('preprocessing'):
-        setting, raw_value = item
-        settings['preprocessing.'+setting] = raw_value
+    if conf.has_section('preprocessing'):
+        for item in conf.items('preprocessing'):
+            setting, raw_value = item
+            settings['preprocessing.'+setting] = raw_value
 
     return settings
 
@@ -266,40 +154,30 @@ if __name__ == '__main__':
     argparser = argparse.ArgumentParser()
     argparser.add_argument('config_file')
     args = argparser.parse_args()
-
+    # read the configuration file
     cfg = read_config(args.config_file)
-
+    
     learning_task_id = cfg['learningtask']
     learning_problem_id = cfg['learningproblem']
-    output_file = cfg['output']
-    _log.debug('Running learning task %s with learning problem %s' % (
-        learning_task_id, learning_problem_id))
-
+    input_file = cfg['input']
+    output_file_path = cfg['output']
+    # read the learned theory 
+    learned_clauses = []
+    with open(input_file) as res:
+        for line in res.readlines():
+            learned_clauses.append(line.strip())
+            
     file_name_base = learning_task_id + '_' + learning_problem_id
     target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
     swipl_executable = find_swipl()
-    knowledge_file_path = copy_files_around(learning_task_id, learning_problem_id, target_dir,
-                      file_name_base, cfg['filename.pos'], cfg['filename.neg'], cfg['preprocessing.knowledge'], prolog=swipl_executable)
-    #knowledge_file_path = copy_files_around(target_dir, file_name_base, cfg["knowledge"])
-
-    settings = get_settings(learning_task_id, learning_problem_id)
-    
     slipcover_script_path = find_slipcover_script()
-    script_path,learned_rules_path = create_exec_script(swipl_executable, slipcover_script_path, knowledge_file_path, target_dir, settings)
-    # script_path = os.path.join(target_dir, train_script_file_name)
-
-    _log.debug('Running SLIPCOVER')
-    check_call_and_terminate([script_path], cwd=target_dir)
+    # copy input files for execution
+    knowledge_file_path = copy_files_around(file_name_base, cfg)
+    # validation execution!
+    nPos, nNeg, results = validate(learned_clauses, target_dir, knowledge_file_path)
+    # write the output configuration file
+    write_config(nPos, nNeg, results, output_file_path)
     
-
-    _log.debug('Postprocessing output files')
-    results = get_and_clean_results(learned_rules_path)
-
-    with open(output_file, 'w') as out:
-        for line in results:
-            out.write(line + "\n")
-    os.remove(learned_rules_path)
-    _log.debug('Postprocessing finished')
     _log.debug('SLIPCOVER run finished.')
-    _log.debug('Results written to %s' % output_file)
+    _log.debug('Results written to %s' % output_file_path)

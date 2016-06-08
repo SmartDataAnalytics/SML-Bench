@@ -76,48 +76,82 @@ class NoSLIPCOVERScriptFound(Exception):
     """Raised when no SLIPCOVER script could be found"""
 
 
-def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
-                      file_neg_path, file_knowledge_path, prolog):
+def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos,
+                      file_neg, prolog):
+    """Finds all the files necessary to run slipcover:
+    - ../../learningtasks/<task_id>/prolog/data/slipcover/*.pl
+                            --> <target_dir>/<file_name_base>.pl
+    - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.pl
+    - file_pos              --> <target_dir>/<file_name_base>.pl # interpretation extraction and merge! 
+    - file_neg              --> <target_dir>/<file_name_base>.pl # interpretation extraction and merge!
     """
-    """
+    # <file_name_base>.b (background knowledge)
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            prolog_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        data_dir_name, tool_specific_data_dir)
     
-    extract_inter_script_path = os.path.join(os.getcwd(),extract_inter_script)
     
-    # copy the file that will be taken as input by SLIPCOVER
+    ## For slipcover the examples, the settings, the background knowledge, the initial knowledge go all in one file.
+    ## and some predicates must be set (e.g. :- sc.)
+
+
+    # open a temporary file that will contain the merge of all the programs
+    bg_temp_path= os.path.join(target_dir, "background_knowledge_temp.pl") 
+    temp_kb = open(bg_temp_path, 'w')
+    # merge all kb files into one
+    # ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+    #                    --> <target_dir>/<file_name_base>.pl
+    for f_name in os.listdir(data_dir):
+        if f_name.endswith('.pl'):
+            subprocess.call(['cat', f_name], cwd=data_dir, stdout=temp_kb)
+    temp_kb.close()
+    
+    # open the file that will be taken as input by SLIPCOVER
     out = open(os.path.join(target_dir, file_name_base + '.pl'), 'w')
-    subprocess.call(['cat', file_knowledge_path], cwd=target_dir, stdout=out)
-    # convert the positive examples
-    file_pos_converted_path = os.path.join(target_dir, "file_pos_converted.pl")
-    
+    _log.debug("Converting the dataset in a supported format by SLIPCOVER.")
+    out.write(":- sc.\n")
+    # Extract the interpretations and save the new kb.
+    # A prolog script will be used, therefore it should be checked if we have SWI-Prolog installed
+    out.write(":- begin_bg.\n")
+    out.flush()
+    extract_inter_script_path = os.path.join(os.getcwd(),extract_inter_script)
+    # extracted interpretations file path 
+    inter_temp_path = os.path.join(target_dir,"output_interpretations.pl")
     command = prolog + " --quiet -l " + extract_inter_script_path + " -g "
-
+    #subprocess.call([prolog,"-l " + extract_inter_script_path, 
+    #                  "-g extract(%s,%s,%s,%s)." % (bg_temp_path,file_pos,file_neg,inter_temp_path)],
+    #                 cwd=tool_specific_dir, stdout=out)
     args = shlex.split(command)
-    args.append("extract_pos_examples(\'%s\',\'%s\'),halt." % (file_pos_path, file_pos_converted_path))
+    args.append("extract(\'%s\',\'%s\',\'%s\',\'%s\'),halt." % (bg_temp_path,file_pos,file_neg,inter_temp_path))
     
-    subprocess.call(args, cwd=os.getcwd())
-    # copy the converted negative examples
-    subprocess.call(['cat', file_pos_converted_path], cwd=target_dir, stdout=out)
-    # remove file containing the converted positive examples
-    os.remove(file_pos_converted_path)
+    subprocess.call(args, cwd=tool_specific_dir, stdout=out)
+    out.write(":- end_bg.\n")
+    out.flush()
     
+    # remove the old kb. NO must be kept!!
+    #os.remove(bg_temp_path)
     
-    # convert the negative examples
-    file_neg_converted_path = os.path.join(target_dir, "file_neg_converted.pl")
-    
-    command = prolog + " --quiet -l " + extract_inter_script_path + " -g "
-
-    args = shlex.split(command)
-    args.append("extract_neg_examples(\'%s\',\'%s\'),halt." % (file_neg_path, file_neg_converted_path))
-    
-    subprocess.call(args, cwd=os.getcwd())
-    # copy converted negative examples
-    subprocess.call(['cat', file_neg_converted_path], cwd=target_dir, stdout=out)
-    # remove file containing the converted negative examples
-    os.remove(file_neg_converted_path)
+    # add the language biases
+    # ../../learningtasks/<task_id>/prolog/data/slipcover/*.pl
+    #                    --> <target_dir>/<file_name_base>.pl
+    if os.path.isdir(tool_specific_dir):
+        for f_name in os.listdir(tool_specific_dir):
+            if f_name.endswith('.pl'):
+                subprocess.call(['cat', f_name], cwd=tool_specific_dir,
+                                stdout=out)
+    # add the examples/interpretations
+    subprocess.call(['cat', inter_temp_path], stdout=out)
+    # remove file containing the extracted interpretations
+    os.remove(inter_temp_path)
     # all examples in one fold
     out.write("fold(all,F) :- findall(I,int(I),F).")
+    # close the final file 
     out.close()
-    
+    _log.debug("Conversion completed")
+    # return the final file
     return os.path.join(target_dir, file_name_base + ".pl")
 
 
@@ -139,7 +173,7 @@ def get_settings(learning_task, lp_id):
 
     return settings
 
-# It finds the executable of SWI-Prolog
+
 def find_swipl():
     swipl_exec_path = subprocess.check_output(['which', swipl_executable_name])
     swipl_exec_path = swipl_exec_path.strip()
@@ -178,7 +212,7 @@ def find_slipcover_script():
         return slipcover_script_path
 
 # create the executable that shall be launched to run SLIPCOVER
-def create_exec_script(swipl_executable, slipcover_script_path, knowledge_file_path, target_dir, settings):
+def create_exec_script(swipl_executable, slipcover_script_path, input_file_path, target_dir, settings):
     """ create the executable that shall be launched to run SLIPCOVER
         :returns: two values: the path of the executable and the path of the file containing the learned rules
     """
@@ -194,7 +228,7 @@ def create_exec_script(swipl_executable, slipcover_script_path, knowledge_file_p
     settings_str = settings_str[:-1]
     
     cmd = ("echo \"consult('%s'),%s,induce([all],P),writeln(P),halt.\" | %s %s 1> %s\n" %  
-        (knowledge_file_path,settings_str,swipl_executable,slipcover_script_path,slipcover_rules_path))
+        (input_file_path,settings_str,swipl_executable,slipcover_script_path,slipcover_rules_path))
 
 
     # write the train script
@@ -253,11 +287,6 @@ def read_config(path):
     for item in conf.items('data'):
         setting, raw_value = item
         settings['data.' + setting] = raw_value
-        
-#    if conf.has_section('preprocessing'):
-    for item in conf.items('preprocessing'):
-        setting, raw_value = item
-        settings['preprocessing.'+setting] = raw_value
 
     return settings
 
@@ -279,14 +308,13 @@ if __name__ == '__main__':
     target_dir = cfg['data.workdir']
     _log.debug('Target dir is %s' % target_dir)
     swipl_executable = find_swipl()
-    knowledge_file_path = copy_files_around(learning_task_id, learning_problem_id, target_dir,
-                      file_name_base, cfg['filename.pos'], cfg['filename.neg'], cfg['preprocessing.knowledge'], prolog=swipl_executable)
-    #knowledge_file_path = copy_files_around(target_dir, file_name_base, cfg["knowledge"])
+    input_file_path = copy_files_around(learning_task_id, learning_problem_id, target_dir,
+                      file_name_base, cfg['filename.pos'], cfg['filename.neg'],prolog=swipl_executable)
 
     settings = get_settings(learning_task_id, learning_problem_id)
     
     slipcover_script_path = find_slipcover_script()
-    script_path,learned_rules_path = create_exec_script(swipl_executable, slipcover_script_path, knowledge_file_path, target_dir, settings)
+    script_path,learned_rules_path = create_exec_script(swipl_executable, slipcover_script_path, input_file_path, target_dir, settings)
     # script_path = os.path.join(target_dir, train_script_file_name)
 
     _log.debug('Running SLIPCOVER')
@@ -299,7 +327,6 @@ if __name__ == '__main__':
     with open(output_file, 'w') as out:
         for line in results:
             out.write(line + "\n")
-    os.remove(learned_rules_path)
     _log.debug('Postprocessing finished')
     _log.debug('SLIPCOVER run finished.')
     _log.debug('Results written to %s' % output_file)
