@@ -18,220 +18,250 @@ import org.apache.commons.exec.ExecuteException;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import org.aksw.mlbenchmark.config.LearningSystemConfig;
+import org.apache.commons.configuration2.ConfigurationUtils;
+import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
 
 /**
  * Actions shared between several types of steps (Cross Validation etc.)
  */
 public abstract class CommonStep {
-	protected final LearningSystemInfo lsi;
-	protected final String system;
-	protected final Constants.LANGUAGES lang;
-	protected final ScenarioSystem ss;
-	protected final ConfigLoader learningProblemConfigLoader;
-	protected final SystemRunner parent;
-	protected Constants.State state;
-	protected String trainingResultFile;
 
-	public CommonStep(SystemRunner parent, ScenarioSystem ss, ConfigLoader learningProblemConfigLoader) {
-		this.parent = parent;
-		this.lsi = ss.getLearningSystemInfo();
-		this.system = ss.getLearningSystem();
-		this.lang = lsi.getLanguage();
-		this.ss = ss;
-		this.learningProblemConfigLoader = learningProblemConfigLoader;
-	}
+    protected final LearningSystemInfo lsi;
+    protected final String system;
+    protected final Constants.LANGUAGES lang;
+    protected final ScenarioSystem ss;
+    protected final ConfigLoader learningProblemConfigLoader;
+    protected final SystemRunner parent;
+    protected Constants.State state;
+    protected String trainingResultFile;
 
-	protected Configuration collectConfig(BaseConfiguration baseConfig) {
-		BenchmarkConfig runtimeConfig = parent.getBenchmarkRunner().getConfig();
-		Configuration scnRuntimeConfig = runtimeConfig.getLearningTaskConfiguration(ss.getTask());
-		Configuration lpRuntimeConfig = runtimeConfig.getLearningProblemConfiguration(ss);
+    public CommonStep(SystemRunner parent, ScenarioSystem ss, ConfigLoader learningProblemConfigLoader) {
+        this.parent = parent;
+        this.lsi = ss.getLearningSystemInfo();
+        this.system = ss.getLearningSystem();
+        this.lang = lsi.getLanguage();
+        this.ss = ss;
+        this.learningProblemConfigLoader = learningProblemConfigLoader;
+    }
 
-		CombinedConfiguration cc = new CombinedConfiguration();
-		cc.setNodeCombiner(new MergeCombiner());
-		cc.addConfiguration(baseConfig);
-		cc.addConfiguration(parent.getParentConfiguration());
-		cc.addConfiguration(lpRuntimeConfig);
-		if (learningProblemConfigLoader != null) {
-			cc.addConfiguration(learningProblemConfigLoader.config());
-		}
-		List<String> families = lsi.getFamilies();
-		if (families != null) {
-			for (String family : families) {
-				ConfigLoader famLpCL = ConfigLoader.findConfig(parent.getBenchmarkRunner().getLearningProblemDir(ss) + "/" + family);
-				if (famLpCL != null) {
-					cc.addConfiguration(famLpCL.config());
-				}
-			}
-		}
-		cc.addConfiguration(scnRuntimeConfig);
-		cc.addConfiguration(lsi.getCommonsConfig());
-		cc.addConfiguration(parent.getBenchmarkRunner().getCommonsConfig());
-		BaseConfiguration defaultConfig = new BaseConfiguration();
-		defaultConfig.setProperty("maxExecutionTime", (long) (new BenchmarkConfig(cc).getMaxExecutionTime() * 0.86));
-		cc.addConfiguration(defaultConfig);
-		return cc;
-	}
+    protected Configuration collectConfig(BaseConfiguration baseConfig) {
+        BenchmarkConfig runtimeConfig = parent.getBenchmarkRunner().getConfig();
+        Configuration scnRuntimeConfig = runtimeConfig.getLearningTaskConfiguration(ss.getTask());
+        Configuration lpRuntimeConfig = runtimeConfig.getLearningProblemConfiguration(ss);
 
+        CombinedConfiguration cc = new CombinedConfiguration();
+        cc.setNodeCombiner(new MergeCombiner());
+        cc.addConfiguration(baseConfig);
+        cc.addConfiguration(parent.getParentConfiguration());
+        cc.addConfiguration(lpRuntimeConfig);
+        if (learningProblemConfigLoader != null) {
+            cc.addConfiguration(learningProblemConfigLoader.config());
+        }
+        List<String> families = lsi.getFamilies();
+        if (families != null) {
+            for (String family : families) {
+                ConfigLoader famLpCL = ConfigLoader.findConfig(parent.getBenchmarkRunner().getLearningProblemDir(ss) + "/" + family);
+                if (famLpCL != null) {
+                    cc.addConfiguration(famLpCL.config());
+                }
+            }
+        }
+        cc.addConfiguration(scnRuntimeConfig);
 
-	protected abstract void saveLearningSystemsConfig(String configFile);
+        Configuration lsiConfig = ConfigurationUtils.cloneConfiguration(this.lsi.getCommonsConfig());
+        if (this.lsi.getConfig().needsPreprocessing()) {
+            //String configPreprocFilename = lsiConfig.getString("preprocessing.output");
+            String configPreprocFilename = PreprocessingRunner.getResultDir(ss)
+                    + "/" + PreprocessingRunner.CONFIG_FILEBASE + "." + ss.getLearningSystemInfo().getConfigFormat();
+            lsiConfig.clearProperty("preprocessing.output");
+            lsiConfig.clearProperty("preprocessing");
+            ConfigLoader configPreprocLoader = new ConfigLoader(configPreprocFilename);
+            Configuration configPreproc = configPreprocLoader.config();
+            List<String> preprocFields = lsiConfig.getList(String.class, LearningSystemConfig.PREPROCESSING_FIELDS_KEY);
+            for (String preprocField : preprocFields) {
+                String value = configPreproc.getString(preprocField);
+                lsiConfig.addProperty("preprocessing." + preprocField, value);
+            }
+            lsiConfig.clearProperty(LearningSystemConfig.PREPROCESSING_FIELDS_KEY);
+            /*
+             Configurations configs = new Configurations();
+             // Read data from this file
+             File propertiesFile = new File("config.properties");
+             FileBasedConfigurationBuilder<PropertiesConfiguration> builder
+             = configs.propertiesBuilder(propertiesFile);
+             */
 
-	protected abstract void saveResultSet();
+        }
+        cc.addConfiguration(lsiConfig);
+        cc.addConfiguration(parent.getBenchmarkRunner().getCommonsConfig());
+        BaseConfiguration defaultConfig = new BaseConfiguration();
+        defaultConfig.setProperty("maxExecutionTime", (long) (new BenchmarkConfig(cc).getMaxExecutionTime() * 0.86));
+        cc.addConfiguration(defaultConfig);
+        return cc;
+    }
 
-	protected abstract BaseConfiguration getBaseConfiguration(File dir, String posFilename, String negFilename);
+    protected abstract void saveLearningSystemsConfig(String configFile);
 
-	protected abstract BaseConfiguration getValidateConfiguration(File dir, String posFilename, String negFilename, String outputFilename);
+    protected abstract void saveResultSet();
 
-	protected abstract Set<String> getTrainingExamples(Constants.LANGUAGES lang, Constants.ExType pos);
+    protected abstract BaseConfiguration getBaseConfiguration(File dir, String posFilename, String negFilename);
 
-	protected abstract Set<String> getValidateExamples(Constants.LANGUAGES lang, Constants.ExType type);
+    protected abstract BaseConfiguration getValidateConfiguration(File dir, String posFilename, String negFilename, String outputFilename);
 
-	protected abstract String getResultDir();
+    protected abstract Set<String> getTrainingExamples(Constants.LANGUAGES lang, Constants.ExType pos);
 
-	protected abstract String getResultKey();
+    protected abstract Set<String> getValidateExamples(Constants.LANGUAGES lang, Constants.ExType type);
 
-	protected Constants.State simpleProcessRunner(String command, List<String> args, Configuration cc, long maxExecutionTime, String expectedOutput, String info) {
-		Constants.State state = Constants.State.RUNNING;
-		try {
-			ProcessRunner processRunner = new ProcessRunner(lsi.getDir(), command, args, cc, maxExecutionTime);
-			state = Constants.State.OK;
-		} catch (ExecuteException e) {
-			if (e.getExitValue() == 143) {
-				CrossValidationRunner.logger.warn(info + " " + system + " was canceled due to timeout");
-				state = Constants.State.TIMEOUT;
-			} else {
-				CrossValidationRunner.logger.warn(info + " " + system + " did not finish cleanly: " + e.getMessage());
-				state = Constants.State.FAILURE;
-			}
-		} catch (IOException e) {
-			CrossValidationRunner.logger.warn(info + " " + system + " could not execute: " + e.getMessage() + "[" + e.getClass() + "]");
-			state = Constants.State.ERROR;
-		}
-		if (expectedOutput != null) {
-			File file = new File(expectedOutput);
-			if (state.equals(Constants.State.OK) && !file.isFile()) {
-				CrossValidationRunner.logger.warn(info + " " + system + " did not produce an output");
-				state = Constants.State.FAILURE;
-			}
-		}
-		return state;
-	}
+    protected abstract String getResultDir();
 
-	public Constants.State getState() {
-		return state;
-	}
+    protected abstract String getResultKey();
 
-	public boolean isStateOk() {
-		return Constants.State.OK.equals(state);
-	}
+    protected Constants.State simpleProcessRunner(String command, List<String> args, Configuration cc, long maxExecutionTime, String expectedOutput, String info) {
+        Constants.State state = Constants.State.RUNNING;
+        try {
+            ProcessRunner processRunner = new ProcessRunner(lsi.getDir(), command, args, cc, maxExecutionTime);
+            state = Constants.State.OK;
+        } catch (ExecuteException e) {
+            if (e.getExitValue() == 143) {
+                CrossValidationRunner.logger.warn(info + " " + system + " was canceled due to timeout");
+                state = Constants.State.TIMEOUT;
+            } else {
+                CrossValidationRunner.logger.warn(info + " " + system + " did not finish cleanly: " + e.getMessage());
+                state = Constants.State.FAILURE;
+            }
+        } catch (IOException e) {
+            CrossValidationRunner.logger.warn(info + " " + system + " could not execute: " + e.getMessage() + "[" + e.getClass() + "]");
+            state = Constants.State.ERROR;
+        }
+        if (expectedOutput != null) {
+            File file = new File(expectedOutput);
+            if (state.equals(Constants.State.OK) && !file.isFile()) {
+                CrossValidationRunner.logger.warn(info + " " + system + " did not produce an output");
+                state = Constants.State.FAILURE;
+            }
+        }
+        return state;
+    }
 
-	public void train() {
-		File dir = new File(parent.getBenchmarkRunner().getTempDirectory() + "/" + getResultDir() + "/" + "train");
-		dir.mkdirs();
+    public Constants.State getState() {
+        return state;
+    }
 
-		String posFilename = dir + "/" + lsi.getFilename(Constants.ExType.POS);
-		String negFilename = dir + "/" + lsi.getFilename(Constants.ExType.NEG);
-		this.trainingResultFile = dir + "/" + "train.out";
-		String configFile = dir + "/" + "config." + lsi.getConfigFormat();
+    public boolean isStateOk() {
+        return Constants.State.OK.equals(state);
+    }
 
-		Set<String> trainingPos = getTrainingExamples(lang, Constants.ExType.POS);
-		Set<String> trainingNeg = getTrainingExamples(lang, Constants.ExType.NEG);
+    public void train() {
+        File dir = new File(parent.getBenchmarkRunner().getTempDirectory() + "/" + getResultDir() + "/" + "train");
+        dir.mkdirs();
 
-		BaseConfiguration baseConfig = getBaseConfiguration(dir, posFilename, negFilename);
+        String posFilename = dir + "/" + lsi.getFilename(Constants.ExType.POS);
+        String negFilename = dir + "/" + lsi.getFilename(Constants.ExType.NEG);
+        this.trainingResultFile = dir + "/" + "train.out";
+        String configFile = dir + "/" + "config." + lsi.getConfigFormat();
 
-		Configuration cc = collectConfig(baseConfig);
-		AbstractSystemRunner.writeConfig(configFile, cc);
-		AbstractSystemRunner.writeExamplesFiles(lang, posFilename, trainingPos, negFilename, trainingNeg);
+        Set<String> trainingPos = getTrainingExamples(lang, Constants.ExType.POS);
+        Set<String> trainingNeg = getTrainingExamples(lang, Constants.ExType.NEG);
 
-		List<String> args = new LinkedList<>();
-		args.add(configFile);
-		saveLearningSystemsConfig(configFile);
+        BaseConfiguration baseConfig = getBaseConfiguration(dir, posFilename, negFilename);
 
-		final long now = System.nanoTime();
-		state = simpleProcessRunner("./run", args, cc, parent.getBenchmarkRunner().getConfig().getMaxExecutionTime(), trainingResultFile, "learning system");
-		long duration = System.nanoTime() - now;
-		File outputFileFile = new File(trainingResultFile);
-		String resultKey = getResultKey();
-		parent.getResultset().setProperty(resultKey + "." + "duration", duration / 1000000000); // nanoseconds -> seconds
+        Configuration cc = collectConfig(baseConfig);
+        AbstractSystemRunner.writeConfig(configFile, cc);
+        AbstractSystemRunner.writeExamplesFiles(lang, posFilename, trainingPos, negFilename, trainingNeg);
 
-		ResultLoaderBase resultLoader = new ResultLoaderBase();
-		try {
-			resultLoader.loadResults(outputFileFile);
-			parent.getResultset().setProperty(resultKey + "." + "trainingRaw", resultLoader.getResults());
-		} catch (IOException e) {
-			CrossValidationRunner.logger.warn("learning system " + system + " result cannot be read: " + e.getMessage());
-			state = state.ERROR;
-		}
+        List<String> args = new LinkedList<>();
+        args.add(configFile);
+        saveLearningSystemsConfig(configFile);
 
-		parent.getResultset().setProperty(resultKey + "." + "trainingResult", state.toString().toLowerCase());
-	}
+        final long now = System.nanoTime();
+        state = simpleProcessRunner("./run", args, cc, parent.getBenchmarkRunner().getConfig().getMaxExecutionTime(), trainingResultFile, "learning system");
+        long duration = System.nanoTime() - now;
+        File outputFileFile = new File(trainingResultFile);
+        String resultKey = getResultKey();
+        parent.getResultset().setProperty(resultKey + "." + "duration", duration / 1000000000); // nanoseconds -> seconds
 
-	public void validate() {
-		File dir = new File(parent.getBenchmarkRunner().getTempDirectory() + "/" + getResultDir() + "/" + "validate");
-		dir.mkdirs();
+        ResultLoaderBase resultLoader = new ResultLoaderBase();
+        try {
+            resultLoader.loadResults(outputFileFile);
+            parent.getResultset().setProperty(resultKey + "." + "trainingRaw", resultLoader.getResults());
+        } catch (IOException e) {
+            CrossValidationRunner.logger.warn("learning system " + system + " result cannot be read: " + e.getMessage());
+            state = state.ERROR;
+        }
 
-		String posFilename = dir + "/" + lsi.getFilename(Constants.ExType.POS);
-		String negFilename = dir + "/" + lsi.getFilename(Constants.ExType.NEG);
-		String outputFile = dir + "/" + "validateResult.prop";
-		String configFile = dir + "/" + "config." + lsi.getConfigFormat();
+        parent.getResultset().setProperty(resultKey + "." + "trainingResult", state.toString().toLowerCase());
+    }
 
-		Set<String> testingPos = getValidateExamples(lang, Constants.ExType.POS);
-		Set<String> testingNeg = getValidateExamples(lang, Constants.ExType.NEG);
+    public void validate() {
+        File dir = new File(parent.getBenchmarkRunner().getTempDirectory() + "/" + getResultDir() + "/" + "validate");
+        dir.mkdirs();
 
-		BaseConfiguration baseConfig = getValidateConfiguration(dir, posFilename, negFilename, outputFile);
+        String posFilename = dir + "/" + lsi.getFilename(Constants.ExType.POS);
+        String negFilename = dir + "/" + lsi.getFilename(Constants.ExType.NEG);
+        String outputFile = dir + "/" + "validateResult.prop";
+        String configFile = dir + "/" + "config." + lsi.getConfigFormat();
 
-		Configuration cc = collectConfig(baseConfig);
-		AbstractSystemRunner.writeConfig(configFile, cc);
-		AbstractSystemRunner.writeExamplesFiles(lang, posFilename, testingPos, negFilename, testingNeg);
+        Set<String> testingPos = getValidateExamples(lang, Constants.ExType.POS);
+        Set<String> testingNeg = getValidateExamples(lang, Constants.ExType.NEG);
 
-		List<String> args = new LinkedList<>();
-		args.add(configFile);
+        BaseConfiguration baseConfig = getValidateConfiguration(dir, posFilename, negFilename, outputFile);
 
-		state = simpleProcessRunner("./validate", args, cc, 0, outputFile, "validation system");
+        Configuration cc = collectConfig(baseConfig);
+        AbstractSystemRunner.writeConfig(configFile, cc);
+        AbstractSystemRunner.writeExamplesFiles(lang, posFilename, testingPos, negFilename, testingNeg);
 
-		String resultKey = getResultKey();
-		HierarchicalConfiguration<ImmutableNode> result = null;
-		if (state.equals(Constants.State.OK)) {
-			try {
-				result = new ConfigLoader(outputFile).load().config();
-			} catch (ConfigLoaderException e) {
-				CrossValidationRunner.logger.warn("could not load validation result: " + e.getMessage());
-				state = Constants.State.FAILURE;
-			}
-		}
-		parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
-		if (!state.equals(Constants.State.OK)) {
-			saveResultSet();
+        List<String> args = new LinkedList<>();
+        args.add(configFile);
 
-			return;
-		}
+        state = simpleProcessRunner("./validate", args, cc, 0, outputFile, "validation system");
 
-		if (result != null) {
-			Iterator<String> keys = result.getKeys();
-			while (keys.hasNext()) {
-				String key = keys.next();
-				parent.getResultset().setProperty(resultKey + "." + "ValidationRaw" + "." + key, result.getProperty(key));
-			}
-		}
-                // Here all the measures are computed
-                // This works only for binary classifier, for scoring classifier
-                // we can use ROC, PR curves and their areas  
-		List<String> measures = parent.getBenchmarkRunner().getConfig().getMeasures();
-		try {
-			int tp = result.getInt("tp");
-			int fn = result.getInt("fn");
-			int fp = result.getInt("fp");
-			int tn = result.getInt("tn");
-			for (String m : measures) {
-				MeasureMethodTwoValued method = MeasureMethod.create(m);
-				double measure = method.getMeasure(tp, fn, fp, tn);
-				parent.getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
-			}
-		} catch (ConversionException | NoSuchElementException e) {
-			CrossValidationRunner.logger.warn("invalid validation results: " + e.getMessage());
-			state = Constants.State.ERROR;
-			parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
-		}
+        String resultKey = getResultKey();
+        HierarchicalConfiguration<ImmutableNode> result = null;
+        if (state.equals(Constants.State.OK)) {
+            try {
+                result = new ConfigLoader(outputFile).load().config();
+            } catch (ConfigLoaderException e) {
+                CrossValidationRunner.logger.warn("could not load validation result: " + e.getMessage());
+                state = Constants.State.FAILURE;
+            }
+        }
+        parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
+        if (!state.equals(Constants.State.OK)) {
+            saveResultSet();
 
-		saveResultSet();
-	}
+            return;
+        }
+
+        if (result != null) {
+            Iterator<String> keys = result.getKeys();
+            while (keys.hasNext()) {
+                String key = keys.next();
+                parent.getResultset().setProperty(resultKey + "." + "ValidationRaw" + "." + key, result.getProperty(key));
+            }
+        }
+        // Here all the measures are computed
+        // This works only for binary classifier, for scoring classifier
+        // we can use ROC, PR curves and their areas  
+        List<String> measures = parent.getBenchmarkRunner().getConfig().getMeasures();
+        try {
+            int tp = result.getInt("tp");
+            int fn = result.getInt("fn");
+            int fp = result.getInt("fp");
+            int tn = result.getInt("tn");
+            for (String m : measures) {
+                MeasureMethodTwoValued method = MeasureMethod.create(m);
+                double measure = method.getMeasure(tp, fn, fp, tn);
+                parent.getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
+            }
+        } catch (ConversionException | NoSuchElementException e) {
+            CrossValidationRunner.logger.warn("invalid validation results: " + e.getMessage());
+            state = Constants.State.ERROR;
+            parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
+        }
+
+        saveResultSet();
+    }
 }

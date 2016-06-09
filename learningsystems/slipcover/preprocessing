@@ -108,9 +108,9 @@ def read_config(path):
         setting, raw_value = item
         settings[setting] = raw_value
 
-    for item in conf.items('filename'):
-        setting, raw_value = item
-        settings['filename.' + setting] = raw_value
+#     for item in conf.items('filename'):
+#         setting, raw_value = item
+#         settings['filename.' + setting] = raw_value
 
     for item in conf.items('data'):
         setting, raw_value = item

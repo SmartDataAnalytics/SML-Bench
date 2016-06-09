@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+from posix import getcwd
 
 try:
     import configparser
@@ -83,10 +84,20 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
 def validate(swipl_executable, learned_clauses, target_dir, knowledge_file_path):
     command = swipl_executable + " --quiet -l " +  + " -g "
     args = shlex.split(command)
-    args.append("consult(%s),test(),halt." % (knowledge_file_path,))
+    args.append("consult(%s),test(%s,[all],Pos,Neg,Results),writeln(number_pos(Pos)),writeln(number_neg(Neg)),write(Results),halt." % 
+                (knowledge_file_path,learned_clauses))
     
-    subprocess.call(args, cwd=tool_specific_dir, stdout=out)
-    cmd = ""
+    # create temp file that will contain the results of the test
+    test_temp = os.path.join(target_dir, "results_test_temp.pl")
+    # execute validation
+    subprocess.call(args, cwd=getcwd(), stdout=test_temp)
+    # close temp file containing the results of the test
+    test_temp.close()
+    # use a prolog script to convert the tuple in a format readable by SML-Bench
+    ###### DO IT LATER
+    
+    # remove temp file containing the results of the test
+    os.remove(os.path.join(target_dir, "results_test_temp.pl"))
     
     
 def find_swipl():
