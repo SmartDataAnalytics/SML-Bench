@@ -3,12 +3,12 @@
 
 convert_results([],[]).
 
-convert_results([P- (\+ _)|T], [(P,neg)|TR]) :- !,
-	writeln((P,neg)),
+convert_results([P- (\+ _)|T], [(P-neg)|TR]) :- !,
+	%writeln((P-neg)),
 	convert_results(T,TR).
 
-convert_results([P- _|T], [(P,pos)|TR]) :- !,
-	writeln((P,pos)),
+convert_results([P- _|T], [(P-pos)|TR]) :- !,
+	%writeln((P-pos)),
 	convert_results(T,TR).
 
 printlist([]).

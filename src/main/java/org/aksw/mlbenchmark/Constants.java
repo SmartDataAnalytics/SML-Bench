@@ -41,4 +41,13 @@ public class Constants {
 	}
 
 	public enum State { RUNNING, OK, TIMEOUT, FAILURE, ERROR }
+        
+        public enum SystemType {
+            DISCRETE, PROBABILISTIC;
+            
+            @Override
+            public String toString() {
+                return name().toLowerCase();
+            }
+        }
 }

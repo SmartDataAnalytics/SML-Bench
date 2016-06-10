@@ -18,6 +18,7 @@ public class LearningSystemConfig {
     private final Configuration config;
     private final String FILENAMEKEY = "filename";
     final String LANGUAGEKEY = "language";
+    public static final String SYSTEMTYPEKEY = "type";
 
     public LearningSystemConfig(BenchmarkRunner br, LearningSystemInfo lsi) {
         Configuration defaultConfig = new BaseConfiguration();
@@ -79,6 +80,11 @@ public class LearningSystemConfig {
 //            }
         return Constants.LANGUAGES.valueOf(
                 config.getString(LANGUAGEKEY).toUpperCase());
+    }
+    
+    public Constants.SystemType getSystemType() {
+        return Constants.SystemType.valueOf(
+        config.getString(SYSTEMTYPEKEY, Constants.SystemType.DISCRETE.toString()).toUpperCase());
     }
 
     public String getConfigFormat() {

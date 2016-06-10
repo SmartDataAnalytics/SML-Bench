@@ -152,13 +152,13 @@ def write_config(nPos, nNeg, results, system_type, output_file_path):
     out.write("pos: %i" % nPos + os.linesep + 
               "neg: %i" % nNeg + os.linesep)
     
-    out.write("values: (\n")
-    out.write("\t(" + results[0].strip() + ")")
+    out.write("values: ")
+    out.write("" + results[0].strip() + "")
     for result in results[1:]:
         if result.strip():
-            out.write(",\n\t(" + result.strip() + ")")
+            out.write(", " + result.strip() + "")
             
-    out.write("\n)")
+    #out.write("\n)")
     
     
 def find_swipl():
