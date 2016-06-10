@@ -176,7 +176,7 @@ test(P,TestFolds,LL,AUCROC,ROC,AUCPR,PR):-
   retract_all(ThRef),
   retract_all(RFRef).
  
-test_no_area(P,TestFolds,Pos,Neg,Results) :-
+test_no_area(P,TestFolds,NPos,NNeg,Results) :-
   write2('Testing\n'),
   input_mod(M),
   make_dynamic(M),
@@ -198,7 +198,7 @@ test_no_area(P,TestFolds,Pos,Neg,Results) :-
     true
   ),
   set_sc(compiling,off),
-  test_no_area([TE],Pos,Neg,Results). 
+  test_no_area([TE],NPos,NNeg,Results). 
 
 induce_rules(Folds,R):-
 %tell(ciao),
@@ -3485,12 +3485,12 @@ sandbox:safe_primitive(slipcover:equality(_,_,_)).
 sandbox:safe_meta(slipcover:get_node(_,_), []).
 
 */
-test_no_area(TestSet,Pos,Neg,Results):-
+test_no_area(TestSet,NPos,NNeg,Results):-
 %  S= user_output,
 %  SA= user_output,
 %  format(SA,"Fold;\tCLL;\t AUCROC;\t AUCPR~n",[]),
   %gtrace,
-  test_folds(TestSet,[],Results,0,Pos,0,Neg,0,_CLL).
+  test_folds(TestSet,[],Results,0,NPos,0,NNeg,0,_CLL).
 
 
 test(TestSet,CLL,AUCROC,ROC,AUCPR,PR):-

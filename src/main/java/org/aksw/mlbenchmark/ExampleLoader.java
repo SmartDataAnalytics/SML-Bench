@@ -15,6 +15,8 @@ public class ExampleLoader {
 			case OWL: return new OwlExampleLoader();
 
 			case PROLOG: return new PrologExampleLoader();
+                            
+                        case CPLINT: return new PrologExampleLoader();
 
 			default: throw new NotImplementedException("No Example Loader for " + language);
 

@@ -20,7 +20,8 @@ public class LearningSystemConfig {
 	public LearningSystemConfig(BenchmarkRunner br, LearningSystemInfo lsi) {
 		Configuration defaultConfig = new BaseConfiguration();
 		// FIXME: we need to find a generic way to determine the language
-		defaultConfig.setProperty(LANGUAGEKEY, lsi.hasType("dllearner") ? "owl" : "prolog");
+		//defaultConfig.setProperty(LANGUAGEKEY, lsi.hasType("dllearner") ? "owl" : "prolog");
+                
 		BenchmarkConfig runtimeConfig = br.getConfig();
                 // Extract a subconfiguration from the configuration passed by the user.
                 // The extracted subconfiguration should contain information about 
@@ -35,6 +36,7 @@ public class LearningSystemConfig {
 		}
 		cc.addConfiguration(defaultConfig);
                 this.config = cc;
+                config.setProperty(LANGUAGEKEY, config.getString(LANGUAGEKEY));
 		defaultConfig.setProperty("configFormat", Constants.LANGUAGES.OWL.equals(getLanguage()) ? "prop" : "conf");
 	}
 
@@ -63,7 +65,11 @@ public class LearningSystemConfig {
 	}
 
 	public Constants.LANGUAGES getLanguage() {
-		return Constants.LANGUAGES.valueOf(
+//            // FIXME: 
+//            if (config.getString(LANGUAGEKEY).equalsIgnoreCase("cplint")) {
+//                
+//            }
+            return Constants.LANGUAGES.valueOf(
 				config.getString(LANGUAGEKEY).toUpperCase());
 	}
 

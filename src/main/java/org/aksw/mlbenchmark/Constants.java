@@ -21,7 +21,7 @@ public class Constants {
 
 	/** Supported knowledge representation languages */
 	public enum LANGUAGES {
-		OWL, PROLOG, language, lang;
+		OWL, PROLOG, language, lang, CPLINT;
 
 		public String asString() {
 			return name().toLowerCase();
