@@ -39,16 +39,22 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumeric {
         try {
 
             ConfusionPoint a = curvePoints.get(0); // (0,0)
-            ConfusionPoint next = curvePoints.get(1);
-
-            // 
-            if (next.getTP() == 1 && next.getFP() == 0) {
-                prPoints.add(new PRPoint(0.0, 1.0));
-            } else if (next.getTP() == 0 && next.getFP() == 1) {
-                prPoints.add(new PRPoint(0.0, 0.0));
-            } else { // Unknown condition!
-                throw new CurvePointGenerationException("Impossible condition: "
-                        + "First point TP=" + next.getTP() + " FP=" + next.getFP());
+            if (curvePoints.size() > 1) {
+                ConfusionPoint next = curvePoints.get(1);
+                // 
+                prPoints.add(new PRPoint(0.0, (double) next.getTP() / (next.getTP() + next.getFP())));
+                /*
+                if (next.getTP() == 1 && next.getFP() == 0) {
+                    prPoints.add(new PRPoint(0.0, 1.0));
+                } else if (next.getTP() == 0 && next.getFP() == 1) {
+                    prPoints.add(new PRPoint(0.0, 0.0));
+                } else { // Unknown condition!
+                    throw new CurvePointGenerationException("Impossible condition: "
+                            + "First point TP=" + next.getTP() + " FP=" + next.getFP());
+                }
+                */
+            } else {
+                prPoints.add(new PRPoint(0.0, (double) nPos / (nPos + nNeg)));
             }
 
             for (ConfusionPoint b : curvePoints.subList(1, curvePoints.size())) {
@@ -76,18 +82,25 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumeric {
     public double getAUC() {
         List<PRPoint> prPoints = new LinkedList<>();
         try {
-
             ConfusionPoint a = curvePoints.get(0); // (0,0)
-            ConfusionPoint next = curvePoints.get(1);
-
-            // 
-            if (next.getTP() == 1 && next.getFP() == 0) {
-                prPoints.add(new PRPoint(0.0, 1.0));
-            } else if (next.getTP() == 0 && next.getFP() == 1) {
-                prPoints.add(new PRPoint(0.0, 0.0));
-            } else { // Unknown condition!
-                throw new CurvePointGenerationException("Impossible condition: "
-                        + "First point TP=" + next.getTP() + " FP=" + next.getFP());
+            if (curvePoints.size() > 1) {
+                ConfusionPoint next = curvePoints.get(1);
+                // 
+                prPoints.add(new PRPoint(0.0, (double) next.getTP() / (next.getTP() + next.getFP())));
+                /*
+                if (next.getTP() == 1 && next.getFP() == 0) {
+                    prPoints.add(new PRPoint(0.0, 1.0));
+                } else if (next.getTP() == 0 && next.getFP() == 1) {
+                    prPoints.add(new PRPoint(0.0, 0.0));
+                } else { // Strange condition!
+                    prPoints.add(new PRPoint(0.0, (double) next.getTP() / (next.getTP() + next.getFP())));
+                    MeasureMethodNumericValued.logger.warn("Strange condition: "
+                            + "First point TP=" + next.getTP() + " FP=" + next.getFP());
+//                    throw new CurvePointGenerationException("Impossible condition: "
+//                            + "First point TP=" + next.getTP() + " FP=" + next.getFP());
+                }*/
+            } else {
+                prPoints.add(new PRPoint(0.0, (double) nPos / (nPos + nNeg)));
             }
 
             for (ConfusionPoint b : curvePoints.subList(1, curvePoints.size())) {

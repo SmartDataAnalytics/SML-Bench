@@ -16,12 +16,17 @@
 package org.aksw.mlbenchmark.validation.measures;
 
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
 public interface MeasureMethodNumericValued {
+    
+    final static Logger logger = LoggerFactory.getLogger(MeasureMethodNumericValued.class);
+    
     public List<? extends Point> getCurvePoints();
     
     public double getAUC();
