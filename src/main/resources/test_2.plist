@@ -1,12 +1,12 @@
 {
   config = 1;
   learningsystems = ( slipcover );
-  scenarios = ( hepatitis/1);
+  scenarios = ( hepatitis/1, carcinogenesis/1);
   measures = ( aucroc, aucpr );
   framework = {
     crossValidationFolds = 2;
     threads = 2; // not implemented yet
-	maxExecutionTime = 1000
+    maxExecutionTime = 3000
   };
   //resultOutput = testResult.prop;
   resultOutput = testResult.xml;
