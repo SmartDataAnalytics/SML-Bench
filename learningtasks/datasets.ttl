@@ -1,0 +1,23 @@
+@prefix : <http://sml-bench.aksw.org/datasets/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix mexc: <http://mex.aksw.org/mex-core#> .
+
+:carcinogenesis_owl a void:Dataset , mexc:Dataset .
+:carcinogenesis_pl a void:Dataset , mexc:Dataset .
+:hepatitis_owl a void:Dataset , mexc:Dataset .
+:hepatitis_pl a void:Dataset , mexc:Dataset .
+:lymphography_owl a void:Dataset , mexc:Dataset .
+:lymphography_pl a void:Dataset , mexc:Dataset .
+:mammographic_owl a void:Dataset , mexc:Dataset .
+:mammographic_pl a void:Dataset , mexc:Dataset .
+:mutagenesis_owl a void:Dataset , mexc:Dataset .
+:mutagenesis_pl a void:Dataset , mexc:Dataset .
+:nctrer_owl a void:Dataset , mexc:Dataset .
+:nctrer_pl a void:Dataset , mexc:Dataset .
+:premierleague_owl a void:Dataset , mexc:Dataset .
+:premierleague_pl a void:Dataset , mexc:Dataset .
+:pyrimidine_owl a void:Dataset , mexc:Dataset .
+:pyrimidine_pl a void:Dataset , mexc:Dataset .
+:suramin_owl a void:Dataset , mexc:Dataset .
+:suramin_pl a void:Dataset , mexc:Dataset .
+
