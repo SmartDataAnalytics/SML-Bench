@@ -21,9 +21,13 @@ fi
 common_config
 
 add_conf
-add_conf "$algorithm_const.writeSearchTree" '=' false
+#add_conf "$algorithm_const.writeSearchTree" '=' false
 
-add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
+if [ $structurelearner_is_set -eq 1 ]; then
+	add_conf "$structurelearner_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
+else
+	add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
+fi
 
 $dllearner_file "$conf" | tee "$tmpdir"/output.log
 #cp "$tmpdir"/output.log test.log

@@ -20,6 +20,7 @@ algorithm_is_set=0
 lp_is_set=0
 reasoner_is_set=0
 measure_is_set=0
+structurelearner_is_set=0
 
 find_dllearner() {
     set -- */bin/"$dllearner_executable_name" bin/"$dllearner_executable_name"
@@ -86,6 +87,10 @@ read_lp_conf() {
                 then
                     measure_is_set=1
                 fi
+				elif [ $key1 = $structurelearner_const ]
+				then 
+					structurelearner_is_set=1
+				fi
             fi
 
             # Do not add an algorithm to the config if common.sh is sourced
