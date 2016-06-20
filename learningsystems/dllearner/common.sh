@@ -86,7 +86,7 @@ read_lp_conf() {
                 elif [ $key1 = $measure_const ]
                 then
                     measure_is_set=1
-                fi
+
 				elif [ $key1 = $structurelearner_const ]
 				then 
 					structurelearner_is_set=1
