@@ -169,6 +169,9 @@
                     <compilerVersion>${compiler.version}</compilerVersion>
                     <source>1.7</source>
                     <target>1.7</target>
+                    <excludes>
+                        <exclude>org/aksw/mlbenchmark/mex/MEXWriter.java</exclude>
+                    </excludes>
                 </configuration>
             </plugin>
             <plugin>
