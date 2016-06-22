@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 #export
 
 start_dir="$(pwd)"
@@ -6,22 +6,46 @@ cd "$(dirname "$0")"
 program_dir="$(pwd)"
 
 step="validate"
-
+is_probabilistic=0
 . ./common.sh
 
-add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
-add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'"'
-add_conf
+
 
 common_config
 
 add_conf
-add_conf acc.type '=' '"gen_fmeasure"'
 
-$dllearner_file "$conf" | tee "$tmpdir"/output.log
-#cp "$tmpdir"/output.log test.log
-# we only check the first result for the benchmark
-grep '#EVAL#' "$tmpdir"/output.log \
-   | sed -e 's,^#EVAL# ,,' > "$result_output_file"
+for measure in ${measures[@]}; do
+	if [ "$measure" == "aucpr" -o "$measure" == "aucroc" ]; then
+		is_probabilistic=1
+	fi
+done
 
-#cat "$conf"
+if [ $is_probabilistic -eq 1 ]; then
+	add_conf cli.type '=' '"org.dllearner.cli.unife.OntologyValidation"'
+	add_conf cli.outputFile '=' '"'"$result_output_file"'"'
+	rm_conf "^\s*ks.*\.type\s*=.*$"
+	rm_conf "^\s*ks.*\.fileName\s*=.*$"
+	add_conf
+	add_conf ks.type '=' '"OWL File"'
+	add_conf ks.fileName '=' '"'$SMLB_INPUT'"'
+	rm_conf "^\s*reasoner.sources\s*=.*$"
+	add_conf reasoner.sources '= { ks }' 
+	add_conf
+	add_conf probReasoner.type '=' '"org.dllearner.core.probabilistic.unife.BUNDLE"'
+	$dllearner_file "$conf" | tee "$tmpdir"/output.log
+else
+	add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
+	#add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'"'
+	add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'
+	add_conf
+	add_conf acc.type '=' '"gen_fmeasure"'
+	$dllearner_file "$conf" | tee "$tmpdir"/output.log
+	#cp "$tmpdir"/output.log test.log
+	# we only check the first result for the benchmark
+	grep '#EVAL#' "$tmpdir"/output.log \
+	   | sed -e 's,^#EVAL# ,,' > "$result_output_file"
+
+	#cat "$conf"
+fi
+

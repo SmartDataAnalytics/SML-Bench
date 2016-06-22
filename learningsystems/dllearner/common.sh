@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 tool_name=dllearner
 
 learning_task_dir_name=learningtasks
@@ -37,6 +37,10 @@ add_conf() {
 
 remove_blanks() {
     grep -v '^\s*\(;\|\s*$\)'
+}
+
+rm_conf() {
+	sed '/'$@'/d' $conf > temp && mv temp $conf
 }
 
 quote_examples() {
@@ -118,6 +122,7 @@ fi
 learning_task="$SMLB_LEARNINGTASK"
 learning_problem="$SMLB_LEARNINGPROBLEM"
 result_output_file="$SMLB_OUTPUT"
+measures=(${SMLB_MEASURES//:/ })  
 
 # define directory names
 task_dir="$learning_task_dir_name"/"$learning_task"
