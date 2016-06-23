@@ -15,11 +15,13 @@ common_config
 
 add_conf
 
+set -x
 for measure in ${measures[@]}; do
 	if [ "$measure" == "aucpr" -o "$measure" == "aucroc" ]; then
 		is_probabilistic=1
 	fi
 done
+set +x
 
 if [ $is_probabilistic -eq 1 ]; then
 	add_conf cli.type '=' '"org.dllearner.cli.unife.OntologyValidation"'
@@ -37,7 +39,7 @@ if [ $is_probabilistic -eq 1 ]; then
 else
 	add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
 	#add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'"'
-	add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'
+	add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'"'
 	add_conf
 	add_conf acc.type '=' '"gen_fmeasure"'
 	$dllearner_file "$conf" | tee "$tmpdir"/output.log

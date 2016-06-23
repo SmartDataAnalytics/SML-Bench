@@ -27,7 +27,7 @@ set -x
 if [ $structurelearner_is_set -eq 1 ]; then
 	echo "Structure learning algorithm"
 	add_conf "$structurelearner_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
-	add_conf "$structurelearner_const.outputFile" '=' '"$result_output_file"'
+	add_conf "$structurelearner_const.outputFile" '=' '"'$result_output_file'"'
 	$dllearner_file "$conf" | tee "$tmpdir"/output.log
 else
 	add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
