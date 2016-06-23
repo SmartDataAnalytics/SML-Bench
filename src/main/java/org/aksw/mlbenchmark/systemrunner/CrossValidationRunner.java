@@ -1,6 +1,22 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import org.aksw.mlbenchmark.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
+
+import org.aksw.mlbenchmark.BenchmarkRunner;
+import org.aksw.mlbenchmark.ConfigLoader;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.CrossValidation;
+import org.aksw.mlbenchmark.ExampleLoader;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.Scenario;
 import org.aksw.mlbenchmark.container.ScenarioAttributes;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
@@ -9,12 +25,6 @@ import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.*;
 
 /**
  * Execute Cross Validation scenario
@@ -42,7 +52,7 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 
 				languageFolds.put(lang, cv);
 			} catch (IOException e) {
-				logger.warn("could not load examples for "+lang+": " + e.getMessage());
+				logger.warn("could not load examples for " + lang + ": " + e.getMessage());
 				failedLang.add(lang);
 			}
 		}
@@ -59,7 +69,10 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 			try {
 				CrossValidation crossValidation = languageFolds.get(lang);
 				for (Constants.ExType ex : Constants.ExType.values()) {
-					BufferedWriter writer = new BufferedWriter(new FileWriter(new File(dir + "/" + "folds-" + lang + "-" + ex.asString() + lang.getInfo().exampleExtension())));
+					BufferedWriter writer = new BufferedWriter(new FileWriter(
+							new File(dir + "/" + "folds-" + lang + "-" + ex.asString() +
+									lang.getInfo().exampleExtension())));
+
 					for (int i = 0; i < parent.getFolds(); ++i) {
 						writer.write("; fold " + i); writer.newLine();
 						LinkedHashSet<String> testingSet = crossValidation.getTestingSet(ex, i);
@@ -79,6 +92,7 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 		return languageFolds.get(lang);
 	}
 
+	@Override
 	public void run() {
 		for (final String system: parent.getDesiredSystems()) {
 			final LearningSystemInfo lsi = parent.getSystemInfo(system);
@@ -88,18 +102,21 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 				continue;
 			}
 
-			/*			parent.getExecutorService().submit(
+/*			parent.getExecutorService().submit(
 					new Runnable() {
 						@Override
 						public void run() { */
 
 			ScenarioSystem ss = scn.addSystem(lsi);
-			ConfigLoader learningProblemConfigLoader = ConfigLoader.findConfig(parent.getLearningProblemDir(ss) + "/" + system);
+			ConfigLoader learningProblemConfigLoader =
+					ConfigLoader.findConfig(parent.getLearningProblemDir(ss) + "/" + system);
 
 			parent.getBenchmarkLog().saveLearningSystemInfo(lsi);
 
 			for (int fold = 0; fold < parent.getFolds(); ++fold) {
-				logger.info("executing scenario " + ss.getTask() + "/" + ss.getProblem() + " with " + ss.getLearningSystem() + ", fold " + fold);
+				logger.info("executing scenario " + ss.getTask() + "/" +
+						ss.getProblem() + " with " + ss.getLearningSystem() +
+						", fold " + fold);
 
 				CommonStep step = new CrossValidationStep(this, ss, learningProblemConfigLoader, fold);
 				step.train();
@@ -110,8 +127,8 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 
 			}
 
-			/*						}
-					}); */
+/*						}
+			}); */
 		}
 	}
 
@@ -133,7 +150,9 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 		return ss.getTask() + "/" + ss.getProblem() + "/" + "fold-" + fold + "/" + ss.getLearningSystem();
 	}
 
-	public static BaseConfiguration getBaseConfiguration(ScenarioAttributes scn, int fold, File dir, String posFilename, String negFilename, String outputFile) {
+	public static BaseConfiguration getBaseConfiguration(ScenarioAttributes scn,
+			int fold, File dir, String posFilename, String negFilename, String outputFile) {
+
 		BaseConfiguration baseConfig = new BaseConfiguration();
 		baseConfig.setProperty("data.workdir", dir.getAbsolutePath());
 		baseConfig.setProperty("framework.currentFold", fold);
@@ -147,7 +166,9 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 		return baseConfig;
 	}
 
-	public static BaseConfiguration getValidateConfiguration(ScenarioAttributes scn, File trainingResultFile, int fold, File dir, String posFilename, String negFilename, String outputFile) {
+	public static BaseConfiguration getValidateConfiguration(ScenarioAttributes scn,
+			File trainingResultFile, int fold, File dir, String posFilename,
+			String negFilename, String outputFile) {
 		BaseConfiguration baseConfig = getBaseConfiguration(scn, fold, dir, posFilename, negFilename, outputFile);
 		baseConfig.setProperty("step", "validate");
 		baseConfig.setProperty("input", trainingResultFile.getAbsolutePath());
