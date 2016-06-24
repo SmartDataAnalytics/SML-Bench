@@ -9,6 +9,28 @@ import org.apache.commons.lang3.NotImplementedException;
  */
 public class MeasureMethod {
 
+    public static Class getType(String method) {
+        switch (method.toLowerCase().replaceAll("_acc", "acc")) {
+
+            case "ameasure":
+                return MeasureMethodTwoValued.class;
+            case "fmeasure":
+                return MeasureMethodTwoValued.class;
+            case "jaccard":
+                return MeasureMethodTwoValued.class;
+            case "predacc":
+                return MeasureMethodTwoValued.class;
+            case "weighted.predacc":
+                return MeasureMethodTwoValued.class;
+            case "aucroc":
+                return MeasureMethodNumericValued.class;
+            case "aucpr":
+                return MeasureMethodNumericValued.class;
+            default:
+                throw new NotImplementedException("Measure " + method + " not implemented or not mapped.");
+        }
+    }
+
     public static MeasureMethodTwoValued create(String method) {
         switch (method.toLowerCase().replaceAll("_acc", "acc")) {
             case "ameasure":

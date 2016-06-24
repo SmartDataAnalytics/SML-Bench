@@ -50,4 +50,13 @@ public class Constants {
                 return name().toLowerCase();
             }
         }
+        
+        public enum MeasureType {
+            DISCRETE, PROBABILISTIC;
+            
+            @Override
+            public String toString() {
+                return name().toLowerCase();
+            }
+        }
 }

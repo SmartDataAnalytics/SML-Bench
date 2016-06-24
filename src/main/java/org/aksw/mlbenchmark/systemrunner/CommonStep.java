@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.*;
 import org.aksw.mlbenchmark.validation.measures.ClassificationResult;
 import org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued;
+import org.apache.commons.lang3.NotImplementedException;
 
 /**
  * Actions shared between several types of steps (Cross Validation etc.)
@@ -219,43 +220,48 @@ public abstract class CommonStep {
         // we can use ROC, PR curves and their areas
         List<String> measures = parent.getBenchmarkRunner().getConfig().getMeasures();
         Constants.SystemType systemType = lsi.getConfig().getSystemType();
-        if (systemType == Constants.SystemType.PROBABILISTIC) {
-            try {
-                List<String> values = result.getList(String.class, "values");
-                List<ClassificationResult> classificationResults = new LinkedList<>();
-                for (String value : values) {
-                    String[] v = value.split("-");
-                    Double param = Double.parseDouble(v[0]);
-                    Constants.ExType exType = Constants.ExType.valueOf(v[1].toUpperCase());
-                    classificationResults.add(new ClassificationResult(param, exType));
-                }
-                for (String m : measures) {
-                    MeasureMethodNumericValued method = MeasureMethod.create(m,
-                            testingPos.size(), testingNeg.size(), classificationResults);
+        for (String m : measures) {
+            if (systemType == Constants.SystemType.PROBABILISTIC || 
+                    MeasureMethod.getType(m) == MeasureMethodNumericValued.class) {
+                try {
+                    List<String> values = result.getList(String.class, "values");
+                    List<ClassificationResult> classificationResults = new LinkedList<>();
+                    for (String value : values) {
+                        String[] v = value.split("-");
+                        Double param = Double.parseDouble(v[0]);
+                        Constants.ExType exType = Constants.ExType.valueOf(v[1].toUpperCase());
+                        classificationResults.add(new ClassificationResult(param, exType));
+                    }
+//                    for (String m : measures) {
+                    MeasureMethodNumericValued method = MeasureMethod.create(
+                            m, testingPos.size(), testingNeg.size(), classificationResults);
                     double measure = method.getAUC();
                     parent.getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
+//                    }
+                } catch (Exception e) {
+                    CrossValidationRunner.logger.warn("invalid validation results: " + e.getMessage());
+                    state = Constants.State.ERROR;
+                    parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
                 }
-            } catch (Exception e) {
-                CrossValidationRunner.logger.warn("invalid validation results: " + e.getMessage());
-                state = Constants.State.ERROR;
-                parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
-            }
 
-        } else {
-            try {
-                int tp = result.getInt("tp");
-                int fn = result.getInt("fn");
-                int fp = result.getInt("fp");
-                int tn = result.getInt("tn");
-                for (String m : measures) {
+            } else if (systemType == Constants.SystemType.DISCRETE) {
+                try {
+                    int tp = result.getInt("tp");
+                    int fn = result.getInt("fn");
+                    int fp = result.getInt("fp");
+                    int tn = result.getInt("tn");
+//                    for (String m : measures) {
                     MeasureMethodTwoValued method = MeasureMethod.create(m);
                     double measure = method.getMeasure(tp, fn, fp, tn);
                     parent.getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
+//                    }
+                } catch (ConversionException | NoSuchElementException e) {
+                    CrossValidationRunner.logger.warn("invalid validation results: " + e.getMessage());
+                    state = Constants.State.ERROR;
+                    parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
                 }
-            } catch (ConversionException | NoSuchElementException e) {
-                CrossValidationRunner.logger.warn("invalid validation results: " + e.getMessage());
-                state = Constants.State.ERROR;
-                parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
+            } else {
+                throw new NotImplementedException("System not compatible with the method type " + MeasureMethod.getType(m).getName());
             }
         }
 

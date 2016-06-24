@@ -68,5 +68,14 @@ public class BenchmarkIT {
         args[0] = configFile;
         Benchmark.main(args);
     }
+    
+        @Test
+    public void testMain3() throws ConfigLoaderException {
+        System.out.println("main");
+        String configFile = "src/main/resources/leap.plist";
+        String[] args = new String[1];
+        args[0] = configFile;
+        Benchmark.main(args);
+    }
 
 }

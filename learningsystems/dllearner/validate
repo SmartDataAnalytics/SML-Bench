@@ -15,26 +15,35 @@ common_config
 
 add_conf
 
-set -x
 for measure in ${measures[@]}; do
 	if [ "$measure" == "aucpr" -o "$measure" == "aucroc" ]; then
 		is_probabilistic=1
+		break
 	fi
 done
-set +x
-
+set -x
 if [ $is_probabilistic -eq 1 ]; then
+	rm_conf  "^\s*cli\..*\s*=.*$"
 	add_conf cli.type '=' '"org.dllearner.cli.unife.OntologyValidation"'
 	add_conf cli.outputFile '=' '"'"$result_output_file"'"'
+	#learnedClass=$(grep -oP "^\s*${structurelearner_const}\.dummyClass\s*=\s*\K.+$" ../../$lp_config_file)
+	#add_conf cli.classExpression '=' '"'$learnedClass'"'
+	add_conf cli.classExpression '=' '"'$SMLB_STRUCTURELEARNER_DUMMYCLASS'"'
+	add_conf
+	rm_conf "^\s*${structurelearner_const}\..*\s*=.*$"
+	rm_conf "^\s*${lp_param_const}\..*\s*=.*$"
+	rm_conf "^\s*${measure_const}\..*\s*=.*$"
 	rm_conf "^\s*ks.*\.type\s*=.*$"
 	rm_conf "^\s*ks.*\.fileName\s*=.*$"
 	add_conf
 	add_conf ks.type '=' '"OWL File"'
 	add_conf ks.fileName '=' '"'$SMLB_INPUT'"'
-	rm_conf "^\s*reasoner.sources\s*=.*$"
-	add_conf reasoner.sources '= { ks }' 
+	rm_conf "^\s*${reasoner_const}\..*\s*=.*$"
+	#rm_conf "^\s*reasoner.sources\s*=.*$"
+	#add_conf reasoner.sources '= { ks }' 
 	add_conf
 	add_conf probReasoner.type '=' '"org.dllearner.core.probabilistic.unife.BUNDLE"'
+	add_conf probReasoner.sources '= { ks }' 
 	$dllearner_file "$conf" | tee "$tmpdir"/output.log
 else
 	add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
@@ -50,4 +59,4 @@ else
 
 	#cat "$conf"
 fi
-
+set +x
