@@ -24,7 +24,7 @@ Copyright (c) 2016, Fabrizio Riguzzi and Elena Bellodi
   induce/2,induce_par/2,test/7,list2or/2,list2and/2,
   sample/4,
   op(500,fx,#),op(500,fx,'-#'),
-  test_no_area/5]).
+  test_prob/5]).
 %:- meta_predicate get_node(:,-).
 :-use_module(library(auc)).
 :-use_module(library(lists)).
@@ -175,8 +175,16 @@ test(P,TestFolds,LL,AUCROC,ROC,AUCPR,PR):-
   ),
   retract_all(ThRef),
   retract_all(RFRef).
- 
-test_no_area(P,TestFolds,NPos,NNeg,Results) :-
+
+/** 
+ * test_prob(-P:probabilistic_program,+TrainFolds:list_of_atoms,-NPos:int,-NNeg:int,-Results:list) is det
+ *
+ * The predicate takes as input in P a probabilistic program,
+ * tests P on the folds indicated in TestFolds and returns 
+ * the number of positive examples in NPos, the number of negative examples in NNeg 
+ * and in Results a list containing the probabilistic result for each query contained in TestFolds.
+ */
+test_prob(P,TestFolds,NPos,NNeg,Results) :-
   write2('Testing\n'),
   input_mod(M),
   make_dynamic(M),
@@ -198,8 +206,17 @@ test_no_area(P,TestFolds,NPos,NNeg,Results) :-
     true
   ),
   set_sc(compiling,off),
-  test_no_area([TE],NPos,NNeg,Results). 
-
+  test_no_area([TE],NPos,NNeg,Results),
+  (M:bg(RBG0)->
+    retract_all(ThBGRef),
+%    retract_all(RBGRFRef),
+    retract_all(ClBGRef)
+  ;
+    true
+  ),
+  retract_all(ThRef),
+  retract_all(RFRef).
+ 
 induce_rules(Folds,R):-
 %tell(ciao),
   input_mod(M),

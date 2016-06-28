@@ -17,6 +17,7 @@ import org.apache.commons.exec.ExecuteException;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 import org.aksw.mlbenchmark.validation.measures.ClassificationResult;
 import org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued;
@@ -228,7 +229,8 @@ public abstract class CommonStep {
                     List<ClassificationResult> classificationResults = new LinkedList<>();
                     for (String value : values) {
                         String[] v = value.split("-");
-                        Double param = Double.parseDouble(v[0]);
+                        Double param = new BigDecimal(v[0]).doubleValue();
+//                        Double param = Double.parseDouble(v[0]);
                         Constants.ExType exType = Constants.ExType.valueOf(v[1].toUpperCase());
                         classificationResults.add(new ClassificationResult(param, exType));
                     }

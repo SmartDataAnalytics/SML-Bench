@@ -15,13 +15,11 @@
  */
 package org.aksw.mlbenchmark;
 
-import static org.aksw.mlbenchmark.BenchmarkRunnerIT.instance;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -69,7 +67,7 @@ public class BenchmarkIT {
         Benchmark.main(args);
     }
 
-    @Test
+    //@Test
     public void testMain3() throws ConfigLoaderException {
         System.out.println("main");
         String configFile = "src/main/resources/leap.plist";
@@ -78,4 +76,12 @@ public class BenchmarkIT {
         Benchmark.main(args);
     }
 
+//    @Test
+    public void testMain4() throws ConfigLoaderException {
+        System.out.println("main");
+        String configFile = "src/main/resources/trains.plist";
+        String[] args = new String[1];
+        args[0] = configFile;
+        Benchmark.main(args);
+    }
 }

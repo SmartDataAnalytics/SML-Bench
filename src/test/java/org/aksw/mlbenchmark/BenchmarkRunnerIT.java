@@ -64,7 +64,15 @@ public class BenchmarkRunnerIT {
     @Test
     public void testRun2() throws ConfigLoaderException {
         System.out.println("run (without any final test)");
-        String configFile = "src/main/resources/test_3.plist";
+        String configFile = "src/main/resources/trains.plist";
+        instance = new BenchmarkRunner(configFile);
+        instance.run();
+    }
+
+    //@Test
+    public void testRun3() throws ConfigLoaderException {
+        System.out.println("run (without any final test)");
+        String configFile = "src/main/resources/leap.plist";
         instance = new BenchmarkRunner(configFile);
         instance.run();
     }

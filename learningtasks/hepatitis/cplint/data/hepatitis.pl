@@ -1,6 +1,5 @@
-:- sc.
+
 :- begin_bg.
-:- end_bg.
 
 activity_level(biopsy001_001,1).
 activity_level(biopsy001_018,1).
@@ -18317,202 +18316,6 @@ direct_bilirubin_level(screening996,2).
 direct_bilirubin_level(screening997,2).
 direct_bilirubin_level(screening998,2).
 direct_bilirubin_level(screening999,2).
-dur(patient002,1).
-dur(patient005,0).
-dur(patient006,1).
-dur(patient009,1).
-dur(patient010,2).
-dur(patient013,0).
-dur(patient014,1).
-dur(patient020,0).
-dur(patient027,0).
-dur(patient028,1).
-dur(patient032,2).
-dur(patient037,2).
-dur(patient038,1).
-dur(patient041,0).
-dur(patient049,1).
-dur(patient053,2).
-dur(patient059,0).
-dur(patient060,4).
-dur(patient062,3).
-dur(patient069,3).
-dur(patient072,3).
-dur(patient073,3).
-dur(patient077,3).
-dur(patient078,4).
-dur(patient081,1).
-dur(patient084,2).
-dur(patient087,3).
-dur(patient089,0).
-dur(patient090,2).
-dur(patient091,1).
-dur(patient092,1).
-dur(patient093,4).
-dur(patient094,3).
-dur(patient095,4).
-dur(patient097,2).
-dur(patient098,1).
-dur(patient100,1).
-dur(patient102,4).
-dur(patient111,4).
-dur(patient113,2).
-dur(patient114,3).
-dur(patient115,0).
-dur(patient117,0).
-dur(patient118,4).
-dur(patient120,2).
-dur(patient121,3).
-dur(patient122,2).
-dur(patient125,1).
-dur(patient126,2).
-dur(patient128,0).
-dur(patient130,2).
-dur(patient131,4).
-dur(patient134,2).
-dur(patient136,2).
-dur(patient137,3).
-dur(patient140,3).
-dur(patient144,0).
-dur(patient145,4).
-dur(patient146,2).
-dur(patient147,4).
-dur(patient150,0).
-dur(patient151,1).
-dur(patient152,1).
-dur(patient154,0).
-dur(patient162,3).
-dur(patient185,3).
-dur(patient187,0).
-dur(patient192,2).
-dur(patient210,4).
-dur(patient215,2).
-dur(patient216,3).
-dur(patient223,1).
-dur(patient225,0).
-dur(patient226,3).
-dur(patient229,0).
-dur(patient230,0).
-dur(patient231,0).
-dur(patient238,4).
-dur(patient241,1).
-dur(patient242,0).
-dur(patient243,2).
-dur(patient253,1).
-dur(patient257,1).
-dur(patient258,4).
-dur(patient260,2).
-dur(patient262,2).
-dur(patient263,3).
-dur(patient265,3).
-dur(patient267,1).
-dur(patient268,1).
-dur(patient271,4).
-dur(patient273,1).
-dur(patient274,0).
-dur(patient275,1).
-dur(patient283,4).
-dur(patient284,4).
-dur(patient289,1).
-dur(patient291,3).
-dur(patient298,1).
-dur(patient299,3).
-dur(patient301,3).
-dur(patient302,3).
-dur(patient303,2).
-dur(patient304,3).
-dur(patient305,3).
-dur(patient306,2).
-dur(patient307,3).
-dur(patient311,2).
-dur(patient316,3).
-dur(patient317,2).
-dur(patient319,1).
-dur(patient321,2).
-dur(patient322,2).
-dur(patient325,3).
-dur(patient326,4).
-dur(patient327,0).
-dur(patient329,2).
-dur(patient332,3).
-dur(patient334,3).
-dur(patient335,4).
-dur(patient336,0).
-dur(patient337,1).
-dur(patient338,3).
-dur(patient343,2).
-dur(patient344,3).
-dur(patient345,3).
-dur(patient346,2).
-dur(patient347,0).
-dur(patient348,3).
-dur(patient349,2).
-dur(patient350,0).
-dur(patient352,0).
-dur(patient354,4).
-dur(patient355,4).
-dur(patient356,4).
-dur(patient357,1).
-dur(patient358,4).
-dur(patient359,1).
-dur(patient360,4).
-dur(patient361,2).
-dur(patient362,0).
-dur(patient363,1).
-dur(patient365,3).
-dur(patient366,1).
-dur(patient369,3).
-dur(patient370,0).
-dur(patient371,3).
-dur(patient372,4).
-dur(patient373,1).
-dur(patient374,4).
-dur(patient376,4).
-dur(patient377,3).
-dur(patient378,1).
-dur(patient379,4).
-dur(patient380,0).
-dur(patient381,0).
-dur(patient382,0).
-dur(patient384,4).
-dur(patient386,3).
-dur(patient387,4).
-dur(patient388,4).
-dur(patient391,4).
-dur(patient392,4).
-dur(patient394,4).
-dur(patient395,4).
-dur(patient396,2).
-dur(patient397,2).
-dur(patient402,2).
-dur(patient403,0).
-dur(patient406,3).
-dur(patient408,2).
-dur(patient413,1).
-dur(patient461,4).
-dur(patient462,0).
-dur(patient463,0).
-dur(patient468,4).
-dur(patient469,0).
-dur(patient471,4).
-dur(patient474,0).
-dur(patient475,2).
-dur(patient478,2).
-dur(patient479,2).
-dur(patient481,1).
-dur(patient482,0).
-dur(patient484,1).
-dur(patient485,4).
-dur(patient486,1).
-dur(patient487,4).
-dur(patient488,0).
-dur(patient489,2).
-dur(patient492,0).
-dur(patient494,0).
-dur(patient495,1).
-dur(patient496,4).
-dur(patient497,3).
-dur(patient500,1).
 fibrosis_level(biopsy001_001,1).
 fibrosis_level(biopsy001_018,1).
 fibrosis_level(biopsy001_026,1).
@@ -19134,5697 +18937,5697 @@ fibrosis_level(biopsy029_404,2).
 fibrosis_level(biopsy030_426,1).
 fibrosis_level(biopsy031_465,0).
 fibrosis_level(biopsy032_499,1).
-glutamic_oxaloacetic_transaminase_level(screening001,4).
-glutamic_oxaloacetic_transaminase_level(screening002,4).
-glutamic_oxaloacetic_transaminase_level(screening003,4).
-glutamic_oxaloacetic_transaminase_level(screening004,4).
-glutamic_oxaloacetic_transaminase_level(screening005,4).
-glutamic_oxaloacetic_transaminase_level(screening006,4).
-glutamic_oxaloacetic_transaminase_level(screening007,4).
-glutamic_oxaloacetic_transaminase_level(screening008,3).
-glutamic_oxaloacetic_transaminase_level(screening009,3).
-glutamic_oxaloacetic_transaminase_level(screening010,3).
-glutamic_oxaloacetic_transaminase_level(screening011,3).
-glutamic_oxaloacetic_transaminase_level(screening012,4).
-glutamic_oxaloacetic_transaminase_level(screening013,3).
-glutamic_oxaloacetic_transaminase_level(screening014,3).
-glutamic_oxaloacetic_transaminase_level(screening015,3).
-glutamic_oxaloacetic_transaminase_level(screening016,4).
-glutamic_oxaloacetic_transaminase_level(screening017,3).
-glutamic_oxaloacetic_transaminase_level(screening018,2).
-glutamic_oxaloacetic_transaminase_level(screening019,3).
-glutamic_oxaloacetic_transaminase_level(screening020,4).
-glutamic_oxaloacetic_transaminase_level(screening021,4).
-glutamic_oxaloacetic_transaminase_level(screening022,2).
-glutamic_oxaloacetic_transaminase_level(screening023,2).
-glutamic_oxaloacetic_transaminase_level(screening024,2).
-glutamic_oxaloacetic_transaminase_level(screening025,2).
-glutamic_oxaloacetic_transaminase_level(screening026,2).
-glutamic_oxaloacetic_transaminase_level(screening027,2).
-glutamic_oxaloacetic_transaminase_level(screening028,2).
-glutamic_oxaloacetic_transaminase_level(screening029,2).
-glutamic_oxaloacetic_transaminase_level(screening030,2).
-glutamic_oxaloacetic_transaminase_level(screening031,2).
-glutamic_oxaloacetic_transaminase_level(screening032,2).
-glutamic_oxaloacetic_transaminase_level(screening033,2).
-glutamic_oxaloacetic_transaminase_level(screening034,2).
-glutamic_oxaloacetic_transaminase_level(screening035,3).
-glutamic_oxaloacetic_transaminase_level(screening036,3).
-glutamic_oxaloacetic_transaminase_level(screening037,2).
-glutamic_oxaloacetic_transaminase_level(screening038,4).
-glutamic_oxaloacetic_transaminase_level(screening039,3).
-glutamic_oxaloacetic_transaminase_level(screening040,3).
-glutamic_oxaloacetic_transaminase_level(screening041,2).
-glutamic_oxaloacetic_transaminase_level(screening042,2).
-glutamic_oxaloacetic_transaminase_level(screening043,1).
-glutamic_oxaloacetic_transaminase_level(screening044,2).
-glutamic_oxaloacetic_transaminase_level(screening045,2).
-glutamic_oxaloacetic_transaminase_level(screening046,2).
-glutamic_oxaloacetic_transaminase_level(screening047,2).
-glutamic_oxaloacetic_transaminase_level(screening048,2).
-glutamic_oxaloacetic_transaminase_level(screening049,4).
-glutamic_oxaloacetic_transaminase_level(screening050,4).
-glutamic_oxaloacetic_transaminase_level(screening051,4).
-glutamic_oxaloacetic_transaminase_level(screening052,4).
-glutamic_oxaloacetic_transaminase_level(screening053,2).
-glutamic_oxaloacetic_transaminase_level(screening054,2).
-glutamic_oxaloacetic_transaminase_level(screening055,2).
-glutamic_oxaloacetic_transaminase_level(screening056,1).
-glutamic_oxaloacetic_transaminase_level(screening057,1).
-glutamic_oxaloacetic_transaminase_level(screening058,1).
-glutamic_oxaloacetic_transaminase_level(screening059,1).
-glutamic_oxaloacetic_transaminase_level(screening060,2).
-glutamic_oxaloacetic_transaminase_level(screening061,1).
-glutamic_oxaloacetic_transaminase_level(screening062,1).
-glutamic_oxaloacetic_transaminase_level(screening063,1).
-glutamic_oxaloacetic_transaminase_level(screening064,1).
-glutamic_oxaloacetic_transaminase_level(screening065,1).
-glutamic_oxaloacetic_transaminase_level(screening066,1).
-glutamic_oxaloacetic_transaminase_level(screening067,2).
-glutamic_oxaloacetic_transaminase_level(screening068,2).
-glutamic_oxaloacetic_transaminase_level(screening069,2).
-glutamic_oxaloacetic_transaminase_level(screening070,1).
-glutamic_oxaloacetic_transaminase_level(screening071,4).
-glutamic_oxaloacetic_transaminase_level(screening072,4).
-glutamic_oxaloacetic_transaminase_level(screening073,4).
-glutamic_oxaloacetic_transaminase_level(screening074,2).
-glutamic_oxaloacetic_transaminase_level(screening075,3).
-glutamic_oxaloacetic_transaminase_level(screening076,3).
-glutamic_oxaloacetic_transaminase_level(screening077,2).
-glutamic_oxaloacetic_transaminase_level(screening078,2).
-glutamic_oxaloacetic_transaminase_level(screening079,2).
-glutamic_oxaloacetic_transaminase_level(screening080,2).
-glutamic_oxaloacetic_transaminase_level(screening081,2).
-glutamic_oxaloacetic_transaminase_level(screening082,2).
-glutamic_oxaloacetic_transaminase_level(screening083,3).
-glutamic_oxaloacetic_transaminase_level(screening084,3).
-glutamic_oxaloacetic_transaminase_level(screening085,3).
-glutamic_oxaloacetic_transaminase_level(screening086,2).
-glutamic_oxaloacetic_transaminase_level(screening087,3).
-glutamic_oxaloacetic_transaminase_level(screening088,3).
-glutamic_oxaloacetic_transaminase_level(screening089,3).
-glutamic_oxaloacetic_transaminase_level(screening090,3).
-glutamic_oxaloacetic_transaminase_level(screening091,3).
-glutamic_oxaloacetic_transaminase_level(screening092,3).
-glutamic_oxaloacetic_transaminase_level(screening093,3).
-glutamic_oxaloacetic_transaminase_level(screening094,3).
-glutamic_oxaloacetic_transaminase_level(screening095,3).
-glutamic_oxaloacetic_transaminase_level(screening096,3).
-glutamic_oxaloacetic_transaminase_level(screening097,3).
-glutamic_oxaloacetic_transaminase_level(screening098,4).
-glutamic_oxaloacetic_transaminase_level(screening099,3).
-glutamic_oxaloacetic_transaminase_level(screening100,2).
-glutamic_oxaloacetic_transaminase_level(screening1000,4).
-glutamic_oxaloacetic_transaminase_level(screening1001,4).
-glutamic_oxaloacetic_transaminase_level(screening1002,2).
-glutamic_oxaloacetic_transaminase_level(screening1003,2).
-glutamic_oxaloacetic_transaminase_level(screening1004,2).
-glutamic_oxaloacetic_transaminase_level(screening1005,2).
-glutamic_oxaloacetic_transaminase_level(screening1006,2).
-glutamic_oxaloacetic_transaminase_level(screening1007,2).
-glutamic_oxaloacetic_transaminase_level(screening1008,2).
-glutamic_oxaloacetic_transaminase_level(screening1009,2).
-glutamic_oxaloacetic_transaminase_level(screening101,3).
-glutamic_oxaloacetic_transaminase_level(screening1010,2).
-glutamic_oxaloacetic_transaminase_level(screening1011,2).
-glutamic_oxaloacetic_transaminase_level(screening1012,4).
-glutamic_oxaloacetic_transaminase_level(screening1013,3).
-glutamic_oxaloacetic_transaminase_level(screening1014,4).
-glutamic_oxaloacetic_transaminase_level(screening1015,4).
-glutamic_oxaloacetic_transaminase_level(screening1016,3).
-glutamic_oxaloacetic_transaminase_level(screening1017,3).
-glutamic_oxaloacetic_transaminase_level(screening1018,3).
-glutamic_oxaloacetic_transaminase_level(screening1019,3).
-glutamic_oxaloacetic_transaminase_level(screening102,2).
-glutamic_oxaloacetic_transaminase_level(screening1020,3).
-glutamic_oxaloacetic_transaminase_level(screening1021,3).
-glutamic_oxaloacetic_transaminase_level(screening1022,2).
-glutamic_oxaloacetic_transaminase_level(screening1023,2).
-glutamic_oxaloacetic_transaminase_level(screening1024,2).
-glutamic_oxaloacetic_transaminase_level(screening1025,2).
-glutamic_oxaloacetic_transaminase_level(screening1026,3).
-glutamic_oxaloacetic_transaminase_level(screening1027,2).
-glutamic_oxaloacetic_transaminase_level(screening1028,3).
-glutamic_oxaloacetic_transaminase_level(screening1029,2).
-glutamic_oxaloacetic_transaminase_level(screening103,3).
-glutamic_oxaloacetic_transaminase_level(screening1030,2).
-glutamic_oxaloacetic_transaminase_level(screening1031,2).
-glutamic_oxaloacetic_transaminase_level(screening1032,2).
-glutamic_oxaloacetic_transaminase_level(screening1033,4).
-glutamic_oxaloacetic_transaminase_level(screening1034,4).
-glutamic_oxaloacetic_transaminase_level(screening1035,4).
-glutamic_oxaloacetic_transaminase_level(screening1036,3).
-glutamic_oxaloacetic_transaminase_level(screening1037,3).
-glutamic_oxaloacetic_transaminase_level(screening1038,3).
-glutamic_oxaloacetic_transaminase_level(screening1039,3).
-glutamic_oxaloacetic_transaminase_level(screening104,2).
-glutamic_oxaloacetic_transaminase_level(screening1040,2).
-glutamic_oxaloacetic_transaminase_level(screening1041,3).
-glutamic_oxaloacetic_transaminase_level(screening1042,3).
-glutamic_oxaloacetic_transaminase_level(screening1043,3).
-glutamic_oxaloacetic_transaminase_level(screening1044,3).
-glutamic_oxaloacetic_transaminase_level(screening1045,3).
-glutamic_oxaloacetic_transaminase_level(screening1046,2).
-glutamic_oxaloacetic_transaminase_level(screening1047,2).
-glutamic_oxaloacetic_transaminase_level(screening1048,2).
-glutamic_oxaloacetic_transaminase_level(screening1049,2).
-glutamic_oxaloacetic_transaminase_level(screening105,2).
-glutamic_oxaloacetic_transaminase_level(screening1050,2).
-glutamic_oxaloacetic_transaminase_level(screening1051,3).
-glutamic_oxaloacetic_transaminase_level(screening1052,3).
-glutamic_oxaloacetic_transaminase_level(screening1053,4).
-glutamic_oxaloacetic_transaminase_level(screening1054,4).
-glutamic_oxaloacetic_transaminase_level(screening1055,4).
-glutamic_oxaloacetic_transaminase_level(screening1056,3).
-glutamic_oxaloacetic_transaminase_level(screening1057,3).
-glutamic_oxaloacetic_transaminase_level(screening1058,3).
-glutamic_oxaloacetic_transaminase_level(screening1059,3).
-glutamic_oxaloacetic_transaminase_level(screening106,2).
-glutamic_oxaloacetic_transaminase_level(screening1060,2).
-glutamic_oxaloacetic_transaminase_level(screening1061,3).
-glutamic_oxaloacetic_transaminase_level(screening1062,3).
-glutamic_oxaloacetic_transaminase_level(screening1063,3).
-glutamic_oxaloacetic_transaminase_level(screening1064,3).
-glutamic_oxaloacetic_transaminase_level(screening1065,3).
-glutamic_oxaloacetic_transaminase_level(screening1066,2).
-glutamic_oxaloacetic_transaminase_level(screening1067,2).
-glutamic_oxaloacetic_transaminase_level(screening1068,2).
-glutamic_oxaloacetic_transaminase_level(screening1069,2).
-glutamic_oxaloacetic_transaminase_level(screening107,2).
-glutamic_oxaloacetic_transaminase_level(screening1070,2).
-glutamic_oxaloacetic_transaminase_level(screening1071,3).
-glutamic_oxaloacetic_transaminase_level(screening1072,3).
-glutamic_oxaloacetic_transaminase_level(screening1073,4).
-glutamic_oxaloacetic_transaminase_level(screening1074,4).
-glutamic_oxaloacetic_transaminase_level(screening1075,4).
-glutamic_oxaloacetic_transaminase_level(screening1076,3).
-glutamic_oxaloacetic_transaminase_level(screening1077,3).
-glutamic_oxaloacetic_transaminase_level(screening1078,3).
-glutamic_oxaloacetic_transaminase_level(screening1079,3).
-glutamic_oxaloacetic_transaminase_level(screening108,2).
-glutamic_oxaloacetic_transaminase_level(screening1080,2).
-glutamic_oxaloacetic_transaminase_level(screening1081,3).
-glutamic_oxaloacetic_transaminase_level(screening1082,3).
-glutamic_oxaloacetic_transaminase_level(screening1083,3).
-glutamic_oxaloacetic_transaminase_level(screening1084,3).
-glutamic_oxaloacetic_transaminase_level(screening1085,3).
-glutamic_oxaloacetic_transaminase_level(screening1086,2).
-glutamic_oxaloacetic_transaminase_level(screening1087,2).
-glutamic_oxaloacetic_transaminase_level(screening1088,2).
-glutamic_oxaloacetic_transaminase_level(screening1089,2).
-glutamic_oxaloacetic_transaminase_level(screening109,4).
-glutamic_oxaloacetic_transaminase_level(screening1090,2).
-glutamic_oxaloacetic_transaminase_level(screening1091,3).
-glutamic_oxaloacetic_transaminase_level(screening1092,3).
-glutamic_oxaloacetic_transaminase_level(screening1093,2).
-glutamic_oxaloacetic_transaminase_level(screening1094,2).
-glutamic_oxaloacetic_transaminase_level(screening1095,2).
-glutamic_oxaloacetic_transaminase_level(screening1096,3).
-glutamic_oxaloacetic_transaminase_level(screening1097,3).
-glutamic_oxaloacetic_transaminase_level(screening1098,3).
-glutamic_oxaloacetic_transaminase_level(screening1099,2).
-glutamic_oxaloacetic_transaminase_level(screening110,3).
-glutamic_oxaloacetic_transaminase_level(screening1100,2).
-glutamic_oxaloacetic_transaminase_level(screening1101,4).
-glutamic_oxaloacetic_transaminase_level(screening1102,3).
-glutamic_oxaloacetic_transaminase_level(screening1103,4).
-glutamic_oxaloacetic_transaminase_level(screening1104,4).
-glutamic_oxaloacetic_transaminase_level(screening1105,4).
-glutamic_oxaloacetic_transaminase_level(screening1106,3).
-glutamic_oxaloacetic_transaminase_level(screening1107,3).
-glutamic_oxaloacetic_transaminase_level(screening1108,4).
-glutamic_oxaloacetic_transaminase_level(screening1109,4).
-glutamic_oxaloacetic_transaminase_level(screening111,4).
-glutamic_oxaloacetic_transaminase_level(screening1110,4).
-glutamic_oxaloacetic_transaminase_level(screening1111,4).
-glutamic_oxaloacetic_transaminase_level(screening1112,4).
-glutamic_oxaloacetic_transaminase_level(screening1113,4).
-glutamic_oxaloacetic_transaminase_level(screening1114,4).
-glutamic_oxaloacetic_transaminase_level(screening1115,4).
-glutamic_oxaloacetic_transaminase_level(screening1116,4).
-glutamic_oxaloacetic_transaminase_level(screening1117,4).
-glutamic_oxaloacetic_transaminase_level(screening1118,3).
-glutamic_oxaloacetic_transaminase_level(screening1119,3).
-glutamic_oxaloacetic_transaminase_level(screening112,4).
-glutamic_oxaloacetic_transaminase_level(screening1120,3).
-glutamic_oxaloacetic_transaminase_level(screening1121,3).
-glutamic_oxaloacetic_transaminase_level(screening1122,3).
-glutamic_oxaloacetic_transaminase_level(screening1123,3).
-glutamic_oxaloacetic_transaminase_level(screening1124,3).
-glutamic_oxaloacetic_transaminase_level(screening1125,3).
-glutamic_oxaloacetic_transaminase_level(screening1126,3).
-glutamic_oxaloacetic_transaminase_level(screening1127,3).
-glutamic_oxaloacetic_transaminase_level(screening1128,4).
-glutamic_oxaloacetic_transaminase_level(screening1129,3).
-glutamic_oxaloacetic_transaminase_level(screening113,3).
-glutamic_oxaloacetic_transaminase_level(screening1130,3).
-glutamic_oxaloacetic_transaminase_level(screening1131,3).
-glutamic_oxaloacetic_transaminase_level(screening1132,2).
-glutamic_oxaloacetic_transaminase_level(screening1133,2).
-glutamic_oxaloacetic_transaminase_level(screening1134,2).
-glutamic_oxaloacetic_transaminase_level(screening1135,2).
-glutamic_oxaloacetic_transaminase_level(screening1136,2).
-glutamic_oxaloacetic_transaminase_level(screening1137,2).
-glutamic_oxaloacetic_transaminase_level(screening1138,3).
-glutamic_oxaloacetic_transaminase_level(screening1139,2).
-glutamic_oxaloacetic_transaminase_level(screening114,2).
-glutamic_oxaloacetic_transaminase_level(screening1140,4).
-glutamic_oxaloacetic_transaminase_level(screening1141,4).
-glutamic_oxaloacetic_transaminase_level(screening1142,3).
-glutamic_oxaloacetic_transaminase_level(screening1143,3).
-glutamic_oxaloacetic_transaminase_level(screening1144,3).
-glutamic_oxaloacetic_transaminase_level(screening1145,3).
-glutamic_oxaloacetic_transaminase_level(screening1146,4).
-glutamic_oxaloacetic_transaminase_level(screening1147,4).
-glutamic_oxaloacetic_transaminase_level(screening1148,4).
-glutamic_oxaloacetic_transaminase_level(screening1149,4).
-glutamic_oxaloacetic_transaminase_level(screening115,2).
-glutamic_oxaloacetic_transaminase_level(screening1150,4).
-glutamic_oxaloacetic_transaminase_level(screening1151,3).
-glutamic_oxaloacetic_transaminase_level(screening1152,3).
-glutamic_oxaloacetic_transaminase_level(screening1153,3).
-glutamic_oxaloacetic_transaminase_level(screening1154,3).
-glutamic_oxaloacetic_transaminase_level(screening1155,4).
-glutamic_oxaloacetic_transaminase_level(screening1156,4).
-glutamic_oxaloacetic_transaminase_level(screening1157,4).
-glutamic_oxaloacetic_transaminase_level(screening1158,4).
-glutamic_oxaloacetic_transaminase_level(screening1159,4).
-glutamic_oxaloacetic_transaminase_level(screening116,2).
-glutamic_oxaloacetic_transaminase_level(screening1160,4).
-glutamic_oxaloacetic_transaminase_level(screening1161,4).
-glutamic_oxaloacetic_transaminase_level(screening1162,4).
-glutamic_oxaloacetic_transaminase_level(screening1163,4).
-glutamic_oxaloacetic_transaminase_level(screening1164,4).
-glutamic_oxaloacetic_transaminase_level(screening1165,4).
-glutamic_oxaloacetic_transaminase_level(screening1166,4).
-glutamic_oxaloacetic_transaminase_level(screening1167,4).
-glutamic_oxaloacetic_transaminase_level(screening1168,4).
-glutamic_oxaloacetic_transaminase_level(screening1169,4).
-glutamic_oxaloacetic_transaminase_level(screening117,2).
-glutamic_oxaloacetic_transaminase_level(screening1170,4).
-glutamic_oxaloacetic_transaminase_level(screening1171,3).
-glutamic_oxaloacetic_transaminase_level(screening1172,3).
-glutamic_oxaloacetic_transaminase_level(screening1173,3).
-glutamic_oxaloacetic_transaminase_level(screening1174,3).
-glutamic_oxaloacetic_transaminase_level(screening1175,3).
-glutamic_oxaloacetic_transaminase_level(screening1176,3).
-glutamic_oxaloacetic_transaminase_level(screening1177,3).
-glutamic_oxaloacetic_transaminase_level(screening1178,3).
-glutamic_oxaloacetic_transaminase_level(screening1179,2).
-glutamic_oxaloacetic_transaminase_level(screening118,3).
-glutamic_oxaloacetic_transaminase_level(screening1180,3).
-glutamic_oxaloacetic_transaminase_level(screening1181,3).
-glutamic_oxaloacetic_transaminase_level(screening1182,4).
-glutamic_oxaloacetic_transaminase_level(screening1183,4).
-glutamic_oxaloacetic_transaminase_level(screening1184,4).
-glutamic_oxaloacetic_transaminase_level(screening1185,3).
-glutamic_oxaloacetic_transaminase_level(screening1186,2).
-glutamic_oxaloacetic_transaminase_level(screening1187,2).
-glutamic_oxaloacetic_transaminase_level(screening1188,2).
-glutamic_oxaloacetic_transaminase_level(screening1189,2).
-glutamic_oxaloacetic_transaminase_level(screening119,3).
-glutamic_oxaloacetic_transaminase_level(screening1190,2).
-glutamic_oxaloacetic_transaminase_level(screening1191,3).
-glutamic_oxaloacetic_transaminase_level(screening1192,2).
-glutamic_oxaloacetic_transaminase_level(screening1193,2).
-glutamic_oxaloacetic_transaminase_level(screening1194,2).
-glutamic_oxaloacetic_transaminase_level(screening1195,2).
-glutamic_oxaloacetic_transaminase_level(screening1196,2).
-glutamic_oxaloacetic_transaminase_level(screening1197,2).
-glutamic_oxaloacetic_transaminase_level(screening1198,2).
-glutamic_oxaloacetic_transaminase_level(screening1199,2).
-glutamic_oxaloacetic_transaminase_level(screening120,2).
-glutamic_oxaloacetic_transaminase_level(screening1200,2).
-glutamic_oxaloacetic_transaminase_level(screening1201,4).
-glutamic_oxaloacetic_transaminase_level(screening1202,4).
-glutamic_oxaloacetic_transaminase_level(screening1203,3).
-glutamic_oxaloacetic_transaminase_level(screening1204,4).
-glutamic_oxaloacetic_transaminase_level(screening1205,3).
-glutamic_oxaloacetic_transaminase_level(screening1206,3).
-glutamic_oxaloacetic_transaminase_level(screening1207,3).
-glutamic_oxaloacetic_transaminase_level(screening1208,3).
-glutamic_oxaloacetic_transaminase_level(screening1209,4).
-glutamic_oxaloacetic_transaminase_level(screening121,2).
-glutamic_oxaloacetic_transaminase_level(screening1210,4).
-glutamic_oxaloacetic_transaminase_level(screening1211,4).
-glutamic_oxaloacetic_transaminase_level(screening1212,4).
-glutamic_oxaloacetic_transaminase_level(screening1213,4).
-glutamic_oxaloacetic_transaminase_level(screening1214,4).
-glutamic_oxaloacetic_transaminase_level(screening1215,4).
-glutamic_oxaloacetic_transaminase_level(screening1216,4).
-glutamic_oxaloacetic_transaminase_level(screening1217,4).
-glutamic_oxaloacetic_transaminase_level(screening1218,4).
-glutamic_oxaloacetic_transaminase_level(screening1219,4).
-glutamic_oxaloacetic_transaminase_level(screening122,3).
-glutamic_oxaloacetic_transaminase_level(screening1220,3).
-glutamic_oxaloacetic_transaminase_level(screening1221,4).
-glutamic_oxaloacetic_transaminase_level(screening1222,4).
-glutamic_oxaloacetic_transaminase_level(screening1223,3).
-glutamic_oxaloacetic_transaminase_level(screening1224,3).
-glutamic_oxaloacetic_transaminase_level(screening1225,3).
-glutamic_oxaloacetic_transaminase_level(screening1226,3).
-glutamic_oxaloacetic_transaminase_level(screening1227,3).
-glutamic_oxaloacetic_transaminase_level(screening1228,3).
-glutamic_oxaloacetic_transaminase_level(screening1229,3).
-glutamic_oxaloacetic_transaminase_level(screening123,3).
-glutamic_oxaloacetic_transaminase_level(screening1230,2).
-glutamic_oxaloacetic_transaminase_level(screening1231,2).
-glutamic_oxaloacetic_transaminase_level(screening1232,3).
-glutamic_oxaloacetic_transaminase_level(screening1233,3).
-glutamic_oxaloacetic_transaminase_level(screening1234,3).
-glutamic_oxaloacetic_transaminase_level(screening1235,3).
-glutamic_oxaloacetic_transaminase_level(screening1236,3).
-glutamic_oxaloacetic_transaminase_level(screening1237,3).
-glutamic_oxaloacetic_transaminase_level(screening1238,2).
-glutamic_oxaloacetic_transaminase_level(screening1239,2).
-glutamic_oxaloacetic_transaminase_level(screening124,4).
-glutamic_oxaloacetic_transaminase_level(screening1240,4).
-glutamic_oxaloacetic_transaminase_level(screening1241,3).
-glutamic_oxaloacetic_transaminase_level(screening1242,4).
-glutamic_oxaloacetic_transaminase_level(screening1243,4).
-glutamic_oxaloacetic_transaminase_level(screening1244,3).
-glutamic_oxaloacetic_transaminase_level(screening1245,3).
-glutamic_oxaloacetic_transaminase_level(screening1246,4).
-glutamic_oxaloacetic_transaminase_level(screening1247,4).
-glutamic_oxaloacetic_transaminase_level(screening1248,2).
-glutamic_oxaloacetic_transaminase_level(screening1249,2).
-glutamic_oxaloacetic_transaminase_level(screening125,4).
-glutamic_oxaloacetic_transaminase_level(screening1250,3).
-glutamic_oxaloacetic_transaminase_level(screening1251,2).
-glutamic_oxaloacetic_transaminase_level(screening1252,2).
-glutamic_oxaloacetic_transaminase_level(screening1253,3).
-glutamic_oxaloacetic_transaminase_level(screening1254,3).
-glutamic_oxaloacetic_transaminase_level(screening1255,3).
-glutamic_oxaloacetic_transaminase_level(screening1256,3).
-glutamic_oxaloacetic_transaminase_level(screening1257,3).
-glutamic_oxaloacetic_transaminase_level(screening1258,3).
-glutamic_oxaloacetic_transaminase_level(screening1259,3).
-glutamic_oxaloacetic_transaminase_level(screening126,4).
-glutamic_oxaloacetic_transaminase_level(screening1260,3).
-glutamic_oxaloacetic_transaminase_level(screening1261,4).
-glutamic_oxaloacetic_transaminase_level(screening1262,3).
-glutamic_oxaloacetic_transaminase_level(screening1263,3).
-glutamic_oxaloacetic_transaminase_level(screening1264,3).
-glutamic_oxaloacetic_transaminase_level(screening1265,4).
-glutamic_oxaloacetic_transaminase_level(screening1266,4).
-glutamic_oxaloacetic_transaminase_level(screening1267,3).
-glutamic_oxaloacetic_transaminase_level(screening1268,3).
-glutamic_oxaloacetic_transaminase_level(screening1269,3).
-glutamic_oxaloacetic_transaminase_level(screening127,4).
-glutamic_oxaloacetic_transaminase_level(screening1270,3).
-glutamic_oxaloacetic_transaminase_level(screening1271,4).
-glutamic_oxaloacetic_transaminase_level(screening1272,4).
-glutamic_oxaloacetic_transaminase_level(screening1273,4).
-glutamic_oxaloacetic_transaminase_level(screening1274,3).
-glutamic_oxaloacetic_transaminase_level(screening1275,4).
-glutamic_oxaloacetic_transaminase_level(screening1276,4).
-glutamic_oxaloacetic_transaminase_level(screening1277,4).
-glutamic_oxaloacetic_transaminase_level(screening1278,4).
-glutamic_oxaloacetic_transaminase_level(screening1279,4).
-glutamic_oxaloacetic_transaminase_level(screening128,4).
-glutamic_oxaloacetic_transaminase_level(screening1280,4).
-glutamic_oxaloacetic_transaminase_level(screening1281,4).
-glutamic_oxaloacetic_transaminase_level(screening1282,4).
-glutamic_oxaloacetic_transaminase_level(screening1283,3).
-glutamic_oxaloacetic_transaminase_level(screening1284,3).
-glutamic_oxaloacetic_transaminase_level(screening1285,2).
-glutamic_oxaloacetic_transaminase_level(screening1286,2).
-glutamic_oxaloacetic_transaminase_level(screening1287,2).
-glutamic_oxaloacetic_transaminase_level(screening1288,3).
-glutamic_oxaloacetic_transaminase_level(screening1289,3).
-glutamic_oxaloacetic_transaminase_level(screening129,4).
-glutamic_oxaloacetic_transaminase_level(screening1290,4).
-glutamic_oxaloacetic_transaminase_level(screening1291,4).
-glutamic_oxaloacetic_transaminase_level(screening1292,4).
-glutamic_oxaloacetic_transaminase_level(screening1293,4).
-glutamic_oxaloacetic_transaminase_level(screening1294,4).
-glutamic_oxaloacetic_transaminase_level(screening1295,4).
-glutamic_oxaloacetic_transaminase_level(screening1296,4).
-glutamic_oxaloacetic_transaminase_level(screening1297,4).
-glutamic_oxaloacetic_transaminase_level(screening1298,4).
-glutamic_oxaloacetic_transaminase_level(screening1299,4).
-glutamic_oxaloacetic_transaminase_level(screening130,4).
-glutamic_oxaloacetic_transaminase_level(screening1300,3).
-glutamic_oxaloacetic_transaminase_level(screening1301,3).
-glutamic_oxaloacetic_transaminase_level(screening1302,2).
-glutamic_oxaloacetic_transaminase_level(screening1303,2).
-glutamic_oxaloacetic_transaminase_level(screening1304,2).
-glutamic_oxaloacetic_transaminase_level(screening1305,3).
-glutamic_oxaloacetic_transaminase_level(screening1306,3).
-glutamic_oxaloacetic_transaminase_level(screening1307,4).
-glutamic_oxaloacetic_transaminase_level(screening1308,4).
-glutamic_oxaloacetic_transaminase_level(screening1309,4).
-glutamic_oxaloacetic_transaminase_level(screening131,4).
-glutamic_oxaloacetic_transaminase_level(screening1310,4).
-glutamic_oxaloacetic_transaminase_level(screening1311,2).
-glutamic_oxaloacetic_transaminase_level(screening1312,4).
-glutamic_oxaloacetic_transaminase_level(screening1313,4).
-glutamic_oxaloacetic_transaminase_level(screening1314,4).
-glutamic_oxaloacetic_transaminase_level(screening1315,3).
-glutamic_oxaloacetic_transaminase_level(screening1316,4).
-glutamic_oxaloacetic_transaminase_level(screening1317,4).
-glutamic_oxaloacetic_transaminase_level(screening1318,3).
-glutamic_oxaloacetic_transaminase_level(screening1319,3).
-glutamic_oxaloacetic_transaminase_level(screening132,2).
-glutamic_oxaloacetic_transaminase_level(screening1320,3).
-glutamic_oxaloacetic_transaminase_level(screening1321,4).
-glutamic_oxaloacetic_transaminase_level(screening1322,4).
-glutamic_oxaloacetic_transaminase_level(screening1323,4).
-glutamic_oxaloacetic_transaminase_level(screening1324,4).
-glutamic_oxaloacetic_transaminase_level(screening1325,4).
-glutamic_oxaloacetic_transaminase_level(screening1326,4).
-glutamic_oxaloacetic_transaminase_level(screening1327,4).
-glutamic_oxaloacetic_transaminase_level(screening1328,4).
-glutamic_oxaloacetic_transaminase_level(screening1329,3).
-glutamic_oxaloacetic_transaminase_level(screening133,2).
-glutamic_oxaloacetic_transaminase_level(screening1330,4).
-glutamic_oxaloacetic_transaminase_level(screening1331,4).
-glutamic_oxaloacetic_transaminase_level(screening1332,4).
-glutamic_oxaloacetic_transaminase_level(screening1333,4).
-glutamic_oxaloacetic_transaminase_level(screening1334,3).
-glutamic_oxaloacetic_transaminase_level(screening1335,2).
-glutamic_oxaloacetic_transaminase_level(screening1336,3).
-glutamic_oxaloacetic_transaminase_level(screening1337,4).
-glutamic_oxaloacetic_transaminase_level(screening1338,3).
-glutamic_oxaloacetic_transaminase_level(screening1339,3).
-glutamic_oxaloacetic_transaminase_level(screening134,2).
-glutamic_oxaloacetic_transaminase_level(screening1340,4).
-glutamic_oxaloacetic_transaminase_level(screening1341,3).
-glutamic_oxaloacetic_transaminase_level(screening1342,4).
-glutamic_oxaloacetic_transaminase_level(screening1343,3).
-glutamic_oxaloacetic_transaminase_level(screening1344,3).
-glutamic_oxaloacetic_transaminase_level(screening1345,2).
-glutamic_oxaloacetic_transaminase_level(screening1346,2).
-glutamic_oxaloacetic_transaminase_level(screening1347,3).
-glutamic_oxaloacetic_transaminase_level(screening1348,4).
-glutamic_oxaloacetic_transaminase_level(screening1349,4).
-glutamic_oxaloacetic_transaminase_level(screening135,2).
-glutamic_oxaloacetic_transaminase_level(screening1350,4).
-glutamic_oxaloacetic_transaminase_level(screening1351,3).
-glutamic_oxaloacetic_transaminase_level(screening1352,3).
-glutamic_oxaloacetic_transaminase_level(screening1353,3).
-glutamic_oxaloacetic_transaminase_level(screening1354,2).
-glutamic_oxaloacetic_transaminase_level(screening1355,2).
-glutamic_oxaloacetic_transaminase_level(screening1356,3).
-glutamic_oxaloacetic_transaminase_level(screening1357,4).
-glutamic_oxaloacetic_transaminase_level(screening1358,4).
-glutamic_oxaloacetic_transaminase_level(screening1359,4).
-glutamic_oxaloacetic_transaminase_level(screening136,2).
-glutamic_oxaloacetic_transaminase_level(screening1360,3).
-glutamic_oxaloacetic_transaminase_level(screening1361,4).
-glutamic_oxaloacetic_transaminase_level(screening1362,4).
-glutamic_oxaloacetic_transaminase_level(screening1363,3).
-glutamic_oxaloacetic_transaminase_level(screening1364,3).
-glutamic_oxaloacetic_transaminase_level(screening1365,3).
-glutamic_oxaloacetic_transaminase_level(screening1366,3).
-glutamic_oxaloacetic_transaminase_level(screening1367,3).
-glutamic_oxaloacetic_transaminase_level(screening1368,4).
-glutamic_oxaloacetic_transaminase_level(screening1369,4).
-glutamic_oxaloacetic_transaminase_level(screening137,4).
-glutamic_oxaloacetic_transaminase_level(screening1370,3).
-glutamic_oxaloacetic_transaminase_level(screening1371,4).
-glutamic_oxaloacetic_transaminase_level(screening1372,4).
-glutamic_oxaloacetic_transaminase_level(screening1373,3).
-glutamic_oxaloacetic_transaminase_level(screening1374,2).
-glutamic_oxaloacetic_transaminase_level(screening1375,2).
-glutamic_oxaloacetic_transaminase_level(screening1376,2).
-glutamic_oxaloacetic_transaminase_level(screening1377,2).
-glutamic_oxaloacetic_transaminase_level(screening1378,2).
-glutamic_oxaloacetic_transaminase_level(screening1379,4).
-glutamic_oxaloacetic_transaminase_level(screening138,2).
-glutamic_oxaloacetic_transaminase_level(screening1380,3).
-glutamic_oxaloacetic_transaminase_level(screening1381,4).
-glutamic_oxaloacetic_transaminase_level(screening1382,4).
-glutamic_oxaloacetic_transaminase_level(screening1383,3).
-glutamic_oxaloacetic_transaminase_level(screening1384,3).
-glutamic_oxaloacetic_transaminase_level(screening1385,3).
-glutamic_oxaloacetic_transaminase_level(screening1386,3).
-glutamic_oxaloacetic_transaminase_level(screening1387,3).
-glutamic_oxaloacetic_transaminase_level(screening1388,4).
-glutamic_oxaloacetic_transaminase_level(screening1389,4).
-glutamic_oxaloacetic_transaminase_level(screening139,2).
-glutamic_oxaloacetic_transaminase_level(screening1390,4).
-glutamic_oxaloacetic_transaminase_level(screening1391,4).
-glutamic_oxaloacetic_transaminase_level(screening1392,3).
-glutamic_oxaloacetic_transaminase_level(screening1393,1).
-glutamic_oxaloacetic_transaminase_level(screening1394,1).
-glutamic_oxaloacetic_transaminase_level(screening1395,1).
-glutamic_oxaloacetic_transaminase_level(screening1396,2).
-glutamic_oxaloacetic_transaminase_level(screening1397,1).
-glutamic_oxaloacetic_transaminase_level(screening1398,2).
-glutamic_oxaloacetic_transaminase_level(screening1399,2).
-glutamic_oxaloacetic_transaminase_level(screening140,4).
-glutamic_oxaloacetic_transaminase_level(screening1400,2).
-glutamic_oxaloacetic_transaminase_level(screening1401,2).
-glutamic_oxaloacetic_transaminase_level(screening1402,2).
-glutamic_oxaloacetic_transaminase_level(screening1403,3).
-glutamic_oxaloacetic_transaminase_level(screening1404,3).
-glutamic_oxaloacetic_transaminase_level(screening1405,3).
-glutamic_oxaloacetic_transaminase_level(screening1406,3).
-glutamic_oxaloacetic_transaminase_level(screening1407,3).
-glutamic_oxaloacetic_transaminase_level(screening1408,3).
-glutamic_oxaloacetic_transaminase_level(screening1409,3).
-glutamic_oxaloacetic_transaminase_level(screening141,2).
-glutamic_oxaloacetic_transaminase_level(screening1410,3).
-glutamic_oxaloacetic_transaminase_level(screening1411,4).
-glutamic_oxaloacetic_transaminase_level(screening1412,4).
-glutamic_oxaloacetic_transaminase_level(screening1413,4).
-glutamic_oxaloacetic_transaminase_level(screening1414,4).
-glutamic_oxaloacetic_transaminase_level(screening1415,4).
-glutamic_oxaloacetic_transaminase_level(screening1416,4).
-glutamic_oxaloacetic_transaminase_level(screening1417,4).
-glutamic_oxaloacetic_transaminase_level(screening1418,4).
-glutamic_oxaloacetic_transaminase_level(screening1419,4).
-glutamic_oxaloacetic_transaminase_level(screening142,2).
-glutamic_oxaloacetic_transaminase_level(screening1420,4).
-glutamic_oxaloacetic_transaminase_level(screening1421,4).
-glutamic_oxaloacetic_transaminase_level(screening1422,4).
-glutamic_oxaloacetic_transaminase_level(screening1423,3).
-glutamic_oxaloacetic_transaminase_level(screening1424,3).
-glutamic_oxaloacetic_transaminase_level(screening1425,3).
-glutamic_oxaloacetic_transaminase_level(screening1426,3).
-glutamic_oxaloacetic_transaminase_level(screening1427,2).
-glutamic_oxaloacetic_transaminase_level(screening1428,4).
-glutamic_oxaloacetic_transaminase_level(screening1429,4).
-glutamic_oxaloacetic_transaminase_level(screening143,1).
-glutamic_oxaloacetic_transaminase_level(screening1430,4).
-glutamic_oxaloacetic_transaminase_level(screening1431,4).
-glutamic_oxaloacetic_transaminase_level(screening1432,3).
-glutamic_oxaloacetic_transaminase_level(screening1433,3).
-glutamic_oxaloacetic_transaminase_level(screening1434,3).
-glutamic_oxaloacetic_transaminase_level(screening1435,3).
-glutamic_oxaloacetic_transaminase_level(screening1436,2).
-glutamic_oxaloacetic_transaminase_level(screening1437,3).
-glutamic_oxaloacetic_transaminase_level(screening1438,3).
-glutamic_oxaloacetic_transaminase_level(screening1439,4).
-glutamic_oxaloacetic_transaminase_level(screening144,3).
-glutamic_oxaloacetic_transaminase_level(screening1440,4).
-glutamic_oxaloacetic_transaminase_level(screening1441,4).
-glutamic_oxaloacetic_transaminase_level(screening1442,2).
-glutamic_oxaloacetic_transaminase_level(screening1443,2).
-glutamic_oxaloacetic_transaminase_level(screening1444,2).
-glutamic_oxaloacetic_transaminase_level(screening1445,2).
-glutamic_oxaloacetic_transaminase_level(screening1446,2).
-glutamic_oxaloacetic_transaminase_level(screening1447,2).
-glutamic_oxaloacetic_transaminase_level(screening1448,2).
-glutamic_oxaloacetic_transaminase_level(screening1449,2).
-glutamic_oxaloacetic_transaminase_level(screening145,3).
-glutamic_oxaloacetic_transaminase_level(screening1450,4).
-glutamic_oxaloacetic_transaminase_level(screening1451,3).
-glutamic_oxaloacetic_transaminase_level(screening1452,3).
-glutamic_oxaloacetic_transaminase_level(screening1453,3).
-glutamic_oxaloacetic_transaminase_level(screening1454,3).
-glutamic_oxaloacetic_transaminase_level(screening1455,3).
-glutamic_oxaloacetic_transaminase_level(screening1456,4).
-glutamic_oxaloacetic_transaminase_level(screening1457,4).
-glutamic_oxaloacetic_transaminase_level(screening1458,4).
-glutamic_oxaloacetic_transaminase_level(screening1459,3).
-glutamic_oxaloacetic_transaminase_level(screening146,4).
-glutamic_oxaloacetic_transaminase_level(screening1460,3).
-glutamic_oxaloacetic_transaminase_level(screening1461,3).
-glutamic_oxaloacetic_transaminase_level(screening1462,3).
-glutamic_oxaloacetic_transaminase_level(screening1463,3).
-glutamic_oxaloacetic_transaminase_level(screening1464,3).
-glutamic_oxaloacetic_transaminase_level(screening1465,3).
-glutamic_oxaloacetic_transaminase_level(screening1466,3).
-glutamic_oxaloacetic_transaminase_level(screening1467,3).
-glutamic_oxaloacetic_transaminase_level(screening1468,3).
-glutamic_oxaloacetic_transaminase_level(screening1469,3).
-glutamic_oxaloacetic_transaminase_level(screening147,4).
-glutamic_oxaloacetic_transaminase_level(screening1470,4).
-glutamic_oxaloacetic_transaminase_level(screening1471,4).
-glutamic_oxaloacetic_transaminase_level(screening1472,4).
-glutamic_oxaloacetic_transaminase_level(screening1473,4).
-glutamic_oxaloacetic_transaminase_level(screening1474,4).
-glutamic_oxaloacetic_transaminase_level(screening1475,3).
-glutamic_oxaloacetic_transaminase_level(screening1476,4).
-glutamic_oxaloacetic_transaminase_level(screening1477,3).
-glutamic_oxaloacetic_transaminase_level(screening1478,3).
-glutamic_oxaloacetic_transaminase_level(screening1479,4).
-glutamic_oxaloacetic_transaminase_level(screening148,3).
-glutamic_oxaloacetic_transaminase_level(screening1480,4).
-glutamic_oxaloacetic_transaminase_level(screening1481,4).
-glutamic_oxaloacetic_transaminase_level(screening1482,4).
-glutamic_oxaloacetic_transaminase_level(screening1483,4).
-glutamic_oxaloacetic_transaminase_level(screening1484,3).
-glutamic_oxaloacetic_transaminase_level(screening1485,4).
-glutamic_oxaloacetic_transaminase_level(screening1486,3).
-glutamic_oxaloacetic_transaminase_level(screening1487,3).
-glutamic_oxaloacetic_transaminase_level(screening1488,3).
-glutamic_oxaloacetic_transaminase_level(screening1489,3).
-glutamic_oxaloacetic_transaminase_level(screening149,2).
-glutamic_oxaloacetic_transaminase_level(screening1490,3).
-glutamic_oxaloacetic_transaminase_level(screening1491,3).
-glutamic_oxaloacetic_transaminase_level(screening1492,3).
-glutamic_oxaloacetic_transaminase_level(screening1493,3).
-glutamic_oxaloacetic_transaminase_level(screening1494,3).
-glutamic_oxaloacetic_transaminase_level(screening1495,3).
-glutamic_oxaloacetic_transaminase_level(screening1496,4).
-glutamic_oxaloacetic_transaminase_level(screening1497,3).
-glutamic_oxaloacetic_transaminase_level(screening1498,3).
-glutamic_oxaloacetic_transaminase_level(screening1499,4).
-glutamic_oxaloacetic_transaminase_level(screening150,2).
-glutamic_oxaloacetic_transaminase_level(screening1500,4).
-glutamic_oxaloacetic_transaminase_level(screening1501,3).
-glutamic_oxaloacetic_transaminase_level(screening1502,3).
-glutamic_oxaloacetic_transaminase_level(screening1503,3).
-glutamic_oxaloacetic_transaminase_level(screening1504,4).
-glutamic_oxaloacetic_transaminase_level(screening1505,4).
-glutamic_oxaloacetic_transaminase_level(screening1506,4).
-glutamic_oxaloacetic_transaminase_level(screening1507,4).
-glutamic_oxaloacetic_transaminase_level(screening1508,3).
-glutamic_oxaloacetic_transaminase_level(screening1509,3).
-glutamic_oxaloacetic_transaminase_level(screening151,2).
-glutamic_oxaloacetic_transaminase_level(screening1510,3).
-glutamic_oxaloacetic_transaminase_level(screening1511,3).
-glutamic_oxaloacetic_transaminase_level(screening1512,2).
-glutamic_oxaloacetic_transaminase_level(screening1513,3).
-glutamic_oxaloacetic_transaminase_level(screening1514,3).
-glutamic_oxaloacetic_transaminase_level(screening1515,2).
-glutamic_oxaloacetic_transaminase_level(screening1516,4).
-glutamic_oxaloacetic_transaminase_level(screening1517,4).
-glutamic_oxaloacetic_transaminase_level(screening1518,4).
-glutamic_oxaloacetic_transaminase_level(screening1519,3).
-glutamic_oxaloacetic_transaminase_level(screening152,2).
-glutamic_oxaloacetic_transaminase_level(screening1520,3).
-glutamic_oxaloacetic_transaminase_level(screening1521,3).
-glutamic_oxaloacetic_transaminase_level(screening1522,2).
-glutamic_oxaloacetic_transaminase_level(screening1523,3).
-glutamic_oxaloacetic_transaminase_level(screening1524,3).
-glutamic_oxaloacetic_transaminase_level(screening1525,3).
-glutamic_oxaloacetic_transaminase_level(screening1526,2).
-glutamic_oxaloacetic_transaminase_level(screening1527,3).
-glutamic_oxaloacetic_transaminase_level(screening1528,3).
-glutamic_oxaloacetic_transaminase_level(screening1529,2).
-glutamic_oxaloacetic_transaminase_level(screening153,2).
-glutamic_oxaloacetic_transaminase_level(screening1530,3).
-glutamic_oxaloacetic_transaminase_level(screening1531,2).
-glutamic_oxaloacetic_transaminase_level(screening1532,4).
-glutamic_oxaloacetic_transaminase_level(screening1533,4).
-glutamic_oxaloacetic_transaminase_level(screening1534,4).
-glutamic_oxaloacetic_transaminase_level(screening1535,3).
-glutamic_oxaloacetic_transaminase_level(screening1536,3).
-glutamic_oxaloacetic_transaminase_level(screening1537,3).
-glutamic_oxaloacetic_transaminase_level(screening1538,2).
-glutamic_oxaloacetic_transaminase_level(screening1539,3).
-glutamic_oxaloacetic_transaminase_level(screening154,2).
-glutamic_oxaloacetic_transaminase_level(screening1540,3).
-glutamic_oxaloacetic_transaminase_level(screening1541,3).
-glutamic_oxaloacetic_transaminase_level(screening1542,2).
-glutamic_oxaloacetic_transaminase_level(screening1543,3).
-glutamic_oxaloacetic_transaminase_level(screening1544,3).
-glutamic_oxaloacetic_transaminase_level(screening1545,2).
-glutamic_oxaloacetic_transaminase_level(screening1546,3).
-glutamic_oxaloacetic_transaminase_level(screening1547,2).
-glutamic_oxaloacetic_transaminase_level(screening1548,4).
-glutamic_oxaloacetic_transaminase_level(screening1549,4).
-glutamic_oxaloacetic_transaminase_level(screening155,2).
-glutamic_oxaloacetic_transaminase_level(screening1550,4).
-glutamic_oxaloacetic_transaminase_level(screening1551,3).
-glutamic_oxaloacetic_transaminase_level(screening1552,3).
-glutamic_oxaloacetic_transaminase_level(screening1553,3).
-glutamic_oxaloacetic_transaminase_level(screening1554,2).
-glutamic_oxaloacetic_transaminase_level(screening1555,3).
-glutamic_oxaloacetic_transaminase_level(screening1556,3).
-glutamic_oxaloacetic_transaminase_level(screening1557,3).
-glutamic_oxaloacetic_transaminase_level(screening1558,2).
-glutamic_oxaloacetic_transaminase_level(screening1559,3).
-glutamic_oxaloacetic_transaminase_level(screening156,1).
-glutamic_oxaloacetic_transaminase_level(screening1560,3).
-glutamic_oxaloacetic_transaminase_level(screening1561,2).
-glutamic_oxaloacetic_transaminase_level(screening1562,3).
-glutamic_oxaloacetic_transaminase_level(screening1563,2).
-glutamic_oxaloacetic_transaminase_level(screening1564,3).
-glutamic_oxaloacetic_transaminase_level(screening1565,2).
-glutamic_oxaloacetic_transaminase_level(screening1566,2).
-glutamic_oxaloacetic_transaminase_level(screening1567,2).
-glutamic_oxaloacetic_transaminase_level(screening1568,2).
-glutamic_oxaloacetic_transaminase_level(screening1569,2).
-glutamic_oxaloacetic_transaminase_level(screening157,2).
-glutamic_oxaloacetic_transaminase_level(screening1570,2).
-glutamic_oxaloacetic_transaminase_level(screening1571,2).
-glutamic_oxaloacetic_transaminase_level(screening1572,2).
-glutamic_oxaloacetic_transaminase_level(screening1573,4).
-glutamic_oxaloacetic_transaminase_level(screening1574,4).
-glutamic_oxaloacetic_transaminase_level(screening1575,3).
-glutamic_oxaloacetic_transaminase_level(screening1576,3).
-glutamic_oxaloacetic_transaminase_level(screening1577,3).
-glutamic_oxaloacetic_transaminase_level(screening1578,3).
-glutamic_oxaloacetic_transaminase_level(screening1579,4).
-glutamic_oxaloacetic_transaminase_level(screening158,2).
-glutamic_oxaloacetic_transaminase_level(screening1580,4).
-glutamic_oxaloacetic_transaminase_level(screening1581,4).
-glutamic_oxaloacetic_transaminase_level(screening1582,4).
-glutamic_oxaloacetic_transaminase_level(screening1583,4).
-glutamic_oxaloacetic_transaminase_level(screening1584,3).
-glutamic_oxaloacetic_transaminase_level(screening1585,3).
-glutamic_oxaloacetic_transaminase_level(screening1586,3).
-glutamic_oxaloacetic_transaminase_level(screening1587,4).
-glutamic_oxaloacetic_transaminase_level(screening1588,3).
-glutamic_oxaloacetic_transaminase_level(screening1589,4).
-glutamic_oxaloacetic_transaminase_level(screening159,2).
-glutamic_oxaloacetic_transaminase_level(screening1590,4).
-glutamic_oxaloacetic_transaminase_level(screening1591,2).
-glutamic_oxaloacetic_transaminase_level(screening1592,2).
-glutamic_oxaloacetic_transaminase_level(screening1593,2).
-glutamic_oxaloacetic_transaminase_level(screening1594,2).
-glutamic_oxaloacetic_transaminase_level(screening1595,2).
-glutamic_oxaloacetic_transaminase_level(screening1596,2).
-glutamic_oxaloacetic_transaminase_level(screening1597,2).
-glutamic_oxaloacetic_transaminase_level(screening1598,3).
-glutamic_oxaloacetic_transaminase_level(screening1599,4).
-glutamic_oxaloacetic_transaminase_level(screening160,2).
-glutamic_oxaloacetic_transaminase_level(screening1600,4).
-glutamic_oxaloacetic_transaminase_level(screening1601,4).
-glutamic_oxaloacetic_transaminase_level(screening1602,4).
-glutamic_oxaloacetic_transaminase_level(screening1603,4).
-glutamic_oxaloacetic_transaminase_level(screening1604,4).
-glutamic_oxaloacetic_transaminase_level(screening1605,4).
-glutamic_oxaloacetic_transaminase_level(screening1606,4).
-glutamic_oxaloacetic_transaminase_level(screening1607,3).
-glutamic_oxaloacetic_transaminase_level(screening1608,3).
-glutamic_oxaloacetic_transaminase_level(screening1609,3).
-glutamic_oxaloacetic_transaminase_level(screening161,2).
-glutamic_oxaloacetic_transaminase_level(screening1610,3).
-glutamic_oxaloacetic_transaminase_level(screening1611,4).
-glutamic_oxaloacetic_transaminase_level(screening1612,4).
-glutamic_oxaloacetic_transaminase_level(screening1613,2).
-glutamic_oxaloacetic_transaminase_level(screening1614,4).
-glutamic_oxaloacetic_transaminase_level(screening1615,3).
-glutamic_oxaloacetic_transaminase_level(screening1616,4).
-glutamic_oxaloacetic_transaminase_level(screening1617,1).
-glutamic_oxaloacetic_transaminase_level(screening1618,1).
-glutamic_oxaloacetic_transaminase_level(screening1619,1).
-glutamic_oxaloacetic_transaminase_level(screening162,2).
-glutamic_oxaloacetic_transaminase_level(screening1620,1).
-glutamic_oxaloacetic_transaminase_level(screening1621,1).
-glutamic_oxaloacetic_transaminase_level(screening1622,2).
-glutamic_oxaloacetic_transaminase_level(screening1623,2).
-glutamic_oxaloacetic_transaminase_level(screening1624,2).
-glutamic_oxaloacetic_transaminase_level(screening1625,2).
-glutamic_oxaloacetic_transaminase_level(screening1626,1).
-glutamic_oxaloacetic_transaminase_level(screening1627,4).
-glutamic_oxaloacetic_transaminase_level(screening1628,2).
-glutamic_oxaloacetic_transaminase_level(screening1629,1).
-glutamic_oxaloacetic_transaminase_level(screening163,4).
-glutamic_oxaloacetic_transaminase_level(screening1630,4).
-glutamic_oxaloacetic_transaminase_level(screening1631,4).
-glutamic_oxaloacetic_transaminase_level(screening1632,4).
-glutamic_oxaloacetic_transaminase_level(screening1633,3).
-glutamic_oxaloacetic_transaminase_level(screening1634,4).
-glutamic_oxaloacetic_transaminase_level(screening1635,4).
-glutamic_oxaloacetic_transaminase_level(screening1636,4).
-glutamic_oxaloacetic_transaminase_level(screening1637,4).
-glutamic_oxaloacetic_transaminase_level(screening1638,3).
-glutamic_oxaloacetic_transaminase_level(screening1639,4).
-glutamic_oxaloacetic_transaminase_level(screening164,2).
-glutamic_oxaloacetic_transaminase_level(screening1640,4).
-glutamic_oxaloacetic_transaminase_level(screening1641,4).
-glutamic_oxaloacetic_transaminase_level(screening1642,4).
-glutamic_oxaloacetic_transaminase_level(screening1643,4).
-glutamic_oxaloacetic_transaminase_level(screening1644,4).
-glutamic_oxaloacetic_transaminase_level(screening1645,4).
-glutamic_oxaloacetic_transaminase_level(screening1646,4).
-glutamic_oxaloacetic_transaminase_level(screening1647,3).
-glutamic_oxaloacetic_transaminase_level(screening1648,4).
-glutamic_oxaloacetic_transaminase_level(screening1649,4).
-glutamic_oxaloacetic_transaminase_level(screening165,2).
-glutamic_oxaloacetic_transaminase_level(screening1650,4).
-glutamic_oxaloacetic_transaminase_level(screening1651,4).
-glutamic_oxaloacetic_transaminase_level(screening1652,3).
-glutamic_oxaloacetic_transaminase_level(screening1653,4).
-glutamic_oxaloacetic_transaminase_level(screening1654,4).
-glutamic_oxaloacetic_transaminase_level(screening1655,4).
-glutamic_oxaloacetic_transaminase_level(screening1656,4).
-glutamic_oxaloacetic_transaminase_level(screening1657,4).
-glutamic_oxaloacetic_transaminase_level(screening1658,4).
-glutamic_oxaloacetic_transaminase_level(screening1659,4).
-glutamic_oxaloacetic_transaminase_level(screening166,2).
-glutamic_oxaloacetic_transaminase_level(screening1660,4).
-glutamic_oxaloacetic_transaminase_level(screening1661,3).
-glutamic_oxaloacetic_transaminase_level(screening1662,4).
-glutamic_oxaloacetic_transaminase_level(screening1663,4).
-glutamic_oxaloacetic_transaminase_level(screening1664,4).
-glutamic_oxaloacetic_transaminase_level(screening1665,4).
-glutamic_oxaloacetic_transaminase_level(screening1666,3).
-glutamic_oxaloacetic_transaminase_level(screening1667,4).
-glutamic_oxaloacetic_transaminase_level(screening1668,4).
-glutamic_oxaloacetic_transaminase_level(screening1669,4).
-glutamic_oxaloacetic_transaminase_level(screening167,2).
-glutamic_oxaloacetic_transaminase_level(screening1670,4).
-glutamic_oxaloacetic_transaminase_level(screening1671,4).
-glutamic_oxaloacetic_transaminase_level(screening1672,3).
-glutamic_oxaloacetic_transaminase_level(screening1673,3).
-glutamic_oxaloacetic_transaminase_level(screening1674,3).
-glutamic_oxaloacetic_transaminase_level(screening1675,2).
-glutamic_oxaloacetic_transaminase_level(screening1676,1).
-glutamic_oxaloacetic_transaminase_level(screening1677,1).
-glutamic_oxaloacetic_transaminase_level(screening1678,1).
-glutamic_oxaloacetic_transaminase_level(screening1679,2).
-glutamic_oxaloacetic_transaminase_level(screening168,2).
-glutamic_oxaloacetic_transaminase_level(screening1680,2).
-glutamic_oxaloacetic_transaminase_level(screening1681,2).
-glutamic_oxaloacetic_transaminase_level(screening1682,2).
-glutamic_oxaloacetic_transaminase_level(screening1683,2).
-glutamic_oxaloacetic_transaminase_level(screening1684,3).
-glutamic_oxaloacetic_transaminase_level(screening1685,3).
-glutamic_oxaloacetic_transaminase_level(screening1686,3).
-glutamic_oxaloacetic_transaminase_level(screening1687,3).
-glutamic_oxaloacetic_transaminase_level(screening1688,2).
-glutamic_oxaloacetic_transaminase_level(screening1689,1).
-glutamic_oxaloacetic_transaminase_level(screening169,2).
-glutamic_oxaloacetic_transaminase_level(screening1690,1).
-glutamic_oxaloacetic_transaminase_level(screening1691,1).
-glutamic_oxaloacetic_transaminase_level(screening1692,2).
-glutamic_oxaloacetic_transaminase_level(screening1693,2).
-glutamic_oxaloacetic_transaminase_level(screening1694,2).
-glutamic_oxaloacetic_transaminase_level(screening1695,2).
-glutamic_oxaloacetic_transaminase_level(screening1696,2).
-glutamic_oxaloacetic_transaminase_level(screening1697,3).
-glutamic_oxaloacetic_transaminase_level(screening1698,3).
-glutamic_oxaloacetic_transaminase_level(screening1699,3).
-glutamic_oxaloacetic_transaminase_level(screening170,2).
-glutamic_oxaloacetic_transaminase_level(screening1700,3).
-glutamic_oxaloacetic_transaminase_level(screening1701,2).
-glutamic_oxaloacetic_transaminase_level(screening1702,1).
-glutamic_oxaloacetic_transaminase_level(screening1703,1).
-glutamic_oxaloacetic_transaminase_level(screening1704,1).
-glutamic_oxaloacetic_transaminase_level(screening1705,2).
-glutamic_oxaloacetic_transaminase_level(screening1706,2).
-glutamic_oxaloacetic_transaminase_level(screening1707,2).
-glutamic_oxaloacetic_transaminase_level(screening1708,2).
-glutamic_oxaloacetic_transaminase_level(screening1709,2).
-glutamic_oxaloacetic_transaminase_level(screening171,3).
-glutamic_oxaloacetic_transaminase_level(screening1710,3).
-glutamic_oxaloacetic_transaminase_level(screening1711,4).
-glutamic_oxaloacetic_transaminase_level(screening1712,4).
-glutamic_oxaloacetic_transaminase_level(screening1713,4).
-glutamic_oxaloacetic_transaminase_level(screening1714,4).
-glutamic_oxaloacetic_transaminase_level(screening1715,3).
-glutamic_oxaloacetic_transaminase_level(screening1716,3).
-glutamic_oxaloacetic_transaminase_level(screening1717,3).
-glutamic_oxaloacetic_transaminase_level(screening1718,3).
-glutamic_oxaloacetic_transaminase_level(screening1719,3).
-glutamic_oxaloacetic_transaminase_level(screening172,4).
-glutamic_oxaloacetic_transaminase_level(screening1720,4).
-glutamic_oxaloacetic_transaminase_level(screening1721,4).
-glutamic_oxaloacetic_transaminase_level(screening1722,4).
-glutamic_oxaloacetic_transaminase_level(screening1723,4).
-glutamic_oxaloacetic_transaminase_level(screening1724,4).
-glutamic_oxaloacetic_transaminase_level(screening1725,4).
-glutamic_oxaloacetic_transaminase_level(screening1726,4).
-glutamic_oxaloacetic_transaminase_level(screening1727,3).
-glutamic_oxaloacetic_transaminase_level(screening1728,3).
-glutamic_oxaloacetic_transaminase_level(screening1729,3).
-glutamic_oxaloacetic_transaminase_level(screening173,4).
-glutamic_oxaloacetic_transaminase_level(screening1730,3).
-glutamic_oxaloacetic_transaminase_level(screening1731,3).
-glutamic_oxaloacetic_transaminase_level(screening1732,4).
-glutamic_oxaloacetic_transaminase_level(screening1733,4).
-glutamic_oxaloacetic_transaminase_level(screening1734,4).
-glutamic_oxaloacetic_transaminase_level(screening1735,2).
-glutamic_oxaloacetic_transaminase_level(screening1736,2).
-glutamic_oxaloacetic_transaminase_level(screening1737,2).
-glutamic_oxaloacetic_transaminase_level(screening1738,2).
-glutamic_oxaloacetic_transaminase_level(screening1739,2).
-glutamic_oxaloacetic_transaminase_level(screening174,3).
-glutamic_oxaloacetic_transaminase_level(screening1740,4).
-glutamic_oxaloacetic_transaminase_level(screening1741,3).
-glutamic_oxaloacetic_transaminase_level(screening1742,4).
-glutamic_oxaloacetic_transaminase_level(screening1743,4).
-glutamic_oxaloacetic_transaminase_level(screening1744,2).
-glutamic_oxaloacetic_transaminase_level(screening1745,2).
-glutamic_oxaloacetic_transaminase_level(screening1746,3).
-glutamic_oxaloacetic_transaminase_level(screening1747,4).
-glutamic_oxaloacetic_transaminase_level(screening1748,4).
-glutamic_oxaloacetic_transaminase_level(screening1749,2).
-glutamic_oxaloacetic_transaminase_level(screening175,2).
-glutamic_oxaloacetic_transaminase_level(screening1750,2).
-glutamic_oxaloacetic_transaminase_level(screening1751,3).
-glutamic_oxaloacetic_transaminase_level(screening1752,4).
-glutamic_oxaloacetic_transaminase_level(screening1753,4).
-glutamic_oxaloacetic_transaminase_level(screening1754,4).
-glutamic_oxaloacetic_transaminase_level(screening1755,4).
-glutamic_oxaloacetic_transaminase_level(screening1756,4).
-glutamic_oxaloacetic_transaminase_level(screening1757,4).
-glutamic_oxaloacetic_transaminase_level(screening1758,4).
-glutamic_oxaloacetic_transaminase_level(screening1759,4).
-glutamic_oxaloacetic_transaminase_level(screening176,2).
-glutamic_oxaloacetic_transaminase_level(screening1760,4).
-glutamic_oxaloacetic_transaminase_level(screening1761,4).
-glutamic_oxaloacetic_transaminase_level(screening1762,4).
-glutamic_oxaloacetic_transaminase_level(screening1763,2).
-glutamic_oxaloacetic_transaminase_level(screening1764,1).
-glutamic_oxaloacetic_transaminase_level(screening1765,1).
-glutamic_oxaloacetic_transaminase_level(screening1766,1).
-glutamic_oxaloacetic_transaminase_level(screening1767,1).
-glutamic_oxaloacetic_transaminase_level(screening1768,1).
-glutamic_oxaloacetic_transaminase_level(screening1769,1).
-glutamic_oxaloacetic_transaminase_level(screening177,1).
-glutamic_oxaloacetic_transaminase_level(screening1770,1).
-glutamic_oxaloacetic_transaminase_level(screening1771,1).
-glutamic_oxaloacetic_transaminase_level(screening1772,1).
-glutamic_oxaloacetic_transaminase_level(screening1773,4).
-glutamic_oxaloacetic_transaminase_level(screening1774,3).
-glutamic_oxaloacetic_transaminase_level(screening1775,4).
-glutamic_oxaloacetic_transaminase_level(screening1776,4).
-glutamic_oxaloacetic_transaminase_level(screening1777,4).
-glutamic_oxaloacetic_transaminase_level(screening1778,4).
-glutamic_oxaloacetic_transaminase_level(screening1779,4).
-glutamic_oxaloacetic_transaminase_level(screening178,2).
-glutamic_oxaloacetic_transaminase_level(screening1780,4).
-glutamic_oxaloacetic_transaminase_level(screening1781,3).
-glutamic_oxaloacetic_transaminase_level(screening1782,3).
-glutamic_oxaloacetic_transaminase_level(screening1783,3).
-glutamic_oxaloacetic_transaminase_level(screening1784,3).
-glutamic_oxaloacetic_transaminase_level(screening1785,3).
-glutamic_oxaloacetic_transaminase_level(screening1786,3).
-glutamic_oxaloacetic_transaminase_level(screening1787,3).
-glutamic_oxaloacetic_transaminase_level(screening1788,3).
-glutamic_oxaloacetic_transaminase_level(screening1789,4).
-glutamic_oxaloacetic_transaminase_level(screening179,3).
-glutamic_oxaloacetic_transaminase_level(screening1790,3).
-glutamic_oxaloacetic_transaminase_level(screening1791,4).
-glutamic_oxaloacetic_transaminase_level(screening1792,4).
-glutamic_oxaloacetic_transaminase_level(screening1793,4).
-glutamic_oxaloacetic_transaminase_level(screening1794,4).
-glutamic_oxaloacetic_transaminase_level(screening1795,4).
-glutamic_oxaloacetic_transaminase_level(screening1796,4).
-glutamic_oxaloacetic_transaminase_level(screening1797,3).
-glutamic_oxaloacetic_transaminase_level(screening1798,3).
-glutamic_oxaloacetic_transaminase_level(screening1799,3).
-glutamic_oxaloacetic_transaminase_level(screening180,4).
-glutamic_oxaloacetic_transaminase_level(screening1800,3).
-glutamic_oxaloacetic_transaminase_level(screening1801,3).
-glutamic_oxaloacetic_transaminase_level(screening1802,3).
-glutamic_oxaloacetic_transaminase_level(screening1803,3).
-glutamic_oxaloacetic_transaminase_level(screening1804,3).
-glutamic_oxaloacetic_transaminase_level(screening1805,4).
-glutamic_oxaloacetic_transaminase_level(screening1806,3).
-glutamic_oxaloacetic_transaminase_level(screening1807,4).
-glutamic_oxaloacetic_transaminase_level(screening1808,4).
-glutamic_oxaloacetic_transaminase_level(screening1809,4).
-glutamic_oxaloacetic_transaminase_level(screening181,3).
-glutamic_oxaloacetic_transaminase_level(screening1810,4).
-glutamic_oxaloacetic_transaminase_level(screening1811,4).
-glutamic_oxaloacetic_transaminase_level(screening1812,4).
-glutamic_oxaloacetic_transaminase_level(screening1813,3).
-glutamic_oxaloacetic_transaminase_level(screening1814,3).
-glutamic_oxaloacetic_transaminase_level(screening1815,3).
-glutamic_oxaloacetic_transaminase_level(screening1816,3).
-glutamic_oxaloacetic_transaminase_level(screening1817,3).
-glutamic_oxaloacetic_transaminase_level(screening1818,3).
-glutamic_oxaloacetic_transaminase_level(screening1819,3).
-glutamic_oxaloacetic_transaminase_level(screening182,3).
-glutamic_oxaloacetic_transaminase_level(screening1820,3).
-glutamic_oxaloacetic_transaminase_level(screening1821,4).
-glutamic_oxaloacetic_transaminase_level(screening1822,2).
-glutamic_oxaloacetic_transaminase_level(screening1823,1).
-glutamic_oxaloacetic_transaminase_level(screening1824,1).
-glutamic_oxaloacetic_transaminase_level(screening1825,2).
-glutamic_oxaloacetic_transaminase_level(screening1826,2).
-glutamic_oxaloacetic_transaminase_level(screening1827,1).
-glutamic_oxaloacetic_transaminase_level(screening1828,1).
-glutamic_oxaloacetic_transaminase_level(screening1829,1).
-glutamic_oxaloacetic_transaminase_level(screening183,3).
-glutamic_oxaloacetic_transaminase_level(screening1830,2).
-glutamic_oxaloacetic_transaminase_level(screening1831,1).
-glutamic_oxaloacetic_transaminase_level(screening1832,5).
-glutamic_oxaloacetic_transaminase_level(screening1833,4).
-glutamic_oxaloacetic_transaminase_level(screening1834,2).
-glutamic_oxaloacetic_transaminase_level(screening1835,1).
-glutamic_oxaloacetic_transaminase_level(screening1836,1).
-glutamic_oxaloacetic_transaminase_level(screening1837,5).
-glutamic_oxaloacetic_transaminase_level(screening1838,4).
-glutamic_oxaloacetic_transaminase_level(screening1839,2).
-glutamic_oxaloacetic_transaminase_level(screening184,3).
-glutamic_oxaloacetic_transaminase_level(screening1840,1).
-glutamic_oxaloacetic_transaminase_level(screening1841,1).
-glutamic_oxaloacetic_transaminase_level(screening1842,5).
-glutamic_oxaloacetic_transaminase_level(screening1843,4).
-glutamic_oxaloacetic_transaminase_level(screening1844,2).
-glutamic_oxaloacetic_transaminase_level(screening1845,1).
-glutamic_oxaloacetic_transaminase_level(screening1846,1).
-glutamic_oxaloacetic_transaminase_level(screening1847,4).
-glutamic_oxaloacetic_transaminase_level(screening1848,3).
-glutamic_oxaloacetic_transaminase_level(screening1849,4).
-glutamic_oxaloacetic_transaminase_level(screening185,2).
-glutamic_oxaloacetic_transaminase_level(screening1850,4).
-glutamic_oxaloacetic_transaminase_level(screening1851,4).
-glutamic_oxaloacetic_transaminase_level(screening1852,4).
-glutamic_oxaloacetic_transaminase_level(screening1853,4).
-glutamic_oxaloacetic_transaminase_level(screening1854,4).
-glutamic_oxaloacetic_transaminase_level(screening1855,3).
-glutamic_oxaloacetic_transaminase_level(screening1856,3).
-glutamic_oxaloacetic_transaminase_level(screening1857,3).
-glutamic_oxaloacetic_transaminase_level(screening1858,2).
-glutamic_oxaloacetic_transaminase_level(screening1859,3).
-glutamic_oxaloacetic_transaminase_level(screening186,2).
-glutamic_oxaloacetic_transaminase_level(screening1860,3).
-glutamic_oxaloacetic_transaminase_level(screening1861,4).
-glutamic_oxaloacetic_transaminase_level(screening1862,3).
-glutamic_oxaloacetic_transaminase_level(screening1863,4).
-glutamic_oxaloacetic_transaminase_level(screening1864,4).
-glutamic_oxaloacetic_transaminase_level(screening1865,4).
-glutamic_oxaloacetic_transaminase_level(screening1866,4).
-glutamic_oxaloacetic_transaminase_level(screening1867,4).
-glutamic_oxaloacetic_transaminase_level(screening1868,4).
-glutamic_oxaloacetic_transaminase_level(screening1869,3).
-glutamic_oxaloacetic_transaminase_level(screening187,2).
-glutamic_oxaloacetic_transaminase_level(screening1870,3).
-glutamic_oxaloacetic_transaminase_level(screening1871,3).
-glutamic_oxaloacetic_transaminase_level(screening1872,2).
-glutamic_oxaloacetic_transaminase_level(screening1873,3).
-glutamic_oxaloacetic_transaminase_level(screening1874,3).
-glutamic_oxaloacetic_transaminase_level(screening1875,4).
-glutamic_oxaloacetic_transaminase_level(screening1876,3).
-glutamic_oxaloacetic_transaminase_level(screening1877,4).
-glutamic_oxaloacetic_transaminase_level(screening1878,4).
-glutamic_oxaloacetic_transaminase_level(screening1879,4).
-glutamic_oxaloacetic_transaminase_level(screening188,5).
-glutamic_oxaloacetic_transaminase_level(screening1880,4).
-glutamic_oxaloacetic_transaminase_level(screening1881,4).
-glutamic_oxaloacetic_transaminase_level(screening1882,4).
-glutamic_oxaloacetic_transaminase_level(screening1883,3).
-glutamic_oxaloacetic_transaminase_level(screening1884,3).
-glutamic_oxaloacetic_transaminase_level(screening1885,3).
-glutamic_oxaloacetic_transaminase_level(screening1886,2).
-glutamic_oxaloacetic_transaminase_level(screening1887,3).
-glutamic_oxaloacetic_transaminase_level(screening1888,3).
-glutamic_oxaloacetic_transaminase_level(screening1889,4).
-glutamic_oxaloacetic_transaminase_level(screening189,1).
-glutamic_oxaloacetic_transaminase_level(screening1890,3).
-glutamic_oxaloacetic_transaminase_level(screening1891,4).
-glutamic_oxaloacetic_transaminase_level(screening1892,4).
-glutamic_oxaloacetic_transaminase_level(screening1893,4).
-glutamic_oxaloacetic_transaminase_level(screening1894,4).
-glutamic_oxaloacetic_transaminase_level(screening1895,4).
-glutamic_oxaloacetic_transaminase_level(screening1896,4).
-glutamic_oxaloacetic_transaminase_level(screening1897,3).
-glutamic_oxaloacetic_transaminase_level(screening1898,3).
-glutamic_oxaloacetic_transaminase_level(screening1899,3).
-glutamic_oxaloacetic_transaminase_level(screening190,1).
-glutamic_oxaloacetic_transaminase_level(screening1900,2).
-glutamic_oxaloacetic_transaminase_level(screening1901,3).
-glutamic_oxaloacetic_transaminase_level(screening1902,3).
-glutamic_oxaloacetic_transaminase_level(screening1903,2).
-glutamic_oxaloacetic_transaminase_level(screening1904,2).
-glutamic_oxaloacetic_transaminase_level(screening1905,2).
-glutamic_oxaloacetic_transaminase_level(screening1906,2).
-glutamic_oxaloacetic_transaminase_level(screening1907,4).
-glutamic_oxaloacetic_transaminase_level(screening1908,4).
-glutamic_oxaloacetic_transaminase_level(screening1909,4).
-glutamic_oxaloacetic_transaminase_level(screening191,1).
-glutamic_oxaloacetic_transaminase_level(screening1910,3).
-glutamic_oxaloacetic_transaminase_level(screening1911,3).
-glutamic_oxaloacetic_transaminase_level(screening1912,3).
-glutamic_oxaloacetic_transaminase_level(screening1913,2).
-glutamic_oxaloacetic_transaminase_level(screening1914,2).
-glutamic_oxaloacetic_transaminase_level(screening1915,4).
-glutamic_oxaloacetic_transaminase_level(screening1916,4).
-glutamic_oxaloacetic_transaminase_level(screening1917,2).
-glutamic_oxaloacetic_transaminase_level(screening1918,2).
-glutamic_oxaloacetic_transaminase_level(screening1919,2).
-glutamic_oxaloacetic_transaminase_level(screening192,1).
-glutamic_oxaloacetic_transaminase_level(screening1920,2).
-glutamic_oxaloacetic_transaminase_level(screening1921,2).
-glutamic_oxaloacetic_transaminase_level(screening1922,2).
-glutamic_oxaloacetic_transaminase_level(screening1923,2).
-glutamic_oxaloacetic_transaminase_level(screening1924,2).
-glutamic_oxaloacetic_transaminase_level(screening1925,2).
-glutamic_oxaloacetic_transaminase_level(screening1926,2).
-glutamic_oxaloacetic_transaminase_level(screening1927,2).
-glutamic_oxaloacetic_transaminase_level(screening1928,2).
-glutamic_oxaloacetic_transaminase_level(screening1929,2).
-glutamic_oxaloacetic_transaminase_level(screening193,1).
-glutamic_oxaloacetic_transaminase_level(screening1930,2).
-glutamic_oxaloacetic_transaminase_level(screening1931,4).
-glutamic_oxaloacetic_transaminase_level(screening1932,5).
-glutamic_oxaloacetic_transaminase_level(screening1933,1).
-glutamic_oxaloacetic_transaminase_level(screening1934,2).
-glutamic_oxaloacetic_transaminase_level(screening1935,2).
-glutamic_oxaloacetic_transaminase_level(screening1936,2).
-glutamic_oxaloacetic_transaminase_level(screening1937,2).
-glutamic_oxaloacetic_transaminase_level(screening1938,2).
-glutamic_oxaloacetic_transaminase_level(screening1939,2).
-glutamic_oxaloacetic_transaminase_level(screening194,2).
-glutamic_oxaloacetic_transaminase_level(screening1940,2).
-glutamic_oxaloacetic_transaminase_level(screening1941,2).
-glutamic_oxaloacetic_transaminase_level(screening1942,2).
-glutamic_oxaloacetic_transaminase_level(screening1943,2).
-glutamic_oxaloacetic_transaminase_level(screening1944,2).
-glutamic_oxaloacetic_transaminase_level(screening1945,2).
-glutamic_oxaloacetic_transaminase_level(screening1946,2).
-glutamic_oxaloacetic_transaminase_level(screening1947,2).
-glutamic_oxaloacetic_transaminase_level(screening1948,2).
-glutamic_oxaloacetic_transaminase_level(screening1949,2).
-glutamic_oxaloacetic_transaminase_level(screening195,2).
-glutamic_oxaloacetic_transaminase_level(screening1950,2).
-glutamic_oxaloacetic_transaminase_level(screening1951,2).
-glutamic_oxaloacetic_transaminase_level(screening1952,2).
-glutamic_oxaloacetic_transaminase_level(screening1953,2).
-glutamic_oxaloacetic_transaminase_level(screening1954,2).
-glutamic_oxaloacetic_transaminase_level(screening1955,4).
-glutamic_oxaloacetic_transaminase_level(screening1956,3).
-glutamic_oxaloacetic_transaminase_level(screening1957,3).
-glutamic_oxaloacetic_transaminase_level(screening1958,2).
-glutamic_oxaloacetic_transaminase_level(screening1959,2).
-glutamic_oxaloacetic_transaminase_level(screening196,2).
-glutamic_oxaloacetic_transaminase_level(screening1960,4).
-glutamic_oxaloacetic_transaminase_level(screening1961,3).
-glutamic_oxaloacetic_transaminase_level(screening1962,3).
-glutamic_oxaloacetic_transaminase_level(screening1963,4).
-glutamic_oxaloacetic_transaminase_level(screening1964,3).
-glutamic_oxaloacetic_transaminase_level(screening1965,4).
-glutamic_oxaloacetic_transaminase_level(screening1966,4).
-glutamic_oxaloacetic_transaminase_level(screening1967,2).
-glutamic_oxaloacetic_transaminase_level(screening1968,2).
-glutamic_oxaloacetic_transaminase_level(screening1969,2).
-glutamic_oxaloacetic_transaminase_level(screening197,2).
-glutamic_oxaloacetic_transaminase_level(screening1970,2).
-glutamic_oxaloacetic_transaminase_level(screening1971,2).
-glutamic_oxaloacetic_transaminase_level(screening1972,1).
-glutamic_oxaloacetic_transaminase_level(screening1973,4).
-glutamic_oxaloacetic_transaminase_level(screening1974,4).
-glutamic_oxaloacetic_transaminase_level(screening1975,4).
-glutamic_oxaloacetic_transaminase_level(screening1976,2).
-glutamic_oxaloacetic_transaminase_level(screening1977,1).
-glutamic_oxaloacetic_transaminase_level(screening1978,2).
-glutamic_oxaloacetic_transaminase_level(screening1979,2).
-glutamic_oxaloacetic_transaminase_level(screening198,2).
-glutamic_oxaloacetic_transaminase_level(screening1980,3).
-glutamic_oxaloacetic_transaminase_level(screening1981,3).
-glutamic_oxaloacetic_transaminase_level(screening1982,2).
-glutamic_oxaloacetic_transaminase_level(screening1983,4).
-glutamic_oxaloacetic_transaminase_level(screening1984,2).
-glutamic_oxaloacetic_transaminase_level(screening1985,3).
-glutamic_oxaloacetic_transaminase_level(screening1986,3).
-glutamic_oxaloacetic_transaminase_level(screening1987,2).
-glutamic_oxaloacetic_transaminase_level(screening1988,3).
-glutamic_oxaloacetic_transaminase_level(screening1989,3).
-glutamic_oxaloacetic_transaminase_level(screening199,2).
-glutamic_oxaloacetic_transaminase_level(screening1990,4).
-glutamic_oxaloacetic_transaminase_level(screening1991,2).
-glutamic_oxaloacetic_transaminase_level(screening1992,2).
-glutamic_oxaloacetic_transaminase_level(screening1993,4).
-glutamic_oxaloacetic_transaminase_level(screening1994,4).
-glutamic_oxaloacetic_transaminase_level(screening1995,4).
-glutamic_oxaloacetic_transaminase_level(screening1996,2).
-glutamic_oxaloacetic_transaminase_level(screening1997,2).
-glutamic_oxaloacetic_transaminase_level(screening1998,2).
-glutamic_oxaloacetic_transaminase_level(screening1999,2).
-glutamic_oxaloacetic_transaminase_level(screening200,2).
-glutamic_oxaloacetic_transaminase_level(screening2000,2).
-glutamic_oxaloacetic_transaminase_level(screening2001,2).
-glutamic_oxaloacetic_transaminase_level(screening2002,2).
-glutamic_oxaloacetic_transaminase_level(screening2003,2).
-glutamic_oxaloacetic_transaminase_level(screening2004,2).
-glutamic_oxaloacetic_transaminase_level(screening2005,2).
-glutamic_oxaloacetic_transaminase_level(screening2006,2).
-glutamic_oxaloacetic_transaminase_level(screening2007,2).
-glutamic_oxaloacetic_transaminase_level(screening2008,3).
-glutamic_oxaloacetic_transaminase_level(screening2009,2).
-glutamic_oxaloacetic_transaminase_level(screening201,2).
-glutamic_oxaloacetic_transaminase_level(screening2010,2).
-glutamic_oxaloacetic_transaminase_level(screening2011,2).
-glutamic_oxaloacetic_transaminase_level(screening2012,2).
-glutamic_oxaloacetic_transaminase_level(screening2013,2).
-glutamic_oxaloacetic_transaminase_level(screening2014,3).
-glutamic_oxaloacetic_transaminase_level(screening2015,2).
-glutamic_oxaloacetic_transaminase_level(screening2016,2).
-glutamic_oxaloacetic_transaminase_level(screening2017,2).
-glutamic_oxaloacetic_transaminase_level(screening2018,2).
-glutamic_oxaloacetic_transaminase_level(screening2019,2).
-glutamic_oxaloacetic_transaminase_level(screening202,3).
-glutamic_oxaloacetic_transaminase_level(screening2020,2).
-glutamic_oxaloacetic_transaminase_level(screening2021,2).
-glutamic_oxaloacetic_transaminase_level(screening2022,2).
-glutamic_oxaloacetic_transaminase_level(screening2023,3).
-glutamic_oxaloacetic_transaminase_level(screening2024,2).
-glutamic_oxaloacetic_transaminase_level(screening2025,3).
-glutamic_oxaloacetic_transaminase_level(screening2026,2).
-glutamic_oxaloacetic_transaminase_level(screening2027,2).
-glutamic_oxaloacetic_transaminase_level(screening2028,3).
-glutamic_oxaloacetic_transaminase_level(screening2029,3).
-glutamic_oxaloacetic_transaminase_level(screening203,4).
-glutamic_oxaloacetic_transaminase_level(screening2030,3).
-glutamic_oxaloacetic_transaminase_level(screening2031,3).
-glutamic_oxaloacetic_transaminase_level(screening2032,3).
-glutamic_oxaloacetic_transaminase_level(screening2033,3).
-glutamic_oxaloacetic_transaminase_level(screening2034,4).
-glutamic_oxaloacetic_transaminase_level(screening2035,3).
-glutamic_oxaloacetic_transaminase_level(screening2036,3).
-glutamic_oxaloacetic_transaminase_level(screening2037,3).
-glutamic_oxaloacetic_transaminase_level(screening2038,3).
-glutamic_oxaloacetic_transaminase_level(screening2039,3).
-glutamic_oxaloacetic_transaminase_level(screening204,4).
-glutamic_oxaloacetic_transaminase_level(screening2040,2).
-glutamic_oxaloacetic_transaminase_level(screening2041,2).
-glutamic_oxaloacetic_transaminase_level(screening2042,1).
-glutamic_oxaloacetic_transaminase_level(screening2043,1).
-glutamic_oxaloacetic_transaminase_level(screening2044,1).
-glutamic_oxaloacetic_transaminase_level(screening2045,2).
-glutamic_oxaloacetic_transaminase_level(screening2046,2).
-glutamic_oxaloacetic_transaminase_level(screening2047,1).
-glutamic_oxaloacetic_transaminase_level(screening2048,1).
-glutamic_oxaloacetic_transaminase_level(screening2049,1).
-glutamic_oxaloacetic_transaminase_level(screening205,1).
-glutamic_oxaloacetic_transaminase_level(screening2050,4).
-glutamic_oxaloacetic_transaminase_level(screening2051,2).
-glutamic_oxaloacetic_transaminase_level(screening2052,1).
-glutamic_oxaloacetic_transaminase_level(screening2053,1).
-glutamic_oxaloacetic_transaminase_level(screening2054,1).
-glutamic_oxaloacetic_transaminase_level(screening2055,1).
-glutamic_oxaloacetic_transaminase_level(screening2056,2).
-glutamic_oxaloacetic_transaminase_level(screening2057,4).
-glutamic_oxaloacetic_transaminase_level(screening2058,2).
-glutamic_oxaloacetic_transaminase_level(screening2059,1).
-glutamic_oxaloacetic_transaminase_level(screening206,4).
-glutamic_oxaloacetic_transaminase_level(screening2060,1).
-glutamic_oxaloacetic_transaminase_level(screening2061,1).
-glutamic_oxaloacetic_transaminase_level(screening2062,1).
-glutamic_oxaloacetic_transaminase_level(screening2063,2).
-glutamic_oxaloacetic_transaminase_level(screening2064,1).
-glutamic_oxaloacetic_transaminase_level(screening2065,1).
-glutamic_oxaloacetic_transaminase_level(screening2066,1).
-glutamic_oxaloacetic_transaminase_level(screening2067,1).
-glutamic_oxaloacetic_transaminase_level(screening2068,1).
-glutamic_oxaloacetic_transaminase_level(screening2069,4).
-glutamic_oxaloacetic_transaminase_level(screening207,3).
-glutamic_oxaloacetic_transaminase_level(screening2070,4).
-glutamic_oxaloacetic_transaminase_level(screening2071,3).
-glutamic_oxaloacetic_transaminase_level(screening2072,2).
-glutamic_oxaloacetic_transaminase_level(screening2073,4).
-glutamic_oxaloacetic_transaminase_level(screening2074,4).
-glutamic_oxaloacetic_transaminase_level(screening2075,4).
-glutamic_oxaloacetic_transaminase_level(screening2076,3).
-glutamic_oxaloacetic_transaminase_level(screening2077,3).
-glutamic_oxaloacetic_transaminase_level(screening2078,3).
-glutamic_oxaloacetic_transaminase_level(screening2079,2).
-glutamic_oxaloacetic_transaminase_level(screening208,2).
-glutamic_oxaloacetic_transaminase_level(screening2080,2).
-glutamic_oxaloacetic_transaminase_level(screening2081,2).
-glutamic_oxaloacetic_transaminase_level(screening2082,2).
-glutamic_oxaloacetic_transaminase_level(screening2083,4).
-glutamic_oxaloacetic_transaminase_level(screening2084,3).
-glutamic_oxaloacetic_transaminase_level(screening2085,3).
-glutamic_oxaloacetic_transaminase_level(screening2086,2).
-glutamic_oxaloacetic_transaminase_level(screening2087,2).
-glutamic_oxaloacetic_transaminase_level(screening2088,3).
-glutamic_oxaloacetic_transaminase_level(screening2089,3).
-glutamic_oxaloacetic_transaminase_level(screening209,3).
-glutamic_oxaloacetic_transaminase_level(screening2090,2).
-glutamic_oxaloacetic_transaminase_level(screening2091,2).
-glutamic_oxaloacetic_transaminase_level(screening2092,2).
-glutamic_oxaloacetic_transaminase_level(screening2093,3).
-glutamic_oxaloacetic_transaminase_level(screening2094,2).
-glutamic_oxaloacetic_transaminase_level(screening2095,2).
-glutamic_oxaloacetic_transaminase_level(screening2096,2).
-glutamic_oxaloacetic_transaminase_level(screening2097,3).
-glutamic_oxaloacetic_transaminase_level(screening2098,4).
-glutamic_oxaloacetic_transaminase_level(screening2099,3).
-glutamic_oxaloacetic_transaminase_level(screening210,2).
-glutamic_oxaloacetic_transaminase_level(screening2100,2).
-glutamic_oxaloacetic_transaminase_level(screening2101,2).
-glutamic_oxaloacetic_transaminase_level(screening2102,2).
-glutamic_oxaloacetic_transaminase_level(screening2103,2).
-glutamic_oxaloacetic_transaminase_level(screening2104,2).
-glutamic_oxaloacetic_transaminase_level(screening2105,3).
-glutamic_oxaloacetic_transaminase_level(screening2106,2).
-glutamic_oxaloacetic_transaminase_level(screening2107,2).
-glutamic_oxaloacetic_transaminase_level(screening2108,2).
-glutamic_oxaloacetic_transaminase_level(screening2109,2).
-glutamic_oxaloacetic_transaminase_level(screening211,3).
-glutamic_oxaloacetic_transaminase_level(screening2110,2).
-glutamic_oxaloacetic_transaminase_level(screening2111,4).
-glutamic_oxaloacetic_transaminase_level(screening2112,2).
-glutamic_oxaloacetic_transaminase_level(screening2113,2).
-glutamic_oxaloacetic_transaminase_level(screening2114,3).
-glutamic_oxaloacetic_transaminase_level(screening2115,2).
-glutamic_oxaloacetic_transaminase_level(screening2116,2).
-glutamic_oxaloacetic_transaminase_level(screening2117,2).
-glutamic_oxaloacetic_transaminase_level(screening2118,2).
-glutamic_oxaloacetic_transaminase_level(screening2119,2).
-glutamic_oxaloacetic_transaminase_level(screening212,2).
-glutamic_oxaloacetic_transaminase_level(screening2120,2).
-glutamic_oxaloacetic_transaminase_level(screening2121,3).
-glutamic_oxaloacetic_transaminase_level(screening2122,3).
-glutamic_oxaloacetic_transaminase_level(screening2123,2).
-glutamic_oxaloacetic_transaminase_level(screening2124,4).
-glutamic_oxaloacetic_transaminase_level(screening2125,2).
-glutamic_oxaloacetic_transaminase_level(screening2126,2).
-glutamic_oxaloacetic_transaminase_level(screening2127,2).
-glutamic_oxaloacetic_transaminase_level(screening2128,2).
-glutamic_oxaloacetic_transaminase_level(screening2129,2).
-glutamic_oxaloacetic_transaminase_level(screening213,2).
-glutamic_oxaloacetic_transaminase_level(screening2130,2).
-glutamic_oxaloacetic_transaminase_level(screening2131,2).
-glutamic_oxaloacetic_transaminase_level(screening2132,3).
-glutamic_oxaloacetic_transaminase_level(screening2133,4).
-glutamic_oxaloacetic_transaminase_level(screening2134,2).
-glutamic_oxaloacetic_transaminase_level(screening2135,2).
-glutamic_oxaloacetic_transaminase_level(screening2136,2).
-glutamic_oxaloacetic_transaminase_level(screening2137,2).
-glutamic_oxaloacetic_transaminase_level(screening2138,2).
-glutamic_oxaloacetic_transaminase_level(screening2139,2).
-glutamic_oxaloacetic_transaminase_level(screening214,2).
-glutamic_oxaloacetic_transaminase_level(screening2140,2).
-glutamic_oxaloacetic_transaminase_level(screening2141,3).
-glutamic_oxaloacetic_transaminase_level(screening2142,4).
-glutamic_oxaloacetic_transaminase_level(screening2143,2).
-glutamic_oxaloacetic_transaminase_level(screening2144,2).
-glutamic_oxaloacetic_transaminase_level(screening2145,2).
-glutamic_oxaloacetic_transaminase_level(screening2146,2).
-glutamic_oxaloacetic_transaminase_level(screening2147,2).
-glutamic_oxaloacetic_transaminase_level(screening2148,2).
-glutamic_oxaloacetic_transaminase_level(screening2149,2).
-glutamic_oxaloacetic_transaminase_level(screening215,2).
-glutamic_oxaloacetic_transaminase_level(screening2150,3).
-glutamic_oxaloacetic_transaminase_level(screening2151,3).
-glutamic_oxaloacetic_transaminase_level(screening2152,4).
-glutamic_oxaloacetic_transaminase_level(screening2153,4).
-glutamic_oxaloacetic_transaminase_level(screening2154,2).
-glutamic_oxaloacetic_transaminase_level(screening2155,2).
-glutamic_oxaloacetic_transaminase_level(screening2156,3).
-glutamic_oxaloacetic_transaminase_level(screening2157,4).
-glutamic_oxaloacetic_transaminase_level(screening2158,4).
-glutamic_oxaloacetic_transaminase_level(screening2159,2).
-glutamic_oxaloacetic_transaminase_level(screening216,3).
-glutamic_oxaloacetic_transaminase_level(screening2160,2).
-glutamic_oxaloacetic_transaminase_level(screening2161,2).
-glutamic_oxaloacetic_transaminase_level(screening2162,2).
-glutamic_oxaloacetic_transaminase_level(screening2163,2).
-glutamic_oxaloacetic_transaminase_level(screening2164,2).
-glutamic_oxaloacetic_transaminase_level(screening2165,2).
-glutamic_oxaloacetic_transaminase_level(screening2166,2).
-glutamic_oxaloacetic_transaminase_level(screening2167,2).
-glutamic_oxaloacetic_transaminase_level(screening2168,2).
-glutamic_oxaloacetic_transaminase_level(screening2169,2).
-glutamic_oxaloacetic_transaminase_level(screening217,4).
-glutamic_oxaloacetic_transaminase_level(screening2170,1).
-glutamic_oxaloacetic_transaminase_level(screening2171,2).
-glutamic_oxaloacetic_transaminase_level(screening2172,2).
-glutamic_oxaloacetic_transaminase_level(screening2173,1).
-glutamic_oxaloacetic_transaminase_level(screening2174,2).
-glutamic_oxaloacetic_transaminase_level(screening2175,2).
-glutamic_oxaloacetic_transaminase_level(screening2176,2).
-glutamic_oxaloacetic_transaminase_level(screening2177,2).
-glutamic_oxaloacetic_transaminase_level(screening2178,1).
-glutamic_oxaloacetic_transaminase_level(screening2179,2).
-glutamic_oxaloacetic_transaminase_level(screening218,3).
-glutamic_oxaloacetic_transaminase_level(screening2180,2).
-glutamic_oxaloacetic_transaminase_level(screening2181,2).
-glutamic_oxaloacetic_transaminase_level(screening2182,3).
-glutamic_oxaloacetic_transaminase_level(screening2183,2).
-glutamic_oxaloacetic_transaminase_level(screening2184,2).
-glutamic_oxaloacetic_transaminase_level(screening2185,2).
-glutamic_oxaloacetic_transaminase_level(screening2186,2).
-glutamic_oxaloacetic_transaminase_level(screening2187,3).
-glutamic_oxaloacetic_transaminase_level(screening2188,2).
-glutamic_oxaloacetic_transaminase_level(screening2189,2).
-glutamic_oxaloacetic_transaminase_level(screening219,3).
-glutamic_oxaloacetic_transaminase_level(screening2190,4).
-glutamic_oxaloacetic_transaminase_level(screening2191,3).
-glutamic_oxaloacetic_transaminase_level(screening2192,4).
-glutamic_oxaloacetic_transaminase_level(screening2193,4).
-glutamic_oxaloacetic_transaminase_level(screening2194,4).
-glutamic_oxaloacetic_transaminase_level(screening2195,3).
-glutamic_oxaloacetic_transaminase_level(screening2196,4).
-glutamic_oxaloacetic_transaminase_level(screening2197,4).
-glutamic_oxaloacetic_transaminase_level(screening2198,3).
-glutamic_oxaloacetic_transaminase_level(screening2199,4).
-glutamic_oxaloacetic_transaminase_level(screening220,3).
-glutamic_oxaloacetic_transaminase_level(screening2200,3).
-glutamic_oxaloacetic_transaminase_level(screening2201,3).
-glutamic_oxaloacetic_transaminase_level(screening2202,3).
-glutamic_oxaloacetic_transaminase_level(screening2203,4).
-glutamic_oxaloacetic_transaminase_level(screening2204,4).
-glutamic_oxaloacetic_transaminase_level(screening2205,4).
-glutamic_oxaloacetic_transaminase_level(screening2206,3).
-glutamic_oxaloacetic_transaminase_level(screening2207,3).
-glutamic_oxaloacetic_transaminase_level(screening2208,3).
-glutamic_oxaloacetic_transaminase_level(screening2209,2).
-glutamic_oxaloacetic_transaminase_level(screening221,2).
-glutamic_oxaloacetic_transaminase_level(screening2210,2).
-glutamic_oxaloacetic_transaminase_level(screening2211,2).
-glutamic_oxaloacetic_transaminase_level(screening2212,2).
-glutamic_oxaloacetic_transaminase_level(screening2213,3).
-glutamic_oxaloacetic_transaminase_level(screening2214,4).
-glutamic_oxaloacetic_transaminase_level(screening2215,4).
-glutamic_oxaloacetic_transaminase_level(screening2216,4).
-glutamic_oxaloacetic_transaminase_level(screening2217,4).
-glutamic_oxaloacetic_transaminase_level(screening2218,4).
-glutamic_oxaloacetic_transaminase_level(screening2219,2).
-glutamic_oxaloacetic_transaminase_level(screening222,2).
-glutamic_oxaloacetic_transaminase_level(screening2220,2).
-glutamic_oxaloacetic_transaminase_level(screening2221,3).
-glutamic_oxaloacetic_transaminase_level(screening2222,4).
-glutamic_oxaloacetic_transaminase_level(screening2223,3).
-glutamic_oxaloacetic_transaminase_level(screening2224,4).
-glutamic_oxaloacetic_transaminase_level(screening2225,3).
-glutamic_oxaloacetic_transaminase_level(screening2226,3).
-glutamic_oxaloacetic_transaminase_level(screening2227,3).
-glutamic_oxaloacetic_transaminase_level(screening2228,3).
-glutamic_oxaloacetic_transaminase_level(screening2229,2).
-glutamic_oxaloacetic_transaminase_level(screening223,2).
-glutamic_oxaloacetic_transaminase_level(screening2230,2).
-glutamic_oxaloacetic_transaminase_level(screening2231,2).
-glutamic_oxaloacetic_transaminase_level(screening2232,2).
-glutamic_oxaloacetic_transaminase_level(screening2233,2).
-glutamic_oxaloacetic_transaminase_level(screening2234,4).
-glutamic_oxaloacetic_transaminase_level(screening2235,4).
-glutamic_oxaloacetic_transaminase_level(screening2236,4).
-glutamic_oxaloacetic_transaminase_level(screening2237,3).
-glutamic_oxaloacetic_transaminase_level(screening2238,3).
-glutamic_oxaloacetic_transaminase_level(screening2239,3).
-glutamic_oxaloacetic_transaminase_level(screening224,2).
-glutamic_oxaloacetic_transaminase_level(screening2240,2).
-glutamic_oxaloacetic_transaminase_level(screening2241,2).
-glutamic_oxaloacetic_transaminase_level(screening2242,2).
-glutamic_oxaloacetic_transaminase_level(screening2243,2).
-glutamic_oxaloacetic_transaminase_level(screening2244,2).
-glutamic_oxaloacetic_transaminase_level(screening2245,2).
-glutamic_oxaloacetic_transaminase_level(screening2246,2).
-glutamic_oxaloacetic_transaminase_level(screening2247,2).
-glutamic_oxaloacetic_transaminase_level(screening2248,2).
-glutamic_oxaloacetic_transaminase_level(screening2249,3).
-glutamic_oxaloacetic_transaminase_level(screening225,2).
-glutamic_oxaloacetic_transaminase_level(screening2250,4).
-glutamic_oxaloacetic_transaminase_level(screening2251,2).
-glutamic_oxaloacetic_transaminase_level(screening2252,2).
-glutamic_oxaloacetic_transaminase_level(screening2253,2).
-glutamic_oxaloacetic_transaminase_level(screening2254,2).
-glutamic_oxaloacetic_transaminase_level(screening2255,2).
-glutamic_oxaloacetic_transaminase_level(screening2256,2).
-glutamic_oxaloacetic_transaminase_level(screening2257,2).
-glutamic_oxaloacetic_transaminase_level(screening2258,2).
-glutamic_oxaloacetic_transaminase_level(screening2259,2).
-glutamic_oxaloacetic_transaminase_level(screening226,2).
-glutamic_oxaloacetic_transaminase_level(screening2260,2).
-glutamic_oxaloacetic_transaminase_level(screening2261,2).
-glutamic_oxaloacetic_transaminase_level(screening2262,3).
-glutamic_oxaloacetic_transaminase_level(screening2263,4).
-glutamic_oxaloacetic_transaminase_level(screening2264,3).
-glutamic_oxaloacetic_transaminase_level(screening2265,4).
-glutamic_oxaloacetic_transaminase_level(screening2266,2).
-glutamic_oxaloacetic_transaminase_level(screening2267,5).
-glutamic_oxaloacetic_transaminase_level(screening2268,4).
-glutamic_oxaloacetic_transaminase_level(screening2269,3).
-glutamic_oxaloacetic_transaminase_level(screening227,2).
-glutamic_oxaloacetic_transaminase_level(screening2270,3).
-glutamic_oxaloacetic_transaminase_level(screening2271,3).
-glutamic_oxaloacetic_transaminase_level(screening2272,3).
-glutamic_oxaloacetic_transaminase_level(screening2273,2).
-glutamic_oxaloacetic_transaminase_level(screening2274,2).
-glutamic_oxaloacetic_transaminase_level(screening2275,2).
-glutamic_oxaloacetic_transaminase_level(screening2276,2).
-glutamic_oxaloacetic_transaminase_level(screening2277,3).
-glutamic_oxaloacetic_transaminase_level(screening2278,3).
-glutamic_oxaloacetic_transaminase_level(screening2279,2).
-glutamic_oxaloacetic_transaminase_level(screening228,2).
-glutamic_oxaloacetic_transaminase_level(screening2280,3).
-glutamic_oxaloacetic_transaminase_level(screening2281,3).
-glutamic_oxaloacetic_transaminase_level(screening2282,4).
-glutamic_oxaloacetic_transaminase_level(screening2283,3).
-glutamic_oxaloacetic_transaminase_level(screening2284,3).
-glutamic_oxaloacetic_transaminase_level(screening2285,2).
-glutamic_oxaloacetic_transaminase_level(screening2286,3).
-glutamic_oxaloacetic_transaminase_level(screening2287,4).
-glutamic_oxaloacetic_transaminase_level(screening2288,2).
-glutamic_oxaloacetic_transaminase_level(screening2289,2).
-glutamic_oxaloacetic_transaminase_level(screening229,4).
-glutamic_oxaloacetic_transaminase_level(screening2290,2).
-glutamic_oxaloacetic_transaminase_level(screening2291,4).
-glutamic_oxaloacetic_transaminase_level(screening2292,4).
-glutamic_oxaloacetic_transaminase_level(screening2293,3).
-glutamic_oxaloacetic_transaminase_level(screening2294,3).
-glutamic_oxaloacetic_transaminase_level(screening2295,1).
-glutamic_oxaloacetic_transaminase_level(screening2296,1).
-glutamic_oxaloacetic_transaminase_level(screening2297,1).
-glutamic_oxaloacetic_transaminase_level(screening2298,4).
-glutamic_oxaloacetic_transaminase_level(screening2299,3).
-glutamic_oxaloacetic_transaminase_level(screening230,4).
-glutamic_oxaloacetic_transaminase_level(screening2300,3).
-glutamic_oxaloacetic_transaminase_level(screening2301,5).
-glutamic_oxaloacetic_transaminase_level(screening2302,3).
-glutamic_oxaloacetic_transaminase_level(screening2303,3).
-glutamic_oxaloacetic_transaminase_level(screening2304,2).
-glutamic_oxaloacetic_transaminase_level(screening2305,1).
-glutamic_oxaloacetic_transaminase_level(screening2306,1).
-glutamic_oxaloacetic_transaminase_level(screening2307,3).
-glutamic_oxaloacetic_transaminase_level(screening2308,3).
-glutamic_oxaloacetic_transaminase_level(screening2309,4).
-glutamic_oxaloacetic_transaminase_level(screening231,4).
-glutamic_oxaloacetic_transaminase_level(screening2310,3).
-glutamic_oxaloacetic_transaminase_level(screening2311,3).
-glutamic_oxaloacetic_transaminase_level(screening2312,2).
-glutamic_oxaloacetic_transaminase_level(screening2313,2).
-glutamic_oxaloacetic_transaminase_level(screening2314,1).
-glutamic_oxaloacetic_transaminase_level(screening2315,1).
-glutamic_oxaloacetic_transaminase_level(screening2316,1).
-glutamic_oxaloacetic_transaminase_level(screening2317,1).
-glutamic_oxaloacetic_transaminase_level(screening2318,2).
-glutamic_oxaloacetic_transaminase_level(screening2319,2).
-glutamic_oxaloacetic_transaminase_level(screening232,2).
-glutamic_oxaloacetic_transaminase_level(screening2320,3).
-glutamic_oxaloacetic_transaminase_level(screening2321,3).
-glutamic_oxaloacetic_transaminase_level(screening2322,3).
-glutamic_oxaloacetic_transaminase_level(screening2323,3).
-glutamic_oxaloacetic_transaminase_level(screening2324,3).
-glutamic_oxaloacetic_transaminase_level(screening2325,3).
-glutamic_oxaloacetic_transaminase_level(screening2326,3).
-glutamic_oxaloacetic_transaminase_level(screening2327,3).
-glutamic_oxaloacetic_transaminase_level(screening2328,3).
-glutamic_oxaloacetic_transaminase_level(screening2329,3).
-glutamic_oxaloacetic_transaminase_level(screening233,2).
-glutamic_oxaloacetic_transaminase_level(screening2330,3).
-glutamic_oxaloacetic_transaminase_level(screening2331,3).
-glutamic_oxaloacetic_transaminase_level(screening2332,2).
-glutamic_oxaloacetic_transaminase_level(screening2333,3).
-glutamic_oxaloacetic_transaminase_level(screening2334,3).
-glutamic_oxaloacetic_transaminase_level(screening2335,3).
-glutamic_oxaloacetic_transaminase_level(screening2336,3).
-glutamic_oxaloacetic_transaminase_level(screening2337,2).
-glutamic_oxaloacetic_transaminase_level(screening2338,2).
-glutamic_oxaloacetic_transaminase_level(screening2339,3).
-glutamic_oxaloacetic_transaminase_level(screening234,2).
-glutamic_oxaloacetic_transaminase_level(screening2340,3).
-glutamic_oxaloacetic_transaminase_level(screening2341,5).
-glutamic_oxaloacetic_transaminase_level(screening2342,2).
-glutamic_oxaloacetic_transaminase_level(screening2343,3).
-glutamic_oxaloacetic_transaminase_level(screening2344,4).
-glutamic_oxaloacetic_transaminase_level(screening2345,3).
-glutamic_oxaloacetic_transaminase_level(screening2346,4).
-glutamic_oxaloacetic_transaminase_level(screening2347,2).
-glutamic_oxaloacetic_transaminase_level(screening2348,4).
-glutamic_oxaloacetic_transaminase_level(screening2349,4).
-glutamic_oxaloacetic_transaminase_level(screening235,2).
-glutamic_oxaloacetic_transaminase_level(screening2350,4).
-glutamic_oxaloacetic_transaminase_level(screening2351,4).
-glutamic_oxaloacetic_transaminase_level(screening2352,3).
-glutamic_oxaloacetic_transaminase_level(screening2353,3).
-glutamic_oxaloacetic_transaminase_level(screening2354,3).
-glutamic_oxaloacetic_transaminase_level(screening2355,3).
-glutamic_oxaloacetic_transaminase_level(screening2356,2).
-glutamic_oxaloacetic_transaminase_level(screening2357,3).
-glutamic_oxaloacetic_transaminase_level(screening2358,3).
-glutamic_oxaloacetic_transaminase_level(screening2359,4).
-glutamic_oxaloacetic_transaminase_level(screening236,2).
-glutamic_oxaloacetic_transaminase_level(screening2360,4).
-glutamic_oxaloacetic_transaminase_level(screening2361,4).
-glutamic_oxaloacetic_transaminase_level(screening2362,4).
-glutamic_oxaloacetic_transaminase_level(screening2363,3).
-glutamic_oxaloacetic_transaminase_level(screening2364,3).
-glutamic_oxaloacetic_transaminase_level(screening2365,3).
-glutamic_oxaloacetic_transaminase_level(screening2366,3).
-glutamic_oxaloacetic_transaminase_level(screening2367,2).
-glutamic_oxaloacetic_transaminase_level(screening2368,3).
-glutamic_oxaloacetic_transaminase_level(screening2369,3).
-glutamic_oxaloacetic_transaminase_level(screening237,1).
-glutamic_oxaloacetic_transaminase_level(screening2370,3).
-glutamic_oxaloacetic_transaminase_level(screening2371,2).
-glutamic_oxaloacetic_transaminase_level(screening2372,3).
-glutamic_oxaloacetic_transaminase_level(screening2373,3).
-glutamic_oxaloacetic_transaminase_level(screening2374,3).
-glutamic_oxaloacetic_transaminase_level(screening2375,3).
-glutamic_oxaloacetic_transaminase_level(screening2376,2).
-glutamic_oxaloacetic_transaminase_level(screening2377,3).
-glutamic_oxaloacetic_transaminase_level(screening2378,3).
-glutamic_oxaloacetic_transaminase_level(screening2379,3).
-glutamic_oxaloacetic_transaminase_level(screening238,1).
-glutamic_oxaloacetic_transaminase_level(screening2380,3).
-glutamic_oxaloacetic_transaminase_level(screening2381,3).
-glutamic_oxaloacetic_transaminase_level(screening2382,4).
-glutamic_oxaloacetic_transaminase_level(screening2383,3).
-glutamic_oxaloacetic_transaminase_level(screening2384,2).
-glutamic_oxaloacetic_transaminase_level(screening2385,3).
-glutamic_oxaloacetic_transaminase_level(screening2386,3).
-glutamic_oxaloacetic_transaminase_level(screening2387,2).
-glutamic_oxaloacetic_transaminase_level(screening2388,3).
-glutamic_oxaloacetic_transaminase_level(screening2389,2).
-glutamic_oxaloacetic_transaminase_level(screening239,1).
-glutamic_oxaloacetic_transaminase_level(screening2390,2).
-glutamic_oxaloacetic_transaminase_level(screening2391,2).
-glutamic_oxaloacetic_transaminase_level(screening2392,2).
-glutamic_oxaloacetic_transaminase_level(screening2393,2).
-glutamic_oxaloacetic_transaminase_level(screening2394,2).
-glutamic_oxaloacetic_transaminase_level(screening2395,1).
-glutamic_oxaloacetic_transaminase_level(screening2396,2).
-glutamic_oxaloacetic_transaminase_level(screening2397,2).
-glutamic_oxaloacetic_transaminase_level(screening2398,2).
-glutamic_oxaloacetic_transaminase_level(screening2399,2).
-glutamic_oxaloacetic_transaminase_level(screening240,1).
-glutamic_oxaloacetic_transaminase_level(screening2400,2).
-glutamic_oxaloacetic_transaminase_level(screening2401,2).
-glutamic_oxaloacetic_transaminase_level(screening2402,3).
-glutamic_oxaloacetic_transaminase_level(screening2403,4).
-glutamic_oxaloacetic_transaminase_level(screening2404,2).
-glutamic_oxaloacetic_transaminase_level(screening2405,2).
-glutamic_oxaloacetic_transaminase_level(screening2406,2).
-glutamic_oxaloacetic_transaminase_level(screening2407,2).
-glutamic_oxaloacetic_transaminase_level(screening2408,4).
-glutamic_oxaloacetic_transaminase_level(screening2409,3).
-glutamic_oxaloacetic_transaminase_level(screening241,1).
-glutamic_oxaloacetic_transaminase_level(screening2410,3).
-glutamic_oxaloacetic_transaminase_level(screening2411,3).
-glutamic_oxaloacetic_transaminase_level(screening2412,3).
-glutamic_oxaloacetic_transaminase_level(screening2413,3).
-glutamic_oxaloacetic_transaminase_level(screening2414,3).
-glutamic_oxaloacetic_transaminase_level(screening2415,3).
-glutamic_oxaloacetic_transaminase_level(screening2416,3).
-glutamic_oxaloacetic_transaminase_level(screening2417,3).
-glutamic_oxaloacetic_transaminase_level(screening2418,2).
-glutamic_oxaloacetic_transaminase_level(screening2419,2).
-glutamic_oxaloacetic_transaminase_level(screening242,1).
-glutamic_oxaloacetic_transaminase_level(screening2420,3).
-glutamic_oxaloacetic_transaminase_level(screening2421,3).
-glutamic_oxaloacetic_transaminase_level(screening2422,3).
-glutamic_oxaloacetic_transaminase_level(screening2423,3).
-glutamic_oxaloacetic_transaminase_level(screening2424,2).
-glutamic_oxaloacetic_transaminase_level(screening2425,3).
-glutamic_oxaloacetic_transaminase_level(screening2426,2).
-glutamic_oxaloacetic_transaminase_level(screening2427,2).
-glutamic_oxaloacetic_transaminase_level(screening2428,2).
-glutamic_oxaloacetic_transaminase_level(screening2429,2).
-glutamic_oxaloacetic_transaminase_level(screening243,1).
-glutamic_oxaloacetic_transaminase_level(screening2430,2).
-glutamic_oxaloacetic_transaminase_level(screening2431,2).
-glutamic_oxaloacetic_transaminase_level(screening2432,2).
-glutamic_oxaloacetic_transaminase_level(screening2433,2).
-glutamic_oxaloacetic_transaminase_level(screening2434,2).
-glutamic_oxaloacetic_transaminase_level(screening2435,2).
-glutamic_oxaloacetic_transaminase_level(screening2436,2).
-glutamic_oxaloacetic_transaminase_level(screening2437,2).
-glutamic_oxaloacetic_transaminase_level(screening2438,2).
-glutamic_oxaloacetic_transaminase_level(screening2439,3).
-glutamic_oxaloacetic_transaminase_level(screening244,1).
-glutamic_oxaloacetic_transaminase_level(screening2440,5).
-glutamic_oxaloacetic_transaminase_level(screening2441,4).
-glutamic_oxaloacetic_transaminase_level(screening2442,2).
-glutamic_oxaloacetic_transaminase_level(screening2443,2).
-glutamic_oxaloacetic_transaminase_level(screening2444,2).
-glutamic_oxaloacetic_transaminase_level(screening2445,2).
-glutamic_oxaloacetic_transaminase_level(screening2446,2).
-glutamic_oxaloacetic_transaminase_level(screening2447,2).
-glutamic_oxaloacetic_transaminase_level(screening2448,2).
-glutamic_oxaloacetic_transaminase_level(screening2449,2).
-glutamic_oxaloacetic_transaminase_level(screening245,1).
-glutamic_oxaloacetic_transaminase_level(screening2450,2).
-glutamic_oxaloacetic_transaminase_level(screening2451,5).
-glutamic_oxaloacetic_transaminase_level(screening2452,4).
-glutamic_oxaloacetic_transaminase_level(screening2453,3).
-glutamic_oxaloacetic_transaminase_level(screening2454,3).
-glutamic_oxaloacetic_transaminase_level(screening2455,3).
-glutamic_oxaloacetic_transaminase_level(screening2456,4).
-glutamic_oxaloacetic_transaminase_level(screening2457,2).
-glutamic_oxaloacetic_transaminase_level(screening2458,2).
-glutamic_oxaloacetic_transaminase_level(screening2459,1).
-glutamic_oxaloacetic_transaminase_level(screening246,2).
-glutamic_oxaloacetic_transaminase_level(screening2460,1).
-glutamic_oxaloacetic_transaminase_level(screening2461,2).
-glutamic_oxaloacetic_transaminase_level(screening2462,1).
-glutamic_oxaloacetic_transaminase_level(screening2463,1).
-glutamic_oxaloacetic_transaminase_level(screening2464,1).
-glutamic_oxaloacetic_transaminase_level(screening2465,1).
-glutamic_oxaloacetic_transaminase_level(screening2466,1).
-glutamic_oxaloacetic_transaminase_level(screening2467,1).
-glutamic_oxaloacetic_transaminase_level(screening2468,1).
-glutamic_oxaloacetic_transaminase_level(screening2469,2).
-glutamic_oxaloacetic_transaminase_level(screening247,1).
-glutamic_oxaloacetic_transaminase_level(screening2470,1).
-glutamic_oxaloacetic_transaminase_level(screening2471,1).
-glutamic_oxaloacetic_transaminase_level(screening2472,1).
-glutamic_oxaloacetic_transaminase_level(screening2473,1).
-glutamic_oxaloacetic_transaminase_level(screening2474,1).
-glutamic_oxaloacetic_transaminase_level(screening2475,1).
-glutamic_oxaloacetic_transaminase_level(screening2476,2).
-glutamic_oxaloacetic_transaminase_level(screening2477,2).
-glutamic_oxaloacetic_transaminase_level(screening2478,2).
-glutamic_oxaloacetic_transaminase_level(screening2479,2).
-glutamic_oxaloacetic_transaminase_level(screening248,4).
-glutamic_oxaloacetic_transaminase_level(screening2480,2).
-glutamic_oxaloacetic_transaminase_level(screening2481,2).
-glutamic_oxaloacetic_transaminase_level(screening2482,4).
-glutamic_oxaloacetic_transaminase_level(screening2483,3).
-glutamic_oxaloacetic_transaminase_level(screening2484,2).
-glutamic_oxaloacetic_transaminase_level(screening2485,2).
-glutamic_oxaloacetic_transaminase_level(screening2486,1).
-glutamic_oxaloacetic_transaminase_level(screening2487,1).
-glutamic_oxaloacetic_transaminase_level(screening2488,2).
-glutamic_oxaloacetic_transaminase_level(screening2489,1).
-glutamic_oxaloacetic_transaminase_level(screening249,3).
-glutamic_oxaloacetic_transaminase_level(screening2490,1).
-glutamic_oxaloacetic_transaminase_level(screening2491,1).
-glutamic_oxaloacetic_transaminase_level(screening2492,2).
-glutamic_oxaloacetic_transaminase_level(screening2493,1).
-glutamic_oxaloacetic_transaminase_level(screening2494,2).
-glutamic_oxaloacetic_transaminase_level(screening2495,1).
-glutamic_oxaloacetic_transaminase_level(screening2496,2).
-glutamic_oxaloacetic_transaminase_level(screening2497,1).
-glutamic_oxaloacetic_transaminase_level(screening2498,1).
-glutamic_oxaloacetic_transaminase_level(screening2499,2).
-glutamic_oxaloacetic_transaminase_level(screening250,4).
-glutamic_oxaloacetic_transaminase_level(screening2500,1).
-glutamic_oxaloacetic_transaminase_level(screening2501,1).
-glutamic_oxaloacetic_transaminase_level(screening2502,1).
-glutamic_oxaloacetic_transaminase_level(screening2503,2).
-glutamic_oxaloacetic_transaminase_level(screening2504,1).
-glutamic_oxaloacetic_transaminase_level(screening2505,2).
-glutamic_oxaloacetic_transaminase_level(screening2506,1).
-glutamic_oxaloacetic_transaminase_level(screening2507,2).
-glutamic_oxaloacetic_transaminase_level(screening2508,1).
-glutamic_oxaloacetic_transaminase_level(screening2509,1).
-glutamic_oxaloacetic_transaminase_level(screening251,3).
-glutamic_oxaloacetic_transaminase_level(screening2510,2).
-glutamic_oxaloacetic_transaminase_level(screening2511,1).
-glutamic_oxaloacetic_transaminase_level(screening2512,1).
-glutamic_oxaloacetic_transaminase_level(screening2513,1).
-glutamic_oxaloacetic_transaminase_level(screening2514,2).
-glutamic_oxaloacetic_transaminase_level(screening2515,1).
-glutamic_oxaloacetic_transaminase_level(screening2516,2).
-glutamic_oxaloacetic_transaminase_level(screening2517,1).
-glutamic_oxaloacetic_transaminase_level(screening2518,4).
-glutamic_oxaloacetic_transaminase_level(screening2519,4).
-glutamic_oxaloacetic_transaminase_level(screening252,3).
-glutamic_oxaloacetic_transaminase_level(screening2520,3).
-glutamic_oxaloacetic_transaminase_level(screening2521,4).
-glutamic_oxaloacetic_transaminase_level(screening2522,4).
-glutamic_oxaloacetic_transaminase_level(screening2523,4).
-glutamic_oxaloacetic_transaminase_level(screening2524,2).
-glutamic_oxaloacetic_transaminase_level(screening2525,3).
-glutamic_oxaloacetic_transaminase_level(screening2526,4).
-glutamic_oxaloacetic_transaminase_level(screening2527,4).
-glutamic_oxaloacetic_transaminase_level(screening2528,4).
-glutamic_oxaloacetic_transaminase_level(screening2529,2).
-glutamic_oxaloacetic_transaminase_level(screening253,3).
-glutamic_oxaloacetic_transaminase_level(screening2530,2).
-glutamic_oxaloacetic_transaminase_level(screening2531,2).
-glutamic_oxaloacetic_transaminase_level(screening2532,2).
-glutamic_oxaloacetic_transaminase_level(screening2533,2).
-glutamic_oxaloacetic_transaminase_level(screening2534,2).
-glutamic_oxaloacetic_transaminase_level(screening2535,2).
-glutamic_oxaloacetic_transaminase_level(screening2536,2).
-glutamic_oxaloacetic_transaminase_level(screening2537,5).
-glutamic_oxaloacetic_transaminase_level(screening2538,4).
-glutamic_oxaloacetic_transaminase_level(screening2539,4).
-glutamic_oxaloacetic_transaminase_level(screening254,3).
-glutamic_oxaloacetic_transaminase_level(screening2540,4).
-glutamic_oxaloacetic_transaminase_level(screening2541,3).
-glutamic_oxaloacetic_transaminase_level(screening2542,4).
-glutamic_oxaloacetic_transaminase_level(screening2543,4).
-glutamic_oxaloacetic_transaminase_level(screening2544,4).
-glutamic_oxaloacetic_transaminase_level(screening2545,4).
-glutamic_oxaloacetic_transaminase_level(screening2546,4).
-glutamic_oxaloacetic_transaminase_level(screening2547,4).
-glutamic_oxaloacetic_transaminase_level(screening2548,4).
-glutamic_oxaloacetic_transaminase_level(screening2549,4).
-glutamic_oxaloacetic_transaminase_level(screening255,3).
-glutamic_oxaloacetic_transaminase_level(screening2550,4).
-glutamic_oxaloacetic_transaminase_level(screening2551,4).
-glutamic_oxaloacetic_transaminase_level(screening2552,4).
-glutamic_oxaloacetic_transaminase_level(screening2553,4).
-glutamic_oxaloacetic_transaminase_level(screening2554,4).
-glutamic_oxaloacetic_transaminase_level(screening2555,4).
-glutamic_oxaloacetic_transaminase_level(screening2556,4).
-glutamic_oxaloacetic_transaminase_level(screening2557,4).
-glutamic_oxaloacetic_transaminase_level(screening2558,4).
-glutamic_oxaloacetic_transaminase_level(screening2559,4).
-glutamic_oxaloacetic_transaminase_level(screening256,3).
-glutamic_oxaloacetic_transaminase_level(screening2560,4).
-glutamic_oxaloacetic_transaminase_level(screening2561,4).
-glutamic_oxaloacetic_transaminase_level(screening2562,4).
-glutamic_oxaloacetic_transaminase_level(screening2563,4).
-glutamic_oxaloacetic_transaminase_level(screening2564,4).
-glutamic_oxaloacetic_transaminase_level(screening2565,3).
-glutamic_oxaloacetic_transaminase_level(screening2566,3).
-glutamic_oxaloacetic_transaminase_level(screening2567,2).
-glutamic_oxaloacetic_transaminase_level(screening2568,1).
-glutamic_oxaloacetic_transaminase_level(screening2569,1).
-glutamic_oxaloacetic_transaminase_level(screening257,2).
-glutamic_oxaloacetic_transaminase_level(screening2570,1).
-glutamic_oxaloacetic_transaminase_level(screening2571,1).
-glutamic_oxaloacetic_transaminase_level(screening2572,1).
-glutamic_oxaloacetic_transaminase_level(screening2573,1).
-glutamic_oxaloacetic_transaminase_level(screening2574,2).
-glutamic_oxaloacetic_transaminase_level(screening2575,2).
-glutamic_oxaloacetic_transaminase_level(screening2576,2).
-glutamic_oxaloacetic_transaminase_level(screening2577,1).
-glutamic_oxaloacetic_transaminase_level(screening2578,4).
-glutamic_oxaloacetic_transaminase_level(screening2579,3).
-glutamic_oxaloacetic_transaminase_level(screening258,3).
-glutamic_oxaloacetic_transaminase_level(screening2580,3).
-glutamic_oxaloacetic_transaminase_level(screening2581,2).
-glutamic_oxaloacetic_transaminase_level(screening2582,1).
-glutamic_oxaloacetic_transaminase_level(screening2583,1).
-glutamic_oxaloacetic_transaminase_level(screening2584,1).
-glutamic_oxaloacetic_transaminase_level(screening2585,1).
-glutamic_oxaloacetic_transaminase_level(screening2586,1).
-glutamic_oxaloacetic_transaminase_level(screening2587,1).
-glutamic_oxaloacetic_transaminase_level(screening2588,2).
-glutamic_oxaloacetic_transaminase_level(screening2589,2).
-glutamic_oxaloacetic_transaminase_level(screening259,3).
-glutamic_oxaloacetic_transaminase_level(screening2590,2).
-glutamic_oxaloacetic_transaminase_level(screening2591,1).
-glutamic_oxaloacetic_transaminase_level(screening2592,4).
-glutamic_oxaloacetic_transaminase_level(screening2593,3).
-glutamic_oxaloacetic_transaminase_level(screening2594,3).
-glutamic_oxaloacetic_transaminase_level(screening2595,2).
-glutamic_oxaloacetic_transaminase_level(screening2596,1).
-glutamic_oxaloacetic_transaminase_level(screening2597,1).
-glutamic_oxaloacetic_transaminase_level(screening2598,1).
-glutamic_oxaloacetic_transaminase_level(screening2599,1).
-glutamic_oxaloacetic_transaminase_level(screening260,3).
-glutamic_oxaloacetic_transaminase_level(screening2600,1).
-glutamic_oxaloacetic_transaminase_level(screening2601,1).
-glutamic_oxaloacetic_transaminase_level(screening2602,2).
-glutamic_oxaloacetic_transaminase_level(screening2603,2).
-glutamic_oxaloacetic_transaminase_level(screening2604,2).
-glutamic_oxaloacetic_transaminase_level(screening2605,1).
-glutamic_oxaloacetic_transaminase_level(screening2606,4).
-glutamic_oxaloacetic_transaminase_level(screening2607,3).
-glutamic_oxaloacetic_transaminase_level(screening2608,4).
-glutamic_oxaloacetic_transaminase_level(screening2609,4).
-glutamic_oxaloacetic_transaminase_level(screening261,4).
-glutamic_oxaloacetic_transaminase_level(screening2610,4).
-glutamic_oxaloacetic_transaminase_level(screening2611,4).
-glutamic_oxaloacetic_transaminase_level(screening2612,5).
-glutamic_oxaloacetic_transaminase_level(screening2613,4).
-glutamic_oxaloacetic_transaminase_level(screening2614,4).
-glutamic_oxaloacetic_transaminase_level(screening2615,4).
-glutamic_oxaloacetic_transaminase_level(screening2616,3).
-glutamic_oxaloacetic_transaminase_level(screening2617,4).
-glutamic_oxaloacetic_transaminase_level(screening2618,3).
-glutamic_oxaloacetic_transaminase_level(screening2619,4).
-glutamic_oxaloacetic_transaminase_level(screening262,3).
-glutamic_oxaloacetic_transaminase_level(screening2620,4).
-glutamic_oxaloacetic_transaminase_level(screening2621,3).
-glutamic_oxaloacetic_transaminase_level(screening2622,2).
-glutamic_oxaloacetic_transaminase_level(screening2623,2).
-glutamic_oxaloacetic_transaminase_level(screening2624,2).
-glutamic_oxaloacetic_transaminase_level(screening2625,2).
-glutamic_oxaloacetic_transaminase_level(screening2626,4).
-glutamic_oxaloacetic_transaminase_level(screening2627,2).
-glutamic_oxaloacetic_transaminase_level(screening2628,2).
-glutamic_oxaloacetic_transaminase_level(screening2629,4).
-glutamic_oxaloacetic_transaminase_level(screening263,4).
-glutamic_oxaloacetic_transaminase_level(screening2630,4).
-glutamic_oxaloacetic_transaminase_level(screening2631,3).
-glutamic_oxaloacetic_transaminase_level(screening2632,3).
-glutamic_oxaloacetic_transaminase_level(screening2633,3).
-glutamic_oxaloacetic_transaminase_level(screening2634,3).
-glutamic_oxaloacetic_transaminase_level(screening2635,3).
-glutamic_oxaloacetic_transaminase_level(screening2636,3).
-glutamic_oxaloacetic_transaminase_level(screening2637,3).
-glutamic_oxaloacetic_transaminase_level(screening2638,3).
-glutamic_oxaloacetic_transaminase_level(screening2639,4).
-glutamic_oxaloacetic_transaminase_level(screening264,3).
-glutamic_oxaloacetic_transaminase_level(screening2640,3).
-glutamic_oxaloacetic_transaminase_level(screening2641,3).
-glutamic_oxaloacetic_transaminase_level(screening2642,3).
-glutamic_oxaloacetic_transaminase_level(screening2643,2).
-glutamic_oxaloacetic_transaminase_level(screening2644,3).
-glutamic_oxaloacetic_transaminase_level(screening2645,3).
-glutamic_oxaloacetic_transaminase_level(screening2646,3).
-glutamic_oxaloacetic_transaminase_level(screening2647,2).
-glutamic_oxaloacetic_transaminase_level(screening2648,2).
-glutamic_oxaloacetic_transaminase_level(screening2649,3).
-glutamic_oxaloacetic_transaminase_level(screening265,3).
-glutamic_oxaloacetic_transaminase_level(screening2650,3).
-glutamic_oxaloacetic_transaminase_level(screening2651,3).
-glutamic_oxaloacetic_transaminase_level(screening2652,3).
-glutamic_oxaloacetic_transaminase_level(screening2653,3).
-glutamic_oxaloacetic_transaminase_level(screening2654,3).
-glutamic_oxaloacetic_transaminase_level(screening2655,4).
-glutamic_oxaloacetic_transaminase_level(screening2656,3).
-glutamic_oxaloacetic_transaminase_level(screening2657,2).
-glutamic_oxaloacetic_transaminase_level(screening2658,2).
-glutamic_oxaloacetic_transaminase_level(screening2659,2).
-glutamic_oxaloacetic_transaminase_level(screening266,3).
-glutamic_oxaloacetic_transaminase_level(screening2660,3).
-glutamic_oxaloacetic_transaminase_level(screening2661,2).
-glutamic_oxaloacetic_transaminase_level(screening2662,2).
-glutamic_oxaloacetic_transaminase_level(screening2663,2).
-glutamic_oxaloacetic_transaminase_level(screening2664,4).
-glutamic_oxaloacetic_transaminase_level(screening2665,3).
-glutamic_oxaloacetic_transaminase_level(screening2666,3).
-glutamic_oxaloacetic_transaminase_level(screening2667,3).
-glutamic_oxaloacetic_transaminase_level(screening2668,3).
-glutamic_oxaloacetic_transaminase_level(screening2669,3).
-glutamic_oxaloacetic_transaminase_level(screening267,3).
-glutamic_oxaloacetic_transaminase_level(screening2670,3).
-glutamic_oxaloacetic_transaminase_level(screening2671,3).
-glutamic_oxaloacetic_transaminase_level(screening2672,2).
-glutamic_oxaloacetic_transaminase_level(screening2673,2).
-glutamic_oxaloacetic_transaminase_level(screening2674,4).
-glutamic_oxaloacetic_transaminase_level(screening2675,4).
-glutamic_oxaloacetic_transaminase_level(screening2676,2).
-glutamic_oxaloacetic_transaminase_level(screening2677,4).
-glutamic_oxaloacetic_transaminase_level(screening2678,4).
-glutamic_oxaloacetic_transaminase_level(screening2679,4).
-glutamic_oxaloacetic_transaminase_level(screening268,3).
-glutamic_oxaloacetic_transaminase_level(screening2680,4).
-glutamic_oxaloacetic_transaminase_level(screening2681,4).
-glutamic_oxaloacetic_transaminase_level(screening2682,4).
-glutamic_oxaloacetic_transaminase_level(screening2683,4).
-glutamic_oxaloacetic_transaminase_level(screening2684,4).
-glutamic_oxaloacetic_transaminase_level(screening2685,4).
-glutamic_oxaloacetic_transaminase_level(screening2686,4).
-glutamic_oxaloacetic_transaminase_level(screening2687,4).
-glutamic_oxaloacetic_transaminase_level(screening2688,4).
-glutamic_oxaloacetic_transaminase_level(screening2689,4).
-glutamic_oxaloacetic_transaminase_level(screening269,3).
-glutamic_oxaloacetic_transaminase_level(screening2690,4).
-glutamic_oxaloacetic_transaminase_level(screening2691,4).
-glutamic_oxaloacetic_transaminase_level(screening2692,4).
-glutamic_oxaloacetic_transaminase_level(screening2693,4).
-glutamic_oxaloacetic_transaminase_level(screening2694,4).
-glutamic_oxaloacetic_transaminase_level(screening2695,4).
-glutamic_oxaloacetic_transaminase_level(screening2696,4).
-glutamic_oxaloacetic_transaminase_level(screening2697,4).
-glutamic_oxaloacetic_transaminase_level(screening2698,4).
-glutamic_oxaloacetic_transaminase_level(screening2699,4).
-glutamic_oxaloacetic_transaminase_level(screening270,2).
-glutamic_oxaloacetic_transaminase_level(screening2700,4).
-glutamic_oxaloacetic_transaminase_level(screening2701,2).
-glutamic_oxaloacetic_transaminase_level(screening2702,2).
-glutamic_oxaloacetic_transaminase_level(screening2703,3).
-glutamic_oxaloacetic_transaminase_level(screening2704,1).
-glutamic_oxaloacetic_transaminase_level(screening2705,2).
-glutamic_oxaloacetic_transaminase_level(screening2706,2).
-glutamic_oxaloacetic_transaminase_level(screening2707,3).
-glutamic_oxaloacetic_transaminase_level(screening2708,1).
-glutamic_oxaloacetic_transaminase_level(screening2709,2).
-glutamic_oxaloacetic_transaminase_level(screening271,3).
-glutamic_oxaloacetic_transaminase_level(screening2710,2).
-glutamic_oxaloacetic_transaminase_level(screening2711,2).
-glutamic_oxaloacetic_transaminase_level(screening2712,2).
-glutamic_oxaloacetic_transaminase_level(screening2713,2).
-glutamic_oxaloacetic_transaminase_level(screening2714,2).
-glutamic_oxaloacetic_transaminase_level(screening2715,2).
-glutamic_oxaloacetic_transaminase_level(screening2716,2).
-glutamic_oxaloacetic_transaminase_level(screening2717,3).
-glutamic_oxaloacetic_transaminase_level(screening2718,2).
-glutamic_oxaloacetic_transaminase_level(screening2719,3).
-glutamic_oxaloacetic_transaminase_level(screening272,3).
-glutamic_oxaloacetic_transaminase_level(screening2720,3).
-glutamic_oxaloacetic_transaminase_level(screening2721,4).
-glutamic_oxaloacetic_transaminase_level(screening2722,3).
-glutamic_oxaloacetic_transaminase_level(screening2723,2).
-glutamic_oxaloacetic_transaminase_level(screening2724,2).
-glutamic_oxaloacetic_transaminase_level(screening2725,2).
-glutamic_oxaloacetic_transaminase_level(screening2726,4).
-glutamic_oxaloacetic_transaminase_level(screening2727,4).
-glutamic_oxaloacetic_transaminase_level(screening2728,4).
-glutamic_oxaloacetic_transaminase_level(screening2729,3).
-glutamic_oxaloacetic_transaminase_level(screening273,3).
-glutamic_oxaloacetic_transaminase_level(screening2730,4).
-glutamic_oxaloacetic_transaminase_level(screening2731,4).
-glutamic_oxaloacetic_transaminase_level(screening2732,4).
-glutamic_oxaloacetic_transaminase_level(screening2733,4).
-glutamic_oxaloacetic_transaminase_level(screening2734,4).
-glutamic_oxaloacetic_transaminase_level(screening2735,4).
-glutamic_oxaloacetic_transaminase_level(screening2736,4).
-glutamic_oxaloacetic_transaminase_level(screening2737,3).
-glutamic_oxaloacetic_transaminase_level(screening2738,4).
-glutamic_oxaloacetic_transaminase_level(screening2739,2).
-glutamic_oxaloacetic_transaminase_level(screening274,4).
-glutamic_oxaloacetic_transaminase_level(screening2740,2).
-glutamic_oxaloacetic_transaminase_level(screening2741,2).
-glutamic_oxaloacetic_transaminase_level(screening2742,2).
-glutamic_oxaloacetic_transaminase_level(screening2743,2).
-glutamic_oxaloacetic_transaminase_level(screening2744,2).
-glutamic_oxaloacetic_transaminase_level(screening2745,2).
-glutamic_oxaloacetic_transaminase_level(screening2746,2).
-glutamic_oxaloacetic_transaminase_level(screening2747,2).
-glutamic_oxaloacetic_transaminase_level(screening2748,2).
-glutamic_oxaloacetic_transaminase_level(screening2749,2).
-glutamic_oxaloacetic_transaminase_level(screening275,3).
-glutamic_oxaloacetic_transaminase_level(screening2750,2).
-glutamic_oxaloacetic_transaminase_level(screening2751,2).
-glutamic_oxaloacetic_transaminase_level(screening2752,2).
-glutamic_oxaloacetic_transaminase_level(screening2753,2).
-glutamic_oxaloacetic_transaminase_level(screening2754,3).
-glutamic_oxaloacetic_transaminase_level(screening2755,2).
-glutamic_oxaloacetic_transaminase_level(screening2756,3).
-glutamic_oxaloacetic_transaminase_level(screening2757,2).
-glutamic_oxaloacetic_transaminase_level(screening2758,2).
-glutamic_oxaloacetic_transaminase_level(screening2759,1).
-glutamic_oxaloacetic_transaminase_level(screening276,4).
-glutamic_oxaloacetic_transaminase_level(screening2760,2).
-glutamic_oxaloacetic_transaminase_level(screening2761,2).
-glutamic_oxaloacetic_transaminase_level(screening2762,3).
-glutamic_oxaloacetic_transaminase_level(screening2763,2).
-glutamic_oxaloacetic_transaminase_level(screening2764,2).
-glutamic_oxaloacetic_transaminase_level(screening2765,3).
-glutamic_oxaloacetic_transaminase_level(screening2766,2).
-glutamic_oxaloacetic_transaminase_level(screening2767,2).
-glutamic_oxaloacetic_transaminase_level(screening2768,2).
-glutamic_oxaloacetic_transaminase_level(screening2769,2).
-glutamic_oxaloacetic_transaminase_level(screening277,3).
-glutamic_oxaloacetic_transaminase_level(screening2770,2).
-glutamic_oxaloacetic_transaminase_level(screening2771,2).
-glutamic_oxaloacetic_transaminase_level(screening2772,3).
-glutamic_oxaloacetic_transaminase_level(screening2773,3).
-glutamic_oxaloacetic_transaminase_level(screening2774,2).
-glutamic_oxaloacetic_transaminase_level(screening2775,2).
-glutamic_oxaloacetic_transaminase_level(screening2776,3).
-glutamic_oxaloacetic_transaminase_level(screening2777,2).
-glutamic_oxaloacetic_transaminase_level(screening2778,2).
-glutamic_oxaloacetic_transaminase_level(screening2779,2).
-glutamic_oxaloacetic_transaminase_level(screening278,3).
-glutamic_oxaloacetic_transaminase_level(screening2780,2).
-glutamic_oxaloacetic_transaminase_level(screening2781,2).
-glutamic_oxaloacetic_transaminase_level(screening2782,2).
-glutamic_oxaloacetic_transaminase_level(screening2783,1).
-glutamic_oxaloacetic_transaminase_level(screening2784,2).
-glutamic_oxaloacetic_transaminase_level(screening2785,2).
-glutamic_oxaloacetic_transaminase_level(screening2786,2).
-glutamic_oxaloacetic_transaminase_level(screening2787,2).
-glutamic_oxaloacetic_transaminase_level(screening2788,2).
-glutamic_oxaloacetic_transaminase_level(screening2789,2).
-glutamic_oxaloacetic_transaminase_level(screening279,3).
-glutamic_oxaloacetic_transaminase_level(screening2790,2).
-glutamic_oxaloacetic_transaminase_level(screening2791,2).
-glutamic_oxaloacetic_transaminase_level(screening2792,3).
-glutamic_oxaloacetic_transaminase_level(screening2793,3).
-glutamic_oxaloacetic_transaminase_level(screening2794,3).
-glutamic_oxaloacetic_transaminase_level(screening2795,3).
-glutamic_oxaloacetic_transaminase_level(screening2796,2).
-glutamic_oxaloacetic_transaminase_level(screening2797,2).
-glutamic_oxaloacetic_transaminase_level(screening2798,3).
-glutamic_oxaloacetic_transaminase_level(screening2799,3).
-glutamic_oxaloacetic_transaminase_level(screening280,3).
-glutamic_oxaloacetic_transaminase_level(screening2800,3).
-glutamic_oxaloacetic_transaminase_level(screening2801,3).
-glutamic_oxaloacetic_transaminase_level(screening2802,3).
-glutamic_oxaloacetic_transaminase_level(screening2803,3).
-glutamic_oxaloacetic_transaminase_level(screening2804,2).
-glutamic_oxaloacetic_transaminase_level(screening2805,2).
-glutamic_oxaloacetic_transaminase_level(screening2806,2).
-glutamic_oxaloacetic_transaminase_level(screening2807,3).
-glutamic_oxaloacetic_transaminase_level(screening2808,3).
-glutamic_oxaloacetic_transaminase_level(screening2809,3).
-glutamic_oxaloacetic_transaminase_level(screening281,3).
-glutamic_oxaloacetic_transaminase_level(screening2810,3).
-glutamic_oxaloacetic_transaminase_level(screening2811,4).
-glutamic_oxaloacetic_transaminase_level(screening2812,4).
-glutamic_oxaloacetic_transaminase_level(screening2813,4).
-glutamic_oxaloacetic_transaminase_level(screening2814,3).
-glutamic_oxaloacetic_transaminase_level(screening2815,4).
-glutamic_oxaloacetic_transaminase_level(screening2816,4).
-glutamic_oxaloacetic_transaminase_level(screening2817,4).
-glutamic_oxaloacetic_transaminase_level(screening2818,3).
-glutamic_oxaloacetic_transaminase_level(screening2819,2).
-glutamic_oxaloacetic_transaminase_level(screening282,3).
-glutamic_oxaloacetic_transaminase_level(screening2820,3).
-glutamic_oxaloacetic_transaminase_level(screening2821,2).
-glutamic_oxaloacetic_transaminase_level(screening2822,3).
-glutamic_oxaloacetic_transaminase_level(screening2823,2).
-glutamic_oxaloacetic_transaminase_level(screening2824,3).
-glutamic_oxaloacetic_transaminase_level(screening2825,2).
-glutamic_oxaloacetic_transaminase_level(screening2826,3).
-glutamic_oxaloacetic_transaminase_level(screening2827,3).
-glutamic_oxaloacetic_transaminase_level(screening2828,2).
-glutamic_oxaloacetic_transaminase_level(screening2829,2).
-glutamic_oxaloacetic_transaminase_level(screening283,2).
-glutamic_oxaloacetic_transaminase_level(screening2830,2).
-glutamic_oxaloacetic_transaminase_level(screening2831,3).
-glutamic_oxaloacetic_transaminase_level(screening2832,3).
-glutamic_oxaloacetic_transaminase_level(screening2833,3).
-glutamic_oxaloacetic_transaminase_level(screening2834,2).
-glutamic_oxaloacetic_transaminase_level(screening2835,2).
-glutamic_oxaloacetic_transaminase_level(screening2836,2).
-glutamic_oxaloacetic_transaminase_level(screening2837,2).
-glutamic_oxaloacetic_transaminase_level(screening2838,3).
-glutamic_oxaloacetic_transaminase_level(screening2839,3).
-glutamic_oxaloacetic_transaminase_level(screening284,3).
-glutamic_oxaloacetic_transaminase_level(screening2840,4).
-glutamic_oxaloacetic_transaminase_level(screening2841,4).
-glutamic_oxaloacetic_transaminase_level(screening2842,4).
-glutamic_oxaloacetic_transaminase_level(screening2843,4).
-glutamic_oxaloacetic_transaminase_level(screening2844,3).
-glutamic_oxaloacetic_transaminase_level(screening2845,3).
-glutamic_oxaloacetic_transaminase_level(screening2846,3).
-glutamic_oxaloacetic_transaminase_level(screening2847,3).
-glutamic_oxaloacetic_transaminase_level(screening2848,3).
-glutamic_oxaloacetic_transaminase_level(screening2849,2).
-glutamic_oxaloacetic_transaminase_level(screening285,3).
-glutamic_oxaloacetic_transaminase_level(screening2850,2).
-glutamic_oxaloacetic_transaminase_level(screening2851,2).
-glutamic_oxaloacetic_transaminase_level(screening2852,2).
-glutamic_oxaloacetic_transaminase_level(screening2853,2).
-glutamic_oxaloacetic_transaminase_level(screening2854,2).
-glutamic_oxaloacetic_transaminase_level(screening2855,2).
-glutamic_oxaloacetic_transaminase_level(screening2856,2).
-glutamic_oxaloacetic_transaminase_level(screening2857,2).
-glutamic_oxaloacetic_transaminase_level(screening2858,2).
-glutamic_oxaloacetic_transaminase_level(screening2859,2).
-glutamic_oxaloacetic_transaminase_level(screening286,3).
-glutamic_oxaloacetic_transaminase_level(screening2860,2).
-glutamic_oxaloacetic_transaminase_level(screening2861,2).
-glutamic_oxaloacetic_transaminase_level(screening2862,2).
-glutamic_oxaloacetic_transaminase_level(screening2863,2).
-glutamic_oxaloacetic_transaminase_level(screening2864,2).
-glutamic_oxaloacetic_transaminase_level(screening2865,2).
-glutamic_oxaloacetic_transaminase_level(screening2866,2).
-glutamic_oxaloacetic_transaminase_level(screening2867,2).
-glutamic_oxaloacetic_transaminase_level(screening2868,3).
-glutamic_oxaloacetic_transaminase_level(screening2869,3).
-glutamic_oxaloacetic_transaminase_level(screening287,4).
-glutamic_oxaloacetic_transaminase_level(screening2870,3).
-glutamic_oxaloacetic_transaminase_level(screening2871,3).
-glutamic_oxaloacetic_transaminase_level(screening2872,3).
-glutamic_oxaloacetic_transaminase_level(screening2873,3).
-glutamic_oxaloacetic_transaminase_level(screening2874,3).
-glutamic_oxaloacetic_transaminase_level(screening2875,2).
-glutamic_oxaloacetic_transaminase_level(screening2876,2).
-glutamic_oxaloacetic_transaminase_level(screening2877,2).
-glutamic_oxaloacetic_transaminase_level(screening2878,2).
-glutamic_oxaloacetic_transaminase_level(screening2879,3).
-glutamic_oxaloacetic_transaminase_level(screening288,4).
-glutamic_oxaloacetic_transaminase_level(screening2880,3).
-glutamic_oxaloacetic_transaminase_level(screening2881,3).
-glutamic_oxaloacetic_transaminase_level(screening2882,2).
-glutamic_oxaloacetic_transaminase_level(screening2883,2).
-glutamic_oxaloacetic_transaminase_level(screening2884,2).
-glutamic_oxaloacetic_transaminase_level(screening2885,2).
-glutamic_oxaloacetic_transaminase_level(screening2886,3).
-glutamic_oxaloacetic_transaminase_level(screening2887,3).
-glutamic_oxaloacetic_transaminase_level(screening2888,2).
-glutamic_oxaloacetic_transaminase_level(screening2889,2).
-glutamic_oxaloacetic_transaminase_level(screening289,4).
-glutamic_oxaloacetic_transaminase_level(screening2890,2).
-glutamic_oxaloacetic_transaminase_level(screening2891,3).
-glutamic_oxaloacetic_transaminase_level(screening2892,4).
-glutamic_oxaloacetic_transaminase_level(screening2893,2).
-glutamic_oxaloacetic_transaminase_level(screening2894,3).
-glutamic_oxaloacetic_transaminase_level(screening2895,4).
-glutamic_oxaloacetic_transaminase_level(screening2896,4).
-glutamic_oxaloacetic_transaminase_level(screening2897,4).
-glutamic_oxaloacetic_transaminase_level(screening2898,4).
-glutamic_oxaloacetic_transaminase_level(screening2899,4).
-glutamic_oxaloacetic_transaminase_level(screening290,3).
-glutamic_oxaloacetic_transaminase_level(screening2900,4).
-glutamic_oxaloacetic_transaminase_level(screening2901,4).
-glutamic_oxaloacetic_transaminase_level(screening2902,4).
-glutamic_oxaloacetic_transaminase_level(screening2903,4).
-glutamic_oxaloacetic_transaminase_level(screening2904,4).
-glutamic_oxaloacetic_transaminase_level(screening2905,4).
-glutamic_oxaloacetic_transaminase_level(screening2906,4).
-glutamic_oxaloacetic_transaminase_level(screening2907,4).
-glutamic_oxaloacetic_transaminase_level(screening2908,4).
-glutamic_oxaloacetic_transaminase_level(screening2909,4).
-glutamic_oxaloacetic_transaminase_level(screening291,4).
-glutamic_oxaloacetic_transaminase_level(screening2910,4).
-glutamic_oxaloacetic_transaminase_level(screening2911,4).
-glutamic_oxaloacetic_transaminase_level(screening2912,4).
-glutamic_oxaloacetic_transaminase_level(screening2913,4).
-glutamic_oxaloacetic_transaminase_level(screening2914,4).
-glutamic_oxaloacetic_transaminase_level(screening2915,4).
-glutamic_oxaloacetic_transaminase_level(screening2916,4).
-glutamic_oxaloacetic_transaminase_level(screening2917,4).
-glutamic_oxaloacetic_transaminase_level(screening2918,4).
-glutamic_oxaloacetic_transaminase_level(screening2919,4).
-glutamic_oxaloacetic_transaminase_level(screening292,2).
-glutamic_oxaloacetic_transaminase_level(screening2920,4).
-glutamic_oxaloacetic_transaminase_level(screening2921,4).
-glutamic_oxaloacetic_transaminase_level(screening2922,4).
-glutamic_oxaloacetic_transaminase_level(screening2923,4).
-glutamic_oxaloacetic_transaminase_level(screening2924,4).
-glutamic_oxaloacetic_transaminase_level(screening2925,4).
-glutamic_oxaloacetic_transaminase_level(screening2926,4).
-glutamic_oxaloacetic_transaminase_level(screening2927,4).
-glutamic_oxaloacetic_transaminase_level(screening2928,4).
-glutamic_oxaloacetic_transaminase_level(screening2929,4).
-glutamic_oxaloacetic_transaminase_level(screening293,2).
-glutamic_oxaloacetic_transaminase_level(screening2930,4).
-glutamic_oxaloacetic_transaminase_level(screening2931,4).
-glutamic_oxaloacetic_transaminase_level(screening2932,2).
-glutamic_oxaloacetic_transaminase_level(screening2933,4).
-glutamic_oxaloacetic_transaminase_level(screening2934,3).
-glutamic_oxaloacetic_transaminase_level(screening2935,2).
-glutamic_oxaloacetic_transaminase_level(screening2936,1).
-glutamic_oxaloacetic_transaminase_level(screening2937,1).
-glutamic_oxaloacetic_transaminase_level(screening2938,1).
-glutamic_oxaloacetic_transaminase_level(screening2939,1).
-glutamic_oxaloacetic_transaminase_level(screening294,2).
-glutamic_oxaloacetic_transaminase_level(screening2940,1).
-glutamic_oxaloacetic_transaminase_level(screening2941,1).
-glutamic_oxaloacetic_transaminase_level(screening2942,1).
-glutamic_oxaloacetic_transaminase_level(screening2943,1).
-glutamic_oxaloacetic_transaminase_level(screening2944,1).
-glutamic_oxaloacetic_transaminase_level(screening2945,1).
-glutamic_oxaloacetic_transaminase_level(screening2946,1).
-glutamic_oxaloacetic_transaminase_level(screening2947,1).
-glutamic_oxaloacetic_transaminase_level(screening2948,1).
-glutamic_oxaloacetic_transaminase_level(screening2949,4).
-glutamic_oxaloacetic_transaminase_level(screening295,2).
-glutamic_oxaloacetic_transaminase_level(screening2950,2).
-glutamic_oxaloacetic_transaminase_level(screening2951,4).
-glutamic_oxaloacetic_transaminase_level(screening2952,3).
-glutamic_oxaloacetic_transaminase_level(screening2953,2).
-glutamic_oxaloacetic_transaminase_level(screening2954,1).
-glutamic_oxaloacetic_transaminase_level(screening2955,1).
-glutamic_oxaloacetic_transaminase_level(screening2956,1).
-glutamic_oxaloacetic_transaminase_level(screening2957,1).
-glutamic_oxaloacetic_transaminase_level(screening2958,1).
-glutamic_oxaloacetic_transaminase_level(screening2959,1).
-glutamic_oxaloacetic_transaminase_level(screening296,2).
-glutamic_oxaloacetic_transaminase_level(screening2960,1).
-glutamic_oxaloacetic_transaminase_level(screening2961,1).
-glutamic_oxaloacetic_transaminase_level(screening2962,1).
-glutamic_oxaloacetic_transaminase_level(screening2963,1).
-glutamic_oxaloacetic_transaminase_level(screening2964,1).
-glutamic_oxaloacetic_transaminase_level(screening2965,1).
-glutamic_oxaloacetic_transaminase_level(screening2966,1).
-glutamic_oxaloacetic_transaminase_level(screening2967,3).
-glutamic_oxaloacetic_transaminase_level(screening2968,3).
-glutamic_oxaloacetic_transaminase_level(screening2969,3).
-glutamic_oxaloacetic_transaminase_level(screening297,4).
-glutamic_oxaloacetic_transaminase_level(screening2970,2).
-glutamic_oxaloacetic_transaminase_level(screening2971,3).
-glutamic_oxaloacetic_transaminase_level(screening2972,4).
-glutamic_oxaloacetic_transaminase_level(screening2973,3).
-glutamic_oxaloacetic_transaminase_level(screening2974,3).
-glutamic_oxaloacetic_transaminase_level(screening2975,2).
-glutamic_oxaloacetic_transaminase_level(screening2976,3).
-glutamic_oxaloacetic_transaminase_level(screening2977,3).
-glutamic_oxaloacetic_transaminase_level(screening2978,3).
-glutamic_oxaloacetic_transaminase_level(screening2979,3).
-glutamic_oxaloacetic_transaminase_level(screening298,2).
-glutamic_oxaloacetic_transaminase_level(screening2980,3).
-glutamic_oxaloacetic_transaminase_level(screening2981,2).
-glutamic_oxaloacetic_transaminase_level(screening2982,2).
-glutamic_oxaloacetic_transaminase_level(screening2983,2).
-glutamic_oxaloacetic_transaminase_level(screening2984,2).
-glutamic_oxaloacetic_transaminase_level(screening2985,2).
-glutamic_oxaloacetic_transaminase_level(screening2986,2).
-glutamic_oxaloacetic_transaminase_level(screening2987,2).
-glutamic_oxaloacetic_transaminase_level(screening2988,4).
-glutamic_oxaloacetic_transaminase_level(screening2989,3).
-glutamic_oxaloacetic_transaminase_level(screening299,2).
-glutamic_oxaloacetic_transaminase_level(screening2990,3).
-glutamic_oxaloacetic_transaminase_level(screening2991,2).
-glutamic_oxaloacetic_transaminase_level(screening2992,3).
-glutamic_oxaloacetic_transaminase_level(screening2993,3).
-glutamic_oxaloacetic_transaminase_level(screening2994,3).
-glutamic_oxaloacetic_transaminase_level(screening2995,3).
-glutamic_oxaloacetic_transaminase_level(screening2996,3).
-glutamic_oxaloacetic_transaminase_level(screening2997,2).
-glutamic_oxaloacetic_transaminase_level(screening2998,2).
-glutamic_oxaloacetic_transaminase_level(screening2999,2).
-glutamic_oxaloacetic_transaminase_level(screening300,2).
-glutamic_oxaloacetic_transaminase_level(screening3000,2).
-glutamic_oxaloacetic_transaminase_level(screening3001,2).
-glutamic_oxaloacetic_transaminase_level(screening3002,2).
-glutamic_oxaloacetic_transaminase_level(screening3003,2).
-glutamic_oxaloacetic_transaminase_level(screening3004,3).
-glutamic_oxaloacetic_transaminase_level(screening3005,2).
-glutamic_oxaloacetic_transaminase_level(screening3006,2).
-glutamic_oxaloacetic_transaminase_level(screening3007,2).
-glutamic_oxaloacetic_transaminase_level(screening3008,4).
-glutamic_oxaloacetic_transaminase_level(screening3009,4).
-glutamic_oxaloacetic_transaminase_level(screening301,2).
-glutamic_oxaloacetic_transaminase_level(screening3010,3).
-glutamic_oxaloacetic_transaminase_level(screening3011,4).
-glutamic_oxaloacetic_transaminase_level(screening3012,3).
-glutamic_oxaloacetic_transaminase_level(screening3013,2).
-glutamic_oxaloacetic_transaminase_level(screening3014,2).
-glutamic_oxaloacetic_transaminase_level(screening3015,4).
-glutamic_oxaloacetic_transaminase_level(screening3016,4).
-glutamic_oxaloacetic_transaminase_level(screening3017,3).
-glutamic_oxaloacetic_transaminase_level(screening3018,4).
-glutamic_oxaloacetic_transaminase_level(screening3019,3).
-glutamic_oxaloacetic_transaminase_level(screening302,2).
-glutamic_oxaloacetic_transaminase_level(screening3020,2).
-glutamic_oxaloacetic_transaminase_level(screening3021,2).
-glutamic_oxaloacetic_transaminase_level(screening3022,4).
-glutamic_oxaloacetic_transaminase_level(screening3023,4).
-glutamic_oxaloacetic_transaminase_level(screening3024,3).
-glutamic_oxaloacetic_transaminase_level(screening3025,4).
-glutamic_oxaloacetic_transaminase_level(screening3026,3).
-glutamic_oxaloacetic_transaminase_level(screening3027,2).
-glutamic_oxaloacetic_transaminase_level(screening3028,2).
-glutamic_oxaloacetic_transaminase_level(screening3029,3).
-glutamic_oxaloacetic_transaminase_level(screening303,4).
-glutamic_oxaloacetic_transaminase_level(screening3030,3).
-glutamic_oxaloacetic_transaminase_level(screening3031,2).
-glutamic_oxaloacetic_transaminase_level(screening3032,2).
-glutamic_oxaloacetic_transaminase_level(screening3033,2).
-glutamic_oxaloacetic_transaminase_level(screening3034,2).
-glutamic_oxaloacetic_transaminase_level(screening3035,3).
-glutamic_oxaloacetic_transaminase_level(screening3036,2).
-glutamic_oxaloacetic_transaminase_level(screening3037,2).
-glutamic_oxaloacetic_transaminase_level(screening3038,2).
-glutamic_oxaloacetic_transaminase_level(screening3039,2).
-glutamic_oxaloacetic_transaminase_level(screening304,2).
-glutamic_oxaloacetic_transaminase_level(screening3040,2).
-glutamic_oxaloacetic_transaminase_level(screening3041,2).
-glutamic_oxaloacetic_transaminase_level(screening3042,1).
-glutamic_oxaloacetic_transaminase_level(screening3043,1).
-glutamic_oxaloacetic_transaminase_level(screening3044,1).
-glutamic_oxaloacetic_transaminase_level(screening3045,1).
-glutamic_oxaloacetic_transaminase_level(screening3046,1).
-glutamic_oxaloacetic_transaminase_level(screening3047,1).
-glutamic_oxaloacetic_transaminase_level(screening3048,2).
-glutamic_oxaloacetic_transaminase_level(screening3049,1).
-glutamic_oxaloacetic_transaminase_level(screening305,2).
-glutamic_oxaloacetic_transaminase_level(screening3050,2).
-glutamic_oxaloacetic_transaminase_level(screening3051,1).
-glutamic_oxaloacetic_transaminase_level(screening3052,2).
-glutamic_oxaloacetic_transaminase_level(screening3053,2).
-glutamic_oxaloacetic_transaminase_level(screening3054,2).
-glutamic_oxaloacetic_transaminase_level(screening3055,4).
-glutamic_oxaloacetic_transaminase_level(screening3056,3).
-glutamic_oxaloacetic_transaminase_level(screening3057,4).
-glutamic_oxaloacetic_transaminase_level(screening3058,4).
-glutamic_oxaloacetic_transaminase_level(screening3059,3).
-glutamic_oxaloacetic_transaminase_level(screening306,2).
-glutamic_oxaloacetic_transaminase_level(screening3060,3).
-glutamic_oxaloacetic_transaminase_level(screening3061,3).
-glutamic_oxaloacetic_transaminase_level(screening3062,3).
-glutamic_oxaloacetic_transaminase_level(screening3063,3).
-glutamic_oxaloacetic_transaminase_level(screening3064,3).
-glutamic_oxaloacetic_transaminase_level(screening3065,4).
-glutamic_oxaloacetic_transaminase_level(screening3066,3).
-glutamic_oxaloacetic_transaminase_level(screening3067,4).
-glutamic_oxaloacetic_transaminase_level(screening3068,3).
-glutamic_oxaloacetic_transaminase_level(screening3069,3).
-glutamic_oxaloacetic_transaminase_level(screening307,3).
-glutamic_oxaloacetic_transaminase_level(screening3070,4).
-glutamic_oxaloacetic_transaminase_level(screening3071,4).
-glutamic_oxaloacetic_transaminase_level(screening3072,4).
-glutamic_oxaloacetic_transaminase_level(screening3073,4).
-glutamic_oxaloacetic_transaminase_level(screening3074,4).
-glutamic_oxaloacetic_transaminase_level(screening3075,2).
-glutamic_oxaloacetic_transaminase_level(screening3076,2).
-glutamic_oxaloacetic_transaminase_level(screening3077,2).
-glutamic_oxaloacetic_transaminase_level(screening3078,2).
-glutamic_oxaloacetic_transaminase_level(screening3079,2).
-glutamic_oxaloacetic_transaminase_level(screening308,3).
-glutamic_oxaloacetic_transaminase_level(screening3080,2).
-glutamic_oxaloacetic_transaminase_level(screening3081,3).
-glutamic_oxaloacetic_transaminase_level(screening3082,3).
-glutamic_oxaloacetic_transaminase_level(screening3083,2).
-glutamic_oxaloacetic_transaminase_level(screening3084,2).
-glutamic_oxaloacetic_transaminase_level(screening3085,2).
-glutamic_oxaloacetic_transaminase_level(screening3086,4).
-glutamic_oxaloacetic_transaminase_level(screening3087,4).
-glutamic_oxaloacetic_transaminase_level(screening3088,2).
-glutamic_oxaloacetic_transaminase_level(screening3089,2).
-glutamic_oxaloacetic_transaminase_level(screening309,2).
-glutamic_oxaloacetic_transaminase_level(screening3090,2).
-glutamic_oxaloacetic_transaminase_level(screening3091,2).
-glutamic_oxaloacetic_transaminase_level(screening3092,2).
-glutamic_oxaloacetic_transaminase_level(screening3093,2).
-glutamic_oxaloacetic_transaminase_level(screening3094,3).
-glutamic_oxaloacetic_transaminase_level(screening3095,3).
-glutamic_oxaloacetic_transaminase_level(screening3096,2).
-glutamic_oxaloacetic_transaminase_level(screening3097,2).
-glutamic_oxaloacetic_transaminase_level(screening3098,2).
-glutamic_oxaloacetic_transaminase_level(screening3099,4).
-glutamic_oxaloacetic_transaminase_level(screening310,3).
-glutamic_oxaloacetic_transaminase_level(screening3100,3).
-glutamic_oxaloacetic_transaminase_level(screening3101,2).
-glutamic_oxaloacetic_transaminase_level(screening3102,2).
-glutamic_oxaloacetic_transaminase_level(screening3103,2).
-glutamic_oxaloacetic_transaminase_level(screening3104,1).
-glutamic_oxaloacetic_transaminase_level(screening3105,1).
-glutamic_oxaloacetic_transaminase_level(screening3106,2).
-glutamic_oxaloacetic_transaminase_level(screening3107,2).
-glutamic_oxaloacetic_transaminase_level(screening3108,2).
-glutamic_oxaloacetic_transaminase_level(screening3109,2).
-glutamic_oxaloacetic_transaminase_level(screening311,2).
-glutamic_oxaloacetic_transaminase_level(screening3110,2).
-glutamic_oxaloacetic_transaminase_level(screening3111,3).
-glutamic_oxaloacetic_transaminase_level(screening3112,4).
-glutamic_oxaloacetic_transaminase_level(screening3113,4).
-glutamic_oxaloacetic_transaminase_level(screening3114,4).
-glutamic_oxaloacetic_transaminase_level(screening3115,4).
-glutamic_oxaloacetic_transaminase_level(screening3116,4).
-glutamic_oxaloacetic_transaminase_level(screening3117,4).
-glutamic_oxaloacetic_transaminase_level(screening3118,4).
-glutamic_oxaloacetic_transaminase_level(screening3119,3).
-glutamic_oxaloacetic_transaminase_level(screening312,2).
-glutamic_oxaloacetic_transaminase_level(screening3120,4).
-glutamic_oxaloacetic_transaminase_level(screening3121,4).
-glutamic_oxaloacetic_transaminase_level(screening3122,4).
-glutamic_oxaloacetic_transaminase_level(screening3123,4).
-glutamic_oxaloacetic_transaminase_level(screening3124,3).
-glutamic_oxaloacetic_transaminase_level(screening3125,4).
-glutamic_oxaloacetic_transaminase_level(screening3126,4).
-glutamic_oxaloacetic_transaminase_level(screening3127,4).
-glutamic_oxaloacetic_transaminase_level(screening3128,4).
-glutamic_oxaloacetic_transaminase_level(screening3129,4).
-glutamic_oxaloacetic_transaminase_level(screening313,2).
-glutamic_oxaloacetic_transaminase_level(screening3130,4).
-glutamic_oxaloacetic_transaminase_level(screening3131,4).
-glutamic_oxaloacetic_transaminase_level(screening3132,3).
-glutamic_oxaloacetic_transaminase_level(screening3133,4).
-glutamic_oxaloacetic_transaminase_level(screening3134,4).
-glutamic_oxaloacetic_transaminase_level(screening3135,4).
-glutamic_oxaloacetic_transaminase_level(screening3136,4).
-glutamic_oxaloacetic_transaminase_level(screening3137,3).
-glutamic_oxaloacetic_transaminase_level(screening3138,4).
-glutamic_oxaloacetic_transaminase_level(screening3139,4).
-glutamic_oxaloacetic_transaminase_level(screening314,2).
-glutamic_oxaloacetic_transaminase_level(screening3140,2).
-glutamic_oxaloacetic_transaminase_level(screening3141,2).
-glutamic_oxaloacetic_transaminase_level(screening3142,2).
-glutamic_oxaloacetic_transaminase_level(screening3143,2).
-glutamic_oxaloacetic_transaminase_level(screening3144,2).
-glutamic_oxaloacetic_transaminase_level(screening3145,2).
-glutamic_oxaloacetic_transaminase_level(screening3146,2).
-glutamic_oxaloacetic_transaminase_level(screening3147,3).
-glutamic_oxaloacetic_transaminase_level(screening3148,4).
-glutamic_oxaloacetic_transaminase_level(screening3149,4).
-glutamic_oxaloacetic_transaminase_level(screening315,2).
-glutamic_oxaloacetic_transaminase_level(screening3150,4).
-glutamic_oxaloacetic_transaminase_level(screening3151,3).
-glutamic_oxaloacetic_transaminase_level(screening3152,4).
-glutamic_oxaloacetic_transaminase_level(screening3153,3).
-glutamic_oxaloacetic_transaminase_level(screening3154,3).
-glutamic_oxaloacetic_transaminase_level(screening3155,2).
-glutamic_oxaloacetic_transaminase_level(screening3156,2).
-glutamic_oxaloacetic_transaminase_level(screening3157,3).
-glutamic_oxaloacetic_transaminase_level(screening3158,3).
-glutamic_oxaloacetic_transaminase_level(screening3159,3).
-glutamic_oxaloacetic_transaminase_level(screening316,2).
-glutamic_oxaloacetic_transaminase_level(screening3160,3).
-glutamic_oxaloacetic_transaminase_level(screening3161,3).
-glutamic_oxaloacetic_transaminase_level(screening3162,3).
-glutamic_oxaloacetic_transaminase_level(screening3163,4).
-glutamic_oxaloacetic_transaminase_level(screening3164,3).
-glutamic_oxaloacetic_transaminase_level(screening3165,3).
-glutamic_oxaloacetic_transaminase_level(screening3166,2).
-glutamic_oxaloacetic_transaminase_level(screening3167,4).
-glutamic_oxaloacetic_transaminase_level(screening3168,2).
-glutamic_oxaloacetic_transaminase_level(screening3169,2).
-glutamic_oxaloacetic_transaminase_level(screening317,2).
-glutamic_oxaloacetic_transaminase_level(screening3170,3).
-glutamic_oxaloacetic_transaminase_level(screening3171,3).
-glutamic_oxaloacetic_transaminase_level(screening3172,3).
-glutamic_oxaloacetic_transaminase_level(screening3173,3).
-glutamic_oxaloacetic_transaminase_level(screening3174,3).
-glutamic_oxaloacetic_transaminase_level(screening3175,4).
-glutamic_oxaloacetic_transaminase_level(screening3176,3).
-glutamic_oxaloacetic_transaminase_level(screening3177,3).
-glutamic_oxaloacetic_transaminase_level(screening3178,4).
-glutamic_oxaloacetic_transaminase_level(screening3179,4).
-glutamic_oxaloacetic_transaminase_level(screening318,2).
-glutamic_oxaloacetic_transaminase_level(screening3180,4).
-glutamic_oxaloacetic_transaminase_level(screening3181,4).
-glutamic_oxaloacetic_transaminase_level(screening3182,4).
-glutamic_oxaloacetic_transaminase_level(screening3183,3).
-glutamic_oxaloacetic_transaminase_level(screening3184,3).
-glutamic_oxaloacetic_transaminase_level(screening3185,3).
-glutamic_oxaloacetic_transaminase_level(screening3186,3).
-glutamic_oxaloacetic_transaminase_level(screening3187,4).
-glutamic_oxaloacetic_transaminase_level(screening3188,3).
-glutamic_oxaloacetic_transaminase_level(screening3189,3).
-glutamic_oxaloacetic_transaminase_level(screening319,2).
-glutamic_oxaloacetic_transaminase_level(screening3190,4).
-glutamic_oxaloacetic_transaminase_level(screening3191,3).
-glutamic_oxaloacetic_transaminase_level(screening3192,4).
-glutamic_oxaloacetic_transaminase_level(screening3193,2).
-glutamic_oxaloacetic_transaminase_level(screening3194,2).
-glutamic_oxaloacetic_transaminase_level(screening3195,3).
-glutamic_oxaloacetic_transaminase_level(screening3196,4).
-glutamic_oxaloacetic_transaminase_level(screening3197,3).
-glutamic_oxaloacetic_transaminase_level(screening3198,4).
-glutamic_oxaloacetic_transaminase_level(screening3199,4).
-glutamic_oxaloacetic_transaminase_level(screening320,2).
-glutamic_oxaloacetic_transaminase_level(screening3200,4).
-glutamic_oxaloacetic_transaminase_level(screening3201,4).
-glutamic_oxaloacetic_transaminase_level(screening3202,4).
-glutamic_oxaloacetic_transaminase_level(screening3203,4).
-glutamic_oxaloacetic_transaminase_level(screening3204,4).
-glutamic_oxaloacetic_transaminase_level(screening3205,3).
-glutamic_oxaloacetic_transaminase_level(screening3206,3).
-glutamic_oxaloacetic_transaminase_level(screening3207,4).
-glutamic_oxaloacetic_transaminase_level(screening3208,4).
-glutamic_oxaloacetic_transaminase_level(screening3209,2).
-glutamic_oxaloacetic_transaminase_level(screening321,2).
-glutamic_oxaloacetic_transaminase_level(screening3210,2).
-glutamic_oxaloacetic_transaminase_level(screening3211,2).
-glutamic_oxaloacetic_transaminase_level(screening3212,3).
-glutamic_oxaloacetic_transaminase_level(screening3213,4).
-glutamic_oxaloacetic_transaminase_level(screening3214,3).
-glutamic_oxaloacetic_transaminase_level(screening3215,3).
-glutamic_oxaloacetic_transaminase_level(screening3216,3).
-glutamic_oxaloacetic_transaminase_level(screening3217,3).
-glutamic_oxaloacetic_transaminase_level(screening3218,3).
-glutamic_oxaloacetic_transaminase_level(screening3219,3).
-glutamic_oxaloacetic_transaminase_level(screening322,2).
-glutamic_oxaloacetic_transaminase_level(screening3220,4).
-glutamic_oxaloacetic_transaminase_level(screening3221,4).
-glutamic_oxaloacetic_transaminase_level(screening3222,2).
-glutamic_oxaloacetic_transaminase_level(screening3223,3).
-glutamic_oxaloacetic_transaminase_level(screening3224,3).
-glutamic_oxaloacetic_transaminase_level(screening3225,2).
-glutamic_oxaloacetic_transaminase_level(screening3226,3).
-glutamic_oxaloacetic_transaminase_level(screening3227,3).
-glutamic_oxaloacetic_transaminase_level(screening3228,4).
-glutamic_oxaloacetic_transaminase_level(screening3229,4).
-glutamic_oxaloacetic_transaminase_level(screening323,2).
-glutamic_oxaloacetic_transaminase_level(screening3230,3).
-glutamic_oxaloacetic_transaminase_level(screening3231,3).
-glutamic_oxaloacetic_transaminase_level(screening3232,3).
-glutamic_oxaloacetic_transaminase_level(screening3233,4).
-glutamic_oxaloacetic_transaminase_level(screening3234,3).
-glutamic_oxaloacetic_transaminase_level(screening3235,2).
-glutamic_oxaloacetic_transaminase_level(screening3236,2).
-glutamic_oxaloacetic_transaminase_level(screening3237,2).
-glutamic_oxaloacetic_transaminase_level(screening3238,2).
-glutamic_oxaloacetic_transaminase_level(screening3239,2).
-glutamic_oxaloacetic_transaminase_level(screening324,2).
-glutamic_oxaloacetic_transaminase_level(screening3240,1).
-glutamic_oxaloacetic_transaminase_level(screening3241,2).
-glutamic_oxaloacetic_transaminase_level(screening3242,2).
-glutamic_oxaloacetic_transaminase_level(screening3243,2).
-glutamic_oxaloacetic_transaminase_level(screening3244,2).
-glutamic_oxaloacetic_transaminase_level(screening3245,2).
-glutamic_oxaloacetic_transaminase_level(screening3246,2).
-glutamic_oxaloacetic_transaminase_level(screening3247,2).
-glutamic_oxaloacetic_transaminase_level(screening3248,2).
-glutamic_oxaloacetic_transaminase_level(screening3249,2).
-glutamic_oxaloacetic_transaminase_level(screening325,2).
-glutamic_oxaloacetic_transaminase_level(screening3250,2).
-glutamic_oxaloacetic_transaminase_level(screening3251,2).
-glutamic_oxaloacetic_transaminase_level(screening3252,2).
-glutamic_oxaloacetic_transaminase_level(screening3253,3).
-glutamic_oxaloacetic_transaminase_level(screening3254,4).
-glutamic_oxaloacetic_transaminase_level(screening3255,4).
-glutamic_oxaloacetic_transaminase_level(screening3256,4).
-glutamic_oxaloacetic_transaminase_level(screening3257,4).
-glutamic_oxaloacetic_transaminase_level(screening3258,4).
-glutamic_oxaloacetic_transaminase_level(screening3259,3).
-glutamic_oxaloacetic_transaminase_level(screening326,3).
-glutamic_oxaloacetic_transaminase_level(screening3260,3).
-glutamic_oxaloacetic_transaminase_level(screening3261,3).
-glutamic_oxaloacetic_transaminase_level(screening3262,3).
-glutamic_oxaloacetic_transaminase_level(screening3263,3).
-glutamic_oxaloacetic_transaminase_level(screening3264,2).
-glutamic_oxaloacetic_transaminase_level(screening3265,2).
-glutamic_oxaloacetic_transaminase_level(screening3266,2).
-glutamic_oxaloacetic_transaminase_level(screening3267,2).
-glutamic_oxaloacetic_transaminase_level(screening3268,2).
-glutamic_oxaloacetic_transaminase_level(screening3269,2).
-glutamic_oxaloacetic_transaminase_level(screening327,5).
-glutamic_oxaloacetic_transaminase_level(screening3270,2).
-glutamic_oxaloacetic_transaminase_level(screening3271,2).
-glutamic_oxaloacetic_transaminase_level(screening3272,2).
-glutamic_oxaloacetic_transaminase_level(screening3273,2).
-glutamic_oxaloacetic_transaminase_level(screening3274,2).
-glutamic_oxaloacetic_transaminase_level(screening3275,4).
-glutamic_oxaloacetic_transaminase_level(screening3276,4).
-glutamic_oxaloacetic_transaminase_level(screening3277,4).
-glutamic_oxaloacetic_transaminase_level(screening3278,3).
-glutamic_oxaloacetic_transaminase_level(screening3279,4).
-glutamic_oxaloacetic_transaminase_level(screening328,2).
-glutamic_oxaloacetic_transaminase_level(screening3280,4).
-glutamic_oxaloacetic_transaminase_level(screening3281,4).
-glutamic_oxaloacetic_transaminase_level(screening3282,4).
-glutamic_oxaloacetic_transaminase_level(screening3283,4).
-glutamic_oxaloacetic_transaminase_level(screening3284,3).
-glutamic_oxaloacetic_transaminase_level(screening3285,4).
-glutamic_oxaloacetic_transaminase_level(screening3286,4).
-glutamic_oxaloacetic_transaminase_level(screening3287,4).
-glutamic_oxaloacetic_transaminase_level(screening3288,4).
-glutamic_oxaloacetic_transaminase_level(screening3289,4).
-glutamic_oxaloacetic_transaminase_level(screening329,3).
-glutamic_oxaloacetic_transaminase_level(screening3290,3).
-glutamic_oxaloacetic_transaminase_level(screening3291,4).
-glutamic_oxaloacetic_transaminase_level(screening3292,4).
-glutamic_oxaloacetic_transaminase_level(screening3293,4).
-glutamic_oxaloacetic_transaminase_level(screening3294,4).
-glutamic_oxaloacetic_transaminase_level(screening3295,4).
-glutamic_oxaloacetic_transaminase_level(screening3296,3).
-glutamic_oxaloacetic_transaminase_level(screening3297,4).
-glutamic_oxaloacetic_transaminase_level(screening3298,4).
-glutamic_oxaloacetic_transaminase_level(screening3299,3).
-glutamic_oxaloacetic_transaminase_level(screening330,3).
-glutamic_oxaloacetic_transaminase_level(screening3300,3).
-glutamic_oxaloacetic_transaminase_level(screening3301,4).
-glutamic_oxaloacetic_transaminase_level(screening3302,4).
-glutamic_oxaloacetic_transaminase_level(screening3303,4).
-glutamic_oxaloacetic_transaminase_level(screening3304,3).
-glutamic_oxaloacetic_transaminase_level(screening3305,3).
-glutamic_oxaloacetic_transaminase_level(screening3306,3).
-glutamic_oxaloacetic_transaminase_level(screening3307,2).
-glutamic_oxaloacetic_transaminase_level(screening3308,3).
-glutamic_oxaloacetic_transaminase_level(screening3309,3).
-glutamic_oxaloacetic_transaminase_level(screening331,3).
-glutamic_oxaloacetic_transaminase_level(screening3310,3).
-glutamic_oxaloacetic_transaminase_level(screening3311,2).
-glutamic_oxaloacetic_transaminase_level(screening3312,2).
-glutamic_oxaloacetic_transaminase_level(screening3313,4).
-glutamic_oxaloacetic_transaminase_level(screening3314,3).
-glutamic_oxaloacetic_transaminase_level(screening3315,3).
-glutamic_oxaloacetic_transaminase_level(screening3316,3).
-glutamic_oxaloacetic_transaminase_level(screening3317,2).
-glutamic_oxaloacetic_transaminase_level(screening3318,4).
-glutamic_oxaloacetic_transaminase_level(screening3319,4).
-glutamic_oxaloacetic_transaminase_level(screening332,3).
-glutamic_oxaloacetic_transaminase_level(screening3320,4).
-glutamic_oxaloacetic_transaminase_level(screening3321,4).
-glutamic_oxaloacetic_transaminase_level(screening3322,4).
-glutamic_oxaloacetic_transaminase_level(screening3323,4).
-glutamic_oxaloacetic_transaminase_level(screening3324,4).
-glutamic_oxaloacetic_transaminase_level(screening3325,2).
-glutamic_oxaloacetic_transaminase_level(screening3326,4).
-glutamic_oxaloacetic_transaminase_level(screening3327,4).
-glutamic_oxaloacetic_transaminase_level(screening3328,4).
-glutamic_oxaloacetic_transaminase_level(screening3329,3).
-glutamic_oxaloacetic_transaminase_level(screening333,2).
-glutamic_oxaloacetic_transaminase_level(screening3330,4).
-glutamic_oxaloacetic_transaminase_level(screening3331,4).
-glutamic_oxaloacetic_transaminase_level(screening3332,4).
-glutamic_oxaloacetic_transaminase_level(screening3333,4).
-glutamic_oxaloacetic_transaminase_level(screening3334,4).
-glutamic_oxaloacetic_transaminase_level(screening3335,4).
-glutamic_oxaloacetic_transaminase_level(screening3336,4).
-glutamic_oxaloacetic_transaminase_level(screening3337,4).
-glutamic_oxaloacetic_transaminase_level(screening3338,2).
-glutamic_oxaloacetic_transaminase_level(screening3339,4).
-glutamic_oxaloacetic_transaminase_level(screening334,2).
-glutamic_oxaloacetic_transaminase_level(screening3340,4).
-glutamic_oxaloacetic_transaminase_level(screening3341,4).
-glutamic_oxaloacetic_transaminase_level(screening3342,3).
-glutamic_oxaloacetic_transaminase_level(screening3343,4).
-glutamic_oxaloacetic_transaminase_level(screening3344,4).
-glutamic_oxaloacetic_transaminase_level(screening3345,4).
-glutamic_oxaloacetic_transaminase_level(screening3346,4).
-glutamic_oxaloacetic_transaminase_level(screening3347,4).
-glutamic_oxaloacetic_transaminase_level(screening3348,4).
-glutamic_oxaloacetic_transaminase_level(screening3349,4).
-glutamic_oxaloacetic_transaminase_level(screening335,1).
-glutamic_oxaloacetic_transaminase_level(screening3350,4).
-glutamic_oxaloacetic_transaminase_level(screening3351,2).
-glutamic_oxaloacetic_transaminase_level(screening3352,4).
-glutamic_oxaloacetic_transaminase_level(screening3353,4).
-glutamic_oxaloacetic_transaminase_level(screening3354,4).
-glutamic_oxaloacetic_transaminase_level(screening3355,3).
-glutamic_oxaloacetic_transaminase_level(screening3356,4).
-glutamic_oxaloacetic_transaminase_level(screening3357,4).
-glutamic_oxaloacetic_transaminase_level(screening3358,4).
-glutamic_oxaloacetic_transaminase_level(screening3359,4).
-glutamic_oxaloacetic_transaminase_level(screening336,2).
-glutamic_oxaloacetic_transaminase_level(screening3360,4).
-glutamic_oxaloacetic_transaminase_level(screening3361,4).
-glutamic_oxaloacetic_transaminase_level(screening3362,4).
-glutamic_oxaloacetic_transaminase_level(screening3363,4).
-glutamic_oxaloacetic_transaminase_level(screening3364,3).
-glutamic_oxaloacetic_transaminase_level(screening3365,2).
-glutamic_oxaloacetic_transaminase_level(screening3366,3).
-glutamic_oxaloacetic_transaminase_level(screening3367,3).
-glutamic_oxaloacetic_transaminase_level(screening3368,3).
-glutamic_oxaloacetic_transaminase_level(screening3369,3).
-glutamic_oxaloacetic_transaminase_level(screening337,2).
-glutamic_oxaloacetic_transaminase_level(screening3370,3).
-glutamic_oxaloacetic_transaminase_level(screening3371,2).
-glutamic_oxaloacetic_transaminase_level(screening3372,3).
-glutamic_oxaloacetic_transaminase_level(screening3373,2).
-glutamic_oxaloacetic_transaminase_level(screening3374,2).
-glutamic_oxaloacetic_transaminase_level(screening3375,2).
-glutamic_oxaloacetic_transaminase_level(screening3376,3).
-glutamic_oxaloacetic_transaminase_level(screening3377,3).
-glutamic_oxaloacetic_transaminase_level(screening3378,3).
-glutamic_oxaloacetic_transaminase_level(screening3379,3).
-glutamic_oxaloacetic_transaminase_level(screening338,2).
-glutamic_oxaloacetic_transaminase_level(screening3380,2).
-glutamic_oxaloacetic_transaminase_level(screening3381,3).
-glutamic_oxaloacetic_transaminase_level(screening3382,3).
-glutamic_oxaloacetic_transaminase_level(screening3383,3).
-glutamic_oxaloacetic_transaminase_level(screening3384,3).
-glutamic_oxaloacetic_transaminase_level(screening3385,3).
-glutamic_oxaloacetic_transaminase_level(screening3386,2).
-glutamic_oxaloacetic_transaminase_level(screening3387,3).
-glutamic_oxaloacetic_transaminase_level(screening3388,2).
-glutamic_oxaloacetic_transaminase_level(screening3389,2).
-glutamic_oxaloacetic_transaminase_level(screening339,2).
-glutamic_oxaloacetic_transaminase_level(screening3390,2).
-glutamic_oxaloacetic_transaminase_level(screening3391,3).
-glutamic_oxaloacetic_transaminase_level(screening3392,3).
-glutamic_oxaloacetic_transaminase_level(screening3393,3).
-glutamic_oxaloacetic_transaminase_level(screening3394,4).
-glutamic_oxaloacetic_transaminase_level(screening3395,4).
-glutamic_oxaloacetic_transaminase_level(screening3396,4).
-glutamic_oxaloacetic_transaminase_level(screening3397,4).
-glutamic_oxaloacetic_transaminase_level(screening3398,4).
-glutamic_oxaloacetic_transaminase_level(screening3399,3).
-glutamic_oxaloacetic_transaminase_level(screening340,2).
-glutamic_oxaloacetic_transaminase_level(screening3400,4).
-glutamic_oxaloacetic_transaminase_level(screening3401,4).
-glutamic_oxaloacetic_transaminase_level(screening3402,4).
-glutamic_oxaloacetic_transaminase_level(screening3403,4).
-glutamic_oxaloacetic_transaminase_level(screening3404,4).
-glutamic_oxaloacetic_transaminase_level(screening3405,4).
-glutamic_oxaloacetic_transaminase_level(screening3406,4).
-glutamic_oxaloacetic_transaminase_level(screening3407,4).
-glutamic_oxaloacetic_transaminase_level(screening3408,4).
-glutamic_oxaloacetic_transaminase_level(screening3409,4).
-glutamic_oxaloacetic_transaminase_level(screening341,2).
-glutamic_oxaloacetic_transaminase_level(screening3410,4).
-glutamic_oxaloacetic_transaminase_level(screening3411,4).
-glutamic_oxaloacetic_transaminase_level(screening3412,4).
-glutamic_oxaloacetic_transaminase_level(screening3413,3).
-glutamic_oxaloacetic_transaminase_level(screening3414,4).
-glutamic_oxaloacetic_transaminase_level(screening3415,4).
-glutamic_oxaloacetic_transaminase_level(screening3416,4).
-glutamic_oxaloacetic_transaminase_level(screening3417,4).
-glutamic_oxaloacetic_transaminase_level(screening3418,4).
-glutamic_oxaloacetic_transaminase_level(screening3419,4).
-glutamic_oxaloacetic_transaminase_level(screening342,2).
-glutamic_oxaloacetic_transaminase_level(screening3420,4).
-glutamic_oxaloacetic_transaminase_level(screening3421,4).
-glutamic_oxaloacetic_transaminase_level(screening3422,4).
-glutamic_oxaloacetic_transaminase_level(screening3423,4).
-glutamic_oxaloacetic_transaminase_level(screening3424,4).
-glutamic_oxaloacetic_transaminase_level(screening3425,4).
-glutamic_oxaloacetic_transaminase_level(screening3426,4).
-glutamic_oxaloacetic_transaminase_level(screening3427,3).
-glutamic_oxaloacetic_transaminase_level(screening3428,4).
-glutamic_oxaloacetic_transaminase_level(screening3429,4).
-glutamic_oxaloacetic_transaminase_level(screening343,2).
-glutamic_oxaloacetic_transaminase_level(screening3430,4).
-glutamic_oxaloacetic_transaminase_level(screening3431,4).
-glutamic_oxaloacetic_transaminase_level(screening3432,4).
-glutamic_oxaloacetic_transaminase_level(screening3433,4).
-glutamic_oxaloacetic_transaminase_level(screening3434,4).
-glutamic_oxaloacetic_transaminase_level(screening3435,4).
-glutamic_oxaloacetic_transaminase_level(screening3436,3).
-glutamic_oxaloacetic_transaminase_level(screening3437,3).
-glutamic_oxaloacetic_transaminase_level(screening3438,2).
-glutamic_oxaloacetic_transaminase_level(screening3439,2).
-glutamic_oxaloacetic_transaminase_level(screening344,3).
-glutamic_oxaloacetic_transaminase_level(screening3440,3).
-glutamic_oxaloacetic_transaminase_level(screening3441,3).
-glutamic_oxaloacetic_transaminase_level(screening3442,2).
-glutamic_oxaloacetic_transaminase_level(screening3443,2).
-glutamic_oxaloacetic_transaminase_level(screening3444,3).
-glutamic_oxaloacetic_transaminase_level(screening3445,3).
-glutamic_oxaloacetic_transaminase_level(screening3446,3).
-glutamic_oxaloacetic_transaminase_level(screening3447,3).
-glutamic_oxaloacetic_transaminase_level(screening3448,3).
-glutamic_oxaloacetic_transaminase_level(screening3449,2).
-glutamic_oxaloacetic_transaminase_level(screening345,5).
-glutamic_oxaloacetic_transaminase_level(screening3450,2).
-glutamic_oxaloacetic_transaminase_level(screening3451,3).
-glutamic_oxaloacetic_transaminase_level(screening3452,3).
-glutamic_oxaloacetic_transaminase_level(screening3453,2).
-glutamic_oxaloacetic_transaminase_level(screening3454,2).
-glutamic_oxaloacetic_transaminase_level(screening3455,3).
-glutamic_oxaloacetic_transaminase_level(screening3456,3).
-glutamic_oxaloacetic_transaminase_level(screening3457,3).
-glutamic_oxaloacetic_transaminase_level(screening3458,3).
-glutamic_oxaloacetic_transaminase_level(screening3459,3).
-glutamic_oxaloacetic_transaminase_level(screening346,2).
-glutamic_oxaloacetic_transaminase_level(screening3460,2).
-glutamic_oxaloacetic_transaminase_level(screening3461,2).
-glutamic_oxaloacetic_transaminase_level(screening3462,3).
-glutamic_oxaloacetic_transaminase_level(screening3463,3).
-glutamic_oxaloacetic_transaminase_level(screening3464,2).
-glutamic_oxaloacetic_transaminase_level(screening3465,2).
-glutamic_oxaloacetic_transaminase_level(screening3466,3).
-glutamic_oxaloacetic_transaminase_level(screening3467,3).
-glutamic_oxaloacetic_transaminase_level(screening3468,3).
-glutamic_oxaloacetic_transaminase_level(screening3469,3).
-glutamic_oxaloacetic_transaminase_level(screening347,3).
-glutamic_oxaloacetic_transaminase_level(screening3470,3).
-glutamic_oxaloacetic_transaminase_level(screening3471,2).
-glutamic_oxaloacetic_transaminase_level(screening3472,1).
-glutamic_oxaloacetic_transaminase_level(screening3473,1).
-glutamic_oxaloacetic_transaminase_level(screening3474,1).
-glutamic_oxaloacetic_transaminase_level(screening3475,2).
-glutamic_oxaloacetic_transaminase_level(screening3476,1).
-glutamic_oxaloacetic_transaminase_level(screening3477,2).
-glutamic_oxaloacetic_transaminase_level(screening3478,2).
-glutamic_oxaloacetic_transaminase_level(screening3479,4).
-glutamic_oxaloacetic_transaminase_level(screening348,3).
-glutamic_oxaloacetic_transaminase_level(screening3480,3).
-glutamic_oxaloacetic_transaminase_level(screening3481,3).
-glutamic_oxaloacetic_transaminase_level(screening3482,2).
-glutamic_oxaloacetic_transaminase_level(screening3483,3).
-glutamic_oxaloacetic_transaminase_level(screening3484,4).
-glutamic_oxaloacetic_transaminase_level(screening3485,3).
-glutamic_oxaloacetic_transaminase_level(screening3486,4).
-glutamic_oxaloacetic_transaminase_level(screening3487,3).
-glutamic_oxaloacetic_transaminase_level(screening3488,2).
-glutamic_oxaloacetic_transaminase_level(screening3489,4).
-glutamic_oxaloacetic_transaminase_level(screening349,3).
-glutamic_oxaloacetic_transaminase_level(screening3490,2).
-glutamic_oxaloacetic_transaminase_level(screening3491,4).
-glutamic_oxaloacetic_transaminase_level(screening3492,4).
-glutamic_oxaloacetic_transaminase_level(screening3493,4).
-glutamic_oxaloacetic_transaminase_level(screening3494,5).
-glutamic_oxaloacetic_transaminase_level(screening3495,3).
-glutamic_oxaloacetic_transaminase_level(screening3496,4).
-glutamic_oxaloacetic_transaminase_level(screening3497,3).
-glutamic_oxaloacetic_transaminase_level(screening3498,3).
-glutamic_oxaloacetic_transaminase_level(screening3499,3).
-glutamic_oxaloacetic_transaminase_level(screening350,3).
-glutamic_oxaloacetic_transaminase_level(screening3500,4).
-glutamic_oxaloacetic_transaminase_level(screening3501,3).
-glutamic_oxaloacetic_transaminase_level(screening3502,4).
-glutamic_oxaloacetic_transaminase_level(screening3503,4).
-glutamic_oxaloacetic_transaminase_level(screening3504,4).
-glutamic_oxaloacetic_transaminase_level(screening3505,4).
-glutamic_oxaloacetic_transaminase_level(screening3506,4).
-glutamic_oxaloacetic_transaminase_level(screening3507,4).
-glutamic_oxaloacetic_transaminase_level(screening3508,4).
-glutamic_oxaloacetic_transaminase_level(screening3509,4).
-glutamic_oxaloacetic_transaminase_level(screening351,2).
-glutamic_oxaloacetic_transaminase_level(screening3510,4).
-glutamic_oxaloacetic_transaminase_level(screening3511,4).
-glutamic_oxaloacetic_transaminase_level(screening3512,4).
-glutamic_oxaloacetic_transaminase_level(screening3513,4).
-glutamic_oxaloacetic_transaminase_level(screening3514,4).
-glutamic_oxaloacetic_transaminase_level(screening3515,4).
-glutamic_oxaloacetic_transaminase_level(screening3516,4).
-glutamic_oxaloacetic_transaminase_level(screening3517,4).
-glutamic_oxaloacetic_transaminase_level(screening3518,4).
-glutamic_oxaloacetic_transaminase_level(screening3519,4).
-glutamic_oxaloacetic_transaminase_level(screening352,2).
-glutamic_oxaloacetic_transaminase_level(screening3520,4).
-glutamic_oxaloacetic_transaminase_level(screening3521,4).
-glutamic_oxaloacetic_transaminase_level(screening3522,4).
-glutamic_oxaloacetic_transaminase_level(screening3523,4).
-glutamic_oxaloacetic_transaminase_level(screening3524,4).
-glutamic_oxaloacetic_transaminase_level(screening3525,4).
-glutamic_oxaloacetic_transaminase_level(screening3526,4).
-glutamic_oxaloacetic_transaminase_level(screening3527,4).
-glutamic_oxaloacetic_transaminase_level(screening3528,4).
-glutamic_oxaloacetic_transaminase_level(screening3529,4).
-glutamic_oxaloacetic_transaminase_level(screening353,1).
-glutamic_oxaloacetic_transaminase_level(screening3530,4).
-glutamic_oxaloacetic_transaminase_level(screening3531,4).
-glutamic_oxaloacetic_transaminase_level(screening3532,4).
-glutamic_oxaloacetic_transaminase_level(screening3533,4).
-glutamic_oxaloacetic_transaminase_level(screening3534,4).
-glutamic_oxaloacetic_transaminase_level(screening3535,4).
-glutamic_oxaloacetic_transaminase_level(screening3536,3).
-glutamic_oxaloacetic_transaminase_level(screening3537,3).
-glutamic_oxaloacetic_transaminase_level(screening3538,4).
-glutamic_oxaloacetic_transaminase_level(screening3539,3).
-glutamic_oxaloacetic_transaminase_level(screening354,2).
-glutamic_oxaloacetic_transaminase_level(screening3540,3).
-glutamic_oxaloacetic_transaminase_level(screening3541,3).
-glutamic_oxaloacetic_transaminase_level(screening3542,4).
-glutamic_oxaloacetic_transaminase_level(screening3543,4).
-glutamic_oxaloacetic_transaminase_level(screening3544,3).
-glutamic_oxaloacetic_transaminase_level(screening3545,4).
-glutamic_oxaloacetic_transaminase_level(screening3546,4).
-glutamic_oxaloacetic_transaminase_level(screening3547,4).
-glutamic_oxaloacetic_transaminase_level(screening3548,4).
-glutamic_oxaloacetic_transaminase_level(screening3549,4).
-glutamic_oxaloacetic_transaminase_level(screening355,2).
-glutamic_oxaloacetic_transaminase_level(screening3550,4).
-glutamic_oxaloacetic_transaminase_level(screening3551,4).
-glutamic_oxaloacetic_transaminase_level(screening3552,3).
-glutamic_oxaloacetic_transaminase_level(screening3553,3).
-glutamic_oxaloacetic_transaminase_level(screening3554,4).
-glutamic_oxaloacetic_transaminase_level(screening3555,4).
-glutamic_oxaloacetic_transaminase_level(screening3556,4).
-glutamic_oxaloacetic_transaminase_level(screening3557,4).
-glutamic_oxaloacetic_transaminase_level(screening3558,4).
-glutamic_oxaloacetic_transaminase_level(screening3559,4).
-glutamic_oxaloacetic_transaminase_level(screening356,2).
-glutamic_oxaloacetic_transaminase_level(screening3560,4).
-glutamic_oxaloacetic_transaminase_level(screening3561,4).
-glutamic_oxaloacetic_transaminase_level(screening3562,4).
-glutamic_oxaloacetic_transaminase_level(screening3563,4).
-glutamic_oxaloacetic_transaminase_level(screening3564,4).
-glutamic_oxaloacetic_transaminase_level(screening3565,4).
-glutamic_oxaloacetic_transaminase_level(screening3566,3).
-glutamic_oxaloacetic_transaminase_level(screening3567,4).
-glutamic_oxaloacetic_transaminase_level(screening3568,3).
-glutamic_oxaloacetic_transaminase_level(screening3569,3).
-glutamic_oxaloacetic_transaminase_level(screening357,2).
-glutamic_oxaloacetic_transaminase_level(screening3570,2).
-glutamic_oxaloacetic_transaminase_level(screening3571,3).
-glutamic_oxaloacetic_transaminase_level(screening3572,3).
-glutamic_oxaloacetic_transaminase_level(screening3573,2).
-glutamic_oxaloacetic_transaminase_level(screening3574,3).
-glutamic_oxaloacetic_transaminase_level(screening3575,2).
-glutamic_oxaloacetic_transaminase_level(screening3576,4).
-glutamic_oxaloacetic_transaminase_level(screening3577,4).
-glutamic_oxaloacetic_transaminase_level(screening3578,3).
-glutamic_oxaloacetic_transaminase_level(screening3579,2).
-glutamic_oxaloacetic_transaminase_level(screening358,2).
-glutamic_oxaloacetic_transaminase_level(screening3580,2).
-glutamic_oxaloacetic_transaminase_level(screening3581,2).
-glutamic_oxaloacetic_transaminase_level(screening3582,2).
-glutamic_oxaloacetic_transaminase_level(screening3583,2).
-glutamic_oxaloacetic_transaminase_level(screening3584,2).
-glutamic_oxaloacetic_transaminase_level(screening3585,2).
-glutamic_oxaloacetic_transaminase_level(screening3586,2).
-glutamic_oxaloacetic_transaminase_level(screening3587,3).
-glutamic_oxaloacetic_transaminase_level(screening3588,3).
-glutamic_oxaloacetic_transaminase_level(screening3589,4).
-glutamic_oxaloacetic_transaminase_level(screening359,2).
-glutamic_oxaloacetic_transaminase_level(screening3590,4).
-glutamic_oxaloacetic_transaminase_level(screening3591,4).
-glutamic_oxaloacetic_transaminase_level(screening3592,4).
-glutamic_oxaloacetic_transaminase_level(screening3593,4).
-glutamic_oxaloacetic_transaminase_level(screening3594,4).
-glutamic_oxaloacetic_transaminase_level(screening3595,3).
-glutamic_oxaloacetic_transaminase_level(screening3596,4).
-glutamic_oxaloacetic_transaminase_level(screening3597,3).
-glutamic_oxaloacetic_transaminase_level(screening3598,4).
-glutamic_oxaloacetic_transaminase_level(screening3599,3).
-glutamic_oxaloacetic_transaminase_level(screening360,2).
-glutamic_oxaloacetic_transaminase_level(screening3600,4).
-glutamic_oxaloacetic_transaminase_level(screening3601,4).
-glutamic_oxaloacetic_transaminase_level(screening3602,3).
-glutamic_oxaloacetic_transaminase_level(screening3603,4).
-glutamic_oxaloacetic_transaminase_level(screening3604,4).
-glutamic_oxaloacetic_transaminase_level(screening3605,3).
-glutamic_oxaloacetic_transaminase_level(screening3606,3).
-glutamic_oxaloacetic_transaminase_level(screening3607,3).
-glutamic_oxaloacetic_transaminase_level(screening3608,3).
-glutamic_oxaloacetic_transaminase_level(screening3609,3).
-glutamic_oxaloacetic_transaminase_level(screening361,2).
-glutamic_oxaloacetic_transaminase_level(screening3610,2).
-glutamic_oxaloacetic_transaminase_level(screening3611,4).
-glutamic_oxaloacetic_transaminase_level(screening3612,4).
-glutamic_oxaloacetic_transaminase_level(screening3613,4).
-glutamic_oxaloacetic_transaminase_level(screening3614,3).
-glutamic_oxaloacetic_transaminase_level(screening3615,4).
-glutamic_oxaloacetic_transaminase_level(screening3616,3).
-glutamic_oxaloacetic_transaminase_level(screening3617,3).
-glutamic_oxaloacetic_transaminase_level(screening3618,1).
-glutamic_oxaloacetic_transaminase_level(screening3619,2).
-glutamic_oxaloacetic_transaminase_level(screening362,2).
-glutamic_oxaloacetic_transaminase_level(screening3620,2).
-glutamic_oxaloacetic_transaminase_level(screening3621,1).
-glutamic_oxaloacetic_transaminase_level(screening3622,4).
-glutamic_oxaloacetic_transaminase_level(screening3623,4).
-glutamic_oxaloacetic_transaminase_level(screening3624,4).
-glutamic_oxaloacetic_transaminase_level(screening3625,4).
-glutamic_oxaloacetic_transaminase_level(screening3626,4).
-glutamic_oxaloacetic_transaminase_level(screening3627,4).
-glutamic_oxaloacetic_transaminase_level(screening3628,3).
-glutamic_oxaloacetic_transaminase_level(screening3629,2).
-glutamic_oxaloacetic_transaminase_level(screening363,3).
-glutamic_oxaloacetic_transaminase_level(screening3630,2).
-glutamic_oxaloacetic_transaminase_level(screening3631,2).
-glutamic_oxaloacetic_transaminase_level(screening3632,2).
-glutamic_oxaloacetic_transaminase_level(screening3633,2).
-glutamic_oxaloacetic_transaminase_level(screening3634,4).
-glutamic_oxaloacetic_transaminase_level(screening3635,3).
-glutamic_oxaloacetic_transaminase_level(screening3636,2).
-glutamic_oxaloacetic_transaminase_level(screening3637,2).
-glutamic_oxaloacetic_transaminase_level(screening3638,4).
-glutamic_oxaloacetic_transaminase_level(screening3639,4).
-glutamic_oxaloacetic_transaminase_level(screening364,3).
-glutamic_oxaloacetic_transaminase_level(screening3640,3).
-glutamic_oxaloacetic_transaminase_level(screening3641,2).
-glutamic_oxaloacetic_transaminase_level(screening3642,2).
-glutamic_oxaloacetic_transaminase_level(screening3643,4).
-glutamic_oxaloacetic_transaminase_level(screening3644,4).
-glutamic_oxaloacetic_transaminase_level(screening3645,4).
-glutamic_oxaloacetic_transaminase_level(screening3646,4).
-glutamic_oxaloacetic_transaminase_level(screening3647,4).
-glutamic_oxaloacetic_transaminase_level(screening3648,4).
-glutamic_oxaloacetic_transaminase_level(screening3649,4).
-glutamic_oxaloacetic_transaminase_level(screening365,2).
-glutamic_oxaloacetic_transaminase_level(screening3650,4).
-glutamic_oxaloacetic_transaminase_level(screening3651,3).
-glutamic_oxaloacetic_transaminase_level(screening3652,4).
-glutamic_oxaloacetic_transaminase_level(screening3653,3).
-glutamic_oxaloacetic_transaminase_level(screening3654,2).
-glutamic_oxaloacetic_transaminase_level(screening3655,2).
-glutamic_oxaloacetic_transaminase_level(screening3656,3).
-glutamic_oxaloacetic_transaminase_level(screening3657,4).
-glutamic_oxaloacetic_transaminase_level(screening3658,3).
-glutamic_oxaloacetic_transaminase_level(screening3659,3).
-glutamic_oxaloacetic_transaminase_level(screening366,2).
-glutamic_oxaloacetic_transaminase_level(screening3660,3).
-glutamic_oxaloacetic_transaminase_level(screening3661,3).
-glutamic_oxaloacetic_transaminase_level(screening3662,4).
-glutamic_oxaloacetic_transaminase_level(screening3663,4).
-glutamic_oxaloacetic_transaminase_level(screening3664,5).
-glutamic_oxaloacetic_transaminase_level(screening3665,5).
-glutamic_oxaloacetic_transaminase_level(screening3666,4).
-glutamic_oxaloacetic_transaminase_level(screening3667,4).
-glutamic_oxaloacetic_transaminase_level(screening3668,4).
-glutamic_oxaloacetic_transaminase_level(screening3669,3).
-glutamic_oxaloacetic_transaminase_level(screening367,2).
-glutamic_oxaloacetic_transaminase_level(screening3670,5).
-glutamic_oxaloacetic_transaminase_level(screening3671,2).
-glutamic_oxaloacetic_transaminase_level(screening3672,2).
-glutamic_oxaloacetic_transaminase_level(screening3673,2).
-glutamic_oxaloacetic_transaminase_level(screening3674,2).
-glutamic_oxaloacetic_transaminase_level(screening3675,2).
-glutamic_oxaloacetic_transaminase_level(screening3676,2).
-glutamic_oxaloacetic_transaminase_level(screening3677,2).
-glutamic_oxaloacetic_transaminase_level(screening3678,2).
-glutamic_oxaloacetic_transaminase_level(screening3679,2).
-glutamic_oxaloacetic_transaminase_level(screening368,2).
-glutamic_oxaloacetic_transaminase_level(screening3680,3).
-glutamic_oxaloacetic_transaminase_level(screening3681,3).
-glutamic_oxaloacetic_transaminase_level(screening3682,2).
-glutamic_oxaloacetic_transaminase_level(screening3683,2).
-glutamic_oxaloacetic_transaminase_level(screening3684,2).
-glutamic_oxaloacetic_transaminase_level(screening3685,2).
-glutamic_oxaloacetic_transaminase_level(screening3686,2).
-glutamic_oxaloacetic_transaminase_level(screening3687,2).
-glutamic_oxaloacetic_transaminase_level(screening3688,2).
-glutamic_oxaloacetic_transaminase_level(screening3689,2).
-glutamic_oxaloacetic_transaminase_level(screening369,3).
-glutamic_oxaloacetic_transaminase_level(screening3690,2).
-glutamic_oxaloacetic_transaminase_level(screening3691,3).
-glutamic_oxaloacetic_transaminase_level(screening3692,3).
-glutamic_oxaloacetic_transaminase_level(screening3693,3).
-glutamic_oxaloacetic_transaminase_level(screening3694,2).
-glutamic_oxaloacetic_transaminase_level(screening3695,4).
-glutamic_oxaloacetic_transaminase_level(screening3696,4).
-glutamic_oxaloacetic_transaminase_level(screening3697,4).
-glutamic_oxaloacetic_transaminase_level(screening3698,4).
-glutamic_oxaloacetic_transaminase_level(screening3699,4).
-glutamic_oxaloacetic_transaminase_level(screening370,1).
-glutamic_oxaloacetic_transaminase_level(screening3700,4).
-glutamic_oxaloacetic_transaminase_level(screening3701,3).
-glutamic_oxaloacetic_transaminase_level(screening3702,4).
-glutamic_oxaloacetic_transaminase_level(screening3703,3).
-glutamic_oxaloacetic_transaminase_level(screening3704,4).
-glutamic_oxaloacetic_transaminase_level(screening3705,3).
-glutamic_oxaloacetic_transaminase_level(screening3706,3).
-glutamic_oxaloacetic_transaminase_level(screening3707,5).
-glutamic_oxaloacetic_transaminase_level(screening3708,4).
-glutamic_oxaloacetic_transaminase_level(screening3709,4).
-glutamic_oxaloacetic_transaminase_level(screening371,1).
-glutamic_oxaloacetic_transaminase_level(screening3710,4).
-glutamic_oxaloacetic_transaminase_level(screening3711,4).
-glutamic_oxaloacetic_transaminase_level(screening3712,4).
-glutamic_oxaloacetic_transaminase_level(screening3713,4).
-glutamic_oxaloacetic_transaminase_level(screening3714,4).
-glutamic_oxaloacetic_transaminase_level(screening3715,2).
-glutamic_oxaloacetic_transaminase_level(screening3716,4).
-glutamic_oxaloacetic_transaminase_level(screening3717,4).
-glutamic_oxaloacetic_transaminase_level(screening3718,4).
-glutamic_oxaloacetic_transaminase_level(screening3719,3).
-glutamic_oxaloacetic_transaminase_level(screening372,3).
-glutamic_oxaloacetic_transaminase_level(screening3720,3).
-glutamic_oxaloacetic_transaminase_level(screening3721,3).
-glutamic_oxaloacetic_transaminase_level(screening3722,2).
-glutamic_oxaloacetic_transaminase_level(screening3723,2).
-glutamic_oxaloacetic_transaminase_level(screening3724,3).
-glutamic_oxaloacetic_transaminase_level(screening3725,2).
-glutamic_oxaloacetic_transaminase_level(screening3726,2).
-glutamic_oxaloacetic_transaminase_level(screening3727,2).
-glutamic_oxaloacetic_transaminase_level(screening3728,2).
-glutamic_oxaloacetic_transaminase_level(screening3729,2).
-glutamic_oxaloacetic_transaminase_level(screening373,1).
-glutamic_oxaloacetic_transaminase_level(screening3730,2).
-glutamic_oxaloacetic_transaminase_level(screening3731,2).
-glutamic_oxaloacetic_transaminase_level(screening3732,2).
-glutamic_oxaloacetic_transaminase_level(screening3733,2).
-glutamic_oxaloacetic_transaminase_level(screening3734,1).
-glutamic_oxaloacetic_transaminase_level(screening3735,2).
-glutamic_oxaloacetic_transaminase_level(screening3736,2).
-glutamic_oxaloacetic_transaminase_level(screening3737,2).
-glutamic_oxaloacetic_transaminase_level(screening3738,2).
-glutamic_oxaloacetic_transaminase_level(screening3739,2).
-glutamic_oxaloacetic_transaminase_level(screening374,1).
-glutamic_oxaloacetic_transaminase_level(screening3740,3).
-glutamic_oxaloacetic_transaminase_level(screening3741,2).
-glutamic_oxaloacetic_transaminase_level(screening3742,2).
-glutamic_oxaloacetic_transaminase_level(screening3743,3).
-glutamic_oxaloacetic_transaminase_level(screening3744,2).
-glutamic_oxaloacetic_transaminase_level(screening3745,2).
-glutamic_oxaloacetic_transaminase_level(screening3746,2).
-glutamic_oxaloacetic_transaminase_level(screening3747,2).
-glutamic_oxaloacetic_transaminase_level(screening3748,2).
-glutamic_oxaloacetic_transaminase_level(screening3749,2).
-glutamic_oxaloacetic_transaminase_level(screening375,4).
-glutamic_oxaloacetic_transaminase_level(screening3750,4).
-glutamic_oxaloacetic_transaminase_level(screening3751,4).
-glutamic_oxaloacetic_transaminase_level(screening3752,2).
-glutamic_oxaloacetic_transaminase_level(screening3753,4).
-glutamic_oxaloacetic_transaminase_level(screening3754,3).
-glutamic_oxaloacetic_transaminase_level(screening3755,3).
-glutamic_oxaloacetic_transaminase_level(screening3756,4).
-glutamic_oxaloacetic_transaminase_level(screening3757,4).
-glutamic_oxaloacetic_transaminase_level(screening3758,4).
-glutamic_oxaloacetic_transaminase_level(screening3759,3).
-glutamic_oxaloacetic_transaminase_level(screening376,3).
-glutamic_oxaloacetic_transaminase_level(screening3760,4).
-glutamic_oxaloacetic_transaminase_level(screening3761,4).
-glutamic_oxaloacetic_transaminase_level(screening3762,4).
-glutamic_oxaloacetic_transaminase_level(screening3763,4).
-glutamic_oxaloacetic_transaminase_level(screening3764,4).
-glutamic_oxaloacetic_transaminase_level(screening3765,4).
-glutamic_oxaloacetic_transaminase_level(screening3766,4).
-glutamic_oxaloacetic_transaminase_level(screening3767,4).
-glutamic_oxaloacetic_transaminase_level(screening3768,4).
-glutamic_oxaloacetic_transaminase_level(screening3769,3).
-glutamic_oxaloacetic_transaminase_level(screening377,2).
-glutamic_oxaloacetic_transaminase_level(screening3770,2).
-glutamic_oxaloacetic_transaminase_level(screening3771,1).
-glutamic_oxaloacetic_transaminase_level(screening3772,1).
-glutamic_oxaloacetic_transaminase_level(screening3773,3).
-glutamic_oxaloacetic_transaminase_level(screening3774,3).
-glutamic_oxaloacetic_transaminase_level(screening3775,3).
-glutamic_oxaloacetic_transaminase_level(screening3776,4).
-glutamic_oxaloacetic_transaminase_level(screening3777,4).
-glutamic_oxaloacetic_transaminase_level(screening3778,4).
-glutamic_oxaloacetic_transaminase_level(screening3779,4).
-glutamic_oxaloacetic_transaminase_level(screening378,2).
-glutamic_oxaloacetic_transaminase_level(screening3780,4).
-glutamic_oxaloacetic_transaminase_level(screening3781,3).
-glutamic_oxaloacetic_transaminase_level(screening3782,4).
-glutamic_oxaloacetic_transaminase_level(screening3783,4).
-glutamic_oxaloacetic_transaminase_level(screening3784,3).
-glutamic_oxaloacetic_transaminase_level(screening3785,3).
-glutamic_oxaloacetic_transaminase_level(screening3786,3).
-glutamic_oxaloacetic_transaminase_level(screening3787,3).
-glutamic_oxaloacetic_transaminase_level(screening3788,4).
-glutamic_oxaloacetic_transaminase_level(screening3789,2).
-glutamic_oxaloacetic_transaminase_level(screening379,2).
-glutamic_oxaloacetic_transaminase_level(screening3790,2).
-glutamic_oxaloacetic_transaminase_level(screening3791,2).
-glutamic_oxaloacetic_transaminase_level(screening3792,2).
-glutamic_oxaloacetic_transaminase_level(screening3793,2).
-glutamic_oxaloacetic_transaminase_level(screening3794,2).
-glutamic_oxaloacetic_transaminase_level(screening3795,2).
-glutamic_oxaloacetic_transaminase_level(screening3796,2).
-glutamic_oxaloacetic_transaminase_level(screening3797,2).
-glutamic_oxaloacetic_transaminase_level(screening3798,2).
-glutamic_oxaloacetic_transaminase_level(screening3799,3).
-glutamic_oxaloacetic_transaminase_level(screening380,2).
-glutamic_oxaloacetic_transaminase_level(screening3800,2).
-glutamic_oxaloacetic_transaminase_level(screening3801,4).
-glutamic_oxaloacetic_transaminase_level(screening3802,4).
-glutamic_oxaloacetic_transaminase_level(screening3803,4).
-glutamic_oxaloacetic_transaminase_level(screening3804,4).
-glutamic_oxaloacetic_transaminase_level(screening3805,4).
-glutamic_oxaloacetic_transaminase_level(screening3806,3).
-glutamic_oxaloacetic_transaminase_level(screening3807,2).
-glutamic_oxaloacetic_transaminase_level(screening3808,2).
-glutamic_oxaloacetic_transaminase_level(screening3809,2).
-glutamic_oxaloacetic_transaminase_level(screening381,4).
-glutamic_oxaloacetic_transaminase_level(screening3810,2).
-glutamic_oxaloacetic_transaminase_level(screening3811,2).
-glutamic_oxaloacetic_transaminase_level(screening3812,2).
-glutamic_oxaloacetic_transaminase_level(screening3813,2).
-glutamic_oxaloacetic_transaminase_level(screening3814,4).
-glutamic_oxaloacetic_transaminase_level(screening3815,3).
-glutamic_oxaloacetic_transaminase_level(screening3816,3).
-glutamic_oxaloacetic_transaminase_level(screening3817,2).
-glutamic_oxaloacetic_transaminase_level(screening3818,2).
-glutamic_oxaloacetic_transaminase_level(screening3819,2).
-glutamic_oxaloacetic_transaminase_level(screening382,2).
-glutamic_oxaloacetic_transaminase_level(screening3820,2).
-glutamic_oxaloacetic_transaminase_level(screening3821,2).
-glutamic_oxaloacetic_transaminase_level(screening3822,2).
-glutamic_oxaloacetic_transaminase_level(screening3823,2).
-glutamic_oxaloacetic_transaminase_level(screening3824,4).
-glutamic_oxaloacetic_transaminase_level(screening3825,2).
-glutamic_oxaloacetic_transaminase_level(screening3826,2).
-glutamic_oxaloacetic_transaminase_level(screening3827,2).
-glutamic_oxaloacetic_transaminase_level(screening3828,2).
-glutamic_oxaloacetic_transaminase_level(screening3829,4).
-glutamic_oxaloacetic_transaminase_level(screening383,1).
-glutamic_oxaloacetic_transaminase_level(screening3830,4).
-glutamic_oxaloacetic_transaminase_level(screening3831,4).
-glutamic_oxaloacetic_transaminase_level(screening3832,4).
-glutamic_oxaloacetic_transaminase_level(screening3833,4).
-glutamic_oxaloacetic_transaminase_level(screening3834,4).
-glutamic_oxaloacetic_transaminase_level(screening3835,4).
-glutamic_oxaloacetic_transaminase_level(screening3836,4).
-glutamic_oxaloacetic_transaminase_level(screening3837,4).
-glutamic_oxaloacetic_transaminase_level(screening3838,4).
-glutamic_oxaloacetic_transaminase_level(screening3839,4).
-glutamic_oxaloacetic_transaminase_level(screening384,2).
-glutamic_oxaloacetic_transaminase_level(screening3840,4).
-glutamic_oxaloacetic_transaminase_level(screening3841,4).
-glutamic_oxaloacetic_transaminase_level(screening3842,4).
-glutamic_oxaloacetic_transaminase_level(screening3843,4).
-glutamic_oxaloacetic_transaminase_level(screening3844,3).
-glutamic_oxaloacetic_transaminase_level(screening3845,3).
-glutamic_oxaloacetic_transaminase_level(screening3846,3).
-glutamic_oxaloacetic_transaminase_level(screening3847,3).
-glutamic_oxaloacetic_transaminase_level(screening3848,4).
-glutamic_oxaloacetic_transaminase_level(screening3849,4).
-glutamic_oxaloacetic_transaminase_level(screening385,1).
-glutamic_oxaloacetic_transaminase_level(screening3850,4).
-glutamic_oxaloacetic_transaminase_level(screening3851,4).
-glutamic_oxaloacetic_transaminase_level(screening3852,4).
-glutamic_oxaloacetic_transaminase_level(screening3853,4).
-glutamic_oxaloacetic_transaminase_level(screening3854,4).
-glutamic_oxaloacetic_transaminase_level(screening3855,4).
-glutamic_oxaloacetic_transaminase_level(screening3856,3).
-glutamic_oxaloacetic_transaminase_level(screening3857,3).
-glutamic_oxaloacetic_transaminase_level(screening3858,3).
-glutamic_oxaloacetic_transaminase_level(screening3859,3).
-glutamic_oxaloacetic_transaminase_level(screening386,2).
-glutamic_oxaloacetic_transaminase_level(screening3860,4).
-glutamic_oxaloacetic_transaminase_level(screening3861,4).
-glutamic_oxaloacetic_transaminase_level(screening3862,4).
-glutamic_oxaloacetic_transaminase_level(screening3863,4).
-glutamic_oxaloacetic_transaminase_level(screening3864,4).
-glutamic_oxaloacetic_transaminase_level(screening3865,4).
-glutamic_oxaloacetic_transaminase_level(screening3866,4).
-glutamic_oxaloacetic_transaminase_level(screening3867,4).
-glutamic_oxaloacetic_transaminase_level(screening3868,3).
-glutamic_oxaloacetic_transaminase_level(screening3869,3).
-glutamic_oxaloacetic_transaminase_level(screening387,1).
-glutamic_oxaloacetic_transaminase_level(screening3870,3).
-glutamic_oxaloacetic_transaminase_level(screening3871,3).
-glutamic_oxaloacetic_transaminase_level(screening3872,2).
-glutamic_oxaloacetic_transaminase_level(screening3873,2).
-glutamic_oxaloacetic_transaminase_level(screening3874,2).
-glutamic_oxaloacetic_transaminase_level(screening3875,2).
-glutamic_oxaloacetic_transaminase_level(screening3876,4).
-glutamic_oxaloacetic_transaminase_level(screening3877,4).
-glutamic_oxaloacetic_transaminase_level(screening3878,4).
-glutamic_oxaloacetic_transaminase_level(screening3879,3).
-glutamic_oxaloacetic_transaminase_level(screening388,2).
-glutamic_oxaloacetic_transaminase_level(screening3880,2).
-glutamic_oxaloacetic_transaminase_level(screening3881,3).
-glutamic_oxaloacetic_transaminase_level(screening3882,3).
-glutamic_oxaloacetic_transaminase_level(screening3883,2).
-glutamic_oxaloacetic_transaminase_level(screening3884,2).
-glutamic_oxaloacetic_transaminase_level(screening3885,2).
-glutamic_oxaloacetic_transaminase_level(screening3886,2).
-glutamic_oxaloacetic_transaminase_level(screening3887,2).
-glutamic_oxaloacetic_transaminase_level(screening3888,2).
-glutamic_oxaloacetic_transaminase_level(screening3889,2).
-glutamic_oxaloacetic_transaminase_level(screening389,2).
-glutamic_oxaloacetic_transaminase_level(screening3890,3).
-glutamic_oxaloacetic_transaminase_level(screening3891,3).
-glutamic_oxaloacetic_transaminase_level(screening3892,2).
-glutamic_oxaloacetic_transaminase_level(screening3893,2).
-glutamic_oxaloacetic_transaminase_level(screening3894,2).
-glutamic_oxaloacetic_transaminase_level(screening3895,2).
-glutamic_oxaloacetic_transaminase_level(screening3896,2).
-glutamic_oxaloacetic_transaminase_level(screening3897,2).
-glutamic_oxaloacetic_transaminase_level(screening3898,2).
-glutamic_oxaloacetic_transaminase_level(screening3899,3).
-glutamic_oxaloacetic_transaminase_level(screening390,2).
-glutamic_oxaloacetic_transaminase_level(screening3900,3).
-glutamic_oxaloacetic_transaminase_level(screening3901,2).
-glutamic_oxaloacetic_transaminase_level(screening3902,2).
-glutamic_oxaloacetic_transaminase_level(screening3903,2).
-glutamic_oxaloacetic_transaminase_level(screening3904,2).
-glutamic_oxaloacetic_transaminase_level(screening3905,2).
-glutamic_oxaloacetic_transaminase_level(screening3906,2).
-glutamic_oxaloacetic_transaminase_level(screening3907,2).
-glutamic_oxaloacetic_transaminase_level(screening3908,4).
-glutamic_oxaloacetic_transaminase_level(screening3909,4).
-glutamic_oxaloacetic_transaminase_level(screening391,1).
-glutamic_oxaloacetic_transaminase_level(screening3910,4).
-glutamic_oxaloacetic_transaminase_level(screening3911,4).
-glutamic_oxaloacetic_transaminase_level(screening3912,4).
-glutamic_oxaloacetic_transaminase_level(screening3913,4).
-glutamic_oxaloacetic_transaminase_level(screening3914,4).
-glutamic_oxaloacetic_transaminase_level(screening3915,3).
-glutamic_oxaloacetic_transaminase_level(screening3916,3).
-glutamic_oxaloacetic_transaminase_level(screening3917,3).
-glutamic_oxaloacetic_transaminase_level(screening3918,2).
-glutamic_oxaloacetic_transaminase_level(screening3919,3).
-glutamic_oxaloacetic_transaminase_level(screening392,1).
-glutamic_oxaloacetic_transaminase_level(screening3920,3).
-glutamic_oxaloacetic_transaminase_level(screening3921,4).
-glutamic_oxaloacetic_transaminase_level(screening3922,4).
-glutamic_oxaloacetic_transaminase_level(screening3923,4).
-glutamic_oxaloacetic_transaminase_level(screening3924,4).
-glutamic_oxaloacetic_transaminase_level(screening3925,3).
-glutamic_oxaloacetic_transaminase_level(screening3926,3).
-glutamic_oxaloacetic_transaminase_level(screening3927,3).
-glutamic_oxaloacetic_transaminase_level(screening3928,2).
-glutamic_oxaloacetic_transaminase_level(screening3929,3).
-glutamic_oxaloacetic_transaminase_level(screening393,3).
-glutamic_oxaloacetic_transaminase_level(screening3930,3).
-glutamic_oxaloacetic_transaminase_level(screening3931,4).
-glutamic_oxaloacetic_transaminase_level(screening3932,3).
-glutamic_oxaloacetic_transaminase_level(screening3933,2).
-glutamic_oxaloacetic_transaminase_level(screening3934,3).
-glutamic_oxaloacetic_transaminase_level(screening3935,2).
-glutamic_oxaloacetic_transaminase_level(screening3936,3).
-glutamic_oxaloacetic_transaminase_level(screening3937,2).
-glutamic_oxaloacetic_transaminase_level(screening3938,3).
-glutamic_oxaloacetic_transaminase_level(screening3939,3).
-glutamic_oxaloacetic_transaminase_level(screening394,2).
-glutamic_oxaloacetic_transaminase_level(screening3940,3).
-glutamic_oxaloacetic_transaminase_level(screening3941,3).
-glutamic_oxaloacetic_transaminase_level(screening3942,4).
-glutamic_oxaloacetic_transaminase_level(screening3943,3).
-glutamic_oxaloacetic_transaminase_level(screening3944,3).
-glutamic_oxaloacetic_transaminase_level(screening3945,3).
-glutamic_oxaloacetic_transaminase_level(screening3946,3).
-glutamic_oxaloacetic_transaminase_level(screening3947,3).
-glutamic_oxaloacetic_transaminase_level(screening3948,3).
-glutamic_oxaloacetic_transaminase_level(screening3949,4).
-glutamic_oxaloacetic_transaminase_level(screening395,2).
-glutamic_oxaloacetic_transaminase_level(screening3950,3).
-glutamic_oxaloacetic_transaminase_level(screening3951,2).
-glutamic_oxaloacetic_transaminase_level(screening3952,2).
-glutamic_oxaloacetic_transaminase_level(screening3953,2).
-glutamic_oxaloacetic_transaminase_level(screening3954,3).
-glutamic_oxaloacetic_transaminase_level(screening3955,2).
-glutamic_oxaloacetic_transaminase_level(screening3956,3).
-glutamic_oxaloacetic_transaminase_level(screening3957,3).
-glutamic_oxaloacetic_transaminase_level(screening3958,2).
-glutamic_oxaloacetic_transaminase_level(screening3959,3).
-glutamic_oxaloacetic_transaminase_level(screening396,2).
-glutamic_oxaloacetic_transaminase_level(screening3960,3).
-glutamic_oxaloacetic_transaminase_level(screening3961,2).
-glutamic_oxaloacetic_transaminase_level(screening3962,4).
-glutamic_oxaloacetic_transaminase_level(screening3963,2).
-glutamic_oxaloacetic_transaminase_level(screening3964,2).
-glutamic_oxaloacetic_transaminase_level(screening3965,1).
-glutamic_oxaloacetic_transaminase_level(screening3966,1).
-glutamic_oxaloacetic_transaminase_level(screening3967,2).
-glutamic_oxaloacetic_transaminase_level(screening3968,2).
-glutamic_oxaloacetic_transaminase_level(screening3969,2).
-glutamic_oxaloacetic_transaminase_level(screening397,2).
-glutamic_oxaloacetic_transaminase_level(screening3970,4).
-glutamic_oxaloacetic_transaminase_level(screening3971,2).
-glutamic_oxaloacetic_transaminase_level(screening3972,2).
-glutamic_oxaloacetic_transaminase_level(screening3973,1).
-glutamic_oxaloacetic_transaminase_level(screening3974,1).
-glutamic_oxaloacetic_transaminase_level(screening3975,2).
-glutamic_oxaloacetic_transaminase_level(screening3976,2).
-glutamic_oxaloacetic_transaminase_level(screening3977,2).
-glutamic_oxaloacetic_transaminase_level(screening3978,3).
-glutamic_oxaloacetic_transaminase_level(screening3979,3).
-glutamic_oxaloacetic_transaminase_level(screening398,2).
-glutamic_oxaloacetic_transaminase_level(screening3980,3).
-glutamic_oxaloacetic_transaminase_level(screening3981,3).
-glutamic_oxaloacetic_transaminase_level(screening3982,4).
-glutamic_oxaloacetic_transaminase_level(screening3983,3).
-glutamic_oxaloacetic_transaminase_level(screening3984,3).
-glutamic_oxaloacetic_transaminase_level(screening3985,3).
-glutamic_oxaloacetic_transaminase_level(screening3986,4).
-glutamic_oxaloacetic_transaminase_level(screening3987,4).
-glutamic_oxaloacetic_transaminase_level(screening3988,4).
-glutamic_oxaloacetic_transaminase_level(screening3989,4).
-glutamic_oxaloacetic_transaminase_level(screening399,2).
-glutamic_oxaloacetic_transaminase_level(screening3990,4).
-glutamic_oxaloacetic_transaminase_level(screening3991,4).
-glutamic_oxaloacetic_transaminase_level(screening3992,4).
-glutamic_oxaloacetic_transaminase_level(screening3993,4).
-glutamic_oxaloacetic_transaminase_level(screening3994,4).
-glutamic_oxaloacetic_transaminase_level(screening3995,4).
-glutamic_oxaloacetic_transaminase_level(screening3996,4).
-glutamic_oxaloacetic_transaminase_level(screening3997,4).
-glutamic_oxaloacetic_transaminase_level(screening3998,4).
-glutamic_oxaloacetic_transaminase_level(screening3999,3).
-glutamic_oxaloacetic_transaminase_level(screening400,3).
-glutamic_oxaloacetic_transaminase_level(screening4000,4).
-glutamic_oxaloacetic_transaminase_level(screening4001,3).
-glutamic_oxaloacetic_transaminase_level(screening4002,2).
-glutamic_oxaloacetic_transaminase_level(screening4003,2).
-glutamic_oxaloacetic_transaminase_level(screening4004,2).
-glutamic_oxaloacetic_transaminase_level(screening4005,2).
-glutamic_oxaloacetic_transaminase_level(screening4006,2).
-glutamic_oxaloacetic_transaminase_level(screening4007,2).
-glutamic_oxaloacetic_transaminase_level(screening4008,2).
-glutamic_oxaloacetic_transaminase_level(screening4009,2).
-glutamic_oxaloacetic_transaminase_level(screening401,2).
-glutamic_oxaloacetic_transaminase_level(screening4010,2).
-glutamic_oxaloacetic_transaminase_level(screening4011,2).
-glutamic_oxaloacetic_transaminase_level(screening4012,3).
-glutamic_oxaloacetic_transaminase_level(screening4013,4).
-glutamic_oxaloacetic_transaminase_level(screening4014,3).
-glutamic_oxaloacetic_transaminase_level(screening4015,3).
-glutamic_oxaloacetic_transaminase_level(screening4016,2).
-glutamic_oxaloacetic_transaminase_level(screening4017,2).
-glutamic_oxaloacetic_transaminase_level(screening4018,2).
-glutamic_oxaloacetic_transaminase_level(screening4019,2).
-glutamic_oxaloacetic_transaminase_level(screening402,1).
-glutamic_oxaloacetic_transaminase_level(screening4020,4).
-glutamic_oxaloacetic_transaminase_level(screening4021,3).
-glutamic_oxaloacetic_transaminase_level(screening4022,2).
-glutamic_oxaloacetic_transaminase_level(screening4023,2).
-glutamic_oxaloacetic_transaminase_level(screening4024,3).
-glutamic_oxaloacetic_transaminase_level(screening4025,4).
-glutamic_oxaloacetic_transaminase_level(screening4026,3).
-glutamic_oxaloacetic_transaminase_level(screening4027,3).
-glutamic_oxaloacetic_transaminase_level(screening4028,2).
-glutamic_oxaloacetic_transaminase_level(screening4029,2).
-glutamic_oxaloacetic_transaminase_level(screening403,1).
-glutamic_oxaloacetic_transaminase_level(screening4030,2).
-glutamic_oxaloacetic_transaminase_level(screening4031,2).
-glutamic_oxaloacetic_transaminase_level(screening4032,4).
-glutamic_oxaloacetic_transaminase_level(screening4033,3).
-glutamic_oxaloacetic_transaminase_level(screening4034,2).
-glutamic_oxaloacetic_transaminase_level(screening4035,4).
-glutamic_oxaloacetic_transaminase_level(screening4036,3).
-glutamic_oxaloacetic_transaminase_level(screening4037,3).
-glutamic_oxaloacetic_transaminase_level(screening4038,4).
-glutamic_oxaloacetic_transaminase_level(screening4039,4).
-glutamic_oxaloacetic_transaminase_level(screening404,1).
-glutamic_oxaloacetic_transaminase_level(screening4040,3).
-glutamic_oxaloacetic_transaminase_level(screening4041,3).
-glutamic_oxaloacetic_transaminase_level(screening4042,3).
-glutamic_oxaloacetic_transaminase_level(screening4043,4).
-glutamic_oxaloacetic_transaminase_level(screening4044,3).
-glutamic_oxaloacetic_transaminase_level(screening4045,3).
-glutamic_oxaloacetic_transaminase_level(screening4046,4).
-glutamic_oxaloacetic_transaminase_level(screening4047,3).
-glutamic_oxaloacetic_transaminase_level(screening4048,2).
-glutamic_oxaloacetic_transaminase_level(screening4049,2).
-glutamic_oxaloacetic_transaminase_level(screening405,1).
-glutamic_oxaloacetic_transaminase_level(screening4050,2).
-glutamic_oxaloacetic_transaminase_level(screening4051,2).
-glutamic_oxaloacetic_transaminase_level(screening4052,2).
-glutamic_oxaloacetic_transaminase_level(screening4053,2).
-glutamic_oxaloacetic_transaminase_level(screening4054,2).
-glutamic_oxaloacetic_transaminase_level(screening4055,3).
-glutamic_oxaloacetic_transaminase_level(screening4056,2).
-glutamic_oxaloacetic_transaminase_level(screening4057,2).
-glutamic_oxaloacetic_transaminase_level(screening4058,2).
-glutamic_oxaloacetic_transaminase_level(screening4059,2).
-glutamic_oxaloacetic_transaminase_level(screening406,2).
-glutamic_oxaloacetic_transaminase_level(screening4060,2).
-glutamic_oxaloacetic_transaminase_level(screening4061,2).
-glutamic_oxaloacetic_transaminase_level(screening4062,4).
-glutamic_oxaloacetic_transaminase_level(screening4063,4).
-glutamic_oxaloacetic_transaminase_level(screening4064,4).
-glutamic_oxaloacetic_transaminase_level(screening4065,2).
-glutamic_oxaloacetic_transaminase_level(screening4066,3).
-glutamic_oxaloacetic_transaminase_level(screening4067,3).
-glutamic_oxaloacetic_transaminase_level(screening4068,3).
-glutamic_oxaloacetic_transaminase_level(screening4069,4).
-glutamic_oxaloacetic_transaminase_level(screening407,4).
-glutamic_oxaloacetic_transaminase_level(screening4070,3).
-glutamic_oxaloacetic_transaminase_level(screening4071,4).
-glutamic_oxaloacetic_transaminase_level(screening4072,4).
-glutamic_oxaloacetic_transaminase_level(screening4073,4).
-glutamic_oxaloacetic_transaminase_level(screening4074,4).
-glutamic_oxaloacetic_transaminase_level(screening4075,4).
-glutamic_oxaloacetic_transaminase_level(screening4076,4).
-glutamic_oxaloacetic_transaminase_level(screening4077,3).
-glutamic_oxaloacetic_transaminase_level(screening4078,3).
-glutamic_oxaloacetic_transaminase_level(screening4079,2).
-glutamic_oxaloacetic_transaminase_level(screening408,4).
-glutamic_oxaloacetic_transaminase_level(screening4080,3).
-glutamic_oxaloacetic_transaminase_level(screening4081,4).
-glutamic_oxaloacetic_transaminase_level(screening4082,4).
-glutamic_oxaloacetic_transaminase_level(screening4083,4).
-glutamic_oxaloacetic_transaminase_level(screening4084,4).
-glutamic_oxaloacetic_transaminase_level(screening4085,4).
-glutamic_oxaloacetic_transaminase_level(screening4086,4).
-glutamic_oxaloacetic_transaminase_level(screening4087,4).
-glutamic_oxaloacetic_transaminase_level(screening4088,4).
-glutamic_oxaloacetic_transaminase_level(screening4089,3).
-glutamic_oxaloacetic_transaminase_level(screening409,4).
-glutamic_oxaloacetic_transaminase_level(screening4090,2).
-glutamic_oxaloacetic_transaminase_level(screening4091,2).
-glutamic_oxaloacetic_transaminase_level(screening4092,1).
-glutamic_oxaloacetic_transaminase_level(screening4093,1).
-glutamic_oxaloacetic_transaminase_level(screening4094,3).
-glutamic_oxaloacetic_transaminase_level(screening4095,4).
-glutamic_oxaloacetic_transaminase_level(screening4096,4).
-glutamic_oxaloacetic_transaminase_level(screening4097,4).
-glutamic_oxaloacetic_transaminase_level(screening4098,4).
-glutamic_oxaloacetic_transaminase_level(screening4099,3).
-glutamic_oxaloacetic_transaminase_level(screening410,4).
-glutamic_oxaloacetic_transaminase_level(screening4100,4).
-glutamic_oxaloacetic_transaminase_level(screening4101,4).
-glutamic_oxaloacetic_transaminase_level(screening4102,4).
-glutamic_oxaloacetic_transaminase_level(screening4103,4).
-glutamic_oxaloacetic_transaminase_level(screening4104,4).
-glutamic_oxaloacetic_transaminase_level(screening4105,4).
-glutamic_oxaloacetic_transaminase_level(screening4106,4).
-glutamic_oxaloacetic_transaminase_level(screening4107,4).
-glutamic_oxaloacetic_transaminase_level(screening4108,4).
-glutamic_oxaloacetic_transaminase_level(screening4109,3).
-glutamic_oxaloacetic_transaminase_level(screening411,3).
-glutamic_oxaloacetic_transaminase_level(screening4110,3).
-glutamic_oxaloacetic_transaminase_level(screening4111,4).
-glutamic_oxaloacetic_transaminase_level(screening4112,4).
-glutamic_oxaloacetic_transaminase_level(screening4113,4).
-glutamic_oxaloacetic_transaminase_level(screening4114,4).
-glutamic_oxaloacetic_transaminase_level(screening4115,4).
-glutamic_oxaloacetic_transaminase_level(screening4116,3).
-glutamic_oxaloacetic_transaminase_level(screening4117,3).
-glutamic_oxaloacetic_transaminase_level(screening4118,3).
-glutamic_oxaloacetic_transaminase_level(screening4119,4).
-glutamic_oxaloacetic_transaminase_level(screening412,3).
-glutamic_oxaloacetic_transaminase_level(screening4120,4).
-glutamic_oxaloacetic_transaminase_level(screening4121,4).
-glutamic_oxaloacetic_transaminase_level(screening4122,4).
-glutamic_oxaloacetic_transaminase_level(screening4123,4).
-glutamic_oxaloacetic_transaminase_level(screening4124,4).
-glutamic_oxaloacetic_transaminase_level(screening4125,4).
-glutamic_oxaloacetic_transaminase_level(screening4126,4).
-glutamic_oxaloacetic_transaminase_level(screening4127,4).
-glutamic_oxaloacetic_transaminase_level(screening4128,3).
-glutamic_oxaloacetic_transaminase_level(screening4129,3).
-glutamic_oxaloacetic_transaminase_level(screening413,3).
-glutamic_oxaloacetic_transaminase_level(screening4130,4).
-glutamic_oxaloacetic_transaminase_level(screening4131,4).
-glutamic_oxaloacetic_transaminase_level(screening4132,3).
-glutamic_oxaloacetic_transaminase_level(screening4133,2).
-glutamic_oxaloacetic_transaminase_level(screening4134,2).
-glutamic_oxaloacetic_transaminase_level(screening4135,1).
-glutamic_oxaloacetic_transaminase_level(screening4136,2).
-glutamic_oxaloacetic_transaminase_level(screening4137,1).
-glutamic_oxaloacetic_transaminase_level(screening4138,1).
-glutamic_oxaloacetic_transaminase_level(screening4139,1).
-glutamic_oxaloacetic_transaminase_level(screening414,3).
-glutamic_oxaloacetic_transaminase_level(screening4140,2).
-glutamic_oxaloacetic_transaminase_level(screening4141,3).
-glutamic_oxaloacetic_transaminase_level(screening4142,3).
-glutamic_oxaloacetic_transaminase_level(screening4143,4).
-glutamic_oxaloacetic_transaminase_level(screening4144,3).
-glutamic_oxaloacetic_transaminase_level(screening4145,2).
-glutamic_oxaloacetic_transaminase_level(screening4146,1).
-glutamic_oxaloacetic_transaminase_level(screening4147,1).
-glutamic_oxaloacetic_transaminase_level(screening4148,2).
-glutamic_oxaloacetic_transaminase_level(screening4149,2).
-glutamic_oxaloacetic_transaminase_level(screening415,3).
-glutamic_oxaloacetic_transaminase_level(screening4150,4).
-glutamic_oxaloacetic_transaminase_level(screening4151,3).
-glutamic_oxaloacetic_transaminase_level(screening4152,3).
-glutamic_oxaloacetic_transaminase_level(screening4153,3).
-glutamic_oxaloacetic_transaminase_level(screening4154,3).
-glutamic_oxaloacetic_transaminase_level(screening4155,2).
-glutamic_oxaloacetic_transaminase_level(screening4156,2).
-glutamic_oxaloacetic_transaminase_level(screening4157,4).
-glutamic_oxaloacetic_transaminase_level(screening4158,3).
-glutamic_oxaloacetic_transaminase_level(screening4159,3).
-glutamic_oxaloacetic_transaminase_level(screening416,4).
-glutamic_oxaloacetic_transaminase_level(screening4160,3).
-glutamic_oxaloacetic_transaminase_level(screening4161,3).
-glutamic_oxaloacetic_transaminase_level(screening4162,2).
-glutamic_oxaloacetic_transaminase_level(screening4163,2).
-glutamic_oxaloacetic_transaminase_level(screening4164,2).
-glutamic_oxaloacetic_transaminase_level(screening4165,4).
-glutamic_oxaloacetic_transaminase_level(screening4166,3).
-glutamic_oxaloacetic_transaminase_level(screening4167,1).
-glutamic_oxaloacetic_transaminase_level(screening4168,1).
-glutamic_oxaloacetic_transaminase_level(screening4169,1).
-glutamic_oxaloacetic_transaminase_level(screening417,3).
-glutamic_oxaloacetic_transaminase_level(screening4170,1).
-glutamic_oxaloacetic_transaminase_level(screening4171,1).
-glutamic_oxaloacetic_transaminase_level(screening4172,1).
-glutamic_oxaloacetic_transaminase_level(screening4173,1).
-glutamic_oxaloacetic_transaminase_level(screening4174,1).
-glutamic_oxaloacetic_transaminase_level(screening4175,1).
-glutamic_oxaloacetic_transaminase_level(screening4176,2).
-glutamic_oxaloacetic_transaminase_level(screening4177,2).
-glutamic_oxaloacetic_transaminase_level(screening4178,1).
-glutamic_oxaloacetic_transaminase_level(screening4179,2).
-glutamic_oxaloacetic_transaminase_level(screening418,3).
-glutamic_oxaloacetic_transaminase_level(screening4180,4).
-glutamic_oxaloacetic_transaminase_level(screening4181,3).
-glutamic_oxaloacetic_transaminase_level(screening4182,1).
-glutamic_oxaloacetic_transaminase_level(screening4183,1).
-glutamic_oxaloacetic_transaminase_level(screening4184,1).
-glutamic_oxaloacetic_transaminase_level(screening4185,1).
-glutamic_oxaloacetic_transaminase_level(screening4186,1).
-glutamic_oxaloacetic_transaminase_level(screening4187,1).
-glutamic_oxaloacetic_transaminase_level(screening4188,1).
-glutamic_oxaloacetic_transaminase_level(screening4189,1).
-glutamic_oxaloacetic_transaminase_level(screening419,4).
-glutamic_oxaloacetic_transaminase_level(screening4190,1).
-glutamic_oxaloacetic_transaminase_level(screening4191,2).
-glutamic_oxaloacetic_transaminase_level(screening4192,2).
-glutamic_oxaloacetic_transaminase_level(screening4193,1).
-glutamic_oxaloacetic_transaminase_level(screening4194,2).
-glutamic_oxaloacetic_transaminase_level(screening4195,3).
-glutamic_oxaloacetic_transaminase_level(screening4196,4).
-glutamic_oxaloacetic_transaminase_level(screening4197,3).
-glutamic_oxaloacetic_transaminase_level(screening4198,3).
-glutamic_oxaloacetic_transaminase_level(screening4199,3).
-glutamic_oxaloacetic_transaminase_level(screening420,4).
-glutamic_oxaloacetic_transaminase_level(screening4200,3).
-glutamic_oxaloacetic_transaminase_level(screening4201,3).
-glutamic_oxaloacetic_transaminase_level(screening4202,2).
-glutamic_oxaloacetic_transaminase_level(screening4203,3).
-glutamic_oxaloacetic_transaminase_level(screening4204,3).
-glutamic_oxaloacetic_transaminase_level(screening4205,2).
-glutamic_oxaloacetic_transaminase_level(screening4206,2).
-glutamic_oxaloacetic_transaminase_level(screening4207,2).
-glutamic_oxaloacetic_transaminase_level(screening4208,3).
-glutamic_oxaloacetic_transaminase_level(screening4209,4).
-glutamic_oxaloacetic_transaminase_level(screening421,4).
-glutamic_oxaloacetic_transaminase_level(screening4210,3).
-glutamic_oxaloacetic_transaminase_level(screening4211,2).
-glutamic_oxaloacetic_transaminase_level(screening4212,3).
-glutamic_oxaloacetic_transaminase_level(screening4213,3).
-glutamic_oxaloacetic_transaminase_level(screening4214,4).
-glutamic_oxaloacetic_transaminase_level(screening4215,3).
-glutamic_oxaloacetic_transaminase_level(screening4216,3).
-glutamic_oxaloacetic_transaminase_level(screening4217,3).
-glutamic_oxaloacetic_transaminase_level(screening4218,3).
-glutamic_oxaloacetic_transaminase_level(screening4219,3).
-glutamic_oxaloacetic_transaminase_level(screening422,4).
-glutamic_oxaloacetic_transaminase_level(screening4220,3).
-glutamic_oxaloacetic_transaminase_level(screening4221,2).
-glutamic_oxaloacetic_transaminase_level(screening4222,2).
-glutamic_oxaloacetic_transaminase_level(screening4223,2).
-glutamic_oxaloacetic_transaminase_level(screening4224,2).
-glutamic_oxaloacetic_transaminase_level(screening4225,3).
-glutamic_oxaloacetic_transaminase_level(screening4226,3).
-glutamic_oxaloacetic_transaminase_level(screening4227,4).
-glutamic_oxaloacetic_transaminase_level(screening4228,4).
-glutamic_oxaloacetic_transaminase_level(screening4229,4).
-glutamic_oxaloacetic_transaminase_level(screening423,4).
-glutamic_oxaloacetic_transaminase_level(screening4230,3).
-glutamic_oxaloacetic_transaminase_level(screening4231,4).
-glutamic_oxaloacetic_transaminase_level(screening4232,4).
-glutamic_oxaloacetic_transaminase_level(screening4233,4).
-glutamic_oxaloacetic_transaminase_level(screening4234,3).
-glutamic_oxaloacetic_transaminase_level(screening4235,4).
-glutamic_oxaloacetic_transaminase_level(screening4236,4).
-glutamic_oxaloacetic_transaminase_level(screening4237,4).
-glutamic_oxaloacetic_transaminase_level(screening4238,4).
-glutamic_oxaloacetic_transaminase_level(screening4239,3).
-glutamic_oxaloacetic_transaminase_level(screening424,3).
-glutamic_oxaloacetic_transaminase_level(screening4240,4).
-glutamic_oxaloacetic_transaminase_level(screening4241,4).
-glutamic_oxaloacetic_transaminase_level(screening4242,4).
-glutamic_oxaloacetic_transaminase_level(screening4243,3).
-glutamic_oxaloacetic_transaminase_level(screening4244,4).
-glutamic_oxaloacetic_transaminase_level(screening4245,4).
-glutamic_oxaloacetic_transaminase_level(screening4246,4).
-glutamic_oxaloacetic_transaminase_level(screening4247,4).
-glutamic_oxaloacetic_transaminase_level(screening4248,3).
-glutamic_oxaloacetic_transaminase_level(screening4249,4).
-glutamic_oxaloacetic_transaminase_level(screening425,3).
-glutamic_oxaloacetic_transaminase_level(screening4250,4).
-glutamic_oxaloacetic_transaminase_level(screening4251,4).
-glutamic_oxaloacetic_transaminase_level(screening4252,3).
-glutamic_oxaloacetic_transaminase_level(screening4253,4).
-glutamic_oxaloacetic_transaminase_level(screening4254,4).
-glutamic_oxaloacetic_transaminase_level(screening4255,4).
-glutamic_oxaloacetic_transaminase_level(screening4256,4).
-glutamic_oxaloacetic_transaminase_level(screening4257,3).
-glutamic_oxaloacetic_transaminase_level(screening4258,4).
-glutamic_oxaloacetic_transaminase_level(screening4259,4).
-glutamic_oxaloacetic_transaminase_level(screening426,3).
-glutamic_oxaloacetic_transaminase_level(screening4260,4).
-glutamic_oxaloacetic_transaminase_level(screening4261,3).
-glutamic_oxaloacetic_transaminase_level(screening4262,4).
-glutamic_oxaloacetic_transaminase_level(screening4263,4).
-glutamic_oxaloacetic_transaminase_level(screening4264,3).
-glutamic_oxaloacetic_transaminase_level(screening4265,3).
-glutamic_oxaloacetic_transaminase_level(screening4266,3).
-glutamic_oxaloacetic_transaminase_level(screening4267,3).
-glutamic_oxaloacetic_transaminase_level(screening4268,3).
-glutamic_oxaloacetic_transaminase_level(screening4269,3).
-glutamic_oxaloacetic_transaminase_level(screening427,3).
-glutamic_oxaloacetic_transaminase_level(screening4270,4).
-glutamic_oxaloacetic_transaminase_level(screening4271,4).
-glutamic_oxaloacetic_transaminase_level(screening4272,4).
-glutamic_oxaloacetic_transaminase_level(screening4273,4).
-glutamic_oxaloacetic_transaminase_level(screening4274,3).
-glutamic_oxaloacetic_transaminase_level(screening4275,3).
-glutamic_oxaloacetic_transaminase_level(screening4276,3).
-glutamic_oxaloacetic_transaminase_level(screening4277,4).
-glutamic_oxaloacetic_transaminase_level(screening4278,4).
-glutamic_oxaloacetic_transaminase_level(screening4279,4).
-glutamic_oxaloacetic_transaminase_level(screening428,3).
-glutamic_oxaloacetic_transaminase_level(screening4280,4).
-glutamic_oxaloacetic_transaminase_level(screening4281,3).
-glutamic_oxaloacetic_transaminase_level(screening4282,3).
-glutamic_oxaloacetic_transaminase_level(screening4283,2).
-glutamic_oxaloacetic_transaminase_level(screening4284,2).
-glutamic_oxaloacetic_transaminase_level(screening4285,4).
-glutamic_oxaloacetic_transaminase_level(screening4286,3).
-glutamic_oxaloacetic_transaminase_level(screening4287,4).
-glutamic_oxaloacetic_transaminase_level(screening4288,3).
-glutamic_oxaloacetic_transaminase_level(screening4289,3).
-glutamic_oxaloacetic_transaminase_level(screening429,4).
-glutamic_oxaloacetic_transaminase_level(screening4290,4).
-glutamic_oxaloacetic_transaminase_level(screening4291,3).
-glutamic_oxaloacetic_transaminase_level(screening4292,3).
-glutamic_oxaloacetic_transaminase_level(screening4293,4).
-glutamic_oxaloacetic_transaminase_level(screening4294,3).
-glutamic_oxaloacetic_transaminase_level(screening4295,3).
-glutamic_oxaloacetic_transaminase_level(screening4296,4).
-glutamic_oxaloacetic_transaminase_level(screening4297,4).
-glutamic_oxaloacetic_transaminase_level(screening4298,4).
-glutamic_oxaloacetic_transaminase_level(screening4299,4).
-glutamic_oxaloacetic_transaminase_level(screening430,3).
-glutamic_oxaloacetic_transaminase_level(screening4300,4).
-glutamic_oxaloacetic_transaminase_level(screening4301,4).
-glutamic_oxaloacetic_transaminase_level(screening4302,4).
-glutamic_oxaloacetic_transaminase_level(screening4303,4).
-glutamic_oxaloacetic_transaminase_level(screening4304,3).
-glutamic_oxaloacetic_transaminase_level(screening4305,3).
-glutamic_oxaloacetic_transaminase_level(screening4306,3).
-glutamic_oxaloacetic_transaminase_level(screening4307,2).
-glutamic_oxaloacetic_transaminase_level(screening4308,2).
-glutamic_oxaloacetic_transaminase_level(screening4309,2).
-glutamic_oxaloacetic_transaminase_level(screening431,3).
-glutamic_oxaloacetic_transaminase_level(screening4310,2).
-glutamic_oxaloacetic_transaminase_level(screening4311,2).
-glutamic_oxaloacetic_transaminase_level(screening4312,2).
-glutamic_oxaloacetic_transaminase_level(screening4313,2).
-glutamic_oxaloacetic_transaminase_level(screening4314,2).
-glutamic_oxaloacetic_transaminase_level(screening4315,4).
-glutamic_oxaloacetic_transaminase_level(screening4316,4).
-glutamic_oxaloacetic_transaminase_level(screening4317,4).
-glutamic_oxaloacetic_transaminase_level(screening4318,4).
-glutamic_oxaloacetic_transaminase_level(screening4319,4).
-glutamic_oxaloacetic_transaminase_level(screening432,4).
-glutamic_oxaloacetic_transaminase_level(screening4320,4).
-glutamic_oxaloacetic_transaminase_level(screening4321,4).
-glutamic_oxaloacetic_transaminase_level(screening4322,4).
-glutamic_oxaloacetic_transaminase_level(screening4323,3).
-glutamic_oxaloacetic_transaminase_level(screening4324,3).
-glutamic_oxaloacetic_transaminase_level(screening4325,3).
-glutamic_oxaloacetic_transaminase_level(screening4326,2).
-glutamic_oxaloacetic_transaminase_level(screening4327,2).
-glutamic_oxaloacetic_transaminase_level(screening4328,2).
-glutamic_oxaloacetic_transaminase_level(screening4329,2).
-glutamic_oxaloacetic_transaminase_level(screening433,4).
-glutamic_oxaloacetic_transaminase_level(screening4330,2).
-glutamic_oxaloacetic_transaminase_level(screening4331,2).
-glutamic_oxaloacetic_transaminase_level(screening4332,2).
-glutamic_oxaloacetic_transaminase_level(screening4333,2).
-glutamic_oxaloacetic_transaminase_level(screening4334,4).
-glutamic_oxaloacetic_transaminase_level(screening4335,4).
-glutamic_oxaloacetic_transaminase_level(screening4336,4).
-glutamic_oxaloacetic_transaminase_level(screening4337,3).
-glutamic_oxaloacetic_transaminase_level(screening4338,3).
-glutamic_oxaloacetic_transaminase_level(screening4339,3).
-glutamic_oxaloacetic_transaminase_level(screening434,4).
-glutamic_oxaloacetic_transaminase_level(screening4340,3).
-glutamic_oxaloacetic_transaminase_level(screening4341,3).
-glutamic_oxaloacetic_transaminase_level(screening4342,4).
-glutamic_oxaloacetic_transaminase_level(screening4343,4).
-glutamic_oxaloacetic_transaminase_level(screening4344,3).
-glutamic_oxaloacetic_transaminase_level(screening4345,4).
-glutamic_oxaloacetic_transaminase_level(screening4346,4).
-glutamic_oxaloacetic_transaminase_level(screening4347,4).
-glutamic_oxaloacetic_transaminase_level(screening4348,3).
-glutamic_oxaloacetic_transaminase_level(screening4349,3).
-glutamic_oxaloacetic_transaminase_level(screening435,2).
-glutamic_oxaloacetic_transaminase_level(screening4350,3).
-glutamic_oxaloacetic_transaminase_level(screening4351,3).
-glutamic_oxaloacetic_transaminase_level(screening4352,3).
-glutamic_oxaloacetic_transaminase_level(screening4353,4).
-glutamic_oxaloacetic_transaminase_level(screening4354,4).
-glutamic_oxaloacetic_transaminase_level(screening4355,3).
-glutamic_oxaloacetic_transaminase_level(screening4356,4).
-glutamic_oxaloacetic_transaminase_level(screening4357,4).
-glutamic_oxaloacetic_transaminase_level(screening4358,3).
-glutamic_oxaloacetic_transaminase_level(screening4359,3).
-glutamic_oxaloacetic_transaminase_level(screening436,4).
-glutamic_oxaloacetic_transaminase_level(screening4360,3).
-glutamic_oxaloacetic_transaminase_level(screening4361,3).
-glutamic_oxaloacetic_transaminase_level(screening4362,3).
-glutamic_oxaloacetic_transaminase_level(screening4363,3).
-glutamic_oxaloacetic_transaminase_level(screening4364,3).
-glutamic_oxaloacetic_transaminase_level(screening4365,3).
-glutamic_oxaloacetic_transaminase_level(screening4366,3).
-glutamic_oxaloacetic_transaminase_level(screening4367,4).
-glutamic_oxaloacetic_transaminase_level(screening4368,3).
-glutamic_oxaloacetic_transaminase_level(screening4369,3).
-glutamic_oxaloacetic_transaminase_level(screening437,4).
-glutamic_oxaloacetic_transaminase_level(screening4370,4).
-glutamic_oxaloacetic_transaminase_level(screening4371,4).
-glutamic_oxaloacetic_transaminase_level(screening4372,3).
-glutamic_oxaloacetic_transaminase_level(screening4373,3).
-glutamic_oxaloacetic_transaminase_level(screening4374,4).
-glutamic_oxaloacetic_transaminase_level(screening4375,3).
-glutamic_oxaloacetic_transaminase_level(screening4376,2).
-glutamic_oxaloacetic_transaminase_level(screening4377,2).
-glutamic_oxaloacetic_transaminase_level(screening4378,2).
-glutamic_oxaloacetic_transaminase_level(screening4379,2).
-glutamic_oxaloacetic_transaminase_level(screening438,2).
-glutamic_oxaloacetic_transaminase_level(screening4380,2).
-glutamic_oxaloacetic_transaminase_level(screening4381,2).
-glutamic_oxaloacetic_transaminase_level(screening4382,3).
-glutamic_oxaloacetic_transaminase_level(screening4383,3).
-glutamic_oxaloacetic_transaminase_level(screening4384,4).
-glutamic_oxaloacetic_transaminase_level(screening4385,3).
-glutamic_oxaloacetic_transaminase_level(screening4386,3).
-glutamic_oxaloacetic_transaminase_level(screening4387,3).
-glutamic_oxaloacetic_transaminase_level(screening4388,2).
-glutamic_oxaloacetic_transaminase_level(screening4389,3).
-glutamic_oxaloacetic_transaminase_level(screening439,2).
-glutamic_oxaloacetic_transaminase_level(screening4390,4).
-glutamic_oxaloacetic_transaminase_level(screening4391,3).
-glutamic_oxaloacetic_transaminase_level(screening4392,4).
-glutamic_oxaloacetic_transaminase_level(screening4393,4).
-glutamic_oxaloacetic_transaminase_level(screening4394,4).
-glutamic_oxaloacetic_transaminase_level(screening4395,3).
-glutamic_oxaloacetic_transaminase_level(screening4396,3).
-glutamic_oxaloacetic_transaminase_level(screening4397,4).
-glutamic_oxaloacetic_transaminase_level(screening4398,4).
-glutamic_oxaloacetic_transaminase_level(screening4399,4).
-glutamic_oxaloacetic_transaminase_level(screening440,2).
-glutamic_oxaloacetic_transaminase_level(screening4400,4).
-glutamic_oxaloacetic_transaminase_level(screening4401,3).
-glutamic_oxaloacetic_transaminase_level(screening4402,3).
-glutamic_oxaloacetic_transaminase_level(screening4403,4).
-glutamic_oxaloacetic_transaminase_level(screening4404,4).
-glutamic_oxaloacetic_transaminase_level(screening4405,3).
-glutamic_oxaloacetic_transaminase_level(screening4406,2).
-glutamic_oxaloacetic_transaminase_level(screening4407,2).
-glutamic_oxaloacetic_transaminase_level(screening4408,2).
-glutamic_oxaloacetic_transaminase_level(screening4409,2).
-glutamic_oxaloacetic_transaminase_level(screening441,4).
-glutamic_oxaloacetic_transaminase_level(screening4410,2).
-glutamic_oxaloacetic_transaminase_level(screening4411,2).
-glutamic_oxaloacetic_transaminase_level(screening4412,3).
-glutamic_oxaloacetic_transaminase_level(screening4413,3).
-glutamic_oxaloacetic_transaminase_level(screening4414,2).
-glutamic_oxaloacetic_transaminase_level(screening4415,3).
-glutamic_oxaloacetic_transaminase_level(screening4416,4).
-glutamic_oxaloacetic_transaminase_level(screening4417,2).
-glutamic_oxaloacetic_transaminase_level(screening4418,3).
-glutamic_oxaloacetic_transaminase_level(screening4419,2).
-glutamic_oxaloacetic_transaminase_level(screening442,2).
-glutamic_oxaloacetic_transaminase_level(screening4420,4).
-glutamic_oxaloacetic_transaminase_level(screening4421,4).
-glutamic_oxaloacetic_transaminase_level(screening4422,3).
-glutamic_oxaloacetic_transaminase_level(screening4423,4).
-glutamic_oxaloacetic_transaminase_level(screening4424,2).
-glutamic_oxaloacetic_transaminase_level(screening4425,3).
-glutamic_oxaloacetic_transaminase_level(screening4426,3).
-glutamic_oxaloacetic_transaminase_level(screening4427,2).
-glutamic_oxaloacetic_transaminase_level(screening4428,4).
-glutamic_oxaloacetic_transaminase_level(screening4429,4).
-glutamic_oxaloacetic_transaminase_level(screening443,1).
-glutamic_oxaloacetic_transaminase_level(screening4430,3).
-glutamic_oxaloacetic_transaminase_level(screening4431,3).
-glutamic_oxaloacetic_transaminase_level(screening4432,2).
-glutamic_oxaloacetic_transaminase_level(screening4433,2).
-glutamic_oxaloacetic_transaminase_level(screening4434,2).
-glutamic_oxaloacetic_transaminase_level(screening4435,2).
-glutamic_oxaloacetic_transaminase_level(screening4436,2).
-glutamic_oxaloacetic_transaminase_level(screening4437,4).
-glutamic_oxaloacetic_transaminase_level(screening4438,4).
-glutamic_oxaloacetic_transaminase_level(screening4439,4).
-glutamic_oxaloacetic_transaminase_level(screening444,1).
-glutamic_oxaloacetic_transaminase_level(screening4440,4).
-glutamic_oxaloacetic_transaminase_level(screening4441,4).
-glutamic_oxaloacetic_transaminase_level(screening4442,4).
-glutamic_oxaloacetic_transaminase_level(screening4443,4).
-glutamic_oxaloacetic_transaminase_level(screening4444,4).
-glutamic_oxaloacetic_transaminase_level(screening4445,3).
-glutamic_oxaloacetic_transaminase_level(screening4446,3).
-glutamic_oxaloacetic_transaminase_level(screening4447,3).
-glutamic_oxaloacetic_transaminase_level(screening4448,2).
-glutamic_oxaloacetic_transaminase_level(screening4449,1).
-glutamic_oxaloacetic_transaminase_level(screening445,1).
-glutamic_oxaloacetic_transaminase_level(screening4450,1).
-glutamic_oxaloacetic_transaminase_level(screening4451,1).
-glutamic_oxaloacetic_transaminase_level(screening4452,4).
-glutamic_oxaloacetic_transaminase_level(screening4453,3).
-glutamic_oxaloacetic_transaminase_level(screening4454,3).
-glutamic_oxaloacetic_transaminase_level(screening4455,4).
-glutamic_oxaloacetic_transaminase_level(screening4456,3).
-glutamic_oxaloacetic_transaminase_level(screening4457,3).
-glutamic_oxaloacetic_transaminase_level(screening4458,4).
-glutamic_oxaloacetic_transaminase_level(screening4459,4).
-glutamic_oxaloacetic_transaminase_level(screening446,1).
-glutamic_oxaloacetic_transaminase_level(screening4460,4).
-glutamic_oxaloacetic_transaminase_level(screening4461,4).
-glutamic_oxaloacetic_transaminase_level(screening4462,4).
-glutamic_oxaloacetic_transaminase_level(screening4463,3).
-glutamic_oxaloacetic_transaminase_level(screening4464,2).
-glutamic_oxaloacetic_transaminase_level(screening4465,2).
-glutamic_oxaloacetic_transaminase_level(screening4466,2).
-glutamic_oxaloacetic_transaminase_level(screening4467,3).
-glutamic_oxaloacetic_transaminase_level(screening4468,3).
-glutamic_oxaloacetic_transaminase_level(screening4469,2).
-glutamic_oxaloacetic_transaminase_level(screening447,2).
-glutamic_oxaloacetic_transaminase_level(screening4470,4).
-glutamic_oxaloacetic_transaminase_level(screening4471,3).
-glutamic_oxaloacetic_transaminase_level(screening4472,3).
-glutamic_oxaloacetic_transaminase_level(screening4473,3).
-glutamic_oxaloacetic_transaminase_level(screening4474,3).
-glutamic_oxaloacetic_transaminase_level(screening4475,3).
-glutamic_oxaloacetic_transaminase_level(screening4476,3).
-glutamic_oxaloacetic_transaminase_level(screening4477,2).
-glutamic_oxaloacetic_transaminase_level(screening4478,3).
-glutamic_oxaloacetic_transaminase_level(screening4479,4).
-glutamic_oxaloacetic_transaminase_level(screening448,3).
-glutamic_oxaloacetic_transaminase_level(screening4480,4).
-glutamic_oxaloacetic_transaminase_level(screening4481,4).
-glutamic_oxaloacetic_transaminase_level(screening4482,4).
-glutamic_oxaloacetic_transaminase_level(screening4483,4).
-glutamic_oxaloacetic_transaminase_level(screening4484,3).
-glutamic_oxaloacetic_transaminase_level(screening4485,2).
-glutamic_oxaloacetic_transaminase_level(screening4486,2).
-glutamic_oxaloacetic_transaminase_level(screening4487,2).
-glutamic_oxaloacetic_transaminase_level(screening4488,3).
-glutamic_oxaloacetic_transaminase_level(screening4489,3).
-glutamic_oxaloacetic_transaminase_level(screening449,3).
-glutamic_oxaloacetic_transaminase_level(screening4490,2).
-glutamic_oxaloacetic_transaminase_level(screening4491,4).
-glutamic_oxaloacetic_transaminase_level(screening4492,3).
-glutamic_oxaloacetic_transaminase_level(screening4493,3).
-glutamic_oxaloacetic_transaminase_level(screening4494,3).
-glutamic_oxaloacetic_transaminase_level(screening4495,3).
-glutamic_oxaloacetic_transaminase_level(screening4496,3).
-glutamic_oxaloacetic_transaminase_level(screening4497,3).
-glutamic_oxaloacetic_transaminase_level(screening4498,2).
-glutamic_oxaloacetic_transaminase_level(screening4499,3).
-glutamic_oxaloacetic_transaminase_level(screening450,2).
-glutamic_oxaloacetic_transaminase_level(screening4500,4).
-glutamic_oxaloacetic_transaminase_level(screening4501,4).
-glutamic_oxaloacetic_transaminase_level(screening4502,4).
-glutamic_oxaloacetic_transaminase_level(screening4503,4).
-glutamic_oxaloacetic_transaminase_level(screening4504,4).
-glutamic_oxaloacetic_transaminase_level(screening4505,3).
-glutamic_oxaloacetic_transaminase_level(screening4506,2).
-glutamic_oxaloacetic_transaminase_level(screening4507,2).
-glutamic_oxaloacetic_transaminase_level(screening4508,2).
-glutamic_oxaloacetic_transaminase_level(screening4509,3).
-glutamic_oxaloacetic_transaminase_level(screening451,2).
-glutamic_oxaloacetic_transaminase_level(screening4510,3).
-glutamic_oxaloacetic_transaminase_level(screening4511,2).
-glutamic_oxaloacetic_transaminase_level(screening4512,4).
-glutamic_oxaloacetic_transaminase_level(screening4513,3).
-glutamic_oxaloacetic_transaminase_level(screening4514,3).
-glutamic_oxaloacetic_transaminase_level(screening4515,3).
-glutamic_oxaloacetic_transaminase_level(screening4516,3).
-glutamic_oxaloacetic_transaminase_level(screening4517,3).
-glutamic_oxaloacetic_transaminase_level(screening4518,3).
-glutamic_oxaloacetic_transaminase_level(screening4519,2).
-glutamic_oxaloacetic_transaminase_level(screening452,2).
-glutamic_oxaloacetic_transaminase_level(screening4520,3).
-glutamic_oxaloacetic_transaminase_level(screening4521,4).
-glutamic_oxaloacetic_transaminase_level(screening4522,4).
-glutamic_oxaloacetic_transaminase_level(screening4523,4).
-glutamic_oxaloacetic_transaminase_level(screening4524,4).
-glutamic_oxaloacetic_transaminase_level(screening4525,4).
-glutamic_oxaloacetic_transaminase_level(screening4526,3).
-glutamic_oxaloacetic_transaminase_level(screening4527,2).
-glutamic_oxaloacetic_transaminase_level(screening4528,2).
-glutamic_oxaloacetic_transaminase_level(screening4529,2).
-glutamic_oxaloacetic_transaminase_level(screening453,3).
-glutamic_oxaloacetic_transaminase_level(screening4530,3).
-glutamic_oxaloacetic_transaminase_level(screening4531,3).
-glutamic_oxaloacetic_transaminase_level(screening4532,2).
-glutamic_oxaloacetic_transaminase_level(screening4533,4).
-glutamic_oxaloacetic_transaminase_level(screening4534,3).
-glutamic_oxaloacetic_transaminase_level(screening4535,3).
-glutamic_oxaloacetic_transaminase_level(screening4536,3).
-glutamic_oxaloacetic_transaminase_level(screening4537,3).
-glutamic_oxaloacetic_transaminase_level(screening4538,3).
-glutamic_oxaloacetic_transaminase_level(screening4539,3).
-glutamic_oxaloacetic_transaminase_level(screening454,3).
-glutamic_oxaloacetic_transaminase_level(screening4540,2).
-glutamic_oxaloacetic_transaminase_level(screening4541,3).
-glutamic_oxaloacetic_transaminase_level(screening4542,4).
-glutamic_oxaloacetic_transaminase_level(screening4543,4).
-glutamic_oxaloacetic_transaminase_level(screening4544,4).
-glutamic_oxaloacetic_transaminase_level(screening4545,4).
-glutamic_oxaloacetic_transaminase_level(screening4546,4).
-glutamic_oxaloacetic_transaminase_level(screening4547,3).
-glutamic_oxaloacetic_transaminase_level(screening4548,2).
-glutamic_oxaloacetic_transaminase_level(screening4549,2).
-glutamic_oxaloacetic_transaminase_level(screening455,3).
-glutamic_oxaloacetic_transaminase_level(screening4550,2).
-glutamic_oxaloacetic_transaminase_level(screening4551,3).
-glutamic_oxaloacetic_transaminase_level(screening4552,3).
-glutamic_oxaloacetic_transaminase_level(screening4553,2).
-glutamic_oxaloacetic_transaminase_level(screening4554,4).
-glutamic_oxaloacetic_transaminase_level(screening4555,3).
-glutamic_oxaloacetic_transaminase_level(screening4556,3).
-glutamic_oxaloacetic_transaminase_level(screening4557,3).
-glutamic_oxaloacetic_transaminase_level(screening4558,3).
-glutamic_oxaloacetic_transaminase_level(screening4559,3).
-glutamic_oxaloacetic_transaminase_level(screening456,4).
-glutamic_oxaloacetic_transaminase_level(screening4560,3).
-glutamic_oxaloacetic_transaminase_level(screening4561,2).
-glutamic_oxaloacetic_transaminase_level(screening4562,3).
-glutamic_oxaloacetic_transaminase_level(screening4563,4).
-glutamic_oxaloacetic_transaminase_level(screening4564,4).
-glutamic_oxaloacetic_transaminase_level(screening4565,4).
-glutamic_oxaloacetic_transaminase_level(screening4566,4).
-glutamic_oxaloacetic_transaminase_level(screening4567,3).
-glutamic_oxaloacetic_transaminase_level(screening4568,3).
-glutamic_oxaloacetic_transaminase_level(screening4569,3).
-glutamic_oxaloacetic_transaminase_level(screening457,5).
-glutamic_oxaloacetic_transaminase_level(screening4570,3).
-glutamic_oxaloacetic_transaminase_level(screening4571,3).
-glutamic_oxaloacetic_transaminase_level(screening4572,4).
-glutamic_oxaloacetic_transaminase_level(screening4573,4).
-glutamic_oxaloacetic_transaminase_level(screening4574,4).
-glutamic_oxaloacetic_transaminase_level(screening4575,3).
-glutamic_oxaloacetic_transaminase_level(screening4576,1).
-glutamic_oxaloacetic_transaminase_level(screening4577,1).
-glutamic_oxaloacetic_transaminase_level(screening4578,1).
-glutamic_oxaloacetic_transaminase_level(screening4579,1).
-glutamic_oxaloacetic_transaminase_level(screening458,2).
-glutamic_oxaloacetic_transaminase_level(screening4580,1).
-glutamic_oxaloacetic_transaminase_level(screening4581,1).
-glutamic_oxaloacetic_transaminase_level(screening4582,1).
-glutamic_oxaloacetic_transaminase_level(screening4583,1).
-glutamic_oxaloacetic_transaminase_level(screening4584,2).
-glutamic_oxaloacetic_transaminase_level(screening4585,4).
-glutamic_oxaloacetic_transaminase_level(screening4586,4).
-glutamic_oxaloacetic_transaminase_level(screening4587,4).
-glutamic_oxaloacetic_transaminase_level(screening4588,4).
-glutamic_oxaloacetic_transaminase_level(screening4589,4).
-glutamic_oxaloacetic_transaminase_level(screening459,3).
-glutamic_oxaloacetic_transaminase_level(screening4590,4).
-glutamic_oxaloacetic_transaminase_level(screening4591,4).
-glutamic_oxaloacetic_transaminase_level(screening4592,4).
-glutamic_oxaloacetic_transaminase_level(screening4593,3).
-glutamic_oxaloacetic_transaminase_level(screening4594,3).
-glutamic_oxaloacetic_transaminase_level(screening4595,4).
-glutamic_oxaloacetic_transaminase_level(screening4596,3).
-glutamic_oxaloacetic_transaminase_level(screening4597,4).
-glutamic_oxaloacetic_transaminase_level(screening4598,4).
-glutamic_oxaloacetic_transaminase_level(screening4599,4).
-glutamic_oxaloacetic_transaminase_level(screening460,5).
-glutamic_oxaloacetic_transaminase_level(screening4600,4).
-glutamic_oxaloacetic_transaminase_level(screening4601,4).
-glutamic_oxaloacetic_transaminase_level(screening4602,3).
-glutamic_oxaloacetic_transaminase_level(screening4603,3).
-glutamic_oxaloacetic_transaminase_level(screening4604,4).
-glutamic_oxaloacetic_transaminase_level(screening4605,4).
-glutamic_oxaloacetic_transaminase_level(screening4606,3).
-glutamic_oxaloacetic_transaminase_level(screening4607,3).
-glutamic_oxaloacetic_transaminase_level(screening4608,4).
-glutamic_oxaloacetic_transaminase_level(screening4609,4).
-glutamic_oxaloacetic_transaminase_level(screening461,4).
-glutamic_oxaloacetic_transaminase_level(screening4610,4).
-glutamic_oxaloacetic_transaminase_level(screening4611,4).
-glutamic_oxaloacetic_transaminase_level(screening4612,4).
-glutamic_oxaloacetic_transaminase_level(screening4613,4).
-glutamic_oxaloacetic_transaminase_level(screening4614,4).
-glutamic_oxaloacetic_transaminase_level(screening4615,4).
-glutamic_oxaloacetic_transaminase_level(screening4616,4).
-glutamic_oxaloacetic_transaminase_level(screening4617,4).
-glutamic_oxaloacetic_transaminase_level(screening4618,4).
-glutamic_oxaloacetic_transaminase_level(screening4619,4).
-glutamic_oxaloacetic_transaminase_level(screening462,4).
-glutamic_oxaloacetic_transaminase_level(screening4620,4).
-glutamic_oxaloacetic_transaminase_level(screening4621,4).
-glutamic_oxaloacetic_transaminase_level(screening4622,4).
-glutamic_oxaloacetic_transaminase_level(screening4623,4).
-glutamic_oxaloacetic_transaminase_level(screening4624,4).
-glutamic_oxaloacetic_transaminase_level(screening4625,4).
-glutamic_oxaloacetic_transaminase_level(screening4626,4).
-glutamic_oxaloacetic_transaminase_level(screening4627,3).
-glutamic_oxaloacetic_transaminase_level(screening4628,4).
-glutamic_oxaloacetic_transaminase_level(screening4629,3).
-glutamic_oxaloacetic_transaminase_level(screening463,3).
-glutamic_oxaloacetic_transaminase_level(screening4630,3).
-glutamic_oxaloacetic_transaminase_level(screening4631,3).
-glutamic_oxaloacetic_transaminase_level(screening4632,3).
-glutamic_oxaloacetic_transaminase_level(screening4633,4).
-glutamic_oxaloacetic_transaminase_level(screening4634,3).
-glutamic_oxaloacetic_transaminase_level(screening4635,3).
-glutamic_oxaloacetic_transaminase_level(screening4636,4).
-glutamic_oxaloacetic_transaminase_level(screening4637,4).
-glutamic_oxaloacetic_transaminase_level(screening4638,4).
-glutamic_oxaloacetic_transaminase_level(screening4639,4).
-glutamic_oxaloacetic_transaminase_level(screening464,4).
-glutamic_oxaloacetic_transaminase_level(screening4640,4).
-glutamic_oxaloacetic_transaminase_level(screening4641,4).
-glutamic_oxaloacetic_transaminase_level(screening4642,4).
-glutamic_oxaloacetic_transaminase_level(screening4643,4).
-glutamic_oxaloacetic_transaminase_level(screening4644,4).
-glutamic_oxaloacetic_transaminase_level(screening4645,3).
-glutamic_oxaloacetic_transaminase_level(screening4646,4).
-glutamic_oxaloacetic_transaminase_level(screening4647,3).
-glutamic_oxaloacetic_transaminase_level(screening4648,3).
-glutamic_oxaloacetic_transaminase_level(screening4649,3).
-glutamic_oxaloacetic_transaminase_level(screening465,3).
-glutamic_oxaloacetic_transaminase_level(screening4650,3).
-glutamic_oxaloacetic_transaminase_level(screening4651,4).
-glutamic_oxaloacetic_transaminase_level(screening4652,3).
-glutamic_oxaloacetic_transaminase_level(screening4653,3).
-glutamic_oxaloacetic_transaminase_level(screening4654,4).
-glutamic_oxaloacetic_transaminase_level(screening4655,4).
-glutamic_oxaloacetic_transaminase_level(screening4656,4).
-glutamic_oxaloacetic_transaminase_level(screening4657,4).
-glutamic_oxaloacetic_transaminase_level(screening4658,2).
-glutamic_oxaloacetic_transaminase_level(screening4659,2).
-glutamic_oxaloacetic_transaminase_level(screening466,2).
-glutamic_oxaloacetic_transaminase_level(screening4660,2).
-glutamic_oxaloacetic_transaminase_level(screening4661,2).
-glutamic_oxaloacetic_transaminase_level(screening4662,2).
-glutamic_oxaloacetic_transaminase_level(screening4663,3).
-glutamic_oxaloacetic_transaminase_level(screening4664,3).
-glutamic_oxaloacetic_transaminase_level(screening4665,3).
-glutamic_oxaloacetic_transaminase_level(screening4666,3).
-glutamic_oxaloacetic_transaminase_level(screening4667,4).
-glutamic_oxaloacetic_transaminase_level(screening4668,4).
-glutamic_oxaloacetic_transaminase_level(screening4669,4).
-glutamic_oxaloacetic_transaminase_level(screening467,2).
-glutamic_oxaloacetic_transaminase_level(screening4670,2).
-glutamic_oxaloacetic_transaminase_level(screening4671,2).
-glutamic_oxaloacetic_transaminase_level(screening4672,2).
-glutamic_oxaloacetic_transaminase_level(screening4673,2).
-glutamic_oxaloacetic_transaminase_level(screening4674,2).
-glutamic_oxaloacetic_transaminase_level(screening4675,2).
-glutamic_oxaloacetic_transaminase_level(screening4676,2).
-glutamic_oxaloacetic_transaminase_level(screening4677,2).
-glutamic_oxaloacetic_transaminase_level(screening4678,2).
-glutamic_oxaloacetic_transaminase_level(screening4679,2).
-glutamic_oxaloacetic_transaminase_level(screening468,2).
-glutamic_oxaloacetic_transaminase_level(screening4680,2).
-glutamic_oxaloacetic_transaminase_level(screening4681,2).
-glutamic_oxaloacetic_transaminase_level(screening4682,2).
-glutamic_oxaloacetic_transaminase_level(screening4683,2).
-glutamic_oxaloacetic_transaminase_level(screening4684,2).
-glutamic_oxaloacetic_transaminase_level(screening4685,2).
-glutamic_oxaloacetic_transaminase_level(screening4686,4).
-glutamic_oxaloacetic_transaminase_level(screening4687,3).
-glutamic_oxaloacetic_transaminase_level(screening4688,4).
-glutamic_oxaloacetic_transaminase_level(screening4689,3).
-glutamic_oxaloacetic_transaminase_level(screening469,2).
-glutamic_oxaloacetic_transaminase_level(screening4690,3).
-glutamic_oxaloacetic_transaminase_level(screening4691,5).
-glutamic_oxaloacetic_transaminase_level(screening4692,4).
-glutamic_oxaloacetic_transaminase_level(screening4693,4).
-glutamic_oxaloacetic_transaminase_level(screening4694,4).
-glutamic_oxaloacetic_transaminase_level(screening4695,4).
-glutamic_oxaloacetic_transaminase_level(screening4696,4).
-glutamic_oxaloacetic_transaminase_level(screening4697,4).
-glutamic_oxaloacetic_transaminase_level(screening4698,3).
-glutamic_oxaloacetic_transaminase_level(screening4699,3).
-glutamic_oxaloacetic_transaminase_level(screening470,2).
-glutamic_oxaloacetic_transaminase_level(screening4700,3).
-glutamic_oxaloacetic_transaminase_level(screening4701,3).
-glutamic_oxaloacetic_transaminase_level(screening4702,3).
-glutamic_oxaloacetic_transaminase_level(screening4703,2).
-glutamic_oxaloacetic_transaminase_level(screening4704,2).
-glutamic_oxaloacetic_transaminase_level(screening4705,2).
-glutamic_oxaloacetic_transaminase_level(screening4706,2).
-glutamic_oxaloacetic_transaminase_level(screening4707,2).
-glutamic_oxaloacetic_transaminase_level(screening4708,4).
-glutamic_oxaloacetic_transaminase_level(screening4709,3).
-glutamic_oxaloacetic_transaminase_level(screening471,2).
-glutamic_oxaloacetic_transaminase_level(screening4710,4).
-glutamic_oxaloacetic_transaminase_level(screening4711,3).
-glutamic_oxaloacetic_transaminase_level(screening4712,3).
-glutamic_oxaloacetic_transaminase_level(screening4713,4).
-glutamic_oxaloacetic_transaminase_level(screening4714,4).
-glutamic_oxaloacetic_transaminase_level(screening4715,4).
-glutamic_oxaloacetic_transaminase_level(screening4716,3).
-glutamic_oxaloacetic_transaminase_level(screening4717,3).
-glutamic_oxaloacetic_transaminase_level(screening4718,3).
-glutamic_oxaloacetic_transaminase_level(screening4719,3).
-glutamic_oxaloacetic_transaminase_level(screening472,3).
-glutamic_oxaloacetic_transaminase_level(screening4720,3).
-glutamic_oxaloacetic_transaminase_level(screening4721,3).
-glutamic_oxaloacetic_transaminase_level(screening4722,2).
-glutamic_oxaloacetic_transaminase_level(screening4723,2).
-glutamic_oxaloacetic_transaminase_level(screening4724,3).
-glutamic_oxaloacetic_transaminase_level(screening4725,2).
-glutamic_oxaloacetic_transaminase_level(screening4726,2).
-glutamic_oxaloacetic_transaminase_level(screening4727,2).
-glutamic_oxaloacetic_transaminase_level(screening4728,2).
-glutamic_oxaloacetic_transaminase_level(screening4729,2).
-glutamic_oxaloacetic_transaminase_level(screening473,3).
-glutamic_oxaloacetic_transaminase_level(screening4730,3).
-glutamic_oxaloacetic_transaminase_level(screening4731,4).
-glutamic_oxaloacetic_transaminase_level(screening4732,5).
-glutamic_oxaloacetic_transaminase_level(screening4733,4).
-glutamic_oxaloacetic_transaminase_level(screening4734,4).
-glutamic_oxaloacetic_transaminase_level(screening4735,2).
-glutamic_oxaloacetic_transaminase_level(screening4736,2).
-glutamic_oxaloacetic_transaminase_level(screening4737,2).
-glutamic_oxaloacetic_transaminase_level(screening4738,4).
-glutamic_oxaloacetic_transaminase_level(screening4739,3).
-glutamic_oxaloacetic_transaminase_level(screening474,5).
-glutamic_oxaloacetic_transaminase_level(screening4740,2).
-glutamic_oxaloacetic_transaminase_level(screening4741,3).
-glutamic_oxaloacetic_transaminase_level(screening4742,2).
-glutamic_oxaloacetic_transaminase_level(screening4743,3).
-glutamic_oxaloacetic_transaminase_level(screening4744,4).
-glutamic_oxaloacetic_transaminase_level(screening4745,3).
-glutamic_oxaloacetic_transaminase_level(screening4746,4).
-glutamic_oxaloacetic_transaminase_level(screening4747,3).
-glutamic_oxaloacetic_transaminase_level(screening4748,4).
-glutamic_oxaloacetic_transaminase_level(screening4749,4).
-glutamic_oxaloacetic_transaminase_level(screening475,4).
-glutamic_oxaloacetic_transaminase_level(screening4750,3).
-glutamic_oxaloacetic_transaminase_level(screening4751,2).
-glutamic_oxaloacetic_transaminase_level(screening4752,2).
-glutamic_oxaloacetic_transaminase_level(screening4753,3).
-glutamic_oxaloacetic_transaminase_level(screening4754,3).
-glutamic_oxaloacetic_transaminase_level(screening4755,2).
-glutamic_oxaloacetic_transaminase_level(screening4756,4).
-glutamic_oxaloacetic_transaminase_level(screening4757,3).
-glutamic_oxaloacetic_transaminase_level(screening4758,2).
-glutamic_oxaloacetic_transaminase_level(screening4759,2).
-glutamic_oxaloacetic_transaminase_level(screening476,4).
-glutamic_oxaloacetic_transaminase_level(screening4760,3).
-glutamic_oxaloacetic_transaminase_level(screening4761,3).
-glutamic_oxaloacetic_transaminase_level(screening4762,4).
-glutamic_oxaloacetic_transaminase_level(screening4763,4).
-glutamic_oxaloacetic_transaminase_level(screening4764,4).
-glutamic_oxaloacetic_transaminase_level(screening4765,4).
-glutamic_oxaloacetic_transaminase_level(screening4766,4).
-glutamic_oxaloacetic_transaminase_level(screening4767,2).
-glutamic_oxaloacetic_transaminase_level(screening4768,2).
-glutamic_oxaloacetic_transaminase_level(screening4769,3).
-glutamic_oxaloacetic_transaminase_level(screening477,2).
-glutamic_oxaloacetic_transaminase_level(screening4770,1).
-glutamic_oxaloacetic_transaminase_level(screening4771,1).
-glutamic_oxaloacetic_transaminase_level(screening4772,1).
-glutamic_oxaloacetic_transaminase_level(screening4773,1).
-glutamic_oxaloacetic_transaminase_level(screening4774,1).
-glutamic_oxaloacetic_transaminase_level(screening4775,1).
-glutamic_oxaloacetic_transaminase_level(screening4776,1).
-glutamic_oxaloacetic_transaminase_level(screening4777,1).
-glutamic_oxaloacetic_transaminase_level(screening4778,2).
-glutamic_oxaloacetic_transaminase_level(screening4779,1).
-glutamic_oxaloacetic_transaminase_level(screening478,2).
-glutamic_oxaloacetic_transaminase_level(screening4780,1).
-glutamic_oxaloacetic_transaminase_level(screening4781,1).
-glutamic_oxaloacetic_transaminase_level(screening4782,1).
-glutamic_oxaloacetic_transaminase_level(screening4783,4).
-glutamic_oxaloacetic_transaminase_level(screening4784,4).
-glutamic_oxaloacetic_transaminase_level(screening4785,3).
-glutamic_oxaloacetic_transaminase_level(screening4786,3).
-glutamic_oxaloacetic_transaminase_level(screening4787,3).
-glutamic_oxaloacetic_transaminase_level(screening4788,3).
-glutamic_oxaloacetic_transaminase_level(screening4789,3).
-glutamic_oxaloacetic_transaminase_level(screening479,2).
-glutamic_oxaloacetic_transaminase_level(screening4790,3).
-glutamic_oxaloacetic_transaminase_level(screening4791,3).
-glutamic_oxaloacetic_transaminase_level(screening4792,3).
-glutamic_oxaloacetic_transaminase_level(screening4793,3).
-glutamic_oxaloacetic_transaminase_level(screening4794,3).
-glutamic_oxaloacetic_transaminase_level(screening4795,4).
-glutamic_oxaloacetic_transaminase_level(screening4796,2).
-glutamic_oxaloacetic_transaminase_level(screening4797,3).
-glutamic_oxaloacetic_transaminase_level(screening4798,4).
-glutamic_oxaloacetic_transaminase_level(screening4799,4).
-glutamic_oxaloacetic_transaminase_level(screening480,2).
-glutamic_oxaloacetic_transaminase_level(screening4800,2).
-glutamic_oxaloacetic_transaminase_level(screening4801,2).
-glutamic_oxaloacetic_transaminase_level(screening4802,2).
-glutamic_oxaloacetic_transaminase_level(screening4803,2).
-glutamic_oxaloacetic_transaminase_level(screening4804,1).
-glutamic_oxaloacetic_transaminase_level(screening4805,1).
-glutamic_oxaloacetic_transaminase_level(screening4806,2).
-glutamic_oxaloacetic_transaminase_level(screening4807,2).
-glutamic_oxaloacetic_transaminase_level(screening4808,2).
-glutamic_oxaloacetic_transaminase_level(screening4809,2).
-glutamic_oxaloacetic_transaminase_level(screening481,2).
-glutamic_oxaloacetic_transaminase_level(screening4810,2).
-glutamic_oxaloacetic_transaminase_level(screening4811,2).
-glutamic_oxaloacetic_transaminase_level(screening4812,5).
-glutamic_oxaloacetic_transaminase_level(screening4813,4).
-glutamic_oxaloacetic_transaminase_level(screening4814,4).
-glutamic_oxaloacetic_transaminase_level(screening4815,3).
-glutamic_oxaloacetic_transaminase_level(screening4816,3).
-glutamic_oxaloacetic_transaminase_level(screening4817,4).
-glutamic_oxaloacetic_transaminase_level(screening4818,5).
-glutamic_oxaloacetic_transaminase_level(screening4819,2).
-glutamic_oxaloacetic_transaminase_level(screening482,2).
-glutamic_oxaloacetic_transaminase_level(screening4820,2).
-glutamic_oxaloacetic_transaminase_level(screening4821,2).
-glutamic_oxaloacetic_transaminase_level(screening4822,2).
-glutamic_oxaloacetic_transaminase_level(screening4823,2).
-glutamic_oxaloacetic_transaminase_level(screening4824,1).
-glutamic_oxaloacetic_transaminase_level(screening4825,1).
-glutamic_oxaloacetic_transaminase_level(screening4826,2).
-glutamic_oxaloacetic_transaminase_level(screening4827,2).
-glutamic_oxaloacetic_transaminase_level(screening4828,2).
-glutamic_oxaloacetic_transaminase_level(screening4829,1).
-glutamic_oxaloacetic_transaminase_level(screening483,2).
-glutamic_oxaloacetic_transaminase_level(screening4830,1).
-glutamic_oxaloacetic_transaminase_level(screening4831,4).
-glutamic_oxaloacetic_transaminase_level(screening4832,3).
-glutamic_oxaloacetic_transaminase_level(screening4833,4).
-glutamic_oxaloacetic_transaminase_level(screening4834,4).
-glutamic_oxaloacetic_transaminase_level(screening4835,4).
-glutamic_oxaloacetic_transaminase_level(screening4836,3).
-glutamic_oxaloacetic_transaminase_level(screening4837,4).
-glutamic_oxaloacetic_transaminase_level(screening4838,2).
-glutamic_oxaloacetic_transaminase_level(screening4839,3).
-glutamic_oxaloacetic_transaminase_level(screening484,2).
-glutamic_oxaloacetic_transaminase_level(screening4840,3).
-glutamic_oxaloacetic_transaminase_level(screening4841,3).
-glutamic_oxaloacetic_transaminase_level(screening4842,3).
-glutamic_oxaloacetic_transaminase_level(screening4843,3).
-glutamic_oxaloacetic_transaminase_level(screening4844,3).
-glutamic_oxaloacetic_transaminase_level(screening4845,3).
-glutamic_oxaloacetic_transaminase_level(screening4846,3).
-glutamic_oxaloacetic_transaminase_level(screening4847,4).
-glutamic_oxaloacetic_transaminase_level(screening4848,3).
-glutamic_oxaloacetic_transaminase_level(screening4849,4).
-glutamic_oxaloacetic_transaminase_level(screening485,2).
-glutamic_oxaloacetic_transaminase_level(screening4850,3).
-glutamic_oxaloacetic_transaminase_level(screening4851,3).
-glutamic_oxaloacetic_transaminase_level(screening4852,3).
-glutamic_oxaloacetic_transaminase_level(screening4853,4).
-glutamic_oxaloacetic_transaminase_level(screening4854,4).
-glutamic_oxaloacetic_transaminase_level(screening4855,4).
-glutamic_oxaloacetic_transaminase_level(screening4856,3).
-glutamic_oxaloacetic_transaminase_level(screening4857,4).
-glutamic_oxaloacetic_transaminase_level(screening4858,3).
-glutamic_oxaloacetic_transaminase_level(screening4859,3).
-glutamic_oxaloacetic_transaminase_level(screening486,2).
-glutamic_oxaloacetic_transaminase_level(screening4860,4).
-glutamic_oxaloacetic_transaminase_level(screening4861,4).
-glutamic_oxaloacetic_transaminase_level(screening4862,2).
-glutamic_oxaloacetic_transaminase_level(screening4863,2).
-glutamic_oxaloacetic_transaminase_level(screening4864,1).
-glutamic_oxaloacetic_transaminase_level(screening4865,1).
-glutamic_oxaloacetic_transaminase_level(screening4866,1).
-glutamic_oxaloacetic_transaminase_level(screening4867,1).
-glutamic_oxaloacetic_transaminase_level(screening4868,2).
-glutamic_oxaloacetic_transaminase_level(screening4869,2).
-glutamic_oxaloacetic_transaminase_level(screening487,2).
-glutamic_oxaloacetic_transaminase_level(screening4870,2).
-glutamic_oxaloacetic_transaminase_level(screening4871,2).
-glutamic_oxaloacetic_transaminase_level(screening4872,2).
-glutamic_oxaloacetic_transaminase_level(screening4873,2).
-glutamic_oxaloacetic_transaminase_level(screening4874,2).
-glutamic_oxaloacetic_transaminase_level(screening4875,2).
-glutamic_oxaloacetic_transaminase_level(screening4876,2).
-glutamic_oxaloacetic_transaminase_level(screening4877,2).
-glutamic_oxaloacetic_transaminase_level(screening4878,4).
-glutamic_oxaloacetic_transaminase_level(screening4879,4).
-glutamic_oxaloacetic_transaminase_level(screening488,2).
-glutamic_oxaloacetic_transaminase_level(screening4880,4).
-glutamic_oxaloacetic_transaminase_level(screening4881,3).
-glutamic_oxaloacetic_transaminase_level(screening4882,4).
-glutamic_oxaloacetic_transaminase_level(screening4883,3).
-glutamic_oxaloacetic_transaminase_level(screening4884,2).
-glutamic_oxaloacetic_transaminase_level(screening4885,2).
-glutamic_oxaloacetic_transaminase_level(screening4886,2).
-glutamic_oxaloacetic_transaminase_level(screening4887,2).
-glutamic_oxaloacetic_transaminase_level(screening4888,2).
-glutamic_oxaloacetic_transaminase_level(screening4889,2).
-glutamic_oxaloacetic_transaminase_level(screening489,2).
-glutamic_oxaloacetic_transaminase_level(screening4890,2).
-glutamic_oxaloacetic_transaminase_level(screening4891,3).
-glutamic_oxaloacetic_transaminase_level(screening4892,3).
-glutamic_oxaloacetic_transaminase_level(screening4893,2).
-glutamic_oxaloacetic_transaminase_level(screening4894,4).
-glutamic_oxaloacetic_transaminase_level(screening4895,4).
-glutamic_oxaloacetic_transaminase_level(screening4896,3).
-glutamic_oxaloacetic_transaminase_level(screening4897,2).
-glutamic_oxaloacetic_transaminase_level(screening4898,2).
-glutamic_oxaloacetic_transaminase_level(screening4899,3).
-glutamic_oxaloacetic_transaminase_level(screening490,2).
-glutamic_oxaloacetic_transaminase_level(screening4900,3).
-glutamic_oxaloacetic_transaminase_level(screening4901,3).
-glutamic_oxaloacetic_transaminase_level(screening4902,4).
-glutamic_oxaloacetic_transaminase_level(screening4903,2).
-glutamic_oxaloacetic_transaminase_level(screening4904,2).
-glutamic_oxaloacetic_transaminase_level(screening4905,3).
-glutamic_oxaloacetic_transaminase_level(screening4906,2).
-glutamic_oxaloacetic_transaminase_level(screening4907,3).
-glutamic_oxaloacetic_transaminase_level(screening4908,3).
-glutamic_oxaloacetic_transaminase_level(screening4909,2).
-glutamic_oxaloacetic_transaminase_level(screening491,2).
-glutamic_oxaloacetic_transaminase_level(screening4910,2).
-glutamic_oxaloacetic_transaminase_level(screening4911,2).
-glutamic_oxaloacetic_transaminase_level(screening4912,3).
-glutamic_oxaloacetic_transaminase_level(screening4913,4).
-glutamic_oxaloacetic_transaminase_level(screening4914,3).
-glutamic_oxaloacetic_transaminase_level(screening4915,2).
-glutamic_oxaloacetic_transaminase_level(screening4916,2).
-glutamic_oxaloacetic_transaminase_level(screening4917,4).
-glutamic_oxaloacetic_transaminase_level(screening4918,3).
-glutamic_oxaloacetic_transaminase_level(screening4919,3).
-glutamic_oxaloacetic_transaminase_level(screening492,2).
-glutamic_oxaloacetic_transaminase_level(screening4920,3).
-glutamic_oxaloacetic_transaminase_level(screening4921,3).
-glutamic_oxaloacetic_transaminase_level(screening4922,3).
-glutamic_oxaloacetic_transaminase_level(screening4923,3).
-glutamic_oxaloacetic_transaminase_level(screening4924,3).
-glutamic_oxaloacetic_transaminase_level(screening4925,3).
-glutamic_oxaloacetic_transaminase_level(screening4926,3).
-glutamic_oxaloacetic_transaminase_level(screening4927,3).
-glutamic_oxaloacetic_transaminase_level(screening4928,2).
-glutamic_oxaloacetic_transaminase_level(screening4929,2).
-glutamic_oxaloacetic_transaminase_level(screening493,3).
-glutamic_oxaloacetic_transaminase_level(screening4930,3).
-glutamic_oxaloacetic_transaminase_level(screening4931,3).
-glutamic_oxaloacetic_transaminase_level(screening4932,4).
-glutamic_oxaloacetic_transaminase_level(screening4933,4).
-glutamic_oxaloacetic_transaminase_level(screening4934,4).
-glutamic_oxaloacetic_transaminase_level(screening4935,3).
-glutamic_oxaloacetic_transaminase_level(screening4936,3).
-glutamic_oxaloacetic_transaminase_level(screening4937,2).
-glutamic_oxaloacetic_transaminase_level(screening4938,2).
-glutamic_oxaloacetic_transaminase_level(screening4939,3).
-glutamic_oxaloacetic_transaminase_level(screening494,4).
-glutamic_oxaloacetic_transaminase_level(screening4940,2).
-glutamic_oxaloacetic_transaminase_level(screening4941,2).
-glutamic_oxaloacetic_transaminase_level(screening4942,2).
-glutamic_oxaloacetic_transaminase_level(screening4943,2).
-glutamic_oxaloacetic_transaminase_level(screening4944,4).
-glutamic_oxaloacetic_transaminase_level(screening4945,4).
-glutamic_oxaloacetic_transaminase_level(screening4946,4).
-glutamic_oxaloacetic_transaminase_level(screening4947,4).
-glutamic_oxaloacetic_transaminase_level(screening4948,4).
-glutamic_oxaloacetic_transaminase_level(screening4949,5).
-glutamic_oxaloacetic_transaminase_level(screening495,4).
-glutamic_oxaloacetic_transaminase_level(screening4950,4).
-glutamic_oxaloacetic_transaminase_level(screening4951,4).
-glutamic_oxaloacetic_transaminase_level(screening4952,2).
-glutamic_oxaloacetic_transaminase_level(screening4953,2).
-glutamic_oxaloacetic_transaminase_level(screening4954,3).
-glutamic_oxaloacetic_transaminase_level(screening4955,2).
-glutamic_oxaloacetic_transaminase_level(screening4956,4).
-glutamic_oxaloacetic_transaminase_level(screening4957,4).
-glutamic_oxaloacetic_transaminase_level(screening4958,3).
-glutamic_oxaloacetic_transaminase_level(screening4959,3).
-glutamic_oxaloacetic_transaminase_level(screening496,2).
-glutamic_oxaloacetic_transaminase_level(screening4960,4).
-glutamic_oxaloacetic_transaminase_level(screening4961,2).
-glutamic_oxaloacetic_transaminase_level(screening4962,3).
-glutamic_oxaloacetic_transaminase_level(screening4963,3).
-glutamic_oxaloacetic_transaminase_level(screening4964,3).
-glutamic_oxaloacetic_transaminase_level(screening4965,3).
-glutamic_oxaloacetic_transaminase_level(screening4966,2).
-glutamic_oxaloacetic_transaminase_level(screening4967,3).
-glutamic_oxaloacetic_transaminase_level(screening4968,3).
-glutamic_oxaloacetic_transaminase_level(screening4969,2).
-glutamic_oxaloacetic_transaminase_level(screening497,4).
-glutamic_oxaloacetic_transaminase_level(screening4970,4).
-glutamic_oxaloacetic_transaminase_level(screening4971,4).
-glutamic_oxaloacetic_transaminase_level(screening4972,3).
-glutamic_oxaloacetic_transaminase_level(screening4973,4).
-glutamic_oxaloacetic_transaminase_level(screening4974,3).
-glutamic_oxaloacetic_transaminase_level(screening4975,3).
-glutamic_oxaloacetic_transaminase_level(screening4976,3).
-glutamic_oxaloacetic_transaminase_level(screening4977,4).
-glutamic_oxaloacetic_transaminase_level(screening4978,4).
-glutamic_oxaloacetic_transaminase_level(screening4979,2).
-glutamic_oxaloacetic_transaminase_level(screening498,4).
-glutamic_oxaloacetic_transaminase_level(screening4980,1).
-glutamic_oxaloacetic_transaminase_level(screening4981,1).
-glutamic_oxaloacetic_transaminase_level(screening4982,1).
-glutamic_oxaloacetic_transaminase_level(screening4983,1).
-glutamic_oxaloacetic_transaminase_level(screening4984,4).
-glutamic_oxaloacetic_transaminase_level(screening4985,4).
-glutamic_oxaloacetic_transaminase_level(screening4986,4).
-glutamic_oxaloacetic_transaminase_level(screening4987,4).
-glutamic_oxaloacetic_transaminase_level(screening4988,4).
-glutamic_oxaloacetic_transaminase_level(screening4989,4).
-glutamic_oxaloacetic_transaminase_level(screening499,1).
-glutamic_oxaloacetic_transaminase_level(screening4990,4).
-glutamic_oxaloacetic_transaminase_level(screening4991,4).
-glutamic_oxaloacetic_transaminase_level(screening4992,5).
-glutamic_oxaloacetic_transaminase_level(screening4993,4).
-glutamic_oxaloacetic_transaminase_level(screening4994,4).
-glutamic_oxaloacetic_transaminase_level(screening4995,3).
-glutamic_oxaloacetic_transaminase_level(screening4996,3).
-glutamic_oxaloacetic_transaminase_level(screening4997,3).
-glutamic_oxaloacetic_transaminase_level(screening4998,2).
-glutamic_oxaloacetic_transaminase_level(screening4999,2).
-glutamic_oxaloacetic_transaminase_level(screening500,1).
-glutamic_oxaloacetic_transaminase_level(screening5000,3).
-glutamic_oxaloacetic_transaminase_level(screening5001,3).
-glutamic_oxaloacetic_transaminase_level(screening5002,3).
-glutamic_oxaloacetic_transaminase_level(screening5003,4).
-glutamic_oxaloacetic_transaminase_level(screening5004,4).
-glutamic_oxaloacetic_transaminase_level(screening5005,4).
-glutamic_oxaloacetic_transaminase_level(screening5006,3).
-glutamic_oxaloacetic_transaminase_level(screening5007,2).
-glutamic_oxaloacetic_transaminase_level(screening5008,3).
-glutamic_oxaloacetic_transaminase_level(screening5009,3).
-glutamic_oxaloacetic_transaminase_level(screening501,1).
-glutamic_oxaloacetic_transaminase_level(screening5010,2).
-glutamic_oxaloacetic_transaminase_level(screening5011,2).
-glutamic_oxaloacetic_transaminase_level(screening5012,2).
-glutamic_oxaloacetic_transaminase_level(screening5013,2).
-glutamic_oxaloacetic_transaminase_level(screening5014,2).
-glutamic_oxaloacetic_transaminase_level(screening5015,2).
-glutamic_oxaloacetic_transaminase_level(screening5016,3).
-glutamic_oxaloacetic_transaminase_level(screening5017,3).
-glutamic_oxaloacetic_transaminase_level(screening5018,3).
-glutamic_oxaloacetic_transaminase_level(screening5019,2).
-glutamic_oxaloacetic_transaminase_level(screening502,2).
-glutamic_oxaloacetic_transaminase_level(screening5020,2).
-glutamic_oxaloacetic_transaminase_level(screening5021,2).
-glutamic_oxaloacetic_transaminase_level(screening5022,2).
-glutamic_oxaloacetic_transaminase_level(screening5023,2).
-glutamic_oxaloacetic_transaminase_level(screening5024,2).
-glutamic_oxaloacetic_transaminase_level(screening5025,2).
-glutamic_oxaloacetic_transaminase_level(screening5026,2).
-glutamic_oxaloacetic_transaminase_level(screening5027,3).
-glutamic_oxaloacetic_transaminase_level(screening5028,3).
-glutamic_oxaloacetic_transaminase_level(screening5029,2).
-glutamic_oxaloacetic_transaminase_level(screening503,2).
-glutamic_oxaloacetic_transaminase_level(screening5030,2).
-glutamic_oxaloacetic_transaminase_level(screening5031,4).
-glutamic_oxaloacetic_transaminase_level(screening5032,3).
-glutamic_oxaloacetic_transaminase_level(screening5033,4).
-glutamic_oxaloacetic_transaminase_level(screening5034,3).
-glutamic_oxaloacetic_transaminase_level(screening5035,3).
-glutamic_oxaloacetic_transaminase_level(screening5036,3).
-glutamic_oxaloacetic_transaminase_level(screening5037,4).
-glutamic_oxaloacetic_transaminase_level(screening5038,3).
-glutamic_oxaloacetic_transaminase_level(screening5039,4).
-glutamic_oxaloacetic_transaminase_level(screening504,2).
-glutamic_oxaloacetic_transaminase_level(screening5040,3).
-glutamic_oxaloacetic_transaminase_level(screening5041,3).
-glutamic_oxaloacetic_transaminase_level(screening5042,3).
-glutamic_oxaloacetic_transaminase_level(screening5043,3).
-glutamic_oxaloacetic_transaminase_level(screening5044,3).
-glutamic_oxaloacetic_transaminase_level(screening5045,3).
-glutamic_oxaloacetic_transaminase_level(screening5046,3).
-glutamic_oxaloacetic_transaminase_level(screening5047,3).
-glutamic_oxaloacetic_transaminase_level(screening5048,4).
-glutamic_oxaloacetic_transaminase_level(screening5049,4).
-glutamic_oxaloacetic_transaminase_level(screening505,2).
-glutamic_oxaloacetic_transaminase_level(screening5050,4).
-glutamic_oxaloacetic_transaminase_level(screening5051,4).
-glutamic_oxaloacetic_transaminase_level(screening5052,4).
-glutamic_oxaloacetic_transaminase_level(screening5053,3).
-glutamic_oxaloacetic_transaminase_level(screening5054,3).
-glutamic_oxaloacetic_transaminase_level(screening5055,3).
-glutamic_oxaloacetic_transaminase_level(screening5056,3).
-glutamic_oxaloacetic_transaminase_level(screening5057,5).
-glutamic_oxaloacetic_transaminase_level(screening5058,4).
-glutamic_oxaloacetic_transaminase_level(screening5059,4).
-glutamic_oxaloacetic_transaminase_level(screening506,2).
-glutamic_oxaloacetic_transaminase_level(screening5060,2).
-glutamic_oxaloacetic_transaminase_level(screening5061,1).
-glutamic_oxaloacetic_transaminase_level(screening5062,1).
-glutamic_oxaloacetic_transaminase_level(screening5063,1).
-glutamic_oxaloacetic_transaminase_level(screening5064,1).
-glutamic_oxaloacetic_transaminase_level(screening5065,1).
-glutamic_oxaloacetic_transaminase_level(screening5066,1).
-glutamic_oxaloacetic_transaminase_level(screening5067,1).
-glutamic_oxaloacetic_transaminase_level(screening5068,1).
-glutamic_oxaloacetic_transaminase_level(screening5069,1).
-glutamic_oxaloacetic_transaminase_level(screening507,2).
-glutamic_oxaloacetic_transaminase_level(screening5070,1).
-glutamic_oxaloacetic_transaminase_level(screening5071,4).
-glutamic_oxaloacetic_transaminase_level(screening5072,4).
-glutamic_oxaloacetic_transaminase_level(screening5073,2).
-glutamic_oxaloacetic_transaminase_level(screening5074,1).
-glutamic_oxaloacetic_transaminase_level(screening5075,1).
-glutamic_oxaloacetic_transaminase_level(screening5076,1).
-glutamic_oxaloacetic_transaminase_level(screening5077,1).
-glutamic_oxaloacetic_transaminase_level(screening5078,1).
-glutamic_oxaloacetic_transaminase_level(screening5079,1).
-glutamic_oxaloacetic_transaminase_level(screening508,2).
-glutamic_oxaloacetic_transaminase_level(screening5080,1).
-glutamic_oxaloacetic_transaminase_level(screening5081,1).
-glutamic_oxaloacetic_transaminase_level(screening5082,1).
-glutamic_oxaloacetic_transaminase_level(screening5083,1).
-glutamic_oxaloacetic_transaminase_level(screening5084,4).
-glutamic_oxaloacetic_transaminase_level(screening5085,4).
-glutamic_oxaloacetic_transaminase_level(screening5086,2).
-glutamic_oxaloacetic_transaminase_level(screening5087,1).
-glutamic_oxaloacetic_transaminase_level(screening5088,1).
-glutamic_oxaloacetic_transaminase_level(screening5089,1).
-glutamic_oxaloacetic_transaminase_level(screening509,2).
-glutamic_oxaloacetic_transaminase_level(screening5090,1).
-glutamic_oxaloacetic_transaminase_level(screening5091,1).
-glutamic_oxaloacetic_transaminase_level(screening5092,1).
-glutamic_oxaloacetic_transaminase_level(screening5093,1).
-glutamic_oxaloacetic_transaminase_level(screening5094,1).
-glutamic_oxaloacetic_transaminase_level(screening5095,1).
-glutamic_oxaloacetic_transaminase_level(screening5096,1).
-glutamic_oxaloacetic_transaminase_level(screening5097,4).
-glutamic_oxaloacetic_transaminase_level(screening5098,4).
-glutamic_oxaloacetic_transaminase_level(screening5099,2).
-glutamic_oxaloacetic_transaminase_level(screening510,2).
-glutamic_oxaloacetic_transaminase_level(screening5100,1).
-glutamic_oxaloacetic_transaminase_level(screening5101,1).
-glutamic_oxaloacetic_transaminase_level(screening5102,1).
-glutamic_oxaloacetic_transaminase_level(screening5103,1).
-glutamic_oxaloacetic_transaminase_level(screening5104,1).
-glutamic_oxaloacetic_transaminase_level(screening5105,1).
-glutamic_oxaloacetic_transaminase_level(screening5106,1).
-glutamic_oxaloacetic_transaminase_level(screening5107,1).
-glutamic_oxaloacetic_transaminase_level(screening5108,1).
-glutamic_oxaloacetic_transaminase_level(screening5109,1).
-glutamic_oxaloacetic_transaminase_level(screening511,4).
-glutamic_oxaloacetic_transaminase_level(screening5110,4).
-glutamic_oxaloacetic_transaminase_level(screening5111,4).
-glutamic_oxaloacetic_transaminase_level(screening5112,2).
-glutamic_oxaloacetic_transaminase_level(screening5113,1).
-glutamic_oxaloacetic_transaminase_level(screening5114,1).
-glutamic_oxaloacetic_transaminase_level(screening5115,1).
-glutamic_oxaloacetic_transaminase_level(screening5116,1).
-glutamic_oxaloacetic_transaminase_level(screening5117,1).
-glutamic_oxaloacetic_transaminase_level(screening5118,1).
-glutamic_oxaloacetic_transaminase_level(screening5119,1).
-glutamic_oxaloacetic_transaminase_level(screening512,2).
-glutamic_oxaloacetic_transaminase_level(screening5120,1).
-glutamic_oxaloacetic_transaminase_level(screening5121,1).
-glutamic_oxaloacetic_transaminase_level(screening5122,1).
-glutamic_oxaloacetic_transaminase_level(screening5123,4).
-glutamic_oxaloacetic_transaminase_level(screening5124,3).
-glutamic_oxaloacetic_transaminase_level(screening5125,2).
-glutamic_oxaloacetic_transaminase_level(screening5126,2).
-glutamic_oxaloacetic_transaminase_level(screening5127,2).
-glutamic_oxaloacetic_transaminase_level(screening5128,2).
-glutamic_oxaloacetic_transaminase_level(screening5129,2).
-glutamic_oxaloacetic_transaminase_level(screening513,1).
-glutamic_oxaloacetic_transaminase_level(screening5130,2).
-glutamic_oxaloacetic_transaminase_level(screening5131,2).
-glutamic_oxaloacetic_transaminase_level(screening5132,2).
-glutamic_oxaloacetic_transaminase_level(screening5133,2).
-glutamic_oxaloacetic_transaminase_level(screening5134,2).
-glutamic_oxaloacetic_transaminase_level(screening5135,2).
-glutamic_oxaloacetic_transaminase_level(screening5136,4).
-glutamic_oxaloacetic_transaminase_level(screening5137,3).
-glutamic_oxaloacetic_transaminase_level(screening5138,2).
-glutamic_oxaloacetic_transaminase_level(screening5139,2).
-glutamic_oxaloacetic_transaminase_level(screening514,3).
-glutamic_oxaloacetic_transaminase_level(screening5140,2).
-glutamic_oxaloacetic_transaminase_level(screening5141,2).
-glutamic_oxaloacetic_transaminase_level(screening5142,2).
-glutamic_oxaloacetic_transaminase_level(screening5143,2).
-glutamic_oxaloacetic_transaminase_level(screening5144,2).
-glutamic_oxaloacetic_transaminase_level(screening5145,2).
-glutamic_oxaloacetic_transaminase_level(screening5146,2).
-glutamic_oxaloacetic_transaminase_level(screening5147,2).
-glutamic_oxaloacetic_transaminase_level(screening5148,2).
-glutamic_oxaloacetic_transaminase_level(screening5149,3).
-glutamic_oxaloacetic_transaminase_level(screening515,3).
-glutamic_oxaloacetic_transaminase_level(screening5150,3).
-glutamic_oxaloacetic_transaminase_level(screening5151,1).
-glutamic_oxaloacetic_transaminase_level(screening5152,2).
-glutamic_oxaloacetic_transaminase_level(screening5153,1).
-glutamic_oxaloacetic_transaminase_level(screening5154,1).
-glutamic_oxaloacetic_transaminase_level(screening5155,3).
-glutamic_oxaloacetic_transaminase_level(screening5156,3).
-glutamic_oxaloacetic_transaminase_level(screening5157,3).
-glutamic_oxaloacetic_transaminase_level(screening5158,2).
-glutamic_oxaloacetic_transaminase_level(screening5159,2).
-glutamic_oxaloacetic_transaminase_level(screening516,3).
-glutamic_oxaloacetic_transaminase_level(screening5160,2).
-glutamic_oxaloacetic_transaminase_level(screening5161,4).
-glutamic_oxaloacetic_transaminase_level(screening5162,3).
-glutamic_oxaloacetic_transaminase_level(screening5163,2).
-glutamic_oxaloacetic_transaminase_level(screening5164,2).
-glutamic_oxaloacetic_transaminase_level(screening5165,4).
-glutamic_oxaloacetic_transaminase_level(screening5166,4).
-glutamic_oxaloacetic_transaminase_level(screening5167,3).
-glutamic_oxaloacetic_transaminase_level(screening5168,2).
-glutamic_oxaloacetic_transaminase_level(screening5169,2).
-glutamic_oxaloacetic_transaminase_level(screening517,3).
-glutamic_oxaloacetic_transaminase_level(screening5170,2).
-glutamic_oxaloacetic_transaminase_level(screening5171,4).
-glutamic_oxaloacetic_transaminase_level(screening5172,3).
-glutamic_oxaloacetic_transaminase_level(screening5173,2).
-glutamic_oxaloacetic_transaminase_level(screening5174,2).
-glutamic_oxaloacetic_transaminase_level(screening5175,4).
-glutamic_oxaloacetic_transaminase_level(screening5176,4).
-glutamic_oxaloacetic_transaminase_level(screening5177,3).
-glutamic_oxaloacetic_transaminase_level(screening5178,2).
-glutamic_oxaloacetic_transaminase_level(screening5179,3).
-glutamic_oxaloacetic_transaminase_level(screening518,4).
-glutamic_oxaloacetic_transaminase_level(screening5180,3).
-glutamic_oxaloacetic_transaminase_level(screening5181,2).
-glutamic_oxaloacetic_transaminase_level(screening5182,2).
-glutamic_oxaloacetic_transaminase_level(screening5183,2).
-glutamic_oxaloacetic_transaminase_level(screening5184,1).
-glutamic_oxaloacetic_transaminase_level(screening5185,2).
-glutamic_oxaloacetic_transaminase_level(screening5186,3).
-glutamic_oxaloacetic_transaminase_level(screening5187,3).
-glutamic_oxaloacetic_transaminase_level(screening5188,2).
-glutamic_oxaloacetic_transaminase_level(screening5189,2).
-glutamic_oxaloacetic_transaminase_level(screening519,4).
-glutamic_oxaloacetic_transaminase_level(screening5190,2).
-glutamic_oxaloacetic_transaminase_level(screening5191,1).
-glutamic_oxaloacetic_transaminase_level(screening5192,2).
-glutamic_oxaloacetic_transaminase_level(screening5193,3).
-glutamic_oxaloacetic_transaminase_level(screening5194,3).
-glutamic_oxaloacetic_transaminase_level(screening5195,2).
-glutamic_oxaloacetic_transaminase_level(screening5196,2).
-glutamic_oxaloacetic_transaminase_level(screening5197,2).
-glutamic_oxaloacetic_transaminase_level(screening5198,1).
-glutamic_oxaloacetic_transaminase_level(screening5199,4).
-glutamic_oxaloacetic_transaminase_level(screening520,4).
-glutamic_oxaloacetic_transaminase_level(screening5200,4).
-glutamic_oxaloacetic_transaminase_level(screening5201,4).
-glutamic_oxaloacetic_transaminase_level(screening5202,4).
-glutamic_oxaloacetic_transaminase_level(screening5203,4).
-glutamic_oxaloacetic_transaminase_level(screening5204,4).
-glutamic_oxaloacetic_transaminase_level(screening5205,3).
-glutamic_oxaloacetic_transaminase_level(screening5206,2).
-glutamic_oxaloacetic_transaminase_level(screening5207,2).
-glutamic_oxaloacetic_transaminase_level(screening5208,2).
-glutamic_oxaloacetic_transaminase_level(screening5209,1).
-glutamic_oxaloacetic_transaminase_level(screening521,3).
-glutamic_oxaloacetic_transaminase_level(screening5210,2).
-glutamic_oxaloacetic_transaminase_level(screening5211,2).
-glutamic_oxaloacetic_transaminase_level(screening5212,2).
-glutamic_oxaloacetic_transaminase_level(screening5213,2).
-glutamic_oxaloacetic_transaminase_level(screening5214,2).
-glutamic_oxaloacetic_transaminase_level(screening5215,4).
-glutamic_oxaloacetic_transaminase_level(screening5216,4).
-glutamic_oxaloacetic_transaminase_level(screening5217,3).
-glutamic_oxaloacetic_transaminase_level(screening5218,2).
-glutamic_oxaloacetic_transaminase_level(screening5219,2).
-glutamic_oxaloacetic_transaminase_level(screening522,2).
-glutamic_oxaloacetic_transaminase_level(screening5220,2).
-glutamic_oxaloacetic_transaminase_level(screening5221,1).
-glutamic_oxaloacetic_transaminase_level(screening5222,2).
-glutamic_oxaloacetic_transaminase_level(screening5223,2).
-glutamic_oxaloacetic_transaminase_level(screening5224,2).
-glutamic_oxaloacetic_transaminase_level(screening5225,2).
-glutamic_oxaloacetic_transaminase_level(screening5226,2).
-glutamic_oxaloacetic_transaminase_level(screening5227,4).
-glutamic_oxaloacetic_transaminase_level(screening5228,4).
-glutamic_oxaloacetic_transaminase_level(screening5229,4).
-glutamic_oxaloacetic_transaminase_level(screening523,4).
-glutamic_oxaloacetic_transaminase_level(screening5230,4).
-glutamic_oxaloacetic_transaminase_level(screening5231,4).
-glutamic_oxaloacetic_transaminase_level(screening5232,4).
-glutamic_oxaloacetic_transaminase_level(screening5233,4).
-glutamic_oxaloacetic_transaminase_level(screening5234,4).
-glutamic_oxaloacetic_transaminase_level(screening5235,4).
-glutamic_oxaloacetic_transaminase_level(screening5236,4).
-glutamic_oxaloacetic_transaminase_level(screening5237,4).
-glutamic_oxaloacetic_transaminase_level(screening5238,4).
-glutamic_oxaloacetic_transaminase_level(screening5239,4).
-glutamic_oxaloacetic_transaminase_level(screening524,3).
-glutamic_oxaloacetic_transaminase_level(screening5240,4).
-glutamic_oxaloacetic_transaminase_level(screening5241,4).
-glutamic_oxaloacetic_transaminase_level(screening5242,4).
-glutamic_oxaloacetic_transaminase_level(screening5243,3).
-glutamic_oxaloacetic_transaminase_level(screening5244,2).
-glutamic_oxaloacetic_transaminase_level(screening5245,3).
-glutamic_oxaloacetic_transaminase_level(screening5246,3).
-glutamic_oxaloacetic_transaminase_level(screening5247,3).
-glutamic_oxaloacetic_transaminase_level(screening5248,3).
-glutamic_oxaloacetic_transaminase_level(screening5249,3).
-glutamic_oxaloacetic_transaminase_level(screening525,4).
-glutamic_oxaloacetic_transaminase_level(screening5250,4).
-glutamic_oxaloacetic_transaminase_level(screening5251,4).
-glutamic_oxaloacetic_transaminase_level(screening5252,5).
-glutamic_oxaloacetic_transaminase_level(screening5253,4).
-glutamic_oxaloacetic_transaminase_level(screening5254,4).
-glutamic_oxaloacetic_transaminase_level(screening5255,5).
-glutamic_oxaloacetic_transaminase_level(screening5256,5).
-glutamic_oxaloacetic_transaminase_level(screening5257,4).
-glutamic_oxaloacetic_transaminase_level(screening5258,4).
-glutamic_oxaloacetic_transaminase_level(screening5259,4).
-glutamic_oxaloacetic_transaminase_level(screening526,4).
-glutamic_oxaloacetic_transaminase_level(screening5260,4).
-glutamic_oxaloacetic_transaminase_level(screening5261,4).
-glutamic_oxaloacetic_transaminase_level(screening5262,4).
-glutamic_oxaloacetic_transaminase_level(screening5263,4).
-glutamic_oxaloacetic_transaminase_level(screening5264,4).
-glutamic_oxaloacetic_transaminase_level(screening5265,3).
-glutamic_oxaloacetic_transaminase_level(screening5266,4).
-glutamic_oxaloacetic_transaminase_level(screening5267,3).
-glutamic_oxaloacetic_transaminase_level(screening5268,3).
-glutamic_oxaloacetic_transaminase_level(screening5269,3).
-glutamic_oxaloacetic_transaminase_level(screening527,3).
-glutamic_oxaloacetic_transaminase_level(screening5270,3).
-glutamic_oxaloacetic_transaminase_level(screening5271,3).
-glutamic_oxaloacetic_transaminase_level(screening5272,3).
-glutamic_oxaloacetic_transaminase_level(screening5273,3).
-glutamic_oxaloacetic_transaminase_level(screening5274,4).
-glutamic_oxaloacetic_transaminase_level(screening5275,3).
-glutamic_oxaloacetic_transaminase_level(screening5276,4).
-glutamic_oxaloacetic_transaminase_level(screening5277,4).
-glutamic_oxaloacetic_transaminase_level(screening5278,4).
-glutamic_oxaloacetic_transaminase_level(screening5279,4).
-glutamic_oxaloacetic_transaminase_level(screening528,4).
-glutamic_oxaloacetic_transaminase_level(screening5280,2).
-glutamic_oxaloacetic_transaminase_level(screening5281,3).
-glutamic_oxaloacetic_transaminase_level(screening5282,4).
-glutamic_oxaloacetic_transaminase_level(screening5283,4).
-glutamic_oxaloacetic_transaminase_level(screening5284,3).
-glutamic_oxaloacetic_transaminase_level(screening5285,3).
-glutamic_oxaloacetic_transaminase_level(screening5286,3).
-glutamic_oxaloacetic_transaminase_level(screening5287,3).
-glutamic_oxaloacetic_transaminase_level(screening5288,3).
-glutamic_oxaloacetic_transaminase_level(screening5289,2).
-glutamic_oxaloacetic_transaminase_level(screening529,3).
-glutamic_oxaloacetic_transaminase_level(screening5290,2).
-glutamic_oxaloacetic_transaminase_level(screening5291,1).
-glutamic_oxaloacetic_transaminase_level(screening5292,4).
-glutamic_oxaloacetic_transaminase_level(screening5293,4).
-glutamic_oxaloacetic_transaminase_level(screening5294,2).
-glutamic_oxaloacetic_transaminase_level(screening5295,2).
-glutamic_oxaloacetic_transaminase_level(screening5296,2).
-glutamic_oxaloacetic_transaminase_level(screening5297,2).
-glutamic_oxaloacetic_transaminase_level(screening5298,2).
-glutamic_oxaloacetic_transaminase_level(screening5299,2).
-glutamic_oxaloacetic_transaminase_level(screening530,3).
-glutamic_oxaloacetic_transaminase_level(screening5300,2).
-glutamic_oxaloacetic_transaminase_level(screening5301,2).
-glutamic_oxaloacetic_transaminase_level(screening5302,4).
-glutamic_oxaloacetic_transaminase_level(screening5303,4).
-glutamic_oxaloacetic_transaminase_level(screening5304,3).
-glutamic_oxaloacetic_transaminase_level(screening5305,3).
-glutamic_oxaloacetic_transaminase_level(screening5306,3).
-glutamic_oxaloacetic_transaminase_level(screening5307,3).
-glutamic_oxaloacetic_transaminase_level(screening5308,2).
-glutamic_oxaloacetic_transaminase_level(screening5309,2).
-glutamic_oxaloacetic_transaminase_level(screening531,3).
-glutamic_oxaloacetic_transaminase_level(screening5310,2).
-glutamic_oxaloacetic_transaminase_level(screening5311,1).
-glutamic_oxaloacetic_transaminase_level(screening5312,4).
-glutamic_oxaloacetic_transaminase_level(screening5313,3).
-glutamic_oxaloacetic_transaminase_level(screening5314,2).
-glutamic_oxaloacetic_transaminase_level(screening5315,1).
-glutamic_oxaloacetic_transaminase_level(screening5316,3).
-glutamic_oxaloacetic_transaminase_level(screening5317,3).
-glutamic_oxaloacetic_transaminase_level(screening5318,2).
-glutamic_oxaloacetic_transaminase_level(screening5319,2).
-glutamic_oxaloacetic_transaminase_level(screening532,4).
-glutamic_oxaloacetic_transaminase_level(screening5320,2).
-glutamic_oxaloacetic_transaminase_level(screening5321,2).
-glutamic_oxaloacetic_transaminase_level(screening5322,3).
-glutamic_oxaloacetic_transaminase_level(screening5323,3).
-glutamic_oxaloacetic_transaminase_level(screening5324,3).
-glutamic_oxaloacetic_transaminase_level(screening5325,3).
-glutamic_oxaloacetic_transaminase_level(screening5326,4).
-glutamic_oxaloacetic_transaminase_level(screening5327,3).
-glutamic_oxaloacetic_transaminase_level(screening5328,3).
-glutamic_oxaloacetic_transaminase_level(screening5329,3).
-glutamic_oxaloacetic_transaminase_level(screening533,3).
-glutamic_oxaloacetic_transaminase_level(screening5330,2).
-glutamic_oxaloacetic_transaminase_level(screening5331,3).
-glutamic_oxaloacetic_transaminase_level(screening5332,2).
-glutamic_oxaloacetic_transaminase_level(screening5333,4).
-glutamic_oxaloacetic_transaminase_level(screening5334,4).
-glutamic_oxaloacetic_transaminase_level(screening5335,3).
-glutamic_oxaloacetic_transaminase_level(screening5336,1).
-glutamic_oxaloacetic_transaminase_level(screening5337,3).
-glutamic_oxaloacetic_transaminase_level(screening5338,1).
-glutamic_oxaloacetic_transaminase_level(screening5339,2).
-glutamic_oxaloacetic_transaminase_level(screening534,3).
-glutamic_oxaloacetic_transaminase_level(screening5340,2).
-glutamic_oxaloacetic_transaminase_level(screening5341,2).
-glutamic_oxaloacetic_transaminase_level(screening5342,2).
-glutamic_oxaloacetic_transaminase_level(screening5343,2).
-glutamic_oxaloacetic_transaminase_level(screening5344,2).
-glutamic_oxaloacetic_transaminase_level(screening5345,2).
-glutamic_oxaloacetic_transaminase_level(screening5346,2).
-glutamic_oxaloacetic_transaminase_level(screening5347,4).
-glutamic_oxaloacetic_transaminase_level(screening5348,4).
-glutamic_oxaloacetic_transaminase_level(screening5349,3).
-glutamic_oxaloacetic_transaminase_level(screening535,3).
-glutamic_oxaloacetic_transaminase_level(screening5350,1).
-glutamic_oxaloacetic_transaminase_level(screening5351,3).
-glutamic_oxaloacetic_transaminase_level(screening5352,1).
-glutamic_oxaloacetic_transaminase_level(screening5353,2).
-glutamic_oxaloacetic_transaminase_level(screening5354,2).
-glutamic_oxaloacetic_transaminase_level(screening5355,2).
-glutamic_oxaloacetic_transaminase_level(screening5356,2).
-glutamic_oxaloacetic_transaminase_level(screening5357,2).
-glutamic_oxaloacetic_transaminase_level(screening5358,2).
-glutamic_oxaloacetic_transaminase_level(screening5359,2).
-glutamic_oxaloacetic_transaminase_level(screening536,3).
-glutamic_oxaloacetic_transaminase_level(screening5360,2).
-glutamic_oxaloacetic_transaminase_level(screening5361,2).
-glutamic_oxaloacetic_transaminase_level(screening5362,2).
-glutamic_oxaloacetic_transaminase_level(screening5363,4).
-glutamic_oxaloacetic_transaminase_level(screening5364,4).
-glutamic_oxaloacetic_transaminase_level(screening5365,4).
-glutamic_oxaloacetic_transaminase_level(screening5366,4).
-glutamic_oxaloacetic_transaminase_level(screening5367,4).
-glutamic_oxaloacetic_transaminase_level(screening5368,4).
-glutamic_oxaloacetic_transaminase_level(screening5369,4).
-glutamic_oxaloacetic_transaminase_level(screening537,3).
-glutamic_oxaloacetic_transaminase_level(screening5370,4).
-glutamic_oxaloacetic_transaminase_level(screening5371,4).
-glutamic_oxaloacetic_transaminase_level(screening5372,4).
-glutamic_oxaloacetic_transaminase_level(screening5373,4).
-glutamic_oxaloacetic_transaminase_level(screening5374,4).
-glutamic_oxaloacetic_transaminase_level(screening5375,3).
-glutamic_oxaloacetic_transaminase_level(screening5376,2).
-glutamic_oxaloacetic_transaminase_level(screening5377,4).
-glutamic_oxaloacetic_transaminase_level(screening5378,4).
-glutamic_oxaloacetic_transaminase_level(screening5379,4).
-glutamic_oxaloacetic_transaminase_level(screening538,3).
-glutamic_oxaloacetic_transaminase_level(screening5380,4).
-glutamic_oxaloacetic_transaminase_level(screening5381,4).
-glutamic_oxaloacetic_transaminase_level(screening5382,4).
-glutamic_oxaloacetic_transaminase_level(screening5383,4).
-glutamic_oxaloacetic_transaminase_level(screening5384,4).
-glutamic_oxaloacetic_transaminase_level(screening5385,4).
-glutamic_oxaloacetic_transaminase_level(screening5386,4).
-glutamic_oxaloacetic_transaminase_level(screening5387,4).
-glutamic_oxaloacetic_transaminase_level(screening5388,4).
-glutamic_oxaloacetic_transaminase_level(screening5389,3).
-glutamic_oxaloacetic_transaminase_level(screening539,3).
-glutamic_oxaloacetic_transaminase_level(screening5390,2).
-glutamic_oxaloacetic_transaminase_level(screening5391,2).
-glutamic_oxaloacetic_transaminase_level(screening5392,2).
-glutamic_oxaloacetic_transaminase_level(screening5393,2).
-glutamic_oxaloacetic_transaminase_level(screening5394,2).
-glutamic_oxaloacetic_transaminase_level(screening5395,2).
-glutamic_oxaloacetic_transaminase_level(screening5396,2).
-glutamic_oxaloacetic_transaminase_level(screening5397,2).
-glutamic_oxaloacetic_transaminase_level(screening5398,4).
-glutamic_oxaloacetic_transaminase_level(screening5399,4).
-glutamic_oxaloacetic_transaminase_level(screening540,3).
-glutamic_oxaloacetic_transaminase_level(screening5400,4).
-glutamic_oxaloacetic_transaminase_level(screening5401,4).
-glutamic_oxaloacetic_transaminase_level(screening5402,4).
-glutamic_oxaloacetic_transaminase_level(screening5403,4).
-glutamic_oxaloacetic_transaminase_level(screening5404,4).
-glutamic_oxaloacetic_transaminase_level(screening5405,4).
-glutamic_oxaloacetic_transaminase_level(screening5406,4).
-glutamic_oxaloacetic_transaminase_level(screening5407,4).
-glutamic_oxaloacetic_transaminase_level(screening5408,4).
-glutamic_oxaloacetic_transaminase_level(screening5409,4).
-glutamic_oxaloacetic_transaminase_level(screening541,4).
-glutamic_oxaloacetic_transaminase_level(screening5410,3).
-glutamic_oxaloacetic_transaminase_level(screening5411,2).
-glutamic_oxaloacetic_transaminase_level(screening5412,2).
-glutamic_oxaloacetic_transaminase_level(screening5413,2).
-glutamic_oxaloacetic_transaminase_level(screening5414,2).
-glutamic_oxaloacetic_transaminase_level(screening5415,2).
-glutamic_oxaloacetic_transaminase_level(screening5416,2).
-glutamic_oxaloacetic_transaminase_level(screening5417,2).
-glutamic_oxaloacetic_transaminase_level(screening5418,2).
-glutamic_oxaloacetic_transaminase_level(screening5419,4).
-glutamic_oxaloacetic_transaminase_level(screening542,3).
-glutamic_oxaloacetic_transaminase_level(screening5420,4).
-glutamic_oxaloacetic_transaminase_level(screening5421,4).
-glutamic_oxaloacetic_transaminase_level(screening5422,4).
-glutamic_oxaloacetic_transaminase_level(screening5423,4).
-glutamic_oxaloacetic_transaminase_level(screening5424,4).
-glutamic_oxaloacetic_transaminase_level(screening5425,4).
-glutamic_oxaloacetic_transaminase_level(screening5426,4).
-glutamic_oxaloacetic_transaminase_level(screening5427,4).
-glutamic_oxaloacetic_transaminase_level(screening5428,4).
-glutamic_oxaloacetic_transaminase_level(screening5429,4).
-glutamic_oxaloacetic_transaminase_level(screening543,3).
-glutamic_oxaloacetic_transaminase_level(screening5430,4).
-glutamic_oxaloacetic_transaminase_level(screening5431,3).
-glutamic_oxaloacetic_transaminase_level(screening5432,2).
-glutamic_oxaloacetic_transaminase_level(screening5433,2).
-glutamic_oxaloacetic_transaminase_level(screening5434,2).
-glutamic_oxaloacetic_transaminase_level(screening5435,2).
-glutamic_oxaloacetic_transaminase_level(screening5436,2).
-glutamic_oxaloacetic_transaminase_level(screening5437,2).
-glutamic_oxaloacetic_transaminase_level(screening5438,2).
-glutamic_oxaloacetic_transaminase_level(screening5439,2).
-glutamic_oxaloacetic_transaminase_level(screening544,2).
-glutamic_oxaloacetic_transaminase_level(screening5440,4).
-glutamic_oxaloacetic_transaminase_level(screening5441,4).
-glutamic_oxaloacetic_transaminase_level(screening5442,4).
-glutamic_oxaloacetic_transaminase_level(screening5443,4).
-glutamic_oxaloacetic_transaminase_level(screening5444,4).
-glutamic_oxaloacetic_transaminase_level(screening5445,4).
-glutamic_oxaloacetic_transaminase_level(screening5446,4).
-glutamic_oxaloacetic_transaminase_level(screening5447,4).
-glutamic_oxaloacetic_transaminase_level(screening5448,4).
-glutamic_oxaloacetic_transaminase_level(screening5449,4).
-glutamic_oxaloacetic_transaminase_level(screening545,2).
-glutamic_oxaloacetic_transaminase_level(screening5450,4).
-glutamic_oxaloacetic_transaminase_level(screening5451,4).
-glutamic_oxaloacetic_transaminase_level(screening5452,3).
-glutamic_oxaloacetic_transaminase_level(screening5453,2).
-glutamic_oxaloacetic_transaminase_level(screening5454,2).
-glutamic_oxaloacetic_transaminase_level(screening5455,2).
-glutamic_oxaloacetic_transaminase_level(screening5456,2).
-glutamic_oxaloacetic_transaminase_level(screening5457,2).
-glutamic_oxaloacetic_transaminase_level(screening5458,2).
-glutamic_oxaloacetic_transaminase_level(screening5459,2).
-glutamic_oxaloacetic_transaminase_level(screening546,2).
-glutamic_oxaloacetic_transaminase_level(screening5460,2).
-glutamic_oxaloacetic_transaminase_level(screening5461,4).
-glutamic_oxaloacetic_transaminase_level(screening5462,4).
-glutamic_oxaloacetic_transaminase_level(screening5463,4).
-glutamic_oxaloacetic_transaminase_level(screening5464,4).
-glutamic_oxaloacetic_transaminase_level(screening5465,4).
-glutamic_oxaloacetic_transaminase_level(screening5466,4).
-glutamic_oxaloacetic_transaminase_level(screening5467,4).
-glutamic_oxaloacetic_transaminase_level(screening5468,4).
-glutamic_oxaloacetic_transaminase_level(screening5469,4).
-glutamic_oxaloacetic_transaminase_level(screening547,2).
-glutamic_oxaloacetic_transaminase_level(screening5470,3).
-glutamic_oxaloacetic_transaminase_level(screening5471,3).
-glutamic_oxaloacetic_transaminase_level(screening5472,3).
-glutamic_oxaloacetic_transaminase_level(screening5473,3).
-glutamic_oxaloacetic_transaminase_level(screening5474,2).
-glutamic_oxaloacetic_transaminase_level(screening5475,2).
-glutamic_oxaloacetic_transaminase_level(screening5476,3).
-glutamic_oxaloacetic_transaminase_level(screening5477,3).
-glutamic_oxaloacetic_transaminase_level(screening5478,3).
-glutamic_oxaloacetic_transaminase_level(screening5479,2).
-glutamic_oxaloacetic_transaminase_level(screening548,2).
-glutamic_oxaloacetic_transaminase_level(screening5480,2).
-glutamic_oxaloacetic_transaminase_level(screening5481,2).
-glutamic_oxaloacetic_transaminase_level(screening5482,2).
-glutamic_oxaloacetic_transaminase_level(screening5483,2).
-glutamic_oxaloacetic_transaminase_level(screening5484,2).
-glutamic_oxaloacetic_transaminase_level(screening5485,2).
-glutamic_oxaloacetic_transaminase_level(screening5486,4).
-glutamic_oxaloacetic_transaminase_level(screening5487,4).
-glutamic_oxaloacetic_transaminase_level(screening5488,3).
-glutamic_oxaloacetic_transaminase_level(screening5489,3).
-glutamic_oxaloacetic_transaminase_level(screening549,4).
-glutamic_oxaloacetic_transaminase_level(screening5490,3).
-glutamic_oxaloacetic_transaminase_level(screening5491,3).
-glutamic_oxaloacetic_transaminase_level(screening5492,2).
-glutamic_oxaloacetic_transaminase_level(screening5493,2).
-glutamic_oxaloacetic_transaminase_level(screening5494,3).
-glutamic_oxaloacetic_transaminase_level(screening5495,3).
-glutamic_oxaloacetic_transaminase_level(screening5496,3).
-glutamic_oxaloacetic_transaminase_level(screening5497,2).
-glutamic_oxaloacetic_transaminase_level(screening5498,2).
-glutamic_oxaloacetic_transaminase_level(screening5499,2).
-glutamic_oxaloacetic_transaminase_level(screening550,3).
-glutamic_oxaloacetic_transaminase_level(screening5500,2).
-glutamic_oxaloacetic_transaminase_level(screening5501,2).
-glutamic_oxaloacetic_transaminase_level(screening5502,2).
-glutamic_oxaloacetic_transaminase_level(screening5503,2).
-glutamic_oxaloacetic_transaminase_level(screening5504,4).
-glutamic_oxaloacetic_transaminase_level(screening5505,4).
-glutamic_oxaloacetic_transaminase_level(screening5506,3).
-glutamic_oxaloacetic_transaminase_level(screening5507,3).
-glutamic_oxaloacetic_transaminase_level(screening5508,3).
-glutamic_oxaloacetic_transaminase_level(screening5509,3).
-glutamic_oxaloacetic_transaminase_level(screening551,3).
-glutamic_oxaloacetic_transaminase_level(screening5510,2).
-glutamic_oxaloacetic_transaminase_level(screening5511,2).
-glutamic_oxaloacetic_transaminase_level(screening5512,3).
-glutamic_oxaloacetic_transaminase_level(screening5513,3).
-glutamic_oxaloacetic_transaminase_level(screening5514,3).
-glutamic_oxaloacetic_transaminase_level(screening5515,2).
-glutamic_oxaloacetic_transaminase_level(screening5516,2).
-glutamic_oxaloacetic_transaminase_level(screening5517,2).
-glutamic_oxaloacetic_transaminase_level(screening5518,2).
-glutamic_oxaloacetic_transaminase_level(screening5519,2).
-glutamic_oxaloacetic_transaminase_level(screening552,2).
-glutamic_oxaloacetic_transaminase_level(screening5520,2).
-glutamic_oxaloacetic_transaminase_level(screening5521,2).
-glutamic_oxaloacetic_transaminase_level(screening5522,4).
-glutamic_oxaloacetic_transaminase_level(screening5523,3).
-glutamic_oxaloacetic_transaminase_level(screening5524,3).
-glutamic_oxaloacetic_transaminase_level(screening5525,3).
-glutamic_oxaloacetic_transaminase_level(screening5526,2).
-glutamic_oxaloacetic_transaminase_level(screening5527,2).
-glutamic_oxaloacetic_transaminase_level(screening5528,2).
-glutamic_oxaloacetic_transaminase_level(screening5529,2).
-glutamic_oxaloacetic_transaminase_level(screening553,2).
-glutamic_oxaloacetic_transaminase_level(screening5530,3).
-glutamic_oxaloacetic_transaminase_level(screening5531,2).
-glutamic_oxaloacetic_transaminase_level(screening5532,3).
-glutamic_oxaloacetic_transaminase_level(screening5533,3).
-glutamic_oxaloacetic_transaminase_level(screening5534,3).
-glutamic_oxaloacetic_transaminase_level(screening5535,2).
-glutamic_oxaloacetic_transaminase_level(screening5536,2).
-glutamic_oxaloacetic_transaminase_level(screening5537,2).
-glutamic_oxaloacetic_transaminase_level(screening5538,3).
-glutamic_oxaloacetic_transaminase_level(screening5539,3).
-glutamic_oxaloacetic_transaminase_level(screening554,2).
-glutamic_oxaloacetic_transaminase_level(screening5540,2).
-glutamic_oxaloacetic_transaminase_level(screening5541,2).
-glutamic_oxaloacetic_transaminase_level(screening5542,2).
-glutamic_oxaloacetic_transaminase_level(screening5543,3).
-glutamic_oxaloacetic_transaminase_level(screening5544,3).
-glutamic_oxaloacetic_transaminase_level(screening5545,3).
-glutamic_oxaloacetic_transaminase_level(screening5546,3).
-glutamic_oxaloacetic_transaminase_level(screening5547,3).
-glutamic_oxaloacetic_transaminase_level(screening5548,3).
-glutamic_oxaloacetic_transaminase_level(screening5549,3).
-glutamic_oxaloacetic_transaminase_level(screening555,2).
-glutamic_oxaloacetic_transaminase_level(screening5550,3).
-glutamic_oxaloacetic_transaminase_level(screening5551,3).
-glutamic_oxaloacetic_transaminase_level(screening5552,4).
-glutamic_oxaloacetic_transaminase_level(screening5553,3).
-glutamic_oxaloacetic_transaminase_level(screening5554,3).
-glutamic_oxaloacetic_transaminase_level(screening5555,3).
-glutamic_oxaloacetic_transaminase_level(screening5556,3).
-glutamic_oxaloacetic_transaminase_level(screening5557,3).
-glutamic_oxaloacetic_transaminase_level(screening5558,3).
-glutamic_oxaloacetic_transaminase_level(screening5559,4).
-glutamic_oxaloacetic_transaminase_level(screening556,2).
-glutamic_oxaloacetic_transaminase_level(screening5560,4).
-glutamic_oxaloacetic_transaminase_level(screening5561,4).
-glutamic_oxaloacetic_transaminase_level(screening5562,4).
-glutamic_oxaloacetic_transaminase_level(screening5563,4).
-glutamic_oxaloacetic_transaminase_level(screening5564,3).
-glutamic_oxaloacetic_transaminase_level(screening5565,3).
-glutamic_oxaloacetic_transaminase_level(screening5566,3).
-glutamic_oxaloacetic_transaminase_level(screening5567,3).
-glutamic_oxaloacetic_transaminase_level(screening5568,3).
-glutamic_oxaloacetic_transaminase_level(screening5569,3).
-glutamic_oxaloacetic_transaminase_level(screening557,3).
-glutamic_oxaloacetic_transaminase_level(screening5570,2).
-glutamic_oxaloacetic_transaminase_level(screening5571,2).
-glutamic_oxaloacetic_transaminase_level(screening5572,1).
-glutamic_oxaloacetic_transaminase_level(screening5573,1).
-glutamic_oxaloacetic_transaminase_level(screening5574,1).
-glutamic_oxaloacetic_transaminase_level(screening5575,1).
-glutamic_oxaloacetic_transaminase_level(screening5576,1).
-glutamic_oxaloacetic_transaminase_level(screening5577,1).
-glutamic_oxaloacetic_transaminase_level(screening5578,1).
-glutamic_oxaloacetic_transaminase_level(screening5579,1).
-glutamic_oxaloacetic_transaminase_level(screening558,3).
-glutamic_oxaloacetic_transaminase_level(screening5580,1).
-glutamic_oxaloacetic_transaminase_level(screening5581,1).
-glutamic_oxaloacetic_transaminase_level(screening5582,1).
-glutamic_oxaloacetic_transaminase_level(screening5583,4).
-glutamic_oxaloacetic_transaminase_level(screening5584,3).
-glutamic_oxaloacetic_transaminase_level(screening5585,3).
-glutamic_oxaloacetic_transaminase_level(screening5586,3).
-glutamic_oxaloacetic_transaminase_level(screening5587,3).
-glutamic_oxaloacetic_transaminase_level(screening5588,3).
-glutamic_oxaloacetic_transaminase_level(screening5589,3).
-glutamic_oxaloacetic_transaminase_level(screening559,2).
-glutamic_oxaloacetic_transaminase_level(screening5590,2).
-glutamic_oxaloacetic_transaminase_level(screening5591,2).
-glutamic_oxaloacetic_transaminase_level(screening5592,1).
-glutamic_oxaloacetic_transaminase_level(screening5593,1).
-glutamic_oxaloacetic_transaminase_level(screening5594,1).
-glutamic_oxaloacetic_transaminase_level(screening5595,1).
-glutamic_oxaloacetic_transaminase_level(screening5596,1).
-glutamic_oxaloacetic_transaminase_level(screening5597,1).
-glutamic_oxaloacetic_transaminase_level(screening5598,1).
-glutamic_oxaloacetic_transaminase_level(screening5599,1).
-glutamic_oxaloacetic_transaminase_level(screening560,2).
-glutamic_oxaloacetic_transaminase_level(screening5600,1).
-glutamic_oxaloacetic_transaminase_level(screening5601,1).
-glutamic_oxaloacetic_transaminase_level(screening5602,1).
-glutamic_oxaloacetic_transaminase_level(screening5603,4).
-glutamic_oxaloacetic_transaminase_level(screening5604,3).
-glutamic_oxaloacetic_transaminase_level(screening5605,3).
-glutamic_oxaloacetic_transaminase_level(screening5606,3).
-glutamic_oxaloacetic_transaminase_level(screening5607,3).
-glutamic_oxaloacetic_transaminase_level(screening5608,3).
-glutamic_oxaloacetic_transaminase_level(screening5609,3).
-glutamic_oxaloacetic_transaminase_level(screening561,2).
-glutamic_oxaloacetic_transaminase_level(screening5610,2).
-glutamic_oxaloacetic_transaminase_level(screening5611,2).
-glutamic_oxaloacetic_transaminase_level(screening5612,1).
-glutamic_oxaloacetic_transaminase_level(screening5613,1).
-glutamic_oxaloacetic_transaminase_level(screening5614,1).
-glutamic_oxaloacetic_transaminase_level(screening5615,1).
-glutamic_oxaloacetic_transaminase_level(screening5616,1).
-glutamic_oxaloacetic_transaminase_level(screening5617,1).
-glutamic_oxaloacetic_transaminase_level(screening5618,1).
-glutamic_oxaloacetic_transaminase_level(screening5619,1).
-glutamic_oxaloacetic_transaminase_level(screening562,2).
-glutamic_oxaloacetic_transaminase_level(screening5620,1).
-glutamic_oxaloacetic_transaminase_level(screening5621,1).
-glutamic_oxaloacetic_transaminase_level(screening5622,1).
-glutamic_oxaloacetic_transaminase_level(screening5623,2).
-glutamic_oxaloacetic_transaminase_level(screening5624,3).
-glutamic_oxaloacetic_transaminase_level(screening5625,3).
-glutamic_oxaloacetic_transaminase_level(screening5626,3).
-glutamic_oxaloacetic_transaminase_level(screening5627,3).
-glutamic_oxaloacetic_transaminase_level(screening5628,2).
-glutamic_oxaloacetic_transaminase_level(screening5629,3).
-glutamic_oxaloacetic_transaminase_level(screening563,3).
-glutamic_oxaloacetic_transaminase_level(screening5630,3).
-glutamic_oxaloacetic_transaminase_level(screening5631,3).
-glutamic_oxaloacetic_transaminase_level(screening5632,2).
-glutamic_oxaloacetic_transaminase_level(screening5633,2).
-glutamic_oxaloacetic_transaminase_level(screening5634,2).
-glutamic_oxaloacetic_transaminase_level(screening5635,2).
-glutamic_oxaloacetic_transaminase_level(screening5636,2).
-glutamic_oxaloacetic_transaminase_level(screening5637,2).
-glutamic_oxaloacetic_transaminase_level(screening5638,2).
-glutamic_oxaloacetic_transaminase_level(screening5639,1).
-glutamic_oxaloacetic_transaminase_level(screening564,2).
-glutamic_oxaloacetic_transaminase_level(screening5640,4).
-glutamic_oxaloacetic_transaminase_level(screening5641,3).
-glutamic_oxaloacetic_transaminase_level(screening5642,3).
-glutamic_oxaloacetic_transaminase_level(screening5643,4).
-glutamic_oxaloacetic_transaminase_level(screening5644,4).
-glutamic_oxaloacetic_transaminase_level(screening5645,3).
-glutamic_oxaloacetic_transaminase_level(screening5646,3).
-glutamic_oxaloacetic_transaminase_level(screening5647,3).
-glutamic_oxaloacetic_transaminase_level(screening5648,3).
-glutamic_oxaloacetic_transaminase_level(screening5649,3).
-glutamic_oxaloacetic_transaminase_level(screening565,4).
-glutamic_oxaloacetic_transaminase_level(screening5650,3).
-glutamic_oxaloacetic_transaminase_level(screening5651,3).
-glutamic_oxaloacetic_transaminase_level(screening5652,3).
-glutamic_oxaloacetic_transaminase_level(screening5653,2).
-glutamic_oxaloacetic_transaminase_level(screening5654,2).
-glutamic_oxaloacetic_transaminase_level(screening5655,3).
-glutamic_oxaloacetic_transaminase_level(screening5656,4).
-glutamic_oxaloacetic_transaminase_level(screening5657,4).
-glutamic_oxaloacetic_transaminase_level(screening5658,4).
-glutamic_oxaloacetic_transaminase_level(screening5659,4).
-glutamic_oxaloacetic_transaminase_level(screening566,4).
-glutamic_oxaloacetic_transaminase_level(screening5660,4).
-glutamic_oxaloacetic_transaminase_level(screening5661,4).
-glutamic_oxaloacetic_transaminase_level(screening5662,4).
-glutamic_oxaloacetic_transaminase_level(screening5663,4).
-glutamic_oxaloacetic_transaminase_level(screening5664,4).
-glutamic_oxaloacetic_transaminase_level(screening5665,4).
-glutamic_oxaloacetic_transaminase_level(screening5666,4).
-glutamic_oxaloacetic_transaminase_level(screening5667,4).
-glutamic_oxaloacetic_transaminase_level(screening5668,3).
-glutamic_oxaloacetic_transaminase_level(screening5669,3).
-glutamic_oxaloacetic_transaminase_level(screening567,4).
-glutamic_oxaloacetic_transaminase_level(screening5670,2).
-glutamic_oxaloacetic_transaminase_level(screening5671,2).
-glutamic_oxaloacetic_transaminase_level(screening5672,2).
-glutamic_oxaloacetic_transaminase_level(screening5673,2).
-glutamic_oxaloacetic_transaminase_level(screening5674,3).
-glutamic_oxaloacetic_transaminase_level(screening5675,3).
-glutamic_oxaloacetic_transaminase_level(screening5676,3).
-glutamic_oxaloacetic_transaminase_level(screening5677,3).
-glutamic_oxaloacetic_transaminase_level(screening5678,4).
-glutamic_oxaloacetic_transaminase_level(screening5679,4).
-glutamic_oxaloacetic_transaminase_level(screening568,3).
-glutamic_oxaloacetic_transaminase_level(screening5680,4).
-glutamic_oxaloacetic_transaminase_level(screening5681,4).
-glutamic_oxaloacetic_transaminase_level(screening5682,3).
-glutamic_oxaloacetic_transaminase_level(screening5683,3).
-glutamic_oxaloacetic_transaminase_level(screening5684,2).
-glutamic_oxaloacetic_transaminase_level(screening5685,2).
-glutamic_oxaloacetic_transaminase_level(screening5686,2).
-glutamic_oxaloacetic_transaminase_level(screening5687,2).
-glutamic_oxaloacetic_transaminase_level(screening5688,3).
-glutamic_oxaloacetic_transaminase_level(screening5689,3).
-glutamic_oxaloacetic_transaminase_level(screening569,2).
-glutamic_oxaloacetic_transaminase_level(screening5690,3).
-glutamic_oxaloacetic_transaminase_level(screening5691,3).
-glutamic_oxaloacetic_transaminase_level(screening570,4).
-glutamic_oxaloacetic_transaminase_level(screening571,3).
-glutamic_oxaloacetic_transaminase_level(screening572,2).
-glutamic_oxaloacetic_transaminase_level(screening573,4).
-glutamic_oxaloacetic_transaminase_level(screening574,4).
-glutamic_oxaloacetic_transaminase_level(screening575,4).
-glutamic_oxaloacetic_transaminase_level(screening576,2).
-glutamic_oxaloacetic_transaminase_level(screening577,2).
-glutamic_oxaloacetic_transaminase_level(screening578,3).
-glutamic_oxaloacetic_transaminase_level(screening579,2).
-glutamic_oxaloacetic_transaminase_level(screening580,2).
-glutamic_oxaloacetic_transaminase_level(screening581,2).
-glutamic_oxaloacetic_transaminase_level(screening582,5).
-glutamic_oxaloacetic_transaminase_level(screening583,2).
-glutamic_oxaloacetic_transaminase_level(screening584,4).
-glutamic_oxaloacetic_transaminase_level(screening585,3).
-glutamic_oxaloacetic_transaminase_level(screening586,2).
-glutamic_oxaloacetic_transaminase_level(screening587,2).
-glutamic_oxaloacetic_transaminase_level(screening588,2).
-glutamic_oxaloacetic_transaminase_level(screening589,2).
-glutamic_oxaloacetic_transaminase_level(screening590,2).
-glutamic_oxaloacetic_transaminase_level(screening591,1).
-glutamic_oxaloacetic_transaminase_level(screening592,2).
-glutamic_oxaloacetic_transaminase_level(screening593,2).
-glutamic_oxaloacetic_transaminase_level(screening594,2).
-glutamic_oxaloacetic_transaminase_level(screening595,2).
-glutamic_oxaloacetic_transaminase_level(screening596,2).
-glutamic_oxaloacetic_transaminase_level(screening597,2).
-glutamic_oxaloacetic_transaminase_level(screening598,2).
-glutamic_oxaloacetic_transaminase_level(screening599,2).
-glutamic_oxaloacetic_transaminase_level(screening600,2).
-glutamic_oxaloacetic_transaminase_level(screening601,2).
-glutamic_oxaloacetic_transaminase_level(screening602,2).
-glutamic_oxaloacetic_transaminase_level(screening603,2).
-glutamic_oxaloacetic_transaminase_level(screening604,2).
-glutamic_oxaloacetic_transaminase_level(screening605,2).
-glutamic_oxaloacetic_transaminase_level(screening606,3).
-glutamic_oxaloacetic_transaminase_level(screening607,2).
-glutamic_oxaloacetic_transaminase_level(screening608,3).
-glutamic_oxaloacetic_transaminase_level(screening609,2).
-glutamic_oxaloacetic_transaminase_level(screening610,2).
-glutamic_oxaloacetic_transaminase_level(screening611,2).
-glutamic_oxaloacetic_transaminase_level(screening612,3).
-glutamic_oxaloacetic_transaminase_level(screening613,3).
-glutamic_oxaloacetic_transaminase_level(screening614,2).
-glutamic_oxaloacetic_transaminase_level(screening615,2).
-glutamic_oxaloacetic_transaminase_level(screening616,2).
-glutamic_oxaloacetic_transaminase_level(screening617,3).
-glutamic_oxaloacetic_transaminase_level(screening618,2).
-glutamic_oxaloacetic_transaminase_level(screening619,2).
-glutamic_oxaloacetic_transaminase_level(screening620,3).
-glutamic_oxaloacetic_transaminase_level(screening621,3).
-glutamic_oxaloacetic_transaminase_level(screening622,2).
-glutamic_oxaloacetic_transaminase_level(screening623,2).
-glutamic_oxaloacetic_transaminase_level(screening624,2).
-glutamic_oxaloacetic_transaminase_level(screening625,3).
-glutamic_oxaloacetic_transaminase_level(screening626,2).
-glutamic_oxaloacetic_transaminase_level(screening627,2).
-glutamic_oxaloacetic_transaminase_level(screening628,4).
-glutamic_oxaloacetic_transaminase_level(screening629,4).
-glutamic_oxaloacetic_transaminase_level(screening630,4).
-glutamic_oxaloacetic_transaminase_level(screening631,2).
-glutamic_oxaloacetic_transaminase_level(screening632,2).
-glutamic_oxaloacetic_transaminase_level(screening633,2).
-glutamic_oxaloacetic_transaminase_level(screening634,3).
-glutamic_oxaloacetic_transaminase_level(screening635,3).
-glutamic_oxaloacetic_transaminase_level(screening636,2).
-glutamic_oxaloacetic_transaminase_level(screening637,2).
-glutamic_oxaloacetic_transaminase_level(screening638,3).
-glutamic_oxaloacetic_transaminase_level(screening639,3).
-glutamic_oxaloacetic_transaminase_level(screening640,3).
-glutamic_oxaloacetic_transaminase_level(screening641,3).
-glutamic_oxaloacetic_transaminase_level(screening642,2).
-glutamic_oxaloacetic_transaminase_level(screening643,4).
-glutamic_oxaloacetic_transaminase_level(screening644,4).
-glutamic_oxaloacetic_transaminase_level(screening645,3).
-glutamic_oxaloacetic_transaminase_level(screening646,4).
-glutamic_oxaloacetic_transaminase_level(screening647,4).
-glutamic_oxaloacetic_transaminase_level(screening648,4).
-glutamic_oxaloacetic_transaminase_level(screening649,2).
-glutamic_oxaloacetic_transaminase_level(screening650,2).
-glutamic_oxaloacetic_transaminase_level(screening651,2).
-glutamic_oxaloacetic_transaminase_level(screening652,2).
-glutamic_oxaloacetic_transaminase_level(screening653,2).
-glutamic_oxaloacetic_transaminase_level(screening654,2).
-glutamic_oxaloacetic_transaminase_level(screening655,2).
-glutamic_oxaloacetic_transaminase_level(screening656,2).
-glutamic_oxaloacetic_transaminase_level(screening657,2).
-glutamic_oxaloacetic_transaminase_level(screening658,2).
-glutamic_oxaloacetic_transaminase_level(screening659,2).
-glutamic_oxaloacetic_transaminase_level(screening660,2).
-glutamic_oxaloacetic_transaminase_level(screening661,4).
-glutamic_oxaloacetic_transaminase_level(screening662,4).
-glutamic_oxaloacetic_transaminase_level(screening663,2).
-glutamic_oxaloacetic_transaminase_level(screening664,2).
-glutamic_oxaloacetic_transaminase_level(screening665,3).
-glutamic_oxaloacetic_transaminase_level(screening666,4).
-glutamic_oxaloacetic_transaminase_level(screening667,4).
-glutamic_oxaloacetic_transaminase_level(screening668,3).
-glutamic_oxaloacetic_transaminase_level(screening669,2).
-glutamic_oxaloacetic_transaminase_level(screening670,2).
-glutamic_oxaloacetic_transaminase_level(screening671,2).
-glutamic_oxaloacetic_transaminase_level(screening672,3).
-glutamic_oxaloacetic_transaminase_level(screening673,2).
-glutamic_oxaloacetic_transaminase_level(screening674,3).
-glutamic_oxaloacetic_transaminase_level(screening675,2).
-glutamic_oxaloacetic_transaminase_level(screening676,3).
-glutamic_oxaloacetic_transaminase_level(screening677,1).
-glutamic_oxaloacetic_transaminase_level(screening678,3).
-glutamic_oxaloacetic_transaminase_level(screening679,1).
-glutamic_oxaloacetic_transaminase_level(screening680,2).
-glutamic_oxaloacetic_transaminase_level(screening681,2).
-glutamic_oxaloacetic_transaminase_level(screening682,4).
-glutamic_oxaloacetic_transaminase_level(screening683,4).
-glutamic_oxaloacetic_transaminase_level(screening684,4).
-glutamic_oxaloacetic_transaminase_level(screening685,4).
-glutamic_oxaloacetic_transaminase_level(screening686,4).
-glutamic_oxaloacetic_transaminase_level(screening687,2).
-glutamic_oxaloacetic_transaminase_level(screening688,4).
-glutamic_oxaloacetic_transaminase_level(screening689,2).
-glutamic_oxaloacetic_transaminase_level(screening690,3).
-glutamic_oxaloacetic_transaminase_level(screening691,2).
-glutamic_oxaloacetic_transaminase_level(screening692,3).
-glutamic_oxaloacetic_transaminase_level(screening693,3).
-glutamic_oxaloacetic_transaminase_level(screening694,3).
-glutamic_oxaloacetic_transaminase_level(screening695,2).
-glutamic_oxaloacetic_transaminase_level(screening696,3).
-glutamic_oxaloacetic_transaminase_level(screening697,2).
-glutamic_oxaloacetic_transaminase_level(screening698,2).
-glutamic_oxaloacetic_transaminase_level(screening699,2).
-glutamic_oxaloacetic_transaminase_level(screening700,2).
-glutamic_oxaloacetic_transaminase_level(screening701,2).
-glutamic_oxaloacetic_transaminase_level(screening702,4).
-glutamic_oxaloacetic_transaminase_level(screening703,3).
-glutamic_oxaloacetic_transaminase_level(screening704,2).
-glutamic_oxaloacetic_transaminase_level(screening705,2).
-glutamic_oxaloacetic_transaminase_level(screening706,3).
-glutamic_oxaloacetic_transaminase_level(screening707,3).
-glutamic_oxaloacetic_transaminase_level(screening708,3).
-glutamic_oxaloacetic_transaminase_level(screening709,3).
-glutamic_oxaloacetic_transaminase_level(screening710,3).
-glutamic_oxaloacetic_transaminase_level(screening711,3).
-glutamic_oxaloacetic_transaminase_level(screening712,3).
-glutamic_oxaloacetic_transaminase_level(screening713,4).
-glutamic_oxaloacetic_transaminase_level(screening714,4).
-glutamic_oxaloacetic_transaminase_level(screening715,3).
-glutamic_oxaloacetic_transaminase_level(screening716,2).
-glutamic_oxaloacetic_transaminase_level(screening717,4).
-glutamic_oxaloacetic_transaminase_level(screening718,2).
-glutamic_oxaloacetic_transaminase_level(screening719,3).
-glutamic_oxaloacetic_transaminase_level(screening720,2).
-glutamic_oxaloacetic_transaminase_level(screening721,4).
-glutamic_oxaloacetic_transaminase_level(screening722,3).
-glutamic_oxaloacetic_transaminase_level(screening723,3).
-glutamic_oxaloacetic_transaminase_level(screening724,3).
-glutamic_oxaloacetic_transaminase_level(screening725,4).
-glutamic_oxaloacetic_transaminase_level(screening726,2).
-glutamic_oxaloacetic_transaminase_level(screening727,3).
-glutamic_oxaloacetic_transaminase_level(screening728,2).
-glutamic_oxaloacetic_transaminase_level(screening729,3).
-glutamic_oxaloacetic_transaminase_level(screening730,2).
-glutamic_oxaloacetic_transaminase_level(screening731,4).
-glutamic_oxaloacetic_transaminase_level(screening732,2).
-glutamic_oxaloacetic_transaminase_level(screening733,3).
-glutamic_oxaloacetic_transaminase_level(screening734,2).
-glutamic_oxaloacetic_transaminase_level(screening735,3).
-glutamic_oxaloacetic_transaminase_level(screening736,2).
-glutamic_oxaloacetic_transaminase_level(screening737,2).
-glutamic_oxaloacetic_transaminase_level(screening738,3).
-glutamic_oxaloacetic_transaminase_level(screening739,3).
-glutamic_oxaloacetic_transaminase_level(screening740,2).
-glutamic_oxaloacetic_transaminase_level(screening741,2).
-glutamic_oxaloacetic_transaminase_level(screening742,3).
-glutamic_oxaloacetic_transaminase_level(screening743,2).
-glutamic_oxaloacetic_transaminase_level(screening744,2).
-glutamic_oxaloacetic_transaminase_level(screening745,3).
-glutamic_oxaloacetic_transaminase_level(screening746,3).
-glutamic_oxaloacetic_transaminase_level(screening747,3).
-glutamic_oxaloacetic_transaminase_level(screening748,3).
-glutamic_oxaloacetic_transaminase_level(screening749,3).
-glutamic_oxaloacetic_transaminase_level(screening750,2).
-glutamic_oxaloacetic_transaminase_level(screening751,1).
-glutamic_oxaloacetic_transaminase_level(screening752,1).
-glutamic_oxaloacetic_transaminase_level(screening753,1).
-glutamic_oxaloacetic_transaminase_level(screening754,1).
-glutamic_oxaloacetic_transaminase_level(screening755,3).
-glutamic_oxaloacetic_transaminase_level(screening756,4).
-glutamic_oxaloacetic_transaminase_level(screening757,3).
-glutamic_oxaloacetic_transaminase_level(screening758,4).
-glutamic_oxaloacetic_transaminase_level(screening759,4).
-glutamic_oxaloacetic_transaminase_level(screening760,4).
-glutamic_oxaloacetic_transaminase_level(screening761,4).
-glutamic_oxaloacetic_transaminase_level(screening762,4).
-glutamic_oxaloacetic_transaminase_level(screening763,4).
-glutamic_oxaloacetic_transaminase_level(screening764,4).
-glutamic_oxaloacetic_transaminase_level(screening765,4).
-glutamic_oxaloacetic_transaminase_level(screening766,4).
-glutamic_oxaloacetic_transaminase_level(screening767,4).
-glutamic_oxaloacetic_transaminase_level(screening768,4).
-glutamic_oxaloacetic_transaminase_level(screening769,4).
-glutamic_oxaloacetic_transaminase_level(screening770,3).
-glutamic_oxaloacetic_transaminase_level(screening771,4).
-glutamic_oxaloacetic_transaminase_level(screening772,4).
-glutamic_oxaloacetic_transaminase_level(screening773,3).
-glutamic_oxaloacetic_transaminase_level(screening774,4).
-glutamic_oxaloacetic_transaminase_level(screening775,3).
-glutamic_oxaloacetic_transaminase_level(screening776,4).
-glutamic_oxaloacetic_transaminase_level(screening777,4).
-glutamic_oxaloacetic_transaminase_level(screening778,4).
-glutamic_oxaloacetic_transaminase_level(screening779,4).
-glutamic_oxaloacetic_transaminase_level(screening780,4).
-glutamic_oxaloacetic_transaminase_level(screening781,4).
-glutamic_oxaloacetic_transaminase_level(screening782,4).
-glutamic_oxaloacetic_transaminase_level(screening783,4).
-glutamic_oxaloacetic_transaminase_level(screening784,4).
-glutamic_oxaloacetic_transaminase_level(screening785,4).
-glutamic_oxaloacetic_transaminase_level(screening786,4).
-glutamic_oxaloacetic_transaminase_level(screening787,4).
-glutamic_oxaloacetic_transaminase_level(screening788,3).
-glutamic_oxaloacetic_transaminase_level(screening789,4).
-glutamic_oxaloacetic_transaminase_level(screening790,4).
-glutamic_oxaloacetic_transaminase_level(screening791,4).
-glutamic_oxaloacetic_transaminase_level(screening792,3).
-glutamic_oxaloacetic_transaminase_level(screening793,3).
-glutamic_oxaloacetic_transaminase_level(screening794,4).
-glutamic_oxaloacetic_transaminase_level(screening795,4).
-glutamic_oxaloacetic_transaminase_level(screening796,4).
-glutamic_oxaloacetic_transaminase_level(screening797,3).
-glutamic_oxaloacetic_transaminase_level(screening798,3).
-glutamic_oxaloacetic_transaminase_level(screening799,2).
-glutamic_oxaloacetic_transaminase_level(screening800,1).
-glutamic_oxaloacetic_transaminase_level(screening801,2).
-glutamic_oxaloacetic_transaminase_level(screening802,2).
-glutamic_oxaloacetic_transaminase_level(screening803,2).
-glutamic_oxaloacetic_transaminase_level(screening804,2).
-glutamic_oxaloacetic_transaminase_level(screening805,1).
-glutamic_oxaloacetic_transaminase_level(screening806,4).
-glutamic_oxaloacetic_transaminase_level(screening807,4).
-glutamic_oxaloacetic_transaminase_level(screening808,3).
-glutamic_oxaloacetic_transaminase_level(screening809,3).
-glutamic_oxaloacetic_transaminase_level(screening810,3).
-glutamic_oxaloacetic_transaminase_level(screening811,3).
-glutamic_oxaloacetic_transaminase_level(screening812,4).
-glutamic_oxaloacetic_transaminase_level(screening813,3).
-glutamic_oxaloacetic_transaminase_level(screening814,4).
-glutamic_oxaloacetic_transaminase_level(screening815,4).
-glutamic_oxaloacetic_transaminase_level(screening816,4).
-glutamic_oxaloacetic_transaminase_level(screening817,3).
-glutamic_oxaloacetic_transaminase_level(screening818,3).
-glutamic_oxaloacetic_transaminase_level(screening819,4).
-glutamic_oxaloacetic_transaminase_level(screening820,4).
-glutamic_oxaloacetic_transaminase_level(screening821,4).
-glutamic_oxaloacetic_transaminase_level(screening822,4).
-glutamic_oxaloacetic_transaminase_level(screening823,4).
-glutamic_oxaloacetic_transaminase_level(screening824,4).
-glutamic_oxaloacetic_transaminase_level(screening825,4).
-glutamic_oxaloacetic_transaminase_level(screening826,4).
-glutamic_oxaloacetic_transaminase_level(screening827,4).
-glutamic_oxaloacetic_transaminase_level(screening828,4).
-glutamic_oxaloacetic_transaminase_level(screening829,4).
-glutamic_oxaloacetic_transaminase_level(screening830,4).
-glutamic_oxaloacetic_transaminase_level(screening831,4).
-glutamic_oxaloacetic_transaminase_level(screening832,4).
-glutamic_oxaloacetic_transaminase_level(screening833,3).
-glutamic_oxaloacetic_transaminase_level(screening834,3).
-glutamic_oxaloacetic_transaminase_level(screening835,3).
-glutamic_oxaloacetic_transaminase_level(screening836,3).
-glutamic_oxaloacetic_transaminase_level(screening837,3).
-glutamic_oxaloacetic_transaminase_level(screening838,4).
-glutamic_oxaloacetic_transaminase_level(screening839,4).
-glutamic_oxaloacetic_transaminase_level(screening840,4).
-glutamic_oxaloacetic_transaminase_level(screening841,4).
-glutamic_oxaloacetic_transaminase_level(screening842,3).
-glutamic_oxaloacetic_transaminase_level(screening843,4).
-glutamic_oxaloacetic_transaminase_level(screening844,3).
-glutamic_oxaloacetic_transaminase_level(screening845,3).
-glutamic_oxaloacetic_transaminase_level(screening846,4).
-glutamic_oxaloacetic_transaminase_level(screening847,4).
-glutamic_oxaloacetic_transaminase_level(screening848,2).
-glutamic_oxaloacetic_transaminase_level(screening849,2).
-glutamic_oxaloacetic_transaminase_level(screening850,2).
-glutamic_oxaloacetic_transaminase_level(screening851,2).
-glutamic_oxaloacetic_transaminase_level(screening852,2).
-glutamic_oxaloacetic_transaminase_level(screening853,2).
-glutamic_oxaloacetic_transaminase_level(screening854,2).
-glutamic_oxaloacetic_transaminase_level(screening855,2).
-glutamic_oxaloacetic_transaminase_level(screening856,3).
-glutamic_oxaloacetic_transaminase_level(screening857,3).
-glutamic_oxaloacetic_transaminase_level(screening858,3).
-glutamic_oxaloacetic_transaminase_level(screening859,4).
-glutamic_oxaloacetic_transaminase_level(screening860,2).
-glutamic_oxaloacetic_transaminase_level(screening861,2).
-glutamic_oxaloacetic_transaminase_level(screening862,2).
-glutamic_oxaloacetic_transaminase_level(screening863,2).
-glutamic_oxaloacetic_transaminase_level(screening864,2).
-glutamic_oxaloacetic_transaminase_level(screening865,2).
-glutamic_oxaloacetic_transaminase_level(screening866,2).
-glutamic_oxaloacetic_transaminase_level(screening867,2).
-glutamic_oxaloacetic_transaminase_level(screening868,2).
-glutamic_oxaloacetic_transaminase_level(screening869,1).
-glutamic_oxaloacetic_transaminase_level(screening870,2).
-glutamic_oxaloacetic_transaminase_level(screening871,2).
-glutamic_oxaloacetic_transaminase_level(screening872,2).
-glutamic_oxaloacetic_transaminase_level(screening873,2).
-glutamic_oxaloacetic_transaminase_level(screening874,2).
-glutamic_oxaloacetic_transaminase_level(screening875,2).
-glutamic_oxaloacetic_transaminase_level(screening876,2).
-glutamic_oxaloacetic_transaminase_level(screening877,2).
-glutamic_oxaloacetic_transaminase_level(screening878,3).
-glutamic_oxaloacetic_transaminase_level(screening879,3).
-glutamic_oxaloacetic_transaminase_level(screening880,3).
-glutamic_oxaloacetic_transaminase_level(screening881,3).
-glutamic_oxaloacetic_transaminase_level(screening882,4).
-glutamic_oxaloacetic_transaminase_level(screening883,4).
-glutamic_oxaloacetic_transaminase_level(screening884,4).
-glutamic_oxaloacetic_transaminase_level(screening885,4).
-glutamic_oxaloacetic_transaminase_level(screening886,4).
-glutamic_oxaloacetic_transaminase_level(screening887,4).
-glutamic_oxaloacetic_transaminase_level(screening888,4).
-glutamic_oxaloacetic_transaminase_level(screening889,4).
-glutamic_oxaloacetic_transaminase_level(screening890,4).
-glutamic_oxaloacetic_transaminase_level(screening891,4).
-glutamic_oxaloacetic_transaminase_level(screening892,4).
-glutamic_oxaloacetic_transaminase_level(screening893,4).
-glutamic_oxaloacetic_transaminase_level(screening894,4).
-glutamic_oxaloacetic_transaminase_level(screening895,4).
-glutamic_oxaloacetic_transaminase_level(screening896,4).
-glutamic_oxaloacetic_transaminase_level(screening897,4).
-glutamic_oxaloacetic_transaminase_level(screening898,4).
-glutamic_oxaloacetic_transaminase_level(screening899,4).
-glutamic_oxaloacetic_transaminase_level(screening900,4).
-glutamic_oxaloacetic_transaminase_level(screening901,4).
-glutamic_oxaloacetic_transaminase_level(screening902,3).
-glutamic_oxaloacetic_transaminase_level(screening903,4).
-glutamic_oxaloacetic_transaminase_level(screening904,4).
-glutamic_oxaloacetic_transaminase_level(screening905,4).
-glutamic_oxaloacetic_transaminase_level(screening906,4).
-glutamic_oxaloacetic_transaminase_level(screening907,3).
-glutamic_oxaloacetic_transaminase_level(screening908,1).
-glutamic_oxaloacetic_transaminase_level(screening909,1).
-glutamic_oxaloacetic_transaminase_level(screening910,1).
-glutamic_oxaloacetic_transaminase_level(screening911,1).
-glutamic_oxaloacetic_transaminase_level(screening912,1).
-glutamic_oxaloacetic_transaminase_level(screening913,1).
-glutamic_oxaloacetic_transaminase_level(screening914,2).
-glutamic_oxaloacetic_transaminase_level(screening915,4).
-glutamic_oxaloacetic_transaminase_level(screening916,4).
-glutamic_oxaloacetic_transaminase_level(screening917,3).
-glutamic_oxaloacetic_transaminase_level(screening918,3).
-glutamic_oxaloacetic_transaminase_level(screening919,4).
-glutamic_oxaloacetic_transaminase_level(screening920,4).
-glutamic_oxaloacetic_transaminase_level(screening921,3).
-glutamic_oxaloacetic_transaminase_level(screening922,3).
-glutamic_oxaloacetic_transaminase_level(screening923,3).
-glutamic_oxaloacetic_transaminase_level(screening924,1).
-glutamic_oxaloacetic_transaminase_level(screening925,2).
-glutamic_oxaloacetic_transaminase_level(screening926,1).
-glutamic_oxaloacetic_transaminase_level(screening927,1).
-glutamic_oxaloacetic_transaminase_level(screening928,1).
-glutamic_oxaloacetic_transaminase_level(screening929,1).
-glutamic_oxaloacetic_transaminase_level(screening930,4).
-glutamic_oxaloacetic_transaminase_level(screening931,4).
-glutamic_oxaloacetic_transaminase_level(screening932,4).
-glutamic_oxaloacetic_transaminase_level(screening933,4).
-glutamic_oxaloacetic_transaminase_level(screening934,4).
-glutamic_oxaloacetic_transaminase_level(screening935,4).
-glutamic_oxaloacetic_transaminase_level(screening936,3).
-glutamic_oxaloacetic_transaminase_level(screening937,4).
-glutamic_oxaloacetic_transaminase_level(screening938,4).
-glutamic_oxaloacetic_transaminase_level(screening939,4).
-glutamic_oxaloacetic_transaminase_level(screening940,4).
-glutamic_oxaloacetic_transaminase_level(screening941,4).
-glutamic_oxaloacetic_transaminase_level(screening942,4).
-glutamic_oxaloacetic_transaminase_level(screening943,4).
-glutamic_oxaloacetic_transaminase_level(screening944,3).
-glutamic_oxaloacetic_transaminase_level(screening945,4).
-glutamic_oxaloacetic_transaminase_level(screening946,4).
-glutamic_oxaloacetic_transaminase_level(screening947,4).
-glutamic_oxaloacetic_transaminase_level(screening948,4).
-glutamic_oxaloacetic_transaminase_level(screening949,4).
-glutamic_oxaloacetic_transaminase_level(screening950,4).
-glutamic_oxaloacetic_transaminase_level(screening951,4).
-glutamic_oxaloacetic_transaminase_level(screening952,3).
-glutamic_oxaloacetic_transaminase_level(screening953,4).
-glutamic_oxaloacetic_transaminase_level(screening954,4).
-glutamic_oxaloacetic_transaminase_level(screening955,4).
-glutamic_oxaloacetic_transaminase_level(screening956,3).
-glutamic_oxaloacetic_transaminase_level(screening957,3).
-glutamic_oxaloacetic_transaminase_level(screening958,3).
-glutamic_oxaloacetic_transaminase_level(screening959,3).
-glutamic_oxaloacetic_transaminase_level(screening960,3).
-glutamic_oxaloacetic_transaminase_level(screening961,4).
-glutamic_oxaloacetic_transaminase_level(screening962,4).
-glutamic_oxaloacetic_transaminase_level(screening963,3).
-glutamic_oxaloacetic_transaminase_level(screening964,3).
-glutamic_oxaloacetic_transaminase_level(screening965,3).
-glutamic_oxaloacetic_transaminase_level(screening966,3).
-glutamic_oxaloacetic_transaminase_level(screening967,3).
-glutamic_oxaloacetic_transaminase_level(screening968,3).
-glutamic_oxaloacetic_transaminase_level(screening969,3).
-glutamic_oxaloacetic_transaminase_level(screening970,3).
-glutamic_oxaloacetic_transaminase_level(screening971,3).
-glutamic_oxaloacetic_transaminase_level(screening972,4).
-glutamic_oxaloacetic_transaminase_level(screening973,4).
-glutamic_oxaloacetic_transaminase_level(screening974,3).
-glutamic_oxaloacetic_transaminase_level(screening975,3).
-glutamic_oxaloacetic_transaminase_level(screening976,3).
-glutamic_oxaloacetic_transaminase_level(screening977,3).
-glutamic_oxaloacetic_transaminase_level(screening978,2).
-glutamic_oxaloacetic_transaminase_level(screening979,2).
-glutamic_oxaloacetic_transaminase_level(screening980,3).
-glutamic_oxaloacetic_transaminase_level(screening981,3).
-glutamic_oxaloacetic_transaminase_level(screening982,4).
-glutamic_oxaloacetic_transaminase_level(screening983,3).
-glutamic_oxaloacetic_transaminase_level(screening984,3).
-glutamic_oxaloacetic_transaminase_level(screening985,4).
-glutamic_oxaloacetic_transaminase_level(screening986,4).
-glutamic_oxaloacetic_transaminase_level(screening987,4).
-glutamic_oxaloacetic_transaminase_level(screening988,4).
-glutamic_oxaloacetic_transaminase_level(screening989,4).
-glutamic_oxaloacetic_transaminase_level(screening990,4).
-glutamic_oxaloacetic_transaminase_level(screening991,3).
-glutamic_oxaloacetic_transaminase_level(screening992,3).
-glutamic_oxaloacetic_transaminase_level(screening993,4).
-glutamic_oxaloacetic_transaminase_level(screening994,3).
-glutamic_oxaloacetic_transaminase_level(screening995,3).
-glutamic_oxaloacetic_transaminase_level(screening996,4).
-glutamic_oxaloacetic_transaminase_level(screening997,4).
-glutamic_oxaloacetic_transaminase_level(screening998,4).
-glutamic_oxaloacetic_transaminase_level(screening999,4).
+glutamic_oxaloacetic_transaminase_level(screening001, 4).
+glutamic_oxaloacetic_transaminase_level(screening002, 4).
+glutamic_oxaloacetic_transaminase_level(screening003, 4).
+glutamic_oxaloacetic_transaminase_level(screening004, 4).
+glutamic_oxaloacetic_transaminase_level(screening005, 4).
+glutamic_oxaloacetic_transaminase_level(screening006, 4).
+glutamic_oxaloacetic_transaminase_level(screening007, 4).
+glutamic_oxaloacetic_transaminase_level(screening008, 3).
+glutamic_oxaloacetic_transaminase_level(screening009, 3).
+glutamic_oxaloacetic_transaminase_level(screening010, 3).
+glutamic_oxaloacetic_transaminase_level(screening011, 3).
+glutamic_oxaloacetic_transaminase_level(screening012, 4).
+glutamic_oxaloacetic_transaminase_level(screening013, 3).
+glutamic_oxaloacetic_transaminase_level(screening014, 3).
+glutamic_oxaloacetic_transaminase_level(screening015, 3).
+glutamic_oxaloacetic_transaminase_level(screening016, 4).
+glutamic_oxaloacetic_transaminase_level(screening017, 3).
+glutamic_oxaloacetic_transaminase_level(screening018, 2).
+glutamic_oxaloacetic_transaminase_level(screening019, 3).
+glutamic_oxaloacetic_transaminase_level(screening020, 4).
+glutamic_oxaloacetic_transaminase_level(screening021, 4).
+glutamic_oxaloacetic_transaminase_level(screening022, 2).
+glutamic_oxaloacetic_transaminase_level(screening023, 2).
+glutamic_oxaloacetic_transaminase_level(screening024, 2).
+glutamic_oxaloacetic_transaminase_level(screening025, 2).
+glutamic_oxaloacetic_transaminase_level(screening026, 2).
+glutamic_oxaloacetic_transaminase_level(screening027, 2).
+glutamic_oxaloacetic_transaminase_level(screening028, 2).
+glutamic_oxaloacetic_transaminase_level(screening029, 2).
+glutamic_oxaloacetic_transaminase_level(screening030, 2).
+glutamic_oxaloacetic_transaminase_level(screening031, 2).
+glutamic_oxaloacetic_transaminase_level(screening032, 2).
+glutamic_oxaloacetic_transaminase_level(screening033, 2).
+glutamic_oxaloacetic_transaminase_level(screening034, 2).
+glutamic_oxaloacetic_transaminase_level(screening035, 3).
+glutamic_oxaloacetic_transaminase_level(screening036, 3).
+glutamic_oxaloacetic_transaminase_level(screening037, 2).
+glutamic_oxaloacetic_transaminase_level(screening038, 4).
+glutamic_oxaloacetic_transaminase_level(screening039, 3).
+glutamic_oxaloacetic_transaminase_level(screening040, 3).
+glutamic_oxaloacetic_transaminase_level(screening041, 2).
+glutamic_oxaloacetic_transaminase_level(screening042, 2).
+glutamic_oxaloacetic_transaminase_level(screening043, 1).
+glutamic_oxaloacetic_transaminase_level(screening044, 2).
+glutamic_oxaloacetic_transaminase_level(screening045, 2).
+glutamic_oxaloacetic_transaminase_level(screening046, 2).
+glutamic_oxaloacetic_transaminase_level(screening047, 2).
+glutamic_oxaloacetic_transaminase_level(screening048, 2).
+glutamic_oxaloacetic_transaminase_level(screening049, 4).
+glutamic_oxaloacetic_transaminase_level(screening050, 4).
+glutamic_oxaloacetic_transaminase_level(screening051, 4).
+glutamic_oxaloacetic_transaminase_level(screening052, 4).
+glutamic_oxaloacetic_transaminase_level(screening053, 2).
+glutamic_oxaloacetic_transaminase_level(screening054, 2).
+glutamic_oxaloacetic_transaminase_level(screening055, 2).
+glutamic_oxaloacetic_transaminase_level(screening056, 1).
+glutamic_oxaloacetic_transaminase_level(screening057, 1).
+glutamic_oxaloacetic_transaminase_level(screening058, 1).
+glutamic_oxaloacetic_transaminase_level(screening059, 1).
+glutamic_oxaloacetic_transaminase_level(screening060, 2).
+glutamic_oxaloacetic_transaminase_level(screening061, 1).
+glutamic_oxaloacetic_transaminase_level(screening062, 1).
+glutamic_oxaloacetic_transaminase_level(screening063, 1).
+glutamic_oxaloacetic_transaminase_level(screening064, 1).
+glutamic_oxaloacetic_transaminase_level(screening065, 1).
+glutamic_oxaloacetic_transaminase_level(screening066, 1).
+glutamic_oxaloacetic_transaminase_level(screening067, 2).
+glutamic_oxaloacetic_transaminase_level(screening068, 2).
+glutamic_oxaloacetic_transaminase_level(screening069, 2).
+glutamic_oxaloacetic_transaminase_level(screening070, 1).
+glutamic_oxaloacetic_transaminase_level(screening071, 4).
+glutamic_oxaloacetic_transaminase_level(screening072, 4).
+glutamic_oxaloacetic_transaminase_level(screening073, 4).
+glutamic_oxaloacetic_transaminase_level(screening074, 2).
+glutamic_oxaloacetic_transaminase_level(screening075, 3).
+glutamic_oxaloacetic_transaminase_level(screening076, 3).
+glutamic_oxaloacetic_transaminase_level(screening077, 2).
+glutamic_oxaloacetic_transaminase_level(screening078, 2).
+glutamic_oxaloacetic_transaminase_level(screening079, 2).
+glutamic_oxaloacetic_transaminase_level(screening080, 2).
+glutamic_oxaloacetic_transaminase_level(screening081, 2).
+glutamic_oxaloacetic_transaminase_level(screening082, 2).
+glutamic_oxaloacetic_transaminase_level(screening083, 3).
+glutamic_oxaloacetic_transaminase_level(screening084, 3).
+glutamic_oxaloacetic_transaminase_level(screening085, 3).
+glutamic_oxaloacetic_transaminase_level(screening086, 2).
+glutamic_oxaloacetic_transaminase_level(screening087, 3).
+glutamic_oxaloacetic_transaminase_level(screening088, 3).
+glutamic_oxaloacetic_transaminase_level(screening089, 3).
+glutamic_oxaloacetic_transaminase_level(screening090, 3).
+glutamic_oxaloacetic_transaminase_level(screening091, 3).
+glutamic_oxaloacetic_transaminase_level(screening092, 3).
+glutamic_oxaloacetic_transaminase_level(screening093, 3).
+glutamic_oxaloacetic_transaminase_level(screening094, 3).
+glutamic_oxaloacetic_transaminase_level(screening095, 3).
+glutamic_oxaloacetic_transaminase_level(screening096, 3).
+glutamic_oxaloacetic_transaminase_level(screening097, 3).
+glutamic_oxaloacetic_transaminase_level(screening098, 4).
+glutamic_oxaloacetic_transaminase_level(screening099, 3).
+glutamic_oxaloacetic_transaminase_level(screening100, 2).
+glutamic_oxaloacetic_transaminase_level(screening1000, 4).
+glutamic_oxaloacetic_transaminase_level(screening1001, 4).
+glutamic_oxaloacetic_transaminase_level(screening1002, 2).
+glutamic_oxaloacetic_transaminase_level(screening1003, 2).
+glutamic_oxaloacetic_transaminase_level(screening1004, 2).
+glutamic_oxaloacetic_transaminase_level(screening1005, 2).
+glutamic_oxaloacetic_transaminase_level(screening1006, 2).
+glutamic_oxaloacetic_transaminase_level(screening1007, 2).
+glutamic_oxaloacetic_transaminase_level(screening1008, 2).
+glutamic_oxaloacetic_transaminase_level(screening1009, 2).
+glutamic_oxaloacetic_transaminase_level(screening101, 3).
+glutamic_oxaloacetic_transaminase_level(screening1010, 2).
+glutamic_oxaloacetic_transaminase_level(screening1011, 2).
+glutamic_oxaloacetic_transaminase_level(screening1012, 4).
+glutamic_oxaloacetic_transaminase_level(screening1013, 3).
+glutamic_oxaloacetic_transaminase_level(screening1014, 4).
+glutamic_oxaloacetic_transaminase_level(screening1015, 4).
+glutamic_oxaloacetic_transaminase_level(screening1016, 3).
+glutamic_oxaloacetic_transaminase_level(screening1017, 3).
+glutamic_oxaloacetic_transaminase_level(screening1018, 3).
+glutamic_oxaloacetic_transaminase_level(screening1019, 3).
+glutamic_oxaloacetic_transaminase_level(screening102, 2).
+glutamic_oxaloacetic_transaminase_level(screening1020, 3).
+glutamic_oxaloacetic_transaminase_level(screening1021, 3).
+glutamic_oxaloacetic_transaminase_level(screening1022, 2).
+glutamic_oxaloacetic_transaminase_level(screening1023, 2).
+glutamic_oxaloacetic_transaminase_level(screening1024, 2).
+glutamic_oxaloacetic_transaminase_level(screening1025, 2).
+glutamic_oxaloacetic_transaminase_level(screening1026, 3).
+glutamic_oxaloacetic_transaminase_level(screening1027, 2).
+glutamic_oxaloacetic_transaminase_level(screening1028, 3).
+glutamic_oxaloacetic_transaminase_level(screening1029, 2).
+glutamic_oxaloacetic_transaminase_level(screening103, 3).
+glutamic_oxaloacetic_transaminase_level(screening1030, 2).
+glutamic_oxaloacetic_transaminase_level(screening1031, 2).
+glutamic_oxaloacetic_transaminase_level(screening1032, 2).
+glutamic_oxaloacetic_transaminase_level(screening1033, 4).
+glutamic_oxaloacetic_transaminase_level(screening1034, 4).
+glutamic_oxaloacetic_transaminase_level(screening1035, 4).
+glutamic_oxaloacetic_transaminase_level(screening1036, 3).
+glutamic_oxaloacetic_transaminase_level(screening1037, 3).
+glutamic_oxaloacetic_transaminase_level(screening1038, 3).
+glutamic_oxaloacetic_transaminase_level(screening1039, 3).
+glutamic_oxaloacetic_transaminase_level(screening104, 2).
+glutamic_oxaloacetic_transaminase_level(screening1040, 2).
+glutamic_oxaloacetic_transaminase_level(screening1041, 3).
+glutamic_oxaloacetic_transaminase_level(screening1042, 3).
+glutamic_oxaloacetic_transaminase_level(screening1043, 3).
+glutamic_oxaloacetic_transaminase_level(screening1044, 3).
+glutamic_oxaloacetic_transaminase_level(screening1045, 3).
+glutamic_oxaloacetic_transaminase_level(screening1046, 2).
+glutamic_oxaloacetic_transaminase_level(screening1047, 2).
+glutamic_oxaloacetic_transaminase_level(screening1048, 2).
+glutamic_oxaloacetic_transaminase_level(screening1049, 2).
+glutamic_oxaloacetic_transaminase_level(screening105, 2).
+glutamic_oxaloacetic_transaminase_level(screening1050, 2).
+glutamic_oxaloacetic_transaminase_level(screening1051, 3).
+glutamic_oxaloacetic_transaminase_level(screening1052, 3).
+glutamic_oxaloacetic_transaminase_level(screening1053, 4).
+glutamic_oxaloacetic_transaminase_level(screening1054, 4).
+glutamic_oxaloacetic_transaminase_level(screening1055, 4).
+glutamic_oxaloacetic_transaminase_level(screening1056, 3).
+glutamic_oxaloacetic_transaminase_level(screening1057, 3).
+glutamic_oxaloacetic_transaminase_level(screening1058, 3).
+glutamic_oxaloacetic_transaminase_level(screening1059, 3).
+glutamic_oxaloacetic_transaminase_level(screening106, 2).
+glutamic_oxaloacetic_transaminase_level(screening1060, 2).
+glutamic_oxaloacetic_transaminase_level(screening1061, 3).
+glutamic_oxaloacetic_transaminase_level(screening1062, 3).
+glutamic_oxaloacetic_transaminase_level(screening1063, 3).
+glutamic_oxaloacetic_transaminase_level(screening1064, 3).
+glutamic_oxaloacetic_transaminase_level(screening1065, 3).
+glutamic_oxaloacetic_transaminase_level(screening1066, 2).
+glutamic_oxaloacetic_transaminase_level(screening1067, 2).
+glutamic_oxaloacetic_transaminase_level(screening1068, 2).
+glutamic_oxaloacetic_transaminase_level(screening1069, 2).
+glutamic_oxaloacetic_transaminase_level(screening107, 2).
+glutamic_oxaloacetic_transaminase_level(screening1070, 2).
+glutamic_oxaloacetic_transaminase_level(screening1071, 3).
+glutamic_oxaloacetic_transaminase_level(screening1072, 3).
+glutamic_oxaloacetic_transaminase_level(screening1073, 4).
+glutamic_oxaloacetic_transaminase_level(screening1074, 4).
+glutamic_oxaloacetic_transaminase_level(screening1075, 4).
+glutamic_oxaloacetic_transaminase_level(screening1076, 3).
+glutamic_oxaloacetic_transaminase_level(screening1077, 3).
+glutamic_oxaloacetic_transaminase_level(screening1078, 3).
+glutamic_oxaloacetic_transaminase_level(screening1079, 3).
+glutamic_oxaloacetic_transaminase_level(screening108, 2).
+glutamic_oxaloacetic_transaminase_level(screening1080, 2).
+glutamic_oxaloacetic_transaminase_level(screening1081, 3).
+glutamic_oxaloacetic_transaminase_level(screening1082, 3).
+glutamic_oxaloacetic_transaminase_level(screening1083, 3).
+glutamic_oxaloacetic_transaminase_level(screening1084, 3).
+glutamic_oxaloacetic_transaminase_level(screening1085, 3).
+glutamic_oxaloacetic_transaminase_level(screening1086, 2).
+glutamic_oxaloacetic_transaminase_level(screening1087, 2).
+glutamic_oxaloacetic_transaminase_level(screening1088, 2).
+glutamic_oxaloacetic_transaminase_level(screening1089, 2).
+glutamic_oxaloacetic_transaminase_level(screening109, 4).
+glutamic_oxaloacetic_transaminase_level(screening1090, 2).
+glutamic_oxaloacetic_transaminase_level(screening1091, 3).
+glutamic_oxaloacetic_transaminase_level(screening1092, 3).
+glutamic_oxaloacetic_transaminase_level(screening1093, 2).
+glutamic_oxaloacetic_transaminase_level(screening1094, 2).
+glutamic_oxaloacetic_transaminase_level(screening1095, 2).
+glutamic_oxaloacetic_transaminase_level(screening1096, 3).
+glutamic_oxaloacetic_transaminase_level(screening1097, 3).
+glutamic_oxaloacetic_transaminase_level(screening1098, 3).
+glutamic_oxaloacetic_transaminase_level(screening1099, 2).
+glutamic_oxaloacetic_transaminase_level(screening110, 3).
+glutamic_oxaloacetic_transaminase_level(screening1100, 2).
+glutamic_oxaloacetic_transaminase_level(screening1101, 4).
+glutamic_oxaloacetic_transaminase_level(screening1102, 3).
+glutamic_oxaloacetic_transaminase_level(screening1103, 4).
+glutamic_oxaloacetic_transaminase_level(screening1104, 4).
+glutamic_oxaloacetic_transaminase_level(screening1105, 4).
+glutamic_oxaloacetic_transaminase_level(screening1106, 3).
+glutamic_oxaloacetic_transaminase_level(screening1107, 3).
+glutamic_oxaloacetic_transaminase_level(screening1108, 4).
+glutamic_oxaloacetic_transaminase_level(screening1109, 4).
+glutamic_oxaloacetic_transaminase_level(screening111, 4).
+glutamic_oxaloacetic_transaminase_level(screening1110, 4).
+glutamic_oxaloacetic_transaminase_level(screening1111, 4).
+glutamic_oxaloacetic_transaminase_level(screening1112, 4).
+glutamic_oxaloacetic_transaminase_level(screening1113, 4).
+glutamic_oxaloacetic_transaminase_level(screening1114, 4).
+glutamic_oxaloacetic_transaminase_level(screening1115, 4).
+glutamic_oxaloacetic_transaminase_level(screening1116, 4).
+glutamic_oxaloacetic_transaminase_level(screening1117, 4).
+glutamic_oxaloacetic_transaminase_level(screening1118, 3).
+glutamic_oxaloacetic_transaminase_level(screening1119, 3).
+glutamic_oxaloacetic_transaminase_level(screening112, 4).
+glutamic_oxaloacetic_transaminase_level(screening1120, 3).
+glutamic_oxaloacetic_transaminase_level(screening1121, 3).
+glutamic_oxaloacetic_transaminase_level(screening1122, 3).
+glutamic_oxaloacetic_transaminase_level(screening1123, 3).
+glutamic_oxaloacetic_transaminase_level(screening1124, 3).
+glutamic_oxaloacetic_transaminase_level(screening1125, 3).
+glutamic_oxaloacetic_transaminase_level(screening1126, 3).
+glutamic_oxaloacetic_transaminase_level(screening1127, 3).
+glutamic_oxaloacetic_transaminase_level(screening1128, 4).
+glutamic_oxaloacetic_transaminase_level(screening1129, 3).
+glutamic_oxaloacetic_transaminase_level(screening113, 3).
+glutamic_oxaloacetic_transaminase_level(screening1130, 3).
+glutamic_oxaloacetic_transaminase_level(screening1131, 3).
+glutamic_oxaloacetic_transaminase_level(screening1132, 2).
+glutamic_oxaloacetic_transaminase_level(screening1133, 2).
+glutamic_oxaloacetic_transaminase_level(screening1134, 2).
+glutamic_oxaloacetic_transaminase_level(screening1135, 2).
+glutamic_oxaloacetic_transaminase_level(screening1136, 2).
+glutamic_oxaloacetic_transaminase_level(screening1137, 2).
+glutamic_oxaloacetic_transaminase_level(screening1138, 3).
+glutamic_oxaloacetic_transaminase_level(screening1139, 2).
+glutamic_oxaloacetic_transaminase_level(screening114, 2).
+glutamic_oxaloacetic_transaminase_level(screening1140, 4).
+glutamic_oxaloacetic_transaminase_level(screening1141, 4).
+glutamic_oxaloacetic_transaminase_level(screening1142, 3).
+glutamic_oxaloacetic_transaminase_level(screening1143, 3).
+glutamic_oxaloacetic_transaminase_level(screening1144, 3).
+glutamic_oxaloacetic_transaminase_level(screening1145, 3).
+glutamic_oxaloacetic_transaminase_level(screening1146, 4).
+glutamic_oxaloacetic_transaminase_level(screening1147, 4).
+glutamic_oxaloacetic_transaminase_level(screening1148, 4).
+glutamic_oxaloacetic_transaminase_level(screening1149, 4).
+glutamic_oxaloacetic_transaminase_level(screening115, 2).
+glutamic_oxaloacetic_transaminase_level(screening1150, 4).
+glutamic_oxaloacetic_transaminase_level(screening1151, 3).
+glutamic_oxaloacetic_transaminase_level(screening1152, 3).
+glutamic_oxaloacetic_transaminase_level(screening1153, 3).
+glutamic_oxaloacetic_transaminase_level(screening1154, 3).
+glutamic_oxaloacetic_transaminase_level(screening1155, 4).
+glutamic_oxaloacetic_transaminase_level(screening1156, 4).
+glutamic_oxaloacetic_transaminase_level(screening1157, 4).
+glutamic_oxaloacetic_transaminase_level(screening1158, 4).
+glutamic_oxaloacetic_transaminase_level(screening1159, 4).
+glutamic_oxaloacetic_transaminase_level(screening116, 2).
+glutamic_oxaloacetic_transaminase_level(screening1160, 4).
+glutamic_oxaloacetic_transaminase_level(screening1161, 4).
+glutamic_oxaloacetic_transaminase_level(screening1162, 4).
+glutamic_oxaloacetic_transaminase_level(screening1163, 4).
+glutamic_oxaloacetic_transaminase_level(screening1164, 4).
+glutamic_oxaloacetic_transaminase_level(screening1165, 4).
+glutamic_oxaloacetic_transaminase_level(screening1166, 4).
+glutamic_oxaloacetic_transaminase_level(screening1167, 4).
+glutamic_oxaloacetic_transaminase_level(screening1168, 4).
+glutamic_oxaloacetic_transaminase_level(screening1169, 4).
+glutamic_oxaloacetic_transaminase_level(screening117, 2).
+glutamic_oxaloacetic_transaminase_level(screening1170, 4).
+glutamic_oxaloacetic_transaminase_level(screening1171, 3).
+glutamic_oxaloacetic_transaminase_level(screening1172, 3).
+glutamic_oxaloacetic_transaminase_level(screening1173, 3).
+glutamic_oxaloacetic_transaminase_level(screening1174, 3).
+glutamic_oxaloacetic_transaminase_level(screening1175, 3).
+glutamic_oxaloacetic_transaminase_level(screening1176, 3).
+glutamic_oxaloacetic_transaminase_level(screening1177, 3).
+glutamic_oxaloacetic_transaminase_level(screening1178, 3).
+glutamic_oxaloacetic_transaminase_level(screening1179, 2).
+glutamic_oxaloacetic_transaminase_level(screening118, 3).
+glutamic_oxaloacetic_transaminase_level(screening1180, 3).
+glutamic_oxaloacetic_transaminase_level(screening1181, 3).
+glutamic_oxaloacetic_transaminase_level(screening1182, 4).
+glutamic_oxaloacetic_transaminase_level(screening1183, 4).
+glutamic_oxaloacetic_transaminase_level(screening1184, 4).
+glutamic_oxaloacetic_transaminase_level(screening1185, 3).
+glutamic_oxaloacetic_transaminase_level(screening1186, 2).
+glutamic_oxaloacetic_transaminase_level(screening1187, 2).
+glutamic_oxaloacetic_transaminase_level(screening1188, 2).
+glutamic_oxaloacetic_transaminase_level(screening1189, 2).
+glutamic_oxaloacetic_transaminase_level(screening119, 3).
+glutamic_oxaloacetic_transaminase_level(screening1190, 2).
+glutamic_oxaloacetic_transaminase_level(screening1191, 3).
+glutamic_oxaloacetic_transaminase_level(screening1192, 2).
+glutamic_oxaloacetic_transaminase_level(screening1193, 2).
+glutamic_oxaloacetic_transaminase_level(screening1194, 2).
+glutamic_oxaloacetic_transaminase_level(screening1195, 2).
+glutamic_oxaloacetic_transaminase_level(screening1196, 2).
+glutamic_oxaloacetic_transaminase_level(screening1197, 2).
+glutamic_oxaloacetic_transaminase_level(screening1198, 2).
+glutamic_oxaloacetic_transaminase_level(screening1199, 2).
+glutamic_oxaloacetic_transaminase_level(screening120, 2).
+glutamic_oxaloacetic_transaminase_level(screening1200, 2).
+glutamic_oxaloacetic_transaminase_level(screening1201, 4).
+glutamic_oxaloacetic_transaminase_level(screening1202, 4).
+glutamic_oxaloacetic_transaminase_level(screening1203, 3).
+glutamic_oxaloacetic_transaminase_level(screening1204, 4).
+glutamic_oxaloacetic_transaminase_level(screening1205, 3).
+glutamic_oxaloacetic_transaminase_level(screening1206, 3).
+glutamic_oxaloacetic_transaminase_level(screening1207, 3).
+glutamic_oxaloacetic_transaminase_level(screening1208, 3).
+glutamic_oxaloacetic_transaminase_level(screening1209, 4).
+glutamic_oxaloacetic_transaminase_level(screening121, 2).
+glutamic_oxaloacetic_transaminase_level(screening1210, 4).
+glutamic_oxaloacetic_transaminase_level(screening1211, 4).
+glutamic_oxaloacetic_transaminase_level(screening1212, 4).
+glutamic_oxaloacetic_transaminase_level(screening1213, 4).
+glutamic_oxaloacetic_transaminase_level(screening1214, 4).
+glutamic_oxaloacetic_transaminase_level(screening1215, 4).
+glutamic_oxaloacetic_transaminase_level(screening1216, 4).
+glutamic_oxaloacetic_transaminase_level(screening1217, 4).
+glutamic_oxaloacetic_transaminase_level(screening1218, 4).
+glutamic_oxaloacetic_transaminase_level(screening1219, 4).
+glutamic_oxaloacetic_transaminase_level(screening122, 3).
+glutamic_oxaloacetic_transaminase_level(screening1220, 3).
+glutamic_oxaloacetic_transaminase_level(screening1221, 4).
+glutamic_oxaloacetic_transaminase_level(screening1222, 4).
+glutamic_oxaloacetic_transaminase_level(screening1223, 3).
+glutamic_oxaloacetic_transaminase_level(screening1224, 3).
+glutamic_oxaloacetic_transaminase_level(screening1225, 3).
+glutamic_oxaloacetic_transaminase_level(screening1226, 3).
+glutamic_oxaloacetic_transaminase_level(screening1227, 3).
+glutamic_oxaloacetic_transaminase_level(screening1228, 3).
+glutamic_oxaloacetic_transaminase_level(screening1229, 3).
+glutamic_oxaloacetic_transaminase_level(screening123, 3).
+glutamic_oxaloacetic_transaminase_level(screening1230, 2).
+glutamic_oxaloacetic_transaminase_level(screening1231, 2).
+glutamic_oxaloacetic_transaminase_level(screening1232, 3).
+glutamic_oxaloacetic_transaminase_level(screening1233, 3).
+glutamic_oxaloacetic_transaminase_level(screening1234, 3).
+glutamic_oxaloacetic_transaminase_level(screening1235, 3).
+glutamic_oxaloacetic_transaminase_level(screening1236, 3).
+glutamic_oxaloacetic_transaminase_level(screening1237, 3).
+glutamic_oxaloacetic_transaminase_level(screening1238, 2).
+glutamic_oxaloacetic_transaminase_level(screening1239, 2).
+glutamic_oxaloacetic_transaminase_level(screening124, 4).
+glutamic_oxaloacetic_transaminase_level(screening1240, 4).
+glutamic_oxaloacetic_transaminase_level(screening1241, 3).
+glutamic_oxaloacetic_transaminase_level(screening1242, 4).
+glutamic_oxaloacetic_transaminase_level(screening1243, 4).
+glutamic_oxaloacetic_transaminase_level(screening1244, 3).
+glutamic_oxaloacetic_transaminase_level(screening1245, 3).
+glutamic_oxaloacetic_transaminase_level(screening1246, 4).
+glutamic_oxaloacetic_transaminase_level(screening1247, 4).
+glutamic_oxaloacetic_transaminase_level(screening1248, 2).
+glutamic_oxaloacetic_transaminase_level(screening1249, 2).
+glutamic_oxaloacetic_transaminase_level(screening125, 4).
+glutamic_oxaloacetic_transaminase_level(screening1250, 3).
+glutamic_oxaloacetic_transaminase_level(screening1251, 2).
+glutamic_oxaloacetic_transaminase_level(screening1252, 2).
+glutamic_oxaloacetic_transaminase_level(screening1253, 3).
+glutamic_oxaloacetic_transaminase_level(screening1254, 3).
+glutamic_oxaloacetic_transaminase_level(screening1255, 3).
+glutamic_oxaloacetic_transaminase_level(screening1256, 3).
+glutamic_oxaloacetic_transaminase_level(screening1257, 3).
+glutamic_oxaloacetic_transaminase_level(screening1258, 3).
+glutamic_oxaloacetic_transaminase_level(screening1259, 3).
+glutamic_oxaloacetic_transaminase_level(screening126, 4).
+glutamic_oxaloacetic_transaminase_level(screening1260, 3).
+glutamic_oxaloacetic_transaminase_level(screening1261, 4).
+glutamic_oxaloacetic_transaminase_level(screening1262, 3).
+glutamic_oxaloacetic_transaminase_level(screening1263, 3).
+glutamic_oxaloacetic_transaminase_level(screening1264, 3).
+glutamic_oxaloacetic_transaminase_level(screening1265, 4).
+glutamic_oxaloacetic_transaminase_level(screening1266, 4).
+glutamic_oxaloacetic_transaminase_level(screening1267, 3).
+glutamic_oxaloacetic_transaminase_level(screening1268, 3).
+glutamic_oxaloacetic_transaminase_level(screening1269, 3).
+glutamic_oxaloacetic_transaminase_level(screening127, 4).
+glutamic_oxaloacetic_transaminase_level(screening1270, 3).
+glutamic_oxaloacetic_transaminase_level(screening1271, 4).
+glutamic_oxaloacetic_transaminase_level(screening1272, 4).
+glutamic_oxaloacetic_transaminase_level(screening1273, 4).
+glutamic_oxaloacetic_transaminase_level(screening1274, 3).
+glutamic_oxaloacetic_transaminase_level(screening1275, 4).
+glutamic_oxaloacetic_transaminase_level(screening1276, 4).
+glutamic_oxaloacetic_transaminase_level(screening1277, 4).
+glutamic_oxaloacetic_transaminase_level(screening1278, 4).
+glutamic_oxaloacetic_transaminase_level(screening1279, 4).
+glutamic_oxaloacetic_transaminase_level(screening128, 4).
+glutamic_oxaloacetic_transaminase_level(screening1280, 4).
+glutamic_oxaloacetic_transaminase_level(screening1281, 4).
+glutamic_oxaloacetic_transaminase_level(screening1282, 4).
+glutamic_oxaloacetic_transaminase_level(screening1283, 3).
+glutamic_oxaloacetic_transaminase_level(screening1284, 3).
+glutamic_oxaloacetic_transaminase_level(screening1285, 2).
+glutamic_oxaloacetic_transaminase_level(screening1286, 2).
+glutamic_oxaloacetic_transaminase_level(screening1287, 2).
+glutamic_oxaloacetic_transaminase_level(screening1288, 3).
+glutamic_oxaloacetic_transaminase_level(screening1289, 3).
+glutamic_oxaloacetic_transaminase_level(screening129, 4).
+glutamic_oxaloacetic_transaminase_level(screening1290, 4).
+glutamic_oxaloacetic_transaminase_level(screening1291, 4).
+glutamic_oxaloacetic_transaminase_level(screening1292, 4).
+glutamic_oxaloacetic_transaminase_level(screening1293, 4).
+glutamic_oxaloacetic_transaminase_level(screening1294, 4).
+glutamic_oxaloacetic_transaminase_level(screening1295, 4).
+glutamic_oxaloacetic_transaminase_level(screening1296, 4).
+glutamic_oxaloacetic_transaminase_level(screening1297, 4).
+glutamic_oxaloacetic_transaminase_level(screening1298, 4).
+glutamic_oxaloacetic_transaminase_level(screening1299, 4).
+glutamic_oxaloacetic_transaminase_level(screening130, 4).
+glutamic_oxaloacetic_transaminase_level(screening1300, 3).
+glutamic_oxaloacetic_transaminase_level(screening1301, 3).
+glutamic_oxaloacetic_transaminase_level(screening1302, 2).
+glutamic_oxaloacetic_transaminase_level(screening1303, 2).
+glutamic_oxaloacetic_transaminase_level(screening1304, 2).
+glutamic_oxaloacetic_transaminase_level(screening1305, 3).
+glutamic_oxaloacetic_transaminase_level(screening1306, 3).
+glutamic_oxaloacetic_transaminase_level(screening1307, 4).
+glutamic_oxaloacetic_transaminase_level(screening1308, 4).
+glutamic_oxaloacetic_transaminase_level(screening1309, 4).
+glutamic_oxaloacetic_transaminase_level(screening131, 4).
+glutamic_oxaloacetic_transaminase_level(screening1310, 4).
+glutamic_oxaloacetic_transaminase_level(screening1311, 2).
+glutamic_oxaloacetic_transaminase_level(screening1312, 4).
+glutamic_oxaloacetic_transaminase_level(screening1313, 4).
+glutamic_oxaloacetic_transaminase_level(screening1314, 4).
+glutamic_oxaloacetic_transaminase_level(screening1315, 3).
+glutamic_oxaloacetic_transaminase_level(screening1316, 4).
+glutamic_oxaloacetic_transaminase_level(screening1317, 4).
+glutamic_oxaloacetic_transaminase_level(screening1318, 3).
+glutamic_oxaloacetic_transaminase_level(screening1319, 3).
+glutamic_oxaloacetic_transaminase_level(screening132, 2).
+glutamic_oxaloacetic_transaminase_level(screening1320, 3).
+glutamic_oxaloacetic_transaminase_level(screening1321, 4).
+glutamic_oxaloacetic_transaminase_level(screening1322, 4).
+glutamic_oxaloacetic_transaminase_level(screening1323, 4).
+glutamic_oxaloacetic_transaminase_level(screening1324, 4).
+glutamic_oxaloacetic_transaminase_level(screening1325, 4).
+glutamic_oxaloacetic_transaminase_level(screening1326, 4).
+glutamic_oxaloacetic_transaminase_level(screening1327, 4).
+glutamic_oxaloacetic_transaminase_level(screening1328, 4).
+glutamic_oxaloacetic_transaminase_level(screening1329, 3).
+glutamic_oxaloacetic_transaminase_level(screening133, 2).
+glutamic_oxaloacetic_transaminase_level(screening1330, 4).
+glutamic_oxaloacetic_transaminase_level(screening1331, 4).
+glutamic_oxaloacetic_transaminase_level(screening1332, 4).
+glutamic_oxaloacetic_transaminase_level(screening1333, 4).
+glutamic_oxaloacetic_transaminase_level(screening1334, 3).
+glutamic_oxaloacetic_transaminase_level(screening1335, 2).
+glutamic_oxaloacetic_transaminase_level(screening1336, 3).
+glutamic_oxaloacetic_transaminase_level(screening1337, 4).
+glutamic_oxaloacetic_transaminase_level(screening1338, 3).
+glutamic_oxaloacetic_transaminase_level(screening1339, 3).
+glutamic_oxaloacetic_transaminase_level(screening134, 2).
+glutamic_oxaloacetic_transaminase_level(screening1340, 4).
+glutamic_oxaloacetic_transaminase_level(screening1341, 3).
+glutamic_oxaloacetic_transaminase_level(screening1342, 4).
+glutamic_oxaloacetic_transaminase_level(screening1343, 3).
+glutamic_oxaloacetic_transaminase_level(screening1344, 3).
+glutamic_oxaloacetic_transaminase_level(screening1345, 2).
+glutamic_oxaloacetic_transaminase_level(screening1346, 2).
+glutamic_oxaloacetic_transaminase_level(screening1347, 3).
+glutamic_oxaloacetic_transaminase_level(screening1348, 4).
+glutamic_oxaloacetic_transaminase_level(screening1349, 4).
+glutamic_oxaloacetic_transaminase_level(screening135, 2).
+glutamic_oxaloacetic_transaminase_level(screening1350, 4).
+glutamic_oxaloacetic_transaminase_level(screening1351, 3).
+glutamic_oxaloacetic_transaminase_level(screening1352, 3).
+glutamic_oxaloacetic_transaminase_level(screening1353, 3).
+glutamic_oxaloacetic_transaminase_level(screening1354, 2).
+glutamic_oxaloacetic_transaminase_level(screening1355, 2).
+glutamic_oxaloacetic_transaminase_level(screening1356, 3).
+glutamic_oxaloacetic_transaminase_level(screening1357, 4).
+glutamic_oxaloacetic_transaminase_level(screening1358, 4).
+glutamic_oxaloacetic_transaminase_level(screening1359, 4).
+glutamic_oxaloacetic_transaminase_level(screening136, 2).
+glutamic_oxaloacetic_transaminase_level(screening1360, 3).
+glutamic_oxaloacetic_transaminase_level(screening1361, 4).
+glutamic_oxaloacetic_transaminase_level(screening1362, 4).
+glutamic_oxaloacetic_transaminase_level(screening1363, 3).
+glutamic_oxaloacetic_transaminase_level(screening1364, 3).
+glutamic_oxaloacetic_transaminase_level(screening1365, 3).
+glutamic_oxaloacetic_transaminase_level(screening1366, 3).
+glutamic_oxaloacetic_transaminase_level(screening1367, 3).
+glutamic_oxaloacetic_transaminase_level(screening1368, 4).
+glutamic_oxaloacetic_transaminase_level(screening1369, 4).
+glutamic_oxaloacetic_transaminase_level(screening137, 4).
+glutamic_oxaloacetic_transaminase_level(screening1370, 3).
+glutamic_oxaloacetic_transaminase_level(screening1371, 4).
+glutamic_oxaloacetic_transaminase_level(screening1372, 4).
+glutamic_oxaloacetic_transaminase_level(screening1373, 3).
+glutamic_oxaloacetic_transaminase_level(screening1374, 2).
+glutamic_oxaloacetic_transaminase_level(screening1375, 2).
+glutamic_oxaloacetic_transaminase_level(screening1376, 2).
+glutamic_oxaloacetic_transaminase_level(screening1377, 2).
+glutamic_oxaloacetic_transaminase_level(screening1378, 2).
+glutamic_oxaloacetic_transaminase_level(screening1379, 4).
+glutamic_oxaloacetic_transaminase_level(screening138, 2).
+glutamic_oxaloacetic_transaminase_level(screening1380, 3).
+glutamic_oxaloacetic_transaminase_level(screening1381, 4).
+glutamic_oxaloacetic_transaminase_level(screening1382, 4).
+glutamic_oxaloacetic_transaminase_level(screening1383, 3).
+glutamic_oxaloacetic_transaminase_level(screening1384, 3).
+glutamic_oxaloacetic_transaminase_level(screening1385, 3).
+glutamic_oxaloacetic_transaminase_level(screening1386, 3).
+glutamic_oxaloacetic_transaminase_level(screening1387, 3).
+glutamic_oxaloacetic_transaminase_level(screening1388, 4).
+glutamic_oxaloacetic_transaminase_level(screening1389, 4).
+glutamic_oxaloacetic_transaminase_level(screening139, 2).
+glutamic_oxaloacetic_transaminase_level(screening1390, 4).
+glutamic_oxaloacetic_transaminase_level(screening1391, 4).
+glutamic_oxaloacetic_transaminase_level(screening1392, 3).
+glutamic_oxaloacetic_transaminase_level(screening1393, 1).
+glutamic_oxaloacetic_transaminase_level(screening1394, 1).
+glutamic_oxaloacetic_transaminase_level(screening1395, 1).
+glutamic_oxaloacetic_transaminase_level(screening1396, 2).
+glutamic_oxaloacetic_transaminase_level(screening1397, 1).
+glutamic_oxaloacetic_transaminase_level(screening1398, 2).
+glutamic_oxaloacetic_transaminase_level(screening1399, 2).
+glutamic_oxaloacetic_transaminase_level(screening140, 4).
+glutamic_oxaloacetic_transaminase_level(screening1400, 2).
+glutamic_oxaloacetic_transaminase_level(screening1401, 2).
+glutamic_oxaloacetic_transaminase_level(screening1402, 2).
+glutamic_oxaloacetic_transaminase_level(screening1403, 3).
+glutamic_oxaloacetic_transaminase_level(screening1404, 3).
+glutamic_oxaloacetic_transaminase_level(screening1405, 3).
+glutamic_oxaloacetic_transaminase_level(screening1406, 3).
+glutamic_oxaloacetic_transaminase_level(screening1407, 3).
+glutamic_oxaloacetic_transaminase_level(screening1408, 3).
+glutamic_oxaloacetic_transaminase_level(screening1409, 3).
+glutamic_oxaloacetic_transaminase_level(screening141, 2).
+glutamic_oxaloacetic_transaminase_level(screening1410, 3).
+glutamic_oxaloacetic_transaminase_level(screening1411, 4).
+glutamic_oxaloacetic_transaminase_level(screening1412, 4).
+glutamic_oxaloacetic_transaminase_level(screening1413, 4).
+glutamic_oxaloacetic_transaminase_level(screening1414, 4).
+glutamic_oxaloacetic_transaminase_level(screening1415, 4).
+glutamic_oxaloacetic_transaminase_level(screening1416, 4).
+glutamic_oxaloacetic_transaminase_level(screening1417, 4).
+glutamic_oxaloacetic_transaminase_level(screening1418, 4).
+glutamic_oxaloacetic_transaminase_level(screening1419, 4).
+glutamic_oxaloacetic_transaminase_level(screening142, 2).
+glutamic_oxaloacetic_transaminase_level(screening1420, 4).
+glutamic_oxaloacetic_transaminase_level(screening1421, 4).
+glutamic_oxaloacetic_transaminase_level(screening1422, 4).
+glutamic_oxaloacetic_transaminase_level(screening1423, 3).
+glutamic_oxaloacetic_transaminase_level(screening1424, 3).
+glutamic_oxaloacetic_transaminase_level(screening1425, 3).
+glutamic_oxaloacetic_transaminase_level(screening1426, 3).
+glutamic_oxaloacetic_transaminase_level(screening1427, 2).
+glutamic_oxaloacetic_transaminase_level(screening1428, 4).
+glutamic_oxaloacetic_transaminase_level(screening1429, 4).
+glutamic_oxaloacetic_transaminase_level(screening143, 1).
+glutamic_oxaloacetic_transaminase_level(screening1430, 4).
+glutamic_oxaloacetic_transaminase_level(screening1431, 4).
+glutamic_oxaloacetic_transaminase_level(screening1432, 3).
+glutamic_oxaloacetic_transaminase_level(screening1433, 3).
+glutamic_oxaloacetic_transaminase_level(screening1434, 3).
+glutamic_oxaloacetic_transaminase_level(screening1435, 3).
+glutamic_oxaloacetic_transaminase_level(screening1436, 2).
+glutamic_oxaloacetic_transaminase_level(screening1437, 3).
+glutamic_oxaloacetic_transaminase_level(screening1438, 3).
+glutamic_oxaloacetic_transaminase_level(screening1439, 4).
+glutamic_oxaloacetic_transaminase_level(screening144, 3).
+glutamic_oxaloacetic_transaminase_level(screening1440, 4).
+glutamic_oxaloacetic_transaminase_level(screening1441, 4).
+glutamic_oxaloacetic_transaminase_level(screening1442, 2).
+glutamic_oxaloacetic_transaminase_level(screening1443, 2).
+glutamic_oxaloacetic_transaminase_level(screening1444, 2).
+glutamic_oxaloacetic_transaminase_level(screening1445, 2).
+glutamic_oxaloacetic_transaminase_level(screening1446, 2).
+glutamic_oxaloacetic_transaminase_level(screening1447, 2).
+glutamic_oxaloacetic_transaminase_level(screening1448, 2).
+glutamic_oxaloacetic_transaminase_level(screening1449, 2).
+glutamic_oxaloacetic_transaminase_level(screening145, 3).
+glutamic_oxaloacetic_transaminase_level(screening1450, 4).
+glutamic_oxaloacetic_transaminase_level(screening1451, 3).
+glutamic_oxaloacetic_transaminase_level(screening1452, 3).
+glutamic_oxaloacetic_transaminase_level(screening1453, 3).
+glutamic_oxaloacetic_transaminase_level(screening1454, 3).
+glutamic_oxaloacetic_transaminase_level(screening1455, 3).
+glutamic_oxaloacetic_transaminase_level(screening1456, 4).
+glutamic_oxaloacetic_transaminase_level(screening1457, 4).
+glutamic_oxaloacetic_transaminase_level(screening1458, 4).
+glutamic_oxaloacetic_transaminase_level(screening1459, 3).
+glutamic_oxaloacetic_transaminase_level(screening146, 4).
+glutamic_oxaloacetic_transaminase_level(screening1460, 3).
+glutamic_oxaloacetic_transaminase_level(screening1461, 3).
+glutamic_oxaloacetic_transaminase_level(screening1462, 3).
+glutamic_oxaloacetic_transaminase_level(screening1463, 3).
+glutamic_oxaloacetic_transaminase_level(screening1464, 3).
+glutamic_oxaloacetic_transaminase_level(screening1465, 3).
+glutamic_oxaloacetic_transaminase_level(screening1466, 3).
+glutamic_oxaloacetic_transaminase_level(screening1467, 3).
+glutamic_oxaloacetic_transaminase_level(screening1468, 3).
+glutamic_oxaloacetic_transaminase_level(screening1469, 3).
+glutamic_oxaloacetic_transaminase_level(screening147, 4).
+glutamic_oxaloacetic_transaminase_level(screening1470, 4).
+glutamic_oxaloacetic_transaminase_level(screening1471, 4).
+glutamic_oxaloacetic_transaminase_level(screening1472, 4).
+glutamic_oxaloacetic_transaminase_level(screening1473, 4).
+glutamic_oxaloacetic_transaminase_level(screening1474, 4).
+glutamic_oxaloacetic_transaminase_level(screening1475, 3).
+glutamic_oxaloacetic_transaminase_level(screening1476, 4).
+glutamic_oxaloacetic_transaminase_level(screening1477, 3).
+glutamic_oxaloacetic_transaminase_level(screening1478, 3).
+glutamic_oxaloacetic_transaminase_level(screening1479, 4).
+glutamic_oxaloacetic_transaminase_level(screening148, 3).
+glutamic_oxaloacetic_transaminase_level(screening1480, 4).
+glutamic_oxaloacetic_transaminase_level(screening1481, 4).
+glutamic_oxaloacetic_transaminase_level(screening1482, 4).
+glutamic_oxaloacetic_transaminase_level(screening1483, 4).
+glutamic_oxaloacetic_transaminase_level(screening1484, 3).
+glutamic_oxaloacetic_transaminase_level(screening1485, 4).
+glutamic_oxaloacetic_transaminase_level(screening1486, 3).
+glutamic_oxaloacetic_transaminase_level(screening1487, 3).
+glutamic_oxaloacetic_transaminase_level(screening1488, 3).
+glutamic_oxaloacetic_transaminase_level(screening1489, 3).
+glutamic_oxaloacetic_transaminase_level(screening149, 2).
+glutamic_oxaloacetic_transaminase_level(screening1490, 3).
+glutamic_oxaloacetic_transaminase_level(screening1491, 3).
+glutamic_oxaloacetic_transaminase_level(screening1492, 3).
+glutamic_oxaloacetic_transaminase_level(screening1493, 3).
+glutamic_oxaloacetic_transaminase_level(screening1494, 3).
+glutamic_oxaloacetic_transaminase_level(screening1495, 3).
+glutamic_oxaloacetic_transaminase_level(screening1496, 4).
+glutamic_oxaloacetic_transaminase_level(screening1497, 3).
+glutamic_oxaloacetic_transaminase_level(screening1498, 3).
+glutamic_oxaloacetic_transaminase_level(screening1499, 4).
+glutamic_oxaloacetic_transaminase_level(screening150, 2).
+glutamic_oxaloacetic_transaminase_level(screening1500, 4).
+glutamic_oxaloacetic_transaminase_level(screening1501, 3).
+glutamic_oxaloacetic_transaminase_level(screening1502, 3).
+glutamic_oxaloacetic_transaminase_level(screening1503, 3).
+glutamic_oxaloacetic_transaminase_level(screening1504, 4).
+glutamic_oxaloacetic_transaminase_level(screening1505, 4).
+glutamic_oxaloacetic_transaminase_level(screening1506, 4).
+glutamic_oxaloacetic_transaminase_level(screening1507, 4).
+glutamic_oxaloacetic_transaminase_level(screening1508, 3).
+glutamic_oxaloacetic_transaminase_level(screening1509, 3).
+glutamic_oxaloacetic_transaminase_level(screening151, 2).
+glutamic_oxaloacetic_transaminase_level(screening1510, 3).
+glutamic_oxaloacetic_transaminase_level(screening1511, 3).
+glutamic_oxaloacetic_transaminase_level(screening1512, 2).
+glutamic_oxaloacetic_transaminase_level(screening1513, 3).
+glutamic_oxaloacetic_transaminase_level(screening1514, 3).
+glutamic_oxaloacetic_transaminase_level(screening1515, 2).
+glutamic_oxaloacetic_transaminase_level(screening1516, 4).
+glutamic_oxaloacetic_transaminase_level(screening1517, 4).
+glutamic_oxaloacetic_transaminase_level(screening1518, 4).
+glutamic_oxaloacetic_transaminase_level(screening1519, 3).
+glutamic_oxaloacetic_transaminase_level(screening152, 2).
+glutamic_oxaloacetic_transaminase_level(screening1520, 3).
+glutamic_oxaloacetic_transaminase_level(screening1521, 3).
+glutamic_oxaloacetic_transaminase_level(screening1522, 2).
+glutamic_oxaloacetic_transaminase_level(screening1523, 3).
+glutamic_oxaloacetic_transaminase_level(screening1524, 3).
+glutamic_oxaloacetic_transaminase_level(screening1525, 3).
+glutamic_oxaloacetic_transaminase_level(screening1526, 2).
+glutamic_oxaloacetic_transaminase_level(screening1527, 3).
+glutamic_oxaloacetic_transaminase_level(screening1528, 3).
+glutamic_oxaloacetic_transaminase_level(screening1529, 2).
+glutamic_oxaloacetic_transaminase_level(screening153, 2).
+glutamic_oxaloacetic_transaminase_level(screening1530, 3).
+glutamic_oxaloacetic_transaminase_level(screening1531, 2).
+glutamic_oxaloacetic_transaminase_level(screening1532, 4).
+glutamic_oxaloacetic_transaminase_level(screening1533, 4).
+glutamic_oxaloacetic_transaminase_level(screening1534, 4).
+glutamic_oxaloacetic_transaminase_level(screening1535, 3).
+glutamic_oxaloacetic_transaminase_level(screening1536, 3).
+glutamic_oxaloacetic_transaminase_level(screening1537, 3).
+glutamic_oxaloacetic_transaminase_level(screening1538, 2).
+glutamic_oxaloacetic_transaminase_level(screening1539, 3).
+glutamic_oxaloacetic_transaminase_level(screening154, 2).
+glutamic_oxaloacetic_transaminase_level(screening1540, 3).
+glutamic_oxaloacetic_transaminase_level(screening1541, 3).
+glutamic_oxaloacetic_transaminase_level(screening1542, 2).
+glutamic_oxaloacetic_transaminase_level(screening1543, 3).
+glutamic_oxaloacetic_transaminase_level(screening1544, 3).
+glutamic_oxaloacetic_transaminase_level(screening1545, 2).
+glutamic_oxaloacetic_transaminase_level(screening1546, 3).
+glutamic_oxaloacetic_transaminase_level(screening1547, 2).
+glutamic_oxaloacetic_transaminase_level(screening1548, 4).
+glutamic_oxaloacetic_transaminase_level(screening1549, 4).
+glutamic_oxaloacetic_transaminase_level(screening155, 2).
+glutamic_oxaloacetic_transaminase_level(screening1550, 4).
+glutamic_oxaloacetic_transaminase_level(screening1551, 3).
+glutamic_oxaloacetic_transaminase_level(screening1552, 3).
+glutamic_oxaloacetic_transaminase_level(screening1553, 3).
+glutamic_oxaloacetic_transaminase_level(screening1554, 2).
+glutamic_oxaloacetic_transaminase_level(screening1555, 3).
+glutamic_oxaloacetic_transaminase_level(screening1556, 3).
+glutamic_oxaloacetic_transaminase_level(screening1557, 3).
+glutamic_oxaloacetic_transaminase_level(screening1558, 2).
+glutamic_oxaloacetic_transaminase_level(screening1559, 3).
+glutamic_oxaloacetic_transaminase_level(screening156, 1).
+glutamic_oxaloacetic_transaminase_level(screening1560, 3).
+glutamic_oxaloacetic_transaminase_level(screening1561, 2).
+glutamic_oxaloacetic_transaminase_level(screening1562, 3).
+glutamic_oxaloacetic_transaminase_level(screening1563, 2).
+glutamic_oxaloacetic_transaminase_level(screening1564, 3).
+glutamic_oxaloacetic_transaminase_level(screening1565, 2).
+glutamic_oxaloacetic_transaminase_level(screening1566, 2).
+glutamic_oxaloacetic_transaminase_level(screening1567, 2).
+glutamic_oxaloacetic_transaminase_level(screening1568, 2).
+glutamic_oxaloacetic_transaminase_level(screening1569, 2).
+glutamic_oxaloacetic_transaminase_level(screening157, 2).
+glutamic_oxaloacetic_transaminase_level(screening1570, 2).
+glutamic_oxaloacetic_transaminase_level(screening1571, 2).
+glutamic_oxaloacetic_transaminase_level(screening1572, 2).
+glutamic_oxaloacetic_transaminase_level(screening1573, 4).
+glutamic_oxaloacetic_transaminase_level(screening1574, 4).
+glutamic_oxaloacetic_transaminase_level(screening1575, 3).
+glutamic_oxaloacetic_transaminase_level(screening1576, 3).
+glutamic_oxaloacetic_transaminase_level(screening1577, 3).
+glutamic_oxaloacetic_transaminase_level(screening1578, 3).
+glutamic_oxaloacetic_transaminase_level(screening1579, 4).
+glutamic_oxaloacetic_transaminase_level(screening158, 2).
+glutamic_oxaloacetic_transaminase_level(screening1580, 4).
+glutamic_oxaloacetic_transaminase_level(screening1581, 4).
+glutamic_oxaloacetic_transaminase_level(screening1582, 4).
+glutamic_oxaloacetic_transaminase_level(screening1583, 4).
+glutamic_oxaloacetic_transaminase_level(screening1584, 3).
+glutamic_oxaloacetic_transaminase_level(screening1585, 3).
+glutamic_oxaloacetic_transaminase_level(screening1586, 3).
+glutamic_oxaloacetic_transaminase_level(screening1587, 4).
+glutamic_oxaloacetic_transaminase_level(screening1588, 3).
+glutamic_oxaloacetic_transaminase_level(screening1589, 4).
+glutamic_oxaloacetic_transaminase_level(screening159, 2).
+glutamic_oxaloacetic_transaminase_level(screening1590, 4).
+glutamic_oxaloacetic_transaminase_level(screening1591, 2).
+glutamic_oxaloacetic_transaminase_level(screening1592, 2).
+glutamic_oxaloacetic_transaminase_level(screening1593, 2).
+glutamic_oxaloacetic_transaminase_level(screening1594, 2).
+glutamic_oxaloacetic_transaminase_level(screening1595, 2).
+glutamic_oxaloacetic_transaminase_level(screening1596, 2).
+glutamic_oxaloacetic_transaminase_level(screening1597, 2).
+glutamic_oxaloacetic_transaminase_level(screening1598, 3).
+glutamic_oxaloacetic_transaminase_level(screening1599, 4).
+glutamic_oxaloacetic_transaminase_level(screening160, 2).
+glutamic_oxaloacetic_transaminase_level(screening1600, 4).
+glutamic_oxaloacetic_transaminase_level(screening1601, 4).
+glutamic_oxaloacetic_transaminase_level(screening1602, 4).
+glutamic_oxaloacetic_transaminase_level(screening1603, 4).
+glutamic_oxaloacetic_transaminase_level(screening1604, 4).
+glutamic_oxaloacetic_transaminase_level(screening1605, 4).
+glutamic_oxaloacetic_transaminase_level(screening1606, 4).
+glutamic_oxaloacetic_transaminase_level(screening1607, 3).
+glutamic_oxaloacetic_transaminase_level(screening1608, 3).
+glutamic_oxaloacetic_transaminase_level(screening1609, 3).
+glutamic_oxaloacetic_transaminase_level(screening161, 2).
+glutamic_oxaloacetic_transaminase_level(screening1610, 3).
+glutamic_oxaloacetic_transaminase_level(screening1611, 4).
+glutamic_oxaloacetic_transaminase_level(screening1612, 4).
+glutamic_oxaloacetic_transaminase_level(screening1613, 2).
+glutamic_oxaloacetic_transaminase_level(screening1614, 4).
+glutamic_oxaloacetic_transaminase_level(screening1615, 3).
+glutamic_oxaloacetic_transaminase_level(screening1616, 4).
+glutamic_oxaloacetic_transaminase_level(screening1617, 1).
+glutamic_oxaloacetic_transaminase_level(screening1618, 1).
+glutamic_oxaloacetic_transaminase_level(screening1619, 1).
+glutamic_oxaloacetic_transaminase_level(screening162, 2).
+glutamic_oxaloacetic_transaminase_level(screening1620, 1).
+glutamic_oxaloacetic_transaminase_level(screening1621, 1).
+glutamic_oxaloacetic_transaminase_level(screening1622, 2).
+glutamic_oxaloacetic_transaminase_level(screening1623, 2).
+glutamic_oxaloacetic_transaminase_level(screening1624, 2).
+glutamic_oxaloacetic_transaminase_level(screening1625, 2).
+glutamic_oxaloacetic_transaminase_level(screening1626, 1).
+glutamic_oxaloacetic_transaminase_level(screening1627, 4).
+glutamic_oxaloacetic_transaminase_level(screening1628, 2).
+glutamic_oxaloacetic_transaminase_level(screening1629, 1).
+glutamic_oxaloacetic_transaminase_level(screening163, 4).
+glutamic_oxaloacetic_transaminase_level(screening1630, 4).
+glutamic_oxaloacetic_transaminase_level(screening1631, 4).
+glutamic_oxaloacetic_transaminase_level(screening1632, 4).
+glutamic_oxaloacetic_transaminase_level(screening1633, 3).
+glutamic_oxaloacetic_transaminase_level(screening1634, 4).
+glutamic_oxaloacetic_transaminase_level(screening1635, 4).
+glutamic_oxaloacetic_transaminase_level(screening1636, 4).
+glutamic_oxaloacetic_transaminase_level(screening1637, 4).
+glutamic_oxaloacetic_transaminase_level(screening1638, 3).
+glutamic_oxaloacetic_transaminase_level(screening1639, 4).
+glutamic_oxaloacetic_transaminase_level(screening164, 2).
+glutamic_oxaloacetic_transaminase_level(screening1640, 4).
+glutamic_oxaloacetic_transaminase_level(screening1641, 4).
+glutamic_oxaloacetic_transaminase_level(screening1642, 4).
+glutamic_oxaloacetic_transaminase_level(screening1643, 4).
+glutamic_oxaloacetic_transaminase_level(screening1644, 4).
+glutamic_oxaloacetic_transaminase_level(screening1645, 4).
+glutamic_oxaloacetic_transaminase_level(screening1646, 4).
+glutamic_oxaloacetic_transaminase_level(screening1647, 3).
+glutamic_oxaloacetic_transaminase_level(screening1648, 4).
+glutamic_oxaloacetic_transaminase_level(screening1649, 4).
+glutamic_oxaloacetic_transaminase_level(screening165, 2).
+glutamic_oxaloacetic_transaminase_level(screening1650, 4).
+glutamic_oxaloacetic_transaminase_level(screening1651, 4).
+glutamic_oxaloacetic_transaminase_level(screening1652, 3).
+glutamic_oxaloacetic_transaminase_level(screening1653, 4).
+glutamic_oxaloacetic_transaminase_level(screening1654, 4).
+glutamic_oxaloacetic_transaminase_level(screening1655, 4).
+glutamic_oxaloacetic_transaminase_level(screening1656, 4).
+glutamic_oxaloacetic_transaminase_level(screening1657, 4).
+glutamic_oxaloacetic_transaminase_level(screening1658, 4).
+glutamic_oxaloacetic_transaminase_level(screening1659, 4).
+glutamic_oxaloacetic_transaminase_level(screening166, 2).
+glutamic_oxaloacetic_transaminase_level(screening1660, 4).
+glutamic_oxaloacetic_transaminase_level(screening1661, 3).
+glutamic_oxaloacetic_transaminase_level(screening1662, 4).
+glutamic_oxaloacetic_transaminase_level(screening1663, 4).
+glutamic_oxaloacetic_transaminase_level(screening1664, 4).
+glutamic_oxaloacetic_transaminase_level(screening1665, 4).
+glutamic_oxaloacetic_transaminase_level(screening1666, 3).
+glutamic_oxaloacetic_transaminase_level(screening1667, 4).
+glutamic_oxaloacetic_transaminase_level(screening1668, 4).
+glutamic_oxaloacetic_transaminase_level(screening1669, 4).
+glutamic_oxaloacetic_transaminase_level(screening167, 2).
+glutamic_oxaloacetic_transaminase_level(screening1670, 4).
+glutamic_oxaloacetic_transaminase_level(screening1671, 4).
+glutamic_oxaloacetic_transaminase_level(screening1672, 3).
+glutamic_oxaloacetic_transaminase_level(screening1673, 3).
+glutamic_oxaloacetic_transaminase_level(screening1674, 3).
+glutamic_oxaloacetic_transaminase_level(screening1675, 2).
+glutamic_oxaloacetic_transaminase_level(screening1676, 1).
+glutamic_oxaloacetic_transaminase_level(screening1677, 1).
+glutamic_oxaloacetic_transaminase_level(screening1678, 1).
+glutamic_oxaloacetic_transaminase_level(screening1679, 2).
+glutamic_oxaloacetic_transaminase_level(screening168, 2).
+glutamic_oxaloacetic_transaminase_level(screening1680, 2).
+glutamic_oxaloacetic_transaminase_level(screening1681, 2).
+glutamic_oxaloacetic_transaminase_level(screening1682, 2).
+glutamic_oxaloacetic_transaminase_level(screening1683, 2).
+glutamic_oxaloacetic_transaminase_level(screening1684, 3).
+glutamic_oxaloacetic_transaminase_level(screening1685, 3).
+glutamic_oxaloacetic_transaminase_level(screening1686, 3).
+glutamic_oxaloacetic_transaminase_level(screening1687, 3).
+glutamic_oxaloacetic_transaminase_level(screening1688, 2).
+glutamic_oxaloacetic_transaminase_level(screening1689, 1).
+glutamic_oxaloacetic_transaminase_level(screening169, 2).
+glutamic_oxaloacetic_transaminase_level(screening1690, 1).
+glutamic_oxaloacetic_transaminase_level(screening1691, 1).
+glutamic_oxaloacetic_transaminase_level(screening1692, 2).
+glutamic_oxaloacetic_transaminase_level(screening1693, 2).
+glutamic_oxaloacetic_transaminase_level(screening1694, 2).
+glutamic_oxaloacetic_transaminase_level(screening1695, 2).
+glutamic_oxaloacetic_transaminase_level(screening1696, 2).
+glutamic_oxaloacetic_transaminase_level(screening1697, 3).
+glutamic_oxaloacetic_transaminase_level(screening1698, 3).
+glutamic_oxaloacetic_transaminase_level(screening1699, 3).
+glutamic_oxaloacetic_transaminase_level(screening170, 2).
+glutamic_oxaloacetic_transaminase_level(screening1700, 3).
+glutamic_oxaloacetic_transaminase_level(screening1701, 2).
+glutamic_oxaloacetic_transaminase_level(screening1702, 1).
+glutamic_oxaloacetic_transaminase_level(screening1703, 1).
+glutamic_oxaloacetic_transaminase_level(screening1704, 1).
+glutamic_oxaloacetic_transaminase_level(screening1705, 2).
+glutamic_oxaloacetic_transaminase_level(screening1706, 2).
+glutamic_oxaloacetic_transaminase_level(screening1707, 2).
+glutamic_oxaloacetic_transaminase_level(screening1708, 2).
+glutamic_oxaloacetic_transaminase_level(screening1709, 2).
+glutamic_oxaloacetic_transaminase_level(screening171, 3).
+glutamic_oxaloacetic_transaminase_level(screening1710, 3).
+glutamic_oxaloacetic_transaminase_level(screening1711, 4).
+glutamic_oxaloacetic_transaminase_level(screening1712, 4).
+glutamic_oxaloacetic_transaminase_level(screening1713, 4).
+glutamic_oxaloacetic_transaminase_level(screening1714, 4).
+glutamic_oxaloacetic_transaminase_level(screening1715, 3).
+glutamic_oxaloacetic_transaminase_level(screening1716, 3).
+glutamic_oxaloacetic_transaminase_level(screening1717, 3).
+glutamic_oxaloacetic_transaminase_level(screening1718, 3).
+glutamic_oxaloacetic_transaminase_level(screening1719, 3).
+glutamic_oxaloacetic_transaminase_level(screening172, 4).
+glutamic_oxaloacetic_transaminase_level(screening1720, 4).
+glutamic_oxaloacetic_transaminase_level(screening1721, 4).
+glutamic_oxaloacetic_transaminase_level(screening1722, 4).
+glutamic_oxaloacetic_transaminase_level(screening1723, 4).
+glutamic_oxaloacetic_transaminase_level(screening1724, 4).
+glutamic_oxaloacetic_transaminase_level(screening1725, 4).
+glutamic_oxaloacetic_transaminase_level(screening1726, 4).
+glutamic_oxaloacetic_transaminase_level(screening1727, 3).
+glutamic_oxaloacetic_transaminase_level(screening1728, 3).
+glutamic_oxaloacetic_transaminase_level(screening1729, 3).
+glutamic_oxaloacetic_transaminase_level(screening173, 4).
+glutamic_oxaloacetic_transaminase_level(screening1730, 3).
+glutamic_oxaloacetic_transaminase_level(screening1731, 3).
+glutamic_oxaloacetic_transaminase_level(screening1732, 4).
+glutamic_oxaloacetic_transaminase_level(screening1733, 4).
+glutamic_oxaloacetic_transaminase_level(screening1734, 4).
+glutamic_oxaloacetic_transaminase_level(screening1735, 2).
+glutamic_oxaloacetic_transaminase_level(screening1736, 2).
+glutamic_oxaloacetic_transaminase_level(screening1737, 2).
+glutamic_oxaloacetic_transaminase_level(screening1738, 2).
+glutamic_oxaloacetic_transaminase_level(screening1739, 2).
+glutamic_oxaloacetic_transaminase_level(screening174, 3).
+glutamic_oxaloacetic_transaminase_level(screening1740, 4).
+glutamic_oxaloacetic_transaminase_level(screening1741, 3).
+glutamic_oxaloacetic_transaminase_level(screening1742, 4).
+glutamic_oxaloacetic_transaminase_level(screening1743, 4).
+glutamic_oxaloacetic_transaminase_level(screening1744, 2).
+glutamic_oxaloacetic_transaminase_level(screening1745, 2).
+glutamic_oxaloacetic_transaminase_level(screening1746, 3).
+glutamic_oxaloacetic_transaminase_level(screening1747, 4).
+glutamic_oxaloacetic_transaminase_level(screening1748, 4).
+glutamic_oxaloacetic_transaminase_level(screening1749, 2).
+glutamic_oxaloacetic_transaminase_level(screening175, 2).
+glutamic_oxaloacetic_transaminase_level(screening1750, 2).
+glutamic_oxaloacetic_transaminase_level(screening1751, 3).
+glutamic_oxaloacetic_transaminase_level(screening1752, 4).
+glutamic_oxaloacetic_transaminase_level(screening1753, 4).
+glutamic_oxaloacetic_transaminase_level(screening1754, 4).
+glutamic_oxaloacetic_transaminase_level(screening1755, 4).
+glutamic_oxaloacetic_transaminase_level(screening1756, 4).
+glutamic_oxaloacetic_transaminase_level(screening1757, 4).
+glutamic_oxaloacetic_transaminase_level(screening1758, 4).
+glutamic_oxaloacetic_transaminase_level(screening1759, 4).
+glutamic_oxaloacetic_transaminase_level(screening176, 2).
+glutamic_oxaloacetic_transaminase_level(screening1760, 4).
+glutamic_oxaloacetic_transaminase_level(screening1761, 4).
+glutamic_oxaloacetic_transaminase_level(screening1762, 4).
+glutamic_oxaloacetic_transaminase_level(screening1763, 2).
+glutamic_oxaloacetic_transaminase_level(screening1764, 1).
+glutamic_oxaloacetic_transaminase_level(screening1765, 1).
+glutamic_oxaloacetic_transaminase_level(screening1766, 1).
+glutamic_oxaloacetic_transaminase_level(screening1767, 1).
+glutamic_oxaloacetic_transaminase_level(screening1768, 1).
+glutamic_oxaloacetic_transaminase_level(screening1769, 1).
+glutamic_oxaloacetic_transaminase_level(screening177, 1).
+glutamic_oxaloacetic_transaminase_level(screening1770, 1).
+glutamic_oxaloacetic_transaminase_level(screening1771, 1).
+glutamic_oxaloacetic_transaminase_level(screening1772, 1).
+glutamic_oxaloacetic_transaminase_level(screening1773, 4).
+glutamic_oxaloacetic_transaminase_level(screening1774, 3).
+glutamic_oxaloacetic_transaminase_level(screening1775, 4).
+glutamic_oxaloacetic_transaminase_level(screening1776, 4).
+glutamic_oxaloacetic_transaminase_level(screening1777, 4).
+glutamic_oxaloacetic_transaminase_level(screening1778, 4).
+glutamic_oxaloacetic_transaminase_level(screening1779, 4).
+glutamic_oxaloacetic_transaminase_level(screening178, 2).
+glutamic_oxaloacetic_transaminase_level(screening1780, 4).
+glutamic_oxaloacetic_transaminase_level(screening1781, 3).
+glutamic_oxaloacetic_transaminase_level(screening1782, 3).
+glutamic_oxaloacetic_transaminase_level(screening1783, 3).
+glutamic_oxaloacetic_transaminase_level(screening1784, 3).
+glutamic_oxaloacetic_transaminase_level(screening1785, 3).
+glutamic_oxaloacetic_transaminase_level(screening1786, 3).
+glutamic_oxaloacetic_transaminase_level(screening1787, 3).
+glutamic_oxaloacetic_transaminase_level(screening1788, 3).
+glutamic_oxaloacetic_transaminase_level(screening1789, 4).
+glutamic_oxaloacetic_transaminase_level(screening179, 3).
+glutamic_oxaloacetic_transaminase_level(screening1790, 3).
+glutamic_oxaloacetic_transaminase_level(screening1791, 4).
+glutamic_oxaloacetic_transaminase_level(screening1792, 4).
+glutamic_oxaloacetic_transaminase_level(screening1793, 4).
+glutamic_oxaloacetic_transaminase_level(screening1794, 4).
+glutamic_oxaloacetic_transaminase_level(screening1795, 4).
+glutamic_oxaloacetic_transaminase_level(screening1796, 4).
+glutamic_oxaloacetic_transaminase_level(screening1797, 3).
+glutamic_oxaloacetic_transaminase_level(screening1798, 3).
+glutamic_oxaloacetic_transaminase_level(screening1799, 3).
+glutamic_oxaloacetic_transaminase_level(screening180, 4).
+glutamic_oxaloacetic_transaminase_level(screening1800, 3).
+glutamic_oxaloacetic_transaminase_level(screening1801, 3).
+glutamic_oxaloacetic_transaminase_level(screening1802, 3).
+glutamic_oxaloacetic_transaminase_level(screening1803, 3).
+glutamic_oxaloacetic_transaminase_level(screening1804, 3).
+glutamic_oxaloacetic_transaminase_level(screening1805, 4).
+glutamic_oxaloacetic_transaminase_level(screening1806, 3).
+glutamic_oxaloacetic_transaminase_level(screening1807, 4).
+glutamic_oxaloacetic_transaminase_level(screening1808, 4).
+glutamic_oxaloacetic_transaminase_level(screening1809, 4).
+glutamic_oxaloacetic_transaminase_level(screening181, 3).
+glutamic_oxaloacetic_transaminase_level(screening1810, 4).
+glutamic_oxaloacetic_transaminase_level(screening1811, 4).
+glutamic_oxaloacetic_transaminase_level(screening1812, 4).
+glutamic_oxaloacetic_transaminase_level(screening1813, 3).
+glutamic_oxaloacetic_transaminase_level(screening1814, 3).
+glutamic_oxaloacetic_transaminase_level(screening1815, 3).
+glutamic_oxaloacetic_transaminase_level(screening1816, 3).
+glutamic_oxaloacetic_transaminase_level(screening1817, 3).
+glutamic_oxaloacetic_transaminase_level(screening1818, 3).
+glutamic_oxaloacetic_transaminase_level(screening1819, 3).
+glutamic_oxaloacetic_transaminase_level(screening182, 3).
+glutamic_oxaloacetic_transaminase_level(screening1820, 3).
+glutamic_oxaloacetic_transaminase_level(screening1821, 4).
+glutamic_oxaloacetic_transaminase_level(screening1822, 2).
+glutamic_oxaloacetic_transaminase_level(screening1823, 1).
+glutamic_oxaloacetic_transaminase_level(screening1824, 1).
+glutamic_oxaloacetic_transaminase_level(screening1825, 2).
+glutamic_oxaloacetic_transaminase_level(screening1826, 2).
+glutamic_oxaloacetic_transaminase_level(screening1827, 1).
+glutamic_oxaloacetic_transaminase_level(screening1828, 1).
+glutamic_oxaloacetic_transaminase_level(screening1829, 1).
+glutamic_oxaloacetic_transaminase_level(screening183, 3).
+glutamic_oxaloacetic_transaminase_level(screening1830, 2).
+glutamic_oxaloacetic_transaminase_level(screening1831, 1).
+glutamic_oxaloacetic_transaminase_level(screening1832, 5).
+glutamic_oxaloacetic_transaminase_level(screening1833, 4).
+glutamic_oxaloacetic_transaminase_level(screening1834, 2).
+glutamic_oxaloacetic_transaminase_level(screening1835, 1).
+glutamic_oxaloacetic_transaminase_level(screening1836, 1).
+glutamic_oxaloacetic_transaminase_level(screening1837, 5).
+glutamic_oxaloacetic_transaminase_level(screening1838, 4).
+glutamic_oxaloacetic_transaminase_level(screening1839, 2).
+glutamic_oxaloacetic_transaminase_level(screening184, 3).
+glutamic_oxaloacetic_transaminase_level(screening1840, 1).
+glutamic_oxaloacetic_transaminase_level(screening1841, 1).
+glutamic_oxaloacetic_transaminase_level(screening1842, 5).
+glutamic_oxaloacetic_transaminase_level(screening1843, 4).
+glutamic_oxaloacetic_transaminase_level(screening1844, 2).
+glutamic_oxaloacetic_transaminase_level(screening1845, 1).
+glutamic_oxaloacetic_transaminase_level(screening1846, 1).
+glutamic_oxaloacetic_transaminase_level(screening1847, 4).
+glutamic_oxaloacetic_transaminase_level(screening1848, 3).
+glutamic_oxaloacetic_transaminase_level(screening1849, 4).
+glutamic_oxaloacetic_transaminase_level(screening185, 2).
+glutamic_oxaloacetic_transaminase_level(screening1850, 4).
+glutamic_oxaloacetic_transaminase_level(screening1851, 4).
+glutamic_oxaloacetic_transaminase_level(screening1852, 4).
+glutamic_oxaloacetic_transaminase_level(screening1853, 4).
+glutamic_oxaloacetic_transaminase_level(screening1854, 4).
+glutamic_oxaloacetic_transaminase_level(screening1855, 3).
+glutamic_oxaloacetic_transaminase_level(screening1856, 3).
+glutamic_oxaloacetic_transaminase_level(screening1857, 3).
+glutamic_oxaloacetic_transaminase_level(screening1858, 2).
+glutamic_oxaloacetic_transaminase_level(screening1859, 3).
+glutamic_oxaloacetic_transaminase_level(screening186, 2).
+glutamic_oxaloacetic_transaminase_level(screening1860, 3).
+glutamic_oxaloacetic_transaminase_level(screening1861, 4).
+glutamic_oxaloacetic_transaminase_level(screening1862, 3).
+glutamic_oxaloacetic_transaminase_level(screening1863, 4).
+glutamic_oxaloacetic_transaminase_level(screening1864, 4).
+glutamic_oxaloacetic_transaminase_level(screening1865, 4).
+glutamic_oxaloacetic_transaminase_level(screening1866, 4).
+glutamic_oxaloacetic_transaminase_level(screening1867, 4).
+glutamic_oxaloacetic_transaminase_level(screening1868, 4).
+glutamic_oxaloacetic_transaminase_level(screening1869, 3).
+glutamic_oxaloacetic_transaminase_level(screening187, 2).
+glutamic_oxaloacetic_transaminase_level(screening1870, 3).
+glutamic_oxaloacetic_transaminase_level(screening1871, 3).
+glutamic_oxaloacetic_transaminase_level(screening1872, 2).
+glutamic_oxaloacetic_transaminase_level(screening1873, 3).
+glutamic_oxaloacetic_transaminase_level(screening1874, 3).
+glutamic_oxaloacetic_transaminase_level(screening1875, 4).
+glutamic_oxaloacetic_transaminase_level(screening1876, 3).
+glutamic_oxaloacetic_transaminase_level(screening1877, 4).
+glutamic_oxaloacetic_transaminase_level(screening1878, 4).
+glutamic_oxaloacetic_transaminase_level(screening1879, 4).
+glutamic_oxaloacetic_transaminase_level(screening188, 5).
+glutamic_oxaloacetic_transaminase_level(screening1880, 4).
+glutamic_oxaloacetic_transaminase_level(screening1881, 4).
+glutamic_oxaloacetic_transaminase_level(screening1882, 4).
+glutamic_oxaloacetic_transaminase_level(screening1883, 3).
+glutamic_oxaloacetic_transaminase_level(screening1884, 3).
+glutamic_oxaloacetic_transaminase_level(screening1885, 3).
+glutamic_oxaloacetic_transaminase_level(screening1886, 2).
+glutamic_oxaloacetic_transaminase_level(screening1887, 3).
+glutamic_oxaloacetic_transaminase_level(screening1888, 3).
+glutamic_oxaloacetic_transaminase_level(screening1889, 4).
+glutamic_oxaloacetic_transaminase_level(screening189, 1).
+glutamic_oxaloacetic_transaminase_level(screening1890, 3).
+glutamic_oxaloacetic_transaminase_level(screening1891, 4).
+glutamic_oxaloacetic_transaminase_level(screening1892, 4).
+glutamic_oxaloacetic_transaminase_level(screening1893, 4).
+glutamic_oxaloacetic_transaminase_level(screening1894, 4).
+glutamic_oxaloacetic_transaminase_level(screening1895, 4).
+glutamic_oxaloacetic_transaminase_level(screening1896, 4).
+glutamic_oxaloacetic_transaminase_level(screening1897, 3).
+glutamic_oxaloacetic_transaminase_level(screening1898, 3).
+glutamic_oxaloacetic_transaminase_level(screening1899, 3).
+glutamic_oxaloacetic_transaminase_level(screening190, 1).
+glutamic_oxaloacetic_transaminase_level(screening1900, 2).
+glutamic_oxaloacetic_transaminase_level(screening1901, 3).
+glutamic_oxaloacetic_transaminase_level(screening1902, 3).
+glutamic_oxaloacetic_transaminase_level(screening1903, 2).
+glutamic_oxaloacetic_transaminase_level(screening1904, 2).
+glutamic_oxaloacetic_transaminase_level(screening1905, 2).
+glutamic_oxaloacetic_transaminase_level(screening1906, 2).
+glutamic_oxaloacetic_transaminase_level(screening1907, 4).
+glutamic_oxaloacetic_transaminase_level(screening1908, 4).
+glutamic_oxaloacetic_transaminase_level(screening1909, 4).
+glutamic_oxaloacetic_transaminase_level(screening191, 1).
+glutamic_oxaloacetic_transaminase_level(screening1910, 3).
+glutamic_oxaloacetic_transaminase_level(screening1911, 3).
+glutamic_oxaloacetic_transaminase_level(screening1912, 3).
+glutamic_oxaloacetic_transaminase_level(screening1913, 2).
+glutamic_oxaloacetic_transaminase_level(screening1914, 2).
+glutamic_oxaloacetic_transaminase_level(screening1915, 4).
+glutamic_oxaloacetic_transaminase_level(screening1916, 4).
+glutamic_oxaloacetic_transaminase_level(screening1917, 2).
+glutamic_oxaloacetic_transaminase_level(screening1918, 2).
+glutamic_oxaloacetic_transaminase_level(screening1919, 2).
+glutamic_oxaloacetic_transaminase_level(screening192, 1).
+glutamic_oxaloacetic_transaminase_level(screening1920, 2).
+glutamic_oxaloacetic_transaminase_level(screening1921, 2).
+glutamic_oxaloacetic_transaminase_level(screening1922, 2).
+glutamic_oxaloacetic_transaminase_level(screening1923, 2).
+glutamic_oxaloacetic_transaminase_level(screening1924, 2).
+glutamic_oxaloacetic_transaminase_level(screening1925, 2).
+glutamic_oxaloacetic_transaminase_level(screening1926, 2).
+glutamic_oxaloacetic_transaminase_level(screening1927, 2).
+glutamic_oxaloacetic_transaminase_level(screening1928, 2).
+glutamic_oxaloacetic_transaminase_level(screening1929, 2).
+glutamic_oxaloacetic_transaminase_level(screening193, 1).
+glutamic_oxaloacetic_transaminase_level(screening1930, 2).
+glutamic_oxaloacetic_transaminase_level(screening1931, 4).
+glutamic_oxaloacetic_transaminase_level(screening1932, 5).
+glutamic_oxaloacetic_transaminase_level(screening1933, 1).
+glutamic_oxaloacetic_transaminase_level(screening1934, 2).
+glutamic_oxaloacetic_transaminase_level(screening1935, 2).
+glutamic_oxaloacetic_transaminase_level(screening1936, 2).
+glutamic_oxaloacetic_transaminase_level(screening1937, 2).
+glutamic_oxaloacetic_transaminase_level(screening1938, 2).
+glutamic_oxaloacetic_transaminase_level(screening1939, 2).
+glutamic_oxaloacetic_transaminase_level(screening194, 2).
+glutamic_oxaloacetic_transaminase_level(screening1940, 2).
+glutamic_oxaloacetic_transaminase_level(screening1941, 2).
+glutamic_oxaloacetic_transaminase_level(screening1942, 2).
+glutamic_oxaloacetic_transaminase_level(screening1943, 2).
+glutamic_oxaloacetic_transaminase_level(screening1944, 2).
+glutamic_oxaloacetic_transaminase_level(screening1945, 2).
+glutamic_oxaloacetic_transaminase_level(screening1946, 2).
+glutamic_oxaloacetic_transaminase_level(screening1947, 2).
+glutamic_oxaloacetic_transaminase_level(screening1948, 2).
+glutamic_oxaloacetic_transaminase_level(screening1949, 2).
+glutamic_oxaloacetic_transaminase_level(screening195, 2).
+glutamic_oxaloacetic_transaminase_level(screening1950, 2).
+glutamic_oxaloacetic_transaminase_level(screening1951, 2).
+glutamic_oxaloacetic_transaminase_level(screening1952, 2).
+glutamic_oxaloacetic_transaminase_level(screening1953, 2).
+glutamic_oxaloacetic_transaminase_level(screening1954, 2).
+glutamic_oxaloacetic_transaminase_level(screening1955, 4).
+glutamic_oxaloacetic_transaminase_level(screening1956, 3).
+glutamic_oxaloacetic_transaminase_level(screening1957, 3).
+glutamic_oxaloacetic_transaminase_level(screening1958, 2).
+glutamic_oxaloacetic_transaminase_level(screening1959, 2).
+glutamic_oxaloacetic_transaminase_level(screening196, 2).
+glutamic_oxaloacetic_transaminase_level(screening1960, 4).
+glutamic_oxaloacetic_transaminase_level(screening1961, 3).
+glutamic_oxaloacetic_transaminase_level(screening1962, 3).
+glutamic_oxaloacetic_transaminase_level(screening1963, 4).
+glutamic_oxaloacetic_transaminase_level(screening1964, 3).
+glutamic_oxaloacetic_transaminase_level(screening1965, 4).
+glutamic_oxaloacetic_transaminase_level(screening1966, 4).
+glutamic_oxaloacetic_transaminase_level(screening1967, 2).
+glutamic_oxaloacetic_transaminase_level(screening1968, 2).
+glutamic_oxaloacetic_transaminase_level(screening1969, 2).
+glutamic_oxaloacetic_transaminase_level(screening197, 2).
+glutamic_oxaloacetic_transaminase_level(screening1970, 2).
+glutamic_oxaloacetic_transaminase_level(screening1971, 2).
+glutamic_oxaloacetic_transaminase_level(screening1972, 1).
+glutamic_oxaloacetic_transaminase_level(screening1973, 4).
+glutamic_oxaloacetic_transaminase_level(screening1974, 4).
+glutamic_oxaloacetic_transaminase_level(screening1975, 4).
+glutamic_oxaloacetic_transaminase_level(screening1976, 2).
+glutamic_oxaloacetic_transaminase_level(screening1977, 1).
+glutamic_oxaloacetic_transaminase_level(screening1978, 2).
+glutamic_oxaloacetic_transaminase_level(screening1979, 2).
+glutamic_oxaloacetic_transaminase_level(screening198, 2).
+glutamic_oxaloacetic_transaminase_level(screening1980, 3).
+glutamic_oxaloacetic_transaminase_level(screening1981, 3).
+glutamic_oxaloacetic_transaminase_level(screening1982, 2).
+glutamic_oxaloacetic_transaminase_level(screening1983, 4).
+glutamic_oxaloacetic_transaminase_level(screening1984, 2).
+glutamic_oxaloacetic_transaminase_level(screening1985, 3).
+glutamic_oxaloacetic_transaminase_level(screening1986, 3).
+glutamic_oxaloacetic_transaminase_level(screening1987, 2).
+glutamic_oxaloacetic_transaminase_level(screening1988, 3).
+glutamic_oxaloacetic_transaminase_level(screening1989, 3).
+glutamic_oxaloacetic_transaminase_level(screening199, 2).
+glutamic_oxaloacetic_transaminase_level(screening1990, 4).
+glutamic_oxaloacetic_transaminase_level(screening1991, 2).
+glutamic_oxaloacetic_transaminase_level(screening1992, 2).
+glutamic_oxaloacetic_transaminase_level(screening1993, 4).
+glutamic_oxaloacetic_transaminase_level(screening1994, 4).
+glutamic_oxaloacetic_transaminase_level(screening1995, 4).
+glutamic_oxaloacetic_transaminase_level(screening1996, 2).
+glutamic_oxaloacetic_transaminase_level(screening1997, 2).
+glutamic_oxaloacetic_transaminase_level(screening1998, 2).
+glutamic_oxaloacetic_transaminase_level(screening1999, 2).
+glutamic_oxaloacetic_transaminase_level(screening200, 2).
+glutamic_oxaloacetic_transaminase_level(screening2000, 2).
+glutamic_oxaloacetic_transaminase_level(screening2001, 2).
+glutamic_oxaloacetic_transaminase_level(screening2002, 2).
+glutamic_oxaloacetic_transaminase_level(screening2003, 2).
+glutamic_oxaloacetic_transaminase_level(screening2004, 2).
+glutamic_oxaloacetic_transaminase_level(screening2005, 2).
+glutamic_oxaloacetic_transaminase_level(screening2006, 2).
+glutamic_oxaloacetic_transaminase_level(screening2007, 2).
+glutamic_oxaloacetic_transaminase_level(screening2008, 3).
+glutamic_oxaloacetic_transaminase_level(screening2009, 2).
+glutamic_oxaloacetic_transaminase_level(screening201, 2).
+glutamic_oxaloacetic_transaminase_level(screening2010, 2).
+glutamic_oxaloacetic_transaminase_level(screening2011, 2).
+glutamic_oxaloacetic_transaminase_level(screening2012, 2).
+glutamic_oxaloacetic_transaminase_level(screening2013, 2).
+glutamic_oxaloacetic_transaminase_level(screening2014, 3).
+glutamic_oxaloacetic_transaminase_level(screening2015, 2).
+glutamic_oxaloacetic_transaminase_level(screening2016, 2).
+glutamic_oxaloacetic_transaminase_level(screening2017, 2).
+glutamic_oxaloacetic_transaminase_level(screening2018, 2).
+glutamic_oxaloacetic_transaminase_level(screening2019, 2).
+glutamic_oxaloacetic_transaminase_level(screening202, 3).
+glutamic_oxaloacetic_transaminase_level(screening2020, 2).
+glutamic_oxaloacetic_transaminase_level(screening2021, 2).
+glutamic_oxaloacetic_transaminase_level(screening2022, 2).
+glutamic_oxaloacetic_transaminase_level(screening2023, 3).
+glutamic_oxaloacetic_transaminase_level(screening2024, 2).
+glutamic_oxaloacetic_transaminase_level(screening2025, 3).
+glutamic_oxaloacetic_transaminase_level(screening2026, 2).
+glutamic_oxaloacetic_transaminase_level(screening2027, 2).
+glutamic_oxaloacetic_transaminase_level(screening2028, 3).
+glutamic_oxaloacetic_transaminase_level(screening2029, 3).
+glutamic_oxaloacetic_transaminase_level(screening203, 4).
+glutamic_oxaloacetic_transaminase_level(screening2030, 3).
+glutamic_oxaloacetic_transaminase_level(screening2031, 3).
+glutamic_oxaloacetic_transaminase_level(screening2032, 3).
+glutamic_oxaloacetic_transaminase_level(screening2033, 3).
+glutamic_oxaloacetic_transaminase_level(screening2034, 4).
+glutamic_oxaloacetic_transaminase_level(screening2035, 3).
+glutamic_oxaloacetic_transaminase_level(screening2036, 3).
+glutamic_oxaloacetic_transaminase_level(screening2037, 3).
+glutamic_oxaloacetic_transaminase_level(screening2038, 3).
+glutamic_oxaloacetic_transaminase_level(screening2039, 3).
+glutamic_oxaloacetic_transaminase_level(screening204, 4).
+glutamic_oxaloacetic_transaminase_level(screening2040, 2).
+glutamic_oxaloacetic_transaminase_level(screening2041, 2).
+glutamic_oxaloacetic_transaminase_level(screening2042, 1).
+glutamic_oxaloacetic_transaminase_level(screening2043, 1).
+glutamic_oxaloacetic_transaminase_level(screening2044, 1).
+glutamic_oxaloacetic_transaminase_level(screening2045, 2).
+glutamic_oxaloacetic_transaminase_level(screening2046, 2).
+glutamic_oxaloacetic_transaminase_level(screening2047, 1).
+glutamic_oxaloacetic_transaminase_level(screening2048, 1).
+glutamic_oxaloacetic_transaminase_level(screening2049, 1).
+glutamic_oxaloacetic_transaminase_level(screening205, 1).
+glutamic_oxaloacetic_transaminase_level(screening2050, 4).
+glutamic_oxaloacetic_transaminase_level(screening2051, 2).
+glutamic_oxaloacetic_transaminase_level(screening2052, 1).
+glutamic_oxaloacetic_transaminase_level(screening2053, 1).
+glutamic_oxaloacetic_transaminase_level(screening2054, 1).
+glutamic_oxaloacetic_transaminase_level(screening2055, 1).
+glutamic_oxaloacetic_transaminase_level(screening2056, 2).
+glutamic_oxaloacetic_transaminase_level(screening2057, 4).
+glutamic_oxaloacetic_transaminase_level(screening2058, 2).
+glutamic_oxaloacetic_transaminase_level(screening2059, 1).
+glutamic_oxaloacetic_transaminase_level(screening206, 4).
+glutamic_oxaloacetic_transaminase_level(screening2060, 1).
+glutamic_oxaloacetic_transaminase_level(screening2061, 1).
+glutamic_oxaloacetic_transaminase_level(screening2062, 1).
+glutamic_oxaloacetic_transaminase_level(screening2063, 2).
+glutamic_oxaloacetic_transaminase_level(screening2064, 1).
+glutamic_oxaloacetic_transaminase_level(screening2065, 1).
+glutamic_oxaloacetic_transaminase_level(screening2066, 1).
+glutamic_oxaloacetic_transaminase_level(screening2067, 1).
+glutamic_oxaloacetic_transaminase_level(screening2068, 1).
+glutamic_oxaloacetic_transaminase_level(screening2069, 4).
+glutamic_oxaloacetic_transaminase_level(screening207, 3).
+glutamic_oxaloacetic_transaminase_level(screening2070, 4).
+glutamic_oxaloacetic_transaminase_level(screening2071, 3).
+glutamic_oxaloacetic_transaminase_level(screening2072, 2).
+glutamic_oxaloacetic_transaminase_level(screening2073, 4).
+glutamic_oxaloacetic_transaminase_level(screening2074, 4).
+glutamic_oxaloacetic_transaminase_level(screening2075, 4).
+glutamic_oxaloacetic_transaminase_level(screening2076, 3).
+glutamic_oxaloacetic_transaminase_level(screening2077, 3).
+glutamic_oxaloacetic_transaminase_level(screening2078, 3).
+glutamic_oxaloacetic_transaminase_level(screening2079, 2).
+glutamic_oxaloacetic_transaminase_level(screening208, 2).
+glutamic_oxaloacetic_transaminase_level(screening2080, 2).
+glutamic_oxaloacetic_transaminase_level(screening2081, 2).
+glutamic_oxaloacetic_transaminase_level(screening2082, 2).
+glutamic_oxaloacetic_transaminase_level(screening2083, 4).
+glutamic_oxaloacetic_transaminase_level(screening2084, 3).
+glutamic_oxaloacetic_transaminase_level(screening2085, 3).
+glutamic_oxaloacetic_transaminase_level(screening2086, 2).
+glutamic_oxaloacetic_transaminase_level(screening2087, 2).
+glutamic_oxaloacetic_transaminase_level(screening2088, 3).
+glutamic_oxaloacetic_transaminase_level(screening2089, 3).
+glutamic_oxaloacetic_transaminase_level(screening209, 3).
+glutamic_oxaloacetic_transaminase_level(screening2090, 2).
+glutamic_oxaloacetic_transaminase_level(screening2091, 2).
+glutamic_oxaloacetic_transaminase_level(screening2092, 2).
+glutamic_oxaloacetic_transaminase_level(screening2093, 3).
+glutamic_oxaloacetic_transaminase_level(screening2094, 2).
+glutamic_oxaloacetic_transaminase_level(screening2095, 2).
+glutamic_oxaloacetic_transaminase_level(screening2096, 2).
+glutamic_oxaloacetic_transaminase_level(screening2097, 3).
+glutamic_oxaloacetic_transaminase_level(screening2098, 4).
+glutamic_oxaloacetic_transaminase_level(screening2099, 3).
+glutamic_oxaloacetic_transaminase_level(screening210, 2).
+glutamic_oxaloacetic_transaminase_level(screening2100, 2).
+glutamic_oxaloacetic_transaminase_level(screening2101, 2).
+glutamic_oxaloacetic_transaminase_level(screening2102, 2).
+glutamic_oxaloacetic_transaminase_level(screening2103, 2).
+glutamic_oxaloacetic_transaminase_level(screening2104, 2).
+glutamic_oxaloacetic_transaminase_level(screening2105, 3).
+glutamic_oxaloacetic_transaminase_level(screening2106, 2).
+glutamic_oxaloacetic_transaminase_level(screening2107, 2).
+glutamic_oxaloacetic_transaminase_level(screening2108, 2).
+glutamic_oxaloacetic_transaminase_level(screening2109, 2).
+glutamic_oxaloacetic_transaminase_level(screening211, 3).
+glutamic_oxaloacetic_transaminase_level(screening2110, 2).
+glutamic_oxaloacetic_transaminase_level(screening2111, 4).
+glutamic_oxaloacetic_transaminase_level(screening2112, 2).
+glutamic_oxaloacetic_transaminase_level(screening2113, 2).
+glutamic_oxaloacetic_transaminase_level(screening2114, 3).
+glutamic_oxaloacetic_transaminase_level(screening2115, 2).
+glutamic_oxaloacetic_transaminase_level(screening2116, 2).
+glutamic_oxaloacetic_transaminase_level(screening2117, 2).
+glutamic_oxaloacetic_transaminase_level(screening2118, 2).
+glutamic_oxaloacetic_transaminase_level(screening2119, 2).
+glutamic_oxaloacetic_transaminase_level(screening212, 2).
+glutamic_oxaloacetic_transaminase_level(screening2120, 2).
+glutamic_oxaloacetic_transaminase_level(screening2121, 3).
+glutamic_oxaloacetic_transaminase_level(screening2122, 3).
+glutamic_oxaloacetic_transaminase_level(screening2123, 2).
+glutamic_oxaloacetic_transaminase_level(screening2124, 4).
+glutamic_oxaloacetic_transaminase_level(screening2125, 2).
+glutamic_oxaloacetic_transaminase_level(screening2126, 2).
+glutamic_oxaloacetic_transaminase_level(screening2127, 2).
+glutamic_oxaloacetic_transaminase_level(screening2128, 2).
+glutamic_oxaloacetic_transaminase_level(screening2129, 2).
+glutamic_oxaloacetic_transaminase_level(screening213, 2).
+glutamic_oxaloacetic_transaminase_level(screening2130, 2).
+glutamic_oxaloacetic_transaminase_level(screening2131, 2).
+glutamic_oxaloacetic_transaminase_level(screening2132, 3).
+glutamic_oxaloacetic_transaminase_level(screening2133, 4).
+glutamic_oxaloacetic_transaminase_level(screening2134, 2).
+glutamic_oxaloacetic_transaminase_level(screening2135, 2).
+glutamic_oxaloacetic_transaminase_level(screening2136, 2).
+glutamic_oxaloacetic_transaminase_level(screening2137, 2).
+glutamic_oxaloacetic_transaminase_level(screening2138, 2).
+glutamic_oxaloacetic_transaminase_level(screening2139, 2).
+glutamic_oxaloacetic_transaminase_level(screening214, 2).
+glutamic_oxaloacetic_transaminase_level(screening2140, 2).
+glutamic_oxaloacetic_transaminase_level(screening2141, 3).
+glutamic_oxaloacetic_transaminase_level(screening2142, 4).
+glutamic_oxaloacetic_transaminase_level(screening2143, 2).
+glutamic_oxaloacetic_transaminase_level(screening2144, 2).
+glutamic_oxaloacetic_transaminase_level(screening2145, 2).
+glutamic_oxaloacetic_transaminase_level(screening2146, 2).
+glutamic_oxaloacetic_transaminase_level(screening2147, 2).
+glutamic_oxaloacetic_transaminase_level(screening2148, 2).
+glutamic_oxaloacetic_transaminase_level(screening2149, 2).
+glutamic_oxaloacetic_transaminase_level(screening215, 2).
+glutamic_oxaloacetic_transaminase_level(screening2150, 3).
+glutamic_oxaloacetic_transaminase_level(screening2151, 3).
+glutamic_oxaloacetic_transaminase_level(screening2152, 4).
+glutamic_oxaloacetic_transaminase_level(screening2153, 4).
+glutamic_oxaloacetic_transaminase_level(screening2154, 2).
+glutamic_oxaloacetic_transaminase_level(screening2155, 2).
+glutamic_oxaloacetic_transaminase_level(screening2156, 3).
+glutamic_oxaloacetic_transaminase_level(screening2157, 4).
+glutamic_oxaloacetic_transaminase_level(screening2158, 4).
+glutamic_oxaloacetic_transaminase_level(screening2159, 2).
+glutamic_oxaloacetic_transaminase_level(screening216, 3).
+glutamic_oxaloacetic_transaminase_level(screening2160, 2).
+glutamic_oxaloacetic_transaminase_level(screening2161, 2).
+glutamic_oxaloacetic_transaminase_level(screening2162, 2).
+glutamic_oxaloacetic_transaminase_level(screening2163, 2).
+glutamic_oxaloacetic_transaminase_level(screening2164, 2).
+glutamic_oxaloacetic_transaminase_level(screening2165, 2).
+glutamic_oxaloacetic_transaminase_level(screening2166, 2).
+glutamic_oxaloacetic_transaminase_level(screening2167, 2).
+glutamic_oxaloacetic_transaminase_level(screening2168, 2).
+glutamic_oxaloacetic_transaminase_level(screening2169, 2).
+glutamic_oxaloacetic_transaminase_level(screening217, 4).
+glutamic_oxaloacetic_transaminase_level(screening2170, 1).
+glutamic_oxaloacetic_transaminase_level(screening2171, 2).
+glutamic_oxaloacetic_transaminase_level(screening2172, 2).
+glutamic_oxaloacetic_transaminase_level(screening2173, 1).
+glutamic_oxaloacetic_transaminase_level(screening2174, 2).
+glutamic_oxaloacetic_transaminase_level(screening2175, 2).
+glutamic_oxaloacetic_transaminase_level(screening2176, 2).
+glutamic_oxaloacetic_transaminase_level(screening2177, 2).
+glutamic_oxaloacetic_transaminase_level(screening2178, 1).
+glutamic_oxaloacetic_transaminase_level(screening2179, 2).
+glutamic_oxaloacetic_transaminase_level(screening218, 3).
+glutamic_oxaloacetic_transaminase_level(screening2180, 2).
+glutamic_oxaloacetic_transaminase_level(screening2181, 2).
+glutamic_oxaloacetic_transaminase_level(screening2182, 3).
+glutamic_oxaloacetic_transaminase_level(screening2183, 2).
+glutamic_oxaloacetic_transaminase_level(screening2184, 2).
+glutamic_oxaloacetic_transaminase_level(screening2185, 2).
+glutamic_oxaloacetic_transaminase_level(screening2186, 2).
+glutamic_oxaloacetic_transaminase_level(screening2187, 3).
+glutamic_oxaloacetic_transaminase_level(screening2188, 2).
+glutamic_oxaloacetic_transaminase_level(screening2189, 2).
+glutamic_oxaloacetic_transaminase_level(screening219, 3).
+glutamic_oxaloacetic_transaminase_level(screening2190, 4).
+glutamic_oxaloacetic_transaminase_level(screening2191, 3).
+glutamic_oxaloacetic_transaminase_level(screening2192, 4).
+glutamic_oxaloacetic_transaminase_level(screening2193, 4).
+glutamic_oxaloacetic_transaminase_level(screening2194, 4).
+glutamic_oxaloacetic_transaminase_level(screening2195, 3).
+glutamic_oxaloacetic_transaminase_level(screening2196, 4).
+glutamic_oxaloacetic_transaminase_level(screening2197, 4).
+glutamic_oxaloacetic_transaminase_level(screening2198, 3).
+glutamic_oxaloacetic_transaminase_level(screening2199, 4).
+glutamic_oxaloacetic_transaminase_level(screening220, 3).
+glutamic_oxaloacetic_transaminase_level(screening2200, 3).
+glutamic_oxaloacetic_transaminase_level(screening2201, 3).
+glutamic_oxaloacetic_transaminase_level(screening2202, 3).
+glutamic_oxaloacetic_transaminase_level(screening2203, 4).
+glutamic_oxaloacetic_transaminase_level(screening2204, 4).
+glutamic_oxaloacetic_transaminase_level(screening2205, 4).
+glutamic_oxaloacetic_transaminase_level(screening2206, 3).
+glutamic_oxaloacetic_transaminase_level(screening2207, 3).
+glutamic_oxaloacetic_transaminase_level(screening2208, 3).
+glutamic_oxaloacetic_transaminase_level(screening2209, 2).
+glutamic_oxaloacetic_transaminase_level(screening221, 2).
+glutamic_oxaloacetic_transaminase_level(screening2210, 2).
+glutamic_oxaloacetic_transaminase_level(screening2211, 2).
+glutamic_oxaloacetic_transaminase_level(screening2212, 2).
+glutamic_oxaloacetic_transaminase_level(screening2213, 3).
+glutamic_oxaloacetic_transaminase_level(screening2214, 4).
+glutamic_oxaloacetic_transaminase_level(screening2215, 4).
+glutamic_oxaloacetic_transaminase_level(screening2216, 4).
+glutamic_oxaloacetic_transaminase_level(screening2217, 4).
+glutamic_oxaloacetic_transaminase_level(screening2218, 4).
+glutamic_oxaloacetic_transaminase_level(screening2219, 2).
+glutamic_oxaloacetic_transaminase_level(screening222, 2).
+glutamic_oxaloacetic_transaminase_level(screening2220, 2).
+glutamic_oxaloacetic_transaminase_level(screening2221, 3).
+glutamic_oxaloacetic_transaminase_level(screening2222, 4).
+glutamic_oxaloacetic_transaminase_level(screening2223, 3).
+glutamic_oxaloacetic_transaminase_level(screening2224, 4).
+glutamic_oxaloacetic_transaminase_level(screening2225, 3).
+glutamic_oxaloacetic_transaminase_level(screening2226, 3).
+glutamic_oxaloacetic_transaminase_level(screening2227, 3).
+glutamic_oxaloacetic_transaminase_level(screening2228, 3).
+glutamic_oxaloacetic_transaminase_level(screening2229, 2).
+glutamic_oxaloacetic_transaminase_level(screening223, 2).
+glutamic_oxaloacetic_transaminase_level(screening2230, 2).
+glutamic_oxaloacetic_transaminase_level(screening2231, 2).
+glutamic_oxaloacetic_transaminase_level(screening2232, 2).
+glutamic_oxaloacetic_transaminase_level(screening2233, 2).
+glutamic_oxaloacetic_transaminase_level(screening2234, 4).
+glutamic_oxaloacetic_transaminase_level(screening2235, 4).
+glutamic_oxaloacetic_transaminase_level(screening2236, 4).
+glutamic_oxaloacetic_transaminase_level(screening2237, 3).
+glutamic_oxaloacetic_transaminase_level(screening2238, 3).
+glutamic_oxaloacetic_transaminase_level(screening2239, 3).
+glutamic_oxaloacetic_transaminase_level(screening224, 2).
+glutamic_oxaloacetic_transaminase_level(screening2240, 2).
+glutamic_oxaloacetic_transaminase_level(screening2241, 2).
+glutamic_oxaloacetic_transaminase_level(screening2242, 2).
+glutamic_oxaloacetic_transaminase_level(screening2243, 2).
+glutamic_oxaloacetic_transaminase_level(screening2244, 2).
+glutamic_oxaloacetic_transaminase_level(screening2245, 2).
+glutamic_oxaloacetic_transaminase_level(screening2246, 2).
+glutamic_oxaloacetic_transaminase_level(screening2247, 2).
+glutamic_oxaloacetic_transaminase_level(screening2248, 2).
+glutamic_oxaloacetic_transaminase_level(screening2249, 3).
+glutamic_oxaloacetic_transaminase_level(screening225, 2).
+glutamic_oxaloacetic_transaminase_level(screening2250, 4).
+glutamic_oxaloacetic_transaminase_level(screening2251, 2).
+glutamic_oxaloacetic_transaminase_level(screening2252, 2).
+glutamic_oxaloacetic_transaminase_level(screening2253, 2).
+glutamic_oxaloacetic_transaminase_level(screening2254, 2).
+glutamic_oxaloacetic_transaminase_level(screening2255, 2).
+glutamic_oxaloacetic_transaminase_level(screening2256, 2).
+glutamic_oxaloacetic_transaminase_level(screening2257, 2).
+glutamic_oxaloacetic_transaminase_level(screening2258, 2).
+glutamic_oxaloacetic_transaminase_level(screening2259, 2).
+glutamic_oxaloacetic_transaminase_level(screening226, 2).
+glutamic_oxaloacetic_transaminase_level(screening2260, 2).
+glutamic_oxaloacetic_transaminase_level(screening2261, 2).
+glutamic_oxaloacetic_transaminase_level(screening2262, 3).
+glutamic_oxaloacetic_transaminase_level(screening2263, 4).
+glutamic_oxaloacetic_transaminase_level(screening2264, 3).
+glutamic_oxaloacetic_transaminase_level(screening2265, 4).
+glutamic_oxaloacetic_transaminase_level(screening2266, 2).
+glutamic_oxaloacetic_transaminase_level(screening2267, 5).
+glutamic_oxaloacetic_transaminase_level(screening2268, 4).
+glutamic_oxaloacetic_transaminase_level(screening2269, 3).
+glutamic_oxaloacetic_transaminase_level(screening227, 2).
+glutamic_oxaloacetic_transaminase_level(screening2270, 3).
+glutamic_oxaloacetic_transaminase_level(screening2271, 3).
+glutamic_oxaloacetic_transaminase_level(screening2272, 3).
+glutamic_oxaloacetic_transaminase_level(screening2273, 2).
+glutamic_oxaloacetic_transaminase_level(screening2274, 2).
+glutamic_oxaloacetic_transaminase_level(screening2275, 2).
+glutamic_oxaloacetic_transaminase_level(screening2276, 2).
+glutamic_oxaloacetic_transaminase_level(screening2277, 3).
+glutamic_oxaloacetic_transaminase_level(screening2278, 3).
+glutamic_oxaloacetic_transaminase_level(screening2279, 2).
+glutamic_oxaloacetic_transaminase_level(screening228, 2).
+glutamic_oxaloacetic_transaminase_level(screening2280, 3).
+glutamic_oxaloacetic_transaminase_level(screening2281, 3).
+glutamic_oxaloacetic_transaminase_level(screening2282, 4).
+glutamic_oxaloacetic_transaminase_level(screening2283, 3).
+glutamic_oxaloacetic_transaminase_level(screening2284, 3).
+glutamic_oxaloacetic_transaminase_level(screening2285, 2).
+glutamic_oxaloacetic_transaminase_level(screening2286, 3).
+glutamic_oxaloacetic_transaminase_level(screening2287, 4).
+glutamic_oxaloacetic_transaminase_level(screening2288, 2).
+glutamic_oxaloacetic_transaminase_level(screening2289, 2).
+glutamic_oxaloacetic_transaminase_level(screening229, 4).
+glutamic_oxaloacetic_transaminase_level(screening2290, 2).
+glutamic_oxaloacetic_transaminase_level(screening2291, 4).
+glutamic_oxaloacetic_transaminase_level(screening2292, 4).
+glutamic_oxaloacetic_transaminase_level(screening2293, 3).
+glutamic_oxaloacetic_transaminase_level(screening2294, 3).
+glutamic_oxaloacetic_transaminase_level(screening2295, 1).
+glutamic_oxaloacetic_transaminase_level(screening2296, 1).
+glutamic_oxaloacetic_transaminase_level(screening2297, 1).
+glutamic_oxaloacetic_transaminase_level(screening2298, 4).
+glutamic_oxaloacetic_transaminase_level(screening2299, 3).
+glutamic_oxaloacetic_transaminase_level(screening230, 4).
+glutamic_oxaloacetic_transaminase_level(screening2300, 3).
+glutamic_oxaloacetic_transaminase_level(screening2301, 5).
+glutamic_oxaloacetic_transaminase_level(screening2302, 3).
+glutamic_oxaloacetic_transaminase_level(screening2303, 3).
+glutamic_oxaloacetic_transaminase_level(screening2304, 2).
+glutamic_oxaloacetic_transaminase_level(screening2305, 1).
+glutamic_oxaloacetic_transaminase_level(screening2306, 1).
+glutamic_oxaloacetic_transaminase_level(screening2307, 3).
+glutamic_oxaloacetic_transaminase_level(screening2308, 3).
+glutamic_oxaloacetic_transaminase_level(screening2309, 4).
+glutamic_oxaloacetic_transaminase_level(screening231, 4).
+glutamic_oxaloacetic_transaminase_level(screening2310, 3).
+glutamic_oxaloacetic_transaminase_level(screening2311, 3).
+glutamic_oxaloacetic_transaminase_level(screening2312, 2).
+glutamic_oxaloacetic_transaminase_level(screening2313, 2).
+glutamic_oxaloacetic_transaminase_level(screening2314, 1).
+glutamic_oxaloacetic_transaminase_level(screening2315, 1).
+glutamic_oxaloacetic_transaminase_level(screening2316, 1).
+glutamic_oxaloacetic_transaminase_level(screening2317, 1).
+glutamic_oxaloacetic_transaminase_level(screening2318, 2).
+glutamic_oxaloacetic_transaminase_level(screening2319, 2).
+glutamic_oxaloacetic_transaminase_level(screening232, 2).
+glutamic_oxaloacetic_transaminase_level(screening2320, 3).
+glutamic_oxaloacetic_transaminase_level(screening2321, 3).
+glutamic_oxaloacetic_transaminase_level(screening2322, 3).
+glutamic_oxaloacetic_transaminase_level(screening2323, 3).
+glutamic_oxaloacetic_transaminase_level(screening2324, 3).
+glutamic_oxaloacetic_transaminase_level(screening2325, 3).
+glutamic_oxaloacetic_transaminase_level(screening2326, 3).
+glutamic_oxaloacetic_transaminase_level(screening2327, 3).
+glutamic_oxaloacetic_transaminase_level(screening2328, 3).
+glutamic_oxaloacetic_transaminase_level(screening2329, 3).
+glutamic_oxaloacetic_transaminase_level(screening233, 2).
+glutamic_oxaloacetic_transaminase_level(screening2330, 3).
+glutamic_oxaloacetic_transaminase_level(screening2331, 3).
+glutamic_oxaloacetic_transaminase_level(screening2332, 2).
+glutamic_oxaloacetic_transaminase_level(screening2333, 3).
+glutamic_oxaloacetic_transaminase_level(screening2334, 3).
+glutamic_oxaloacetic_transaminase_level(screening2335, 3).
+glutamic_oxaloacetic_transaminase_level(screening2336, 3).
+glutamic_oxaloacetic_transaminase_level(screening2337, 2).
+glutamic_oxaloacetic_transaminase_level(screening2338, 2).
+glutamic_oxaloacetic_transaminase_level(screening2339, 3).
+glutamic_oxaloacetic_transaminase_level(screening234, 2).
+glutamic_oxaloacetic_transaminase_level(screening2340, 3).
+glutamic_oxaloacetic_transaminase_level(screening2341, 5).
+glutamic_oxaloacetic_transaminase_level(screening2342, 2).
+glutamic_oxaloacetic_transaminase_level(screening2343, 3).
+glutamic_oxaloacetic_transaminase_level(screening2344, 4).
+glutamic_oxaloacetic_transaminase_level(screening2345, 3).
+glutamic_oxaloacetic_transaminase_level(screening2346, 4).
+glutamic_oxaloacetic_transaminase_level(screening2347, 2).
+glutamic_oxaloacetic_transaminase_level(screening2348, 4).
+glutamic_oxaloacetic_transaminase_level(screening2349, 4).
+glutamic_oxaloacetic_transaminase_level(screening235, 2).
+glutamic_oxaloacetic_transaminase_level(screening2350, 4).
+glutamic_oxaloacetic_transaminase_level(screening2351, 4).
+glutamic_oxaloacetic_transaminase_level(screening2352, 3).
+glutamic_oxaloacetic_transaminase_level(screening2353, 3).
+glutamic_oxaloacetic_transaminase_level(screening2354, 3).
+glutamic_oxaloacetic_transaminase_level(screening2355, 3).
+glutamic_oxaloacetic_transaminase_level(screening2356, 2).
+glutamic_oxaloacetic_transaminase_level(screening2357, 3).
+glutamic_oxaloacetic_transaminase_level(screening2358, 3).
+glutamic_oxaloacetic_transaminase_level(screening2359, 4).
+glutamic_oxaloacetic_transaminase_level(screening236, 2).
+glutamic_oxaloacetic_transaminase_level(screening2360, 4).
+glutamic_oxaloacetic_transaminase_level(screening2361, 4).
+glutamic_oxaloacetic_transaminase_level(screening2362, 4).
+glutamic_oxaloacetic_transaminase_level(screening2363, 3).
+glutamic_oxaloacetic_transaminase_level(screening2364, 3).
+glutamic_oxaloacetic_transaminase_level(screening2365, 3).
+glutamic_oxaloacetic_transaminase_level(screening2366, 3).
+glutamic_oxaloacetic_transaminase_level(screening2367, 2).
+glutamic_oxaloacetic_transaminase_level(screening2368, 3).
+glutamic_oxaloacetic_transaminase_level(screening2369, 3).
+glutamic_oxaloacetic_transaminase_level(screening237, 1).
+glutamic_oxaloacetic_transaminase_level(screening2370, 3).
+glutamic_oxaloacetic_transaminase_level(screening2371, 2).
+glutamic_oxaloacetic_transaminase_level(screening2372, 3).
+glutamic_oxaloacetic_transaminase_level(screening2373, 3).
+glutamic_oxaloacetic_transaminase_level(screening2374, 3).
+glutamic_oxaloacetic_transaminase_level(screening2375, 3).
+glutamic_oxaloacetic_transaminase_level(screening2376, 2).
+glutamic_oxaloacetic_transaminase_level(screening2377, 3).
+glutamic_oxaloacetic_transaminase_level(screening2378, 3).
+glutamic_oxaloacetic_transaminase_level(screening2379, 3).
+glutamic_oxaloacetic_transaminase_level(screening238, 1).
+glutamic_oxaloacetic_transaminase_level(screening2380, 3).
+glutamic_oxaloacetic_transaminase_level(screening2381, 3).
+glutamic_oxaloacetic_transaminase_level(screening2382, 4).
+glutamic_oxaloacetic_transaminase_level(screening2383, 3).
+glutamic_oxaloacetic_transaminase_level(screening2384, 2).
+glutamic_oxaloacetic_transaminase_level(screening2385, 3).
+glutamic_oxaloacetic_transaminase_level(screening2386, 3).
+glutamic_oxaloacetic_transaminase_level(screening2387, 2).
+glutamic_oxaloacetic_transaminase_level(screening2388, 3).
+glutamic_oxaloacetic_transaminase_level(screening2389, 2).
+glutamic_oxaloacetic_transaminase_level(screening239, 1).
+glutamic_oxaloacetic_transaminase_level(screening2390, 2).
+glutamic_oxaloacetic_transaminase_level(screening2391, 2).
+glutamic_oxaloacetic_transaminase_level(screening2392, 2).
+glutamic_oxaloacetic_transaminase_level(screening2393, 2).
+glutamic_oxaloacetic_transaminase_level(screening2394, 2).
+glutamic_oxaloacetic_transaminase_level(screening2395, 1).
+glutamic_oxaloacetic_transaminase_level(screening2396, 2).
+glutamic_oxaloacetic_transaminase_level(screening2397, 2).
+glutamic_oxaloacetic_transaminase_level(screening2398, 2).
+glutamic_oxaloacetic_transaminase_level(screening2399, 2).
+glutamic_oxaloacetic_transaminase_level(screening240, 1).
+glutamic_oxaloacetic_transaminase_level(screening2400, 2).
+glutamic_oxaloacetic_transaminase_level(screening2401, 2).
+glutamic_oxaloacetic_transaminase_level(screening2402, 3).
+glutamic_oxaloacetic_transaminase_level(screening2403, 4).
+glutamic_oxaloacetic_transaminase_level(screening2404, 2).
+glutamic_oxaloacetic_transaminase_level(screening2405, 2).
+glutamic_oxaloacetic_transaminase_level(screening2406, 2).
+glutamic_oxaloacetic_transaminase_level(screening2407, 2).
+glutamic_oxaloacetic_transaminase_level(screening2408, 4).
+glutamic_oxaloacetic_transaminase_level(screening2409, 3).
+glutamic_oxaloacetic_transaminase_level(screening241, 1).
+glutamic_oxaloacetic_transaminase_level(screening2410, 3).
+glutamic_oxaloacetic_transaminase_level(screening2411, 3).
+glutamic_oxaloacetic_transaminase_level(screening2412, 3).
+glutamic_oxaloacetic_transaminase_level(screening2413, 3).
+glutamic_oxaloacetic_transaminase_level(screening2414, 3).
+glutamic_oxaloacetic_transaminase_level(screening2415, 3).
+glutamic_oxaloacetic_transaminase_level(screening2416, 3).
+glutamic_oxaloacetic_transaminase_level(screening2417, 3).
+glutamic_oxaloacetic_transaminase_level(screening2418, 2).
+glutamic_oxaloacetic_transaminase_level(screening2419, 2).
+glutamic_oxaloacetic_transaminase_level(screening242, 1).
+glutamic_oxaloacetic_transaminase_level(screening2420, 3).
+glutamic_oxaloacetic_transaminase_level(screening2421, 3).
+glutamic_oxaloacetic_transaminase_level(screening2422, 3).
+glutamic_oxaloacetic_transaminase_level(screening2423, 3).
+glutamic_oxaloacetic_transaminase_level(screening2424, 2).
+glutamic_oxaloacetic_transaminase_level(screening2425, 3).
+glutamic_oxaloacetic_transaminase_level(screening2426, 2).
+glutamic_oxaloacetic_transaminase_level(screening2427, 2).
+glutamic_oxaloacetic_transaminase_level(screening2428, 2).
+glutamic_oxaloacetic_transaminase_level(screening2429, 2).
+glutamic_oxaloacetic_transaminase_level(screening243, 1).
+glutamic_oxaloacetic_transaminase_level(screening2430, 2).
+glutamic_oxaloacetic_transaminase_level(screening2431, 2).
+glutamic_oxaloacetic_transaminase_level(screening2432, 2).
+glutamic_oxaloacetic_transaminase_level(screening2433, 2).
+glutamic_oxaloacetic_transaminase_level(screening2434, 2).
+glutamic_oxaloacetic_transaminase_level(screening2435, 2).
+glutamic_oxaloacetic_transaminase_level(screening2436, 2).
+glutamic_oxaloacetic_transaminase_level(screening2437, 2).
+glutamic_oxaloacetic_transaminase_level(screening2438, 2).
+glutamic_oxaloacetic_transaminase_level(screening2439, 3).
+glutamic_oxaloacetic_transaminase_level(screening244, 1).
+glutamic_oxaloacetic_transaminase_level(screening2440, 5).
+glutamic_oxaloacetic_transaminase_level(screening2441, 4).
+glutamic_oxaloacetic_transaminase_level(screening2442, 2).
+glutamic_oxaloacetic_transaminase_level(screening2443, 2).
+glutamic_oxaloacetic_transaminase_level(screening2444, 2).
+glutamic_oxaloacetic_transaminase_level(screening2445, 2).
+glutamic_oxaloacetic_transaminase_level(screening2446, 2).
+glutamic_oxaloacetic_transaminase_level(screening2447, 2).
+glutamic_oxaloacetic_transaminase_level(screening2448, 2).
+glutamic_oxaloacetic_transaminase_level(screening2449, 2).
+glutamic_oxaloacetic_transaminase_level(screening245, 1).
+glutamic_oxaloacetic_transaminase_level(screening2450, 2).
+glutamic_oxaloacetic_transaminase_level(screening2451, 5).
+glutamic_oxaloacetic_transaminase_level(screening2452, 4).
+glutamic_oxaloacetic_transaminase_level(screening2453, 3).
+glutamic_oxaloacetic_transaminase_level(screening2454, 3).
+glutamic_oxaloacetic_transaminase_level(screening2455, 3).
+glutamic_oxaloacetic_transaminase_level(screening2456, 4).
+glutamic_oxaloacetic_transaminase_level(screening2457, 2).
+glutamic_oxaloacetic_transaminase_level(screening2458, 2).
+glutamic_oxaloacetic_transaminase_level(screening2459, 1).
+glutamic_oxaloacetic_transaminase_level(screening246, 2).
+glutamic_oxaloacetic_transaminase_level(screening2460, 1).
+glutamic_oxaloacetic_transaminase_level(screening2461, 2).
+glutamic_oxaloacetic_transaminase_level(screening2462, 1).
+glutamic_oxaloacetic_transaminase_level(screening2463, 1).
+glutamic_oxaloacetic_transaminase_level(screening2464, 1).
+glutamic_oxaloacetic_transaminase_level(screening2465, 1).
+glutamic_oxaloacetic_transaminase_level(screening2466, 1).
+glutamic_oxaloacetic_transaminase_level(screening2467, 1).
+glutamic_oxaloacetic_transaminase_level(screening2468, 1).
+glutamic_oxaloacetic_transaminase_level(screening2469, 2).
+glutamic_oxaloacetic_transaminase_level(screening247, 1).
+glutamic_oxaloacetic_transaminase_level(screening2470, 1).
+glutamic_oxaloacetic_transaminase_level(screening2471, 1).
+glutamic_oxaloacetic_transaminase_level(screening2472, 1).
+glutamic_oxaloacetic_transaminase_level(screening2473, 1).
+glutamic_oxaloacetic_transaminase_level(screening2474, 1).
+glutamic_oxaloacetic_transaminase_level(screening2475, 1).
+glutamic_oxaloacetic_transaminase_level(screening2476, 2).
+glutamic_oxaloacetic_transaminase_level(screening2477, 2).
+glutamic_oxaloacetic_transaminase_level(screening2478, 2).
+glutamic_oxaloacetic_transaminase_level(screening2479, 2).
+glutamic_oxaloacetic_transaminase_level(screening248, 4).
+glutamic_oxaloacetic_transaminase_level(screening2480, 2).
+glutamic_oxaloacetic_transaminase_level(screening2481, 2).
+glutamic_oxaloacetic_transaminase_level(screening2482, 4).
+glutamic_oxaloacetic_transaminase_level(screening2483, 3).
+glutamic_oxaloacetic_transaminase_level(screening2484, 2).
+glutamic_oxaloacetic_transaminase_level(screening2485, 2).
+glutamic_oxaloacetic_transaminase_level(screening2486, 1).
+glutamic_oxaloacetic_transaminase_level(screening2487, 1).
+glutamic_oxaloacetic_transaminase_level(screening2488, 2).
+glutamic_oxaloacetic_transaminase_level(screening2489, 1).
+glutamic_oxaloacetic_transaminase_level(screening249, 3).
+glutamic_oxaloacetic_transaminase_level(screening2490, 1).
+glutamic_oxaloacetic_transaminase_level(screening2491, 1).
+glutamic_oxaloacetic_transaminase_level(screening2492, 2).
+glutamic_oxaloacetic_transaminase_level(screening2493, 1).
+glutamic_oxaloacetic_transaminase_level(screening2494, 2).
+glutamic_oxaloacetic_transaminase_level(screening2495, 1).
+glutamic_oxaloacetic_transaminase_level(screening2496, 2).
+glutamic_oxaloacetic_transaminase_level(screening2497, 1).
+glutamic_oxaloacetic_transaminase_level(screening2498, 1).
+glutamic_oxaloacetic_transaminase_level(screening2499, 2).
+glutamic_oxaloacetic_transaminase_level(screening250, 4).
+glutamic_oxaloacetic_transaminase_level(screening2500, 1).
+glutamic_oxaloacetic_transaminase_level(screening2501, 1).
+glutamic_oxaloacetic_transaminase_level(screening2502, 1).
+glutamic_oxaloacetic_transaminase_level(screening2503, 2).
+glutamic_oxaloacetic_transaminase_level(screening2504, 1).
+glutamic_oxaloacetic_transaminase_level(screening2505, 2).
+glutamic_oxaloacetic_transaminase_level(screening2506, 1).
+glutamic_oxaloacetic_transaminase_level(screening2507, 2).
+glutamic_oxaloacetic_transaminase_level(screening2508, 1).
+glutamic_oxaloacetic_transaminase_level(screening2509, 1).
+glutamic_oxaloacetic_transaminase_level(screening251, 3).
+glutamic_oxaloacetic_transaminase_level(screening2510, 2).
+glutamic_oxaloacetic_transaminase_level(screening2511, 1).
+glutamic_oxaloacetic_transaminase_level(screening2512, 1).
+glutamic_oxaloacetic_transaminase_level(screening2513, 1).
+glutamic_oxaloacetic_transaminase_level(screening2514, 2).
+glutamic_oxaloacetic_transaminase_level(screening2515, 1).
+glutamic_oxaloacetic_transaminase_level(screening2516, 2).
+glutamic_oxaloacetic_transaminase_level(screening2517, 1).
+glutamic_oxaloacetic_transaminase_level(screening2518, 4).
+glutamic_oxaloacetic_transaminase_level(screening2519, 4).
+glutamic_oxaloacetic_transaminase_level(screening252, 3).
+glutamic_oxaloacetic_transaminase_level(screening2520, 3).
+glutamic_oxaloacetic_transaminase_level(screening2521, 4).
+glutamic_oxaloacetic_transaminase_level(screening2522, 4).
+glutamic_oxaloacetic_transaminase_level(screening2523, 4).
+glutamic_oxaloacetic_transaminase_level(screening2524, 2).
+glutamic_oxaloacetic_transaminase_level(screening2525, 3).
+glutamic_oxaloacetic_transaminase_level(screening2526, 4).
+glutamic_oxaloacetic_transaminase_level(screening2527, 4).
+glutamic_oxaloacetic_transaminase_level(screening2528, 4).
+glutamic_oxaloacetic_transaminase_level(screening2529, 2).
+glutamic_oxaloacetic_transaminase_level(screening253, 3).
+glutamic_oxaloacetic_transaminase_level(screening2530, 2).
+glutamic_oxaloacetic_transaminase_level(screening2531, 2).
+glutamic_oxaloacetic_transaminase_level(screening2532, 2).
+glutamic_oxaloacetic_transaminase_level(screening2533, 2).
+glutamic_oxaloacetic_transaminase_level(screening2534, 2).
+glutamic_oxaloacetic_transaminase_level(screening2535, 2).
+glutamic_oxaloacetic_transaminase_level(screening2536, 2).
+glutamic_oxaloacetic_transaminase_level(screening2537, 5).
+glutamic_oxaloacetic_transaminase_level(screening2538, 4).
+glutamic_oxaloacetic_transaminase_level(screening2539, 4).
+glutamic_oxaloacetic_transaminase_level(screening254, 3).
+glutamic_oxaloacetic_transaminase_level(screening2540, 4).
+glutamic_oxaloacetic_transaminase_level(screening2541, 3).
+glutamic_oxaloacetic_transaminase_level(screening2542, 4).
+glutamic_oxaloacetic_transaminase_level(screening2543, 4).
+glutamic_oxaloacetic_transaminase_level(screening2544, 4).
+glutamic_oxaloacetic_transaminase_level(screening2545, 4).
+glutamic_oxaloacetic_transaminase_level(screening2546, 4).
+glutamic_oxaloacetic_transaminase_level(screening2547, 4).
+glutamic_oxaloacetic_transaminase_level(screening2548, 4).
+glutamic_oxaloacetic_transaminase_level(screening2549, 4).
+glutamic_oxaloacetic_transaminase_level(screening255, 3).
+glutamic_oxaloacetic_transaminase_level(screening2550, 4).
+glutamic_oxaloacetic_transaminase_level(screening2551, 4).
+glutamic_oxaloacetic_transaminase_level(screening2552, 4).
+glutamic_oxaloacetic_transaminase_level(screening2553, 4).
+glutamic_oxaloacetic_transaminase_level(screening2554, 4).
+glutamic_oxaloacetic_transaminase_level(screening2555, 4).
+glutamic_oxaloacetic_transaminase_level(screening2556, 4).
+glutamic_oxaloacetic_transaminase_level(screening2557, 4).
+glutamic_oxaloacetic_transaminase_level(screening2558, 4).
+glutamic_oxaloacetic_transaminase_level(screening2559, 4).
+glutamic_oxaloacetic_transaminase_level(screening256, 3).
+glutamic_oxaloacetic_transaminase_level(screening2560, 4).
+glutamic_oxaloacetic_transaminase_level(screening2561, 4).
+glutamic_oxaloacetic_transaminase_level(screening2562, 4).
+glutamic_oxaloacetic_transaminase_level(screening2563, 4).
+glutamic_oxaloacetic_transaminase_level(screening2564, 4).
+glutamic_oxaloacetic_transaminase_level(screening2565, 3).
+glutamic_oxaloacetic_transaminase_level(screening2566, 3).
+glutamic_oxaloacetic_transaminase_level(screening2567, 2).
+glutamic_oxaloacetic_transaminase_level(screening2568, 1).
+glutamic_oxaloacetic_transaminase_level(screening2569, 1).
+glutamic_oxaloacetic_transaminase_level(screening257, 2).
+glutamic_oxaloacetic_transaminase_level(screening2570, 1).
+glutamic_oxaloacetic_transaminase_level(screening2571, 1).
+glutamic_oxaloacetic_transaminase_level(screening2572, 1).
+glutamic_oxaloacetic_transaminase_level(screening2573, 1).
+glutamic_oxaloacetic_transaminase_level(screening2574, 2).
+glutamic_oxaloacetic_transaminase_level(screening2575, 2).
+glutamic_oxaloacetic_transaminase_level(screening2576, 2).
+glutamic_oxaloacetic_transaminase_level(screening2577, 1).
+glutamic_oxaloacetic_transaminase_level(screening2578, 4).
+glutamic_oxaloacetic_transaminase_level(screening2579, 3).
+glutamic_oxaloacetic_transaminase_level(screening258, 3).
+glutamic_oxaloacetic_transaminase_level(screening2580, 3).
+glutamic_oxaloacetic_transaminase_level(screening2581, 2).
+glutamic_oxaloacetic_transaminase_level(screening2582, 1).
+glutamic_oxaloacetic_transaminase_level(screening2583, 1).
+glutamic_oxaloacetic_transaminase_level(screening2584, 1).
+glutamic_oxaloacetic_transaminase_level(screening2585, 1).
+glutamic_oxaloacetic_transaminase_level(screening2586, 1).
+glutamic_oxaloacetic_transaminase_level(screening2587, 1).
+glutamic_oxaloacetic_transaminase_level(screening2588, 2).
+glutamic_oxaloacetic_transaminase_level(screening2589, 2).
+glutamic_oxaloacetic_transaminase_level(screening259, 3).
+glutamic_oxaloacetic_transaminase_level(screening2590, 2).
+glutamic_oxaloacetic_transaminase_level(screening2591, 1).
+glutamic_oxaloacetic_transaminase_level(screening2592, 4).
+glutamic_oxaloacetic_transaminase_level(screening2593, 3).
+glutamic_oxaloacetic_transaminase_level(screening2594, 3).
+glutamic_oxaloacetic_transaminase_level(screening2595, 2).
+glutamic_oxaloacetic_transaminase_level(screening2596, 1).
+glutamic_oxaloacetic_transaminase_level(screening2597, 1).
+glutamic_oxaloacetic_transaminase_level(screening2598, 1).
+glutamic_oxaloacetic_transaminase_level(screening2599, 1).
+glutamic_oxaloacetic_transaminase_level(screening260, 3).
+glutamic_oxaloacetic_transaminase_level(screening2600, 1).
+glutamic_oxaloacetic_transaminase_level(screening2601, 1).
+glutamic_oxaloacetic_transaminase_level(screening2602, 2).
+glutamic_oxaloacetic_transaminase_level(screening2603, 2).
+glutamic_oxaloacetic_transaminase_level(screening2604, 2).
+glutamic_oxaloacetic_transaminase_level(screening2605, 1).
+glutamic_oxaloacetic_transaminase_level(screening2606, 4).
+glutamic_oxaloacetic_transaminase_level(screening2607, 3).
+glutamic_oxaloacetic_transaminase_level(screening2608, 4).
+glutamic_oxaloacetic_transaminase_level(screening2609, 4).
+glutamic_oxaloacetic_transaminase_level(screening261, 4).
+glutamic_oxaloacetic_transaminase_level(screening2610, 4).
+glutamic_oxaloacetic_transaminase_level(screening2611, 4).
+glutamic_oxaloacetic_transaminase_level(screening2612, 5).
+glutamic_oxaloacetic_transaminase_level(screening2613, 4).
+glutamic_oxaloacetic_transaminase_level(screening2614, 4).
+glutamic_oxaloacetic_transaminase_level(screening2615, 4).
+glutamic_oxaloacetic_transaminase_level(screening2616, 3).
+glutamic_oxaloacetic_transaminase_level(screening2617, 4).
+glutamic_oxaloacetic_transaminase_level(screening2618, 3).
+glutamic_oxaloacetic_transaminase_level(screening2619, 4).
+glutamic_oxaloacetic_transaminase_level(screening262, 3).
+glutamic_oxaloacetic_transaminase_level(screening2620, 4).
+glutamic_oxaloacetic_transaminase_level(screening2621, 3).
+glutamic_oxaloacetic_transaminase_level(screening2622, 2).
+glutamic_oxaloacetic_transaminase_level(screening2623, 2).
+glutamic_oxaloacetic_transaminase_level(screening2624, 2).
+glutamic_oxaloacetic_transaminase_level(screening2625, 2).
+glutamic_oxaloacetic_transaminase_level(screening2626, 4).
+glutamic_oxaloacetic_transaminase_level(screening2627, 2).
+glutamic_oxaloacetic_transaminase_level(screening2628, 2).
+glutamic_oxaloacetic_transaminase_level(screening2629, 4).
+glutamic_oxaloacetic_transaminase_level(screening263, 4).
+glutamic_oxaloacetic_transaminase_level(screening2630, 4).
+glutamic_oxaloacetic_transaminase_level(screening2631, 3).
+glutamic_oxaloacetic_transaminase_level(screening2632, 3).
+glutamic_oxaloacetic_transaminase_level(screening2633, 3).
+glutamic_oxaloacetic_transaminase_level(screening2634, 3).
+glutamic_oxaloacetic_transaminase_level(screening2635, 3).
+glutamic_oxaloacetic_transaminase_level(screening2636, 3).
+glutamic_oxaloacetic_transaminase_level(screening2637, 3).
+glutamic_oxaloacetic_transaminase_level(screening2638, 3).
+glutamic_oxaloacetic_transaminase_level(screening2639, 4).
+glutamic_oxaloacetic_transaminase_level(screening264, 3).
+glutamic_oxaloacetic_transaminase_level(screening2640, 3).
+glutamic_oxaloacetic_transaminase_level(screening2641, 3).
+glutamic_oxaloacetic_transaminase_level(screening2642, 3).
+glutamic_oxaloacetic_transaminase_level(screening2643, 2).
+glutamic_oxaloacetic_transaminase_level(screening2644, 3).
+glutamic_oxaloacetic_transaminase_level(screening2645, 3).
+glutamic_oxaloacetic_transaminase_level(screening2646, 3).
+glutamic_oxaloacetic_transaminase_level(screening2647, 2).
+glutamic_oxaloacetic_transaminase_level(screening2648, 2).
+glutamic_oxaloacetic_transaminase_level(screening2649, 3).
+glutamic_oxaloacetic_transaminase_level(screening265, 3).
+glutamic_oxaloacetic_transaminase_level(screening2650, 3).
+glutamic_oxaloacetic_transaminase_level(screening2651, 3).
+glutamic_oxaloacetic_transaminase_level(screening2652, 3).
+glutamic_oxaloacetic_transaminase_level(screening2653, 3).
+glutamic_oxaloacetic_transaminase_level(screening2654, 3).
+glutamic_oxaloacetic_transaminase_level(screening2655, 4).
+glutamic_oxaloacetic_transaminase_level(screening2656, 3).
+glutamic_oxaloacetic_transaminase_level(screening2657, 2).
+glutamic_oxaloacetic_transaminase_level(screening2658, 2).
+glutamic_oxaloacetic_transaminase_level(screening2659, 2).
+glutamic_oxaloacetic_transaminase_level(screening266, 3).
+glutamic_oxaloacetic_transaminase_level(screening2660, 3).
+glutamic_oxaloacetic_transaminase_level(screening2661, 2).
+glutamic_oxaloacetic_transaminase_level(screening2662, 2).
+glutamic_oxaloacetic_transaminase_level(screening2663, 2).
+glutamic_oxaloacetic_transaminase_level(screening2664, 4).
+glutamic_oxaloacetic_transaminase_level(screening2665, 3).
+glutamic_oxaloacetic_transaminase_level(screening2666, 3).
+glutamic_oxaloacetic_transaminase_level(screening2667, 3).
+glutamic_oxaloacetic_transaminase_level(screening2668, 3).
+glutamic_oxaloacetic_transaminase_level(screening2669, 3).
+glutamic_oxaloacetic_transaminase_level(screening267, 3).
+glutamic_oxaloacetic_transaminase_level(screening2670, 3).
+glutamic_oxaloacetic_transaminase_level(screening2671, 3).
+glutamic_oxaloacetic_transaminase_level(screening2672, 2).
+glutamic_oxaloacetic_transaminase_level(screening2673, 2).
+glutamic_oxaloacetic_transaminase_level(screening2674, 4).
+glutamic_oxaloacetic_transaminase_level(screening2675, 4).
+glutamic_oxaloacetic_transaminase_level(screening2676, 2).
+glutamic_oxaloacetic_transaminase_level(screening2677, 4).
+glutamic_oxaloacetic_transaminase_level(screening2678, 4).
+glutamic_oxaloacetic_transaminase_level(screening2679, 4).
+glutamic_oxaloacetic_transaminase_level(screening268, 3).
+glutamic_oxaloacetic_transaminase_level(screening2680, 4).
+glutamic_oxaloacetic_transaminase_level(screening2681, 4).
+glutamic_oxaloacetic_transaminase_level(screening2682, 4).
+glutamic_oxaloacetic_transaminase_level(screening2683, 4).
+glutamic_oxaloacetic_transaminase_level(screening2684, 4).
+glutamic_oxaloacetic_transaminase_level(screening2685, 4).
+glutamic_oxaloacetic_transaminase_level(screening2686, 4).
+glutamic_oxaloacetic_transaminase_level(screening2687, 4).
+glutamic_oxaloacetic_transaminase_level(screening2688, 4).
+glutamic_oxaloacetic_transaminase_level(screening2689, 4).
+glutamic_oxaloacetic_transaminase_level(screening269, 3).
+glutamic_oxaloacetic_transaminase_level(screening2690, 4).
+glutamic_oxaloacetic_transaminase_level(screening2691, 4).
+glutamic_oxaloacetic_transaminase_level(screening2692, 4).
+glutamic_oxaloacetic_transaminase_level(screening2693, 4).
+glutamic_oxaloacetic_transaminase_level(screening2694, 4).
+glutamic_oxaloacetic_transaminase_level(screening2695, 4).
+glutamic_oxaloacetic_transaminase_level(screening2696, 4).
+glutamic_oxaloacetic_transaminase_level(screening2697, 4).
+glutamic_oxaloacetic_transaminase_level(screening2698, 4).
+glutamic_oxaloacetic_transaminase_level(screening2699, 4).
+glutamic_oxaloacetic_transaminase_level(screening270, 2).
+glutamic_oxaloacetic_transaminase_level(screening2700, 4).
+glutamic_oxaloacetic_transaminase_level(screening2701, 2).
+glutamic_oxaloacetic_transaminase_level(screening2702, 2).
+glutamic_oxaloacetic_transaminase_level(screening2703, 3).
+glutamic_oxaloacetic_transaminase_level(screening2704, 1).
+glutamic_oxaloacetic_transaminase_level(screening2705, 2).
+glutamic_oxaloacetic_transaminase_level(screening2706, 2).
+glutamic_oxaloacetic_transaminase_level(screening2707, 3).
+glutamic_oxaloacetic_transaminase_level(screening2708, 1).
+glutamic_oxaloacetic_transaminase_level(screening2709, 2).
+glutamic_oxaloacetic_transaminase_level(screening271, 3).
+glutamic_oxaloacetic_transaminase_level(screening2710, 2).
+glutamic_oxaloacetic_transaminase_level(screening2711, 2).
+glutamic_oxaloacetic_transaminase_level(screening2712, 2).
+glutamic_oxaloacetic_transaminase_level(screening2713, 2).
+glutamic_oxaloacetic_transaminase_level(screening2714, 2).
+glutamic_oxaloacetic_transaminase_level(screening2715, 2).
+glutamic_oxaloacetic_transaminase_level(screening2716, 2).
+glutamic_oxaloacetic_transaminase_level(screening2717, 3).
+glutamic_oxaloacetic_transaminase_level(screening2718, 2).
+glutamic_oxaloacetic_transaminase_level(screening2719, 3).
+glutamic_oxaloacetic_transaminase_level(screening272, 3).
+glutamic_oxaloacetic_transaminase_level(screening2720, 3).
+glutamic_oxaloacetic_transaminase_level(screening2721, 4).
+glutamic_oxaloacetic_transaminase_level(screening2722, 3).
+glutamic_oxaloacetic_transaminase_level(screening2723, 2).
+glutamic_oxaloacetic_transaminase_level(screening2724, 2).
+glutamic_oxaloacetic_transaminase_level(screening2725, 2).
+glutamic_oxaloacetic_transaminase_level(screening2726, 4).
+glutamic_oxaloacetic_transaminase_level(screening2727, 4).
+glutamic_oxaloacetic_transaminase_level(screening2728, 4).
+glutamic_oxaloacetic_transaminase_level(screening2729, 3).
+glutamic_oxaloacetic_transaminase_level(screening273, 3).
+glutamic_oxaloacetic_transaminase_level(screening2730, 4).
+glutamic_oxaloacetic_transaminase_level(screening2731, 4).
+glutamic_oxaloacetic_transaminase_level(screening2732, 4).
+glutamic_oxaloacetic_transaminase_level(screening2733, 4).
+glutamic_oxaloacetic_transaminase_level(screening2734, 4).
+glutamic_oxaloacetic_transaminase_level(screening2735, 4).
+glutamic_oxaloacetic_transaminase_level(screening2736, 4).
+glutamic_oxaloacetic_transaminase_level(screening2737, 3).
+glutamic_oxaloacetic_transaminase_level(screening2738, 4).
+glutamic_oxaloacetic_transaminase_level(screening2739, 2).
+glutamic_oxaloacetic_transaminase_level(screening274, 4).
+glutamic_oxaloacetic_transaminase_level(screening2740, 2).
+glutamic_oxaloacetic_transaminase_level(screening2741, 2).
+glutamic_oxaloacetic_transaminase_level(screening2742, 2).
+glutamic_oxaloacetic_transaminase_level(screening2743, 2).
+glutamic_oxaloacetic_transaminase_level(screening2744, 2).
+glutamic_oxaloacetic_transaminase_level(screening2745, 2).
+glutamic_oxaloacetic_transaminase_level(screening2746, 2).
+glutamic_oxaloacetic_transaminase_level(screening2747, 2).
+glutamic_oxaloacetic_transaminase_level(screening2748, 2).
+glutamic_oxaloacetic_transaminase_level(screening2749, 2).
+glutamic_oxaloacetic_transaminase_level(screening275, 3).
+glutamic_oxaloacetic_transaminase_level(screening2750, 2).
+glutamic_oxaloacetic_transaminase_level(screening2751, 2).
+glutamic_oxaloacetic_transaminase_level(screening2752, 2).
+glutamic_oxaloacetic_transaminase_level(screening2753, 2).
+glutamic_oxaloacetic_transaminase_level(screening2754, 3).
+glutamic_oxaloacetic_transaminase_level(screening2755, 2).
+glutamic_oxaloacetic_transaminase_level(screening2756, 3).
+glutamic_oxaloacetic_transaminase_level(screening2757, 2).
+glutamic_oxaloacetic_transaminase_level(screening2758, 2).
+glutamic_oxaloacetic_transaminase_level(screening2759, 1).
+glutamic_oxaloacetic_transaminase_level(screening276, 4).
+glutamic_oxaloacetic_transaminase_level(screening2760, 2).
+glutamic_oxaloacetic_transaminase_level(screening2761, 2).
+glutamic_oxaloacetic_transaminase_level(screening2762, 3).
+glutamic_oxaloacetic_transaminase_level(screening2763, 2).
+glutamic_oxaloacetic_transaminase_level(screening2764, 2).
+glutamic_oxaloacetic_transaminase_level(screening2765, 3).
+glutamic_oxaloacetic_transaminase_level(screening2766, 2).
+glutamic_oxaloacetic_transaminase_level(screening2767, 2).
+glutamic_oxaloacetic_transaminase_level(screening2768, 2).
+glutamic_oxaloacetic_transaminase_level(screening2769, 2).
+glutamic_oxaloacetic_transaminase_level(screening277, 3).
+glutamic_oxaloacetic_transaminase_level(screening2770, 2).
+glutamic_oxaloacetic_transaminase_level(screening2771, 2).
+glutamic_oxaloacetic_transaminase_level(screening2772, 3).
+glutamic_oxaloacetic_transaminase_level(screening2773, 3).
+glutamic_oxaloacetic_transaminase_level(screening2774, 2).
+glutamic_oxaloacetic_transaminase_level(screening2775, 2).
+glutamic_oxaloacetic_transaminase_level(screening2776, 3).
+glutamic_oxaloacetic_transaminase_level(screening2777, 2).
+glutamic_oxaloacetic_transaminase_level(screening2778, 2).
+glutamic_oxaloacetic_transaminase_level(screening2779, 2).
+glutamic_oxaloacetic_transaminase_level(screening278, 3).
+glutamic_oxaloacetic_transaminase_level(screening2780, 2).
+glutamic_oxaloacetic_transaminase_level(screening2781, 2).
+glutamic_oxaloacetic_transaminase_level(screening2782, 2).
+glutamic_oxaloacetic_transaminase_level(screening2783, 1).
+glutamic_oxaloacetic_transaminase_level(screening2784, 2).
+glutamic_oxaloacetic_transaminase_level(screening2785, 2).
+glutamic_oxaloacetic_transaminase_level(screening2786, 2).
+glutamic_oxaloacetic_transaminase_level(screening2787, 2).
+glutamic_oxaloacetic_transaminase_level(screening2788, 2).
+glutamic_oxaloacetic_transaminase_level(screening2789, 2).
+glutamic_oxaloacetic_transaminase_level(screening279, 3).
+glutamic_oxaloacetic_transaminase_level(screening2790, 2).
+glutamic_oxaloacetic_transaminase_level(screening2791, 2).
+glutamic_oxaloacetic_transaminase_level(screening2792, 3).
+glutamic_oxaloacetic_transaminase_level(screening2793, 3).
+glutamic_oxaloacetic_transaminase_level(screening2794, 3).
+glutamic_oxaloacetic_transaminase_level(screening2795, 3).
+glutamic_oxaloacetic_transaminase_level(screening2796, 2).
+glutamic_oxaloacetic_transaminase_level(screening2797, 2).
+glutamic_oxaloacetic_transaminase_level(screening2798, 3).
+glutamic_oxaloacetic_transaminase_level(screening2799, 3).
+glutamic_oxaloacetic_transaminase_level(screening280, 3).
+glutamic_oxaloacetic_transaminase_level(screening2800, 3).
+glutamic_oxaloacetic_transaminase_level(screening2801, 3).
+glutamic_oxaloacetic_transaminase_level(screening2802, 3).
+glutamic_oxaloacetic_transaminase_level(screening2803, 3).
+glutamic_oxaloacetic_transaminase_level(screening2804, 2).
+glutamic_oxaloacetic_transaminase_level(screening2805, 2).
+glutamic_oxaloacetic_transaminase_level(screening2806, 2).
+glutamic_oxaloacetic_transaminase_level(screening2807, 3).
+glutamic_oxaloacetic_transaminase_level(screening2808, 3).
+glutamic_oxaloacetic_transaminase_level(screening2809, 3).
+glutamic_oxaloacetic_transaminase_level(screening281, 3).
+glutamic_oxaloacetic_transaminase_level(screening2810, 3).
+glutamic_oxaloacetic_transaminase_level(screening2811, 4).
+glutamic_oxaloacetic_transaminase_level(screening2812, 4).
+glutamic_oxaloacetic_transaminase_level(screening2813, 4).
+glutamic_oxaloacetic_transaminase_level(screening2814, 3).
+glutamic_oxaloacetic_transaminase_level(screening2815, 4).
+glutamic_oxaloacetic_transaminase_level(screening2816, 4).
+glutamic_oxaloacetic_transaminase_level(screening2817, 4).
+glutamic_oxaloacetic_transaminase_level(screening2818, 3).
+glutamic_oxaloacetic_transaminase_level(screening2819, 2).
+glutamic_oxaloacetic_transaminase_level(screening282, 3).
+glutamic_oxaloacetic_transaminase_level(screening2820, 3).
+glutamic_oxaloacetic_transaminase_level(screening2821, 2).
+glutamic_oxaloacetic_transaminase_level(screening2822, 3).
+glutamic_oxaloacetic_transaminase_level(screening2823, 2).
+glutamic_oxaloacetic_transaminase_level(screening2824, 3).
+glutamic_oxaloacetic_transaminase_level(screening2825, 2).
+glutamic_oxaloacetic_transaminase_level(screening2826, 3).
+glutamic_oxaloacetic_transaminase_level(screening2827, 3).
+glutamic_oxaloacetic_transaminase_level(screening2828, 2).
+glutamic_oxaloacetic_transaminase_level(screening2829, 2).
+glutamic_oxaloacetic_transaminase_level(screening283, 2).
+glutamic_oxaloacetic_transaminase_level(screening2830, 2).
+glutamic_oxaloacetic_transaminase_level(screening2831, 3).
+glutamic_oxaloacetic_transaminase_level(screening2832, 3).
+glutamic_oxaloacetic_transaminase_level(screening2833, 3).
+glutamic_oxaloacetic_transaminase_level(screening2834, 2).
+glutamic_oxaloacetic_transaminase_level(screening2835, 2).
+glutamic_oxaloacetic_transaminase_level(screening2836, 2).
+glutamic_oxaloacetic_transaminase_level(screening2837, 2).
+glutamic_oxaloacetic_transaminase_level(screening2838, 3).
+glutamic_oxaloacetic_transaminase_level(screening2839, 3).
+glutamic_oxaloacetic_transaminase_level(screening284, 3).
+glutamic_oxaloacetic_transaminase_level(screening2840, 4).
+glutamic_oxaloacetic_transaminase_level(screening2841, 4).
+glutamic_oxaloacetic_transaminase_level(screening2842, 4).
+glutamic_oxaloacetic_transaminase_level(screening2843, 4).
+glutamic_oxaloacetic_transaminase_level(screening2844, 3).
+glutamic_oxaloacetic_transaminase_level(screening2845, 3).
+glutamic_oxaloacetic_transaminase_level(screening2846, 3).
+glutamic_oxaloacetic_transaminase_level(screening2847, 3).
+glutamic_oxaloacetic_transaminase_level(screening2848, 3).
+glutamic_oxaloacetic_transaminase_level(screening2849, 2).
+glutamic_oxaloacetic_transaminase_level(screening285, 3).
+glutamic_oxaloacetic_transaminase_level(screening2850, 2).
+glutamic_oxaloacetic_transaminase_level(screening2851, 2).
+glutamic_oxaloacetic_transaminase_level(screening2852, 2).
+glutamic_oxaloacetic_transaminase_level(screening2853, 2).
+glutamic_oxaloacetic_transaminase_level(screening2854, 2).
+glutamic_oxaloacetic_transaminase_level(screening2855, 2).
+glutamic_oxaloacetic_transaminase_level(screening2856, 2).
+glutamic_oxaloacetic_transaminase_level(screening2857, 2).
+glutamic_oxaloacetic_transaminase_level(screening2858, 2).
+glutamic_oxaloacetic_transaminase_level(screening2859, 2).
+glutamic_oxaloacetic_transaminase_level(screening286, 3).
+glutamic_oxaloacetic_transaminase_level(screening2860, 2).
+glutamic_oxaloacetic_transaminase_level(screening2861, 2).
+glutamic_oxaloacetic_transaminase_level(screening2862, 2).
+glutamic_oxaloacetic_transaminase_level(screening2863, 2).
+glutamic_oxaloacetic_transaminase_level(screening2864, 2).
+glutamic_oxaloacetic_transaminase_level(screening2865, 2).
+glutamic_oxaloacetic_transaminase_level(screening2866, 2).
+glutamic_oxaloacetic_transaminase_level(screening2867, 2).
+glutamic_oxaloacetic_transaminase_level(screening2868, 3).
+glutamic_oxaloacetic_transaminase_level(screening2869, 3).
+glutamic_oxaloacetic_transaminase_level(screening287, 4).
+glutamic_oxaloacetic_transaminase_level(screening2870, 3).
+glutamic_oxaloacetic_transaminase_level(screening2871, 3).
+glutamic_oxaloacetic_transaminase_level(screening2872, 3).
+glutamic_oxaloacetic_transaminase_level(screening2873, 3).
+glutamic_oxaloacetic_transaminase_level(screening2874, 3).
+glutamic_oxaloacetic_transaminase_level(screening2875, 2).
+glutamic_oxaloacetic_transaminase_level(screening2876, 2).
+glutamic_oxaloacetic_transaminase_level(screening2877, 2).
+glutamic_oxaloacetic_transaminase_level(screening2878, 2).
+glutamic_oxaloacetic_transaminase_level(screening2879, 3).
+glutamic_oxaloacetic_transaminase_level(screening288, 4).
+glutamic_oxaloacetic_transaminase_level(screening2880, 3).
+glutamic_oxaloacetic_transaminase_level(screening2881, 3).
+glutamic_oxaloacetic_transaminase_level(screening2882, 2).
+glutamic_oxaloacetic_transaminase_level(screening2883, 2).
+glutamic_oxaloacetic_transaminase_level(screening2884, 2).
+glutamic_oxaloacetic_transaminase_level(screening2885, 2).
+glutamic_oxaloacetic_transaminase_level(screening2886, 3).
+glutamic_oxaloacetic_transaminase_level(screening2887, 3).
+glutamic_oxaloacetic_transaminase_level(screening2888, 2).
+glutamic_oxaloacetic_transaminase_level(screening2889, 2).
+glutamic_oxaloacetic_transaminase_level(screening289, 4).
+glutamic_oxaloacetic_transaminase_level(screening2890, 2).
+glutamic_oxaloacetic_transaminase_level(screening2891, 3).
+glutamic_oxaloacetic_transaminase_level(screening2892, 4).
+glutamic_oxaloacetic_transaminase_level(screening2893, 2).
+glutamic_oxaloacetic_transaminase_level(screening2894, 3).
+glutamic_oxaloacetic_transaminase_level(screening2895, 4).
+glutamic_oxaloacetic_transaminase_level(screening2896, 4).
+glutamic_oxaloacetic_transaminase_level(screening2897, 4).
+glutamic_oxaloacetic_transaminase_level(screening2898, 4).
+glutamic_oxaloacetic_transaminase_level(screening2899, 4).
+glutamic_oxaloacetic_transaminase_level(screening290, 3).
+glutamic_oxaloacetic_transaminase_level(screening2900, 4).
+glutamic_oxaloacetic_transaminase_level(screening2901, 4).
+glutamic_oxaloacetic_transaminase_level(screening2902, 4).
+glutamic_oxaloacetic_transaminase_level(screening2903, 4).
+glutamic_oxaloacetic_transaminase_level(screening2904, 4).
+glutamic_oxaloacetic_transaminase_level(screening2905, 4).
+glutamic_oxaloacetic_transaminase_level(screening2906, 4).
+glutamic_oxaloacetic_transaminase_level(screening2907, 4).
+glutamic_oxaloacetic_transaminase_level(screening2908, 4).
+glutamic_oxaloacetic_transaminase_level(screening2909, 4).
+glutamic_oxaloacetic_transaminase_level(screening291, 4).
+glutamic_oxaloacetic_transaminase_level(screening2910, 4).
+glutamic_oxaloacetic_transaminase_level(screening2911, 4).
+glutamic_oxaloacetic_transaminase_level(screening2912, 4).
+glutamic_oxaloacetic_transaminase_level(screening2913, 4).
+glutamic_oxaloacetic_transaminase_level(screening2914, 4).
+glutamic_oxaloacetic_transaminase_level(screening2915, 4).
+glutamic_oxaloacetic_transaminase_level(screening2916, 4).
+glutamic_oxaloacetic_transaminase_level(screening2917, 4).
+glutamic_oxaloacetic_transaminase_level(screening2918, 4).
+glutamic_oxaloacetic_transaminase_level(screening2919, 4).
+glutamic_oxaloacetic_transaminase_level(screening292, 2).
+glutamic_oxaloacetic_transaminase_level(screening2920, 4).
+glutamic_oxaloacetic_transaminase_level(screening2921, 4).
+glutamic_oxaloacetic_transaminase_level(screening2922, 4).
+glutamic_oxaloacetic_transaminase_level(screening2923, 4).
+glutamic_oxaloacetic_transaminase_level(screening2924, 4).
+glutamic_oxaloacetic_transaminase_level(screening2925, 4).
+glutamic_oxaloacetic_transaminase_level(screening2926, 4).
+glutamic_oxaloacetic_transaminase_level(screening2927, 4).
+glutamic_oxaloacetic_transaminase_level(screening2928, 4).
+glutamic_oxaloacetic_transaminase_level(screening2929, 4).
+glutamic_oxaloacetic_transaminase_level(screening293, 2).
+glutamic_oxaloacetic_transaminase_level(screening2930, 4).
+glutamic_oxaloacetic_transaminase_level(screening2931, 4).
+glutamic_oxaloacetic_transaminase_level(screening2932, 2).
+glutamic_oxaloacetic_transaminase_level(screening2933, 4).
+glutamic_oxaloacetic_transaminase_level(screening2934, 3).
+glutamic_oxaloacetic_transaminase_level(screening2935, 2).
+glutamic_oxaloacetic_transaminase_level(screening2936, 1).
+glutamic_oxaloacetic_transaminase_level(screening2937, 1).
+glutamic_oxaloacetic_transaminase_level(screening2938, 1).
+glutamic_oxaloacetic_transaminase_level(screening2939, 1).
+glutamic_oxaloacetic_transaminase_level(screening294, 2).
+glutamic_oxaloacetic_transaminase_level(screening2940, 1).
+glutamic_oxaloacetic_transaminase_level(screening2941, 1).
+glutamic_oxaloacetic_transaminase_level(screening2942, 1).
+glutamic_oxaloacetic_transaminase_level(screening2943, 1).
+glutamic_oxaloacetic_transaminase_level(screening2944, 1).
+glutamic_oxaloacetic_transaminase_level(screening2945, 1).
+glutamic_oxaloacetic_transaminase_level(screening2946, 1).
+glutamic_oxaloacetic_transaminase_level(screening2947, 1).
+glutamic_oxaloacetic_transaminase_level(screening2948, 1).
+glutamic_oxaloacetic_transaminase_level(screening2949, 4).
+glutamic_oxaloacetic_transaminase_level(screening295, 2).
+glutamic_oxaloacetic_transaminase_level(screening2950, 2).
+glutamic_oxaloacetic_transaminase_level(screening2951, 4).
+glutamic_oxaloacetic_transaminase_level(screening2952, 3).
+glutamic_oxaloacetic_transaminase_level(screening2953, 2).
+glutamic_oxaloacetic_transaminase_level(screening2954, 1).
+glutamic_oxaloacetic_transaminase_level(screening2955, 1).
+glutamic_oxaloacetic_transaminase_level(screening2956, 1).
+glutamic_oxaloacetic_transaminase_level(screening2957, 1).
+glutamic_oxaloacetic_transaminase_level(screening2958, 1).
+glutamic_oxaloacetic_transaminase_level(screening2959, 1).
+glutamic_oxaloacetic_transaminase_level(screening296, 2).
+glutamic_oxaloacetic_transaminase_level(screening2960, 1).
+glutamic_oxaloacetic_transaminase_level(screening2961, 1).
+glutamic_oxaloacetic_transaminase_level(screening2962, 1).
+glutamic_oxaloacetic_transaminase_level(screening2963, 1).
+glutamic_oxaloacetic_transaminase_level(screening2964, 1).
+glutamic_oxaloacetic_transaminase_level(screening2965, 1).
+glutamic_oxaloacetic_transaminase_level(screening2966, 1).
+glutamic_oxaloacetic_transaminase_level(screening2967, 3).
+glutamic_oxaloacetic_transaminase_level(screening2968, 3).
+glutamic_oxaloacetic_transaminase_level(screening2969, 3).
+glutamic_oxaloacetic_transaminase_level(screening297, 4).
+glutamic_oxaloacetic_transaminase_level(screening2970, 2).
+glutamic_oxaloacetic_transaminase_level(screening2971, 3).
+glutamic_oxaloacetic_transaminase_level(screening2972, 4).
+glutamic_oxaloacetic_transaminase_level(screening2973, 3).
+glutamic_oxaloacetic_transaminase_level(screening2974, 3).
+glutamic_oxaloacetic_transaminase_level(screening2975, 2).
+glutamic_oxaloacetic_transaminase_level(screening2976, 3).
+glutamic_oxaloacetic_transaminase_level(screening2977, 3).
+glutamic_oxaloacetic_transaminase_level(screening2978, 3).
+glutamic_oxaloacetic_transaminase_level(screening2979, 3).
+glutamic_oxaloacetic_transaminase_level(screening298, 2).
+glutamic_oxaloacetic_transaminase_level(screening2980, 3).
+glutamic_oxaloacetic_transaminase_level(screening2981, 2).
+glutamic_oxaloacetic_transaminase_level(screening2982, 2).
+glutamic_oxaloacetic_transaminase_level(screening2983, 2).
+glutamic_oxaloacetic_transaminase_level(screening2984, 2).
+glutamic_oxaloacetic_transaminase_level(screening2985, 2).
+glutamic_oxaloacetic_transaminase_level(screening2986, 2).
+glutamic_oxaloacetic_transaminase_level(screening2987, 2).
+glutamic_oxaloacetic_transaminase_level(screening2988, 4).
+glutamic_oxaloacetic_transaminase_level(screening2989, 3).
+glutamic_oxaloacetic_transaminase_level(screening299, 2).
+glutamic_oxaloacetic_transaminase_level(screening2990, 3).
+glutamic_oxaloacetic_transaminase_level(screening2991, 2).
+glutamic_oxaloacetic_transaminase_level(screening2992, 3).
+glutamic_oxaloacetic_transaminase_level(screening2993, 3).
+glutamic_oxaloacetic_transaminase_level(screening2994, 3).
+glutamic_oxaloacetic_transaminase_level(screening2995, 3).
+glutamic_oxaloacetic_transaminase_level(screening2996, 3).
+glutamic_oxaloacetic_transaminase_level(screening2997, 2).
+glutamic_oxaloacetic_transaminase_level(screening2998, 2).
+glutamic_oxaloacetic_transaminase_level(screening2999, 2).
+glutamic_oxaloacetic_transaminase_level(screening300, 2).
+glutamic_oxaloacetic_transaminase_level(screening3000, 2).
+glutamic_oxaloacetic_transaminase_level(screening3001, 2).
+glutamic_oxaloacetic_transaminase_level(screening3002, 2).
+glutamic_oxaloacetic_transaminase_level(screening3003, 2).
+glutamic_oxaloacetic_transaminase_level(screening3004, 3).
+glutamic_oxaloacetic_transaminase_level(screening3005, 2).
+glutamic_oxaloacetic_transaminase_level(screening3006, 2).
+glutamic_oxaloacetic_transaminase_level(screening3007, 2).
+glutamic_oxaloacetic_transaminase_level(screening3008, 4).
+glutamic_oxaloacetic_transaminase_level(screening3009, 4).
+glutamic_oxaloacetic_transaminase_level(screening301, 2).
+glutamic_oxaloacetic_transaminase_level(screening3010, 3).
+glutamic_oxaloacetic_transaminase_level(screening3011, 4).
+glutamic_oxaloacetic_transaminase_level(screening3012, 3).
+glutamic_oxaloacetic_transaminase_level(screening3013, 2).
+glutamic_oxaloacetic_transaminase_level(screening3014, 2).
+glutamic_oxaloacetic_transaminase_level(screening3015, 4).
+glutamic_oxaloacetic_transaminase_level(screening3016, 4).
+glutamic_oxaloacetic_transaminase_level(screening3017, 3).
+glutamic_oxaloacetic_transaminase_level(screening3018, 4).
+glutamic_oxaloacetic_transaminase_level(screening3019, 3).
+glutamic_oxaloacetic_transaminase_level(screening302, 2).
+glutamic_oxaloacetic_transaminase_level(screening3020, 2).
+glutamic_oxaloacetic_transaminase_level(screening3021, 2).
+glutamic_oxaloacetic_transaminase_level(screening3022, 4).
+glutamic_oxaloacetic_transaminase_level(screening3023, 4).
+glutamic_oxaloacetic_transaminase_level(screening3024, 3).
+glutamic_oxaloacetic_transaminase_level(screening3025, 4).
+glutamic_oxaloacetic_transaminase_level(screening3026, 3).
+glutamic_oxaloacetic_transaminase_level(screening3027, 2).
+glutamic_oxaloacetic_transaminase_level(screening3028, 2).
+glutamic_oxaloacetic_transaminase_level(screening3029, 3).
+glutamic_oxaloacetic_transaminase_level(screening303, 4).
+glutamic_oxaloacetic_transaminase_level(screening3030, 3).
+glutamic_oxaloacetic_transaminase_level(screening3031, 2).
+glutamic_oxaloacetic_transaminase_level(screening3032, 2).
+glutamic_oxaloacetic_transaminase_level(screening3033, 2).
+glutamic_oxaloacetic_transaminase_level(screening3034, 2).
+glutamic_oxaloacetic_transaminase_level(screening3035, 3).
+glutamic_oxaloacetic_transaminase_level(screening3036, 2).
+glutamic_oxaloacetic_transaminase_level(screening3037, 2).
+glutamic_oxaloacetic_transaminase_level(screening3038, 2).
+glutamic_oxaloacetic_transaminase_level(screening3039, 2).
+glutamic_oxaloacetic_transaminase_level(screening304, 2).
+glutamic_oxaloacetic_transaminase_level(screening3040, 2).
+glutamic_oxaloacetic_transaminase_level(screening3041, 2).
+glutamic_oxaloacetic_transaminase_level(screening3042, 1).
+glutamic_oxaloacetic_transaminase_level(screening3043, 1).
+glutamic_oxaloacetic_transaminase_level(screening3044, 1).
+glutamic_oxaloacetic_transaminase_level(screening3045, 1).
+glutamic_oxaloacetic_transaminase_level(screening3046, 1).
+glutamic_oxaloacetic_transaminase_level(screening3047, 1).
+glutamic_oxaloacetic_transaminase_level(screening3048, 2).
+glutamic_oxaloacetic_transaminase_level(screening3049, 1).
+glutamic_oxaloacetic_transaminase_level(screening305, 2).
+glutamic_oxaloacetic_transaminase_level(screening3050, 2).
+glutamic_oxaloacetic_transaminase_level(screening3051, 1).
+glutamic_oxaloacetic_transaminase_level(screening3052, 2).
+glutamic_oxaloacetic_transaminase_level(screening3053, 2).
+glutamic_oxaloacetic_transaminase_level(screening3054, 2).
+glutamic_oxaloacetic_transaminase_level(screening3055, 4).
+glutamic_oxaloacetic_transaminase_level(screening3056, 3).
+glutamic_oxaloacetic_transaminase_level(screening3057, 4).
+glutamic_oxaloacetic_transaminase_level(screening3058, 4).
+glutamic_oxaloacetic_transaminase_level(screening3059, 3).
+glutamic_oxaloacetic_transaminase_level(screening306, 2).
+glutamic_oxaloacetic_transaminase_level(screening3060, 3).
+glutamic_oxaloacetic_transaminase_level(screening3061, 3).
+glutamic_oxaloacetic_transaminase_level(screening3062, 3).
+glutamic_oxaloacetic_transaminase_level(screening3063, 3).
+glutamic_oxaloacetic_transaminase_level(screening3064, 3).
+glutamic_oxaloacetic_transaminase_level(screening3065, 4).
+glutamic_oxaloacetic_transaminase_level(screening3066, 3).
+glutamic_oxaloacetic_transaminase_level(screening3067, 4).
+glutamic_oxaloacetic_transaminase_level(screening3068, 3).
+glutamic_oxaloacetic_transaminase_level(screening3069, 3).
+glutamic_oxaloacetic_transaminase_level(screening307, 3).
+glutamic_oxaloacetic_transaminase_level(screening3070, 4).
+glutamic_oxaloacetic_transaminase_level(screening3071, 4).
+glutamic_oxaloacetic_transaminase_level(screening3072, 4).
+glutamic_oxaloacetic_transaminase_level(screening3073, 4).
+glutamic_oxaloacetic_transaminase_level(screening3074, 4).
+glutamic_oxaloacetic_transaminase_level(screening3075, 2).
+glutamic_oxaloacetic_transaminase_level(screening3076, 2).
+glutamic_oxaloacetic_transaminase_level(screening3077, 2).
+glutamic_oxaloacetic_transaminase_level(screening3078, 2).
+glutamic_oxaloacetic_transaminase_level(screening3079, 2).
+glutamic_oxaloacetic_transaminase_level(screening308, 3).
+glutamic_oxaloacetic_transaminase_level(screening3080, 2).
+glutamic_oxaloacetic_transaminase_level(screening3081, 3).
+glutamic_oxaloacetic_transaminase_level(screening3082, 3).
+glutamic_oxaloacetic_transaminase_level(screening3083, 2).
+glutamic_oxaloacetic_transaminase_level(screening3084, 2).
+glutamic_oxaloacetic_transaminase_level(screening3085, 2).
+glutamic_oxaloacetic_transaminase_level(screening3086, 4).
+glutamic_oxaloacetic_transaminase_level(screening3087, 4).
+glutamic_oxaloacetic_transaminase_level(screening3088, 2).
+glutamic_oxaloacetic_transaminase_level(screening3089, 2).
+glutamic_oxaloacetic_transaminase_level(screening309, 2).
+glutamic_oxaloacetic_transaminase_level(screening3090, 2).
+glutamic_oxaloacetic_transaminase_level(screening3091, 2).
+glutamic_oxaloacetic_transaminase_level(screening3092, 2).
+glutamic_oxaloacetic_transaminase_level(screening3093, 2).
+glutamic_oxaloacetic_transaminase_level(screening3094, 3).
+glutamic_oxaloacetic_transaminase_level(screening3095, 3).
+glutamic_oxaloacetic_transaminase_level(screening3096, 2).
+glutamic_oxaloacetic_transaminase_level(screening3097, 2).
+glutamic_oxaloacetic_transaminase_level(screening3098, 2).
+glutamic_oxaloacetic_transaminase_level(screening3099, 4).
+glutamic_oxaloacetic_transaminase_level(screening310, 3).
+glutamic_oxaloacetic_transaminase_level(screening3100, 3).
+glutamic_oxaloacetic_transaminase_level(screening3101, 2).
+glutamic_oxaloacetic_transaminase_level(screening3102, 2).
+glutamic_oxaloacetic_transaminase_level(screening3103, 2).
+glutamic_oxaloacetic_transaminase_level(screening3104, 1).
+glutamic_oxaloacetic_transaminase_level(screening3105, 1).
+glutamic_oxaloacetic_transaminase_level(screening3106, 2).
+glutamic_oxaloacetic_transaminase_level(screening3107, 2).
+glutamic_oxaloacetic_transaminase_level(screening3108, 2).
+glutamic_oxaloacetic_transaminase_level(screening3109, 2).
+glutamic_oxaloacetic_transaminase_level(screening311, 2).
+glutamic_oxaloacetic_transaminase_level(screening3110, 2).
+glutamic_oxaloacetic_transaminase_level(screening3111, 3).
+glutamic_oxaloacetic_transaminase_level(screening3112, 4).
+glutamic_oxaloacetic_transaminase_level(screening3113, 4).
+glutamic_oxaloacetic_transaminase_level(screening3114, 4).
+glutamic_oxaloacetic_transaminase_level(screening3115, 4).
+glutamic_oxaloacetic_transaminase_level(screening3116, 4).
+glutamic_oxaloacetic_transaminase_level(screening3117, 4).
+glutamic_oxaloacetic_transaminase_level(screening3118, 4).
+glutamic_oxaloacetic_transaminase_level(screening3119, 3).
+glutamic_oxaloacetic_transaminase_level(screening312, 2).
+glutamic_oxaloacetic_transaminase_level(screening3120, 4).
+glutamic_oxaloacetic_transaminase_level(screening3121, 4).
+glutamic_oxaloacetic_transaminase_level(screening3122, 4).
+glutamic_oxaloacetic_transaminase_level(screening3123, 4).
+glutamic_oxaloacetic_transaminase_level(screening3124, 3).
+glutamic_oxaloacetic_transaminase_level(screening3125, 4).
+glutamic_oxaloacetic_transaminase_level(screening3126, 4).
+glutamic_oxaloacetic_transaminase_level(screening3127, 4).
+glutamic_oxaloacetic_transaminase_level(screening3128, 4).
+glutamic_oxaloacetic_transaminase_level(screening3129, 4).
+glutamic_oxaloacetic_transaminase_level(screening313, 2).
+glutamic_oxaloacetic_transaminase_level(screening3130, 4).
+glutamic_oxaloacetic_transaminase_level(screening3131, 4).
+glutamic_oxaloacetic_transaminase_level(screening3132, 3).
+glutamic_oxaloacetic_transaminase_level(screening3133, 4).
+glutamic_oxaloacetic_transaminase_level(screening3134, 4).
+glutamic_oxaloacetic_transaminase_level(screening3135, 4).
+glutamic_oxaloacetic_transaminase_level(screening3136, 4).
+glutamic_oxaloacetic_transaminase_level(screening3137, 3).
+glutamic_oxaloacetic_transaminase_level(screening3138, 4).
+glutamic_oxaloacetic_transaminase_level(screening3139, 4).
+glutamic_oxaloacetic_transaminase_level(screening314, 2).
+glutamic_oxaloacetic_transaminase_level(screening3140, 2).
+glutamic_oxaloacetic_transaminase_level(screening3141, 2).
+glutamic_oxaloacetic_transaminase_level(screening3142, 2).
+glutamic_oxaloacetic_transaminase_level(screening3143, 2).
+glutamic_oxaloacetic_transaminase_level(screening3144, 2).
+glutamic_oxaloacetic_transaminase_level(screening3145, 2).
+glutamic_oxaloacetic_transaminase_level(screening3146, 2).
+glutamic_oxaloacetic_transaminase_level(screening3147, 3).
+glutamic_oxaloacetic_transaminase_level(screening3148, 4).
+glutamic_oxaloacetic_transaminase_level(screening3149, 4).
+glutamic_oxaloacetic_transaminase_level(screening315, 2).
+glutamic_oxaloacetic_transaminase_level(screening3150, 4).
+glutamic_oxaloacetic_transaminase_level(screening3151, 3).
+glutamic_oxaloacetic_transaminase_level(screening3152, 4).
+glutamic_oxaloacetic_transaminase_level(screening3153, 3).
+glutamic_oxaloacetic_transaminase_level(screening3154, 3).
+glutamic_oxaloacetic_transaminase_level(screening3155, 2).
+glutamic_oxaloacetic_transaminase_level(screening3156, 2).
+glutamic_oxaloacetic_transaminase_level(screening3157, 3).
+glutamic_oxaloacetic_transaminase_level(screening3158, 3).
+glutamic_oxaloacetic_transaminase_level(screening3159, 3).
+glutamic_oxaloacetic_transaminase_level(screening316, 2).
+glutamic_oxaloacetic_transaminase_level(screening3160, 3).
+glutamic_oxaloacetic_transaminase_level(screening3161, 3).
+glutamic_oxaloacetic_transaminase_level(screening3162, 3).
+glutamic_oxaloacetic_transaminase_level(screening3163, 4).
+glutamic_oxaloacetic_transaminase_level(screening3164, 3).
+glutamic_oxaloacetic_transaminase_level(screening3165, 3).
+glutamic_oxaloacetic_transaminase_level(screening3166, 2).
+glutamic_oxaloacetic_transaminase_level(screening3167, 4).
+glutamic_oxaloacetic_transaminase_level(screening3168, 2).
+glutamic_oxaloacetic_transaminase_level(screening3169, 2).
+glutamic_oxaloacetic_transaminase_level(screening317, 2).
+glutamic_oxaloacetic_transaminase_level(screening3170, 3).
+glutamic_oxaloacetic_transaminase_level(screening3171, 3).
+glutamic_oxaloacetic_transaminase_level(screening3172, 3).
+glutamic_oxaloacetic_transaminase_level(screening3173, 3).
+glutamic_oxaloacetic_transaminase_level(screening3174, 3).
+glutamic_oxaloacetic_transaminase_level(screening3175, 4).
+glutamic_oxaloacetic_transaminase_level(screening3176, 3).
+glutamic_oxaloacetic_transaminase_level(screening3177, 3).
+glutamic_oxaloacetic_transaminase_level(screening3178, 4).
+glutamic_oxaloacetic_transaminase_level(screening3179, 4).
+glutamic_oxaloacetic_transaminase_level(screening318, 2).
+glutamic_oxaloacetic_transaminase_level(screening3180, 4).
+glutamic_oxaloacetic_transaminase_level(screening3181, 4).
+glutamic_oxaloacetic_transaminase_level(screening3182, 4).
+glutamic_oxaloacetic_transaminase_level(screening3183, 3).
+glutamic_oxaloacetic_transaminase_level(screening3184, 3).
+glutamic_oxaloacetic_transaminase_level(screening3185, 3).
+glutamic_oxaloacetic_transaminase_level(screening3186, 3).
+glutamic_oxaloacetic_transaminase_level(screening3187, 4).
+glutamic_oxaloacetic_transaminase_level(screening3188, 3).
+glutamic_oxaloacetic_transaminase_level(screening3189, 3).
+glutamic_oxaloacetic_transaminase_level(screening319, 2).
+glutamic_oxaloacetic_transaminase_level(screening3190, 4).
+glutamic_oxaloacetic_transaminase_level(screening3191, 3).
+glutamic_oxaloacetic_transaminase_level(screening3192, 4).
+glutamic_oxaloacetic_transaminase_level(screening3193, 2).
+glutamic_oxaloacetic_transaminase_level(screening3194, 2).
+glutamic_oxaloacetic_transaminase_level(screening3195, 3).
+glutamic_oxaloacetic_transaminase_level(screening3196, 4).
+glutamic_oxaloacetic_transaminase_level(screening3197, 3).
+glutamic_oxaloacetic_transaminase_level(screening3198, 4).
+glutamic_oxaloacetic_transaminase_level(screening3199, 4).
+glutamic_oxaloacetic_transaminase_level(screening320, 2).
+glutamic_oxaloacetic_transaminase_level(screening3200, 4).
+glutamic_oxaloacetic_transaminase_level(screening3201, 4).
+glutamic_oxaloacetic_transaminase_level(screening3202, 4).
+glutamic_oxaloacetic_transaminase_level(screening3203, 4).
+glutamic_oxaloacetic_transaminase_level(screening3204, 4).
+glutamic_oxaloacetic_transaminase_level(screening3205, 3).
+glutamic_oxaloacetic_transaminase_level(screening3206, 3).
+glutamic_oxaloacetic_transaminase_level(screening3207, 4).
+glutamic_oxaloacetic_transaminase_level(screening3208, 4).
+glutamic_oxaloacetic_transaminase_level(screening3209, 2).
+glutamic_oxaloacetic_transaminase_level(screening321, 2).
+glutamic_oxaloacetic_transaminase_level(screening3210, 2).
+glutamic_oxaloacetic_transaminase_level(screening3211, 2).
+glutamic_oxaloacetic_transaminase_level(screening3212, 3).
+glutamic_oxaloacetic_transaminase_level(screening3213, 4).
+glutamic_oxaloacetic_transaminase_level(screening3214, 3).
+glutamic_oxaloacetic_transaminase_level(screening3215, 3).
+glutamic_oxaloacetic_transaminase_level(screening3216, 3).
+glutamic_oxaloacetic_transaminase_level(screening3217, 3).
+glutamic_oxaloacetic_transaminase_level(screening3218, 3).
+glutamic_oxaloacetic_transaminase_level(screening3219, 3).
+glutamic_oxaloacetic_transaminase_level(screening322, 2).
+glutamic_oxaloacetic_transaminase_level(screening3220, 4).
+glutamic_oxaloacetic_transaminase_level(screening3221, 4).
+glutamic_oxaloacetic_transaminase_level(screening3222, 2).
+glutamic_oxaloacetic_transaminase_level(screening3223, 3).
+glutamic_oxaloacetic_transaminase_level(screening3224, 3).
+glutamic_oxaloacetic_transaminase_level(screening3225, 2).
+glutamic_oxaloacetic_transaminase_level(screening3226, 3).
+glutamic_oxaloacetic_transaminase_level(screening3227, 3).
+glutamic_oxaloacetic_transaminase_level(screening3228, 4).
+glutamic_oxaloacetic_transaminase_level(screening3229, 4).
+glutamic_oxaloacetic_transaminase_level(screening323, 2).
+glutamic_oxaloacetic_transaminase_level(screening3230, 3).
+glutamic_oxaloacetic_transaminase_level(screening3231, 3).
+glutamic_oxaloacetic_transaminase_level(screening3232, 3).
+glutamic_oxaloacetic_transaminase_level(screening3233, 4).
+glutamic_oxaloacetic_transaminase_level(screening3234, 3).
+glutamic_oxaloacetic_transaminase_level(screening3235, 2).
+glutamic_oxaloacetic_transaminase_level(screening3236, 2).
+glutamic_oxaloacetic_transaminase_level(screening3237, 2).
+glutamic_oxaloacetic_transaminase_level(screening3238, 2).
+glutamic_oxaloacetic_transaminase_level(screening3239, 2).
+glutamic_oxaloacetic_transaminase_level(screening324, 2).
+glutamic_oxaloacetic_transaminase_level(screening3240, 1).
+glutamic_oxaloacetic_transaminase_level(screening3241, 2).
+glutamic_oxaloacetic_transaminase_level(screening3242, 2).
+glutamic_oxaloacetic_transaminase_level(screening3243, 2).
+glutamic_oxaloacetic_transaminase_level(screening3244, 2).
+glutamic_oxaloacetic_transaminase_level(screening3245, 2).
+glutamic_oxaloacetic_transaminase_level(screening3246, 2).
+glutamic_oxaloacetic_transaminase_level(screening3247, 2).
+glutamic_oxaloacetic_transaminase_level(screening3248, 2).
+glutamic_oxaloacetic_transaminase_level(screening3249, 2).
+glutamic_oxaloacetic_transaminase_level(screening325, 2).
+glutamic_oxaloacetic_transaminase_level(screening3250, 2).
+glutamic_oxaloacetic_transaminase_level(screening3251, 2).
+glutamic_oxaloacetic_transaminase_level(screening3252, 2).
+glutamic_oxaloacetic_transaminase_level(screening3253, 3).
+glutamic_oxaloacetic_transaminase_level(screening3254, 4).
+glutamic_oxaloacetic_transaminase_level(screening3255, 4).
+glutamic_oxaloacetic_transaminase_level(screening3256, 4).
+glutamic_oxaloacetic_transaminase_level(screening3257, 4).
+glutamic_oxaloacetic_transaminase_level(screening3258, 4).
+glutamic_oxaloacetic_transaminase_level(screening3259, 3).
+glutamic_oxaloacetic_transaminase_level(screening326, 3).
+glutamic_oxaloacetic_transaminase_level(screening3260, 3).
+glutamic_oxaloacetic_transaminase_level(screening3261, 3).
+glutamic_oxaloacetic_transaminase_level(screening3262, 3).
+glutamic_oxaloacetic_transaminase_level(screening3263, 3).
+glutamic_oxaloacetic_transaminase_level(screening3264, 2).
+glutamic_oxaloacetic_transaminase_level(screening3265, 2).
+glutamic_oxaloacetic_transaminase_level(screening3266, 2).
+glutamic_oxaloacetic_transaminase_level(screening3267, 2).
+glutamic_oxaloacetic_transaminase_level(screening3268, 2).
+glutamic_oxaloacetic_transaminase_level(screening3269, 2).
+glutamic_oxaloacetic_transaminase_level(screening327, 5).
+glutamic_oxaloacetic_transaminase_level(screening3270, 2).
+glutamic_oxaloacetic_transaminase_level(screening3271, 2).
+glutamic_oxaloacetic_transaminase_level(screening3272, 2).
+glutamic_oxaloacetic_transaminase_level(screening3273, 2).
+glutamic_oxaloacetic_transaminase_level(screening3274, 2).
+glutamic_oxaloacetic_transaminase_level(screening3275, 4).
+glutamic_oxaloacetic_transaminase_level(screening3276, 4).
+glutamic_oxaloacetic_transaminase_level(screening3277, 4).
+glutamic_oxaloacetic_transaminase_level(screening3278, 3).
+glutamic_oxaloacetic_transaminase_level(screening3279, 4).
+glutamic_oxaloacetic_transaminase_level(screening328, 2).
+glutamic_oxaloacetic_transaminase_level(screening3280, 4).
+glutamic_oxaloacetic_transaminase_level(screening3281, 4).
+glutamic_oxaloacetic_transaminase_level(screening3282, 4).
+glutamic_oxaloacetic_transaminase_level(screening3283, 4).
+glutamic_oxaloacetic_transaminase_level(screening3284, 3).
+glutamic_oxaloacetic_transaminase_level(screening3285, 4).
+glutamic_oxaloacetic_transaminase_level(screening3286, 4).
+glutamic_oxaloacetic_transaminase_level(screening3287, 4).
+glutamic_oxaloacetic_transaminase_level(screening3288, 4).
+glutamic_oxaloacetic_transaminase_level(screening3289, 4).
+glutamic_oxaloacetic_transaminase_level(screening329, 3).
+glutamic_oxaloacetic_transaminase_level(screening3290, 3).
+glutamic_oxaloacetic_transaminase_level(screening3291, 4).
+glutamic_oxaloacetic_transaminase_level(screening3292, 4).
+glutamic_oxaloacetic_transaminase_level(screening3293, 4).
+glutamic_oxaloacetic_transaminase_level(screening3294, 4).
+glutamic_oxaloacetic_transaminase_level(screening3295, 4).
+glutamic_oxaloacetic_transaminase_level(screening3296, 3).
+glutamic_oxaloacetic_transaminase_level(screening3297, 4).
+glutamic_oxaloacetic_transaminase_level(screening3298, 4).
+glutamic_oxaloacetic_transaminase_level(screening3299, 3).
+glutamic_oxaloacetic_transaminase_level(screening330, 3).
+glutamic_oxaloacetic_transaminase_level(screening3300, 3).
+glutamic_oxaloacetic_transaminase_level(screening3301, 4).
+glutamic_oxaloacetic_transaminase_level(screening3302, 4).
+glutamic_oxaloacetic_transaminase_level(screening3303, 4).
+glutamic_oxaloacetic_transaminase_level(screening3304, 3).
+glutamic_oxaloacetic_transaminase_level(screening3305, 3).
+glutamic_oxaloacetic_transaminase_level(screening3306, 3).
+glutamic_oxaloacetic_transaminase_level(screening3307, 2).
+glutamic_oxaloacetic_transaminase_level(screening3308, 3).
+glutamic_oxaloacetic_transaminase_level(screening3309, 3).
+glutamic_oxaloacetic_transaminase_level(screening331, 3).
+glutamic_oxaloacetic_transaminase_level(screening3310, 3).
+glutamic_oxaloacetic_transaminase_level(screening3311, 2).
+glutamic_oxaloacetic_transaminase_level(screening3312, 2).
+glutamic_oxaloacetic_transaminase_level(screening3313, 4).
+glutamic_oxaloacetic_transaminase_level(screening3314, 3).
+glutamic_oxaloacetic_transaminase_level(screening3315, 3).
+glutamic_oxaloacetic_transaminase_level(screening3316, 3).
+glutamic_oxaloacetic_transaminase_level(screening3317, 2).
+glutamic_oxaloacetic_transaminase_level(screening3318, 4).
+glutamic_oxaloacetic_transaminase_level(screening3319, 4).
+glutamic_oxaloacetic_transaminase_level(screening332, 3).
+glutamic_oxaloacetic_transaminase_level(screening3320, 4).
+glutamic_oxaloacetic_transaminase_level(screening3321, 4).
+glutamic_oxaloacetic_transaminase_level(screening3322, 4).
+glutamic_oxaloacetic_transaminase_level(screening3323, 4).
+glutamic_oxaloacetic_transaminase_level(screening3324, 4).
+glutamic_oxaloacetic_transaminase_level(screening3325, 2).
+glutamic_oxaloacetic_transaminase_level(screening3326, 4).
+glutamic_oxaloacetic_transaminase_level(screening3327, 4).
+glutamic_oxaloacetic_transaminase_level(screening3328, 4).
+glutamic_oxaloacetic_transaminase_level(screening3329, 3).
+glutamic_oxaloacetic_transaminase_level(screening333, 2).
+glutamic_oxaloacetic_transaminase_level(screening3330, 4).
+glutamic_oxaloacetic_transaminase_level(screening3331, 4).
+glutamic_oxaloacetic_transaminase_level(screening3332, 4).
+glutamic_oxaloacetic_transaminase_level(screening3333, 4).
+glutamic_oxaloacetic_transaminase_level(screening3334, 4).
+glutamic_oxaloacetic_transaminase_level(screening3335, 4).
+glutamic_oxaloacetic_transaminase_level(screening3336, 4).
+glutamic_oxaloacetic_transaminase_level(screening3337, 4).
+glutamic_oxaloacetic_transaminase_level(screening3338, 2).
+glutamic_oxaloacetic_transaminase_level(screening3339, 4).
+glutamic_oxaloacetic_transaminase_level(screening334, 2).
+glutamic_oxaloacetic_transaminase_level(screening3340, 4).
+glutamic_oxaloacetic_transaminase_level(screening3341, 4).
+glutamic_oxaloacetic_transaminase_level(screening3342, 3).
+glutamic_oxaloacetic_transaminase_level(screening3343, 4).
+glutamic_oxaloacetic_transaminase_level(screening3344, 4).
+glutamic_oxaloacetic_transaminase_level(screening3345, 4).
+glutamic_oxaloacetic_transaminase_level(screening3346, 4).
+glutamic_oxaloacetic_transaminase_level(screening3347, 4).
+glutamic_oxaloacetic_transaminase_level(screening3348, 4).
+glutamic_oxaloacetic_transaminase_level(screening3349, 4).
+glutamic_oxaloacetic_transaminase_level(screening335, 1).
+glutamic_oxaloacetic_transaminase_level(screening3350, 4).
+glutamic_oxaloacetic_transaminase_level(screening3351, 2).
+glutamic_oxaloacetic_transaminase_level(screening3352, 4).
+glutamic_oxaloacetic_transaminase_level(screening3353, 4).
+glutamic_oxaloacetic_transaminase_level(screening3354, 4).
+glutamic_oxaloacetic_transaminase_level(screening3355, 3).
+glutamic_oxaloacetic_transaminase_level(screening3356, 4).
+glutamic_oxaloacetic_transaminase_level(screening3357, 4).
+glutamic_oxaloacetic_transaminase_level(screening3358, 4).
+glutamic_oxaloacetic_transaminase_level(screening3359, 4).
+glutamic_oxaloacetic_transaminase_level(screening336, 2).
+glutamic_oxaloacetic_transaminase_level(screening3360, 4).
+glutamic_oxaloacetic_transaminase_level(screening3361, 4).
+glutamic_oxaloacetic_transaminase_level(screening3362, 4).
+glutamic_oxaloacetic_transaminase_level(screening3363, 4).
+glutamic_oxaloacetic_transaminase_level(screening3364, 3).
+glutamic_oxaloacetic_transaminase_level(screening3365, 2).
+glutamic_oxaloacetic_transaminase_level(screening3366, 3).
+glutamic_oxaloacetic_transaminase_level(screening3367, 3).
+glutamic_oxaloacetic_transaminase_level(screening3368, 3).
+glutamic_oxaloacetic_transaminase_level(screening3369, 3).
+glutamic_oxaloacetic_transaminase_level(screening337, 2).
+glutamic_oxaloacetic_transaminase_level(screening3370, 3).
+glutamic_oxaloacetic_transaminase_level(screening3371, 2).
+glutamic_oxaloacetic_transaminase_level(screening3372, 3).
+glutamic_oxaloacetic_transaminase_level(screening3373, 2).
+glutamic_oxaloacetic_transaminase_level(screening3374, 2).
+glutamic_oxaloacetic_transaminase_level(screening3375, 2).
+glutamic_oxaloacetic_transaminase_level(screening3376, 3).
+glutamic_oxaloacetic_transaminase_level(screening3377, 3).
+glutamic_oxaloacetic_transaminase_level(screening3378, 3).
+glutamic_oxaloacetic_transaminase_level(screening3379, 3).
+glutamic_oxaloacetic_transaminase_level(screening338, 2).
+glutamic_oxaloacetic_transaminase_level(screening3380, 2).
+glutamic_oxaloacetic_transaminase_level(screening3381, 3).
+glutamic_oxaloacetic_transaminase_level(screening3382, 3).
+glutamic_oxaloacetic_transaminase_level(screening3383, 3).
+glutamic_oxaloacetic_transaminase_level(screening3384, 3).
+glutamic_oxaloacetic_transaminase_level(screening3385, 3).
+glutamic_oxaloacetic_transaminase_level(screening3386, 2).
+glutamic_oxaloacetic_transaminase_level(screening3387, 3).
+glutamic_oxaloacetic_transaminase_level(screening3388, 2).
+glutamic_oxaloacetic_transaminase_level(screening3389, 2).
+glutamic_oxaloacetic_transaminase_level(screening339, 2).
+glutamic_oxaloacetic_transaminase_level(screening3390, 2).
+glutamic_oxaloacetic_transaminase_level(screening3391, 3).
+glutamic_oxaloacetic_transaminase_level(screening3392, 3).
+glutamic_oxaloacetic_transaminase_level(screening3393, 3).
+glutamic_oxaloacetic_transaminase_level(screening3394, 4).
+glutamic_oxaloacetic_transaminase_level(screening3395, 4).
+glutamic_oxaloacetic_transaminase_level(screening3396, 4).
+glutamic_oxaloacetic_transaminase_level(screening3397, 4).
+glutamic_oxaloacetic_transaminase_level(screening3398, 4).
+glutamic_oxaloacetic_transaminase_level(screening3399, 3).
+glutamic_oxaloacetic_transaminase_level(screening340, 2).
+glutamic_oxaloacetic_transaminase_level(screening3400, 4).
+glutamic_oxaloacetic_transaminase_level(screening3401, 4).
+glutamic_oxaloacetic_transaminase_level(screening3402, 4).
+glutamic_oxaloacetic_transaminase_level(screening3403, 4).
+glutamic_oxaloacetic_transaminase_level(screening3404, 4).
+glutamic_oxaloacetic_transaminase_level(screening3405, 4).
+glutamic_oxaloacetic_transaminase_level(screening3406, 4).
+glutamic_oxaloacetic_transaminase_level(screening3407, 4).
+glutamic_oxaloacetic_transaminase_level(screening3408, 4).
+glutamic_oxaloacetic_transaminase_level(screening3409, 4).
+glutamic_oxaloacetic_transaminase_level(screening341, 2).
+glutamic_oxaloacetic_transaminase_level(screening3410, 4).
+glutamic_oxaloacetic_transaminase_level(screening3411, 4).
+glutamic_oxaloacetic_transaminase_level(screening3412, 4).
+glutamic_oxaloacetic_transaminase_level(screening3413, 3).
+glutamic_oxaloacetic_transaminase_level(screening3414, 4).
+glutamic_oxaloacetic_transaminase_level(screening3415, 4).
+glutamic_oxaloacetic_transaminase_level(screening3416, 4).
+glutamic_oxaloacetic_transaminase_level(screening3417, 4).
+glutamic_oxaloacetic_transaminase_level(screening3418, 4).
+glutamic_oxaloacetic_transaminase_level(screening3419, 4).
+glutamic_oxaloacetic_transaminase_level(screening342, 2).
+glutamic_oxaloacetic_transaminase_level(screening3420, 4).
+glutamic_oxaloacetic_transaminase_level(screening3421, 4).
+glutamic_oxaloacetic_transaminase_level(screening3422, 4).
+glutamic_oxaloacetic_transaminase_level(screening3423, 4).
+glutamic_oxaloacetic_transaminase_level(screening3424, 4).
+glutamic_oxaloacetic_transaminase_level(screening3425, 4).
+glutamic_oxaloacetic_transaminase_level(screening3426, 4).
+glutamic_oxaloacetic_transaminase_level(screening3427, 3).
+glutamic_oxaloacetic_transaminase_level(screening3428, 4).
+glutamic_oxaloacetic_transaminase_level(screening3429, 4).
+glutamic_oxaloacetic_transaminase_level(screening343, 2).
+glutamic_oxaloacetic_transaminase_level(screening3430, 4).
+glutamic_oxaloacetic_transaminase_level(screening3431, 4).
+glutamic_oxaloacetic_transaminase_level(screening3432, 4).
+glutamic_oxaloacetic_transaminase_level(screening3433, 4).
+glutamic_oxaloacetic_transaminase_level(screening3434, 4).
+glutamic_oxaloacetic_transaminase_level(screening3435, 4).
+glutamic_oxaloacetic_transaminase_level(screening3436, 3).
+glutamic_oxaloacetic_transaminase_level(screening3437, 3).
+glutamic_oxaloacetic_transaminase_level(screening3438, 2).
+glutamic_oxaloacetic_transaminase_level(screening3439, 2).
+glutamic_oxaloacetic_transaminase_level(screening344, 3).
+glutamic_oxaloacetic_transaminase_level(screening3440, 3).
+glutamic_oxaloacetic_transaminase_level(screening3441, 3).
+glutamic_oxaloacetic_transaminase_level(screening3442, 2).
+glutamic_oxaloacetic_transaminase_level(screening3443, 2).
+glutamic_oxaloacetic_transaminase_level(screening3444, 3).
+glutamic_oxaloacetic_transaminase_level(screening3445, 3).
+glutamic_oxaloacetic_transaminase_level(screening3446, 3).
+glutamic_oxaloacetic_transaminase_level(screening3447, 3).
+glutamic_oxaloacetic_transaminase_level(screening3448, 3).
+glutamic_oxaloacetic_transaminase_level(screening3449, 2).
+glutamic_oxaloacetic_transaminase_level(screening345, 5).
+glutamic_oxaloacetic_transaminase_level(screening3450, 2).
+glutamic_oxaloacetic_transaminase_level(screening3451, 3).
+glutamic_oxaloacetic_transaminase_level(screening3452, 3).
+glutamic_oxaloacetic_transaminase_level(screening3453, 2).
+glutamic_oxaloacetic_transaminase_level(screening3454, 2).
+glutamic_oxaloacetic_transaminase_level(screening3455, 3).
+glutamic_oxaloacetic_transaminase_level(screening3456, 3).
+glutamic_oxaloacetic_transaminase_level(screening3457, 3).
+glutamic_oxaloacetic_transaminase_level(screening3458, 3).
+glutamic_oxaloacetic_transaminase_level(screening3459, 3).
+glutamic_oxaloacetic_transaminase_level(screening346, 2).
+glutamic_oxaloacetic_transaminase_level(screening3460, 2).
+glutamic_oxaloacetic_transaminase_level(screening3461, 2).
+glutamic_oxaloacetic_transaminase_level(screening3462, 3).
+glutamic_oxaloacetic_transaminase_level(screening3463, 3).
+glutamic_oxaloacetic_transaminase_level(screening3464, 2).
+glutamic_oxaloacetic_transaminase_level(screening3465, 2).
+glutamic_oxaloacetic_transaminase_level(screening3466, 3).
+glutamic_oxaloacetic_transaminase_level(screening3467, 3).
+glutamic_oxaloacetic_transaminase_level(screening3468, 3).
+glutamic_oxaloacetic_transaminase_level(screening3469, 3).
+glutamic_oxaloacetic_transaminase_level(screening347, 3).
+glutamic_oxaloacetic_transaminase_level(screening3470, 3).
+glutamic_oxaloacetic_transaminase_level(screening3471, 2).
+glutamic_oxaloacetic_transaminase_level(screening3472, 1).
+glutamic_oxaloacetic_transaminase_level(screening3473, 1).
+glutamic_oxaloacetic_transaminase_level(screening3474, 1).
+glutamic_oxaloacetic_transaminase_level(screening3475, 2).
+glutamic_oxaloacetic_transaminase_level(screening3476, 1).
+glutamic_oxaloacetic_transaminase_level(screening3477, 2).
+glutamic_oxaloacetic_transaminase_level(screening3478, 2).
+glutamic_oxaloacetic_transaminase_level(screening3479, 4).
+glutamic_oxaloacetic_transaminase_level(screening348, 3).
+glutamic_oxaloacetic_transaminase_level(screening3480, 3).
+glutamic_oxaloacetic_transaminase_level(screening3481, 3).
+glutamic_oxaloacetic_transaminase_level(screening3482, 2).
+glutamic_oxaloacetic_transaminase_level(screening3483, 3).
+glutamic_oxaloacetic_transaminase_level(screening3484, 4).
+glutamic_oxaloacetic_transaminase_level(screening3485, 3).
+glutamic_oxaloacetic_transaminase_level(screening3486, 4).
+glutamic_oxaloacetic_transaminase_level(screening3487, 3).
+glutamic_oxaloacetic_transaminase_level(screening3488, 2).
+glutamic_oxaloacetic_transaminase_level(screening3489, 4).
+glutamic_oxaloacetic_transaminase_level(screening349, 3).
+glutamic_oxaloacetic_transaminase_level(screening3490, 2).
+glutamic_oxaloacetic_transaminase_level(screening3491, 4).
+glutamic_oxaloacetic_transaminase_level(screening3492, 4).
+glutamic_oxaloacetic_transaminase_level(screening3493, 4).
+glutamic_oxaloacetic_transaminase_level(screening3494, 5).
+glutamic_oxaloacetic_transaminase_level(screening3495, 3).
+glutamic_oxaloacetic_transaminase_level(screening3496, 4).
+glutamic_oxaloacetic_transaminase_level(screening3497, 3).
+glutamic_oxaloacetic_transaminase_level(screening3498, 3).
+glutamic_oxaloacetic_transaminase_level(screening3499, 3).
+glutamic_oxaloacetic_transaminase_level(screening350, 3).
+glutamic_oxaloacetic_transaminase_level(screening3500, 4).
+glutamic_oxaloacetic_transaminase_level(screening3501, 3).
+glutamic_oxaloacetic_transaminase_level(screening3502, 4).
+glutamic_oxaloacetic_transaminase_level(screening3503, 4).
+glutamic_oxaloacetic_transaminase_level(screening3504, 4).
+glutamic_oxaloacetic_transaminase_level(screening3505, 4).
+glutamic_oxaloacetic_transaminase_level(screening3506, 4).
+glutamic_oxaloacetic_transaminase_level(screening3507, 4).
+glutamic_oxaloacetic_transaminase_level(screening3508, 4).
+glutamic_oxaloacetic_transaminase_level(screening3509, 4).
+glutamic_oxaloacetic_transaminase_level(screening351, 2).
+glutamic_oxaloacetic_transaminase_level(screening3510, 4).
+glutamic_oxaloacetic_transaminase_level(screening3511, 4).
+glutamic_oxaloacetic_transaminase_level(screening3512, 4).
+glutamic_oxaloacetic_transaminase_level(screening3513, 4).
+glutamic_oxaloacetic_transaminase_level(screening3514, 4).
+glutamic_oxaloacetic_transaminase_level(screening3515, 4).
+glutamic_oxaloacetic_transaminase_level(screening3516, 4).
+glutamic_oxaloacetic_transaminase_level(screening3517, 4).
+glutamic_oxaloacetic_transaminase_level(screening3518, 4).
+glutamic_oxaloacetic_transaminase_level(screening3519, 4).
+glutamic_oxaloacetic_transaminase_level(screening352, 2).
+glutamic_oxaloacetic_transaminase_level(screening3520, 4).
+glutamic_oxaloacetic_transaminase_level(screening3521, 4).
+glutamic_oxaloacetic_transaminase_level(screening3522, 4).
+glutamic_oxaloacetic_transaminase_level(screening3523, 4).
+glutamic_oxaloacetic_transaminase_level(screening3524, 4).
+glutamic_oxaloacetic_transaminase_level(screening3525, 4).
+glutamic_oxaloacetic_transaminase_level(screening3526, 4).
+glutamic_oxaloacetic_transaminase_level(screening3527, 4).
+glutamic_oxaloacetic_transaminase_level(screening3528, 4).
+glutamic_oxaloacetic_transaminase_level(screening3529, 4).
+glutamic_oxaloacetic_transaminase_level(screening353, 1).
+glutamic_oxaloacetic_transaminase_level(screening3530, 4).
+glutamic_oxaloacetic_transaminase_level(screening3531, 4).
+glutamic_oxaloacetic_transaminase_level(screening3532, 4).
+glutamic_oxaloacetic_transaminase_level(screening3533, 4).
+glutamic_oxaloacetic_transaminase_level(screening3534, 4).
+glutamic_oxaloacetic_transaminase_level(screening3535, 4).
+glutamic_oxaloacetic_transaminase_level(screening3536, 3).
+glutamic_oxaloacetic_transaminase_level(screening3537, 3).
+glutamic_oxaloacetic_transaminase_level(screening3538, 4).
+glutamic_oxaloacetic_transaminase_level(screening3539, 3).
+glutamic_oxaloacetic_transaminase_level(screening354, 2).
+glutamic_oxaloacetic_transaminase_level(screening3540, 3).
+glutamic_oxaloacetic_transaminase_level(screening3541, 3).
+glutamic_oxaloacetic_transaminase_level(screening3542, 4).
+glutamic_oxaloacetic_transaminase_level(screening3543, 4).
+glutamic_oxaloacetic_transaminase_level(screening3544, 3).
+glutamic_oxaloacetic_transaminase_level(screening3545, 4).
+glutamic_oxaloacetic_transaminase_level(screening3546, 4).
+glutamic_oxaloacetic_transaminase_level(screening3547, 4).
+glutamic_oxaloacetic_transaminase_level(screening3548, 4).
+glutamic_oxaloacetic_transaminase_level(screening3549, 4).
+glutamic_oxaloacetic_transaminase_level(screening355, 2).
+glutamic_oxaloacetic_transaminase_level(screening3550, 4).
+glutamic_oxaloacetic_transaminase_level(screening3551, 4).
+glutamic_oxaloacetic_transaminase_level(screening3552, 3).
+glutamic_oxaloacetic_transaminase_level(screening3553, 3).
+glutamic_oxaloacetic_transaminase_level(screening3554, 4).
+glutamic_oxaloacetic_transaminase_level(screening3555, 4).
+glutamic_oxaloacetic_transaminase_level(screening3556, 4).
+glutamic_oxaloacetic_transaminase_level(screening3557, 4).
+glutamic_oxaloacetic_transaminase_level(screening3558, 4).
+glutamic_oxaloacetic_transaminase_level(screening3559, 4).
+glutamic_oxaloacetic_transaminase_level(screening356, 2).
+glutamic_oxaloacetic_transaminase_level(screening3560, 4).
+glutamic_oxaloacetic_transaminase_level(screening3561, 4).
+glutamic_oxaloacetic_transaminase_level(screening3562, 4).
+glutamic_oxaloacetic_transaminase_level(screening3563, 4).
+glutamic_oxaloacetic_transaminase_level(screening3564, 4).
+glutamic_oxaloacetic_transaminase_level(screening3565, 4).
+glutamic_oxaloacetic_transaminase_level(screening3566, 3).
+glutamic_oxaloacetic_transaminase_level(screening3567, 4).
+glutamic_oxaloacetic_transaminase_level(screening3568, 3).
+glutamic_oxaloacetic_transaminase_level(screening3569, 3).
+glutamic_oxaloacetic_transaminase_level(screening357, 2).
+glutamic_oxaloacetic_transaminase_level(screening3570, 2).
+glutamic_oxaloacetic_transaminase_level(screening3571, 3).
+glutamic_oxaloacetic_transaminase_level(screening3572, 3).
+glutamic_oxaloacetic_transaminase_level(screening3573, 2).
+glutamic_oxaloacetic_transaminase_level(screening3574, 3).
+glutamic_oxaloacetic_transaminase_level(screening3575, 2).
+glutamic_oxaloacetic_transaminase_level(screening3576, 4).
+glutamic_oxaloacetic_transaminase_level(screening3577, 4).
+glutamic_oxaloacetic_transaminase_level(screening3578, 3).
+glutamic_oxaloacetic_transaminase_level(screening3579, 2).
+glutamic_oxaloacetic_transaminase_level(screening358, 2).
+glutamic_oxaloacetic_transaminase_level(screening3580, 2).
+glutamic_oxaloacetic_transaminase_level(screening3581, 2).
+glutamic_oxaloacetic_transaminase_level(screening3582, 2).
+glutamic_oxaloacetic_transaminase_level(screening3583, 2).
+glutamic_oxaloacetic_transaminase_level(screening3584, 2).
+glutamic_oxaloacetic_transaminase_level(screening3585, 2).
+glutamic_oxaloacetic_transaminase_level(screening3586, 2).
+glutamic_oxaloacetic_transaminase_level(screening3587, 3).
+glutamic_oxaloacetic_transaminase_level(screening3588, 3).
+glutamic_oxaloacetic_transaminase_level(screening3589, 4).
+glutamic_oxaloacetic_transaminase_level(screening359, 2).
+glutamic_oxaloacetic_transaminase_level(screening3590, 4).
+glutamic_oxaloacetic_transaminase_level(screening3591, 4).
+glutamic_oxaloacetic_transaminase_level(screening3592, 4).
+glutamic_oxaloacetic_transaminase_level(screening3593, 4).
+glutamic_oxaloacetic_transaminase_level(screening3594, 4).
+glutamic_oxaloacetic_transaminase_level(screening3595, 3).
+glutamic_oxaloacetic_transaminase_level(screening3596, 4).
+glutamic_oxaloacetic_transaminase_level(screening3597, 3).
+glutamic_oxaloacetic_transaminase_level(screening3598, 4).
+glutamic_oxaloacetic_transaminase_level(screening3599, 3).
+glutamic_oxaloacetic_transaminase_level(screening360, 2).
+glutamic_oxaloacetic_transaminase_level(screening3600, 4).
+glutamic_oxaloacetic_transaminase_level(screening3601, 4).
+glutamic_oxaloacetic_transaminase_level(screening3602, 3).
+glutamic_oxaloacetic_transaminase_level(screening3603, 4).
+glutamic_oxaloacetic_transaminase_level(screening3604, 4).
+glutamic_oxaloacetic_transaminase_level(screening3605, 3).
+glutamic_oxaloacetic_transaminase_level(screening3606, 3).
+glutamic_oxaloacetic_transaminase_level(screening3607, 3).
+glutamic_oxaloacetic_transaminase_level(screening3608, 3).
+glutamic_oxaloacetic_transaminase_level(screening3609, 3).
+glutamic_oxaloacetic_transaminase_level(screening361, 2).
+glutamic_oxaloacetic_transaminase_level(screening3610, 2).
+glutamic_oxaloacetic_transaminase_level(screening3611, 4).
+glutamic_oxaloacetic_transaminase_level(screening3612, 4).
+glutamic_oxaloacetic_transaminase_level(screening3613, 4).
+glutamic_oxaloacetic_transaminase_level(screening3614, 3).
+glutamic_oxaloacetic_transaminase_level(screening3615, 4).
+glutamic_oxaloacetic_transaminase_level(screening3616, 3).
+glutamic_oxaloacetic_transaminase_level(screening3617, 3).
+glutamic_oxaloacetic_transaminase_level(screening3618, 1).
+glutamic_oxaloacetic_transaminase_level(screening3619, 2).
+glutamic_oxaloacetic_transaminase_level(screening362, 2).
+glutamic_oxaloacetic_transaminase_level(screening3620, 2).
+glutamic_oxaloacetic_transaminase_level(screening3621, 1).
+glutamic_oxaloacetic_transaminase_level(screening3622, 4).
+glutamic_oxaloacetic_transaminase_level(screening3623, 4).
+glutamic_oxaloacetic_transaminase_level(screening3624, 4).
+glutamic_oxaloacetic_transaminase_level(screening3625, 4).
+glutamic_oxaloacetic_transaminase_level(screening3626, 4).
+glutamic_oxaloacetic_transaminase_level(screening3627, 4).
+glutamic_oxaloacetic_transaminase_level(screening3628, 3).
+glutamic_oxaloacetic_transaminase_level(screening3629, 2).
+glutamic_oxaloacetic_transaminase_level(screening363, 3).
+glutamic_oxaloacetic_transaminase_level(screening3630, 2).
+glutamic_oxaloacetic_transaminase_level(screening3631, 2).
+glutamic_oxaloacetic_transaminase_level(screening3632, 2).
+glutamic_oxaloacetic_transaminase_level(screening3633, 2).
+glutamic_oxaloacetic_transaminase_level(screening3634, 4).
+glutamic_oxaloacetic_transaminase_level(screening3635, 3).
+glutamic_oxaloacetic_transaminase_level(screening3636, 2).
+glutamic_oxaloacetic_transaminase_level(screening3637, 2).
+glutamic_oxaloacetic_transaminase_level(screening3638, 4).
+glutamic_oxaloacetic_transaminase_level(screening3639, 4).
+glutamic_oxaloacetic_transaminase_level(screening364, 3).
+glutamic_oxaloacetic_transaminase_level(screening3640, 3).
+glutamic_oxaloacetic_transaminase_level(screening3641, 2).
+glutamic_oxaloacetic_transaminase_level(screening3642, 2).
+glutamic_oxaloacetic_transaminase_level(screening3643, 4).
+glutamic_oxaloacetic_transaminase_level(screening3644, 4).
+glutamic_oxaloacetic_transaminase_level(screening3645, 4).
+glutamic_oxaloacetic_transaminase_level(screening3646, 4).
+glutamic_oxaloacetic_transaminase_level(screening3647, 4).
+glutamic_oxaloacetic_transaminase_level(screening3648, 4).
+glutamic_oxaloacetic_transaminase_level(screening3649, 4).
+glutamic_oxaloacetic_transaminase_level(screening365, 2).
+glutamic_oxaloacetic_transaminase_level(screening3650, 4).
+glutamic_oxaloacetic_transaminase_level(screening3651, 3).
+glutamic_oxaloacetic_transaminase_level(screening3652, 4).
+glutamic_oxaloacetic_transaminase_level(screening3653, 3).
+glutamic_oxaloacetic_transaminase_level(screening3654, 2).
+glutamic_oxaloacetic_transaminase_level(screening3655, 2).
+glutamic_oxaloacetic_transaminase_level(screening3656, 3).
+glutamic_oxaloacetic_transaminase_level(screening3657, 4).
+glutamic_oxaloacetic_transaminase_level(screening3658, 3).
+glutamic_oxaloacetic_transaminase_level(screening3659, 3).
+glutamic_oxaloacetic_transaminase_level(screening366, 2).
+glutamic_oxaloacetic_transaminase_level(screening3660, 3).
+glutamic_oxaloacetic_transaminase_level(screening3661, 3).
+glutamic_oxaloacetic_transaminase_level(screening3662, 4).
+glutamic_oxaloacetic_transaminase_level(screening3663, 4).
+glutamic_oxaloacetic_transaminase_level(screening3664, 5).
+glutamic_oxaloacetic_transaminase_level(screening3665, 5).
+glutamic_oxaloacetic_transaminase_level(screening3666, 4).
+glutamic_oxaloacetic_transaminase_level(screening3667, 4).
+glutamic_oxaloacetic_transaminase_level(screening3668, 4).
+glutamic_oxaloacetic_transaminase_level(screening3669, 3).
+glutamic_oxaloacetic_transaminase_level(screening367, 2).
+glutamic_oxaloacetic_transaminase_level(screening3670, 5).
+glutamic_oxaloacetic_transaminase_level(screening3671, 2).
+glutamic_oxaloacetic_transaminase_level(screening3672, 2).
+glutamic_oxaloacetic_transaminase_level(screening3673, 2).
+glutamic_oxaloacetic_transaminase_level(screening3674, 2).
+glutamic_oxaloacetic_transaminase_level(screening3675, 2).
+glutamic_oxaloacetic_transaminase_level(screening3676, 2).
+glutamic_oxaloacetic_transaminase_level(screening3677, 2).
+glutamic_oxaloacetic_transaminase_level(screening3678, 2).
+glutamic_oxaloacetic_transaminase_level(screening3679, 2).
+glutamic_oxaloacetic_transaminase_level(screening368, 2).
+glutamic_oxaloacetic_transaminase_level(screening3680, 3).
+glutamic_oxaloacetic_transaminase_level(screening3681, 3).
+glutamic_oxaloacetic_transaminase_level(screening3682, 2).
+glutamic_oxaloacetic_transaminase_level(screening3683, 2).
+glutamic_oxaloacetic_transaminase_level(screening3684, 2).
+glutamic_oxaloacetic_transaminase_level(screening3685, 2).
+glutamic_oxaloacetic_transaminase_level(screening3686, 2).
+glutamic_oxaloacetic_transaminase_level(screening3687, 2).
+glutamic_oxaloacetic_transaminase_level(screening3688, 2).
+glutamic_oxaloacetic_transaminase_level(screening3689, 2).
+glutamic_oxaloacetic_transaminase_level(screening369, 3).
+glutamic_oxaloacetic_transaminase_level(screening3690, 2).
+glutamic_oxaloacetic_transaminase_level(screening3691, 3).
+glutamic_oxaloacetic_transaminase_level(screening3692, 3).
+glutamic_oxaloacetic_transaminase_level(screening3693, 3).
+glutamic_oxaloacetic_transaminase_level(screening3694, 2).
+glutamic_oxaloacetic_transaminase_level(screening3695, 4).
+glutamic_oxaloacetic_transaminase_level(screening3696, 4).
+glutamic_oxaloacetic_transaminase_level(screening3697, 4).
+glutamic_oxaloacetic_transaminase_level(screening3698, 4).
+glutamic_oxaloacetic_transaminase_level(screening3699, 4).
+glutamic_oxaloacetic_transaminase_level(screening370, 1).
+glutamic_oxaloacetic_transaminase_level(screening3700, 4).
+glutamic_oxaloacetic_transaminase_level(screening3701, 3).
+glutamic_oxaloacetic_transaminase_level(screening3702, 4).
+glutamic_oxaloacetic_transaminase_level(screening3703, 3).
+glutamic_oxaloacetic_transaminase_level(screening3704, 4).
+glutamic_oxaloacetic_transaminase_level(screening3705, 3).
+glutamic_oxaloacetic_transaminase_level(screening3706, 3).
+glutamic_oxaloacetic_transaminase_level(screening3707, 5).
+glutamic_oxaloacetic_transaminase_level(screening3708, 4).
+glutamic_oxaloacetic_transaminase_level(screening3709, 4).
+glutamic_oxaloacetic_transaminase_level(screening371, 1).
+glutamic_oxaloacetic_transaminase_level(screening3710, 4).
+glutamic_oxaloacetic_transaminase_level(screening3711, 4).
+glutamic_oxaloacetic_transaminase_level(screening3712, 4).
+glutamic_oxaloacetic_transaminase_level(screening3713, 4).
+glutamic_oxaloacetic_transaminase_level(screening3714, 4).
+glutamic_oxaloacetic_transaminase_level(screening3715, 2).
+glutamic_oxaloacetic_transaminase_level(screening3716, 4).
+glutamic_oxaloacetic_transaminase_level(screening3717, 4).
+glutamic_oxaloacetic_transaminase_level(screening3718, 4).
+glutamic_oxaloacetic_transaminase_level(screening3719, 3).
+glutamic_oxaloacetic_transaminase_level(screening372, 3).
+glutamic_oxaloacetic_transaminase_level(screening3720, 3).
+glutamic_oxaloacetic_transaminase_level(screening3721, 3).
+glutamic_oxaloacetic_transaminase_level(screening3722, 2).
+glutamic_oxaloacetic_transaminase_level(screening3723, 2).
+glutamic_oxaloacetic_transaminase_level(screening3724, 3).
+glutamic_oxaloacetic_transaminase_level(screening3725, 2).
+glutamic_oxaloacetic_transaminase_level(screening3726, 2).
+glutamic_oxaloacetic_transaminase_level(screening3727, 2).
+glutamic_oxaloacetic_transaminase_level(screening3728, 2).
+glutamic_oxaloacetic_transaminase_level(screening3729, 2).
+glutamic_oxaloacetic_transaminase_level(screening373, 1).
+glutamic_oxaloacetic_transaminase_level(screening3730, 2).
+glutamic_oxaloacetic_transaminase_level(screening3731, 2).
+glutamic_oxaloacetic_transaminase_level(screening3732, 2).
+glutamic_oxaloacetic_transaminase_level(screening3733, 2).
+glutamic_oxaloacetic_transaminase_level(screening3734, 1).
+glutamic_oxaloacetic_transaminase_level(screening3735, 2).
+glutamic_oxaloacetic_transaminase_level(screening3736, 2).
+glutamic_oxaloacetic_transaminase_level(screening3737, 2).
+glutamic_oxaloacetic_transaminase_level(screening3738, 2).
+glutamic_oxaloacetic_transaminase_level(screening3739, 2).
+glutamic_oxaloacetic_transaminase_level(screening374, 1).
+glutamic_oxaloacetic_transaminase_level(screening3740, 3).
+glutamic_oxaloacetic_transaminase_level(screening3741, 2).
+glutamic_oxaloacetic_transaminase_level(screening3742, 2).
+glutamic_oxaloacetic_transaminase_level(screening3743, 3).
+glutamic_oxaloacetic_transaminase_level(screening3744, 2).
+glutamic_oxaloacetic_transaminase_level(screening3745, 2).
+glutamic_oxaloacetic_transaminase_level(screening3746, 2).
+glutamic_oxaloacetic_transaminase_level(screening3747, 2).
+glutamic_oxaloacetic_transaminase_level(screening3748, 2).
+glutamic_oxaloacetic_transaminase_level(screening3749, 2).
+glutamic_oxaloacetic_transaminase_level(screening375, 4).
+glutamic_oxaloacetic_transaminase_level(screening3750, 4).
+glutamic_oxaloacetic_transaminase_level(screening3751, 4).
+glutamic_oxaloacetic_transaminase_level(screening3752, 2).
+glutamic_oxaloacetic_transaminase_level(screening3753, 4).
+glutamic_oxaloacetic_transaminase_level(screening3754, 3).
+glutamic_oxaloacetic_transaminase_level(screening3755, 3).
+glutamic_oxaloacetic_transaminase_level(screening3756, 4).
+glutamic_oxaloacetic_transaminase_level(screening3757, 4).
+glutamic_oxaloacetic_transaminase_level(screening3758, 4).
+glutamic_oxaloacetic_transaminase_level(screening3759, 3).
+glutamic_oxaloacetic_transaminase_level(screening376, 3).
+glutamic_oxaloacetic_transaminase_level(screening3760, 4).
+glutamic_oxaloacetic_transaminase_level(screening3761, 4).
+glutamic_oxaloacetic_transaminase_level(screening3762, 4).
+glutamic_oxaloacetic_transaminase_level(screening3763, 4).
+glutamic_oxaloacetic_transaminase_level(screening3764, 4).
+glutamic_oxaloacetic_transaminase_level(screening3765, 4).
+glutamic_oxaloacetic_transaminase_level(screening3766, 4).
+glutamic_oxaloacetic_transaminase_level(screening3767, 4).
+glutamic_oxaloacetic_transaminase_level(screening3768, 4).
+glutamic_oxaloacetic_transaminase_level(screening3769, 3).
+glutamic_oxaloacetic_transaminase_level(screening377, 2).
+glutamic_oxaloacetic_transaminase_level(screening3770, 2).
+glutamic_oxaloacetic_transaminase_level(screening3771, 1).
+glutamic_oxaloacetic_transaminase_level(screening3772, 1).
+glutamic_oxaloacetic_transaminase_level(screening3773, 3).
+glutamic_oxaloacetic_transaminase_level(screening3774, 3).
+glutamic_oxaloacetic_transaminase_level(screening3775, 3).
+glutamic_oxaloacetic_transaminase_level(screening3776, 4).
+glutamic_oxaloacetic_transaminase_level(screening3777, 4).
+glutamic_oxaloacetic_transaminase_level(screening3778, 4).
+glutamic_oxaloacetic_transaminase_level(screening3779, 4).
+glutamic_oxaloacetic_transaminase_level(screening378, 2).
+glutamic_oxaloacetic_transaminase_level(screening3780, 4).
+glutamic_oxaloacetic_transaminase_level(screening3781, 3).
+glutamic_oxaloacetic_transaminase_level(screening3782, 4).
+glutamic_oxaloacetic_transaminase_level(screening3783, 4).
+glutamic_oxaloacetic_transaminase_level(screening3784, 3).
+glutamic_oxaloacetic_transaminase_level(screening3785, 3).
+glutamic_oxaloacetic_transaminase_level(screening3786, 3).
+glutamic_oxaloacetic_transaminase_level(screening3787, 3).
+glutamic_oxaloacetic_transaminase_level(screening3788, 4).
+glutamic_oxaloacetic_transaminase_level(screening3789, 2).
+glutamic_oxaloacetic_transaminase_level(screening379, 2).
+glutamic_oxaloacetic_transaminase_level(screening3790, 2).
+glutamic_oxaloacetic_transaminase_level(screening3791, 2).
+glutamic_oxaloacetic_transaminase_level(screening3792, 2).
+glutamic_oxaloacetic_transaminase_level(screening3793, 2).
+glutamic_oxaloacetic_transaminase_level(screening3794, 2).
+glutamic_oxaloacetic_transaminase_level(screening3795, 2).
+glutamic_oxaloacetic_transaminase_level(screening3796, 2).
+glutamic_oxaloacetic_transaminase_level(screening3797, 2).
+glutamic_oxaloacetic_transaminase_level(screening3798, 2).
+glutamic_oxaloacetic_transaminase_level(screening3799, 3).
+glutamic_oxaloacetic_transaminase_level(screening380, 2).
+glutamic_oxaloacetic_transaminase_level(screening3800, 2).
+glutamic_oxaloacetic_transaminase_level(screening3801, 4).
+glutamic_oxaloacetic_transaminase_level(screening3802, 4).
+glutamic_oxaloacetic_transaminase_level(screening3803, 4).
+glutamic_oxaloacetic_transaminase_level(screening3804, 4).
+glutamic_oxaloacetic_transaminase_level(screening3805, 4).
+glutamic_oxaloacetic_transaminase_level(screening3806, 3).
+glutamic_oxaloacetic_transaminase_level(screening3807, 2).
+glutamic_oxaloacetic_transaminase_level(screening3808, 2).
+glutamic_oxaloacetic_transaminase_level(screening3809, 2).
+glutamic_oxaloacetic_transaminase_level(screening381, 4).
+glutamic_oxaloacetic_transaminase_level(screening3810, 2).
+glutamic_oxaloacetic_transaminase_level(screening3811, 2).
+glutamic_oxaloacetic_transaminase_level(screening3812, 2).
+glutamic_oxaloacetic_transaminase_level(screening3813, 2).
+glutamic_oxaloacetic_transaminase_level(screening3814, 4).
+glutamic_oxaloacetic_transaminase_level(screening3815, 3).
+glutamic_oxaloacetic_transaminase_level(screening3816, 3).
+glutamic_oxaloacetic_transaminase_level(screening3817, 2).
+glutamic_oxaloacetic_transaminase_level(screening3818, 2).
+glutamic_oxaloacetic_transaminase_level(screening3819, 2).
+glutamic_oxaloacetic_transaminase_level(screening382, 2).
+glutamic_oxaloacetic_transaminase_level(screening3820, 2).
+glutamic_oxaloacetic_transaminase_level(screening3821, 2).
+glutamic_oxaloacetic_transaminase_level(screening3822, 2).
+glutamic_oxaloacetic_transaminase_level(screening3823, 2).
+glutamic_oxaloacetic_transaminase_level(screening3824, 4).
+glutamic_oxaloacetic_transaminase_level(screening3825, 2).
+glutamic_oxaloacetic_transaminase_level(screening3826, 2).
+glutamic_oxaloacetic_transaminase_level(screening3827, 2).
+glutamic_oxaloacetic_transaminase_level(screening3828, 2).
+glutamic_oxaloacetic_transaminase_level(screening3829, 4).
+glutamic_oxaloacetic_transaminase_level(screening383, 1).
+glutamic_oxaloacetic_transaminase_level(screening3830, 4).
+glutamic_oxaloacetic_transaminase_level(screening3831, 4).
+glutamic_oxaloacetic_transaminase_level(screening3832, 4).
+glutamic_oxaloacetic_transaminase_level(screening3833, 4).
+glutamic_oxaloacetic_transaminase_level(screening3834, 4).
+glutamic_oxaloacetic_transaminase_level(screening3835, 4).
+glutamic_oxaloacetic_transaminase_level(screening3836, 4).
+glutamic_oxaloacetic_transaminase_level(screening3837, 4).
+glutamic_oxaloacetic_transaminase_level(screening3838, 4).
+glutamic_oxaloacetic_transaminase_level(screening3839, 4).
+glutamic_oxaloacetic_transaminase_level(screening384, 2).
+glutamic_oxaloacetic_transaminase_level(screening3840, 4).
+glutamic_oxaloacetic_transaminase_level(screening3841, 4).
+glutamic_oxaloacetic_transaminase_level(screening3842, 4).
+glutamic_oxaloacetic_transaminase_level(screening3843, 4).
+glutamic_oxaloacetic_transaminase_level(screening3844, 3).
+glutamic_oxaloacetic_transaminase_level(screening3845, 3).
+glutamic_oxaloacetic_transaminase_level(screening3846, 3).
+glutamic_oxaloacetic_transaminase_level(screening3847, 3).
+glutamic_oxaloacetic_transaminase_level(screening3848, 4).
+glutamic_oxaloacetic_transaminase_level(screening3849, 4).
+glutamic_oxaloacetic_transaminase_level(screening385, 1).
+glutamic_oxaloacetic_transaminase_level(screening3850, 4).
+glutamic_oxaloacetic_transaminase_level(screening3851, 4).
+glutamic_oxaloacetic_transaminase_level(screening3852, 4).
+glutamic_oxaloacetic_transaminase_level(screening3853, 4).
+glutamic_oxaloacetic_transaminase_level(screening3854, 4).
+glutamic_oxaloacetic_transaminase_level(screening3855, 4).
+glutamic_oxaloacetic_transaminase_level(screening3856, 3).
+glutamic_oxaloacetic_transaminase_level(screening3857, 3).
+glutamic_oxaloacetic_transaminase_level(screening3858, 3).
+glutamic_oxaloacetic_transaminase_level(screening3859, 3).
+glutamic_oxaloacetic_transaminase_level(screening386, 2).
+glutamic_oxaloacetic_transaminase_level(screening3860, 4).
+glutamic_oxaloacetic_transaminase_level(screening3861, 4).
+glutamic_oxaloacetic_transaminase_level(screening3862, 4).
+glutamic_oxaloacetic_transaminase_level(screening3863, 4).
+glutamic_oxaloacetic_transaminase_level(screening3864, 4).
+glutamic_oxaloacetic_transaminase_level(screening3865, 4).
+glutamic_oxaloacetic_transaminase_level(screening3866, 4).
+glutamic_oxaloacetic_transaminase_level(screening3867, 4).
+glutamic_oxaloacetic_transaminase_level(screening3868, 3).
+glutamic_oxaloacetic_transaminase_level(screening3869, 3).
+glutamic_oxaloacetic_transaminase_level(screening387, 1).
+glutamic_oxaloacetic_transaminase_level(screening3870, 3).
+glutamic_oxaloacetic_transaminase_level(screening3871, 3).
+glutamic_oxaloacetic_transaminase_level(screening3872, 2).
+glutamic_oxaloacetic_transaminase_level(screening3873, 2).
+glutamic_oxaloacetic_transaminase_level(screening3874, 2).
+glutamic_oxaloacetic_transaminase_level(screening3875, 2).
+glutamic_oxaloacetic_transaminase_level(screening3876, 4).
+glutamic_oxaloacetic_transaminase_level(screening3877, 4).
+glutamic_oxaloacetic_transaminase_level(screening3878, 4).
+glutamic_oxaloacetic_transaminase_level(screening3879, 3).
+glutamic_oxaloacetic_transaminase_level(screening388, 2).
+glutamic_oxaloacetic_transaminase_level(screening3880, 2).
+glutamic_oxaloacetic_transaminase_level(screening3881, 3).
+glutamic_oxaloacetic_transaminase_level(screening3882, 3).
+glutamic_oxaloacetic_transaminase_level(screening3883, 2).
+glutamic_oxaloacetic_transaminase_level(screening3884, 2).
+glutamic_oxaloacetic_transaminase_level(screening3885, 2).
+glutamic_oxaloacetic_transaminase_level(screening3886, 2).
+glutamic_oxaloacetic_transaminase_level(screening3887, 2).
+glutamic_oxaloacetic_transaminase_level(screening3888, 2).
+glutamic_oxaloacetic_transaminase_level(screening3889, 2).
+glutamic_oxaloacetic_transaminase_level(screening389, 2).
+glutamic_oxaloacetic_transaminase_level(screening3890, 3).
+glutamic_oxaloacetic_transaminase_level(screening3891, 3).
+glutamic_oxaloacetic_transaminase_level(screening3892, 2).
+glutamic_oxaloacetic_transaminase_level(screening3893, 2).
+glutamic_oxaloacetic_transaminase_level(screening3894, 2).
+glutamic_oxaloacetic_transaminase_level(screening3895, 2).
+glutamic_oxaloacetic_transaminase_level(screening3896, 2).
+glutamic_oxaloacetic_transaminase_level(screening3897, 2).
+glutamic_oxaloacetic_transaminase_level(screening3898, 2).
+glutamic_oxaloacetic_transaminase_level(screening3899, 3).
+glutamic_oxaloacetic_transaminase_level(screening390, 2).
+glutamic_oxaloacetic_transaminase_level(screening3900, 3).
+glutamic_oxaloacetic_transaminase_level(screening3901, 2).
+glutamic_oxaloacetic_transaminase_level(screening3902, 2).
+glutamic_oxaloacetic_transaminase_level(screening3903, 2).
+glutamic_oxaloacetic_transaminase_level(screening3904, 2).
+glutamic_oxaloacetic_transaminase_level(screening3905, 2).
+glutamic_oxaloacetic_transaminase_level(screening3906, 2).
+glutamic_oxaloacetic_transaminase_level(screening3907, 2).
+glutamic_oxaloacetic_transaminase_level(screening3908, 4).
+glutamic_oxaloacetic_transaminase_level(screening3909, 4).
+glutamic_oxaloacetic_transaminase_level(screening391, 1).
+glutamic_oxaloacetic_transaminase_level(screening3910, 4).
+glutamic_oxaloacetic_transaminase_level(screening3911, 4).
+glutamic_oxaloacetic_transaminase_level(screening3912, 4).
+glutamic_oxaloacetic_transaminase_level(screening3913, 4).
+glutamic_oxaloacetic_transaminase_level(screening3914, 4).
+glutamic_oxaloacetic_transaminase_level(screening3915, 3).
+glutamic_oxaloacetic_transaminase_level(screening3916, 3).
+glutamic_oxaloacetic_transaminase_level(screening3917, 3).
+glutamic_oxaloacetic_transaminase_level(screening3918, 2).
+glutamic_oxaloacetic_transaminase_level(screening3919, 3).
+glutamic_oxaloacetic_transaminase_level(screening392, 1).
+glutamic_oxaloacetic_transaminase_level(screening3920, 3).
+glutamic_oxaloacetic_transaminase_level(screening3921, 4).
+glutamic_oxaloacetic_transaminase_level(screening3922, 4).
+glutamic_oxaloacetic_transaminase_level(screening3923, 4).
+glutamic_oxaloacetic_transaminase_level(screening3924, 4).
+glutamic_oxaloacetic_transaminase_level(screening3925, 3).
+glutamic_oxaloacetic_transaminase_level(screening3926, 3).
+glutamic_oxaloacetic_transaminase_level(screening3927, 3).
+glutamic_oxaloacetic_transaminase_level(screening3928, 2).
+glutamic_oxaloacetic_transaminase_level(screening3929, 3).
+glutamic_oxaloacetic_transaminase_level(screening393, 3).
+glutamic_oxaloacetic_transaminase_level(screening3930, 3).
+glutamic_oxaloacetic_transaminase_level(screening3931, 4).
+glutamic_oxaloacetic_transaminase_level(screening3932, 3).
+glutamic_oxaloacetic_transaminase_level(screening3933, 2).
+glutamic_oxaloacetic_transaminase_level(screening3934, 3).
+glutamic_oxaloacetic_transaminase_level(screening3935, 2).
+glutamic_oxaloacetic_transaminase_level(screening3936, 3).
+glutamic_oxaloacetic_transaminase_level(screening3937, 2).
+glutamic_oxaloacetic_transaminase_level(screening3938, 3).
+glutamic_oxaloacetic_transaminase_level(screening3939, 3).
+glutamic_oxaloacetic_transaminase_level(screening394, 2).
+glutamic_oxaloacetic_transaminase_level(screening3940, 3).
+glutamic_oxaloacetic_transaminase_level(screening3941, 3).
+glutamic_oxaloacetic_transaminase_level(screening3942, 4).
+glutamic_oxaloacetic_transaminase_level(screening3943, 3).
+glutamic_oxaloacetic_transaminase_level(screening3944, 3).
+glutamic_oxaloacetic_transaminase_level(screening3945, 3).
+glutamic_oxaloacetic_transaminase_level(screening3946, 3).
+glutamic_oxaloacetic_transaminase_level(screening3947, 3).
+glutamic_oxaloacetic_transaminase_level(screening3948, 3).
+glutamic_oxaloacetic_transaminase_level(screening3949, 4).
+glutamic_oxaloacetic_transaminase_level(screening395, 2).
+glutamic_oxaloacetic_transaminase_level(screening3950, 3).
+glutamic_oxaloacetic_transaminase_level(screening3951, 2).
+glutamic_oxaloacetic_transaminase_level(screening3952, 2).
+glutamic_oxaloacetic_transaminase_level(screening3953, 2).
+glutamic_oxaloacetic_transaminase_level(screening3954, 3).
+glutamic_oxaloacetic_transaminase_level(screening3955, 2).
+glutamic_oxaloacetic_transaminase_level(screening3956, 3).
+glutamic_oxaloacetic_transaminase_level(screening3957, 3).
+glutamic_oxaloacetic_transaminase_level(screening3958, 2).
+glutamic_oxaloacetic_transaminase_level(screening3959, 3).
+glutamic_oxaloacetic_transaminase_level(screening396, 2).
+glutamic_oxaloacetic_transaminase_level(screening3960, 3).
+glutamic_oxaloacetic_transaminase_level(screening3961, 2).
+glutamic_oxaloacetic_transaminase_level(screening3962, 4).
+glutamic_oxaloacetic_transaminase_level(screening3963, 2).
+glutamic_oxaloacetic_transaminase_level(screening3964, 2).
+glutamic_oxaloacetic_transaminase_level(screening3965, 1).
+glutamic_oxaloacetic_transaminase_level(screening3966, 1).
+glutamic_oxaloacetic_transaminase_level(screening3967, 2).
+glutamic_oxaloacetic_transaminase_level(screening3968, 2).
+glutamic_oxaloacetic_transaminase_level(screening3969, 2).
+glutamic_oxaloacetic_transaminase_level(screening397, 2).
+glutamic_oxaloacetic_transaminase_level(screening3970, 4).
+glutamic_oxaloacetic_transaminase_level(screening3971, 2).
+glutamic_oxaloacetic_transaminase_level(screening3972, 2).
+glutamic_oxaloacetic_transaminase_level(screening3973, 1).
+glutamic_oxaloacetic_transaminase_level(screening3974, 1).
+glutamic_oxaloacetic_transaminase_level(screening3975, 2).
+glutamic_oxaloacetic_transaminase_level(screening3976, 2).
+glutamic_oxaloacetic_transaminase_level(screening3977, 2).
+glutamic_oxaloacetic_transaminase_level(screening3978, 3).
+glutamic_oxaloacetic_transaminase_level(screening3979, 3).
+glutamic_oxaloacetic_transaminase_level(screening398, 2).
+glutamic_oxaloacetic_transaminase_level(screening3980, 3).
+glutamic_oxaloacetic_transaminase_level(screening3981, 3).
+glutamic_oxaloacetic_transaminase_level(screening3982, 4).
+glutamic_oxaloacetic_transaminase_level(screening3983, 3).
+glutamic_oxaloacetic_transaminase_level(screening3984, 3).
+glutamic_oxaloacetic_transaminase_level(screening3985, 3).
+glutamic_oxaloacetic_transaminase_level(screening3986, 4).
+glutamic_oxaloacetic_transaminase_level(screening3987, 4).
+glutamic_oxaloacetic_transaminase_level(screening3988, 4).
+glutamic_oxaloacetic_transaminase_level(screening3989, 4).
+glutamic_oxaloacetic_transaminase_level(screening399, 2).
+glutamic_oxaloacetic_transaminase_level(screening3990, 4).
+glutamic_oxaloacetic_transaminase_level(screening3991, 4).
+glutamic_oxaloacetic_transaminase_level(screening3992, 4).
+glutamic_oxaloacetic_transaminase_level(screening3993, 4).
+glutamic_oxaloacetic_transaminase_level(screening3994, 4).
+glutamic_oxaloacetic_transaminase_level(screening3995, 4).
+glutamic_oxaloacetic_transaminase_level(screening3996, 4).
+glutamic_oxaloacetic_transaminase_level(screening3997, 4).
+glutamic_oxaloacetic_transaminase_level(screening3998, 4).
+glutamic_oxaloacetic_transaminase_level(screening3999, 3).
+glutamic_oxaloacetic_transaminase_level(screening400, 3).
+glutamic_oxaloacetic_transaminase_level(screening4000, 4).
+glutamic_oxaloacetic_transaminase_level(screening4001, 3).
+glutamic_oxaloacetic_transaminase_level(screening4002, 2).
+glutamic_oxaloacetic_transaminase_level(screening4003, 2).
+glutamic_oxaloacetic_transaminase_level(screening4004, 2).
+glutamic_oxaloacetic_transaminase_level(screening4005, 2).
+glutamic_oxaloacetic_transaminase_level(screening4006, 2).
+glutamic_oxaloacetic_transaminase_level(screening4007, 2).
+glutamic_oxaloacetic_transaminase_level(screening4008, 2).
+glutamic_oxaloacetic_transaminase_level(screening4009, 2).
+glutamic_oxaloacetic_transaminase_level(screening401, 2).
+glutamic_oxaloacetic_transaminase_level(screening4010, 2).
+glutamic_oxaloacetic_transaminase_level(screening4011, 2).
+glutamic_oxaloacetic_transaminase_level(screening4012, 3).
+glutamic_oxaloacetic_transaminase_level(screening4013, 4).
+glutamic_oxaloacetic_transaminase_level(screening4014, 3).
+glutamic_oxaloacetic_transaminase_level(screening4015, 3).
+glutamic_oxaloacetic_transaminase_level(screening4016, 2).
+glutamic_oxaloacetic_transaminase_level(screening4017, 2).
+glutamic_oxaloacetic_transaminase_level(screening4018, 2).
+glutamic_oxaloacetic_transaminase_level(screening4019, 2).
+glutamic_oxaloacetic_transaminase_level(screening402, 1).
+glutamic_oxaloacetic_transaminase_level(screening4020, 4).
+glutamic_oxaloacetic_transaminase_level(screening4021, 3).
+glutamic_oxaloacetic_transaminase_level(screening4022, 2).
+glutamic_oxaloacetic_transaminase_level(screening4023, 2).
+glutamic_oxaloacetic_transaminase_level(screening4024, 3).
+glutamic_oxaloacetic_transaminase_level(screening4025, 4).
+glutamic_oxaloacetic_transaminase_level(screening4026, 3).
+glutamic_oxaloacetic_transaminase_level(screening4027, 3).
+glutamic_oxaloacetic_transaminase_level(screening4028, 2).
+glutamic_oxaloacetic_transaminase_level(screening4029, 2).
+glutamic_oxaloacetic_transaminase_level(screening403, 1).
+glutamic_oxaloacetic_transaminase_level(screening4030, 2).
+glutamic_oxaloacetic_transaminase_level(screening4031, 2).
+glutamic_oxaloacetic_transaminase_level(screening4032, 4).
+glutamic_oxaloacetic_transaminase_level(screening4033, 3).
+glutamic_oxaloacetic_transaminase_level(screening4034, 2).
+glutamic_oxaloacetic_transaminase_level(screening4035, 4).
+glutamic_oxaloacetic_transaminase_level(screening4036, 3).
+glutamic_oxaloacetic_transaminase_level(screening4037, 3).
+glutamic_oxaloacetic_transaminase_level(screening4038, 4).
+glutamic_oxaloacetic_transaminase_level(screening4039, 4).
+glutamic_oxaloacetic_transaminase_level(screening404, 1).
+glutamic_oxaloacetic_transaminase_level(screening4040, 3).
+glutamic_oxaloacetic_transaminase_level(screening4041, 3).
+glutamic_oxaloacetic_transaminase_level(screening4042, 3).
+glutamic_oxaloacetic_transaminase_level(screening4043, 4).
+glutamic_oxaloacetic_transaminase_level(screening4044, 3).
+glutamic_oxaloacetic_transaminase_level(screening4045, 3).
+glutamic_oxaloacetic_transaminase_level(screening4046, 4).
+glutamic_oxaloacetic_transaminase_level(screening4047, 3).
+glutamic_oxaloacetic_transaminase_level(screening4048, 2).
+glutamic_oxaloacetic_transaminase_level(screening4049, 2).
+glutamic_oxaloacetic_transaminase_level(screening405, 1).
+glutamic_oxaloacetic_transaminase_level(screening4050, 2).
+glutamic_oxaloacetic_transaminase_level(screening4051, 2).
+glutamic_oxaloacetic_transaminase_level(screening4052, 2).
+glutamic_oxaloacetic_transaminase_level(screening4053, 2).
+glutamic_oxaloacetic_transaminase_level(screening4054, 2).
+glutamic_oxaloacetic_transaminase_level(screening4055, 3).
+glutamic_oxaloacetic_transaminase_level(screening4056, 2).
+glutamic_oxaloacetic_transaminase_level(screening4057, 2).
+glutamic_oxaloacetic_transaminase_level(screening4058, 2).
+glutamic_oxaloacetic_transaminase_level(screening4059, 2).
+glutamic_oxaloacetic_transaminase_level(screening406, 2).
+glutamic_oxaloacetic_transaminase_level(screening4060, 2).
+glutamic_oxaloacetic_transaminase_level(screening4061, 2).
+glutamic_oxaloacetic_transaminase_level(screening4062, 4).
+glutamic_oxaloacetic_transaminase_level(screening4063, 4).
+glutamic_oxaloacetic_transaminase_level(screening4064, 4).
+glutamic_oxaloacetic_transaminase_level(screening4065, 2).
+glutamic_oxaloacetic_transaminase_level(screening4066, 3).
+glutamic_oxaloacetic_transaminase_level(screening4067, 3).
+glutamic_oxaloacetic_transaminase_level(screening4068, 3).
+glutamic_oxaloacetic_transaminase_level(screening4069, 4).
+glutamic_oxaloacetic_transaminase_level(screening407, 4).
+glutamic_oxaloacetic_transaminase_level(screening4070, 3).
+glutamic_oxaloacetic_transaminase_level(screening4071, 4).
+glutamic_oxaloacetic_transaminase_level(screening4072, 4).
+glutamic_oxaloacetic_transaminase_level(screening4073, 4).
+glutamic_oxaloacetic_transaminase_level(screening4074, 4).
+glutamic_oxaloacetic_transaminase_level(screening4075, 4).
+glutamic_oxaloacetic_transaminase_level(screening4076, 4).
+glutamic_oxaloacetic_transaminase_level(screening4077, 3).
+glutamic_oxaloacetic_transaminase_level(screening4078, 3).
+glutamic_oxaloacetic_transaminase_level(screening4079, 2).
+glutamic_oxaloacetic_transaminase_level(screening408, 4).
+glutamic_oxaloacetic_transaminase_level(screening4080, 3).
+glutamic_oxaloacetic_transaminase_level(screening4081, 4).
+glutamic_oxaloacetic_transaminase_level(screening4082, 4).
+glutamic_oxaloacetic_transaminase_level(screening4083, 4).
+glutamic_oxaloacetic_transaminase_level(screening4084, 4).
+glutamic_oxaloacetic_transaminase_level(screening4085, 4).
+glutamic_oxaloacetic_transaminase_level(screening4086, 4).
+glutamic_oxaloacetic_transaminase_level(screening4087, 4).
+glutamic_oxaloacetic_transaminase_level(screening4088, 4).
+glutamic_oxaloacetic_transaminase_level(screening4089, 3).
+glutamic_oxaloacetic_transaminase_level(screening409, 4).
+glutamic_oxaloacetic_transaminase_level(screening4090, 2).
+glutamic_oxaloacetic_transaminase_level(screening4091, 2).
+glutamic_oxaloacetic_transaminase_level(screening4092, 1).
+glutamic_oxaloacetic_transaminase_level(screening4093, 1).
+glutamic_oxaloacetic_transaminase_level(screening4094, 3).
+glutamic_oxaloacetic_transaminase_level(screening4095, 4).
+glutamic_oxaloacetic_transaminase_level(screening4096, 4).
+glutamic_oxaloacetic_transaminase_level(screening4097, 4).
+glutamic_oxaloacetic_transaminase_level(screening4098, 4).
+glutamic_oxaloacetic_transaminase_level(screening4099, 3).
+glutamic_oxaloacetic_transaminase_level(screening410, 4).
+glutamic_oxaloacetic_transaminase_level(screening4100, 4).
+glutamic_oxaloacetic_transaminase_level(screening4101, 4).
+glutamic_oxaloacetic_transaminase_level(screening4102, 4).
+glutamic_oxaloacetic_transaminase_level(screening4103, 4).
+glutamic_oxaloacetic_transaminase_level(screening4104, 4).
+glutamic_oxaloacetic_transaminase_level(screening4105, 4).
+glutamic_oxaloacetic_transaminase_level(screening4106, 4).
+glutamic_oxaloacetic_transaminase_level(screening4107, 4).
+glutamic_oxaloacetic_transaminase_level(screening4108, 4).
+glutamic_oxaloacetic_transaminase_level(screening4109, 3).
+glutamic_oxaloacetic_transaminase_level(screening411, 3).
+glutamic_oxaloacetic_transaminase_level(screening4110, 3).
+glutamic_oxaloacetic_transaminase_level(screening4111, 4).
+glutamic_oxaloacetic_transaminase_level(screening4112, 4).
+glutamic_oxaloacetic_transaminase_level(screening4113, 4).
+glutamic_oxaloacetic_transaminase_level(screening4114, 4).
+glutamic_oxaloacetic_transaminase_level(screening4115, 4).
+glutamic_oxaloacetic_transaminase_level(screening4116, 3).
+glutamic_oxaloacetic_transaminase_level(screening4117, 3).
+glutamic_oxaloacetic_transaminase_level(screening4118, 3).
+glutamic_oxaloacetic_transaminase_level(screening4119, 4).
+glutamic_oxaloacetic_transaminase_level(screening412, 3).
+glutamic_oxaloacetic_transaminase_level(screening4120, 4).
+glutamic_oxaloacetic_transaminase_level(screening4121, 4).
+glutamic_oxaloacetic_transaminase_level(screening4122, 4).
+glutamic_oxaloacetic_transaminase_level(screening4123, 4).
+glutamic_oxaloacetic_transaminase_level(screening4124, 4).
+glutamic_oxaloacetic_transaminase_level(screening4125, 4).
+glutamic_oxaloacetic_transaminase_level(screening4126, 4).
+glutamic_oxaloacetic_transaminase_level(screening4127, 4).
+glutamic_oxaloacetic_transaminase_level(screening4128, 3).
+glutamic_oxaloacetic_transaminase_level(screening4129, 3).
+glutamic_oxaloacetic_transaminase_level(screening413, 3).
+glutamic_oxaloacetic_transaminase_level(screening4130, 4).
+glutamic_oxaloacetic_transaminase_level(screening4131, 4).
+glutamic_oxaloacetic_transaminase_level(screening4132, 3).
+glutamic_oxaloacetic_transaminase_level(screening4133, 2).
+glutamic_oxaloacetic_transaminase_level(screening4134, 2).
+glutamic_oxaloacetic_transaminase_level(screening4135, 1).
+glutamic_oxaloacetic_transaminase_level(screening4136, 2).
+glutamic_oxaloacetic_transaminase_level(screening4137, 1).
+glutamic_oxaloacetic_transaminase_level(screening4138, 1).
+glutamic_oxaloacetic_transaminase_level(screening4139, 1).
+glutamic_oxaloacetic_transaminase_level(screening414, 3).
+glutamic_oxaloacetic_transaminase_level(screening4140, 2).
+glutamic_oxaloacetic_transaminase_level(screening4141, 3).
+glutamic_oxaloacetic_transaminase_level(screening4142, 3).
+glutamic_oxaloacetic_transaminase_level(screening4143, 4).
+glutamic_oxaloacetic_transaminase_level(screening4144, 3).
+glutamic_oxaloacetic_transaminase_level(screening4145, 2).
+glutamic_oxaloacetic_transaminase_level(screening4146, 1).
+glutamic_oxaloacetic_transaminase_level(screening4147, 1).
+glutamic_oxaloacetic_transaminase_level(screening4148, 2).
+glutamic_oxaloacetic_transaminase_level(screening4149, 2).
+glutamic_oxaloacetic_transaminase_level(screening415, 3).
+glutamic_oxaloacetic_transaminase_level(screening4150, 4).
+glutamic_oxaloacetic_transaminase_level(screening4151, 3).
+glutamic_oxaloacetic_transaminase_level(screening4152, 3).
+glutamic_oxaloacetic_transaminase_level(screening4153, 3).
+glutamic_oxaloacetic_transaminase_level(screening4154, 3).
+glutamic_oxaloacetic_transaminase_level(screening4155, 2).
+glutamic_oxaloacetic_transaminase_level(screening4156, 2).
+glutamic_oxaloacetic_transaminase_level(screening4157, 4).
+glutamic_oxaloacetic_transaminase_level(screening4158, 3).
+glutamic_oxaloacetic_transaminase_level(screening4159, 3).
+glutamic_oxaloacetic_transaminase_level(screening416, 4).
+glutamic_oxaloacetic_transaminase_level(screening4160, 3).
+glutamic_oxaloacetic_transaminase_level(screening4161, 3).
+glutamic_oxaloacetic_transaminase_level(screening4162, 2).
+glutamic_oxaloacetic_transaminase_level(screening4163, 2).
+glutamic_oxaloacetic_transaminase_level(screening4164, 2).
+glutamic_oxaloacetic_transaminase_level(screening4165, 4).
+glutamic_oxaloacetic_transaminase_level(screening4166, 3).
+glutamic_oxaloacetic_transaminase_level(screening4167, 1).
+glutamic_oxaloacetic_transaminase_level(screening4168, 1).
+glutamic_oxaloacetic_transaminase_level(screening4169, 1).
+glutamic_oxaloacetic_transaminase_level(screening417, 3).
+glutamic_oxaloacetic_transaminase_level(screening4170, 1).
+glutamic_oxaloacetic_transaminase_level(screening4171, 1).
+glutamic_oxaloacetic_transaminase_level(screening4172, 1).
+glutamic_oxaloacetic_transaminase_level(screening4173, 1).
+glutamic_oxaloacetic_transaminase_level(screening4174, 1).
+glutamic_oxaloacetic_transaminase_level(screening4175, 1).
+glutamic_oxaloacetic_transaminase_level(screening4176, 2).
+glutamic_oxaloacetic_transaminase_level(screening4177, 2).
+glutamic_oxaloacetic_transaminase_level(screening4178, 1).
+glutamic_oxaloacetic_transaminase_level(screening4179, 2).
+glutamic_oxaloacetic_transaminase_level(screening418, 3).
+glutamic_oxaloacetic_transaminase_level(screening4180, 4).
+glutamic_oxaloacetic_transaminase_level(screening4181, 3).
+glutamic_oxaloacetic_transaminase_level(screening4182, 1).
+glutamic_oxaloacetic_transaminase_level(screening4183, 1).
+glutamic_oxaloacetic_transaminase_level(screening4184, 1).
+glutamic_oxaloacetic_transaminase_level(screening4185, 1).
+glutamic_oxaloacetic_transaminase_level(screening4186, 1).
+glutamic_oxaloacetic_transaminase_level(screening4187, 1).
+glutamic_oxaloacetic_transaminase_level(screening4188, 1).
+glutamic_oxaloacetic_transaminase_level(screening4189, 1).
+glutamic_oxaloacetic_transaminase_level(screening419, 4).
+glutamic_oxaloacetic_transaminase_level(screening4190, 1).
+glutamic_oxaloacetic_transaminase_level(screening4191, 2).
+glutamic_oxaloacetic_transaminase_level(screening4192, 2).
+glutamic_oxaloacetic_transaminase_level(screening4193, 1).
+glutamic_oxaloacetic_transaminase_level(screening4194, 2).
+glutamic_oxaloacetic_transaminase_level(screening4195, 3).
+glutamic_oxaloacetic_transaminase_level(screening4196, 4).
+glutamic_oxaloacetic_transaminase_level(screening4197, 3).
+glutamic_oxaloacetic_transaminase_level(screening4198, 3).
+glutamic_oxaloacetic_transaminase_level(screening4199, 3).
+glutamic_oxaloacetic_transaminase_level(screening420, 4).
+glutamic_oxaloacetic_transaminase_level(screening4200, 3).
+glutamic_oxaloacetic_transaminase_level(screening4201, 3).
+glutamic_oxaloacetic_transaminase_level(screening4202, 2).
+glutamic_oxaloacetic_transaminase_level(screening4203, 3).
+glutamic_oxaloacetic_transaminase_level(screening4204, 3).
+glutamic_oxaloacetic_transaminase_level(screening4205, 2).
+glutamic_oxaloacetic_transaminase_level(screening4206, 2).
+glutamic_oxaloacetic_transaminase_level(screening4207, 2).
+glutamic_oxaloacetic_transaminase_level(screening4208, 3).
+glutamic_oxaloacetic_transaminase_level(screening4209, 4).
+glutamic_oxaloacetic_transaminase_level(screening421, 4).
+glutamic_oxaloacetic_transaminase_level(screening4210, 3).
+glutamic_oxaloacetic_transaminase_level(screening4211, 2).
+glutamic_oxaloacetic_transaminase_level(screening4212, 3).
+glutamic_oxaloacetic_transaminase_level(screening4213, 3).
+glutamic_oxaloacetic_transaminase_level(screening4214, 4).
+glutamic_oxaloacetic_transaminase_level(screening4215, 3).
+glutamic_oxaloacetic_transaminase_level(screening4216, 3).
+glutamic_oxaloacetic_transaminase_level(screening4217, 3).
+glutamic_oxaloacetic_transaminase_level(screening4218, 3).
+glutamic_oxaloacetic_transaminase_level(screening4219, 3).
+glutamic_oxaloacetic_transaminase_level(screening422, 4).
+glutamic_oxaloacetic_transaminase_level(screening4220, 3).
+glutamic_oxaloacetic_transaminase_level(screening4221, 2).
+glutamic_oxaloacetic_transaminase_level(screening4222, 2).
+glutamic_oxaloacetic_transaminase_level(screening4223, 2).
+glutamic_oxaloacetic_transaminase_level(screening4224, 2).
+glutamic_oxaloacetic_transaminase_level(screening4225, 3).
+glutamic_oxaloacetic_transaminase_level(screening4226, 3).
+glutamic_oxaloacetic_transaminase_level(screening4227, 4).
+glutamic_oxaloacetic_transaminase_level(screening4228, 4).
+glutamic_oxaloacetic_transaminase_level(screening4229, 4).
+glutamic_oxaloacetic_transaminase_level(screening423, 4).
+glutamic_oxaloacetic_transaminase_level(screening4230, 3).
+glutamic_oxaloacetic_transaminase_level(screening4231, 4).
+glutamic_oxaloacetic_transaminase_level(screening4232, 4).
+glutamic_oxaloacetic_transaminase_level(screening4233, 4).
+glutamic_oxaloacetic_transaminase_level(screening4234, 3).
+glutamic_oxaloacetic_transaminase_level(screening4235, 4).
+glutamic_oxaloacetic_transaminase_level(screening4236, 4).
+glutamic_oxaloacetic_transaminase_level(screening4237, 4).
+glutamic_oxaloacetic_transaminase_level(screening4238, 4).
+glutamic_oxaloacetic_transaminase_level(screening4239, 3).
+glutamic_oxaloacetic_transaminase_level(screening424, 3).
+glutamic_oxaloacetic_transaminase_level(screening4240, 4).
+glutamic_oxaloacetic_transaminase_level(screening4241, 4).
+glutamic_oxaloacetic_transaminase_level(screening4242, 4).
+glutamic_oxaloacetic_transaminase_level(screening4243, 3).
+glutamic_oxaloacetic_transaminase_level(screening4244, 4).
+glutamic_oxaloacetic_transaminase_level(screening4245, 4).
+glutamic_oxaloacetic_transaminase_level(screening4246, 4).
+glutamic_oxaloacetic_transaminase_level(screening4247, 4).
+glutamic_oxaloacetic_transaminase_level(screening4248, 3).
+glutamic_oxaloacetic_transaminase_level(screening4249, 4).
+glutamic_oxaloacetic_transaminase_level(screening425, 3).
+glutamic_oxaloacetic_transaminase_level(screening4250, 4).
+glutamic_oxaloacetic_transaminase_level(screening4251, 4).
+glutamic_oxaloacetic_transaminase_level(screening4252, 3).
+glutamic_oxaloacetic_transaminase_level(screening4253, 4).
+glutamic_oxaloacetic_transaminase_level(screening4254, 4).
+glutamic_oxaloacetic_transaminase_level(screening4255, 4).
+glutamic_oxaloacetic_transaminase_level(screening4256, 4).
+glutamic_oxaloacetic_transaminase_level(screening4257, 3).
+glutamic_oxaloacetic_transaminase_level(screening4258, 4).
+glutamic_oxaloacetic_transaminase_level(screening4259, 4).
+glutamic_oxaloacetic_transaminase_level(screening426, 3).
+glutamic_oxaloacetic_transaminase_level(screening4260, 4).
+glutamic_oxaloacetic_transaminase_level(screening4261, 3).
+glutamic_oxaloacetic_transaminase_level(screening4262, 4).
+glutamic_oxaloacetic_transaminase_level(screening4263, 4).
+glutamic_oxaloacetic_transaminase_level(screening4264, 3).
+glutamic_oxaloacetic_transaminase_level(screening4265, 3).
+glutamic_oxaloacetic_transaminase_level(screening4266, 3).
+glutamic_oxaloacetic_transaminase_level(screening4267, 3).
+glutamic_oxaloacetic_transaminase_level(screening4268, 3).
+glutamic_oxaloacetic_transaminase_level(screening4269, 3).
+glutamic_oxaloacetic_transaminase_level(screening427, 3).
+glutamic_oxaloacetic_transaminase_level(screening4270, 4).
+glutamic_oxaloacetic_transaminase_level(screening4271, 4).
+glutamic_oxaloacetic_transaminase_level(screening4272, 4).
+glutamic_oxaloacetic_transaminase_level(screening4273, 4).
+glutamic_oxaloacetic_transaminase_level(screening4274, 3).
+glutamic_oxaloacetic_transaminase_level(screening4275, 3).
+glutamic_oxaloacetic_transaminase_level(screening4276, 3).
+glutamic_oxaloacetic_transaminase_level(screening4277, 4).
+glutamic_oxaloacetic_transaminase_level(screening4278, 4).
+glutamic_oxaloacetic_transaminase_level(screening4279, 4).
+glutamic_oxaloacetic_transaminase_level(screening428, 3).
+glutamic_oxaloacetic_transaminase_level(screening4280, 4).
+glutamic_oxaloacetic_transaminase_level(screening4281, 3).
+glutamic_oxaloacetic_transaminase_level(screening4282, 3).
+glutamic_oxaloacetic_transaminase_level(screening4283, 2).
+glutamic_oxaloacetic_transaminase_level(screening4284, 2).
+glutamic_oxaloacetic_transaminase_level(screening4285, 4).
+glutamic_oxaloacetic_transaminase_level(screening4286, 3).
+glutamic_oxaloacetic_transaminase_level(screening4287, 4).
+glutamic_oxaloacetic_transaminase_level(screening4288, 3).
+glutamic_oxaloacetic_transaminase_level(screening4289, 3).
+glutamic_oxaloacetic_transaminase_level(screening429, 4).
+glutamic_oxaloacetic_transaminase_level(screening4290, 4).
+glutamic_oxaloacetic_transaminase_level(screening4291, 3).
+glutamic_oxaloacetic_transaminase_level(screening4292, 3).
+glutamic_oxaloacetic_transaminase_level(screening4293, 4).
+glutamic_oxaloacetic_transaminase_level(screening4294, 3).
+glutamic_oxaloacetic_transaminase_level(screening4295, 3).
+glutamic_oxaloacetic_transaminase_level(screening4296, 4).
+glutamic_oxaloacetic_transaminase_level(screening4297, 4).
+glutamic_oxaloacetic_transaminase_level(screening4298, 4).
+glutamic_oxaloacetic_transaminase_level(screening4299, 4).
+glutamic_oxaloacetic_transaminase_level(screening430, 3).
+glutamic_oxaloacetic_transaminase_level(screening4300, 4).
+glutamic_oxaloacetic_transaminase_level(screening4301, 4).
+glutamic_oxaloacetic_transaminase_level(screening4302, 4).
+glutamic_oxaloacetic_transaminase_level(screening4303, 4).
+glutamic_oxaloacetic_transaminase_level(screening4304, 3).
+glutamic_oxaloacetic_transaminase_level(screening4305, 3).
+glutamic_oxaloacetic_transaminase_level(screening4306, 3).
+glutamic_oxaloacetic_transaminase_level(screening4307, 2).
+glutamic_oxaloacetic_transaminase_level(screening4308, 2).
+glutamic_oxaloacetic_transaminase_level(screening4309, 2).
+glutamic_oxaloacetic_transaminase_level(screening431, 3).
+glutamic_oxaloacetic_transaminase_level(screening4310, 2).
+glutamic_oxaloacetic_transaminase_level(screening4311, 2).
+glutamic_oxaloacetic_transaminase_level(screening4312, 2).
+glutamic_oxaloacetic_transaminase_level(screening4313, 2).
+glutamic_oxaloacetic_transaminase_level(screening4314, 2).
+glutamic_oxaloacetic_transaminase_level(screening4315, 4).
+glutamic_oxaloacetic_transaminase_level(screening4316, 4).
+glutamic_oxaloacetic_transaminase_level(screening4317, 4).
+glutamic_oxaloacetic_transaminase_level(screening4318, 4).
+glutamic_oxaloacetic_transaminase_level(screening4319, 4).
+glutamic_oxaloacetic_transaminase_level(screening432, 4).
+glutamic_oxaloacetic_transaminase_level(screening4320, 4).
+glutamic_oxaloacetic_transaminase_level(screening4321, 4).
+glutamic_oxaloacetic_transaminase_level(screening4322, 4).
+glutamic_oxaloacetic_transaminase_level(screening4323, 3).
+glutamic_oxaloacetic_transaminase_level(screening4324, 3).
+glutamic_oxaloacetic_transaminase_level(screening4325, 3).
+glutamic_oxaloacetic_transaminase_level(screening4326, 2).
+glutamic_oxaloacetic_transaminase_level(screening4327, 2).
+glutamic_oxaloacetic_transaminase_level(screening4328, 2).
+glutamic_oxaloacetic_transaminase_level(screening4329, 2).
+glutamic_oxaloacetic_transaminase_level(screening433, 4).
+glutamic_oxaloacetic_transaminase_level(screening4330, 2).
+glutamic_oxaloacetic_transaminase_level(screening4331, 2).
+glutamic_oxaloacetic_transaminase_level(screening4332, 2).
+glutamic_oxaloacetic_transaminase_level(screening4333, 2).
+glutamic_oxaloacetic_transaminase_level(screening4334, 4).
+glutamic_oxaloacetic_transaminase_level(screening4335, 4).
+glutamic_oxaloacetic_transaminase_level(screening4336, 4).
+glutamic_oxaloacetic_transaminase_level(screening4337, 3).
+glutamic_oxaloacetic_transaminase_level(screening4338, 3).
+glutamic_oxaloacetic_transaminase_level(screening4339, 3).
+glutamic_oxaloacetic_transaminase_level(screening434, 4).
+glutamic_oxaloacetic_transaminase_level(screening4340, 3).
+glutamic_oxaloacetic_transaminase_level(screening4341, 3).
+glutamic_oxaloacetic_transaminase_level(screening4342, 4).
+glutamic_oxaloacetic_transaminase_level(screening4343, 4).
+glutamic_oxaloacetic_transaminase_level(screening4344, 3).
+glutamic_oxaloacetic_transaminase_level(screening4345, 4).
+glutamic_oxaloacetic_transaminase_level(screening4346, 4).
+glutamic_oxaloacetic_transaminase_level(screening4347, 4).
+glutamic_oxaloacetic_transaminase_level(screening4348, 3).
+glutamic_oxaloacetic_transaminase_level(screening4349, 3).
+glutamic_oxaloacetic_transaminase_level(screening435, 2).
+glutamic_oxaloacetic_transaminase_level(screening4350, 3).
+glutamic_oxaloacetic_transaminase_level(screening4351, 3).
+glutamic_oxaloacetic_transaminase_level(screening4352, 3).
+glutamic_oxaloacetic_transaminase_level(screening4353, 4).
+glutamic_oxaloacetic_transaminase_level(screening4354, 4).
+glutamic_oxaloacetic_transaminase_level(screening4355, 3).
+glutamic_oxaloacetic_transaminase_level(screening4356, 4).
+glutamic_oxaloacetic_transaminase_level(screening4357, 4).
+glutamic_oxaloacetic_transaminase_level(screening4358, 3).
+glutamic_oxaloacetic_transaminase_level(screening4359, 3).
+glutamic_oxaloacetic_transaminase_level(screening436, 4).
+glutamic_oxaloacetic_transaminase_level(screening4360, 3).
+glutamic_oxaloacetic_transaminase_level(screening4361, 3).
+glutamic_oxaloacetic_transaminase_level(screening4362, 3).
+glutamic_oxaloacetic_transaminase_level(screening4363, 3).
+glutamic_oxaloacetic_transaminase_level(screening4364, 3).
+glutamic_oxaloacetic_transaminase_level(screening4365, 3).
+glutamic_oxaloacetic_transaminase_level(screening4366, 3).
+glutamic_oxaloacetic_transaminase_level(screening4367, 4).
+glutamic_oxaloacetic_transaminase_level(screening4368, 3).
+glutamic_oxaloacetic_transaminase_level(screening4369, 3).
+glutamic_oxaloacetic_transaminase_level(screening437, 4).
+glutamic_oxaloacetic_transaminase_level(screening4370, 4).
+glutamic_oxaloacetic_transaminase_level(screening4371, 4).
+glutamic_oxaloacetic_transaminase_level(screening4372, 3).
+glutamic_oxaloacetic_transaminase_level(screening4373, 3).
+glutamic_oxaloacetic_transaminase_level(screening4374, 4).
+glutamic_oxaloacetic_transaminase_level(screening4375, 3).
+glutamic_oxaloacetic_transaminase_level(screening4376, 2).
+glutamic_oxaloacetic_transaminase_level(screening4377, 2).
+glutamic_oxaloacetic_transaminase_level(screening4378, 2).
+glutamic_oxaloacetic_transaminase_level(screening4379, 2).
+glutamic_oxaloacetic_transaminase_level(screening438, 2).
+glutamic_oxaloacetic_transaminase_level(screening4380, 2).
+glutamic_oxaloacetic_transaminase_level(screening4381, 2).
+glutamic_oxaloacetic_transaminase_level(screening4382, 3).
+glutamic_oxaloacetic_transaminase_level(screening4383, 3).
+glutamic_oxaloacetic_transaminase_level(screening4384, 4).
+glutamic_oxaloacetic_transaminase_level(screening4385, 3).
+glutamic_oxaloacetic_transaminase_level(screening4386, 3).
+glutamic_oxaloacetic_transaminase_level(screening4387, 3).
+glutamic_oxaloacetic_transaminase_level(screening4388, 2).
+glutamic_oxaloacetic_transaminase_level(screening4389, 3).
+glutamic_oxaloacetic_transaminase_level(screening439, 2).
+glutamic_oxaloacetic_transaminase_level(screening4390, 4).
+glutamic_oxaloacetic_transaminase_level(screening4391, 3).
+glutamic_oxaloacetic_transaminase_level(screening4392, 4).
+glutamic_oxaloacetic_transaminase_level(screening4393, 4).
+glutamic_oxaloacetic_transaminase_level(screening4394, 4).
+glutamic_oxaloacetic_transaminase_level(screening4395, 3).
+glutamic_oxaloacetic_transaminase_level(screening4396, 3).
+glutamic_oxaloacetic_transaminase_level(screening4397, 4).
+glutamic_oxaloacetic_transaminase_level(screening4398, 4).
+glutamic_oxaloacetic_transaminase_level(screening4399, 4).
+glutamic_oxaloacetic_transaminase_level(screening440, 2).
+glutamic_oxaloacetic_transaminase_level(screening4400, 4).
+glutamic_oxaloacetic_transaminase_level(screening4401, 3).
+glutamic_oxaloacetic_transaminase_level(screening4402, 3).
+glutamic_oxaloacetic_transaminase_level(screening4403, 4).
+glutamic_oxaloacetic_transaminase_level(screening4404, 4).
+glutamic_oxaloacetic_transaminase_level(screening4405, 3).
+glutamic_oxaloacetic_transaminase_level(screening4406, 2).
+glutamic_oxaloacetic_transaminase_level(screening4407, 2).
+glutamic_oxaloacetic_transaminase_level(screening4408, 2).
+glutamic_oxaloacetic_transaminase_level(screening4409, 2).
+glutamic_oxaloacetic_transaminase_level(screening441, 4).
+glutamic_oxaloacetic_transaminase_level(screening4410, 2).
+glutamic_oxaloacetic_transaminase_level(screening4411, 2).
+glutamic_oxaloacetic_transaminase_level(screening4412, 3).
+glutamic_oxaloacetic_transaminase_level(screening4413, 3).
+glutamic_oxaloacetic_transaminase_level(screening4414, 2).
+glutamic_oxaloacetic_transaminase_level(screening4415, 3).
+glutamic_oxaloacetic_transaminase_level(screening4416, 4).
+glutamic_oxaloacetic_transaminase_level(screening4417, 2).
+glutamic_oxaloacetic_transaminase_level(screening4418, 3).
+glutamic_oxaloacetic_transaminase_level(screening4419, 2).
+glutamic_oxaloacetic_transaminase_level(screening442, 2).
+glutamic_oxaloacetic_transaminase_level(screening4420, 4).
+glutamic_oxaloacetic_transaminase_level(screening4421, 4).
+glutamic_oxaloacetic_transaminase_level(screening4422, 3).
+glutamic_oxaloacetic_transaminase_level(screening4423, 4).
+glutamic_oxaloacetic_transaminase_level(screening4424, 2).
+glutamic_oxaloacetic_transaminase_level(screening4425, 3).
+glutamic_oxaloacetic_transaminase_level(screening4426, 3).
+glutamic_oxaloacetic_transaminase_level(screening4427, 2).
+glutamic_oxaloacetic_transaminase_level(screening4428, 4).
+glutamic_oxaloacetic_transaminase_level(screening4429, 4).
+glutamic_oxaloacetic_transaminase_level(screening443, 1).
+glutamic_oxaloacetic_transaminase_level(screening4430, 3).
+glutamic_oxaloacetic_transaminase_level(screening4431, 3).
+glutamic_oxaloacetic_transaminase_level(screening4432, 2).
+glutamic_oxaloacetic_transaminase_level(screening4433, 2).
+glutamic_oxaloacetic_transaminase_level(screening4434, 2).
+glutamic_oxaloacetic_transaminase_level(screening4435, 2).
+glutamic_oxaloacetic_transaminase_level(screening4436, 2).
+glutamic_oxaloacetic_transaminase_level(screening4437, 4).
+glutamic_oxaloacetic_transaminase_level(screening4438, 4).
+glutamic_oxaloacetic_transaminase_level(screening4439, 4).
+glutamic_oxaloacetic_transaminase_level(screening444, 1).
+glutamic_oxaloacetic_transaminase_level(screening4440, 4).
+glutamic_oxaloacetic_transaminase_level(screening4441, 4).
+glutamic_oxaloacetic_transaminase_level(screening4442, 4).
+glutamic_oxaloacetic_transaminase_level(screening4443, 4).
+glutamic_oxaloacetic_transaminase_level(screening4444, 4).
+glutamic_oxaloacetic_transaminase_level(screening4445, 3).
+glutamic_oxaloacetic_transaminase_level(screening4446, 3).
+glutamic_oxaloacetic_transaminase_level(screening4447, 3).
+glutamic_oxaloacetic_transaminase_level(screening4448, 2).
+glutamic_oxaloacetic_transaminase_level(screening4449, 1).
+glutamic_oxaloacetic_transaminase_level(screening445, 1).
+glutamic_oxaloacetic_transaminase_level(screening4450, 1).
+glutamic_oxaloacetic_transaminase_level(screening4451, 1).
+glutamic_oxaloacetic_transaminase_level(screening4452, 4).
+glutamic_oxaloacetic_transaminase_level(screening4453, 3).
+glutamic_oxaloacetic_transaminase_level(screening4454, 3).
+glutamic_oxaloacetic_transaminase_level(screening4455, 4).
+glutamic_oxaloacetic_transaminase_level(screening4456, 3).
+glutamic_oxaloacetic_transaminase_level(screening4457, 3).
+glutamic_oxaloacetic_transaminase_level(screening4458, 4).
+glutamic_oxaloacetic_transaminase_level(screening4459, 4).
+glutamic_oxaloacetic_transaminase_level(screening446, 1).
+glutamic_oxaloacetic_transaminase_level(screening4460, 4).
+glutamic_oxaloacetic_transaminase_level(screening4461, 4).
+glutamic_oxaloacetic_transaminase_level(screening4462, 4).
+glutamic_oxaloacetic_transaminase_level(screening4463, 3).
+glutamic_oxaloacetic_transaminase_level(screening4464, 2).
+glutamic_oxaloacetic_transaminase_level(screening4465, 2).
+glutamic_oxaloacetic_transaminase_level(screening4466, 2).
+glutamic_oxaloacetic_transaminase_level(screening4467, 3).
+glutamic_oxaloacetic_transaminase_level(screening4468, 3).
+glutamic_oxaloacetic_transaminase_level(screening4469, 2).
+glutamic_oxaloacetic_transaminase_level(screening447, 2).
+glutamic_oxaloacetic_transaminase_level(screening4470, 4).
+glutamic_oxaloacetic_transaminase_level(screening4471, 3).
+glutamic_oxaloacetic_transaminase_level(screening4472, 3).
+glutamic_oxaloacetic_transaminase_level(screening4473, 3).
+glutamic_oxaloacetic_transaminase_level(screening4474, 3).
+glutamic_oxaloacetic_transaminase_level(screening4475, 3).
+glutamic_oxaloacetic_transaminase_level(screening4476, 3).
+glutamic_oxaloacetic_transaminase_level(screening4477, 2).
+glutamic_oxaloacetic_transaminase_level(screening4478, 3).
+glutamic_oxaloacetic_transaminase_level(screening4479, 4).
+glutamic_oxaloacetic_transaminase_level(screening448, 3).
+glutamic_oxaloacetic_transaminase_level(screening4480, 4).
+glutamic_oxaloacetic_transaminase_level(screening4481, 4).
+glutamic_oxaloacetic_transaminase_level(screening4482, 4).
+glutamic_oxaloacetic_transaminase_level(screening4483, 4).
+glutamic_oxaloacetic_transaminase_level(screening4484, 3).
+glutamic_oxaloacetic_transaminase_level(screening4485, 2).
+glutamic_oxaloacetic_transaminase_level(screening4486, 2).
+glutamic_oxaloacetic_transaminase_level(screening4487, 2).
+glutamic_oxaloacetic_transaminase_level(screening4488, 3).
+glutamic_oxaloacetic_transaminase_level(screening4489, 3).
+glutamic_oxaloacetic_transaminase_level(screening449, 3).
+glutamic_oxaloacetic_transaminase_level(screening4490, 2).
+glutamic_oxaloacetic_transaminase_level(screening4491, 4).
+glutamic_oxaloacetic_transaminase_level(screening4492, 3).
+glutamic_oxaloacetic_transaminase_level(screening4493, 3).
+glutamic_oxaloacetic_transaminase_level(screening4494, 3).
+glutamic_oxaloacetic_transaminase_level(screening4495, 3).
+glutamic_oxaloacetic_transaminase_level(screening4496, 3).
+glutamic_oxaloacetic_transaminase_level(screening4497, 3).
+glutamic_oxaloacetic_transaminase_level(screening4498, 2).
+glutamic_oxaloacetic_transaminase_level(screening4499, 3).
+glutamic_oxaloacetic_transaminase_level(screening450, 2).
+glutamic_oxaloacetic_transaminase_level(screening4500, 4).
+glutamic_oxaloacetic_transaminase_level(screening4501, 4).
+glutamic_oxaloacetic_transaminase_level(screening4502, 4).
+glutamic_oxaloacetic_transaminase_level(screening4503, 4).
+glutamic_oxaloacetic_transaminase_level(screening4504, 4).
+glutamic_oxaloacetic_transaminase_level(screening4505, 3).
+glutamic_oxaloacetic_transaminase_level(screening4506, 2).
+glutamic_oxaloacetic_transaminase_level(screening4507, 2).
+glutamic_oxaloacetic_transaminase_level(screening4508, 2).
+glutamic_oxaloacetic_transaminase_level(screening4509, 3).
+glutamic_oxaloacetic_transaminase_level(screening451, 2).
+glutamic_oxaloacetic_transaminase_level(screening4510, 3).
+glutamic_oxaloacetic_transaminase_level(screening4511, 2).
+glutamic_oxaloacetic_transaminase_level(screening4512, 4).
+glutamic_oxaloacetic_transaminase_level(screening4513, 3).
+glutamic_oxaloacetic_transaminase_level(screening4514, 3).
+glutamic_oxaloacetic_transaminase_level(screening4515, 3).
+glutamic_oxaloacetic_transaminase_level(screening4516, 3).
+glutamic_oxaloacetic_transaminase_level(screening4517, 3).
+glutamic_oxaloacetic_transaminase_level(screening4518, 3).
+glutamic_oxaloacetic_transaminase_level(screening4519, 2).
+glutamic_oxaloacetic_transaminase_level(screening452, 2).
+glutamic_oxaloacetic_transaminase_level(screening4520, 3).
+glutamic_oxaloacetic_transaminase_level(screening4521, 4).
+glutamic_oxaloacetic_transaminase_level(screening4522, 4).
+glutamic_oxaloacetic_transaminase_level(screening4523, 4).
+glutamic_oxaloacetic_transaminase_level(screening4524, 4).
+glutamic_oxaloacetic_transaminase_level(screening4525, 4).
+glutamic_oxaloacetic_transaminase_level(screening4526, 3).
+glutamic_oxaloacetic_transaminase_level(screening4527, 2).
+glutamic_oxaloacetic_transaminase_level(screening4528, 2).
+glutamic_oxaloacetic_transaminase_level(screening4529, 2).
+glutamic_oxaloacetic_transaminase_level(screening453, 3).
+glutamic_oxaloacetic_transaminase_level(screening4530, 3).
+glutamic_oxaloacetic_transaminase_level(screening4531, 3).
+glutamic_oxaloacetic_transaminase_level(screening4532, 2).
+glutamic_oxaloacetic_transaminase_level(screening4533, 4).
+glutamic_oxaloacetic_transaminase_level(screening4534, 3).
+glutamic_oxaloacetic_transaminase_level(screening4535, 3).
+glutamic_oxaloacetic_transaminase_level(screening4536, 3).
+glutamic_oxaloacetic_transaminase_level(screening4537, 3).
+glutamic_oxaloacetic_transaminase_level(screening4538, 3).
+glutamic_oxaloacetic_transaminase_level(screening4539, 3).
+glutamic_oxaloacetic_transaminase_level(screening454, 3).
+glutamic_oxaloacetic_transaminase_level(screening4540, 2).
+glutamic_oxaloacetic_transaminase_level(screening4541, 3).
+glutamic_oxaloacetic_transaminase_level(screening4542, 4).
+glutamic_oxaloacetic_transaminase_level(screening4543, 4).
+glutamic_oxaloacetic_transaminase_level(screening4544, 4).
+glutamic_oxaloacetic_transaminase_level(screening4545, 4).
+glutamic_oxaloacetic_transaminase_level(screening4546, 4).
+glutamic_oxaloacetic_transaminase_level(screening4547, 3).
+glutamic_oxaloacetic_transaminase_level(screening4548, 2).
+glutamic_oxaloacetic_transaminase_level(screening4549, 2).
+glutamic_oxaloacetic_transaminase_level(screening455, 3).
+glutamic_oxaloacetic_transaminase_level(screening4550, 2).
+glutamic_oxaloacetic_transaminase_level(screening4551, 3).
+glutamic_oxaloacetic_transaminase_level(screening4552, 3).
+glutamic_oxaloacetic_transaminase_level(screening4553, 2).
+glutamic_oxaloacetic_transaminase_level(screening4554, 4).
+glutamic_oxaloacetic_transaminase_level(screening4555, 3).
+glutamic_oxaloacetic_transaminase_level(screening4556, 3).
+glutamic_oxaloacetic_transaminase_level(screening4557, 3).
+glutamic_oxaloacetic_transaminase_level(screening4558, 3).
+glutamic_oxaloacetic_transaminase_level(screening4559, 3).
+glutamic_oxaloacetic_transaminase_level(screening456, 4).
+glutamic_oxaloacetic_transaminase_level(screening4560, 3).
+glutamic_oxaloacetic_transaminase_level(screening4561, 2).
+glutamic_oxaloacetic_transaminase_level(screening4562, 3).
+glutamic_oxaloacetic_transaminase_level(screening4563, 4).
+glutamic_oxaloacetic_transaminase_level(screening4564, 4).
+glutamic_oxaloacetic_transaminase_level(screening4565, 4).
+glutamic_oxaloacetic_transaminase_level(screening4566, 4).
+glutamic_oxaloacetic_transaminase_level(screening4567, 3).
+glutamic_oxaloacetic_transaminase_level(screening4568, 3).
+glutamic_oxaloacetic_transaminase_level(screening4569, 3).
+glutamic_oxaloacetic_transaminase_level(screening457, 5).
+glutamic_oxaloacetic_transaminase_level(screening4570, 3).
+glutamic_oxaloacetic_transaminase_level(screening4571, 3).
+glutamic_oxaloacetic_transaminase_level(screening4572, 4).
+glutamic_oxaloacetic_transaminase_level(screening4573, 4).
+glutamic_oxaloacetic_transaminase_level(screening4574, 4).
+glutamic_oxaloacetic_transaminase_level(screening4575, 3).
+glutamic_oxaloacetic_transaminase_level(screening4576, 1).
+glutamic_oxaloacetic_transaminase_level(screening4577, 1).
+glutamic_oxaloacetic_transaminase_level(screening4578, 1).
+glutamic_oxaloacetic_transaminase_level(screening4579, 1).
+glutamic_oxaloacetic_transaminase_level(screening458, 2).
+glutamic_oxaloacetic_transaminase_level(screening4580, 1).
+glutamic_oxaloacetic_transaminase_level(screening4581, 1).
+glutamic_oxaloacetic_transaminase_level(screening4582, 1).
+glutamic_oxaloacetic_transaminase_level(screening4583, 1).
+glutamic_oxaloacetic_transaminase_level(screening4584, 2).
+glutamic_oxaloacetic_transaminase_level(screening4585, 4).
+glutamic_oxaloacetic_transaminase_level(screening4586, 4).
+glutamic_oxaloacetic_transaminase_level(screening4587, 4).
+glutamic_oxaloacetic_transaminase_level(screening4588, 4).
+glutamic_oxaloacetic_transaminase_level(screening4589, 4).
+glutamic_oxaloacetic_transaminase_level(screening459, 3).
+glutamic_oxaloacetic_transaminase_level(screening4590, 4).
+glutamic_oxaloacetic_transaminase_level(screening4591, 4).
+glutamic_oxaloacetic_transaminase_level(screening4592, 4).
+glutamic_oxaloacetic_transaminase_level(screening4593, 3).
+glutamic_oxaloacetic_transaminase_level(screening4594, 3).
+glutamic_oxaloacetic_transaminase_level(screening4595, 4).
+glutamic_oxaloacetic_transaminase_level(screening4596, 3).
+glutamic_oxaloacetic_transaminase_level(screening4597, 4).
+glutamic_oxaloacetic_transaminase_level(screening4598, 4).
+glutamic_oxaloacetic_transaminase_level(screening4599, 4).
+glutamic_oxaloacetic_transaminase_level(screening460, 5).
+glutamic_oxaloacetic_transaminase_level(screening4600, 4).
+glutamic_oxaloacetic_transaminase_level(screening4601, 4).
+glutamic_oxaloacetic_transaminase_level(screening4602, 3).
+glutamic_oxaloacetic_transaminase_level(screening4603, 3).
+glutamic_oxaloacetic_transaminase_level(screening4604, 4).
+glutamic_oxaloacetic_transaminase_level(screening4605, 4).
+glutamic_oxaloacetic_transaminase_level(screening4606, 3).
+glutamic_oxaloacetic_transaminase_level(screening4607, 3).
+glutamic_oxaloacetic_transaminase_level(screening4608, 4).
+glutamic_oxaloacetic_transaminase_level(screening4609, 4).
+glutamic_oxaloacetic_transaminase_level(screening461, 4).
+glutamic_oxaloacetic_transaminase_level(screening4610, 4).
+glutamic_oxaloacetic_transaminase_level(screening4611, 4).
+glutamic_oxaloacetic_transaminase_level(screening4612, 4).
+glutamic_oxaloacetic_transaminase_level(screening4613, 4).
+glutamic_oxaloacetic_transaminase_level(screening4614, 4).
+glutamic_oxaloacetic_transaminase_level(screening4615, 4).
+glutamic_oxaloacetic_transaminase_level(screening4616, 4).
+glutamic_oxaloacetic_transaminase_level(screening4617, 4).
+glutamic_oxaloacetic_transaminase_level(screening4618, 4).
+glutamic_oxaloacetic_transaminase_level(screening4619, 4).
+glutamic_oxaloacetic_transaminase_level(screening462, 4).
+glutamic_oxaloacetic_transaminase_level(screening4620, 4).
+glutamic_oxaloacetic_transaminase_level(screening4621, 4).
+glutamic_oxaloacetic_transaminase_level(screening4622, 4).
+glutamic_oxaloacetic_transaminase_level(screening4623, 4).
+glutamic_oxaloacetic_transaminase_level(screening4624, 4).
+glutamic_oxaloacetic_transaminase_level(screening4625, 4).
+glutamic_oxaloacetic_transaminase_level(screening4626, 4).
+glutamic_oxaloacetic_transaminase_level(screening4627, 3).
+glutamic_oxaloacetic_transaminase_level(screening4628, 4).
+glutamic_oxaloacetic_transaminase_level(screening4629, 3).
+glutamic_oxaloacetic_transaminase_level(screening463, 3).
+glutamic_oxaloacetic_transaminase_level(screening4630, 3).
+glutamic_oxaloacetic_transaminase_level(screening4631, 3).
+glutamic_oxaloacetic_transaminase_level(screening4632, 3).
+glutamic_oxaloacetic_transaminase_level(screening4633, 4).
+glutamic_oxaloacetic_transaminase_level(screening4634, 3).
+glutamic_oxaloacetic_transaminase_level(screening4635, 3).
+glutamic_oxaloacetic_transaminase_level(screening4636, 4).
+glutamic_oxaloacetic_transaminase_level(screening4637, 4).
+glutamic_oxaloacetic_transaminase_level(screening4638, 4).
+glutamic_oxaloacetic_transaminase_level(screening4639, 4).
+glutamic_oxaloacetic_transaminase_level(screening464, 4).
+glutamic_oxaloacetic_transaminase_level(screening4640, 4).
+glutamic_oxaloacetic_transaminase_level(screening4641, 4).
+glutamic_oxaloacetic_transaminase_level(screening4642, 4).
+glutamic_oxaloacetic_transaminase_level(screening4643, 4).
+glutamic_oxaloacetic_transaminase_level(screening4644, 4).
+glutamic_oxaloacetic_transaminase_level(screening4645, 3).
+glutamic_oxaloacetic_transaminase_level(screening4646, 4).
+glutamic_oxaloacetic_transaminase_level(screening4647, 3).
+glutamic_oxaloacetic_transaminase_level(screening4648, 3).
+glutamic_oxaloacetic_transaminase_level(screening4649, 3).
+glutamic_oxaloacetic_transaminase_level(screening465, 3).
+glutamic_oxaloacetic_transaminase_level(screening4650, 3).
+glutamic_oxaloacetic_transaminase_level(screening4651, 4).
+glutamic_oxaloacetic_transaminase_level(screening4652, 3).
+glutamic_oxaloacetic_transaminase_level(screening4653, 3).
+glutamic_oxaloacetic_transaminase_level(screening4654, 4).
+glutamic_oxaloacetic_transaminase_level(screening4655, 4).
+glutamic_oxaloacetic_transaminase_level(screening4656, 4).
+glutamic_oxaloacetic_transaminase_level(screening4657, 4).
+glutamic_oxaloacetic_transaminase_level(screening4658, 2).
+glutamic_oxaloacetic_transaminase_level(screening4659, 2).
+glutamic_oxaloacetic_transaminase_level(screening466, 2).
+glutamic_oxaloacetic_transaminase_level(screening4660, 2).
+glutamic_oxaloacetic_transaminase_level(screening4661, 2).
+glutamic_oxaloacetic_transaminase_level(screening4662, 2).
+glutamic_oxaloacetic_transaminase_level(screening4663, 3).
+glutamic_oxaloacetic_transaminase_level(screening4664, 3).
+glutamic_oxaloacetic_transaminase_level(screening4665, 3).
+glutamic_oxaloacetic_transaminase_level(screening4666, 3).
+glutamic_oxaloacetic_transaminase_level(screening4667, 4).
+glutamic_oxaloacetic_transaminase_level(screening4668, 4).
+glutamic_oxaloacetic_transaminase_level(screening4669, 4).
+glutamic_oxaloacetic_transaminase_level(screening467, 2).
+glutamic_oxaloacetic_transaminase_level(screening4670, 2).
+glutamic_oxaloacetic_transaminase_level(screening4671, 2).
+glutamic_oxaloacetic_transaminase_level(screening4672, 2).
+glutamic_oxaloacetic_transaminase_level(screening4673, 2).
+glutamic_oxaloacetic_transaminase_level(screening4674, 2).
+glutamic_oxaloacetic_transaminase_level(screening4675, 2).
+glutamic_oxaloacetic_transaminase_level(screening4676, 2).
+glutamic_oxaloacetic_transaminase_level(screening4677, 2).
+glutamic_oxaloacetic_transaminase_level(screening4678, 2).
+glutamic_oxaloacetic_transaminase_level(screening4679, 2).
+glutamic_oxaloacetic_transaminase_level(screening468, 2).
+glutamic_oxaloacetic_transaminase_level(screening4680, 2).
+glutamic_oxaloacetic_transaminase_level(screening4681, 2).
+glutamic_oxaloacetic_transaminase_level(screening4682, 2).
+glutamic_oxaloacetic_transaminase_level(screening4683, 2).
+glutamic_oxaloacetic_transaminase_level(screening4684, 2).
+glutamic_oxaloacetic_transaminase_level(screening4685, 2).
+glutamic_oxaloacetic_transaminase_level(screening4686, 4).
+glutamic_oxaloacetic_transaminase_level(screening4687, 3).
+glutamic_oxaloacetic_transaminase_level(screening4688, 4).
+glutamic_oxaloacetic_transaminase_level(screening4689, 3).
+glutamic_oxaloacetic_transaminase_level(screening469, 2).
+glutamic_oxaloacetic_transaminase_level(screening4690, 3).
+glutamic_oxaloacetic_transaminase_level(screening4691, 5).
+glutamic_oxaloacetic_transaminase_level(screening4692, 4).
+glutamic_oxaloacetic_transaminase_level(screening4693, 4).
+glutamic_oxaloacetic_transaminase_level(screening4694, 4).
+glutamic_oxaloacetic_transaminase_level(screening4695, 4).
+glutamic_oxaloacetic_transaminase_level(screening4696, 4).
+glutamic_oxaloacetic_transaminase_level(screening4697, 4).
+glutamic_oxaloacetic_transaminase_level(screening4698, 3).
+glutamic_oxaloacetic_transaminase_level(screening4699, 3).
+glutamic_oxaloacetic_transaminase_level(screening470, 2).
+glutamic_oxaloacetic_transaminase_level(screening4700, 3).
+glutamic_oxaloacetic_transaminase_level(screening4701, 3).
+glutamic_oxaloacetic_transaminase_level(screening4702, 3).
+glutamic_oxaloacetic_transaminase_level(screening4703, 2).
+glutamic_oxaloacetic_transaminase_level(screening4704, 2).
+glutamic_oxaloacetic_transaminase_level(screening4705, 2).
+glutamic_oxaloacetic_transaminase_level(screening4706, 2).
+glutamic_oxaloacetic_transaminase_level(screening4707, 2).
+glutamic_oxaloacetic_transaminase_level(screening4708, 4).
+glutamic_oxaloacetic_transaminase_level(screening4709, 3).
+glutamic_oxaloacetic_transaminase_level(screening471, 2).
+glutamic_oxaloacetic_transaminase_level(screening4710, 4).
+glutamic_oxaloacetic_transaminase_level(screening4711, 3).
+glutamic_oxaloacetic_transaminase_level(screening4712, 3).
+glutamic_oxaloacetic_transaminase_level(screening4713, 4).
+glutamic_oxaloacetic_transaminase_level(screening4714, 4).
+glutamic_oxaloacetic_transaminase_level(screening4715, 4).
+glutamic_oxaloacetic_transaminase_level(screening4716, 3).
+glutamic_oxaloacetic_transaminase_level(screening4717, 3).
+glutamic_oxaloacetic_transaminase_level(screening4718, 3).
+glutamic_oxaloacetic_transaminase_level(screening4719, 3).
+glutamic_oxaloacetic_transaminase_level(screening472, 3).
+glutamic_oxaloacetic_transaminase_level(screening4720, 3).
+glutamic_oxaloacetic_transaminase_level(screening4721, 3).
+glutamic_oxaloacetic_transaminase_level(screening4722, 2).
+glutamic_oxaloacetic_transaminase_level(screening4723, 2).
+glutamic_oxaloacetic_transaminase_level(screening4724, 3).
+glutamic_oxaloacetic_transaminase_level(screening4725, 2).
+glutamic_oxaloacetic_transaminase_level(screening4726, 2).
+glutamic_oxaloacetic_transaminase_level(screening4727, 2).
+glutamic_oxaloacetic_transaminase_level(screening4728, 2).
+glutamic_oxaloacetic_transaminase_level(screening4729, 2).
+glutamic_oxaloacetic_transaminase_level(screening473, 3).
+glutamic_oxaloacetic_transaminase_level(screening4730, 3).
+glutamic_oxaloacetic_transaminase_level(screening4731, 4).
+glutamic_oxaloacetic_transaminase_level(screening4732, 5).
+glutamic_oxaloacetic_transaminase_level(screening4733, 4).
+glutamic_oxaloacetic_transaminase_level(screening4734, 4).
+glutamic_oxaloacetic_transaminase_level(screening4735, 2).
+glutamic_oxaloacetic_transaminase_level(screening4736, 2).
+glutamic_oxaloacetic_transaminase_level(screening4737, 2).
+glutamic_oxaloacetic_transaminase_level(screening4738, 4).
+glutamic_oxaloacetic_transaminase_level(screening4739, 3).
+glutamic_oxaloacetic_transaminase_level(screening474, 5).
+glutamic_oxaloacetic_transaminase_level(screening4740, 2).
+glutamic_oxaloacetic_transaminase_level(screening4741, 3).
+glutamic_oxaloacetic_transaminase_level(screening4742, 2).
+glutamic_oxaloacetic_transaminase_level(screening4743, 3).
+glutamic_oxaloacetic_transaminase_level(screening4744, 4).
+glutamic_oxaloacetic_transaminase_level(screening4745, 3).
+glutamic_oxaloacetic_transaminase_level(screening4746, 4).
+glutamic_oxaloacetic_transaminase_level(screening4747, 3).
+glutamic_oxaloacetic_transaminase_level(screening4748, 4).
+glutamic_oxaloacetic_transaminase_level(screening4749, 4).
+glutamic_oxaloacetic_transaminase_level(screening475, 4).
+glutamic_oxaloacetic_transaminase_level(screening4750, 3).
+glutamic_oxaloacetic_transaminase_level(screening4751, 2).
+glutamic_oxaloacetic_transaminase_level(screening4752, 2).
+glutamic_oxaloacetic_transaminase_level(screening4753, 3).
+glutamic_oxaloacetic_transaminase_level(screening4754, 3).
+glutamic_oxaloacetic_transaminase_level(screening4755, 2).
+glutamic_oxaloacetic_transaminase_level(screening4756, 4).
+glutamic_oxaloacetic_transaminase_level(screening4757, 3).
+glutamic_oxaloacetic_transaminase_level(screening4758, 2).
+glutamic_oxaloacetic_transaminase_level(screening4759, 2).
+glutamic_oxaloacetic_transaminase_level(screening476, 4).
+glutamic_oxaloacetic_transaminase_level(screening4760, 3).
+glutamic_oxaloacetic_transaminase_level(screening4761, 3).
+glutamic_oxaloacetic_transaminase_level(screening4762, 4).
+glutamic_oxaloacetic_transaminase_level(screening4763, 4).
+glutamic_oxaloacetic_transaminase_level(screening4764, 4).
+glutamic_oxaloacetic_transaminase_level(screening4765, 4).
+glutamic_oxaloacetic_transaminase_level(screening4766, 4).
+glutamic_oxaloacetic_transaminase_level(screening4767, 2).
+glutamic_oxaloacetic_transaminase_level(screening4768, 2).
+glutamic_oxaloacetic_transaminase_level(screening4769, 3).
+glutamic_oxaloacetic_transaminase_level(screening477, 2).
+glutamic_oxaloacetic_transaminase_level(screening4770, 1).
+glutamic_oxaloacetic_transaminase_level(screening4771, 1).
+glutamic_oxaloacetic_transaminase_level(screening4772, 1).
+glutamic_oxaloacetic_transaminase_level(screening4773, 1).
+glutamic_oxaloacetic_transaminase_level(screening4774, 1).
+glutamic_oxaloacetic_transaminase_level(screening4775, 1).
+glutamic_oxaloacetic_transaminase_level(screening4776, 1).
+glutamic_oxaloacetic_transaminase_level(screening4777, 1).
+glutamic_oxaloacetic_transaminase_level(screening4778, 2).
+glutamic_oxaloacetic_transaminase_level(screening4779, 1).
+glutamic_oxaloacetic_transaminase_level(screening478, 2).
+glutamic_oxaloacetic_transaminase_level(screening4780, 1).
+glutamic_oxaloacetic_transaminase_level(screening4781, 1).
+glutamic_oxaloacetic_transaminase_level(screening4782, 1).
+glutamic_oxaloacetic_transaminase_level(screening4783, 4).
+glutamic_oxaloacetic_transaminase_level(screening4784, 4).
+glutamic_oxaloacetic_transaminase_level(screening4785, 3).
+glutamic_oxaloacetic_transaminase_level(screening4786, 3).
+glutamic_oxaloacetic_transaminase_level(screening4787, 3).
+glutamic_oxaloacetic_transaminase_level(screening4788, 3).
+glutamic_oxaloacetic_transaminase_level(screening4789, 3).
+glutamic_oxaloacetic_transaminase_level(screening479, 2).
+glutamic_oxaloacetic_transaminase_level(screening4790, 3).
+glutamic_oxaloacetic_transaminase_level(screening4791, 3).
+glutamic_oxaloacetic_transaminase_level(screening4792, 3).
+glutamic_oxaloacetic_transaminase_level(screening4793, 3).
+glutamic_oxaloacetic_transaminase_level(screening4794, 3).
+glutamic_oxaloacetic_transaminase_level(screening4795, 4).
+glutamic_oxaloacetic_transaminase_level(screening4796, 2).
+glutamic_oxaloacetic_transaminase_level(screening4797, 3).
+glutamic_oxaloacetic_transaminase_level(screening4798, 4).
+glutamic_oxaloacetic_transaminase_level(screening4799, 4).
+glutamic_oxaloacetic_transaminase_level(screening480, 2).
+glutamic_oxaloacetic_transaminase_level(screening4800, 2).
+glutamic_oxaloacetic_transaminase_level(screening4801, 2).
+glutamic_oxaloacetic_transaminase_level(screening4802, 2).
+glutamic_oxaloacetic_transaminase_level(screening4803, 2).
+glutamic_oxaloacetic_transaminase_level(screening4804, 1).
+glutamic_oxaloacetic_transaminase_level(screening4805, 1).
+glutamic_oxaloacetic_transaminase_level(screening4806, 2).
+glutamic_oxaloacetic_transaminase_level(screening4807, 2).
+glutamic_oxaloacetic_transaminase_level(screening4808, 2).
+glutamic_oxaloacetic_transaminase_level(screening4809, 2).
+glutamic_oxaloacetic_transaminase_level(screening481, 2).
+glutamic_oxaloacetic_transaminase_level(screening4810, 2).
+glutamic_oxaloacetic_transaminase_level(screening4811, 2).
+glutamic_oxaloacetic_transaminase_level(screening4812, 5).
+glutamic_oxaloacetic_transaminase_level(screening4813, 4).
+glutamic_oxaloacetic_transaminase_level(screening4814, 4).
+glutamic_oxaloacetic_transaminase_level(screening4815, 3).
+glutamic_oxaloacetic_transaminase_level(screening4816, 3).
+glutamic_oxaloacetic_transaminase_level(screening4817, 4).
+glutamic_oxaloacetic_transaminase_level(screening4818, 5).
+glutamic_oxaloacetic_transaminase_level(screening4819, 2).
+glutamic_oxaloacetic_transaminase_level(screening482, 2).
+glutamic_oxaloacetic_transaminase_level(screening4820, 2).
+glutamic_oxaloacetic_transaminase_level(screening4821, 2).
+glutamic_oxaloacetic_transaminase_level(screening4822, 2).
+glutamic_oxaloacetic_transaminase_level(screening4823, 2).
+glutamic_oxaloacetic_transaminase_level(screening4824, 1).
+glutamic_oxaloacetic_transaminase_level(screening4825, 1).
+glutamic_oxaloacetic_transaminase_level(screening4826, 2).
+glutamic_oxaloacetic_transaminase_level(screening4827, 2).
+glutamic_oxaloacetic_transaminase_level(screening4828, 2).
+glutamic_oxaloacetic_transaminase_level(screening4829, 1).
+glutamic_oxaloacetic_transaminase_level(screening483, 2).
+glutamic_oxaloacetic_transaminase_level(screening4830, 1).
+glutamic_oxaloacetic_transaminase_level(screening4831, 4).
+glutamic_oxaloacetic_transaminase_level(screening4832, 3).
+glutamic_oxaloacetic_transaminase_level(screening4833, 4).
+glutamic_oxaloacetic_transaminase_level(screening4834, 4).
+glutamic_oxaloacetic_transaminase_level(screening4835, 4).
+glutamic_oxaloacetic_transaminase_level(screening4836, 3).
+glutamic_oxaloacetic_transaminase_level(screening4837, 4).
+glutamic_oxaloacetic_transaminase_level(screening4838, 2).
+glutamic_oxaloacetic_transaminase_level(screening4839, 3).
+glutamic_oxaloacetic_transaminase_level(screening484, 2).
+glutamic_oxaloacetic_transaminase_level(screening4840, 3).
+glutamic_oxaloacetic_transaminase_level(screening4841, 3).
+glutamic_oxaloacetic_transaminase_level(screening4842, 3).
+glutamic_oxaloacetic_transaminase_level(screening4843, 3).
+glutamic_oxaloacetic_transaminase_level(screening4844, 3).
+glutamic_oxaloacetic_transaminase_level(screening4845, 3).
+glutamic_oxaloacetic_transaminase_level(screening4846, 3).
+glutamic_oxaloacetic_transaminase_level(screening4847, 4).
+glutamic_oxaloacetic_transaminase_level(screening4848, 3).
+glutamic_oxaloacetic_transaminase_level(screening4849, 4).
+glutamic_oxaloacetic_transaminase_level(screening485, 2).
+glutamic_oxaloacetic_transaminase_level(screening4850, 3).
+glutamic_oxaloacetic_transaminase_level(screening4851, 3).
+glutamic_oxaloacetic_transaminase_level(screening4852, 3).
+glutamic_oxaloacetic_transaminase_level(screening4853, 4).
+glutamic_oxaloacetic_transaminase_level(screening4854, 4).
+glutamic_oxaloacetic_transaminase_level(screening4855, 4).
+glutamic_oxaloacetic_transaminase_level(screening4856, 3).
+glutamic_oxaloacetic_transaminase_level(screening4857, 4).
+glutamic_oxaloacetic_transaminase_level(screening4858, 3).
+glutamic_oxaloacetic_transaminase_level(screening4859, 3).
+glutamic_oxaloacetic_transaminase_level(screening486, 2).
+glutamic_oxaloacetic_transaminase_level(screening4860, 4).
+glutamic_oxaloacetic_transaminase_level(screening4861, 4).
+glutamic_oxaloacetic_transaminase_level(screening4862, 2).
+glutamic_oxaloacetic_transaminase_level(screening4863, 2).
+glutamic_oxaloacetic_transaminase_level(screening4864, 1).
+glutamic_oxaloacetic_transaminase_level(screening4865, 1).
+glutamic_oxaloacetic_transaminase_level(screening4866, 1).
+glutamic_oxaloacetic_transaminase_level(screening4867, 1).
+glutamic_oxaloacetic_transaminase_level(screening4868, 2).
+glutamic_oxaloacetic_transaminase_level(screening4869, 2).
+glutamic_oxaloacetic_transaminase_level(screening487, 2).
+glutamic_oxaloacetic_transaminase_level(screening4870, 2).
+glutamic_oxaloacetic_transaminase_level(screening4871, 2).
+glutamic_oxaloacetic_transaminase_level(screening4872, 2).
+glutamic_oxaloacetic_transaminase_level(screening4873, 2).
+glutamic_oxaloacetic_transaminase_level(screening4874, 2).
+glutamic_oxaloacetic_transaminase_level(screening4875, 2).
+glutamic_oxaloacetic_transaminase_level(screening4876, 2).
+glutamic_oxaloacetic_transaminase_level(screening4877, 2).
+glutamic_oxaloacetic_transaminase_level(screening4878, 4).
+glutamic_oxaloacetic_transaminase_level(screening4879, 4).
+glutamic_oxaloacetic_transaminase_level(screening488, 2).
+glutamic_oxaloacetic_transaminase_level(screening4880, 4).
+glutamic_oxaloacetic_transaminase_level(screening4881, 3).
+glutamic_oxaloacetic_transaminase_level(screening4882, 4).
+glutamic_oxaloacetic_transaminase_level(screening4883, 3).
+glutamic_oxaloacetic_transaminase_level(screening4884, 2).
+glutamic_oxaloacetic_transaminase_level(screening4885, 2).
+glutamic_oxaloacetic_transaminase_level(screening4886, 2).
+glutamic_oxaloacetic_transaminase_level(screening4887, 2).
+glutamic_oxaloacetic_transaminase_level(screening4888, 2).
+glutamic_oxaloacetic_transaminase_level(screening4889, 2).
+glutamic_oxaloacetic_transaminase_level(screening489, 2).
+glutamic_oxaloacetic_transaminase_level(screening4890, 2).
+glutamic_oxaloacetic_transaminase_level(screening4891, 3).
+glutamic_oxaloacetic_transaminase_level(screening4892, 3).
+glutamic_oxaloacetic_transaminase_level(screening4893, 2).
+glutamic_oxaloacetic_transaminase_level(screening4894, 4).
+glutamic_oxaloacetic_transaminase_level(screening4895, 4).
+glutamic_oxaloacetic_transaminase_level(screening4896, 3).
+glutamic_oxaloacetic_transaminase_level(screening4897, 2).
+glutamic_oxaloacetic_transaminase_level(screening4898, 2).
+glutamic_oxaloacetic_transaminase_level(screening4899, 3).
+glutamic_oxaloacetic_transaminase_level(screening490, 2).
+glutamic_oxaloacetic_transaminase_level(screening4900, 3).
+glutamic_oxaloacetic_transaminase_level(screening4901, 3).
+glutamic_oxaloacetic_transaminase_level(screening4902, 4).
+glutamic_oxaloacetic_transaminase_level(screening4903, 2).
+glutamic_oxaloacetic_transaminase_level(screening4904, 2).
+glutamic_oxaloacetic_transaminase_level(screening4905, 3).
+glutamic_oxaloacetic_transaminase_level(screening4906, 2).
+glutamic_oxaloacetic_transaminase_level(screening4907, 3).
+glutamic_oxaloacetic_transaminase_level(screening4908, 3).
+glutamic_oxaloacetic_transaminase_level(screening4909, 2).
+glutamic_oxaloacetic_transaminase_level(screening491, 2).
+glutamic_oxaloacetic_transaminase_level(screening4910, 2).
+glutamic_oxaloacetic_transaminase_level(screening4911, 2).
+glutamic_oxaloacetic_transaminase_level(screening4912, 3).
+glutamic_oxaloacetic_transaminase_level(screening4913, 4).
+glutamic_oxaloacetic_transaminase_level(screening4914, 3).
+glutamic_oxaloacetic_transaminase_level(screening4915, 2).
+glutamic_oxaloacetic_transaminase_level(screening4916, 2).
+glutamic_oxaloacetic_transaminase_level(screening4917, 4).
+glutamic_oxaloacetic_transaminase_level(screening4918, 3).
+glutamic_oxaloacetic_transaminase_level(screening4919, 3).
+glutamic_oxaloacetic_transaminase_level(screening492, 2).
+glutamic_oxaloacetic_transaminase_level(screening4920, 3).
+glutamic_oxaloacetic_transaminase_level(screening4921, 3).
+glutamic_oxaloacetic_transaminase_level(screening4922, 3).
+glutamic_oxaloacetic_transaminase_level(screening4923, 3).
+glutamic_oxaloacetic_transaminase_level(screening4924, 3).
+glutamic_oxaloacetic_transaminase_level(screening4925, 3).
+glutamic_oxaloacetic_transaminase_level(screening4926, 3).
+glutamic_oxaloacetic_transaminase_level(screening4927, 3).
+glutamic_oxaloacetic_transaminase_level(screening4928, 2).
+glutamic_oxaloacetic_transaminase_level(screening4929, 2).
+glutamic_oxaloacetic_transaminase_level(screening493, 3).
+glutamic_oxaloacetic_transaminase_level(screening4930, 3).
+glutamic_oxaloacetic_transaminase_level(screening4931, 3).
+glutamic_oxaloacetic_transaminase_level(screening4932, 4).
+glutamic_oxaloacetic_transaminase_level(screening4933, 4).
+glutamic_oxaloacetic_transaminase_level(screening4934, 4).
+glutamic_oxaloacetic_transaminase_level(screening4935, 3).
+glutamic_oxaloacetic_transaminase_level(screening4936, 3).
+glutamic_oxaloacetic_transaminase_level(screening4937, 2).
+glutamic_oxaloacetic_transaminase_level(screening4938, 2).
+glutamic_oxaloacetic_transaminase_level(screening4939, 3).
+glutamic_oxaloacetic_transaminase_level(screening494, 4).
+glutamic_oxaloacetic_transaminase_level(screening4940, 2).
+glutamic_oxaloacetic_transaminase_level(screening4941, 2).
+glutamic_oxaloacetic_transaminase_level(screening4942, 2).
+glutamic_oxaloacetic_transaminase_level(screening4943, 2).
+glutamic_oxaloacetic_transaminase_level(screening4944, 4).
+glutamic_oxaloacetic_transaminase_level(screening4945, 4).
+glutamic_oxaloacetic_transaminase_level(screening4946, 4).
+glutamic_oxaloacetic_transaminase_level(screening4947, 4).
+glutamic_oxaloacetic_transaminase_level(screening4948, 4).
+glutamic_oxaloacetic_transaminase_level(screening4949, 5).
+glutamic_oxaloacetic_transaminase_level(screening495, 4).
+glutamic_oxaloacetic_transaminase_level(screening4950, 4).
+glutamic_oxaloacetic_transaminase_level(screening4951, 4).
+glutamic_oxaloacetic_transaminase_level(screening4952, 2).
+glutamic_oxaloacetic_transaminase_level(screening4953, 2).
+glutamic_oxaloacetic_transaminase_level(screening4954, 3).
+glutamic_oxaloacetic_transaminase_level(screening4955, 2).
+glutamic_oxaloacetic_transaminase_level(screening4956, 4).
+glutamic_oxaloacetic_transaminase_level(screening4957, 4).
+glutamic_oxaloacetic_transaminase_level(screening4958, 3).
+glutamic_oxaloacetic_transaminase_level(screening4959, 3).
+glutamic_oxaloacetic_transaminase_level(screening496, 2).
+glutamic_oxaloacetic_transaminase_level(screening4960, 4).
+glutamic_oxaloacetic_transaminase_level(screening4961, 2).
+glutamic_oxaloacetic_transaminase_level(screening4962, 3).
+glutamic_oxaloacetic_transaminase_level(screening4963, 3).
+glutamic_oxaloacetic_transaminase_level(screening4964, 3).
+glutamic_oxaloacetic_transaminase_level(screening4965, 3).
+glutamic_oxaloacetic_transaminase_level(screening4966, 2).
+glutamic_oxaloacetic_transaminase_level(screening4967, 3).
+glutamic_oxaloacetic_transaminase_level(screening4968, 3).
+glutamic_oxaloacetic_transaminase_level(screening4969, 2).
+glutamic_oxaloacetic_transaminase_level(screening497, 4).
+glutamic_oxaloacetic_transaminase_level(screening4970, 4).
+glutamic_oxaloacetic_transaminase_level(screening4971, 4).
+glutamic_oxaloacetic_transaminase_level(screening4972, 3).
+glutamic_oxaloacetic_transaminase_level(screening4973, 4).
+glutamic_oxaloacetic_transaminase_level(screening4974, 3).
+glutamic_oxaloacetic_transaminase_level(screening4975, 3).
+glutamic_oxaloacetic_transaminase_level(screening4976, 3).
+glutamic_oxaloacetic_transaminase_level(screening4977, 4).
+glutamic_oxaloacetic_transaminase_level(screening4978, 4).
+glutamic_oxaloacetic_transaminase_level(screening4979, 2).
+glutamic_oxaloacetic_transaminase_level(screening498, 4).
+glutamic_oxaloacetic_transaminase_level(screening4980, 1).
+glutamic_oxaloacetic_transaminase_level(screening4981, 1).
+glutamic_oxaloacetic_transaminase_level(screening4982, 1).
+glutamic_oxaloacetic_transaminase_level(screening4983, 1).
+glutamic_oxaloacetic_transaminase_level(screening4984, 4).
+glutamic_oxaloacetic_transaminase_level(screening4985, 4).
+glutamic_oxaloacetic_transaminase_level(screening4986, 4).
+glutamic_oxaloacetic_transaminase_level(screening4987, 4).
+glutamic_oxaloacetic_transaminase_level(screening4988, 4).
+glutamic_oxaloacetic_transaminase_level(screening4989, 4).
+glutamic_oxaloacetic_transaminase_level(screening499, 1).
+glutamic_oxaloacetic_transaminase_level(screening4990, 4).
+glutamic_oxaloacetic_transaminase_level(screening4991, 4).
+glutamic_oxaloacetic_transaminase_level(screening4992, 5).
+glutamic_oxaloacetic_transaminase_level(screening4993, 4).
+glutamic_oxaloacetic_transaminase_level(screening4994, 4).
+glutamic_oxaloacetic_transaminase_level(screening4995, 3).
+glutamic_oxaloacetic_transaminase_level(screening4996, 3).
+glutamic_oxaloacetic_transaminase_level(screening4997, 3).
+glutamic_oxaloacetic_transaminase_level(screening4998, 2).
+glutamic_oxaloacetic_transaminase_level(screening4999, 2).
+glutamic_oxaloacetic_transaminase_level(screening500, 1).
+glutamic_oxaloacetic_transaminase_level(screening5000, 3).
+glutamic_oxaloacetic_transaminase_level(screening5001, 3).
+glutamic_oxaloacetic_transaminase_level(screening5002, 3).
+glutamic_oxaloacetic_transaminase_level(screening5003, 4).
+glutamic_oxaloacetic_transaminase_level(screening5004, 4).
+glutamic_oxaloacetic_transaminase_level(screening5005, 4).
+glutamic_oxaloacetic_transaminase_level(screening5006, 3).
+glutamic_oxaloacetic_transaminase_level(screening5007, 2).
+glutamic_oxaloacetic_transaminase_level(screening5008, 3).
+glutamic_oxaloacetic_transaminase_level(screening5009, 3).
+glutamic_oxaloacetic_transaminase_level(screening501, 1).
+glutamic_oxaloacetic_transaminase_level(screening5010, 2).
+glutamic_oxaloacetic_transaminase_level(screening5011, 2).
+glutamic_oxaloacetic_transaminase_level(screening5012, 2).
+glutamic_oxaloacetic_transaminase_level(screening5013, 2).
+glutamic_oxaloacetic_transaminase_level(screening5014, 2).
+glutamic_oxaloacetic_transaminase_level(screening5015, 2).
+glutamic_oxaloacetic_transaminase_level(screening5016, 3).
+glutamic_oxaloacetic_transaminase_level(screening5017, 3).
+glutamic_oxaloacetic_transaminase_level(screening5018, 3).
+glutamic_oxaloacetic_transaminase_level(screening5019, 2).
+glutamic_oxaloacetic_transaminase_level(screening502, 2).
+glutamic_oxaloacetic_transaminase_level(screening5020, 2).
+glutamic_oxaloacetic_transaminase_level(screening5021, 2).
+glutamic_oxaloacetic_transaminase_level(screening5022, 2).
+glutamic_oxaloacetic_transaminase_level(screening5023, 2).
+glutamic_oxaloacetic_transaminase_level(screening5024, 2).
+glutamic_oxaloacetic_transaminase_level(screening5025, 2).
+glutamic_oxaloacetic_transaminase_level(screening5026, 2).
+glutamic_oxaloacetic_transaminase_level(screening5027, 3).
+glutamic_oxaloacetic_transaminase_level(screening5028, 3).
+glutamic_oxaloacetic_transaminase_level(screening5029, 2).
+glutamic_oxaloacetic_transaminase_level(screening503, 2).
+glutamic_oxaloacetic_transaminase_level(screening5030, 2).
+glutamic_oxaloacetic_transaminase_level(screening5031, 4).
+glutamic_oxaloacetic_transaminase_level(screening5032, 3).
+glutamic_oxaloacetic_transaminase_level(screening5033, 4).
+glutamic_oxaloacetic_transaminase_level(screening5034, 3).
+glutamic_oxaloacetic_transaminase_level(screening5035, 3).
+glutamic_oxaloacetic_transaminase_level(screening5036, 3).
+glutamic_oxaloacetic_transaminase_level(screening5037, 4).
+glutamic_oxaloacetic_transaminase_level(screening5038, 3).
+glutamic_oxaloacetic_transaminase_level(screening5039, 4).
+glutamic_oxaloacetic_transaminase_level(screening504, 2).
+glutamic_oxaloacetic_transaminase_level(screening5040, 3).
+glutamic_oxaloacetic_transaminase_level(screening5041, 3).
+glutamic_oxaloacetic_transaminase_level(screening5042, 3).
+glutamic_oxaloacetic_transaminase_level(screening5043, 3).
+glutamic_oxaloacetic_transaminase_level(screening5044, 3).
+glutamic_oxaloacetic_transaminase_level(screening5045, 3).
+glutamic_oxaloacetic_transaminase_level(screening5046, 3).
+glutamic_oxaloacetic_transaminase_level(screening5047, 3).
+glutamic_oxaloacetic_transaminase_level(screening5048, 4).
+glutamic_oxaloacetic_transaminase_level(screening5049, 4).
+glutamic_oxaloacetic_transaminase_level(screening505, 2).
+glutamic_oxaloacetic_transaminase_level(screening5050, 4).
+glutamic_oxaloacetic_transaminase_level(screening5051, 4).
+glutamic_oxaloacetic_transaminase_level(screening5052, 4).
+glutamic_oxaloacetic_transaminase_level(screening5053, 3).
+glutamic_oxaloacetic_transaminase_level(screening5054, 3).
+glutamic_oxaloacetic_transaminase_level(screening5055, 3).
+glutamic_oxaloacetic_transaminase_level(screening5056, 3).
+glutamic_oxaloacetic_transaminase_level(screening5057, 5).
+glutamic_oxaloacetic_transaminase_level(screening5058, 4).
+glutamic_oxaloacetic_transaminase_level(screening5059, 4).
+glutamic_oxaloacetic_transaminase_level(screening506, 2).
+glutamic_oxaloacetic_transaminase_level(screening5060, 2).
+glutamic_oxaloacetic_transaminase_level(screening5061, 1).
+glutamic_oxaloacetic_transaminase_level(screening5062, 1).
+glutamic_oxaloacetic_transaminase_level(screening5063, 1).
+glutamic_oxaloacetic_transaminase_level(screening5064, 1).
+glutamic_oxaloacetic_transaminase_level(screening5065, 1).
+glutamic_oxaloacetic_transaminase_level(screening5066, 1).
+glutamic_oxaloacetic_transaminase_level(screening5067, 1).
+glutamic_oxaloacetic_transaminase_level(screening5068, 1).
+glutamic_oxaloacetic_transaminase_level(screening5069, 1).
+glutamic_oxaloacetic_transaminase_level(screening507, 2).
+glutamic_oxaloacetic_transaminase_level(screening5070, 1).
+glutamic_oxaloacetic_transaminase_level(screening5071, 4).
+glutamic_oxaloacetic_transaminase_level(screening5072, 4).
+glutamic_oxaloacetic_transaminase_level(screening5073, 2).
+glutamic_oxaloacetic_transaminase_level(screening5074, 1).
+glutamic_oxaloacetic_transaminase_level(screening5075, 1).
+glutamic_oxaloacetic_transaminase_level(screening5076, 1).
+glutamic_oxaloacetic_transaminase_level(screening5077, 1).
+glutamic_oxaloacetic_transaminase_level(screening5078, 1).
+glutamic_oxaloacetic_transaminase_level(screening5079, 1).
+glutamic_oxaloacetic_transaminase_level(screening508, 2).
+glutamic_oxaloacetic_transaminase_level(screening5080, 1).
+glutamic_oxaloacetic_transaminase_level(screening5081, 1).
+glutamic_oxaloacetic_transaminase_level(screening5082, 1).
+glutamic_oxaloacetic_transaminase_level(screening5083, 1).
+glutamic_oxaloacetic_transaminase_level(screening5084, 4).
+glutamic_oxaloacetic_transaminase_level(screening5085, 4).
+glutamic_oxaloacetic_transaminase_level(screening5086, 2).
+glutamic_oxaloacetic_transaminase_level(screening5087, 1).
+glutamic_oxaloacetic_transaminase_level(screening5088, 1).
+glutamic_oxaloacetic_transaminase_level(screening5089, 1).
+glutamic_oxaloacetic_transaminase_level(screening509, 2).
+glutamic_oxaloacetic_transaminase_level(screening5090, 1).
+glutamic_oxaloacetic_transaminase_level(screening5091, 1).
+glutamic_oxaloacetic_transaminase_level(screening5092, 1).
+glutamic_oxaloacetic_transaminase_level(screening5093, 1).
+glutamic_oxaloacetic_transaminase_level(screening5094, 1).
+glutamic_oxaloacetic_transaminase_level(screening5095, 1).
+glutamic_oxaloacetic_transaminase_level(screening5096, 1).
+glutamic_oxaloacetic_transaminase_level(screening5097, 4).
+glutamic_oxaloacetic_transaminase_level(screening5098, 4).
+glutamic_oxaloacetic_transaminase_level(screening5099, 2).
+glutamic_oxaloacetic_transaminase_level(screening510, 2).
+glutamic_oxaloacetic_transaminase_level(screening5100, 1).
+glutamic_oxaloacetic_transaminase_level(screening5101, 1).
+glutamic_oxaloacetic_transaminase_level(screening5102, 1).
+glutamic_oxaloacetic_transaminase_level(screening5103, 1).
+glutamic_oxaloacetic_transaminase_level(screening5104, 1).
+glutamic_oxaloacetic_transaminase_level(screening5105, 1).
+glutamic_oxaloacetic_transaminase_level(screening5106, 1).
+glutamic_oxaloacetic_transaminase_level(screening5107, 1).
+glutamic_oxaloacetic_transaminase_level(screening5108, 1).
+glutamic_oxaloacetic_transaminase_level(screening5109, 1).
+glutamic_oxaloacetic_transaminase_level(screening511, 4).
+glutamic_oxaloacetic_transaminase_level(screening5110, 4).
+glutamic_oxaloacetic_transaminase_level(screening5111, 4).
+glutamic_oxaloacetic_transaminase_level(screening5112, 2).
+glutamic_oxaloacetic_transaminase_level(screening5113, 1).
+glutamic_oxaloacetic_transaminase_level(screening5114, 1).
+glutamic_oxaloacetic_transaminase_level(screening5115, 1).
+glutamic_oxaloacetic_transaminase_level(screening5116, 1).
+glutamic_oxaloacetic_transaminase_level(screening5117, 1).
+glutamic_oxaloacetic_transaminase_level(screening5118, 1).
+glutamic_oxaloacetic_transaminase_level(screening5119, 1).
+glutamic_oxaloacetic_transaminase_level(screening512, 2).
+glutamic_oxaloacetic_transaminase_level(screening5120, 1).
+glutamic_oxaloacetic_transaminase_level(screening5121, 1).
+glutamic_oxaloacetic_transaminase_level(screening5122, 1).
+glutamic_oxaloacetic_transaminase_level(screening5123, 4).
+glutamic_oxaloacetic_transaminase_level(screening5124, 3).
+glutamic_oxaloacetic_transaminase_level(screening5125, 2).
+glutamic_oxaloacetic_transaminase_level(screening5126, 2).
+glutamic_oxaloacetic_transaminase_level(screening5127, 2).
+glutamic_oxaloacetic_transaminase_level(screening5128, 2).
+glutamic_oxaloacetic_transaminase_level(screening5129, 2).
+glutamic_oxaloacetic_transaminase_level(screening513, 1).
+glutamic_oxaloacetic_transaminase_level(screening5130, 2).
+glutamic_oxaloacetic_transaminase_level(screening5131, 2).
+glutamic_oxaloacetic_transaminase_level(screening5132, 2).
+glutamic_oxaloacetic_transaminase_level(screening5133, 2).
+glutamic_oxaloacetic_transaminase_level(screening5134, 2).
+glutamic_oxaloacetic_transaminase_level(screening5135, 2).
+glutamic_oxaloacetic_transaminase_level(screening5136, 4).
+glutamic_oxaloacetic_transaminase_level(screening5137, 3).
+glutamic_oxaloacetic_transaminase_level(screening5138, 2).
+glutamic_oxaloacetic_transaminase_level(screening5139, 2).
+glutamic_oxaloacetic_transaminase_level(screening514, 3).
+glutamic_oxaloacetic_transaminase_level(screening5140, 2).
+glutamic_oxaloacetic_transaminase_level(screening5141, 2).
+glutamic_oxaloacetic_transaminase_level(screening5142, 2).
+glutamic_oxaloacetic_transaminase_level(screening5143, 2).
+glutamic_oxaloacetic_transaminase_level(screening5144, 2).
+glutamic_oxaloacetic_transaminase_level(screening5145, 2).
+glutamic_oxaloacetic_transaminase_level(screening5146, 2).
+glutamic_oxaloacetic_transaminase_level(screening5147, 2).
+glutamic_oxaloacetic_transaminase_level(screening5148, 2).
+glutamic_oxaloacetic_transaminase_level(screening5149, 3).
+glutamic_oxaloacetic_transaminase_level(screening515, 3).
+glutamic_oxaloacetic_transaminase_level(screening5150, 3).
+glutamic_oxaloacetic_transaminase_level(screening5151, 1).
+glutamic_oxaloacetic_transaminase_level(screening5152, 2).
+glutamic_oxaloacetic_transaminase_level(screening5153, 1).
+glutamic_oxaloacetic_transaminase_level(screening5154, 1).
+glutamic_oxaloacetic_transaminase_level(screening5155, 3).
+glutamic_oxaloacetic_transaminase_level(screening5156, 3).
+glutamic_oxaloacetic_transaminase_level(screening5157, 3).
+glutamic_oxaloacetic_transaminase_level(screening5158, 2).
+glutamic_oxaloacetic_transaminase_level(screening5159, 2).
+glutamic_oxaloacetic_transaminase_level(screening516, 3).
+glutamic_oxaloacetic_transaminase_level(screening5160, 2).
+glutamic_oxaloacetic_transaminase_level(screening5161, 4).
+glutamic_oxaloacetic_transaminase_level(screening5162, 3).
+glutamic_oxaloacetic_transaminase_level(screening5163, 2).
+glutamic_oxaloacetic_transaminase_level(screening5164, 2).
+glutamic_oxaloacetic_transaminase_level(screening5165, 4).
+glutamic_oxaloacetic_transaminase_level(screening5166, 4).
+glutamic_oxaloacetic_transaminase_level(screening5167, 3).
+glutamic_oxaloacetic_transaminase_level(screening5168, 2).
+glutamic_oxaloacetic_transaminase_level(screening5169, 2).
+glutamic_oxaloacetic_transaminase_level(screening517, 3).
+glutamic_oxaloacetic_transaminase_level(screening5170, 2).
+glutamic_oxaloacetic_transaminase_level(screening5171, 4).
+glutamic_oxaloacetic_transaminase_level(screening5172, 3).
+glutamic_oxaloacetic_transaminase_level(screening5173, 2).
+glutamic_oxaloacetic_transaminase_level(screening5174, 2).
+glutamic_oxaloacetic_transaminase_level(screening5175, 4).
+glutamic_oxaloacetic_transaminase_level(screening5176, 4).
+glutamic_oxaloacetic_transaminase_level(screening5177, 3).
+glutamic_oxaloacetic_transaminase_level(screening5178, 2).
+glutamic_oxaloacetic_transaminase_level(screening5179, 3).
+glutamic_oxaloacetic_transaminase_level(screening518, 4).
+glutamic_oxaloacetic_transaminase_level(screening5180, 3).
+glutamic_oxaloacetic_transaminase_level(screening5181, 2).
+glutamic_oxaloacetic_transaminase_level(screening5182, 2).
+glutamic_oxaloacetic_transaminase_level(screening5183, 2).
+glutamic_oxaloacetic_transaminase_level(screening5184, 1).
+glutamic_oxaloacetic_transaminase_level(screening5185, 2).
+glutamic_oxaloacetic_transaminase_level(screening5186, 3).
+glutamic_oxaloacetic_transaminase_level(screening5187, 3).
+glutamic_oxaloacetic_transaminase_level(screening5188, 2).
+glutamic_oxaloacetic_transaminase_level(screening5189, 2).
+glutamic_oxaloacetic_transaminase_level(screening519, 4).
+glutamic_oxaloacetic_transaminase_level(screening5190, 2).
+glutamic_oxaloacetic_transaminase_level(screening5191, 1).
+glutamic_oxaloacetic_transaminase_level(screening5192, 2).
+glutamic_oxaloacetic_transaminase_level(screening5193, 3).
+glutamic_oxaloacetic_transaminase_level(screening5194, 3).
+glutamic_oxaloacetic_transaminase_level(screening5195, 2).
+glutamic_oxaloacetic_transaminase_level(screening5196, 2).
+glutamic_oxaloacetic_transaminase_level(screening5197, 2).
+glutamic_oxaloacetic_transaminase_level(screening5198, 1).
+glutamic_oxaloacetic_transaminase_level(screening5199, 4).
+glutamic_oxaloacetic_transaminase_level(screening520, 4).
+glutamic_oxaloacetic_transaminase_level(screening5200, 4).
+glutamic_oxaloacetic_transaminase_level(screening5201, 4).
+glutamic_oxaloacetic_transaminase_level(screening5202, 4).
+glutamic_oxaloacetic_transaminase_level(screening5203, 4).
+glutamic_oxaloacetic_transaminase_level(screening5204, 4).
+glutamic_oxaloacetic_transaminase_level(screening5205, 3).
+glutamic_oxaloacetic_transaminase_level(screening5206, 2).
+glutamic_oxaloacetic_transaminase_level(screening5207, 2).
+glutamic_oxaloacetic_transaminase_level(screening5208, 2).
+glutamic_oxaloacetic_transaminase_level(screening5209, 1).
+glutamic_oxaloacetic_transaminase_level(screening521, 3).
+glutamic_oxaloacetic_transaminase_level(screening5210, 2).
+glutamic_oxaloacetic_transaminase_level(screening5211, 2).
+glutamic_oxaloacetic_transaminase_level(screening5212, 2).
+glutamic_oxaloacetic_transaminase_level(screening5213, 2).
+glutamic_oxaloacetic_transaminase_level(screening5214, 2).
+glutamic_oxaloacetic_transaminase_level(screening5215, 4).
+glutamic_oxaloacetic_transaminase_level(screening5216, 4).
+glutamic_oxaloacetic_transaminase_level(screening5217, 3).
+glutamic_oxaloacetic_transaminase_level(screening5218, 2).
+glutamic_oxaloacetic_transaminase_level(screening5219, 2).
+glutamic_oxaloacetic_transaminase_level(screening522, 2).
+glutamic_oxaloacetic_transaminase_level(screening5220, 2).
+glutamic_oxaloacetic_transaminase_level(screening5221, 1).
+glutamic_oxaloacetic_transaminase_level(screening5222, 2).
+glutamic_oxaloacetic_transaminase_level(screening5223, 2).
+glutamic_oxaloacetic_transaminase_level(screening5224, 2).
+glutamic_oxaloacetic_transaminase_level(screening5225, 2).
+glutamic_oxaloacetic_transaminase_level(screening5226, 2).
+glutamic_oxaloacetic_transaminase_level(screening5227, 4).
+glutamic_oxaloacetic_transaminase_level(screening5228, 4).
+glutamic_oxaloacetic_transaminase_level(screening5229, 4).
+glutamic_oxaloacetic_transaminase_level(screening523, 4).
+glutamic_oxaloacetic_transaminase_level(screening5230, 4).
+glutamic_oxaloacetic_transaminase_level(screening5231, 4).
+glutamic_oxaloacetic_transaminase_level(screening5232, 4).
+glutamic_oxaloacetic_transaminase_level(screening5233, 4).
+glutamic_oxaloacetic_transaminase_level(screening5234, 4).
+glutamic_oxaloacetic_transaminase_level(screening5235, 4).
+glutamic_oxaloacetic_transaminase_level(screening5236, 4).
+glutamic_oxaloacetic_transaminase_level(screening5237, 4).
+glutamic_oxaloacetic_transaminase_level(screening5238, 4).
+glutamic_oxaloacetic_transaminase_level(screening5239, 4).
+glutamic_oxaloacetic_transaminase_level(screening524, 3).
+glutamic_oxaloacetic_transaminase_level(screening5240, 4).
+glutamic_oxaloacetic_transaminase_level(screening5241, 4).
+glutamic_oxaloacetic_transaminase_level(screening5242, 4).
+glutamic_oxaloacetic_transaminase_level(screening5243, 3).
+glutamic_oxaloacetic_transaminase_level(screening5244, 2).
+glutamic_oxaloacetic_transaminase_level(screening5245, 3).
+glutamic_oxaloacetic_transaminase_level(screening5246, 3).
+glutamic_oxaloacetic_transaminase_level(screening5247, 3).
+glutamic_oxaloacetic_transaminase_level(screening5248, 3).
+glutamic_oxaloacetic_transaminase_level(screening5249, 3).
+glutamic_oxaloacetic_transaminase_level(screening525, 4).
+glutamic_oxaloacetic_transaminase_level(screening5250, 4).
+glutamic_oxaloacetic_transaminase_level(screening5251, 4).
+glutamic_oxaloacetic_transaminase_level(screening5252, 5).
+glutamic_oxaloacetic_transaminase_level(screening5253, 4).
+glutamic_oxaloacetic_transaminase_level(screening5254, 4).
+glutamic_oxaloacetic_transaminase_level(screening5255, 5).
+glutamic_oxaloacetic_transaminase_level(screening5256, 5).
+glutamic_oxaloacetic_transaminase_level(screening5257, 4).
+glutamic_oxaloacetic_transaminase_level(screening5258, 4).
+glutamic_oxaloacetic_transaminase_level(screening5259, 4).
+glutamic_oxaloacetic_transaminase_level(screening526, 4).
+glutamic_oxaloacetic_transaminase_level(screening5260, 4).
+glutamic_oxaloacetic_transaminase_level(screening5261, 4).
+glutamic_oxaloacetic_transaminase_level(screening5262, 4).
+glutamic_oxaloacetic_transaminase_level(screening5263, 4).
+glutamic_oxaloacetic_transaminase_level(screening5264, 4).
+glutamic_oxaloacetic_transaminase_level(screening5265, 3).
+glutamic_oxaloacetic_transaminase_level(screening5266, 4).
+glutamic_oxaloacetic_transaminase_level(screening5267, 3).
+glutamic_oxaloacetic_transaminase_level(screening5268, 3).
+glutamic_oxaloacetic_transaminase_level(screening5269, 3).
+glutamic_oxaloacetic_transaminase_level(screening527, 3).
+glutamic_oxaloacetic_transaminase_level(screening5270, 3).
+glutamic_oxaloacetic_transaminase_level(screening5271, 3).
+glutamic_oxaloacetic_transaminase_level(screening5272, 3).
+glutamic_oxaloacetic_transaminase_level(screening5273, 3).
+glutamic_oxaloacetic_transaminase_level(screening5274, 4).
+glutamic_oxaloacetic_transaminase_level(screening5275, 3).
+glutamic_oxaloacetic_transaminase_level(screening5276, 4).
+glutamic_oxaloacetic_transaminase_level(screening5277, 4).
+glutamic_oxaloacetic_transaminase_level(screening5278, 4).
+glutamic_oxaloacetic_transaminase_level(screening5279, 4).
+glutamic_oxaloacetic_transaminase_level(screening528, 4).
+glutamic_oxaloacetic_transaminase_level(screening5280, 2).
+glutamic_oxaloacetic_transaminase_level(screening5281, 3).
+glutamic_oxaloacetic_transaminase_level(screening5282, 4).
+glutamic_oxaloacetic_transaminase_level(screening5283, 4).
+glutamic_oxaloacetic_transaminase_level(screening5284, 3).
+glutamic_oxaloacetic_transaminase_level(screening5285, 3).
+glutamic_oxaloacetic_transaminase_level(screening5286, 3).
+glutamic_oxaloacetic_transaminase_level(screening5287, 3).
+glutamic_oxaloacetic_transaminase_level(screening5288, 3).
+glutamic_oxaloacetic_transaminase_level(screening5289, 2).
+glutamic_oxaloacetic_transaminase_level(screening529, 3).
+glutamic_oxaloacetic_transaminase_level(screening5290, 2).
+glutamic_oxaloacetic_transaminase_level(screening5291, 1).
+glutamic_oxaloacetic_transaminase_level(screening5292, 4).
+glutamic_oxaloacetic_transaminase_level(screening5293, 4).
+glutamic_oxaloacetic_transaminase_level(screening5294, 2).
+glutamic_oxaloacetic_transaminase_level(screening5295, 2).
+glutamic_oxaloacetic_transaminase_level(screening5296, 2).
+glutamic_oxaloacetic_transaminase_level(screening5297, 2).
+glutamic_oxaloacetic_transaminase_level(screening5298, 2).
+glutamic_oxaloacetic_transaminase_level(screening5299, 2).
+glutamic_oxaloacetic_transaminase_level(screening530, 3).
+glutamic_oxaloacetic_transaminase_level(screening5300, 2).
+glutamic_oxaloacetic_transaminase_level(screening5301, 2).
+glutamic_oxaloacetic_transaminase_level(screening5302, 4).
+glutamic_oxaloacetic_transaminase_level(screening5303, 4).
+glutamic_oxaloacetic_transaminase_level(screening5304, 3).
+glutamic_oxaloacetic_transaminase_level(screening5305, 3).
+glutamic_oxaloacetic_transaminase_level(screening5306, 3).
+glutamic_oxaloacetic_transaminase_level(screening5307, 3).
+glutamic_oxaloacetic_transaminase_level(screening5308, 2).
+glutamic_oxaloacetic_transaminase_level(screening5309, 2).
+glutamic_oxaloacetic_transaminase_level(screening531, 3).
+glutamic_oxaloacetic_transaminase_level(screening5310, 2).
+glutamic_oxaloacetic_transaminase_level(screening5311, 1).
+glutamic_oxaloacetic_transaminase_level(screening5312, 4).
+glutamic_oxaloacetic_transaminase_level(screening5313, 3).
+glutamic_oxaloacetic_transaminase_level(screening5314, 2).
+glutamic_oxaloacetic_transaminase_level(screening5315, 1).
+glutamic_oxaloacetic_transaminase_level(screening5316, 3).
+glutamic_oxaloacetic_transaminase_level(screening5317, 3).
+glutamic_oxaloacetic_transaminase_level(screening5318, 2).
+glutamic_oxaloacetic_transaminase_level(screening5319, 2).
+glutamic_oxaloacetic_transaminase_level(screening532, 4).
+glutamic_oxaloacetic_transaminase_level(screening5320, 2).
+glutamic_oxaloacetic_transaminase_level(screening5321, 2).
+glutamic_oxaloacetic_transaminase_level(screening5322, 3).
+glutamic_oxaloacetic_transaminase_level(screening5323, 3).
+glutamic_oxaloacetic_transaminase_level(screening5324, 3).
+glutamic_oxaloacetic_transaminase_level(screening5325, 3).
+glutamic_oxaloacetic_transaminase_level(screening5326, 4).
+glutamic_oxaloacetic_transaminase_level(screening5327, 3).
+glutamic_oxaloacetic_transaminase_level(screening5328, 3).
+glutamic_oxaloacetic_transaminase_level(screening5329, 3).
+glutamic_oxaloacetic_transaminase_level(screening533, 3).
+glutamic_oxaloacetic_transaminase_level(screening5330, 2).
+glutamic_oxaloacetic_transaminase_level(screening5331, 3).
+glutamic_oxaloacetic_transaminase_level(screening5332, 2).
+glutamic_oxaloacetic_transaminase_level(screening5333, 4).
+glutamic_oxaloacetic_transaminase_level(screening5334, 4).
+glutamic_oxaloacetic_transaminase_level(screening5335, 3).
+glutamic_oxaloacetic_transaminase_level(screening5336, 1).
+glutamic_oxaloacetic_transaminase_level(screening5337, 3).
+glutamic_oxaloacetic_transaminase_level(screening5338, 1).
+glutamic_oxaloacetic_transaminase_level(screening5339, 2).
+glutamic_oxaloacetic_transaminase_level(screening534, 3).
+glutamic_oxaloacetic_transaminase_level(screening5340, 2).
+glutamic_oxaloacetic_transaminase_level(screening5341, 2).
+glutamic_oxaloacetic_transaminase_level(screening5342, 2).
+glutamic_oxaloacetic_transaminase_level(screening5343, 2).
+glutamic_oxaloacetic_transaminase_level(screening5344, 2).
+glutamic_oxaloacetic_transaminase_level(screening5345, 2).
+glutamic_oxaloacetic_transaminase_level(screening5346, 2).
+glutamic_oxaloacetic_transaminase_level(screening5347, 4).
+glutamic_oxaloacetic_transaminase_level(screening5348, 4).
+glutamic_oxaloacetic_transaminase_level(screening5349, 3).
+glutamic_oxaloacetic_transaminase_level(screening535, 3).
+glutamic_oxaloacetic_transaminase_level(screening5350, 1).
+glutamic_oxaloacetic_transaminase_level(screening5351, 3).
+glutamic_oxaloacetic_transaminase_level(screening5352, 1).
+glutamic_oxaloacetic_transaminase_level(screening5353, 2).
+glutamic_oxaloacetic_transaminase_level(screening5354, 2).
+glutamic_oxaloacetic_transaminase_level(screening5355, 2).
+glutamic_oxaloacetic_transaminase_level(screening5356, 2).
+glutamic_oxaloacetic_transaminase_level(screening5357, 2).
+glutamic_oxaloacetic_transaminase_level(screening5358, 2).
+glutamic_oxaloacetic_transaminase_level(screening5359, 2).
+glutamic_oxaloacetic_transaminase_level(screening536, 3).
+glutamic_oxaloacetic_transaminase_level(screening5360, 2).
+glutamic_oxaloacetic_transaminase_level(screening5361, 2).
+glutamic_oxaloacetic_transaminase_level(screening5362, 2).
+glutamic_oxaloacetic_transaminase_level(screening5363, 4).
+glutamic_oxaloacetic_transaminase_level(screening5364, 4).
+glutamic_oxaloacetic_transaminase_level(screening5365, 4).
+glutamic_oxaloacetic_transaminase_level(screening5366, 4).
+glutamic_oxaloacetic_transaminase_level(screening5367, 4).
+glutamic_oxaloacetic_transaminase_level(screening5368, 4).
+glutamic_oxaloacetic_transaminase_level(screening5369, 4).
+glutamic_oxaloacetic_transaminase_level(screening537, 3).
+glutamic_oxaloacetic_transaminase_level(screening5370, 4).
+glutamic_oxaloacetic_transaminase_level(screening5371, 4).
+glutamic_oxaloacetic_transaminase_level(screening5372, 4).
+glutamic_oxaloacetic_transaminase_level(screening5373, 4).
+glutamic_oxaloacetic_transaminase_level(screening5374, 4).
+glutamic_oxaloacetic_transaminase_level(screening5375, 3).
+glutamic_oxaloacetic_transaminase_level(screening5376, 2).
+glutamic_oxaloacetic_transaminase_level(screening5377, 4).
+glutamic_oxaloacetic_transaminase_level(screening5378, 4).
+glutamic_oxaloacetic_transaminase_level(screening5379, 4).
+glutamic_oxaloacetic_transaminase_level(screening538, 3).
+glutamic_oxaloacetic_transaminase_level(screening5380, 4).
+glutamic_oxaloacetic_transaminase_level(screening5381, 4).
+glutamic_oxaloacetic_transaminase_level(screening5382, 4).
+glutamic_oxaloacetic_transaminase_level(screening5383, 4).
+glutamic_oxaloacetic_transaminase_level(screening5384, 4).
+glutamic_oxaloacetic_transaminase_level(screening5385, 4).
+glutamic_oxaloacetic_transaminase_level(screening5386, 4).
+glutamic_oxaloacetic_transaminase_level(screening5387, 4).
+glutamic_oxaloacetic_transaminase_level(screening5388, 4).
+glutamic_oxaloacetic_transaminase_level(screening5389, 3).
+glutamic_oxaloacetic_transaminase_level(screening539, 3).
+glutamic_oxaloacetic_transaminase_level(screening5390, 2).
+glutamic_oxaloacetic_transaminase_level(screening5391, 2).
+glutamic_oxaloacetic_transaminase_level(screening5392, 2).
+glutamic_oxaloacetic_transaminase_level(screening5393, 2).
+glutamic_oxaloacetic_transaminase_level(screening5394, 2).
+glutamic_oxaloacetic_transaminase_level(screening5395, 2).
+glutamic_oxaloacetic_transaminase_level(screening5396, 2).
+glutamic_oxaloacetic_transaminase_level(screening5397, 2).
+glutamic_oxaloacetic_transaminase_level(screening5398, 4).
+glutamic_oxaloacetic_transaminase_level(screening5399, 4).
+glutamic_oxaloacetic_transaminase_level(screening540, 3).
+glutamic_oxaloacetic_transaminase_level(screening5400, 4).
+glutamic_oxaloacetic_transaminase_level(screening5401, 4).
+glutamic_oxaloacetic_transaminase_level(screening5402, 4).
+glutamic_oxaloacetic_transaminase_level(screening5403, 4).
+glutamic_oxaloacetic_transaminase_level(screening5404, 4).
+glutamic_oxaloacetic_transaminase_level(screening5405, 4).
+glutamic_oxaloacetic_transaminase_level(screening5406, 4).
+glutamic_oxaloacetic_transaminase_level(screening5407, 4).
+glutamic_oxaloacetic_transaminase_level(screening5408, 4).
+glutamic_oxaloacetic_transaminase_level(screening5409, 4).
+glutamic_oxaloacetic_transaminase_level(screening541, 4).
+glutamic_oxaloacetic_transaminase_level(screening5410, 3).
+glutamic_oxaloacetic_transaminase_level(screening5411, 2).
+glutamic_oxaloacetic_transaminase_level(screening5412, 2).
+glutamic_oxaloacetic_transaminase_level(screening5413, 2).
+glutamic_oxaloacetic_transaminase_level(screening5414, 2).
+glutamic_oxaloacetic_transaminase_level(screening5415, 2).
+glutamic_oxaloacetic_transaminase_level(screening5416, 2).
+glutamic_oxaloacetic_transaminase_level(screening5417, 2).
+glutamic_oxaloacetic_transaminase_level(screening5418, 2).
+glutamic_oxaloacetic_transaminase_level(screening5419, 4).
+glutamic_oxaloacetic_transaminase_level(screening542, 3).
+glutamic_oxaloacetic_transaminase_level(screening5420, 4).
+glutamic_oxaloacetic_transaminase_level(screening5421, 4).
+glutamic_oxaloacetic_transaminase_level(screening5422, 4).
+glutamic_oxaloacetic_transaminase_level(screening5423, 4).
+glutamic_oxaloacetic_transaminase_level(screening5424, 4).
+glutamic_oxaloacetic_transaminase_level(screening5425, 4).
+glutamic_oxaloacetic_transaminase_level(screening5426, 4).
+glutamic_oxaloacetic_transaminase_level(screening5427, 4).
+glutamic_oxaloacetic_transaminase_level(screening5428, 4).
+glutamic_oxaloacetic_transaminase_level(screening5429, 4).
+glutamic_oxaloacetic_transaminase_level(screening543, 3).
+glutamic_oxaloacetic_transaminase_level(screening5430, 4).
+glutamic_oxaloacetic_transaminase_level(screening5431, 3).
+glutamic_oxaloacetic_transaminase_level(screening5432, 2).
+glutamic_oxaloacetic_transaminase_level(screening5433, 2).
+glutamic_oxaloacetic_transaminase_level(screening5434, 2).
+glutamic_oxaloacetic_transaminase_level(screening5435, 2).
+glutamic_oxaloacetic_transaminase_level(screening5436, 2).
+glutamic_oxaloacetic_transaminase_level(screening5437, 2).
+glutamic_oxaloacetic_transaminase_level(screening5438, 2).
+glutamic_oxaloacetic_transaminase_level(screening5439, 2).
+glutamic_oxaloacetic_transaminase_level(screening544, 2).
+glutamic_oxaloacetic_transaminase_level(screening5440, 4).
+glutamic_oxaloacetic_transaminase_level(screening5441, 4).
+glutamic_oxaloacetic_transaminase_level(screening5442, 4).
+glutamic_oxaloacetic_transaminase_level(screening5443, 4).
+glutamic_oxaloacetic_transaminase_level(screening5444, 4).
+glutamic_oxaloacetic_transaminase_level(screening5445, 4).
+glutamic_oxaloacetic_transaminase_level(screening5446, 4).
+glutamic_oxaloacetic_transaminase_level(screening5447, 4).
+glutamic_oxaloacetic_transaminase_level(screening5448, 4).
+glutamic_oxaloacetic_transaminase_level(screening5449, 4).
+glutamic_oxaloacetic_transaminase_level(screening545, 2).
+glutamic_oxaloacetic_transaminase_level(screening5450, 4).
+glutamic_oxaloacetic_transaminase_level(screening5451, 4).
+glutamic_oxaloacetic_transaminase_level(screening5452, 3).
+glutamic_oxaloacetic_transaminase_level(screening5453, 2).
+glutamic_oxaloacetic_transaminase_level(screening5454, 2).
+glutamic_oxaloacetic_transaminase_level(screening5455, 2).
+glutamic_oxaloacetic_transaminase_level(screening5456, 2).
+glutamic_oxaloacetic_transaminase_level(screening5457, 2).
+glutamic_oxaloacetic_transaminase_level(screening5458, 2).
+glutamic_oxaloacetic_transaminase_level(screening5459, 2).
+glutamic_oxaloacetic_transaminase_level(screening546, 2).
+glutamic_oxaloacetic_transaminase_level(screening5460, 2).
+glutamic_oxaloacetic_transaminase_level(screening5461, 4).
+glutamic_oxaloacetic_transaminase_level(screening5462, 4).
+glutamic_oxaloacetic_transaminase_level(screening5463, 4).
+glutamic_oxaloacetic_transaminase_level(screening5464, 4).
+glutamic_oxaloacetic_transaminase_level(screening5465, 4).
+glutamic_oxaloacetic_transaminase_level(screening5466, 4).
+glutamic_oxaloacetic_transaminase_level(screening5467, 4).
+glutamic_oxaloacetic_transaminase_level(screening5468, 4).
+glutamic_oxaloacetic_transaminase_level(screening5469, 4).
+glutamic_oxaloacetic_transaminase_level(screening547, 2).
+glutamic_oxaloacetic_transaminase_level(screening5470, 3).
+glutamic_oxaloacetic_transaminase_level(screening5471, 3).
+glutamic_oxaloacetic_transaminase_level(screening5472, 3).
+glutamic_oxaloacetic_transaminase_level(screening5473, 3).
+glutamic_oxaloacetic_transaminase_level(screening5474, 2).
+glutamic_oxaloacetic_transaminase_level(screening5475, 2).
+glutamic_oxaloacetic_transaminase_level(screening5476, 3).
+glutamic_oxaloacetic_transaminase_level(screening5477, 3).
+glutamic_oxaloacetic_transaminase_level(screening5478, 3).
+glutamic_oxaloacetic_transaminase_level(screening5479, 2).
+glutamic_oxaloacetic_transaminase_level(screening548, 2).
+glutamic_oxaloacetic_transaminase_level(screening5480, 2).
+glutamic_oxaloacetic_transaminase_level(screening5481, 2).
+glutamic_oxaloacetic_transaminase_level(screening5482, 2).
+glutamic_oxaloacetic_transaminase_level(screening5483, 2).
+glutamic_oxaloacetic_transaminase_level(screening5484, 2).
+glutamic_oxaloacetic_transaminase_level(screening5485, 2).
+glutamic_oxaloacetic_transaminase_level(screening5486, 4).
+glutamic_oxaloacetic_transaminase_level(screening5487, 4).
+glutamic_oxaloacetic_transaminase_level(screening5488, 3).
+glutamic_oxaloacetic_transaminase_level(screening5489, 3).
+glutamic_oxaloacetic_transaminase_level(screening549, 4).
+glutamic_oxaloacetic_transaminase_level(screening5490, 3).
+glutamic_oxaloacetic_transaminase_level(screening5491, 3).
+glutamic_oxaloacetic_transaminase_level(screening5492, 2).
+glutamic_oxaloacetic_transaminase_level(screening5493, 2).
+glutamic_oxaloacetic_transaminase_level(screening5494, 3).
+glutamic_oxaloacetic_transaminase_level(screening5495, 3).
+glutamic_oxaloacetic_transaminase_level(screening5496, 3).
+glutamic_oxaloacetic_transaminase_level(screening5497, 2).
+glutamic_oxaloacetic_transaminase_level(screening5498, 2).
+glutamic_oxaloacetic_transaminase_level(screening5499, 2).
+glutamic_oxaloacetic_transaminase_level(screening550, 3).
+glutamic_oxaloacetic_transaminase_level(screening5500, 2).
+glutamic_oxaloacetic_transaminase_level(screening5501, 2).
+glutamic_oxaloacetic_transaminase_level(screening5502, 2).
+glutamic_oxaloacetic_transaminase_level(screening5503, 2).
+glutamic_oxaloacetic_transaminase_level(screening5504, 4).
+glutamic_oxaloacetic_transaminase_level(screening5505, 4).
+glutamic_oxaloacetic_transaminase_level(screening5506, 3).
+glutamic_oxaloacetic_transaminase_level(screening5507, 3).
+glutamic_oxaloacetic_transaminase_level(screening5508, 3).
+glutamic_oxaloacetic_transaminase_level(screening5509, 3).
+glutamic_oxaloacetic_transaminase_level(screening551, 3).
+glutamic_oxaloacetic_transaminase_level(screening5510, 2).
+glutamic_oxaloacetic_transaminase_level(screening5511, 2).
+glutamic_oxaloacetic_transaminase_level(screening5512, 3).
+glutamic_oxaloacetic_transaminase_level(screening5513, 3).
+glutamic_oxaloacetic_transaminase_level(screening5514, 3).
+glutamic_oxaloacetic_transaminase_level(screening5515, 2).
+glutamic_oxaloacetic_transaminase_level(screening5516, 2).
+glutamic_oxaloacetic_transaminase_level(screening5517, 2).
+glutamic_oxaloacetic_transaminase_level(screening5518, 2).
+glutamic_oxaloacetic_transaminase_level(screening5519, 2).
+glutamic_oxaloacetic_transaminase_level(screening552, 2).
+glutamic_oxaloacetic_transaminase_level(screening5520, 2).
+glutamic_oxaloacetic_transaminase_level(screening5521, 2).
+glutamic_oxaloacetic_transaminase_level(screening5522, 4).
+glutamic_oxaloacetic_transaminase_level(screening5523, 3).
+glutamic_oxaloacetic_transaminase_level(screening5524, 3).
+glutamic_oxaloacetic_transaminase_level(screening5525, 3).
+glutamic_oxaloacetic_transaminase_level(screening5526, 2).
+glutamic_oxaloacetic_transaminase_level(screening5527, 2).
+glutamic_oxaloacetic_transaminase_level(screening5528, 2).
+glutamic_oxaloacetic_transaminase_level(screening5529, 2).
+glutamic_oxaloacetic_transaminase_level(screening553, 2).
+glutamic_oxaloacetic_transaminase_level(screening5530, 3).
+glutamic_oxaloacetic_transaminase_level(screening5531, 2).
+glutamic_oxaloacetic_transaminase_level(screening5532, 3).
+glutamic_oxaloacetic_transaminase_level(screening5533, 3).
+glutamic_oxaloacetic_transaminase_level(screening5534, 3).
+glutamic_oxaloacetic_transaminase_level(screening5535, 2).
+glutamic_oxaloacetic_transaminase_level(screening5536, 2).
+glutamic_oxaloacetic_transaminase_level(screening5537, 2).
+glutamic_oxaloacetic_transaminase_level(screening5538, 3).
+glutamic_oxaloacetic_transaminase_level(screening5539, 3).
+glutamic_oxaloacetic_transaminase_level(screening554, 2).
+glutamic_oxaloacetic_transaminase_level(screening5540, 2).
+glutamic_oxaloacetic_transaminase_level(screening5541, 2).
+glutamic_oxaloacetic_transaminase_level(screening5542, 2).
+glutamic_oxaloacetic_transaminase_level(screening5543, 3).
+glutamic_oxaloacetic_transaminase_level(screening5544, 3).
+glutamic_oxaloacetic_transaminase_level(screening5545, 3).
+glutamic_oxaloacetic_transaminase_level(screening5546, 3).
+glutamic_oxaloacetic_transaminase_level(screening5547, 3).
+glutamic_oxaloacetic_transaminase_level(screening5548, 3).
+glutamic_oxaloacetic_transaminase_level(screening5549, 3).
+glutamic_oxaloacetic_transaminase_level(screening555, 2).
+glutamic_oxaloacetic_transaminase_level(screening5550, 3).
+glutamic_oxaloacetic_transaminase_level(screening5551, 3).
+glutamic_oxaloacetic_transaminase_level(screening5552, 4).
+glutamic_oxaloacetic_transaminase_level(screening5553, 3).
+glutamic_oxaloacetic_transaminase_level(screening5554, 3).
+glutamic_oxaloacetic_transaminase_level(screening5555, 3).
+glutamic_oxaloacetic_transaminase_level(screening5556, 3).
+glutamic_oxaloacetic_transaminase_level(screening5557, 3).
+glutamic_oxaloacetic_transaminase_level(screening5558, 3).
+glutamic_oxaloacetic_transaminase_level(screening5559, 4).
+glutamic_oxaloacetic_transaminase_level(screening556, 2).
+glutamic_oxaloacetic_transaminase_level(screening5560, 4).
+glutamic_oxaloacetic_transaminase_level(screening5561, 4).
+glutamic_oxaloacetic_transaminase_level(screening5562, 4).
+glutamic_oxaloacetic_transaminase_level(screening5563, 4).
+glutamic_oxaloacetic_transaminase_level(screening5564, 3).
+glutamic_oxaloacetic_transaminase_level(screening5565, 3).
+glutamic_oxaloacetic_transaminase_level(screening5566, 3).
+glutamic_oxaloacetic_transaminase_level(screening5567, 3).
+glutamic_oxaloacetic_transaminase_level(screening5568, 3).
+glutamic_oxaloacetic_transaminase_level(screening5569, 3).
+glutamic_oxaloacetic_transaminase_level(screening557, 3).
+glutamic_oxaloacetic_transaminase_level(screening5570, 2).
+glutamic_oxaloacetic_transaminase_level(screening5571, 2).
+glutamic_oxaloacetic_transaminase_level(screening5572, 1).
+glutamic_oxaloacetic_transaminase_level(screening5573, 1).
+glutamic_oxaloacetic_transaminase_level(screening5574, 1).
+glutamic_oxaloacetic_transaminase_level(screening5575, 1).
+glutamic_oxaloacetic_transaminase_level(screening5576, 1).
+glutamic_oxaloacetic_transaminase_level(screening5577, 1).
+glutamic_oxaloacetic_transaminase_level(screening5578, 1).
+glutamic_oxaloacetic_transaminase_level(screening5579, 1).
+glutamic_oxaloacetic_transaminase_level(screening558, 3).
+glutamic_oxaloacetic_transaminase_level(screening5580, 1).
+glutamic_oxaloacetic_transaminase_level(screening5581, 1).
+glutamic_oxaloacetic_transaminase_level(screening5582, 1).
+glutamic_oxaloacetic_transaminase_level(screening5583, 4).
+glutamic_oxaloacetic_transaminase_level(screening5584, 3).
+glutamic_oxaloacetic_transaminase_level(screening5585, 3).
+glutamic_oxaloacetic_transaminase_level(screening5586, 3).
+glutamic_oxaloacetic_transaminase_level(screening5587, 3).
+glutamic_oxaloacetic_transaminase_level(screening5588, 3).
+glutamic_oxaloacetic_transaminase_level(screening5589, 3).
+glutamic_oxaloacetic_transaminase_level(screening559, 2).
+glutamic_oxaloacetic_transaminase_level(screening5590, 2).
+glutamic_oxaloacetic_transaminase_level(screening5591, 2).
+glutamic_oxaloacetic_transaminase_level(screening5592, 1).
+glutamic_oxaloacetic_transaminase_level(screening5593, 1).
+glutamic_oxaloacetic_transaminase_level(screening5594, 1).
+glutamic_oxaloacetic_transaminase_level(screening5595, 1).
+glutamic_oxaloacetic_transaminase_level(screening5596, 1).
+glutamic_oxaloacetic_transaminase_level(screening5597, 1).
+glutamic_oxaloacetic_transaminase_level(screening5598, 1).
+glutamic_oxaloacetic_transaminase_level(screening5599, 1).
+glutamic_oxaloacetic_transaminase_level(screening560, 2).
+glutamic_oxaloacetic_transaminase_level(screening5600, 1).
+glutamic_oxaloacetic_transaminase_level(screening5601, 1).
+glutamic_oxaloacetic_transaminase_level(screening5602, 1).
+glutamic_oxaloacetic_transaminase_level(screening5603, 4).
+glutamic_oxaloacetic_transaminase_level(screening5604, 3).
+glutamic_oxaloacetic_transaminase_level(screening5605, 3).
+glutamic_oxaloacetic_transaminase_level(screening5606, 3).
+glutamic_oxaloacetic_transaminase_level(screening5607, 3).
+glutamic_oxaloacetic_transaminase_level(screening5608, 3).
+glutamic_oxaloacetic_transaminase_level(screening5609, 3).
+glutamic_oxaloacetic_transaminase_level(screening561, 2).
+glutamic_oxaloacetic_transaminase_level(screening5610, 2).
+glutamic_oxaloacetic_transaminase_level(screening5611, 2).
+glutamic_oxaloacetic_transaminase_level(screening5612, 1).
+glutamic_oxaloacetic_transaminase_level(screening5613, 1).
+glutamic_oxaloacetic_transaminase_level(screening5614, 1).
+glutamic_oxaloacetic_transaminase_level(screening5615, 1).
+glutamic_oxaloacetic_transaminase_level(screening5616, 1).
+glutamic_oxaloacetic_transaminase_level(screening5617, 1).
+glutamic_oxaloacetic_transaminase_level(screening5618, 1).
+glutamic_oxaloacetic_transaminase_level(screening5619, 1).
+glutamic_oxaloacetic_transaminase_level(screening562, 2).
+glutamic_oxaloacetic_transaminase_level(screening5620, 1).
+glutamic_oxaloacetic_transaminase_level(screening5621, 1).
+glutamic_oxaloacetic_transaminase_level(screening5622, 1).
+glutamic_oxaloacetic_transaminase_level(screening5623, 2).
+glutamic_oxaloacetic_transaminase_level(screening5624, 3).
+glutamic_oxaloacetic_transaminase_level(screening5625, 3).
+glutamic_oxaloacetic_transaminase_level(screening5626, 3).
+glutamic_oxaloacetic_transaminase_level(screening5627, 3).
+glutamic_oxaloacetic_transaminase_level(screening5628, 2).
+glutamic_oxaloacetic_transaminase_level(screening5629, 3).
+glutamic_oxaloacetic_transaminase_level(screening563, 3).
+glutamic_oxaloacetic_transaminase_level(screening5630, 3).
+glutamic_oxaloacetic_transaminase_level(screening5631, 3).
+glutamic_oxaloacetic_transaminase_level(screening5632, 2).
+glutamic_oxaloacetic_transaminase_level(screening5633, 2).
+glutamic_oxaloacetic_transaminase_level(screening5634, 2).
+glutamic_oxaloacetic_transaminase_level(screening5635, 2).
+glutamic_oxaloacetic_transaminase_level(screening5636, 2).
+glutamic_oxaloacetic_transaminase_level(screening5637, 2).
+glutamic_oxaloacetic_transaminase_level(screening5638, 2).
+glutamic_oxaloacetic_transaminase_level(screening5639, 1).
+glutamic_oxaloacetic_transaminase_level(screening564, 2).
+glutamic_oxaloacetic_transaminase_level(screening5640, 4).
+glutamic_oxaloacetic_transaminase_level(screening5641, 3).
+glutamic_oxaloacetic_transaminase_level(screening5642, 3).
+glutamic_oxaloacetic_transaminase_level(screening5643, 4).
+glutamic_oxaloacetic_transaminase_level(screening5644, 4).
+glutamic_oxaloacetic_transaminase_level(screening5645, 3).
+glutamic_oxaloacetic_transaminase_level(screening5646, 3).
+glutamic_oxaloacetic_transaminase_level(screening5647, 3).
+glutamic_oxaloacetic_transaminase_level(screening5648, 3).
+glutamic_oxaloacetic_transaminase_level(screening5649, 3).
+glutamic_oxaloacetic_transaminase_level(screening565, 4).
+glutamic_oxaloacetic_transaminase_level(screening5650, 3).
+glutamic_oxaloacetic_transaminase_level(screening5651, 3).
+glutamic_oxaloacetic_transaminase_level(screening5652, 3).
+glutamic_oxaloacetic_transaminase_level(screening5653, 2).
+glutamic_oxaloacetic_transaminase_level(screening5654, 2).
+glutamic_oxaloacetic_transaminase_level(screening5655, 3).
+glutamic_oxaloacetic_transaminase_level(screening5656, 4).
+glutamic_oxaloacetic_transaminase_level(screening5657, 4).
+glutamic_oxaloacetic_transaminase_level(screening5658, 4).
+glutamic_oxaloacetic_transaminase_level(screening5659, 4).
+glutamic_oxaloacetic_transaminase_level(screening566, 4).
+glutamic_oxaloacetic_transaminase_level(screening5660, 4).
+glutamic_oxaloacetic_transaminase_level(screening5661, 4).
+glutamic_oxaloacetic_transaminase_level(screening5662, 4).
+glutamic_oxaloacetic_transaminase_level(screening5663, 4).
+glutamic_oxaloacetic_transaminase_level(screening5664, 4).
+glutamic_oxaloacetic_transaminase_level(screening5665, 4).
+glutamic_oxaloacetic_transaminase_level(screening5666, 4).
+glutamic_oxaloacetic_transaminase_level(screening5667, 4).
+glutamic_oxaloacetic_transaminase_level(screening5668, 3).
+glutamic_oxaloacetic_transaminase_level(screening5669, 3).
+glutamic_oxaloacetic_transaminase_level(screening567, 4).
+glutamic_oxaloacetic_transaminase_level(screening5670, 2).
+glutamic_oxaloacetic_transaminase_level(screening5671, 2).
+glutamic_oxaloacetic_transaminase_level(screening5672, 2).
+glutamic_oxaloacetic_transaminase_level(screening5673, 2).
+glutamic_oxaloacetic_transaminase_level(screening5674, 3).
+glutamic_oxaloacetic_transaminase_level(screening5675, 3).
+glutamic_oxaloacetic_transaminase_level(screening5676, 3).
+glutamic_oxaloacetic_transaminase_level(screening5677, 3).
+glutamic_oxaloacetic_transaminase_level(screening5678, 4).
+glutamic_oxaloacetic_transaminase_level(screening5679, 4).
+glutamic_oxaloacetic_transaminase_level(screening568, 3).
+glutamic_oxaloacetic_transaminase_level(screening5680, 4).
+glutamic_oxaloacetic_transaminase_level(screening5681, 4).
+glutamic_oxaloacetic_transaminase_level(screening5682, 3).
+glutamic_oxaloacetic_transaminase_level(screening5683, 3).
+glutamic_oxaloacetic_transaminase_level(screening5684, 2).
+glutamic_oxaloacetic_transaminase_level(screening5685, 2).
+glutamic_oxaloacetic_transaminase_level(screening5686, 2).
+glutamic_oxaloacetic_transaminase_level(screening5687, 2).
+glutamic_oxaloacetic_transaminase_level(screening5688, 3).
+glutamic_oxaloacetic_transaminase_level(screening5689, 3).
+glutamic_oxaloacetic_transaminase_level(screening569, 2).
+glutamic_oxaloacetic_transaminase_level(screening5690, 3).
+glutamic_oxaloacetic_transaminase_level(screening5691, 3).
+glutamic_oxaloacetic_transaminase_level(screening570, 4).
+glutamic_oxaloacetic_transaminase_level(screening571, 3).
+glutamic_oxaloacetic_transaminase_level(screening572, 2).
+glutamic_oxaloacetic_transaminase_level(screening573, 4).
+glutamic_oxaloacetic_transaminase_level(screening574, 4).
+glutamic_oxaloacetic_transaminase_level(screening575, 4).
+glutamic_oxaloacetic_transaminase_level(screening576, 2).
+glutamic_oxaloacetic_transaminase_level(screening577, 2).
+glutamic_oxaloacetic_transaminase_level(screening578, 3).
+glutamic_oxaloacetic_transaminase_level(screening579, 2).
+glutamic_oxaloacetic_transaminase_level(screening580, 2).
+glutamic_oxaloacetic_transaminase_level(screening581, 2).
+glutamic_oxaloacetic_transaminase_level(screening582, 5).
+glutamic_oxaloacetic_transaminase_level(screening583, 2).
+glutamic_oxaloacetic_transaminase_level(screening584, 4).
+glutamic_oxaloacetic_transaminase_level(screening585, 3).
+glutamic_oxaloacetic_transaminase_level(screening586, 2).
+glutamic_oxaloacetic_transaminase_level(screening587, 2).
+glutamic_oxaloacetic_transaminase_level(screening588, 2).
+glutamic_oxaloacetic_transaminase_level(screening589, 2).
+glutamic_oxaloacetic_transaminase_level(screening590, 2).
+glutamic_oxaloacetic_transaminase_level(screening591, 1).
+glutamic_oxaloacetic_transaminase_level(screening592, 2).
+glutamic_oxaloacetic_transaminase_level(screening593, 2).
+glutamic_oxaloacetic_transaminase_level(screening594, 2).
+glutamic_oxaloacetic_transaminase_level(screening595, 2).
+glutamic_oxaloacetic_transaminase_level(screening596, 2).
+glutamic_oxaloacetic_transaminase_level(screening597, 2).
+glutamic_oxaloacetic_transaminase_level(screening598, 2).
+glutamic_oxaloacetic_transaminase_level(screening599, 2).
+glutamic_oxaloacetic_transaminase_level(screening600, 2).
+glutamic_oxaloacetic_transaminase_level(screening601, 2).
+glutamic_oxaloacetic_transaminase_level(screening602, 2).
+glutamic_oxaloacetic_transaminase_level(screening603, 2).
+glutamic_oxaloacetic_transaminase_level(screening604, 2).
+glutamic_oxaloacetic_transaminase_level(screening605, 2).
+glutamic_oxaloacetic_transaminase_level(screening606, 3).
+glutamic_oxaloacetic_transaminase_level(screening607, 2).
+glutamic_oxaloacetic_transaminase_level(screening608, 3).
+glutamic_oxaloacetic_transaminase_level(screening609, 2).
+glutamic_oxaloacetic_transaminase_level(screening610, 2).
+glutamic_oxaloacetic_transaminase_level(screening611, 2).
+glutamic_oxaloacetic_transaminase_level(screening612, 3).
+glutamic_oxaloacetic_transaminase_level(screening613, 3).
+glutamic_oxaloacetic_transaminase_level(screening614, 2).
+glutamic_oxaloacetic_transaminase_level(screening615, 2).
+glutamic_oxaloacetic_transaminase_level(screening616, 2).
+glutamic_oxaloacetic_transaminase_level(screening617, 3).
+glutamic_oxaloacetic_transaminase_level(screening618, 2).
+glutamic_oxaloacetic_transaminase_level(screening619, 2).
+glutamic_oxaloacetic_transaminase_level(screening620, 3).
+glutamic_oxaloacetic_transaminase_level(screening621, 3).
+glutamic_oxaloacetic_transaminase_level(screening622, 2).
+glutamic_oxaloacetic_transaminase_level(screening623, 2).
+glutamic_oxaloacetic_transaminase_level(screening624, 2).
+glutamic_oxaloacetic_transaminase_level(screening625, 3).
+glutamic_oxaloacetic_transaminase_level(screening626, 2).
+glutamic_oxaloacetic_transaminase_level(screening627, 2).
+glutamic_oxaloacetic_transaminase_level(screening628, 4).
+glutamic_oxaloacetic_transaminase_level(screening629, 4).
+glutamic_oxaloacetic_transaminase_level(screening630, 4).
+glutamic_oxaloacetic_transaminase_level(screening631, 2).
+glutamic_oxaloacetic_transaminase_level(screening632, 2).
+glutamic_oxaloacetic_transaminase_level(screening633, 2).
+glutamic_oxaloacetic_transaminase_level(screening634, 3).
+glutamic_oxaloacetic_transaminase_level(screening635, 3).
+glutamic_oxaloacetic_transaminase_level(screening636, 2).
+glutamic_oxaloacetic_transaminase_level(screening637, 2).
+glutamic_oxaloacetic_transaminase_level(screening638, 3).
+glutamic_oxaloacetic_transaminase_level(screening639, 3).
+glutamic_oxaloacetic_transaminase_level(screening640, 3).
+glutamic_oxaloacetic_transaminase_level(screening641, 3).
+glutamic_oxaloacetic_transaminase_level(screening642, 2).
+glutamic_oxaloacetic_transaminase_level(screening643, 4).
+glutamic_oxaloacetic_transaminase_level(screening644, 4).
+glutamic_oxaloacetic_transaminase_level(screening645, 3).
+glutamic_oxaloacetic_transaminase_level(screening646, 4).
+glutamic_oxaloacetic_transaminase_level(screening647, 4).
+glutamic_oxaloacetic_transaminase_level(screening648, 4).
+glutamic_oxaloacetic_transaminase_level(screening649, 2).
+glutamic_oxaloacetic_transaminase_level(screening650, 2).
+glutamic_oxaloacetic_transaminase_level(screening651, 2).
+glutamic_oxaloacetic_transaminase_level(screening652, 2).
+glutamic_oxaloacetic_transaminase_level(screening653, 2).
+glutamic_oxaloacetic_transaminase_level(screening654, 2).
+glutamic_oxaloacetic_transaminase_level(screening655, 2).
+glutamic_oxaloacetic_transaminase_level(screening656, 2).
+glutamic_oxaloacetic_transaminase_level(screening657, 2).
+glutamic_oxaloacetic_transaminase_level(screening658, 2).
+glutamic_oxaloacetic_transaminase_level(screening659, 2).
+glutamic_oxaloacetic_transaminase_level(screening660, 2).
+glutamic_oxaloacetic_transaminase_level(screening661, 4).
+glutamic_oxaloacetic_transaminase_level(screening662, 4).
+glutamic_oxaloacetic_transaminase_level(screening663, 2).
+glutamic_oxaloacetic_transaminase_level(screening664, 2).
+glutamic_oxaloacetic_transaminase_level(screening665, 3).
+glutamic_oxaloacetic_transaminase_level(screening666, 4).
+glutamic_oxaloacetic_transaminase_level(screening667, 4).
+glutamic_oxaloacetic_transaminase_level(screening668, 3).
+glutamic_oxaloacetic_transaminase_level(screening669, 2).
+glutamic_oxaloacetic_transaminase_level(screening670, 2).
+glutamic_oxaloacetic_transaminase_level(screening671, 2).
+glutamic_oxaloacetic_transaminase_level(screening672, 3).
+glutamic_oxaloacetic_transaminase_level(screening673, 2).
+glutamic_oxaloacetic_transaminase_level(screening674, 3).
+glutamic_oxaloacetic_transaminase_level(screening675, 2).
+glutamic_oxaloacetic_transaminase_level(screening676, 3).
+glutamic_oxaloacetic_transaminase_level(screening677, 1).
+glutamic_oxaloacetic_transaminase_level(screening678, 3).
+glutamic_oxaloacetic_transaminase_level(screening679, 1).
+glutamic_oxaloacetic_transaminase_level(screening680, 2).
+glutamic_oxaloacetic_transaminase_level(screening681, 2).
+glutamic_oxaloacetic_transaminase_level(screening682, 4).
+glutamic_oxaloacetic_transaminase_level(screening683, 4).
+glutamic_oxaloacetic_transaminase_level(screening684, 4).
+glutamic_oxaloacetic_transaminase_level(screening685, 4).
+glutamic_oxaloacetic_transaminase_level(screening686, 4).
+glutamic_oxaloacetic_transaminase_level(screening687, 2).
+glutamic_oxaloacetic_transaminase_level(screening688, 4).
+glutamic_oxaloacetic_transaminase_level(screening689, 2).
+glutamic_oxaloacetic_transaminase_level(screening690, 3).
+glutamic_oxaloacetic_transaminase_level(screening691, 2).
+glutamic_oxaloacetic_transaminase_level(screening692, 3).
+glutamic_oxaloacetic_transaminase_level(screening693, 3).
+glutamic_oxaloacetic_transaminase_level(screening694, 3).
+glutamic_oxaloacetic_transaminase_level(screening695, 2).
+glutamic_oxaloacetic_transaminase_level(screening696, 3).
+glutamic_oxaloacetic_transaminase_level(screening697, 2).
+glutamic_oxaloacetic_transaminase_level(screening698, 2).
+glutamic_oxaloacetic_transaminase_level(screening699, 2).
+glutamic_oxaloacetic_transaminase_level(screening700, 2).
+glutamic_oxaloacetic_transaminase_level(screening701, 2).
+glutamic_oxaloacetic_transaminase_level(screening702, 4).
+glutamic_oxaloacetic_transaminase_level(screening703, 3).
+glutamic_oxaloacetic_transaminase_level(screening704, 2).
+glutamic_oxaloacetic_transaminase_level(screening705, 2).
+glutamic_oxaloacetic_transaminase_level(screening706, 3).
+glutamic_oxaloacetic_transaminase_level(screening707, 3).
+glutamic_oxaloacetic_transaminase_level(screening708, 3).
+glutamic_oxaloacetic_transaminase_level(screening709, 3).
+glutamic_oxaloacetic_transaminase_level(screening710, 3).
+glutamic_oxaloacetic_transaminase_level(screening711, 3).
+glutamic_oxaloacetic_transaminase_level(screening712, 3).
+glutamic_oxaloacetic_transaminase_level(screening713, 4).
+glutamic_oxaloacetic_transaminase_level(screening714, 4).
+glutamic_oxaloacetic_transaminase_level(screening715, 3).
+glutamic_oxaloacetic_transaminase_level(screening716, 2).
+glutamic_oxaloacetic_transaminase_level(screening717, 4).
+glutamic_oxaloacetic_transaminase_level(screening718, 2).
+glutamic_oxaloacetic_transaminase_level(screening719, 3).
+glutamic_oxaloacetic_transaminase_level(screening720, 2).
+glutamic_oxaloacetic_transaminase_level(screening721, 4).
+glutamic_oxaloacetic_transaminase_level(screening722, 3).
+glutamic_oxaloacetic_transaminase_level(screening723, 3).
+glutamic_oxaloacetic_transaminase_level(screening724, 3).
+glutamic_oxaloacetic_transaminase_level(screening725, 4).
+glutamic_oxaloacetic_transaminase_level(screening726, 2).
+glutamic_oxaloacetic_transaminase_level(screening727, 3).
+glutamic_oxaloacetic_transaminase_level(screening728, 2).
+glutamic_oxaloacetic_transaminase_level(screening729, 3).
+glutamic_oxaloacetic_transaminase_level(screening730, 2).
+glutamic_oxaloacetic_transaminase_level(screening731, 4).
+glutamic_oxaloacetic_transaminase_level(screening732, 2).
+glutamic_oxaloacetic_transaminase_level(screening733, 3).
+glutamic_oxaloacetic_transaminase_level(screening734, 2).
+glutamic_oxaloacetic_transaminase_level(screening735, 3).
+glutamic_oxaloacetic_transaminase_level(screening736, 2).
+glutamic_oxaloacetic_transaminase_level(screening737, 2).
+glutamic_oxaloacetic_transaminase_level(screening738, 3).
+glutamic_oxaloacetic_transaminase_level(screening739, 3).
+glutamic_oxaloacetic_transaminase_level(screening740, 2).
+glutamic_oxaloacetic_transaminase_level(screening741, 2).
+glutamic_oxaloacetic_transaminase_level(screening742, 3).
+glutamic_oxaloacetic_transaminase_level(screening743, 2).
+glutamic_oxaloacetic_transaminase_level(screening744, 2).
+glutamic_oxaloacetic_transaminase_level(screening745, 3).
+glutamic_oxaloacetic_transaminase_level(screening746, 3).
+glutamic_oxaloacetic_transaminase_level(screening747, 3).
+glutamic_oxaloacetic_transaminase_level(screening748, 3).
+glutamic_oxaloacetic_transaminase_level(screening749, 3).
+glutamic_oxaloacetic_transaminase_level(screening750, 2).
+glutamic_oxaloacetic_transaminase_level(screening751, 1).
+glutamic_oxaloacetic_transaminase_level(screening752, 1).
+glutamic_oxaloacetic_transaminase_level(screening753, 1).
+glutamic_oxaloacetic_transaminase_level(screening754, 1).
+glutamic_oxaloacetic_transaminase_level(screening755, 3).
+glutamic_oxaloacetic_transaminase_level(screening756, 4).
+glutamic_oxaloacetic_transaminase_level(screening757, 3).
+glutamic_oxaloacetic_transaminase_level(screening758, 4).
+glutamic_oxaloacetic_transaminase_level(screening759, 4).
+glutamic_oxaloacetic_transaminase_level(screening760, 4).
+glutamic_oxaloacetic_transaminase_level(screening761, 4).
+glutamic_oxaloacetic_transaminase_level(screening762, 4).
+glutamic_oxaloacetic_transaminase_level(screening763, 4).
+glutamic_oxaloacetic_transaminase_level(screening764, 4).
+glutamic_oxaloacetic_transaminase_level(screening765, 4).
+glutamic_oxaloacetic_transaminase_level(screening766, 4).
+glutamic_oxaloacetic_transaminase_level(screening767, 4).
+glutamic_oxaloacetic_transaminase_level(screening768, 4).
+glutamic_oxaloacetic_transaminase_level(screening769, 4).
+glutamic_oxaloacetic_transaminase_level(screening770, 3).
+glutamic_oxaloacetic_transaminase_level(screening771, 4).
+glutamic_oxaloacetic_transaminase_level(screening772, 4).
+glutamic_oxaloacetic_transaminase_level(screening773, 3).
+glutamic_oxaloacetic_transaminase_level(screening774, 4).
+glutamic_oxaloacetic_transaminase_level(screening775, 3).
+glutamic_oxaloacetic_transaminase_level(screening776, 4).
+glutamic_oxaloacetic_transaminase_level(screening777, 4).
+glutamic_oxaloacetic_transaminase_level(screening778, 4).
+glutamic_oxaloacetic_transaminase_level(screening779, 4).
+glutamic_oxaloacetic_transaminase_level(screening780, 4).
+glutamic_oxaloacetic_transaminase_level(screening781, 4).
+glutamic_oxaloacetic_transaminase_level(screening782, 4).
+glutamic_oxaloacetic_transaminase_level(screening783, 4).
+glutamic_oxaloacetic_transaminase_level(screening784, 4).
+glutamic_oxaloacetic_transaminase_level(screening785, 4).
+glutamic_oxaloacetic_transaminase_level(screening786, 4).
+glutamic_oxaloacetic_transaminase_level(screening787, 4).
+glutamic_oxaloacetic_transaminase_level(screening788, 3).
+glutamic_oxaloacetic_transaminase_level(screening789, 4).
+glutamic_oxaloacetic_transaminase_level(screening790, 4).
+glutamic_oxaloacetic_transaminase_level(screening791, 4).
+glutamic_oxaloacetic_transaminase_level(screening792, 3).
+glutamic_oxaloacetic_transaminase_level(screening793, 3).
+glutamic_oxaloacetic_transaminase_level(screening794, 4).
+glutamic_oxaloacetic_transaminase_level(screening795, 4).
+glutamic_oxaloacetic_transaminase_level(screening796, 4).
+glutamic_oxaloacetic_transaminase_level(screening797, 3).
+glutamic_oxaloacetic_transaminase_level(screening798, 3).
+glutamic_oxaloacetic_transaminase_level(screening799, 2).
+glutamic_oxaloacetic_transaminase_level(screening800, 1).
+glutamic_oxaloacetic_transaminase_level(screening801, 2).
+glutamic_oxaloacetic_transaminase_level(screening802, 2).
+glutamic_oxaloacetic_transaminase_level(screening803, 2).
+glutamic_oxaloacetic_transaminase_level(screening804, 2).
+glutamic_oxaloacetic_transaminase_level(screening805, 1).
+glutamic_oxaloacetic_transaminase_level(screening806, 4).
+glutamic_oxaloacetic_transaminase_level(screening807, 4).
+glutamic_oxaloacetic_transaminase_level(screening808, 3).
+glutamic_oxaloacetic_transaminase_level(screening809, 3).
+glutamic_oxaloacetic_transaminase_level(screening810, 3).
+glutamic_oxaloacetic_transaminase_level(screening811, 3).
+glutamic_oxaloacetic_transaminase_level(screening812, 4).
+glutamic_oxaloacetic_transaminase_level(screening813, 3).
+glutamic_oxaloacetic_transaminase_level(screening814, 4).
+glutamic_oxaloacetic_transaminase_level(screening815, 4).
+glutamic_oxaloacetic_transaminase_level(screening816, 4).
+glutamic_oxaloacetic_transaminase_level(screening817, 3).
+glutamic_oxaloacetic_transaminase_level(screening818, 3).
+glutamic_oxaloacetic_transaminase_level(screening819, 4).
+glutamic_oxaloacetic_transaminase_level(screening820, 4).
+glutamic_oxaloacetic_transaminase_level(screening821, 4).
+glutamic_oxaloacetic_transaminase_level(screening822, 4).
+glutamic_oxaloacetic_transaminase_level(screening823, 4).
+glutamic_oxaloacetic_transaminase_level(screening824, 4).
+glutamic_oxaloacetic_transaminase_level(screening825, 4).
+glutamic_oxaloacetic_transaminase_level(screening826, 4).
+glutamic_oxaloacetic_transaminase_level(screening827, 4).
+glutamic_oxaloacetic_transaminase_level(screening828, 4).
+glutamic_oxaloacetic_transaminase_level(screening829, 4).
+glutamic_oxaloacetic_transaminase_level(screening830, 4).
+glutamic_oxaloacetic_transaminase_level(screening831, 4).
+glutamic_oxaloacetic_transaminase_level(screening832, 4).
+glutamic_oxaloacetic_transaminase_level(screening833, 3).
+glutamic_oxaloacetic_transaminase_level(screening834, 3).
+glutamic_oxaloacetic_transaminase_level(screening835, 3).
+glutamic_oxaloacetic_transaminase_level(screening836, 3).
+glutamic_oxaloacetic_transaminase_level(screening837, 3).
+glutamic_oxaloacetic_transaminase_level(screening838, 4).
+glutamic_oxaloacetic_transaminase_level(screening839, 4).
+glutamic_oxaloacetic_transaminase_level(screening840, 4).
+glutamic_oxaloacetic_transaminase_level(screening841, 4).
+glutamic_oxaloacetic_transaminase_level(screening842, 3).
+glutamic_oxaloacetic_transaminase_level(screening843, 4).
+glutamic_oxaloacetic_transaminase_level(screening844, 3).
+glutamic_oxaloacetic_transaminase_level(screening845, 3).
+glutamic_oxaloacetic_transaminase_level(screening846, 4).
+glutamic_oxaloacetic_transaminase_level(screening847, 4).
+glutamic_oxaloacetic_transaminase_level(screening848, 2).
+glutamic_oxaloacetic_transaminase_level(screening849, 2).
+glutamic_oxaloacetic_transaminase_level(screening850, 2).
+glutamic_oxaloacetic_transaminase_level(screening851, 2).
+glutamic_oxaloacetic_transaminase_level(screening852, 2).
+glutamic_oxaloacetic_transaminase_level(screening853, 2).
+glutamic_oxaloacetic_transaminase_level(screening854, 2).
+glutamic_oxaloacetic_transaminase_level(screening855, 2).
+glutamic_oxaloacetic_transaminase_level(screening856, 3).
+glutamic_oxaloacetic_transaminase_level(screening857, 3).
+glutamic_oxaloacetic_transaminase_level(screening858, 3).
+glutamic_oxaloacetic_transaminase_level(screening859, 4).
+glutamic_oxaloacetic_transaminase_level(screening860, 2).
+glutamic_oxaloacetic_transaminase_level(screening861, 2).
+glutamic_oxaloacetic_transaminase_level(screening862, 2).
+glutamic_oxaloacetic_transaminase_level(screening863, 2).
+glutamic_oxaloacetic_transaminase_level(screening864, 2).
+glutamic_oxaloacetic_transaminase_level(screening865, 2).
+glutamic_oxaloacetic_transaminase_level(screening866, 2).
+glutamic_oxaloacetic_transaminase_level(screening867, 2).
+glutamic_oxaloacetic_transaminase_level(screening868, 2).
+glutamic_oxaloacetic_transaminase_level(screening869, 1).
+glutamic_oxaloacetic_transaminase_level(screening870, 2).
+glutamic_oxaloacetic_transaminase_level(screening871, 2).
+glutamic_oxaloacetic_transaminase_level(screening872, 2).
+glutamic_oxaloacetic_transaminase_level(screening873, 2).
+glutamic_oxaloacetic_transaminase_level(screening874, 2).
+glutamic_oxaloacetic_transaminase_level(screening875, 2).
+glutamic_oxaloacetic_transaminase_level(screening876, 2).
+glutamic_oxaloacetic_transaminase_level(screening877, 2).
+glutamic_oxaloacetic_transaminase_level(screening878, 3).
+glutamic_oxaloacetic_transaminase_level(screening879, 3).
+glutamic_oxaloacetic_transaminase_level(screening880, 3).
+glutamic_oxaloacetic_transaminase_level(screening881, 3).
+glutamic_oxaloacetic_transaminase_level(screening882, 4).
+glutamic_oxaloacetic_transaminase_level(screening883, 4).
+glutamic_oxaloacetic_transaminase_level(screening884, 4).
+glutamic_oxaloacetic_transaminase_level(screening885, 4).
+glutamic_oxaloacetic_transaminase_level(screening886, 4).
+glutamic_oxaloacetic_transaminase_level(screening887, 4).
+glutamic_oxaloacetic_transaminase_level(screening888, 4).
+glutamic_oxaloacetic_transaminase_level(screening889, 4).
+glutamic_oxaloacetic_transaminase_level(screening890, 4).
+glutamic_oxaloacetic_transaminase_level(screening891, 4).
+glutamic_oxaloacetic_transaminase_level(screening892, 4).
+glutamic_oxaloacetic_transaminase_level(screening893, 4).
+glutamic_oxaloacetic_transaminase_level(screening894, 4).
+glutamic_oxaloacetic_transaminase_level(screening895, 4).
+glutamic_oxaloacetic_transaminase_level(screening896, 4).
+glutamic_oxaloacetic_transaminase_level(screening897, 4).
+glutamic_oxaloacetic_transaminase_level(screening898, 4).
+glutamic_oxaloacetic_transaminase_level(screening899, 4).
+glutamic_oxaloacetic_transaminase_level(screening900, 4).
+glutamic_oxaloacetic_transaminase_level(screening901, 4).
+glutamic_oxaloacetic_transaminase_level(screening902, 3).
+glutamic_oxaloacetic_transaminase_level(screening903, 4).
+glutamic_oxaloacetic_transaminase_level(screening904, 4).
+glutamic_oxaloacetic_transaminase_level(screening905, 4).
+glutamic_oxaloacetic_transaminase_level(screening906, 4).
+glutamic_oxaloacetic_transaminase_level(screening907, 3).
+glutamic_oxaloacetic_transaminase_level(screening908, 1).
+glutamic_oxaloacetic_transaminase_level(screening909, 1).
+glutamic_oxaloacetic_transaminase_level(screening910, 1).
+glutamic_oxaloacetic_transaminase_level(screening911, 1).
+glutamic_oxaloacetic_transaminase_level(screening912, 1).
+glutamic_oxaloacetic_transaminase_level(screening913, 1).
+glutamic_oxaloacetic_transaminase_level(screening914, 2).
+glutamic_oxaloacetic_transaminase_level(screening915, 4).
+glutamic_oxaloacetic_transaminase_level(screening916, 4).
+glutamic_oxaloacetic_transaminase_level(screening917, 3).
+glutamic_oxaloacetic_transaminase_level(screening918, 3).
+glutamic_oxaloacetic_transaminase_level(screening919, 4).
+glutamic_oxaloacetic_transaminase_level(screening920, 4).
+glutamic_oxaloacetic_transaminase_level(screening921, 3).
+glutamic_oxaloacetic_transaminase_level(screening922, 3).
+glutamic_oxaloacetic_transaminase_level(screening923, 3).
+glutamic_oxaloacetic_transaminase_level(screening924, 1).
+glutamic_oxaloacetic_transaminase_level(screening925, 2).
+glutamic_oxaloacetic_transaminase_level(screening926, 1).
+glutamic_oxaloacetic_transaminase_level(screening927, 1).
+glutamic_oxaloacetic_transaminase_level(screening928, 1).
+glutamic_oxaloacetic_transaminase_level(screening929, 1).
+glutamic_oxaloacetic_transaminase_level(screening930, 4).
+glutamic_oxaloacetic_transaminase_level(screening931, 4).
+glutamic_oxaloacetic_transaminase_level(screening932, 4).
+glutamic_oxaloacetic_transaminase_level(screening933, 4).
+glutamic_oxaloacetic_transaminase_level(screening934, 4).
+glutamic_oxaloacetic_transaminase_level(screening935, 4).
+glutamic_oxaloacetic_transaminase_level(screening936, 3).
+glutamic_oxaloacetic_transaminase_level(screening937, 4).
+glutamic_oxaloacetic_transaminase_level(screening938, 4).
+glutamic_oxaloacetic_transaminase_level(screening939, 4).
+glutamic_oxaloacetic_transaminase_level(screening940, 4).
+glutamic_oxaloacetic_transaminase_level(screening941, 4).
+glutamic_oxaloacetic_transaminase_level(screening942, 4).
+glutamic_oxaloacetic_transaminase_level(screening943, 4).
+glutamic_oxaloacetic_transaminase_level(screening944, 3).
+glutamic_oxaloacetic_transaminase_level(screening945, 4).
+glutamic_oxaloacetic_transaminase_level(screening946, 4).
+glutamic_oxaloacetic_transaminase_level(screening947, 4).
+glutamic_oxaloacetic_transaminase_level(screening948, 4).
+glutamic_oxaloacetic_transaminase_level(screening949, 4).
+glutamic_oxaloacetic_transaminase_level(screening950, 4).
+glutamic_oxaloacetic_transaminase_level(screening951, 4).
+glutamic_oxaloacetic_transaminase_level(screening952, 3).
+glutamic_oxaloacetic_transaminase_level(screening953, 4).
+glutamic_oxaloacetic_transaminase_level(screening954, 4).
+glutamic_oxaloacetic_transaminase_level(screening955, 4).
+glutamic_oxaloacetic_transaminase_level(screening956, 3).
+glutamic_oxaloacetic_transaminase_level(screening957, 3).
+glutamic_oxaloacetic_transaminase_level(screening958, 3).
+glutamic_oxaloacetic_transaminase_level(screening959, 3).
+glutamic_oxaloacetic_transaminase_level(screening960, 3).
+glutamic_oxaloacetic_transaminase_level(screening961, 4).
+glutamic_oxaloacetic_transaminase_level(screening962, 4).
+glutamic_oxaloacetic_transaminase_level(screening963, 3).
+glutamic_oxaloacetic_transaminase_level(screening964, 3).
+glutamic_oxaloacetic_transaminase_level(screening965, 3).
+glutamic_oxaloacetic_transaminase_level(screening966, 3).
+glutamic_oxaloacetic_transaminase_level(screening967, 3).
+glutamic_oxaloacetic_transaminase_level(screening968, 3).
+glutamic_oxaloacetic_transaminase_level(screening969, 3).
+glutamic_oxaloacetic_transaminase_level(screening970, 3).
+glutamic_oxaloacetic_transaminase_level(screening971, 3).
+glutamic_oxaloacetic_transaminase_level(screening972, 4).
+glutamic_oxaloacetic_transaminase_level(screening973, 4).
+glutamic_oxaloacetic_transaminase_level(screening974, 3).
+glutamic_oxaloacetic_transaminase_level(screening975, 3).
+glutamic_oxaloacetic_transaminase_level(screening976, 3).
+glutamic_oxaloacetic_transaminase_level(screening977, 3).
+glutamic_oxaloacetic_transaminase_level(screening978, 2).
+glutamic_oxaloacetic_transaminase_level(screening979, 2).
+glutamic_oxaloacetic_transaminase_level(screening980, 3).
+glutamic_oxaloacetic_transaminase_level(screening981, 3).
+glutamic_oxaloacetic_transaminase_level(screening982, 4).
+glutamic_oxaloacetic_transaminase_level(screening983, 3).
+glutamic_oxaloacetic_transaminase_level(screening984, 3).
+glutamic_oxaloacetic_transaminase_level(screening985, 4).
+glutamic_oxaloacetic_transaminase_level(screening986, 4).
+glutamic_oxaloacetic_transaminase_level(screening987, 4).
+glutamic_oxaloacetic_transaminase_level(screening988, 4).
+glutamic_oxaloacetic_transaminase_level(screening989, 4).
+glutamic_oxaloacetic_transaminase_level(screening990, 4).
+glutamic_oxaloacetic_transaminase_level(screening991, 3).
+glutamic_oxaloacetic_transaminase_level(screening992, 3).
+glutamic_oxaloacetic_transaminase_level(screening993, 4).
+glutamic_oxaloacetic_transaminase_level(screening994, 3).
+glutamic_oxaloacetic_transaminase_level(screening995, 3).
+glutamic_oxaloacetic_transaminase_level(screening996, 4).
+glutamic_oxaloacetic_transaminase_level(screening997, 4).
+glutamic_oxaloacetic_transaminase_level(screening998, 4).
+glutamic_oxaloacetic_transaminase_level(screening999, 4).
 glutamic_pyruvic_transaminase_level(screening001,3).
 glutamic_pyruvic_transaminase_level(screening002,3).
 glutamic_pyruvic_transaminase_level(screening003,3).
@@ -30516,7318 +30319,6 @@ glutamic_pyruvic_transaminase_level(screening996,3).
 glutamic_pyruvic_transaminase_level(screening997,3).
 glutamic_pyruvic_transaminase_level(screening998,3).
 glutamic_pyruvic_transaminase_level(screening999,3).
-has_biopsy(patient001,biopsy001_001).
-has_biopsy(patient002,biopsy002_002).
-has_biopsy(patient003,biopsy003_003).
-has_biopsy(patient004,biopsy004_004).
-has_biopsy(patient005,biopsy005_005).
-has_biopsy(patient006,biopsy002_006).
-has_biopsy(patient007,biopsy006_007).
-has_biopsy(patient008,biopsy007_008).
-has_biopsy(patient009,biopsy008_009).
-has_biopsy(patient010,biopsy009_010).
-has_biopsy(patient011,biopsy010_011).
-has_biopsy(patient012,biopsy011_012).
-has_biopsy(patient013,biopsy012_013).
-has_biopsy(patient014,biopsy008_014).
-has_biopsy(patient015,biopsy013_015).
-has_biopsy(patient016,biopsy010_016).
-has_biopsy(patient017,biopsy003_017).
-has_biopsy(patient018,biopsy001_018).
-has_biopsy(patient019,biopsy010_019).
-has_biopsy(patient020,biopsy002_020).
-has_biopsy(patient021,biopsy010_021).
-has_biopsy(patient022,biopsy010_022).
-has_biopsy(patient023,biopsy008_023).
-has_biopsy(patient024,biopsy010_024).
-has_biopsy(patient025,biopsy014_025).
-has_biopsy(patient026,biopsy001_026).
-has_biopsy(patient027,biopsy012_027).
-has_biopsy(patient028,biopsy009_028).
-has_biopsy(patient028,biopsy015_028).
-has_biopsy(patient028,biopsy016_028).
-has_biopsy(patient029,biopsy001_029).
-has_biopsy(patient030,biopsy015_030).
-has_biopsy(patient031,biopsy006_031).
-has_biopsy(patient032,biopsy015_032).
-has_biopsy(patient032,biopsy017_032).
-has_biopsy(patient033,biopsy006_033).
-has_biopsy(patient034,biopsy008_034).
-has_biopsy(patient034,biopsy015_034).
-has_biopsy(patient035,biopsy018_035).
-has_biopsy(patient036,biopsy008_036).
-has_biopsy(patient037,biopsy017_037).
-has_biopsy(patient038,biopsy002_038).
-has_biopsy(patient038,biopsy005_038).
-has_biopsy(patient039,biopsy001_039).
-has_biopsy(patient040,biopsy001_040).
-has_biopsy(patient041,biopsy002_041).
-has_biopsy(patient042,biopsy001_042).
-has_biopsy(patient043,biopsy018_043).
-has_biopsy(patient044,biopsy013_044).
-has_biopsy(patient045,biopsy014_045).
-has_biopsy(patient046,biopsy001_046).
-has_biopsy(patient047,biopsy003_047).
-has_biopsy(patient048,biopsy015_048).
-has_biopsy(patient049,biopsy008_049).
-has_biopsy(patient050,biopsy005_050).
-has_biopsy(patient051,biopsy010_051).
-has_biopsy(patient052,biopsy010_052).
-has_biopsy(patient053,biopsy005_053).
-has_biopsy(patient054,biopsy005_054).
-has_biopsy(patient054,biopsy008_054).
-has_biopsy(patient055,biopsy010_055).
-has_biopsy(patient056,biopsy017_056).
-has_biopsy(patient057,biopsy001_057).
-has_biopsy(patient058,biopsy001_058).
-has_biopsy(patient059,biopsy019_059).
-has_biopsy(patient060,biopsy015_060).
-has_biopsy(patient060,biopsy020_060).
-has_biopsy(patient061,biopsy009_061).
-has_biopsy(patient062,biopsy002_062).
-has_biopsy(patient063,biopsy006_063).
-has_biopsy(patient064,biopsy006_064).
-has_biopsy(patient065,biopsy012_065).
-has_biopsy(patient066,biopsy001_066).
-has_biopsy(patient067,biopsy021_067).
-has_biopsy(patient068,biopsy001_068).
-has_biopsy(patient069,biopsy017_069).
-has_biopsy(patient070,biopsy001_070).
-has_biopsy(patient071,biopsy006_071).
-has_biopsy(patient072,biopsy005_072).
-has_biopsy(patient073,biopsy005_073).
-has_biopsy(patient074,biopsy008_074).
-has_biopsy(patient074,biopsy019_074).
-has_biopsy(patient075,biopsy010_075).
-has_biopsy(patient076,biopsy021_076).
-has_biopsy(patient077,biopsy002_077).
-has_biopsy(patient078,biopsy002_078).
-has_biopsy(patient078,biopsy019_078).
-has_biopsy(patient079,biopsy001_079).
-has_biopsy(patient080,biopsy002_080).
-has_biopsy(patient081,biopsy008_081).
-has_biopsy(patient082,biopsy001_082).
-has_biopsy(patient083,biopsy021_083).
-has_biopsy(patient084,biopsy017_084).
-has_biopsy(patient085,biopsy005_085).
-has_biopsy(patient086,biopsy001_086).
-has_biopsy(patient087,biopsy009_087).
-has_biopsy(patient088,biopsy015_088).
-has_biopsy(patient089,biopsy008_089).
-has_biopsy(patient090,biopsy009_090).
-has_biopsy(patient090,biopsy022_090).
-has_biopsy(patient090,biopsy023_090).
-has_biopsy(patient091,biopsy009_091).
-has_biopsy(patient091,biopsy015_091).
-has_biopsy(patient092,biopsy009_092).
-has_biopsy(patient093,biopsy002_093).
-has_biopsy(patient093,biopsy005_093).
-has_biopsy(patient094,biopsy023_094).
-has_biopsy(patient095,biopsy002_095).
-has_biopsy(patient096,biopsy016_096).
-has_biopsy(patient097,biopsy005_097).
-has_biopsy(patient097,biopsy019_097).
-has_biopsy(patient097,biopsy024_097).
-has_biopsy(patient098,biopsy020_098).
-has_biopsy(patient099,biopsy003_099).
-has_biopsy(patient100,biopsy005_100).
-has_biopsy(patient101,biopsy008_101).
-has_biopsy(patient102,biopsy002_102).
-has_biopsy(patient102,biopsy023_102).
-has_biopsy(patient103,biopsy005_103).
-has_biopsy(patient104,biopsy002_104).
-has_biopsy(patient105,biopsy002_105).
-has_biopsy(patient106,biopsy014_106).
-has_biopsy(patient107,biopsy010_107).
-has_biopsy(patient108,biopsy005_108).
-has_biopsy(patient109,biopsy005_109).
-has_biopsy(patient110,biopsy008_110).
-has_biopsy(patient111,biopsy002_111).
-has_biopsy(patient112,biopsy015_112).
-has_biopsy(patient113,biopsy005_113).
-has_biopsy(patient114,biopsy002_114).
-has_biopsy(patient115,biopsy002_115).
-has_biopsy(patient116,biopsy012_116).
-has_biopsy(patient117,biopsy005_117).
-has_biopsy(patient117,biopsy009_117).
-has_biopsy(patient118,biopsy005_118).
-has_biopsy(patient119,biopsy008_119).
-has_biopsy(patient120,biopsy005_120).
-has_biopsy(patient121,biopsy005_121).
-has_biopsy(patient121,biopsy015_121).
-has_biopsy(patient122,biopsy005_122).
-has_biopsy(patient123,biopsy021_123).
-has_biopsy(patient124,biopsy005_124).
-has_biopsy(patient125,biopsy012_125).
-has_biopsy(patient126,biopsy012_126).
-has_biopsy(patient127,biopsy017_127).
-has_biopsy(patient128,biopsy005_128).
-has_biopsy(patient128,biopsy012_128).
-has_biopsy(patient129,biopsy005_129).
-has_biopsy(patient130,biopsy004_130).
-has_biopsy(patient131,biopsy020_131).
-has_biopsy(patient132,biopsy008_132).
-has_biopsy(patient133,biopsy005_133).
-has_biopsy(patient133,biopsy008_133).
-has_biopsy(patient134,biopsy008_134).
-has_biopsy(patient135,biopsy015_135).
-has_biopsy(patient136,biopsy005_136).
-has_biopsy(patient136,biopsy008_136).
-has_biopsy(patient136,biopsy024_136).
-has_biopsy(patient137,biopsy005_137).
-has_biopsy(patient138,biopsy009_138).
-has_biopsy(patient139,biopsy005_139).
-has_biopsy(patient140,biopsy024_140).
-has_biopsy(patient141,biopsy005_141).
-has_biopsy(patient142,biopsy010_142).
-has_biopsy(patient143,biopsy021_143).
-has_biopsy(patient144,biopsy008_144).
-has_biopsy(patient145,biopsy005_145).
-has_biopsy(patient145,biopsy008_145).
-has_biopsy(patient145,biopsy016_145).
-has_biopsy(patient146,biopsy004_146).
-has_biopsy(patient146,biopsy008_146).
-has_biopsy(patient146,biopsy015_146).
-has_biopsy(patient147,biopsy005_147).
-has_biopsy(patient147,biopsy008_147).
-has_biopsy(patient148,biopsy014_148).
-has_biopsy(patient149,biopsy005_149).
-has_biopsy(patient150,biopsy008_150).
-has_biopsy(patient151,biopsy005_151).
-has_biopsy(patient151,biopsy008_151).
-has_biopsy(patient151,biopsy016_151).
-has_biopsy(patient152,biopsy002_152).
-has_biopsy(patient153,biopsy002_153).
-has_biopsy(patient153,biopsy004_153).
-has_biopsy(patient153,biopsy008_153).
-has_biopsy(patient154,biopsy005_154).
-has_biopsy(patient154,biopsy008_154).
-has_biopsy(patient154,biopsy012_154).
-has_biopsy(patient154,biopsy019_154).
-has_biopsy(patient155,biopsy014_155).
-has_biopsy(patient156,biopsy003_156).
-has_biopsy(patient157,biopsy010_157).
-has_biopsy(patient158,biopsy014_158).
-has_biopsy(patient159,biopsy006_159).
-has_biopsy(patient160,biopsy013_160).
-has_biopsy(patient161,biopsy021_161).
-has_biopsy(patient162,biopsy008_162).
-has_biopsy(patient163,biopsy006_163).
-has_biopsy(patient164,biopsy007_164).
-has_biopsy(patient165,biopsy001_165).
-has_biopsy(patient166,biopsy001_166).
-has_biopsy(patient167,biopsy013_167).
-has_biopsy(patient168,biopsy001_168).
-has_biopsy(patient169,biopsy001_169).
-has_biopsy(patient170,biopsy010_170).
-has_biopsy(patient171,biopsy010_171).
-has_biopsy(patient172,biopsy005_172).
-has_biopsy(patient173,biopsy008_173).
-has_biopsy(patient173,biopsy012_173).
-has_biopsy(patient174,biopsy001_174).
-has_biopsy(patient175,biopsy021_175).
-has_biopsy(patient176,biopsy017_176).
-has_biopsy(patient177,biopsy001_177).
-has_biopsy(patient178,biopsy001_178).
-has_biopsy(patient179,biopsy014_179).
-has_biopsy(patient180,biopsy014_180).
-has_biopsy(patient181,biopsy005_181).
-has_biopsy(patient182,biopsy006_182).
-has_biopsy(patient183,biopsy001_183).
-has_biopsy(patient184,biopsy001_184).
-has_biopsy(patient185,biopsy017_185).
-has_biopsy(patient186,biopsy005_186).
-has_biopsy(patient187,biopsy005_187).
-has_biopsy(patient187,biopsy019_187).
-has_biopsy(patient187,biopsy020_187).
-has_biopsy(patient188,biopsy001_188).
-has_biopsy(patient189,biopsy010_189).
-has_biopsy(patient190,biopsy001_190).
-has_biopsy(patient191,biopsy001_191).
-has_biopsy(patient192,biopsy008_192).
-has_biopsy(patient193,biopsy010_193).
-has_biopsy(patient194,biopsy010_194).
-has_biopsy(patient195,biopsy007_195).
-has_biopsy(patient196,biopsy001_196).
-has_biopsy(patient197,biopsy007_197).
-has_biopsy(patient198,biopsy014_198).
-has_biopsy(patient199,biopsy007_199).
-has_biopsy(patient200,biopsy010_200).
-has_biopsy(patient201,biopsy013_201).
-has_biopsy(patient202,biopsy001_202).
-has_biopsy(patient203,biopsy014_203).
-has_biopsy(patient204,biopsy013_204).
-has_biopsy(patient205,biopsy006_205).
-has_biopsy(patient206,biopsy006_206).
-has_biopsy(patient207,biopsy010_207).
-has_biopsy(patient208,biopsy001_208).
-has_biopsy(patient209,biopsy014_209).
-has_biopsy(patient210,biopsy012_210).
-has_biopsy(patient210,biopsy024_210).
-has_biopsy(patient211,biopsy003_211).
-has_biopsy(patient212,biopsy007_212).
-has_biopsy(patient213,biopsy010_213).
-has_biopsy(patient214,biopsy003_214).
-has_biopsy(patient215,biopsy009_215).
-has_biopsy(patient216,biopsy012_216).
-has_biopsy(patient217,biopsy012_217).
-has_biopsy(patient218,biopsy010_218).
-has_biopsy(patient219,biopsy021_219).
-has_biopsy(patient220,biopsy010_220).
-has_biopsy(patient221,biopsy010_221).
-has_biopsy(patient222,biopsy010_222).
-has_biopsy(patient223,biopsy009_223).
-has_biopsy(patient224,biopsy014_224).
-has_biopsy(patient225,biopsy005_225).
-has_biopsy(patient225,biopsy008_225).
-has_biopsy(patient225,biopsy023_225).
-has_biopsy(patient226,biopsy005_226).
-has_biopsy(patient227,biopsy003_227).
-has_biopsy(patient228,biopsy003_228).
-has_biopsy(patient229,biopsy005_229).
-has_biopsy(patient230,biopsy005_230).
-has_biopsy(patient230,biopsy015_230).
-has_biopsy(patient231,biopsy002_231).
-has_biopsy(patient231,biopsy005_231).
-has_biopsy(patient231,biopsy008_231).
-has_biopsy(patient232,biopsy010_232).
-has_biopsy(patient233,biopsy018_233).
-has_biopsy(patient234,biopsy010_234).
-has_biopsy(patient235,biopsy010_235).
-has_biopsy(patient236,biopsy010_236).
-has_biopsy(patient237,biopsy006_237).
-has_biopsy(patient238,biopsy005_238).
-has_biopsy(patient239,biopsy010_239).
-has_biopsy(patient240,biopsy001_240).
-has_biopsy(patient241,biopsy008_241).
-has_biopsy(patient241,biopsy012_241).
-has_biopsy(patient242,biopsy008_242).
-has_biopsy(patient242,biopsy020_242).
-has_biopsy(patient243,biopsy005_243).
-has_biopsy(patient244,biopsy001_244).
-has_biopsy(patient245,biopsy006_245).
-has_biopsy(patient246,biopsy014_246).
-has_biopsy(patient247,biopsy014_247).
-has_biopsy(patient248,biopsy018_248).
-has_biopsy(patient249,biopsy010_249).
-has_biopsy(patient250,biopsy002_250).
-has_biopsy(patient251,biopsy001_251).
-has_biopsy(patient252,biopsy001_252).
-has_biopsy(patient253,biopsy005_253).
-has_biopsy(patient254,biopsy001_254).
-has_biopsy(patient255,biopsy007_255).
-has_biopsy(patient256,biopsy005_256).
-has_biopsy(patient257,biopsy002_257).
-has_biopsy(patient257,biopsy024_257).
-has_biopsy(patient258,biopsy005_258).
-has_biopsy(patient259,biopsy010_259).
-has_biopsy(patient260,biopsy015_260).
-has_biopsy(patient260,biopsy024_260).
-has_biopsy(patient260,biopsy025_260).
-has_biopsy(patient261,biopsy001_261).
-has_biopsy(patient262,biopsy005_262).
-has_biopsy(patient262,biopsy019_262).
-has_biopsy(patient263,biopsy005_263).
-has_biopsy(patient264,biopsy006_264).
-has_biopsy(patient265,biopsy005_265).
-has_biopsy(patient265,biopsy026_265).
-has_biopsy(patient266,biopsy014_266).
-has_biopsy(patient267,biopsy005_267).
-has_biopsy(patient267,biopsy015_267).
-has_biopsy(patient267,biopsy024_267).
-has_biopsy(patient268,biopsy008_268).
-has_biopsy(patient269,biopsy007_269).
-has_biopsy(patient270,biopsy010_270).
-has_biopsy(patient271,biopsy005_271).
-has_biopsy(patient272,biopsy005_272).
-has_biopsy(patient273,biopsy005_273).
-has_biopsy(patient274,biopsy002_274).
-has_biopsy(patient274,biopsy005_274).
-has_biopsy(patient275,biopsy005_275).
-has_biopsy(patient276,biopsy024_276).
-has_biopsy(patient277,biopsy005_277).
-has_biopsy(patient277,biopsy008_277).
-has_biopsy(patient278,biopsy010_278).
-has_biopsy(patient279,biopsy001_279).
-has_biopsy(patient280,biopsy010_280).
-has_biopsy(patient281,biopsy006_281).
-has_biopsy(patient282,biopsy010_282).
-has_biopsy(patient283,biopsy016_283).
-has_biopsy(patient284,biopsy002_284).
-has_biopsy(patient285,biopsy008_285).
-has_biopsy(patient286,biopsy008_286).
-has_biopsy(patient287,biopsy005_287).
-has_biopsy(patient288,biopsy005_288).
-has_biopsy(patient289,biopsy016_289).
-has_biopsy(patient290,biopsy005_290).
-has_biopsy(patient291,biopsy005_291).
-has_biopsy(patient292,biopsy005_292).
-has_biopsy(patient293,biopsy010_293).
-has_biopsy(patient294,biopsy013_294).
-has_biopsy(patient295,biopsy017_295).
-has_biopsy(patient296,biopsy008_296).
-has_biopsy(patient296,biopsy009_296).
-has_biopsy(patient296,biopsy025_296).
-has_biopsy(patient296,biopsy027_296).
-has_biopsy(patient297,biopsy001_297).
-has_biopsy(patient298,biopsy025_298).
-has_biopsy(patient299,biopsy017_299).
-has_biopsy(patient300,biopsy017_300).
-has_biopsy(patient301,biopsy005_301).
-has_biopsy(patient301,biopsy009_301).
-has_biopsy(patient301,biopsy024_301).
-has_biopsy(patient302,biopsy022_302).
-has_biopsy(patient302,biopsy023_302).
-has_biopsy(patient303,biopsy019_303).
-has_biopsy(patient303,biopsy020_303).
-has_biopsy(patient303,biopsy024_303).
-has_biopsy(patient304,biopsy005_304).
-has_biopsy(patient304,biopsy008_304).
-has_biopsy(patient304,biopsy024_304).
-has_biopsy(patient305,biopsy005_305).
-has_biopsy(patient306,biopsy005_306).
-has_biopsy(patient307,biopsy008_307).
-has_biopsy(patient308,biopsy006_308).
-has_biopsy(patient309,biopsy010_309).
-has_biopsy(patient310,biopsy005_310).
-has_biopsy(patient311,biopsy005_311).
-has_biopsy(patient311,biopsy024_311).
-has_biopsy(patient312,biopsy027_312).
-has_biopsy(patient313,biopsy005_313).
-has_biopsy(patient313,biopsy009_313).
-has_biopsy(patient313,biopsy015_313).
-has_biopsy(patient314,biopsy011_314).
-has_biopsy(patient315,biopsy010_315).
-has_biopsy(patient316,biopsy009_316).
-has_biopsy(patient317,biopsy002_317).
-has_biopsy(patient318,biopsy005_318).
-has_biopsy(patient319,biopsy005_319).
-has_biopsy(patient320,biopsy001_320).
-has_biopsy(patient321,biopsy005_321).
-has_biopsy(patient322,biopsy017_322).
-has_biopsy(patient323,biopsy015_323).
-has_biopsy(patient324,biopsy005_324).
-has_biopsy(patient325,biopsy016_325).
-has_biopsy(patient326,biopsy008_326).
-has_biopsy(patient327,biopsy012_327).
-has_biopsy(patient327,biopsy015_327).
-has_biopsy(patient328,biopsy019_328).
-has_biopsy(patient329,biopsy009_329).
-has_biopsy(patient330,biopsy001_330).
-has_biopsy(patient331,biopsy013_331).
-has_biopsy(patient332,biopsy017_332).
-has_biopsy(patient332,biopsy024_332).
-has_biopsy(patient333,biopsy012_333).
-has_biopsy(patient334,biopsy005_334).
-has_biopsy(patient335,biopsy016_335).
-has_biopsy(patient336,biopsy026_336).
-has_biopsy(patient337,biopsy016_337).
-has_biopsy(patient338,biopsy015_338).
-has_biopsy(patient339,biopsy023_339).
-has_biopsy(patient340,biopsy005_340).
-has_biopsy(patient341,biopsy007_341).
-has_biopsy(patient342,biopsy028_342).
-has_biopsy(patient343,biopsy005_343).
-has_biopsy(patient344,biopsy009_344).
-has_biopsy(patient345,biopsy012_345).
-has_biopsy(patient346,biopsy009_346).
-has_biopsy(patient347,biopsy008_347).
-has_biopsy(patient348,biopsy002_348).
-has_biopsy(patient349,biopsy008_349).
-has_biopsy(patient350,biopsy008_350).
-has_biopsy(patient351,biopsy026_351).
-has_biopsy(patient352,biopsy002_352).
-has_biopsy(patient352,biopsy016_352).
-has_biopsy(patient352,biopsy023_352).
-has_biopsy(patient353,biopsy005_353).
-has_biopsy(patient354,biopsy005_354).
-has_biopsy(patient355,biopsy005_355).
-has_biopsy(patient356,biopsy005_356).
-has_biopsy(patient356,biopsy023_356).
-has_biopsy(patient356,biopsy027_356).
-has_biopsy(patient357,biopsy027_357).
-has_biopsy(patient358,biopsy005_358).
-has_biopsy(patient358,biopsy019_358).
-has_biopsy(patient359,biopsy019_359).
-has_biopsy(patient360,biopsy002_360).
-has_biopsy(patient361,biopsy002_361).
-has_biopsy(patient362,biopsy017_362).
-has_biopsy(patient362,biopsy024_362).
-has_biopsy(patient363,biopsy002_363).
-has_biopsy(patient363,biopsy005_363).
-has_biopsy(patient364,biopsy017_364).
-has_biopsy(patient365,biopsy005_365).
-has_biopsy(patient366,biopsy005_366).
-has_biopsy(patient366,biopsy009_366).
-has_biopsy(patient367,biopsy014_367).
-has_biopsy(patient368,biopsy005_368).
-has_biopsy(patient369,biopsy008_369).
-has_biopsy(patient370,biopsy002_370).
-has_biopsy(patient371,biopsy002_371).
-has_biopsy(patient372,biopsy005_372).
-has_biopsy(patient373,biopsy005_373).
-has_biopsy(patient374,biopsy022_374).
-has_biopsy(patient375,biopsy001_375).
-has_biopsy(patient376,biopsy002_376).
-has_biopsy(patient377,biopsy009_377).
-has_biopsy(patient378,biopsy009_378).
-has_biopsy(patient379,biopsy012_379).
-has_biopsy(patient380,biopsy029_380).
-has_biopsy(patient381,biopsy002_381).
-has_biopsy(patient381,biopsy016_381).
-has_biopsy(patient382,biopsy005_382).
-has_biopsy(patient382,biopsy016_382).
-has_biopsy(patient383,biopsy007_383).
-has_biopsy(patient384,biopsy005_384).
-has_biopsy(patient385,biopsy002_385).
-has_biopsy(patient385,biopsy005_385).
-has_biopsy(patient385,biopsy008_385).
-has_biopsy(patient385,biopsy023_385).
-has_biopsy(patient386,biopsy005_386).
-has_biopsy(patient387,biopsy008_387).
-has_biopsy(patient388,biopsy008_388).
-has_biopsy(patient389,biopsy002_389).
-has_biopsy(patient390,biopsy005_390).
-has_biopsy(patient390,biopsy008_390).
-has_biopsy(patient391,biopsy002_391).
-has_biopsy(patient391,biopsy019_391).
-has_biopsy(patient392,biopsy017_392).
-has_biopsy(patient392,biopsy023_392).
-has_biopsy(patient393,biopsy006_393).
-has_biopsy(patient394,biopsy002_394).
-has_biopsy(patient395,biopsy016_395).
-has_biopsy(patient396,biopsy017_396).
-has_biopsy(patient396,biopsy026_396).
-has_biopsy(patient397,biopsy002_397).
-has_biopsy(patient398,biopsy009_398).
-has_biopsy(patient399,biopsy009_399).
-has_biopsy(patient400,biopsy009_400).
-has_biopsy(patient401,biopsy008_401).
-has_biopsy(patient402,biopsy009_402).
-has_biopsy(patient403,biopsy024_403).
-has_biopsy(patient404,biopsy005_404).
-has_biopsy(patient404,biopsy009_404).
-has_biopsy(patient404,biopsy017_404).
-has_biopsy(patient404,biopsy022_404).
-has_biopsy(patient404,biopsy029_404).
-has_biopsy(patient405,biopsy008_405).
-has_biopsy(patient406,biopsy009_406).
-has_biopsy(patient407,biopsy012_407).
-has_biopsy(patient408,biopsy002_408).
-has_biopsy(patient409,biopsy005_409).
-has_biopsy(patient410,biopsy006_410).
-has_biopsy(patient411,biopsy007_411).
-has_biopsy(patient412,biopsy005_412).
-has_biopsy(patient412,biopsy020_412).
-has_biopsy(patient413,biopsy005_413).
-has_biopsy(patient413,biopsy024_413).
-has_biopsy(patient414,biopsy018_414).
-has_biopsy(patient415,biopsy010_415).
-has_biopsy(patient416,biopsy010_416).
-has_biopsy(patient417,biopsy028_417).
-has_biopsy(patient418,biopsy001_418).
-has_biopsy(patient419,biopsy013_419).
-has_biopsy(patient420,biopsy001_420).
-has_biopsy(patient421,biopsy003_421).
-has_biopsy(patient422,biopsy003_422).
-has_biopsy(patient423,biopsy014_423).
-has_biopsy(patient424,biopsy006_424).
-has_biopsy(patient425,biopsy001_425).
-has_biopsy(patient426,biopsy030_426).
-has_biopsy(patient427,biopsy003_427).
-has_biopsy(patient428,biopsy001_428).
-has_biopsy(patient429,biopsy010_429).
-has_biopsy(patient430,biopsy010_430).
-has_biopsy(patient431,biopsy007_431).
-has_biopsy(patient432,biopsy003_432).
-has_biopsy(patient433,biopsy003_433).
-has_biopsy(patient434,biopsy013_434).
-has_biopsy(patient435,biopsy010_435).
-has_biopsy(patient436,biopsy013_436).
-has_biopsy(patient437,biopsy006_437).
-has_biopsy(patient438,biopsy001_438).
-has_biopsy(patient439,biopsy001_439).
-has_biopsy(patient440,biopsy001_440).
-has_biopsy(patient441,biopsy014_441).
-has_biopsy(patient442,biopsy010_442).
-has_biopsy(patient443,biopsy003_443).
-has_biopsy(patient444,biopsy001_444).
-has_biopsy(patient445,biopsy001_445).
-has_biopsy(patient446,biopsy006_446).
-has_biopsy(patient447,biopsy001_447).
-has_biopsy(patient448,biopsy007_448).
-has_biopsy(patient449,biopsy012_449).
-has_biopsy(patient450,biopsy011_450).
-has_biopsy(patient451,biopsy006_451).
-has_biopsy(patient452,biopsy001_452).
-has_biopsy(patient453,biopsy014_453).
-has_biopsy(patient454,biopsy005_454).
-has_biopsy(patient454,biopsy009_454).
-has_biopsy(patient454,biopsy017_454).
-has_biopsy(patient454,biopsy024_454).
-has_biopsy(patient455,biopsy010_455).
-has_biopsy(patient456,biopsy001_456).
-has_biopsy(patient457,biopsy010_457).
-has_biopsy(patient458,biopsy018_458).
-has_biopsy(patient459,biopsy010_459).
-has_biopsy(patient460,biopsy001_460).
-has_biopsy(patient461,biopsy002_461).
-has_biopsy(patient461,biopsy005_461).
-has_biopsy(patient461,biopsy009_461).
-has_biopsy(patient461,biopsy012_461).
-has_biopsy(patient461,biopsy015_461).
-has_biopsy(patient462,biopsy005_462).
-has_biopsy(patient462,biopsy009_462).
-has_biopsy(patient463,biopsy008_463).
-has_biopsy(patient464,biopsy002_464).
-has_biopsy(patient464,biopsy008_464).
-has_biopsy(patient464,biopsy009_464).
-has_biopsy(patient465,biopsy015_465).
-has_biopsy(patient465,biopsy031_465).
-has_biopsy(patient466,biopsy002_466).
-has_biopsy(patient466,biopsy004_466).
-has_biopsy(patient466,biopsy005_466).
-has_biopsy(patient467,biopsy002_467).
-has_biopsy(patient467,biopsy005_467).
-has_biopsy(patient468,biopsy005_468).
-has_biopsy(patient468,biopsy015_468).
-has_biopsy(patient469,biopsy012_469).
-has_biopsy(patient469,biopsy016_469).
-has_biopsy(patient470,biopsy002_470).
-has_biopsy(patient470,biopsy015_470).
-has_biopsy(patient471,biopsy022_471).
-has_biopsy(patient472,biopsy010_472).
-has_biopsy(patient473,biopsy007_473).
-has_biopsy(patient474,biopsy005_474).
-has_biopsy(patient475,biopsy005_475).
-has_biopsy(patient476,biopsy023_476).
-has_biopsy(patient477,biopsy001_477).
-has_biopsy(patient478,biopsy024_478).
-has_biopsy(patient479,biopsy005_479).
-has_biopsy(patient480,biopsy009_480).
-has_biopsy(patient481,biopsy009_481).
-has_biopsy(patient482,biopsy002_482).
-has_biopsy(patient482,biopsy017_482).
-has_biopsy(patient483,biopsy005_483).
-has_biopsy(patient484,biopsy002_484).
-has_biopsy(patient485,biopsy009_485).
-has_biopsy(patient486,biopsy002_486).
-has_biopsy(patient486,biopsy005_486).
-has_biopsy(patient486,biopsy009_486).
-has_biopsy(patient486,biopsy024_486).
-has_biopsy(patient487,biopsy019_487).
-has_biopsy(patient488,biopsy015_488).
-has_biopsy(patient488,biopsy025_488).
-has_biopsy(patient488,biopsy027_488).
-has_biopsy(patient489,biopsy024_489).
-has_biopsy(patient490,biopsy005_490).
-has_biopsy(patient491,biopsy005_491).
-has_biopsy(patient492,biopsy002_492).
-has_biopsy(patient493,biopsy005_493).
-has_biopsy(patient493,biopsy015_493).
-has_biopsy(patient494,biopsy002_494).
-has_biopsy(patient494,biopsy016_494).
-has_biopsy(patient494,biopsy024_494).
-has_biopsy(patient495,biopsy016_495).
-has_biopsy(patient496,biopsy002_496).
-has_biopsy(patient497,biopsy009_497).
-has_biopsy(patient498,biopsy005_498).
-has_biopsy(patient498,biopsy008_498).
-has_biopsy(patient499,biopsy024_499).
-has_biopsy(patient499,biopsy032_499).
-has_biopsy(patient500,biopsy005_500).
-has_biopsy(patient500,biopsy008_500).
-has_screening(patient001,screening001).
-has_screening(patient001,screening002).
-has_screening(patient001,screening003).
-has_screening(patient001,screening004).
-has_screening(patient001,screening005).
-has_screening(patient001,screening006).
-has_screening(patient001,screening007).
-has_screening(patient001,screening008).
-has_screening(patient001,screening009).
-has_screening(patient001,screening010).
-has_screening(patient001,screening011).
-has_screening(patient001,screening012).
-has_screening(patient001,screening013).
-has_screening(patient001,screening014).
-has_screening(patient001,screening015).
-has_screening(patient001,screening016).
-has_screening(patient001,screening017).
-has_screening(patient001,screening018).
-has_screening(patient001,screening019).
-has_screening(patient001,screening020).
-has_screening(patient001,screening021).
-has_screening(patient002,screening022).
-has_screening(patient002,screening023).
-has_screening(patient002,screening024).
-has_screening(patient002,screening025).
-has_screening(patient002,screening026).
-has_screening(patient002,screening027).
-has_screening(patient002,screening028).
-has_screening(patient002,screening029).
-has_screening(patient002,screening030).
-has_screening(patient002,screening031).
-has_screening(patient002,screening032).
-has_screening(patient003,screening033).
-has_screening(patient003,screening034).
-has_screening(patient004,screening035).
-has_screening(patient004,screening036).
-has_screening(patient004,screening037).
-has_screening(patient005,screening038).
-has_screening(patient006,screening039).
-has_screening(patient006,screening040).
-has_screening(patient006,screening041).
-has_screening(patient006,screening042).
-has_screening(patient006,screening043).
-has_screening(patient006,screening044).
-has_screening(patient006,screening045).
-has_screening(patient006,screening046).
-has_screening(patient006,screening047).
-has_screening(patient006,screening048).
-has_screening(patient006,screening049).
-has_screening(patient007,screening050).
-has_screening(patient007,screening051).
-has_screening(patient007,screening052).
-has_screening(patient007,screening053).
-has_screening(patient007,screening054).
-has_screening(patient007,screening055).
-has_screening(patient007,screening056).
-has_screening(patient007,screening057).
-has_screening(patient007,screening058).
-has_screening(patient007,screening059).
-has_screening(patient007,screening060).
-has_screening(patient007,screening061).
-has_screening(patient007,screening062).
-has_screening(patient007,screening063).
-has_screening(patient007,screening064).
-has_screening(patient007,screening065).
-has_screening(patient007,screening066).
-has_screening(patient007,screening067).
-has_screening(patient007,screening068).
-has_screening(patient007,screening069).
-has_screening(patient007,screening070).
-has_screening(patient008,screening071).
-has_screening(patient008,screening072).
-has_screening(patient008,screening073).
-has_screening(patient008,screening074).
-has_screening(patient008,screening075).
-has_screening(patient008,screening076).
-has_screening(patient008,screening077).
-has_screening(patient008,screening078).
-has_screening(patient008,screening079).
-has_screening(patient008,screening080).
-has_screening(patient008,screening081).
-has_screening(patient008,screening082).
-has_screening(patient008,screening083).
-has_screening(patient008,screening084).
-has_screening(patient009,screening085).
-has_screening(patient009,screening086).
-has_screening(patient010,screening087).
-has_screening(patient010,screening088).
-has_screening(patient010,screening089).
-has_screening(patient010,screening090).
-has_screening(patient010,screening091).
-has_screening(patient010,screening092).
-has_screening(patient010,screening093).
-has_screening(patient010,screening094).
-has_screening(patient010,screening095).
-has_screening(patient010,screening096).
-has_screening(patient010,screening097).
-has_screening(patient011,screening098).
-has_screening(patient011,screening099).
-has_screening(patient011,screening100).
-has_screening(patient011,screening101).
-has_screening(patient011,screening102).
-has_screening(patient011,screening103).
-has_screening(patient011,screening104).
-has_screening(patient011,screening105).
-has_screening(patient011,screening106).
-has_screening(patient011,screening107).
-has_screening(patient011,screening108).
-has_screening(patient011,screening109).
-has_screening(patient012,screening110).
-has_screening(patient012,screening111).
-has_screening(patient013,screening112).
-has_screening(patient013,screening113).
-has_screening(patient013,screening114).
-has_screening(patient013,screening115).
-has_screening(patient013,screening116).
-has_screening(patient013,screening117).
-has_screening(patient013,screening118).
-has_screening(patient013,screening119).
-has_screening(patient013,screening120).
-has_screening(patient013,screening121).
-has_screening(patient014,screening122).
-has_screening(patient014,screening123).
-has_screening(patient014,screening124).
-has_screening(patient014,screening125).
-has_screening(patient014,screening126).
-has_screening(patient014,screening127).
-has_screening(patient014,screening128).
-has_screening(patient014,screening129).
-has_screening(patient014,screening130).
-has_screening(patient014,screening131).
-has_screening(patient014,screening132).
-has_screening(patient014,screening133).
-has_screening(patient014,screening134).
-has_screening(patient014,screening135).
-has_screening(patient014,screening136).
-has_screening(patient014,screening137).
-has_screening(patient014,screening138).
-has_screening(patient014,screening139).
-has_screening(patient014,screening140).
-has_screening(patient015,screening141).
-has_screening(patient015,screening142).
-has_screening(patient015,screening143).
-has_screening(patient015,screening144).
-has_screening(patient015,screening145).
-has_screening(patient015,screening146).
-has_screening(patient015,screening147).
-has_screening(patient015,screening148).
-has_screening(patient016,screening149).
-has_screening(patient016,screening150).
-has_screening(patient016,screening151).
-has_screening(patient016,screening152).
-has_screening(patient016,screening153).
-has_screening(patient016,screening154).
-has_screening(patient016,screening155).
-has_screening(patient016,screening156).
-has_screening(patient016,screening157).
-has_screening(patient016,screening158).
-has_screening(patient016,screening159).
-has_screening(patient016,screening160).
-has_screening(patient016,screening161).
-has_screening(patient016,screening162).
-has_screening(patient016,screening163).
-has_screening(patient016,screening164).
-has_screening(patient016,screening165).
-has_screening(patient016,screening166).
-has_screening(patient017,screening167).
-has_screening(patient017,screening168).
-has_screening(patient017,screening169).
-has_screening(patient017,screening170).
-has_screening(patient017,screening171).
-has_screening(patient017,screening172).
-has_screening(patient017,screening173).
-has_screening(patient017,screening174).
-has_screening(patient017,screening175).
-has_screening(patient017,screening176).
-has_screening(patient017,screening177).
-has_screening(patient017,screening178).
-has_screening(patient018,screening179).
-has_screening(patient018,screening180).
-has_screening(patient018,screening181).
-has_screening(patient018,screening182).
-has_screening(patient018,screening183).
-has_screening(patient018,screening184).
-has_screening(patient018,screening185).
-has_screening(patient018,screening186).
-has_screening(patient018,screening187).
-has_screening(patient019,screening188).
-has_screening(patient019,screening189).
-has_screening(patient019,screening190).
-has_screening(patient019,screening191).
-has_screening(patient019,screening192).
-has_screening(patient019,screening193).
-has_screening(patient020,screening194).
-has_screening(patient020,screening195).
-has_screening(patient020,screening196).
-has_screening(patient020,screening197).
-has_screening(patient020,screening198).
-has_screening(patient020,screening199).
-has_screening(patient020,screening200).
-has_screening(patient020,screening201).
-has_screening(patient021,screening202).
-has_screening(patient021,screening203).
-has_screening(patient022,screening204).
-has_screening(patient022,screening205).
-has_screening(patient023,screening206).
-has_screening(patient023,screening207).
-has_screening(patient023,screening208).
-has_screening(patient023,screening209).
-has_screening(patient023,screening210).
-has_screening(patient024,screening211).
-has_screening(patient024,screening212).
-has_screening(patient024,screening213).
-has_screening(patient024,screening214).
-has_screening(patient024,screening215).
-has_screening(patient025,screening216).
-has_screening(patient025,screening217).
-has_screening(patient025,screening218).
-has_screening(patient025,screening219).
-has_screening(patient025,screening220).
-has_screening(patient025,screening221).
-has_screening(patient025,screening222).
-has_screening(patient025,screening223).
-has_screening(patient025,screening224).
-has_screening(patient025,screening225).
-has_screening(patient025,screening226).
-has_screening(patient025,screening227).
-has_screening(patient025,screening228).
-has_screening(patient026,screening229).
-has_screening(patient026,screening230).
-has_screening(patient026,screening231).
-has_screening(patient026,screening232).
-has_screening(patient026,screening233).
-has_screening(patient026,screening234).
-has_screening(patient026,screening235).
-has_screening(patient027,screening236).
-has_screening(patient027,screening237).
-has_screening(patient027,screening238).
-has_screening(patient027,screening239).
-has_screening(patient027,screening240).
-has_screening(patient027,screening241).
-has_screening(patient027,screening242).
-has_screening(patient027,screening243).
-has_screening(patient027,screening244).
-has_screening(patient027,screening245).
-has_screening(patient027,screening246).
-has_screening(patient027,screening247).
-has_screening(patient028,screening248).
-has_screening(patient028,screening249).
-has_screening(patient028,screening250).
-has_screening(patient028,screening251).
-has_screening(patient028,screening252).
-has_screening(patient028,screening253).
-has_screening(patient028,screening254).
-has_screening(patient028,screening255).
-has_screening(patient028,screening256).
-has_screening(patient028,screening257).
-has_screening(patient028,screening258).
-has_screening(patient028,screening259).
-has_screening(patient028,screening260).
-has_screening(patient028,screening261).
-has_screening(patient028,screening262).
-has_screening(patient028,screening263).
-has_screening(patient028,screening264).
-has_screening(patient028,screening265).
-has_screening(patient028,screening266).
-has_screening(patient028,screening267).
-has_screening(patient028,screening268).
-has_screening(patient028,screening269).
-has_screening(patient028,screening270).
-has_screening(patient028,screening271).
-has_screening(patient028,screening272).
-has_screening(patient028,screening273).
-has_screening(patient028,screening274).
-has_screening(patient028,screening275).
-has_screening(patient028,screening276).
-has_screening(patient028,screening277).
-has_screening(patient028,screening278).
-has_screening(patient028,screening279).
-has_screening(patient028,screening280).
-has_screening(patient028,screening281).
-has_screening(patient028,screening282).
-has_screening(patient028,screening283).
-has_screening(patient028,screening284).
-has_screening(patient028,screening285).
-has_screening(patient028,screening286).
-has_screening(patient029,screening287).
-has_screening(patient029,screening288).
-has_screening(patient029,screening289).
-has_screening(patient029,screening290).
-has_screening(patient029,screening291).
-has_screening(patient029,screening292).
-has_screening(patient029,screening293).
-has_screening(patient029,screening294).
-has_screening(patient029,screening295).
-has_screening(patient029,screening296).
-has_screening(patient029,screening297).
-has_screening(patient029,screening298).
-has_screening(patient029,screening299).
-has_screening(patient029,screening300).
-has_screening(patient029,screening301).
-has_screening(patient030,screening302).
-has_screening(patient030,screening303).
-has_screening(patient030,screening304).
-has_screening(patient030,screening305).
-has_screening(patient030,screening306).
-has_screening(patient031,screening307).
-has_screening(patient031,screening308).
-has_screening(patient031,screening309).
-has_screening(patient031,screening310).
-has_screening(patient031,screening311).
-has_screening(patient031,screening312).
-has_screening(patient031,screening313).
-has_screening(patient031,screening314).
-has_screening(patient031,screening315).
-has_screening(patient031,screening316).
-has_screening(patient031,screening317).
-has_screening(patient031,screening318).
-has_screening(patient031,screening319).
-has_screening(patient031,screening320).
-has_screening(patient031,screening321).
-has_screening(patient031,screening322).
-has_screening(patient031,screening323).
-has_screening(patient031,screening324).
-has_screening(patient031,screening325).
-has_screening(patient032,screening326).
-has_screening(patient032,screening327).
-has_screening(patient032,screening328).
-has_screening(patient032,screening329).
-has_screening(patient032,screening330).
-has_screening(patient032,screening331).
-has_screening(patient032,screening332).
-has_screening(patient032,screening333).
-has_screening(patient032,screening334).
-has_screening(patient032,screening335).
-has_screening(patient032,screening336).
-has_screening(patient032,screening337).
-has_screening(patient032,screening338).
-has_screening(patient032,screening339).
-has_screening(patient032,screening340).
-has_screening(patient032,screening341).
-has_screening(patient032,screening342).
-has_screening(patient032,screening343).
-has_screening(patient032,screening344).
-has_screening(patient032,screening345).
-has_screening(patient032,screening346).
-has_screening(patient032,screening347).
-has_screening(patient032,screening348).
-has_screening(patient032,screening349).
-has_screening(patient032,screening350).
-has_screening(patient032,screening351).
-has_screening(patient032,screening352).
-has_screening(patient032,screening353).
-has_screening(patient032,screening354).
-has_screening(patient032,screening355).
-has_screening(patient032,screening356).
-has_screening(patient032,screening357).
-has_screening(patient032,screening358).
-has_screening(patient032,screening359).
-has_screening(patient032,screening360).
-has_screening(patient032,screening361).
-has_screening(patient033,screening362).
-has_screening(patient033,screening363).
-has_screening(patient033,screening364).
-has_screening(patient033,screening365).
-has_screening(patient033,screening366).
-has_screening(patient033,screening367).
-has_screening(patient033,screening368).
-has_screening(patient034,screening369).
-has_screening(patient034,screening370).
-has_screening(patient034,screening371).
-has_screening(patient034,screening372).
-has_screening(patient034,screening373).
-has_screening(patient034,screening374).
-has_screening(patient035,screening375).
-has_screening(patient035,screening376).
-has_screening(patient035,screening377).
-has_screening(patient035,screening378).
-has_screening(patient035,screening379).
-has_screening(patient035,screening380).
-has_screening(patient035,screening381).
-has_screening(patient035,screening382).
-has_screening(patient035,screening383).
-has_screening(patient035,screening384).
-has_screening(patient035,screening385).
-has_screening(patient035,screening386).
-has_screening(patient035,screening387).
-has_screening(patient035,screening388).
-has_screening(patient035,screening389).
-has_screening(patient035,screening390).
-has_screening(patient035,screening391).
-has_screening(patient035,screening392).
-has_screening(patient036,screening393).
-has_screening(patient036,screening394).
-has_screening(patient036,screening395).
-has_screening(patient036,screening396).
-has_screening(patient036,screening397).
-has_screening(patient036,screening398).
-has_screening(patient036,screening399).
-has_screening(patient037,screening400).
-has_screening(patient037,screening401).
-has_screening(patient037,screening402).
-has_screening(patient037,screening403).
-has_screening(patient037,screening404).
-has_screening(patient037,screening405).
-has_screening(patient037,screening406).
-has_screening(patient038,screening407).
-has_screening(patient038,screening408).
-has_screening(patient038,screening409).
-has_screening(patient038,screening410).
-has_screening(patient038,screening411).
-has_screening(patient038,screening412).
-has_screening(patient038,screening413).
-has_screening(patient038,screening414).
-has_screening(patient038,screening415).
-has_screening(patient038,screening416).
-has_screening(patient038,screening417).
-has_screening(patient038,screening418).
-has_screening(patient038,screening419).
-has_screening(patient038,screening420).
-has_screening(patient038,screening421).
-has_screening(patient038,screening422).
-has_screening(patient038,screening423).
-has_screening(patient038,screening424).
-has_screening(patient038,screening425).
-has_screening(patient038,screening426).
-has_screening(patient038,screening427).
-has_screening(patient038,screening428).
-has_screening(patient038,screening429).
-has_screening(patient038,screening430).
-has_screening(patient038,screening431).
-has_screening(patient038,screening432).
-has_screening(patient039,screening433).
-has_screening(patient040,screening434).
-has_screening(patient040,screening435).
-has_screening(patient040,screening436).
-has_screening(patient040,screening437).
-has_screening(patient040,screening438).
-has_screening(patient040,screening439).
-has_screening(patient040,screening440).
-has_screening(patient041,screening441).
-has_screening(patient041,screening442).
-has_screening(patient041,screening443).
-has_screening(patient041,screening444).
-has_screening(patient041,screening445).
-has_screening(patient041,screening446).
-has_screening(patient041,screening447).
-has_screening(patient042,screening448).
-has_screening(patient042,screening449).
-has_screening(patient043,screening450).
-has_screening(patient043,screening451).
-has_screening(patient043,screening452).
-has_screening(patient044,screening453).
-has_screening(patient044,screening454).
-has_screening(patient044,screening455).
-has_screening(patient044,screening456).
-has_screening(patient044,screening457).
-has_screening(patient044,screening458).
-has_screening(patient045,screening459).
-has_screening(patient045,screening460).
-has_screening(patient045,screening461).
-has_screening(patient045,screening462).
-has_screening(patient045,screening463).
-has_screening(patient045,screening464).
-has_screening(patient045,screening465).
-has_screening(patient045,screening466).
-has_screening(patient045,screening467).
-has_screening(patient045,screening468).
-has_screening(patient045,screening469).
-has_screening(patient045,screening470).
-has_screening(patient045,screening471).
-has_screening(patient045,screening472).
-has_screening(patient045,screening473).
-has_screening(patient046,screening474).
-has_screening(patient046,screening475).
-has_screening(patient046,screening476).
-has_screening(patient046,screening477).
-has_screening(patient046,screening478).
-has_screening(patient046,screening479).
-has_screening(patient046,screening480).
-has_screening(patient046,screening481).
-has_screening(patient046,screening482).
-has_screening(patient046,screening483).
-has_screening(patient046,screening484).
-has_screening(patient046,screening485).
-has_screening(patient046,screening486).
-has_screening(patient046,screening487).
-has_screening(patient046,screening488).
-has_screening(patient046,screening489).
-has_screening(patient046,screening490).
-has_screening(patient046,screening491).
-has_screening(patient046,screening492).
-has_screening(patient047,screening493).
-has_screening(patient047,screening494).
-has_screening(patient047,screening495).
-has_screening(patient047,screening496).
-has_screening(patient047,screening497).
-has_screening(patient047,screening498).
-has_screening(patient047,screening499).
-has_screening(patient047,screening500).
-has_screening(patient047,screening501).
-has_screening(patient048,screening502).
-has_screening(patient048,screening503).
-has_screening(patient048,screening504).
-has_screening(patient048,screening505).
-has_screening(patient048,screening506).
-has_screening(patient048,screening507).
-has_screening(patient048,screening508).
-has_screening(patient048,screening509).
-has_screening(patient048,screening510).
-has_screening(patient049,screening511).
-has_screening(patient049,screening512).
-has_screening(patient049,screening513).
-has_screening(patient050,screening514).
-has_screening(patient050,screening515).
-has_screening(patient050,screening516).
-has_screening(patient050,screening517).
-has_screening(patient050,screening518).
-has_screening(patient050,screening519).
-has_screening(patient050,screening520).
-has_screening(patient050,screening521).
-has_screening(patient050,screening522).
-has_screening(patient050,screening523).
-has_screening(patient050,screening524).
-has_screening(patient050,screening525).
-has_screening(patient050,screening526).
-has_screening(patient050,screening527).
-has_screening(patient050,screening528).
-has_screening(patient050,screening529).
-has_screening(patient050,screening530).
-has_screening(patient050,screening531).
-has_screening(patient050,screening532).
-has_screening(patient050,screening533).
-has_screening(patient051,screening534).
-has_screening(patient051,screening535).
-has_screening(patient052,screening536).
-has_screening(patient052,screening537).
-has_screening(patient052,screening538).
-has_screening(patient053,screening539).
-has_screening(patient053,screening540).
-has_screening(patient054,screening541).
-has_screening(patient054,screening542).
-has_screening(patient054,screening543).
-has_screening(patient054,screening544).
-has_screening(patient054,screening545).
-has_screening(patient054,screening546).
-has_screening(patient054,screening547).
-has_screening(patient054,screening548).
-has_screening(patient054,screening549).
-has_screening(patient054,screening550).
-has_screening(patient054,screening551).
-has_screening(patient054,screening552).
-has_screening(patient054,screening553).
-has_screening(patient054,screening554).
-has_screening(patient054,screening555).
-has_screening(patient054,screening556).
-has_screening(patient055,screening557).
-has_screening(patient055,screening558).
-has_screening(patient055,screening559).
-has_screening(patient055,screening560).
-has_screening(patient055,screening561).
-has_screening(patient055,screening562).
-has_screening(patient055,screening563).
-has_screening(patient055,screening564).
-has_screening(patient055,screening565).
-has_screening(patient055,screening566).
-has_screening(patient055,screening567).
-has_screening(patient055,screening568).
-has_screening(patient055,screening569).
-has_screening(patient055,screening570).
-has_screening(patient055,screening571).
-has_screening(patient056,screening572).
-has_screening(patient056,screening573).
-has_screening(patient056,screening574).
-has_screening(patient056,screening575).
-has_screening(patient056,screening576).
-has_screening(patient056,screening577).
-has_screening(patient056,screening578).
-has_screening(patient057,screening579).
-has_screening(patient057,screening580).
-has_screening(patient057,screening581).
-has_screening(patient057,screening582).
-has_screening(patient058,screening583).
-has_screening(patient058,screening584).
-has_screening(patient058,screening585).
-has_screening(patient058,screening586).
-has_screening(patient058,screening587).
-has_screening(patient058,screening588).
-has_screening(patient058,screening589).
-has_screening(patient058,screening590).
-has_screening(patient058,screening591).
-has_screening(patient058,screening592).
-has_screening(patient058,screening593).
-has_screening(patient058,screening594).
-has_screening(patient058,screening595).
-has_screening(patient058,screening596).
-has_screening(patient058,screening597).
-has_screening(patient058,screening598).
-has_screening(patient058,screening599).
-has_screening(patient058,screening600).
-has_screening(patient058,screening601).
-has_screening(patient058,screening602).
-has_screening(patient058,screening603).
-has_screening(patient059,screening604).
-has_screening(patient059,screening605).
-has_screening(patient059,screening606).
-has_screening(patient059,screening607).
-has_screening(patient059,screening608).
-has_screening(patient059,screening609).
-has_screening(patient059,screening610).
-has_screening(patient059,screening611).
-has_screening(patient060,screening612).
-has_screening(patient060,screening613).
-has_screening(patient060,screening614).
-has_screening(patient060,screening615).
-has_screening(patient060,screening616).
-has_screening(patient060,screening617).
-has_screening(patient060,screening618).
-has_screening(patient060,screening619).
-has_screening(patient060,screening620).
-has_screening(patient060,screening621).
-has_screening(patient060,screening622).
-has_screening(patient060,screening623).
-has_screening(patient060,screening624).
-has_screening(patient060,screening625).
-has_screening(patient060,screening626).
-has_screening(patient060,screening627).
-has_screening(patient061,screening628).
-has_screening(patient061,screening629).
-has_screening(patient061,screening630).
-has_screening(patient061,screening631).
-has_screening(patient061,screening632).
-has_screening(patient061,screening633).
-has_screening(patient062,screening634).
-has_screening(patient062,screening635).
-has_screening(patient062,screening636).
-has_screening(patient062,screening637).
-has_screening(patient062,screening638).
-has_screening(patient062,screening639).
-has_screening(patient062,screening640).
-has_screening(patient062,screening641).
-has_screening(patient063,screening642).
-has_screening(patient063,screening643).
-has_screening(patient063,screening644).
-has_screening(patient063,screening645).
-has_screening(patient064,screening646).
-has_screening(patient064,screening647).
-has_screening(patient064,screening648).
-has_screening(patient064,screening649).
-has_screening(patient065,screening650).
-has_screening(patient065,screening651).
-has_screening(patient065,screening652).
-has_screening(patient065,screening653).
-has_screening(patient065,screening654).
-has_screening(patient065,screening655).
-has_screening(patient065,screening656).
-has_screening(patient065,screening657).
-has_screening(patient065,screening658).
-has_screening(patient065,screening659).
-has_screening(patient065,screening660).
-has_screening(patient066,screening661).
-has_screening(patient066,screening662).
-has_screening(patient066,screening663).
-has_screening(patient066,screening664).
-has_screening(patient066,screening665).
-has_screening(patient066,screening666).
-has_screening(patient066,screening667).
-has_screening(patient066,screening668).
-has_screening(patient066,screening669).
-has_screening(patient066,screening670).
-has_screening(patient066,screening671).
-has_screening(patient066,screening672).
-has_screening(patient066,screening673).
-has_screening(patient066,screening674).
-has_screening(patient066,screening675).
-has_screening(patient066,screening676).
-has_screening(patient066,screening677).
-has_screening(patient066,screening678).
-has_screening(patient066,screening679).
-has_screening(patient066,screening680).
-has_screening(patient066,screening681).
-has_screening(patient067,screening682).
-has_screening(patient067,screening683).
-has_screening(patient067,screening684).
-has_screening(patient067,screening685).
-has_screening(patient067,screening686).
-has_screening(patient068,screening687).
-has_screening(patient068,screening688).
-has_screening(patient068,screening689).
-has_screening(patient068,screening690).
-has_screening(patient068,screening691).
-has_screening(patient068,screening692).
-has_screening(patient068,screening693).
-has_screening(patient068,screening694).
-has_screening(patient068,screening695).
-has_screening(patient068,screening696).
-has_screening(patient068,screening697).
-has_screening(patient068,screening698).
-has_screening(patient068,screening699).
-has_screening(patient068,screening700).
-has_screening(patient068,screening701).
-has_screening(patient068,screening702).
-has_screening(patient068,screening703).
-has_screening(patient068,screening704).
-has_screening(patient069,screening705).
-has_screening(patient069,screening706).
-has_screening(patient069,screening707).
-has_screening(patient069,screening708).
-has_screening(patient069,screening709).
-has_screening(patient069,screening710).
-has_screening(patient069,screening711).
-has_screening(patient069,screening712).
-has_screening(patient069,screening713).
-has_screening(patient069,screening714).
-has_screening(patient069,screening715).
-has_screening(patient069,screening716).
-has_screening(patient070,screening717).
-has_screening(patient070,screening718).
-has_screening(patient070,screening719).
-has_screening(patient070,screening720).
-has_screening(patient070,screening721).
-has_screening(patient070,screening722).
-has_screening(patient070,screening723).
-has_screening(patient070,screening724).
-has_screening(patient070,screening725).
-has_screening(patient070,screening726).
-has_screening(patient070,screening727).
-has_screening(patient070,screening728).
-has_screening(patient071,screening729).
-has_screening(patient071,screening730).
-has_screening(patient071,screening731).
-has_screening(patient072,screening732).
-has_screening(patient072,screening733).
-has_screening(patient072,screening734).
-has_screening(patient072,screening735).
-has_screening(patient072,screening736).
-has_screening(patient072,screening737).
-has_screening(patient072,screening738).
-has_screening(patient072,screening739).
-has_screening(patient072,screening740).
-has_screening(patient072,screening741).
-has_screening(patient072,screening742).
-has_screening(patient072,screening743).
-has_screening(patient072,screening744).
-has_screening(patient072,screening745).
-has_screening(patient072,screening746).
-has_screening(patient072,screening747).
-has_screening(patient072,screening748).
-has_screening(patient073,screening749).
-has_screening(patient073,screening750).
-has_screening(patient073,screening751).
-has_screening(patient073,screening752).
-has_screening(patient073,screening753).
-has_screening(patient073,screening754).
-has_screening(patient074,screening755).
-has_screening(patient074,screening756).
-has_screening(patient074,screening757).
-has_screening(patient074,screening758).
-has_screening(patient074,screening759).
-has_screening(patient074,screening760).
-has_screening(patient074,screening761).
-has_screening(patient074,screening762).
-has_screening(patient074,screening763).
-has_screening(patient074,screening764).
-has_screening(patient074,screening765).
-has_screening(patient074,screening766).
-has_screening(patient074,screening767).
-has_screening(patient074,screening768).
-has_screening(patient074,screening769).
-has_screening(patient074,screening770).
-has_screening(patient074,screening771).
-has_screening(patient074,screening772).
-has_screening(patient074,screening773).
-has_screening(patient074,screening774).
-has_screening(patient074,screening775).
-has_screening(patient074,screening776).
-has_screening(patient074,screening777).
-has_screening(patient074,screening778).
-has_screening(patient074,screening779).
-has_screening(patient074,screening780).
-has_screening(patient074,screening781).
-has_screening(patient074,screening782).
-has_screening(patient074,screening783).
-has_screening(patient074,screening784).
-has_screening(patient074,screening785).
-has_screening(patient074,screening786).
-has_screening(patient074,screening787).
-has_screening(patient074,screening788).
-has_screening(patient074,screening789).
-has_screening(patient074,screening790).
-has_screening(patient075,screening791).
-has_screening(patient075,screening792).
-has_screening(patient075,screening793).
-has_screening(patient076,screening794).
-has_screening(patient076,screening795).
-has_screening(patient076,screening796).
-has_screening(patient076,screening797).
-has_screening(patient076,screening798).
-has_screening(patient076,screening799).
-has_screening(patient076,screening800).
-has_screening(patient076,screening801).
-has_screening(patient076,screening802).
-has_screening(patient076,screening803).
-has_screening(patient076,screening804).
-has_screening(patient077,screening805).
-has_screening(patient077,screening806).
-has_screening(patient077,screening807).
-has_screening(patient077,screening808).
-has_screening(patient077,screening809).
-has_screening(patient077,screening810).
-has_screening(patient077,screening811).
-has_screening(patient077,screening812).
-has_screening(patient077,screening813).
-has_screening(patient077,screening814).
-has_screening(patient077,screening815).
-has_screening(patient077,screening816).
-has_screening(patient077,screening817).
-has_screening(patient077,screening818).
-has_screening(patient078,screening819).
-has_screening(patient078,screening820).
-has_screening(patient078,screening821).
-has_screening(patient078,screening822).
-has_screening(patient078,screening823).
-has_screening(patient078,screening824).
-has_screening(patient078,screening825).
-has_screening(patient078,screening826).
-has_screening(patient079,screening827).
-has_screening(patient079,screening828).
-has_screening(patient079,screening829).
-has_screening(patient080,screening830).
-has_screening(patient080,screening831).
-has_screening(patient080,screening832).
-has_screening(patient080,screening833).
-has_screening(patient080,screening834).
-has_screening(patient080,screening835).
-has_screening(patient080,screening836).
-has_screening(patient080,screening837).
-has_screening(patient080,screening838).
-has_screening(patient080,screening839).
-has_screening(patient080,screening840).
-has_screening(patient080,screening841).
-has_screening(patient080,screening842).
-has_screening(patient080,screening843).
-has_screening(patient080,screening844).
-has_screening(patient080,screening845).
-has_screening(patient081,screening846).
-has_screening(patient081,screening847).
-has_screening(patient081,screening848).
-has_screening(patient081,screening849).
-has_screening(patient081,screening850).
-has_screening(patient081,screening851).
-has_screening(patient081,screening852).
-has_screening(patient081,screening853).
-has_screening(patient081,screening854).
-has_screening(patient081,screening855).
-has_screening(patient082,screening856).
-has_screening(patient082,screening857).
-has_screening(patient082,screening858).
-has_screening(patient082,screening859).
-has_screening(patient083,screening860).
-has_screening(patient083,screening861).
-has_screening(patient083,screening862).
-has_screening(patient083,screening863).
-has_screening(patient083,screening864).
-has_screening(patient083,screening865).
-has_screening(patient083,screening866).
-has_screening(patient083,screening867).
-has_screening(patient083,screening868).
-has_screening(patient083,screening869).
-has_screening(patient083,screening870).
-has_screening(patient083,screening871).
-has_screening(patient083,screening872).
-has_screening(patient083,screening873).
-has_screening(patient083,screening874).
-has_screening(patient083,screening875).
-has_screening(patient083,screening876).
-has_screening(patient083,screening877).
-has_screening(patient084,screening878).
-has_screening(patient084,screening879).
-has_screening(patient084,screening880).
-has_screening(patient084,screening881).
-has_screening(patient084,screening882).
-has_screening(patient084,screening883).
-has_screening(patient084,screening884).
-has_screening(patient084,screening885).
-has_screening(patient084,screening886).
-has_screening(patient085,screening887).
-has_screening(patient085,screening888).
-has_screening(patient085,screening889).
-has_screening(patient085,screening890).
-has_screening(patient085,screening891).
-has_screening(patient085,screening892).
-has_screening(patient085,screening893).
-has_screening(patient085,screening894).
-has_screening(patient085,screening895).
-has_screening(patient085,screening896).
-has_screening(patient085,screening897).
-has_screening(patient085,screening898).
-has_screening(patient085,screening899).
-has_screening(patient085,screening900).
-has_screening(patient085,screening901).
-has_screening(patient086,screening902).
-has_screening(patient086,screening903).
-has_screening(patient086,screening904).
-has_screening(patient086,screening905).
-has_screening(patient087,screening906).
-has_screening(patient087,screening907).
-has_screening(patient087,screening908).
-has_screening(patient087,screening909).
-has_screening(patient087,screening910).
-has_screening(patient087,screening911).
-has_screening(patient087,screening912).
-has_screening(patient087,screening913).
-has_screening(patient087,screening914).
-has_screening(patient088,screening915).
-has_screening(patient088,screening916).
-has_screening(patient088,screening917).
-has_screening(patient088,screening918).
-has_screening(patient088,screening919).
-has_screening(patient088,screening920).
-has_screening(patient088,screening921).
-has_screening(patient088,screening922).
-has_screening(patient089,screening923).
-has_screening(patient089,screening924).
-has_screening(patient089,screening925).
-has_screening(patient089,screening926).
-has_screening(patient089,screening927).
-has_screening(patient089,screening928).
-has_screening(patient089,screening929).
-has_screening(patient090,screening930).
-has_screening(patient090,screening931).
-has_screening(patient090,screening932).
-has_screening(patient090,screening933).
-has_screening(patient090,screening934).
-has_screening(patient090,screening935).
-has_screening(patient090,screening936).
-has_screening(patient090,screening937).
-has_screening(patient090,screening938).
-has_screening(patient090,screening939).
-has_screening(patient090,screening940).
-has_screening(patient090,screening941).
-has_screening(patient090,screening942).
-has_screening(patient090,screening943).
-has_screening(patient090,screening944).
-has_screening(patient090,screening945).
-has_screening(patient090,screening946).
-has_screening(patient090,screening947).
-has_screening(patient090,screening948).
-has_screening(patient090,screening949).
-has_screening(patient090,screening950).
-has_screening(patient090,screening951).
-has_screening(patient090,screening952).
-has_screening(patient090,screening953).
-has_screening(patient091,screening954).
-has_screening(patient091,screening955).
-has_screening(patient091,screening956).
-has_screening(patient091,screening957).
-has_screening(patient091,screening958).
-has_screening(patient091,screening959).
-has_screening(patient091,screening960).
-has_screening(patient091,screening961).
-has_screening(patient091,screening962).
-has_screening(patient091,screening963).
-has_screening(patient091,screening964).
-has_screening(patient091,screening965).
-has_screening(patient091,screening966).
-has_screening(patient091,screening967).
-has_screening(patient092,screening968).
-has_screening(patient092,screening969).
-has_screening(patient092,screening970).
-has_screening(patient092,screening971).
-has_screening(patient092,screening972).
-has_screening(patient092,screening973).
-has_screening(patient092,screening974).
-has_screening(patient092,screening975).
-has_screening(patient092,screening976).
-has_screening(patient092,screening977).
-has_screening(patient092,screening978).
-has_screening(patient092,screening979).
-has_screening(patient093,screening1000).
-has_screening(patient093,screening1001).
-has_screening(patient093,screening980).
-has_screening(patient093,screening981).
-has_screening(patient093,screening982).
-has_screening(patient093,screening983).
-has_screening(patient093,screening984).
-has_screening(patient093,screening985).
-has_screening(patient093,screening986).
-has_screening(patient093,screening987).
-has_screening(patient093,screening988).
-has_screening(patient093,screening989).
-has_screening(patient093,screening990).
-has_screening(patient093,screening991).
-has_screening(patient093,screening992).
-has_screening(patient093,screening993).
-has_screening(patient093,screening994).
-has_screening(patient093,screening995).
-has_screening(patient093,screening996).
-has_screening(patient093,screening997).
-has_screening(patient093,screening998).
-has_screening(patient093,screening999).
-has_screening(patient094,screening1002).
-has_screening(patient094,screening1003).
-has_screening(patient094,screening1004).
-has_screening(patient094,screening1005).
-has_screening(patient094,screening1006).
-has_screening(patient094,screening1007).
-has_screening(patient094,screening1008).
-has_screening(patient094,screening1009).
-has_screening(patient094,screening1010).
-has_screening(patient094,screening1011).
-has_screening(patient095,screening1012).
-has_screening(patient095,screening1013).
-has_screening(patient095,screening1014).
-has_screening(patient095,screening1015).
-has_screening(patient095,screening1016).
-has_screening(patient095,screening1017).
-has_screening(patient095,screening1018).
-has_screening(patient095,screening1019).
-has_screening(patient095,screening1020).
-has_screening(patient096,screening1021).
-has_screening(patient096,screening1022).
-has_screening(patient096,screening1023).
-has_screening(patient096,screening1024).
-has_screening(patient096,screening1025).
-has_screening(patient096,screening1026).
-has_screening(patient096,screening1027).
-has_screening(patient096,screening1028).
-has_screening(patient096,screening1029).
-has_screening(patient096,screening1030).
-has_screening(patient096,screening1031).
-has_screening(patient096,screening1032).
-has_screening(patient097,screening1033).
-has_screening(patient097,screening1034).
-has_screening(patient097,screening1035).
-has_screening(patient097,screening1036).
-has_screening(patient097,screening1037).
-has_screening(patient097,screening1038).
-has_screening(patient097,screening1039).
-has_screening(patient097,screening1040).
-has_screening(patient097,screening1041).
-has_screening(patient097,screening1042).
-has_screening(patient097,screening1043).
-has_screening(patient097,screening1044).
-has_screening(patient097,screening1045).
-has_screening(patient097,screening1046).
-has_screening(patient097,screening1047).
-has_screening(patient097,screening1048).
-has_screening(patient097,screening1049).
-has_screening(patient097,screening1050).
-has_screening(patient097,screening1051).
-has_screening(patient097,screening1052).
-has_screening(patient097,screening1053).
-has_screening(patient097,screening1054).
-has_screening(patient097,screening1055).
-has_screening(patient097,screening1056).
-has_screening(patient097,screening1057).
-has_screening(patient097,screening1058).
-has_screening(patient097,screening1059).
-has_screening(patient097,screening1060).
-has_screening(patient097,screening1061).
-has_screening(patient097,screening1062).
-has_screening(patient097,screening1063).
-has_screening(patient097,screening1064).
-has_screening(patient097,screening1065).
-has_screening(patient097,screening1066).
-has_screening(patient097,screening1067).
-has_screening(patient097,screening1068).
-has_screening(patient097,screening1069).
-has_screening(patient097,screening1070).
-has_screening(patient097,screening1071).
-has_screening(patient097,screening1072).
-has_screening(patient097,screening1073).
-has_screening(patient097,screening1074).
-has_screening(patient097,screening1075).
-has_screening(patient097,screening1076).
-has_screening(patient097,screening1077).
-has_screening(patient097,screening1078).
-has_screening(patient097,screening1079).
-has_screening(patient097,screening1080).
-has_screening(patient097,screening1081).
-has_screening(patient097,screening1082).
-has_screening(patient097,screening1083).
-has_screening(patient097,screening1084).
-has_screening(patient097,screening1085).
-has_screening(patient097,screening1086).
-has_screening(patient097,screening1087).
-has_screening(patient097,screening1088).
-has_screening(patient097,screening1089).
-has_screening(patient097,screening1090).
-has_screening(patient097,screening1091).
-has_screening(patient097,screening1092).
-has_screening(patient098,screening1093).
-has_screening(patient098,screening1094).
-has_screening(patient098,screening1095).
-has_screening(patient098,screening1096).
-has_screening(patient098,screening1097).
-has_screening(patient098,screening1098).
-has_screening(patient098,screening1099).
-has_screening(patient098,screening1100).
-has_screening(patient098,screening1101).
-has_screening(patient098,screening1102).
-has_screening(patient098,screening1103).
-has_screening(patient098,screening1104).
-has_screening(patient098,screening1105).
-has_screening(patient098,screening1106).
-has_screening(patient098,screening1107).
-has_screening(patient098,screening1108).
-has_screening(patient098,screening1109).
-has_screening(patient098,screening1110).
-has_screening(patient098,screening1111).
-has_screening(patient099,screening1112).
-has_screening(patient099,screening1113).
-has_screening(patient099,screening1114).
-has_screening(patient099,screening1115).
-has_screening(patient099,screening1116).
-has_screening(patient099,screening1117).
-has_screening(patient099,screening1118).
-has_screening(patient099,screening1119).
-has_screening(patient100,screening1120).
-has_screening(patient100,screening1121).
-has_screening(patient100,screening1122).
-has_screening(patient100,screening1123).
-has_screening(patient100,screening1124).
-has_screening(patient100,screening1125).
-has_screening(patient100,screening1126).
-has_screening(patient100,screening1127).
-has_screening(patient100,screening1128).
-has_screening(patient100,screening1129).
-has_screening(patient101,screening1130).
-has_screening(patient101,screening1131).
-has_screening(patient101,screening1132).
-has_screening(patient101,screening1133).
-has_screening(patient101,screening1134).
-has_screening(patient101,screening1135).
-has_screening(patient101,screening1136).
-has_screening(patient101,screening1137).
-has_screening(patient101,screening1138).
-has_screening(patient101,screening1139).
-has_screening(patient102,screening1140).
-has_screening(patient102,screening1141).
-has_screening(patient102,screening1142).
-has_screening(patient102,screening1143).
-has_screening(patient102,screening1144).
-has_screening(patient102,screening1145).
-has_screening(patient102,screening1146).
-has_screening(patient102,screening1147).
-has_screening(patient102,screening1148).
-has_screening(patient102,screening1149).
-has_screening(patient102,screening1150).
-has_screening(patient102,screening1151).
-has_screening(patient102,screening1152).
-has_screening(patient102,screening1153).
-has_screening(patient102,screening1154).
-has_screening(patient102,screening1155).
-has_screening(patient102,screening1156).
-has_screening(patient102,screening1157).
-has_screening(patient103,screening1158).
-has_screening(patient103,screening1159).
-has_screening(patient103,screening1160).
-has_screening(patient103,screening1161).
-has_screening(patient103,screening1162).
-has_screening(patient103,screening1163).
-has_screening(patient103,screening1164).
-has_screening(patient103,screening1165).
-has_screening(patient103,screening1166).
-has_screening(patient103,screening1167).
-has_screening(patient103,screening1168).
-has_screening(patient103,screening1169).
-has_screening(patient103,screening1170).
-has_screening(patient104,screening1171).
-has_screening(patient104,screening1172).
-has_screening(patient104,screening1173).
-has_screening(patient104,screening1174).
-has_screening(patient104,screening1175).
-has_screening(patient104,screening1176).
-has_screening(patient104,screening1177).
-has_screening(patient104,screening1178).
-has_screening(patient104,screening1179).
-has_screening(patient104,screening1180).
-has_screening(patient104,screening1181).
-has_screening(patient104,screening1182).
-has_screening(patient104,screening1183).
-has_screening(patient104,screening1184).
-has_screening(patient104,screening1185).
-has_screening(patient104,screening1186).
-has_screening(patient104,screening1187).
-has_screening(patient104,screening1188).
-has_screening(patient104,screening1189).
-has_screening(patient104,screening1190).
-has_screening(patient104,screening1191).
-has_screening(patient105,screening1192).
-has_screening(patient105,screening1193).
-has_screening(patient105,screening1194).
-has_screening(patient105,screening1195).
-has_screening(patient105,screening1196).
-has_screening(patient105,screening1197).
-has_screening(patient105,screening1198).
-has_screening(patient105,screening1199).
-has_screening(patient105,screening1200).
-has_screening(patient106,screening1201).
-has_screening(patient106,screening1202).
-has_screening(patient106,screening1203).
-has_screening(patient106,screening1204).
-has_screening(patient106,screening1205).
-has_screening(patient106,screening1206).
-has_screening(patient106,screening1207).
-has_screening(patient106,screening1208).
-has_screening(patient106,screening1209).
-has_screening(patient106,screening1210).
-has_screening(patient106,screening1211).
-has_screening(patient106,screening1212).
-has_screening(patient107,screening1213).
-has_screening(patient107,screening1214).
-has_screening(patient107,screening1215).
-has_screening(patient107,screening1216).
-has_screening(patient107,screening1217).
-has_screening(patient107,screening1218).
-has_screening(patient108,screening1219).
-has_screening(patient108,screening1220).
-has_screening(patient109,screening1221).
-has_screening(patient109,screening1222).
-has_screening(patient109,screening1223).
-has_screening(patient109,screening1224).
-has_screening(patient109,screening1225).
-has_screening(patient109,screening1226).
-has_screening(patient111,screening1227).
-has_screening(patient111,screening1228).
-has_screening(patient111,screening1229).
-has_screening(patient111,screening1230).
-has_screening(patient111,screening1231).
-has_screening(patient111,screening1232).
-has_screening(patient111,screening1233).
-has_screening(patient111,screening1234).
-has_screening(patient111,screening1235).
-has_screening(patient111,screening1236).
-has_screening(patient111,screening1237).
-has_screening(patient112,screening1238).
-has_screening(patient112,screening1239).
-has_screening(patient113,screening1240).
-has_screening(patient113,screening1241).
-has_screening(patient113,screening1242).
-has_screening(patient113,screening1243).
-has_screening(patient113,screening1244).
-has_screening(patient113,screening1245).
-has_screening(patient113,screening1246).
-has_screening(patient113,screening1247).
-has_screening(patient113,screening1248).
-has_screening(patient113,screening1249).
-has_screening(patient113,screening1250).
-has_screening(patient113,screening1251).
-has_screening(patient113,screening1252).
-has_screening(patient113,screening1253).
-has_screening(patient113,screening1254).
-has_screening(patient114,screening1255).
-has_screening(patient114,screening1256).
-has_screening(patient114,screening1257).
-has_screening(patient114,screening1258).
-has_screening(patient114,screening1259).
-has_screening(patient114,screening1260).
-has_screening(patient114,screening1261).
-has_screening(patient115,screening1262).
-has_screening(patient115,screening1263).
-has_screening(patient115,screening1264).
-has_screening(patient115,screening1265).
-has_screening(patient115,screening1266).
-has_screening(patient115,screening1267).
-has_screening(patient115,screening1268).
-has_screening(patient115,screening1269).
-has_screening(patient115,screening1270).
-has_screening(patient116,screening1271).
-has_screening(patient116,screening1272).
-has_screening(patient116,screening1273).
-has_screening(patient116,screening1274).
-has_screening(patient116,screening1275).
-has_screening(patient116,screening1276).
-has_screening(patient117,screening1277).
-has_screening(patient117,screening1278).
-has_screening(patient117,screening1279).
-has_screening(patient117,screening1280).
-has_screening(patient117,screening1281).
-has_screening(patient117,screening1282).
-has_screening(patient117,screening1283).
-has_screening(patient117,screening1284).
-has_screening(patient117,screening1285).
-has_screening(patient117,screening1286).
-has_screening(patient117,screening1287).
-has_screening(patient117,screening1288).
-has_screening(patient117,screening1289).
-has_screening(patient117,screening1290).
-has_screening(patient117,screening1291).
-has_screening(patient117,screening1292).
-has_screening(patient117,screening1293).
-has_screening(patient117,screening1294).
-has_screening(patient117,screening1295).
-has_screening(patient117,screening1296).
-has_screening(patient117,screening1297).
-has_screening(patient117,screening1298).
-has_screening(patient117,screening1299).
-has_screening(patient117,screening1300).
-has_screening(patient117,screening1301).
-has_screening(patient117,screening1302).
-has_screening(patient117,screening1303).
-has_screening(patient117,screening1304).
-has_screening(patient117,screening1305).
-has_screening(patient117,screening1306).
-has_screening(patient117,screening1307).
-has_screening(patient117,screening1308).
-has_screening(patient117,screening1309).
-has_screening(patient117,screening1310).
-has_screening(patient118,screening1311).
-has_screening(patient118,screening1312).
-has_screening(patient118,screening1313).
-has_screening(patient118,screening1314).
-has_screening(patient118,screening1315).
-has_screening(patient118,screening1316).
-has_screening(patient119,screening1317).
-has_screening(patient119,screening1318).
-has_screening(patient119,screening1319).
-has_screening(patient119,screening1320).
-has_screening(patient119,screening1321).
-has_screening(patient119,screening1322).
-has_screening(patient119,screening1323).
-has_screening(patient119,screening1324).
-has_screening(patient119,screening1325).
-has_screening(patient119,screening1326).
-has_screening(patient119,screening1327).
-has_screening(patient119,screening1328).
-has_screening(patient119,screening1329).
-has_screening(patient119,screening1330).
-has_screening(patient119,screening1331).
-has_screening(patient120,screening1332).
-has_screening(patient120,screening1333).
-has_screening(patient120,screening1334).
-has_screening(patient120,screening1335).
-has_screening(patient120,screening1336).
-has_screening(patient120,screening1337).
-has_screening(patient120,screening1338).
-has_screening(patient120,screening1339).
-has_screening(patient120,screening1340).
-has_screening(patient120,screening1341).
-has_screening(patient120,screening1342).
-has_screening(patient121,screening1343).
-has_screening(patient121,screening1344).
-has_screening(patient121,screening1345).
-has_screening(patient121,screening1346).
-has_screening(patient121,screening1347).
-has_screening(patient121,screening1348).
-has_screening(patient121,screening1349).
-has_screening(patient121,screening1350).
-has_screening(patient121,screening1351).
-has_screening(patient121,screening1352).
-has_screening(patient121,screening1353).
-has_screening(patient121,screening1354).
-has_screening(patient121,screening1355).
-has_screening(patient121,screening1356).
-has_screening(patient121,screening1357).
-has_screening(patient121,screening1358).
-has_screening(patient121,screening1359).
-has_screening(patient121,screening1360).
-has_screening(patient122,screening1361).
-has_screening(patient122,screening1362).
-has_screening(patient122,screening1363).
-has_screening(patient122,screening1364).
-has_screening(patient122,screening1365).
-has_screening(patient122,screening1366).
-has_screening(patient122,screening1367).
-has_screening(patient122,screening1368).
-has_screening(patient123,screening1369).
-has_screening(patient123,screening1370).
-has_screening(patient124,screening1371).
-has_screening(patient124,screening1372).
-has_screening(patient124,screening1373).
-has_screening(patient124,screening1374).
-has_screening(patient124,screening1375).
-has_screening(patient124,screening1376).
-has_screening(patient124,screening1377).
-has_screening(patient124,screening1378).
-has_screening(patient124,screening1379).
-has_screening(patient124,screening1380).
-has_screening(patient124,screening1381).
-has_screening(patient124,screening1382).
-has_screening(patient124,screening1383).
-has_screening(patient124,screening1384).
-has_screening(patient124,screening1385).
-has_screening(patient124,screening1386).
-has_screening(patient124,screening1387).
-has_screening(patient125,screening1388).
-has_screening(patient125,screening1389).
-has_screening(patient125,screening1390).
-has_screening(patient125,screening1391).
-has_screening(patient125,screening1392).
-has_screening(patient125,screening1393).
-has_screening(patient125,screening1394).
-has_screening(patient125,screening1395).
-has_screening(patient125,screening1396).
-has_screening(patient125,screening1397).
-has_screening(patient125,screening1398).
-has_screening(patient125,screening1399).
-has_screening(patient125,screening1400).
-has_screening(patient125,screening1401).
-has_screening(patient126,screening1402).
-has_screening(patient126,screening1403).
-has_screening(patient126,screening1404).
-has_screening(patient126,screening1405).
-has_screening(patient126,screening1406).
-has_screening(patient126,screening1407).
-has_screening(patient126,screening1408).
-has_screening(patient126,screening1409).
-has_screening(patient126,screening1410).
-has_screening(patient126,screening1411).
-has_screening(patient127,screening1412).
-has_screening(patient127,screening1413).
-has_screening(patient127,screening1414).
-has_screening(patient127,screening1415).
-has_screening(patient127,screening1416).
-has_screening(patient127,screening1417).
-has_screening(patient127,screening1418).
-has_screening(patient128,screening1419).
-has_screening(patient128,screening1420).
-has_screening(patient128,screening1421).
-has_screening(patient128,screening1422).
-has_screening(patient128,screening1423).
-has_screening(patient128,screening1424).
-has_screening(patient128,screening1425).
-has_screening(patient128,screening1426).
-has_screening(patient128,screening1427).
-has_screening(patient128,screening1428).
-has_screening(patient128,screening1429).
-has_screening(patient128,screening1430).
-has_screening(patient128,screening1431).
-has_screening(patient128,screening1432).
-has_screening(patient128,screening1433).
-has_screening(patient128,screening1434).
-has_screening(patient128,screening1435).
-has_screening(patient128,screening1436).
-has_screening(patient129,screening1437).
-has_screening(patient129,screening1438).
-has_screening(patient130,screening1439).
-has_screening(patient130,screening1440).
-has_screening(patient130,screening1441).
-has_screening(patient130,screening1442).
-has_screening(patient130,screening1443).
-has_screening(patient130,screening1444).
-has_screening(patient130,screening1445).
-has_screening(patient130,screening1446).
-has_screening(patient130,screening1447).
-has_screening(patient130,screening1448).
-has_screening(patient130,screening1449).
-has_screening(patient131,screening1450).
-has_screening(patient131,screening1451).
-has_screening(patient131,screening1452).
-has_screening(patient131,screening1453).
-has_screening(patient131,screening1454).
-has_screening(patient131,screening1455).
-has_screening(patient131,screening1456).
-has_screening(patient131,screening1457).
-has_screening(patient131,screening1458).
-has_screening(patient131,screening1459).
-has_screening(patient132,screening1460).
-has_screening(patient132,screening1461).
-has_screening(patient132,screening1462).
-has_screening(patient132,screening1463).
-has_screening(patient132,screening1464).
-has_screening(patient132,screening1465).
-has_screening(patient132,screening1466).
-has_screening(patient132,screening1467).
-has_screening(patient132,screening1468).
-has_screening(patient132,screening1469).
-has_screening(patient133,screening1470).
-has_screening(patient133,screening1471).
-has_screening(patient133,screening1472).
-has_screening(patient133,screening1473).
-has_screening(patient133,screening1474).
-has_screening(patient133,screening1475).
-has_screening(patient133,screening1476).
-has_screening(patient133,screening1477).
-has_screening(patient133,screening1478).
-has_screening(patient133,screening1479).
-has_screening(patient133,screening1480).
-has_screening(patient133,screening1481).
-has_screening(patient133,screening1482).
-has_screening(patient133,screening1483).
-has_screening(patient133,screening1484).
-has_screening(patient133,screening1485).
-has_screening(patient133,screening1486).
-has_screening(patient133,screening1487).
-has_screening(patient134,screening1488).
-has_screening(patient134,screening1489).
-has_screening(patient134,screening1490).
-has_screening(patient134,screening1491).
-has_screening(patient134,screening1492).
-has_screening(patient134,screening1493).
-has_screening(patient134,screening1494).
-has_screening(patient134,screening1495).
-has_screening(patient134,screening1496).
-has_screening(patient134,screening1497).
-has_screening(patient134,screening1498).
-has_screening(patient135,screening1499).
-has_screening(patient135,screening1500).
-has_screening(patient135,screening1501).
-has_screening(patient135,screening1502).
-has_screening(patient135,screening1503).
-has_screening(patient135,screening1504).
-has_screening(patient135,screening1505).
-has_screening(patient135,screening1506).
-has_screening(patient135,screening1507).
-has_screening(patient135,screening1508).
-has_screening(patient135,screening1509).
-has_screening(patient135,screening1510).
-has_screening(patient135,screening1511).
-has_screening(patient135,screening1512).
-has_screening(patient135,screening1513).
-has_screening(patient135,screening1514).
-has_screening(patient135,screening1515).
-has_screening(patient136,screening1516).
-has_screening(patient136,screening1517).
-has_screening(patient136,screening1518).
-has_screening(patient136,screening1519).
-has_screening(patient136,screening1520).
-has_screening(patient136,screening1521).
-has_screening(patient136,screening1522).
-has_screening(patient136,screening1523).
-has_screening(patient136,screening1524).
-has_screening(patient136,screening1525).
-has_screening(patient136,screening1526).
-has_screening(patient136,screening1527).
-has_screening(patient136,screening1528).
-has_screening(patient136,screening1529).
-has_screening(patient136,screening1530).
-has_screening(patient136,screening1531).
-has_screening(patient136,screening1532).
-has_screening(patient136,screening1533).
-has_screening(patient136,screening1534).
-has_screening(patient136,screening1535).
-has_screening(patient136,screening1536).
-has_screening(patient136,screening1537).
-has_screening(patient136,screening1538).
-has_screening(patient136,screening1539).
-has_screening(patient136,screening1540).
-has_screening(patient136,screening1541).
-has_screening(patient136,screening1542).
-has_screening(patient136,screening1543).
-has_screening(patient136,screening1544).
-has_screening(patient136,screening1545).
-has_screening(patient136,screening1546).
-has_screening(patient136,screening1547).
-has_screening(patient136,screening1548).
-has_screening(patient136,screening1549).
-has_screening(patient136,screening1550).
-has_screening(patient136,screening1551).
-has_screening(patient136,screening1552).
-has_screening(patient136,screening1553).
-has_screening(patient136,screening1554).
-has_screening(patient136,screening1555).
-has_screening(patient136,screening1556).
-has_screening(patient136,screening1557).
-has_screening(patient136,screening1558).
-has_screening(patient136,screening1559).
-has_screening(patient136,screening1560).
-has_screening(patient136,screening1561).
-has_screening(patient136,screening1562).
-has_screening(patient136,screening1563).
-has_screening(patient137,screening1564).
-has_screening(patient137,screening1565).
-has_screening(patient137,screening1566).
-has_screening(patient137,screening1567).
-has_screening(patient137,screening1568).
-has_screening(patient137,screening1569).
-has_screening(patient137,screening1570).
-has_screening(patient137,screening1571).
-has_screening(patient137,screening1572).
-has_screening(patient138,screening1573).
-has_screening(patient138,screening1574).
-has_screening(patient138,screening1575).
-has_screening(patient138,screening1576).
-has_screening(patient138,screening1577).
-has_screening(patient138,screening1578).
-has_screening(patient138,screening1579).
-has_screening(patient138,screening1580).
-has_screening(patient139,screening1581).
-has_screening(patient139,screening1582).
-has_screening(patient139,screening1583).
-has_screening(patient139,screening1584).
-has_screening(patient139,screening1585).
-has_screening(patient139,screening1586).
-has_screening(patient139,screening1587).
-has_screening(patient139,screening1588).
-has_screening(patient139,screening1589).
-has_screening(patient140,screening1590).
-has_screening(patient140,screening1591).
-has_screening(patient140,screening1592).
-has_screening(patient140,screening1593).
-has_screening(patient140,screening1594).
-has_screening(patient140,screening1595).
-has_screening(patient140,screening1596).
-has_screening(patient140,screening1597).
-has_screening(patient140,screening1598).
-has_screening(patient141,screening1599).
-has_screening(patient141,screening1600).
-has_screening(patient141,screening1601).
-has_screening(patient141,screening1602).
-has_screening(patient141,screening1603).
-has_screening(patient141,screening1604).
-has_screening(patient142,screening1605).
-has_screening(patient142,screening1606).
-has_screening(patient142,screening1607).
-has_screening(patient142,screening1608).
-has_screening(patient142,screening1609).
-has_screening(patient142,screening1610).
-has_screening(patient143,screening1611).
-has_screening(patient143,screening1612).
-has_screening(patient143,screening1613).
-has_screening(patient143,screening1614).
-has_screening(patient143,screening1615).
-has_screening(patient143,screening1616).
-has_screening(patient143,screening1617).
-has_screening(patient143,screening1618).
-has_screening(patient143,screening1619).
-has_screening(patient143,screening1620).
-has_screening(patient143,screening1621).
-has_screening(patient143,screening1622).
-has_screening(patient143,screening1623).
-has_screening(patient143,screening1624).
-has_screening(patient143,screening1625).
-has_screening(patient143,screening1626).
-has_screening(patient144,screening1627).
-has_screening(patient144,screening1628).
-has_screening(patient144,screening1629).
-has_screening(patient145,screening1630).
-has_screening(patient145,screening1631).
-has_screening(patient145,screening1632).
-has_screening(patient145,screening1633).
-has_screening(patient145,screening1634).
-has_screening(patient145,screening1635).
-has_screening(patient145,screening1636).
-has_screening(patient145,screening1637).
-has_screening(patient145,screening1638).
-has_screening(patient145,screening1639).
-has_screening(patient145,screening1640).
-has_screening(patient145,screening1641).
-has_screening(patient145,screening1642).
-has_screening(patient145,screening1643).
-has_screening(patient145,screening1644).
-has_screening(patient145,screening1645).
-has_screening(patient145,screening1646).
-has_screening(patient145,screening1647).
-has_screening(patient145,screening1648).
-has_screening(patient145,screening1649).
-has_screening(patient145,screening1650).
-has_screening(patient145,screening1651).
-has_screening(patient145,screening1652).
-has_screening(patient145,screening1653).
-has_screening(patient145,screening1654).
-has_screening(patient145,screening1655).
-has_screening(patient145,screening1656).
-has_screening(patient145,screening1657).
-has_screening(patient145,screening1658).
-has_screening(patient145,screening1659).
-has_screening(patient145,screening1660).
-has_screening(patient145,screening1661).
-has_screening(patient145,screening1662).
-has_screening(patient145,screening1663).
-has_screening(patient145,screening1664).
-has_screening(patient145,screening1665).
-has_screening(patient145,screening1666).
-has_screening(patient145,screening1667).
-has_screening(patient145,screening1668).
-has_screening(patient145,screening1669).
-has_screening(patient145,screening1670).
-has_screening(patient145,screening1671).
-has_screening(patient146,screening1672).
-has_screening(patient146,screening1673).
-has_screening(patient146,screening1674).
-has_screening(patient146,screening1675).
-has_screening(patient146,screening1676).
-has_screening(patient146,screening1677).
-has_screening(patient146,screening1678).
-has_screening(patient146,screening1679).
-has_screening(patient146,screening1680).
-has_screening(patient146,screening1681).
-has_screening(patient146,screening1682).
-has_screening(patient146,screening1683).
-has_screening(patient146,screening1684).
-has_screening(patient146,screening1685).
-has_screening(patient146,screening1686).
-has_screening(patient146,screening1687).
-has_screening(patient146,screening1688).
-has_screening(patient146,screening1689).
-has_screening(patient146,screening1690).
-has_screening(patient146,screening1691).
-has_screening(patient146,screening1692).
-has_screening(patient146,screening1693).
-has_screening(patient146,screening1694).
-has_screening(patient146,screening1695).
-has_screening(patient146,screening1696).
-has_screening(patient146,screening1697).
-has_screening(patient146,screening1698).
-has_screening(patient146,screening1699).
-has_screening(patient146,screening1700).
-has_screening(patient146,screening1701).
-has_screening(patient146,screening1702).
-has_screening(patient146,screening1703).
-has_screening(patient146,screening1704).
-has_screening(patient146,screening1705).
-has_screening(patient146,screening1706).
-has_screening(patient146,screening1707).
-has_screening(patient146,screening1708).
-has_screening(patient146,screening1709).
-has_screening(patient146,screening1710).
-has_screening(patient147,screening1711).
-has_screening(patient147,screening1712).
-has_screening(patient147,screening1713).
-has_screening(patient147,screening1714).
-has_screening(patient147,screening1715).
-has_screening(patient147,screening1716).
-has_screening(patient147,screening1717).
-has_screening(patient147,screening1718).
-has_screening(patient147,screening1719).
-has_screening(patient147,screening1720).
-has_screening(patient147,screening1721).
-has_screening(patient147,screening1722).
-has_screening(patient147,screening1723).
-has_screening(patient147,screening1724).
-has_screening(patient147,screening1725).
-has_screening(patient147,screening1726).
-has_screening(patient147,screening1727).
-has_screening(patient147,screening1728).
-has_screening(patient147,screening1729).
-has_screening(patient147,screening1730).
-has_screening(patient147,screening1731).
-has_screening(patient147,screening1732).
-has_screening(patient147,screening1733).
-has_screening(patient147,screening1734).
-has_screening(patient148,screening1735).
-has_screening(patient148,screening1736).
-has_screening(patient148,screening1737).
-has_screening(patient148,screening1738).
-has_screening(patient148,screening1739).
-has_screening(patient148,screening1740).
-has_screening(patient148,screening1741).
-has_screening(patient148,screening1742).
-has_screening(patient148,screening1743).
-has_screening(patient148,screening1744).
-has_screening(patient148,screening1745).
-has_screening(patient148,screening1746).
-has_screening(patient148,screening1747).
-has_screening(patient148,screening1748).
-has_screening(patient148,screening1749).
-has_screening(patient148,screening1750).
-has_screening(patient148,screening1751).
-has_screening(patient149,screening1752).
-has_screening(patient149,screening1753).
-has_screening(patient149,screening1754).
-has_screening(patient149,screening1755).
-has_screening(patient149,screening1756).
-has_screening(patient149,screening1757).
-has_screening(patient149,screening1758).
-has_screening(patient149,screening1759).
-has_screening(patient149,screening1760).
-has_screening(patient149,screening1761).
-has_screening(patient149,screening1762).
-has_screening(patient150,screening1763).
-has_screening(patient150,screening1764).
-has_screening(patient150,screening1765).
-has_screening(patient150,screening1766).
-has_screening(patient150,screening1767).
-has_screening(patient150,screening1768).
-has_screening(patient150,screening1769).
-has_screening(patient150,screening1770).
-has_screening(patient150,screening1771).
-has_screening(patient150,screening1772).
-has_screening(patient151,screening1773).
-has_screening(patient151,screening1774).
-has_screening(patient151,screening1775).
-has_screening(patient151,screening1776).
-has_screening(patient151,screening1777).
-has_screening(patient151,screening1778).
-has_screening(patient151,screening1779).
-has_screening(patient151,screening1780).
-has_screening(patient151,screening1781).
-has_screening(patient151,screening1782).
-has_screening(patient151,screening1783).
-has_screening(patient151,screening1784).
-has_screening(patient151,screening1785).
-has_screening(patient151,screening1786).
-has_screening(patient151,screening1787).
-has_screening(patient151,screening1788).
-has_screening(patient151,screening1789).
-has_screening(patient151,screening1790).
-has_screening(patient151,screening1791).
-has_screening(patient151,screening1792).
-has_screening(patient151,screening1793).
-has_screening(patient151,screening1794).
-has_screening(patient151,screening1795).
-has_screening(patient151,screening1796).
-has_screening(patient151,screening1797).
-has_screening(patient151,screening1798).
-has_screening(patient151,screening1799).
-has_screening(patient151,screening1800).
-has_screening(patient151,screening1801).
-has_screening(patient151,screening1802).
-has_screening(patient151,screening1803).
-has_screening(patient151,screening1804).
-has_screening(patient151,screening1805).
-has_screening(patient151,screening1806).
-has_screening(patient151,screening1807).
-has_screening(patient151,screening1808).
-has_screening(patient151,screening1809).
-has_screening(patient151,screening1810).
-has_screening(patient151,screening1811).
-has_screening(patient151,screening1812).
-has_screening(patient151,screening1813).
-has_screening(patient151,screening1814).
-has_screening(patient151,screening1815).
-has_screening(patient151,screening1816).
-has_screening(patient151,screening1817).
-has_screening(patient151,screening1818).
-has_screening(patient151,screening1819).
-has_screening(patient151,screening1820).
-has_screening(patient152,screening1821).
-has_screening(patient152,screening1822).
-has_screening(patient152,screening1823).
-has_screening(patient152,screening1824).
-has_screening(patient152,screening1825).
-has_screening(patient152,screening1826).
-has_screening(patient152,screening1827).
-has_screening(patient152,screening1828).
-has_screening(patient152,screening1829).
-has_screening(patient152,screening1830).
-has_screening(patient152,screening1831).
-has_screening(patient153,screening1832).
-has_screening(patient153,screening1833).
-has_screening(patient153,screening1834).
-has_screening(patient153,screening1835).
-has_screening(patient153,screening1836).
-has_screening(patient153,screening1837).
-has_screening(patient153,screening1838).
-has_screening(patient153,screening1839).
-has_screening(patient153,screening1840).
-has_screening(patient153,screening1841).
-has_screening(patient153,screening1842).
-has_screening(patient153,screening1843).
-has_screening(patient153,screening1844).
-has_screening(patient153,screening1845).
-has_screening(patient153,screening1846).
-has_screening(patient154,screening1847).
-has_screening(patient154,screening1848).
-has_screening(patient154,screening1849).
-has_screening(patient154,screening1850).
-has_screening(patient154,screening1851).
-has_screening(patient154,screening1852).
-has_screening(patient154,screening1853).
-has_screening(patient154,screening1854).
-has_screening(patient154,screening1855).
-has_screening(patient154,screening1856).
-has_screening(patient154,screening1857).
-has_screening(patient154,screening1858).
-has_screening(patient154,screening1859).
-has_screening(patient154,screening1860).
-has_screening(patient154,screening1861).
-has_screening(patient154,screening1862).
-has_screening(patient154,screening1863).
-has_screening(patient154,screening1864).
-has_screening(patient154,screening1865).
-has_screening(patient154,screening1866).
-has_screening(patient154,screening1867).
-has_screening(patient154,screening1868).
-has_screening(patient154,screening1869).
-has_screening(patient154,screening1870).
-has_screening(patient154,screening1871).
-has_screening(patient154,screening1872).
-has_screening(patient154,screening1873).
-has_screening(patient154,screening1874).
-has_screening(patient154,screening1875).
-has_screening(patient154,screening1876).
-has_screening(patient154,screening1877).
-has_screening(patient154,screening1878).
-has_screening(patient154,screening1879).
-has_screening(patient154,screening1880).
-has_screening(patient154,screening1881).
-has_screening(patient154,screening1882).
-has_screening(patient154,screening1883).
-has_screening(patient154,screening1884).
-has_screening(patient154,screening1885).
-has_screening(patient154,screening1886).
-has_screening(patient154,screening1887).
-has_screening(patient154,screening1888).
-has_screening(patient154,screening1889).
-has_screening(patient154,screening1890).
-has_screening(patient154,screening1891).
-has_screening(patient154,screening1892).
-has_screening(patient154,screening1893).
-has_screening(patient154,screening1894).
-has_screening(patient154,screening1895).
-has_screening(patient154,screening1896).
-has_screening(patient154,screening1897).
-has_screening(patient154,screening1898).
-has_screening(patient154,screening1899).
-has_screening(patient154,screening1900).
-has_screening(patient154,screening1901).
-has_screening(patient154,screening1902).
-has_screening(patient155,screening1903).
-has_screening(patient156,screening1904).
-has_screening(patient156,screening1905).
-has_screening(patient156,screening1906).
-has_screening(patient156,screening1907).
-has_screening(patient156,screening1908).
-has_screening(patient157,screening1909).
-has_screening(patient157,screening1910).
-has_screening(patient157,screening1911).
-has_screening(patient157,screening1912).
-has_screening(patient157,screening1913).
-has_screening(patient157,screening1914).
-has_screening(patient158,screening1915).
-has_screening(patient158,screening1916).
-has_screening(patient158,screening1917).
-has_screening(patient158,screening1918).
-has_screening(patient158,screening1919).
-has_screening(patient158,screening1920).
-has_screening(patient158,screening1921).
-has_screening(patient158,screening1922).
-has_screening(patient158,screening1923).
-has_screening(patient158,screening1924).
-has_screening(patient158,screening1925).
-has_screening(patient158,screening1926).
-has_screening(patient158,screening1927).
-has_screening(patient158,screening1928).
-has_screening(patient159,screening1929).
-has_screening(patient159,screening1930).
-has_screening(patient159,screening1931).
-has_screening(patient159,screening1932).
-has_screening(patient159,screening1933).
-has_screening(patient159,screening1934).
-has_screening(patient159,screening1935).
-has_screening(patient159,screening1936).
-has_screening(patient159,screening1937).
-has_screening(patient159,screening1938).
-has_screening(patient159,screening1939).
-has_screening(patient159,screening1940).
-has_screening(patient159,screening1941).
-has_screening(patient159,screening1942).
-has_screening(patient159,screening1943).
-has_screening(patient159,screening1944).
-has_screening(patient160,screening1945).
-has_screening(patient160,screening1946).
-has_screening(patient160,screening1947).
-has_screening(patient160,screening1948).
-has_screening(patient160,screening1949).
-has_screening(patient160,screening1950).
-has_screening(patient160,screening1951).
-has_screening(patient160,screening1952).
-has_screening(patient160,screening1953).
-has_screening(patient160,screening1954).
-has_screening(patient161,screening1955).
-has_screening(patient161,screening1956).
-has_screening(patient161,screening1957).
-has_screening(patient161,screening1958).
-has_screening(patient162,screening1959).
-has_screening(patient162,screening1960).
-has_screening(patient162,screening1961).
-has_screening(patient162,screening1962).
-has_screening(patient162,screening1963).
-has_screening(patient162,screening1964).
-has_screening(patient162,screening1965).
-has_screening(patient162,screening1966).
-has_screening(patient162,screening1967).
-has_screening(patient162,screening1968).
-has_screening(patient162,screening1969).
-has_screening(patient162,screening1970).
-has_screening(patient162,screening1971).
-has_screening(patient162,screening1972).
-has_screening(patient162,screening1973).
-has_screening(patient162,screening1974).
-has_screening(patient162,screening1975).
-has_screening(patient162,screening1976).
-has_screening(patient162,screening1977).
-has_screening(patient162,screening1978).
-has_screening(patient162,screening1979).
-has_screening(patient163,screening1980).
-has_screening(patient163,screening1981).
-has_screening(patient163,screening1982).
-has_screening(patient163,screening1983).
-has_screening(patient163,screening1984).
-has_screening(patient163,screening1985).
-has_screening(patient164,screening1986).
-has_screening(patient164,screening1987).
-has_screening(patient164,screening1988).
-has_screening(patient164,screening1989).
-has_screening(patient165,screening1990).
-has_screening(patient165,screening1991).
-has_screening(patient165,screening1992).
-has_screening(patient166,screening1993).
-has_screening(patient167,screening1994).
-has_screening(patient167,screening1995).
-has_screening(patient167,screening1996).
-has_screening(patient167,screening1997).
-has_screening(patient167,screening1998).
-has_screening(patient167,screening1999).
-has_screening(patient167,screening2000).
-has_screening(patient167,screening2001).
-has_screening(patient167,screening2002).
-has_screening(patient167,screening2003).
-has_screening(patient167,screening2004).
-has_screening(patient167,screening2005).
-has_screening(patient167,screening2006).
-has_screening(patient167,screening2007).
-has_screening(patient167,screening2008).
-has_screening(patient167,screening2009).
-has_screening(patient167,screening2010).
-has_screening(patient168,screening2011).
-has_screening(patient168,screening2012).
-has_screening(patient168,screening2013).
-has_screening(patient169,screening2014).
-has_screening(patient169,screening2015).
-has_screening(patient170,screening2016).
-has_screening(patient170,screening2017).
-has_screening(patient170,screening2018).
-has_screening(patient170,screening2019).
-has_screening(patient170,screening2020).
-has_screening(patient170,screening2021).
-has_screening(patient170,screening2022).
-has_screening(patient170,screening2023).
-has_screening(patient171,screening2024).
-has_screening(patient171,screening2025).
-has_screening(patient171,screening2026).
-has_screening(patient171,screening2027).
-has_screening(patient172,screening2028).
-has_screening(patient172,screening2029).
-has_screening(patient172,screening2030).
-has_screening(patient172,screening2031).
-has_screening(patient172,screening2032).
-has_screening(patient172,screening2033).
-has_screening(patient172,screening2034).
-has_screening(patient172,screening2035).
-has_screening(patient172,screening2036).
-has_screening(patient172,screening2037).
-has_screening(patient172,screening2038).
-has_screening(patient172,screening2039).
-has_screening(patient173,screening2040).
-has_screening(patient173,screening2041).
-has_screening(patient173,screening2042).
-has_screening(patient173,screening2043).
-has_screening(patient173,screening2044).
-has_screening(patient173,screening2045).
-has_screening(patient173,screening2046).
-has_screening(patient173,screening2047).
-has_screening(patient173,screening2048).
-has_screening(patient173,screening2049).
-has_screening(patient174,screening2050).
-has_screening(patient174,screening2051).
-has_screening(patient174,screening2052).
-has_screening(patient174,screening2053).
-has_screening(patient174,screening2054).
-has_screening(patient174,screening2055).
-has_screening(patient174,screening2056).
-has_screening(patient175,screening2057).
-has_screening(patient176,screening2058).
-has_screening(patient176,screening2059).
-has_screening(patient176,screening2060).
-has_screening(patient176,screening2061).
-has_screening(patient176,screening2062).
-has_screening(patient176,screening2063).
-has_screening(patient176,screening2064).
-has_screening(patient176,screening2065).
-has_screening(patient176,screening2066).
-has_screening(patient176,screening2067).
-has_screening(patient176,screening2068).
-has_screening(patient177,screening2069).
-has_screening(patient177,screening2070).
-has_screening(patient178,screening2071).
-has_screening(patient178,screening2072).
-has_screening(patient179,screening2073).
-has_screening(patient179,screening2074).
-has_screening(patient179,screening2075).
-has_screening(patient179,screening2076).
-has_screening(patient179,screening2077).
-has_screening(patient179,screening2078).
-has_screening(patient179,screening2079).
-has_screening(patient179,screening2080).
-has_screening(patient179,screening2081).
-has_screening(patient179,screening2082).
-has_screening(patient180,screening2083).
-has_screening(patient180,screening2084).
-has_screening(patient180,screening2085).
-has_screening(patient180,screening2086).
-has_screening(patient181,screening2087).
-has_screening(patient181,screening2088).
-has_screening(patient181,screening2089).
-has_screening(patient181,screening2090).
-has_screening(patient181,screening2091).
-has_screening(patient181,screening2092).
-has_screening(patient181,screening2093).
-has_screening(patient181,screening2094).
-has_screening(patient181,screening2095).
-has_screening(patient182,screening2096).
-has_screening(patient182,screening2097).
-has_screening(patient182,screening2098).
-has_screening(patient182,screening2099).
-has_screening(patient182,screening2100).
-has_screening(patient182,screening2101).
-has_screening(patient182,screening2102).
-has_screening(patient182,screening2103).
-has_screening(patient182,screening2104).
-has_screening(patient182,screening2105).
-has_screening(patient182,screening2106).
-has_screening(patient182,screening2107).
-has_screening(patient182,screening2108).
-has_screening(patient182,screening2109).
-has_screening(patient182,screening2110).
-has_screening(patient183,screening2111).
-has_screening(patient183,screening2112).
-has_screening(patient184,screening2113).
-has_screening(patient185,screening2114).
-has_screening(patient185,screening2115).
-has_screening(patient185,screening2116).
-has_screening(patient185,screening2117).
-has_screening(patient185,screening2118).
-has_screening(patient185,screening2119).
-has_screening(patient185,screening2120).
-has_screening(patient186,screening2121).
-has_screening(patient186,screening2122).
-has_screening(patient186,screening2123).
-has_screening(patient187,screening2124).
-has_screening(patient187,screening2125).
-has_screening(patient187,screening2126).
-has_screening(patient187,screening2127).
-has_screening(patient187,screening2128).
-has_screening(patient187,screening2129).
-has_screening(patient187,screening2130).
-has_screening(patient187,screening2131).
-has_screening(patient187,screening2132).
-has_screening(patient187,screening2133).
-has_screening(patient187,screening2134).
-has_screening(patient187,screening2135).
-has_screening(patient187,screening2136).
-has_screening(patient187,screening2137).
-has_screening(patient187,screening2138).
-has_screening(patient187,screening2139).
-has_screening(patient187,screening2140).
-has_screening(patient187,screening2141).
-has_screening(patient187,screening2142).
-has_screening(patient187,screening2143).
-has_screening(patient187,screening2144).
-has_screening(patient187,screening2145).
-has_screening(patient187,screening2146).
-has_screening(patient187,screening2147).
-has_screening(patient187,screening2148).
-has_screening(patient187,screening2149).
-has_screening(patient187,screening2150).
-has_screening(patient188,screening2151).
-has_screening(patient188,screening2152).
-has_screening(patient188,screening2153).
-has_screening(patient188,screening2154).
-has_screening(patient188,screening2155).
-has_screening(patient188,screening2156).
-has_screening(patient189,screening2157).
-has_screening(patient189,screening2158).
-has_screening(patient189,screening2159).
-has_screening(patient189,screening2160).
-has_screening(patient189,screening2161).
-has_screening(patient189,screening2162).
-has_screening(patient189,screening2163).
-has_screening(patient189,screening2164).
-has_screening(patient189,screening2165).
-has_screening(patient189,screening2166).
-has_screening(patient189,screening2167).
-has_screening(patient189,screening2168).
-has_screening(patient189,screening2169).
-has_screening(patient189,screening2170).
-has_screening(patient189,screening2171).
-has_screening(patient189,screening2172).
-has_screening(patient189,screening2173).
-has_screening(patient189,screening2174).
-has_screening(patient189,screening2175).
-has_screening(patient189,screening2176).
-has_screening(patient189,screening2177).
-has_screening(patient190,screening2178).
-has_screening(patient190,screening2179).
-has_screening(patient190,screening2180).
-has_screening(patient190,screening2181).
-has_screening(patient190,screening2182).
-has_screening(patient190,screening2183).
-has_screening(patient190,screening2184).
-has_screening(patient190,screening2185).
-has_screening(patient190,screening2186).
-has_screening(patient190,screening2187).
-has_screening(patient190,screening2188).
-has_screening(patient190,screening2189).
-has_screening(patient191,screening2190).
-has_screening(patient191,screening2191).
-has_screening(patient191,screening2192).
-has_screening(patient191,screening2193).
-has_screening(patient191,screening2194).
-has_screening(patient191,screening2195).
-has_screening(patient191,screening2196).
-has_screening(patient192,screening2197).
-has_screening(patient192,screening2198).
-has_screening(patient192,screening2199).
-has_screening(patient192,screening2200).
-has_screening(patient192,screening2201).
-has_screening(patient192,screening2202).
-has_screening(patient192,screening2203).
-has_screening(patient192,screening2204).
-has_screening(patient192,screening2205).
-has_screening(patient193,screening2206).
-has_screening(patient193,screening2207).
-has_screening(patient193,screening2208).
-has_screening(patient193,screening2209).
-has_screening(patient193,screening2210).
-has_screening(patient193,screening2211).
-has_screening(patient193,screening2212).
-has_screening(patient193,screening2213).
-has_screening(patient193,screening2214).
-has_screening(patient194,screening2215).
-has_screening(patient194,screening2216).
-has_screening(patient194,screening2217).
-has_screening(patient194,screening2218).
-has_screening(patient194,screening2219).
-has_screening(patient194,screening2220).
-has_screening(patient194,screening2221).
-has_screening(patient195,screening2222).
-has_screening(patient195,screening2223).
-has_screening(patient195,screening2224).
-has_screening(patient195,screening2225).
-has_screening(patient195,screening2226).
-has_screening(patient195,screening2227).
-has_screening(patient195,screening2228).
-has_screening(patient195,screening2229).
-has_screening(patient195,screening2230).
-has_screening(patient195,screening2231).
-has_screening(patient195,screening2232).
-has_screening(patient196,screening2233).
-has_screening(patient197,screening2234).
-has_screening(patient197,screening2235).
-has_screening(patient197,screening2236).
-has_screening(patient197,screening2237).
-has_screening(patient197,screening2238).
-has_screening(patient197,screening2239).
-has_screening(patient197,screening2240).
-has_screening(patient198,screening2241).
-has_screening(patient198,screening2242).
-has_screening(patient198,screening2243).
-has_screening(patient198,screening2244).
-has_screening(patient198,screening2245).
-has_screening(patient198,screening2246).
-has_screening(patient198,screening2247).
-has_screening(patient198,screening2248).
-has_screening(patient198,screening2249).
-has_screening(patient198,screening2250).
-has_screening(patient198,screening2251).
-has_screening(patient198,screening2252).
-has_screening(patient198,screening2253).
-has_screening(patient198,screening2254).
-has_screening(patient198,screening2255).
-has_screening(patient198,screening2256).
-has_screening(patient198,screening2257).
-has_screening(patient198,screening2258).
-has_screening(patient198,screening2259).
-has_screening(patient198,screening2260).
-has_screening(patient198,screening2261).
-has_screening(patient199,screening2262).
-has_screening(patient199,screening2263).
-has_screening(patient199,screening2264).
-has_screening(patient199,screening2265).
-has_screening(patient199,screening2266).
-has_screening(patient200,screening2267).
-has_screening(patient200,screening2268).
-has_screening(patient200,screening2269).
-has_screening(patient200,screening2270).
-has_screening(patient200,screening2271).
-has_screening(patient201,screening2272).
-has_screening(patient201,screening2273).
-has_screening(patient201,screening2274).
-has_screening(patient201,screening2275).
-has_screening(patient201,screening2276).
-has_screening(patient201,screening2277).
-has_screening(patient201,screening2278).
-has_screening(patient201,screening2279).
-has_screening(patient201,screening2280).
-has_screening(patient201,screening2281).
-has_screening(patient201,screening2282).
-has_screening(patient201,screening2283).
-has_screening(patient201,screening2284).
-has_screening(patient201,screening2285).
-has_screening(patient201,screening2286).
-has_screening(patient202,screening2287).
-has_screening(patient202,screening2288).
-has_screening(patient202,screening2289).
-has_screening(patient202,screening2290).
-has_screening(patient202,screening2291).
-has_screening(patient202,screening2292).
-has_screening(patient202,screening2293).
-has_screening(patient202,screening2294).
-has_screening(patient202,screening2295).
-has_screening(patient202,screening2296).
-has_screening(patient202,screening2297).
-has_screening(patient203,screening2298).
-has_screening(patient203,screening2299).
-has_screening(patient203,screening2300).
-has_screening(patient204,screening2301).
-has_screening(patient205,screening2302).
-has_screening(patient205,screening2303).
-has_screening(patient205,screening2304).
-has_screening(patient205,screening2305).
-has_screening(patient205,screening2306).
-has_screening(patient206,screening2307).
-has_screening(patient206,screening2308).
-has_screening(patient206,screening2309).
-has_screening(patient206,screening2310).
-has_screening(patient206,screening2311).
-has_screening(patient206,screening2312).
-has_screening(patient206,screening2313).
-has_screening(patient206,screening2314).
-has_screening(patient206,screening2315).
-has_screening(patient206,screening2316).
-has_screening(patient206,screening2317).
-has_screening(patient206,screening2318).
-has_screening(patient207,screening2319).
-has_screening(patient207,screening2320).
-has_screening(patient207,screening2321).
-has_screening(patient207,screening2322).
-has_screening(patient207,screening2323).
-has_screening(patient207,screening2324).
-has_screening(patient207,screening2325).
-has_screening(patient207,screening2326).
-has_screening(patient207,screening2327).
-has_screening(patient207,screening2328).
-has_screening(patient207,screening2329).
-has_screening(patient207,screening2330).
-has_screening(patient207,screening2331).
-has_screening(patient207,screening2332).
-has_screening(patient207,screening2333).
-has_screening(patient207,screening2334).
-has_screening(patient207,screening2335).
-has_screening(patient207,screening2336).
-has_screening(patient208,screening2337).
-has_screening(patient208,screening2338).
-has_screening(patient208,screening2339).
-has_screening(patient208,screening2340).
-has_screening(patient208,screening2341).
-has_screening(patient209,screening2342).
-has_screening(patient209,screening2343).
-has_screening(patient209,screening2344).
-has_screening(patient209,screening2345).
-has_screening(patient209,screening2346).
-has_screening(patient209,screening2347).
-has_screening(patient210,screening2348).
-has_screening(patient210,screening2349).
-has_screening(patient210,screening2350).
-has_screening(patient210,screening2351).
-has_screening(patient210,screening2352).
-has_screening(patient210,screening2353).
-has_screening(patient210,screening2354).
-has_screening(patient210,screening2355).
-has_screening(patient210,screening2356).
-has_screening(patient210,screening2357).
-has_screening(patient210,screening2358).
-has_screening(patient210,screening2359).
-has_screening(patient210,screening2360).
-has_screening(patient210,screening2361).
-has_screening(patient210,screening2362).
-has_screening(patient210,screening2363).
-has_screening(patient210,screening2364).
-has_screening(patient210,screening2365).
-has_screening(patient210,screening2366).
-has_screening(patient210,screening2367).
-has_screening(patient210,screening2368).
-has_screening(patient210,screening2369).
-has_screening(patient211,screening2370).
-has_screening(patient211,screening2371).
-has_screening(patient211,screening2372).
-has_screening(patient211,screening2373).
-has_screening(patient211,screening2374).
-has_screening(patient211,screening2375).
-has_screening(patient211,screening2376).
-has_screening(patient211,screening2377).
-has_screening(patient211,screening2378).
-has_screening(patient211,screening2379).
-has_screening(patient212,screening2380).
-has_screening(patient212,screening2381).
-has_screening(patient212,screening2382).
-has_screening(patient212,screening2383).
-has_screening(patient212,screening2384).
-has_screening(patient212,screening2385).
-has_screening(patient212,screening2386).
-has_screening(patient213,screening2387).
-has_screening(patient213,screening2388).
-has_screening(patient213,screening2389).
-has_screening(patient213,screening2390).
-has_screening(patient213,screening2391).
-has_screening(patient213,screening2392).
-has_screening(patient213,screening2393).
-has_screening(patient213,screening2394).
-has_screening(patient213,screening2395).
-has_screening(patient213,screening2396).
-has_screening(patient214,screening2397).
-has_screening(patient214,screening2398).
-has_screening(patient214,screening2399).
-has_screening(patient214,screening2400).
-has_screening(patient214,screening2401).
-has_screening(patient214,screening2402).
-has_screening(patient214,screening2403).
-has_screening(patient214,screening2404).
-has_screening(patient214,screening2405).
-has_screening(patient214,screening2406).
-has_screening(patient214,screening2407).
-has_screening(patient214,screening2408).
-has_screening(patient214,screening2409).
-has_screening(patient214,screening2410).
-has_screening(patient214,screening2411).
-has_screening(patient214,screening2412).
-has_screening(patient215,screening2413).
-has_screening(patient215,screening2414).
-has_screening(patient215,screening2415).
-has_screening(patient215,screening2416).
-has_screening(patient215,screening2417).
-has_screening(patient215,screening2418).
-has_screening(patient215,screening2419).
-has_screening(patient215,screening2420).
-has_screening(patient215,screening2421).
-has_screening(patient215,screening2422).
-has_screening(patient215,screening2423).
-has_screening(patient215,screening2424).
-has_screening(patient216,screening2425).
-has_screening(patient216,screening2426).
-has_screening(patient216,screening2427).
-has_screening(patient216,screening2428).
-has_screening(patient216,screening2429).
-has_screening(patient216,screening2430).
-has_screening(patient216,screening2431).
-has_screening(patient216,screening2432).
-has_screening(patient216,screening2433).
-has_screening(patient217,screening2434).
-has_screening(patient217,screening2435).
-has_screening(patient217,screening2436).
-has_screening(patient217,screening2437).
-has_screening(patient217,screening2438).
-has_screening(patient217,screening2439).
-has_screening(patient218,screening2440).
-has_screening(patient218,screening2441).
-has_screening(patient218,screening2442).
-has_screening(patient218,screening2443).
-has_screening(patient218,screening2444).
-has_screening(patient218,screening2445).
-has_screening(patient218,screening2446).
-has_screening(patient218,screening2447).
-has_screening(patient218,screening2448).
-has_screening(patient218,screening2449).
-has_screening(patient218,screening2450).
-has_screening(patient219,screening2451).
-has_screening(patient219,screening2452).
-has_screening(patient219,screening2453).
-has_screening(patient219,screening2454).
-has_screening(patient219,screening2455).
-has_screening(patient220,screening2456).
-has_screening(patient220,screening2457).
-has_screening(patient221,screening2458).
-has_screening(patient221,screening2459).
-has_screening(patient221,screening2460).
-has_screening(patient221,screening2461).
-has_screening(patient221,screening2462).
-has_screening(patient221,screening2463).
-has_screening(patient221,screening2464).
-has_screening(patient221,screening2465).
-has_screening(patient221,screening2466).
-has_screening(patient221,screening2467).
-has_screening(patient221,screening2468).
-has_screening(patient221,screening2469).
-has_screening(patient221,screening2470).
-has_screening(patient221,screening2471).
-has_screening(patient221,screening2472).
-has_screening(patient221,screening2473).
-has_screening(patient221,screening2474).
-has_screening(patient221,screening2475).
-has_screening(patient222,screening2476).
-has_screening(patient223,screening2477).
-has_screening(patient223,screening2478).
-has_screening(patient223,screening2479).
-has_screening(patient223,screening2480).
-has_screening(patient223,screening2481).
-has_screening(patient224,screening2482).
-has_screening(patient224,screening2483).
-has_screening(patient224,screening2484).
-has_screening(patient225,screening2485).
-has_screening(patient225,screening2486).
-has_screening(patient225,screening2487).
-has_screening(patient225,screening2488).
-has_screening(patient225,screening2489).
-has_screening(patient225,screening2490).
-has_screening(patient225,screening2491).
-has_screening(patient225,screening2492).
-has_screening(patient225,screening2493).
-has_screening(patient225,screening2494).
-has_screening(patient225,screening2495).
-has_screening(patient225,screening2496).
-has_screening(patient225,screening2497).
-has_screening(patient225,screening2498).
-has_screening(patient225,screening2499).
-has_screening(patient225,screening2500).
-has_screening(patient225,screening2501).
-has_screening(patient225,screening2502).
-has_screening(patient225,screening2503).
-has_screening(patient225,screening2504).
-has_screening(patient225,screening2505).
-has_screening(patient225,screening2506).
-has_screening(patient225,screening2507).
-has_screening(patient225,screening2508).
-has_screening(patient225,screening2509).
-has_screening(patient225,screening2510).
-has_screening(patient225,screening2511).
-has_screening(patient225,screening2512).
-has_screening(patient225,screening2513).
-has_screening(patient225,screening2514).
-has_screening(patient225,screening2515).
-has_screening(patient225,screening2516).
-has_screening(patient225,screening2517).
-has_screening(patient226,screening2518).
-has_screening(patient226,screening2519).
-has_screening(patient226,screening2520).
-has_screening(patient226,screening2521).
-has_screening(patient226,screening2522).
-has_screening(patient227,screening2523).
-has_screening(patient227,screening2524).
-has_screening(patient227,screening2525).
-has_screening(patient227,screening2526).
-has_screening(patient227,screening2527).
-has_screening(patient227,screening2528).
-has_screening(patient227,screening2529).
-has_screening(patient227,screening2530).
-has_screening(patient227,screening2531).
-has_screening(patient227,screening2532).
-has_screening(patient227,screening2533).
-has_screening(patient227,screening2534).
-has_screening(patient227,screening2535).
-has_screening(patient227,screening2536).
-has_screening(patient228,screening2537).
-has_screening(patient228,screening2538).
-has_screening(patient228,screening2539).
-has_screening(patient228,screening2540).
-has_screening(patient229,screening2541).
-has_screening(patient229,screening2542).
-has_screening(patient229,screening2543).
-has_screening(patient230,screening2544).
-has_screening(patient230,screening2545).
-has_screening(patient230,screening2546).
-has_screening(patient230,screening2547).
-has_screening(patient230,screening2548).
-has_screening(patient230,screening2549).
-has_screening(patient230,screening2550).
-has_screening(patient230,screening2551).
-has_screening(patient230,screening2552).
-has_screening(patient230,screening2553).
-has_screening(patient230,screening2554).
-has_screening(patient230,screening2555).
-has_screening(patient230,screening2556).
-has_screening(patient230,screening2557).
-has_screening(patient230,screening2558).
-has_screening(patient230,screening2559).
-has_screening(patient230,screening2560).
-has_screening(patient230,screening2561).
-has_screening(patient230,screening2562).
-has_screening(patient230,screening2563).
-has_screening(patient231,screening2564).
-has_screening(patient231,screening2565).
-has_screening(patient231,screening2566).
-has_screening(patient231,screening2567).
-has_screening(patient231,screening2568).
-has_screening(patient231,screening2569).
-has_screening(patient231,screening2570).
-has_screening(patient231,screening2571).
-has_screening(patient231,screening2572).
-has_screening(patient231,screening2573).
-has_screening(patient231,screening2574).
-has_screening(patient231,screening2575).
-has_screening(patient231,screening2576).
-has_screening(patient231,screening2577).
-has_screening(patient231,screening2578).
-has_screening(patient231,screening2579).
-has_screening(patient231,screening2580).
-has_screening(patient231,screening2581).
-has_screening(patient231,screening2582).
-has_screening(patient231,screening2583).
-has_screening(patient231,screening2584).
-has_screening(patient231,screening2585).
-has_screening(patient231,screening2586).
-has_screening(patient231,screening2587).
-has_screening(patient231,screening2588).
-has_screening(patient231,screening2589).
-has_screening(patient231,screening2590).
-has_screening(patient231,screening2591).
-has_screening(patient231,screening2592).
-has_screening(patient231,screening2593).
-has_screening(patient231,screening2594).
-has_screening(patient231,screening2595).
-has_screening(patient231,screening2596).
-has_screening(patient231,screening2597).
-has_screening(patient231,screening2598).
-has_screening(patient231,screening2599).
-has_screening(patient231,screening2600).
-has_screening(patient231,screening2601).
-has_screening(patient231,screening2602).
-has_screening(patient231,screening2603).
-has_screening(patient231,screening2604).
-has_screening(patient231,screening2605).
-has_screening(patient232,screening2606).
-has_screening(patient232,screening2607).
-has_screening(patient232,screening2608).
-has_screening(patient232,screening2609).
-has_screening(patient232,screening2610).
-has_screening(patient232,screening2611).
-has_screening(patient233,screening2612).
-has_screening(patient233,screening2613).
-has_screening(patient233,screening2614).
-has_screening(patient233,screening2615).
-has_screening(patient234,screening2616).
-has_screening(patient234,screening2617).
-has_screening(patient234,screening2618).
-has_screening(patient234,screening2619).
-has_screening(patient234,screening2620).
-has_screening(patient234,screening2621).
-has_screening(patient234,screening2622).
-has_screening(patient234,screening2623).
-has_screening(patient234,screening2624).
-has_screening(patient234,screening2625).
-has_screening(patient234,screening2626).
-has_screening(patient234,screening2627).
-has_screening(patient234,screening2628).
-has_screening(patient235,screening2629).
-has_screening(patient235,screening2630).
-has_screening(patient235,screening2631).
-has_screening(patient235,screening2632).
-has_screening(patient235,screening2633).
-has_screening(patient235,screening2634).
-has_screening(patient235,screening2635).
-has_screening(patient235,screening2636).
-has_screening(patient235,screening2637).
-has_screening(patient235,screening2638).
-has_screening(patient236,screening2639).
-has_screening(patient236,screening2640).
-has_screening(patient236,screening2641).
-has_screening(patient236,screening2642).
-has_screening(patient236,screening2643).
-has_screening(patient236,screening2644).
-has_screening(patient236,screening2645).
-has_screening(patient236,screening2646).
-has_screening(patient236,screening2647).
-has_screening(patient236,screening2648).
-has_screening(patient237,screening2649).
-has_screening(patient237,screening2650).
-has_screening(patient237,screening2651).
-has_screening(patient237,screening2652).
-has_screening(patient237,screening2653).
-has_screening(patient237,screening2654).
-has_screening(patient237,screening2655).
-has_screening(patient237,screening2656).
-has_screening(patient237,screening2657).
-has_screening(patient237,screening2658).
-has_screening(patient238,screening2659).
-has_screening(patient238,screening2660).
-has_screening(patient238,screening2661).
-has_screening(patient238,screening2662).
-has_screening(patient238,screening2663).
-has_screening(patient239,screening2664).
-has_screening(patient239,screening2665).
-has_screening(patient239,screening2666).
-has_screening(patient239,screening2667).
-has_screening(patient239,screening2668).
-has_screening(patient239,screening2669).
-has_screening(patient239,screening2670).
-has_screening(patient239,screening2671).
-has_screening(patient239,screening2672).
-has_screening(patient239,screening2673).
-has_screening(patient239,screening2674).
-has_screening(patient240,screening2675).
-has_screening(patient240,screening2676).
-has_screening(patient241,screening2677).
-has_screening(patient241,screening2678).
-has_screening(patient241,screening2679).
-has_screening(patient241,screening2680).
-has_screening(patient241,screening2681).
-has_screening(patient241,screening2682).
-has_screening(patient241,screening2683).
-has_screening(patient241,screening2684).
-has_screening(patient241,screening2685).
-has_screening(patient241,screening2686).
-has_screening(patient241,screening2687).
-has_screening(patient241,screening2688).
-has_screening(patient241,screening2689).
-has_screening(patient241,screening2690).
-has_screening(patient241,screening2691).
-has_screening(patient241,screening2692).
-has_screening(patient241,screening2693).
-has_screening(patient241,screening2694).
-has_screening(patient241,screening2695).
-has_screening(patient241,screening2696).
-has_screening(patient241,screening2697).
-has_screening(patient241,screening2698).
-has_screening(patient241,screening2699).
-has_screening(patient241,screening2700).
-has_screening(patient242,screening2701).
-has_screening(patient242,screening2702).
-has_screening(patient242,screening2703).
-has_screening(patient242,screening2704).
-has_screening(patient242,screening2705).
-has_screening(patient242,screening2706).
-has_screening(patient242,screening2707).
-has_screening(patient242,screening2708).
-has_screening(patient243,screening2709).
-has_screening(patient243,screening2710).
-has_screening(patient243,screening2711).
-has_screening(patient243,screening2712).
-has_screening(patient243,screening2713).
-has_screening(patient243,screening2714).
-has_screening(patient243,screening2715).
-has_screening(patient243,screening2716).
-has_screening(patient243,screening2717).
-has_screening(patient243,screening2718).
-has_screening(patient243,screening2719).
-has_screening(patient244,screening2720).
-has_screening(patient244,screening2721).
-has_screening(patient244,screening2722).
-has_screening(patient244,screening2723).
-has_screening(patient244,screening2724).
-has_screening(patient244,screening2725).
-has_screening(patient245,screening2726).
-has_screening(patient245,screening2727).
-has_screening(patient245,screening2728).
-has_screening(patient245,screening2729).
-has_screening(patient245,screening2730).
-has_screening(patient245,screening2731).
-has_screening(patient245,screening2732).
-has_screening(patient245,screening2733).
-has_screening(patient245,screening2734).
-has_screening(patient245,screening2735).
-has_screening(patient245,screening2736).
-has_screening(patient245,screening2737).
-has_screening(patient245,screening2738).
-has_screening(patient246,screening2739).
-has_screening(patient246,screening2740).
-has_screening(patient246,screening2741).
-has_screening(patient246,screening2742).
-has_screening(patient246,screening2743).
-has_screening(patient246,screening2744).
-has_screening(patient246,screening2745).
-has_screening(patient246,screening2746).
-has_screening(patient246,screening2747).
-has_screening(patient246,screening2748).
-has_screening(patient246,screening2749).
-has_screening(patient246,screening2750).
-has_screening(patient246,screening2751).
-has_screening(patient246,screening2752).
-has_screening(patient246,screening2753).
-has_screening(patient246,screening2754).
-has_screening(patient247,screening2755).
-has_screening(patient247,screening2756).
-has_screening(patient247,screening2757).
-has_screening(patient247,screening2758).
-has_screening(patient247,screening2759).
-has_screening(patient247,screening2760).
-has_screening(patient247,screening2761).
-has_screening(patient248,screening2762).
-has_screening(patient248,screening2763).
-has_screening(patient248,screening2764).
-has_screening(patient248,screening2765).
-has_screening(patient248,screening2766).
-has_screening(patient248,screening2767).
-has_screening(patient248,screening2768).
-has_screening(patient248,screening2769).
-has_screening(patient248,screening2770).
-has_screening(patient248,screening2771).
-has_screening(patient248,screening2772).
-has_screening(patient248,screening2773).
-has_screening(patient248,screening2774).
-has_screening(patient248,screening2775).
-has_screening(patient248,screening2776).
-has_screening(patient249,screening2777).
-has_screening(patient249,screening2778).
-has_screening(patient249,screening2779).
-has_screening(patient249,screening2780).
-has_screening(patient249,screening2781).
-has_screening(patient249,screening2782).
-has_screening(patient249,screening2783).
-has_screening(patient249,screening2784).
-has_screening(patient249,screening2785).
-has_screening(patient249,screening2786).
-has_screening(patient249,screening2787).
-has_screening(patient249,screening2788).
-has_screening(patient249,screening2789).
-has_screening(patient249,screening2790).
-has_screening(patient249,screening2791).
-has_screening(patient250,screening2792).
-has_screening(patient250,screening2793).
-has_screening(patient250,screening2794).
-has_screening(patient250,screening2795).
-has_screening(patient250,screening2796).
-has_screening(patient250,screening2797).
-has_screening(patient250,screening2798).
-has_screening(patient250,screening2799).
-has_screening(patient250,screening2800).
-has_screening(patient250,screening2801).
-has_screening(patient250,screening2802).
-has_screening(patient250,screening2803).
-has_screening(patient250,screening2804).
-has_screening(patient250,screening2805).
-has_screening(patient250,screening2806).
-has_screening(patient250,screening2807).
-has_screening(patient250,screening2808).
-has_screening(patient250,screening2809).
-has_screening(patient251,screening2810).
-has_screening(patient251,screening2811).
-has_screening(patient251,screening2812).
-has_screening(patient251,screening2813).
-has_screening(patient251,screening2814).
-has_screening(patient251,screening2815).
-has_screening(patient251,screening2816).
-has_screening(patient251,screening2817).
-has_screening(patient251,screening2818).
-has_screening(patient251,screening2819).
-has_screening(patient251,screening2820).
-has_screening(patient251,screening2821).
-has_screening(patient251,screening2822).
-has_screening(patient251,screening2823).
-has_screening(patient251,screening2824).
-has_screening(patient251,screening2825).
-has_screening(patient252,screening2826).
-has_screening(patient252,screening2827).
-has_screening(patient252,screening2828).
-has_screening(patient252,screening2829).
-has_screening(patient252,screening2830).
-has_screening(patient252,screening2831).
-has_screening(patient253,screening2832).
-has_screening(patient253,screening2833).
-has_screening(patient253,screening2834).
-has_screening(patient253,screening2835).
-has_screening(patient253,screening2836).
-has_screening(patient253,screening2837).
-has_screening(patient253,screening2838).
-has_screening(patient253,screening2839).
-has_screening(patient253,screening2840).
-has_screening(patient253,screening2841).
-has_screening(patient253,screening2842).
-has_screening(patient254,screening2843).
-has_screening(patient254,screening2844).
-has_screening(patient255,screening2845).
-has_screening(patient255,screening2846).
-has_screening(patient255,screening2847).
-has_screening(patient255,screening2848).
-has_screening(patient255,screening2849).
-has_screening(patient255,screening2850).
-has_screening(patient255,screening2851).
-has_screening(patient255,screening2852).
-has_screening(patient255,screening2853).
-has_screening(patient255,screening2854).
-has_screening(patient255,screening2855).
-has_screening(patient255,screening2856).
-has_screening(patient255,screening2857).
-has_screening(patient255,screening2858).
-has_screening(patient255,screening2859).
-has_screening(patient255,screening2860).
-has_screening(patient255,screening2861).
-has_screening(patient256,screening2862).
-has_screening(patient256,screening2863).
-has_screening(patient256,screening2864).
-has_screening(patient256,screening2865).
-has_screening(patient256,screening2866).
-has_screening(patient256,screening2867).
-has_screening(patient256,screening2868).
-has_screening(patient256,screening2869).
-has_screening(patient256,screening2870).
-has_screening(patient256,screening2871).
-has_screening(patient257,screening2872).
-has_screening(patient257,screening2873).
-has_screening(patient257,screening2874).
-has_screening(patient257,screening2875).
-has_screening(patient257,screening2876).
-has_screening(patient257,screening2877).
-has_screening(patient257,screening2878).
-has_screening(patient257,screening2879).
-has_screening(patient257,screening2880).
-has_screening(patient257,screening2881).
-has_screening(patient257,screening2882).
-has_screening(patient257,screening2883).
-has_screening(patient257,screening2884).
-has_screening(patient257,screening2885).
-has_screening(patient258,screening2886).
-has_screening(patient258,screening2887).
-has_screening(patient258,screening2888).
-has_screening(patient258,screening2889).
-has_screening(patient258,screening2890).
-has_screening(patient258,screening2891).
-has_screening(patient258,screening2892).
-has_screening(patient259,screening2893).
-has_screening(patient259,screening2894).
-has_screening(patient260,screening2895).
-has_screening(patient260,screening2896).
-has_screening(patient260,screening2897).
-has_screening(patient260,screening2898).
-has_screening(patient260,screening2899).
-has_screening(patient260,screening2900).
-has_screening(patient260,screening2901).
-has_screening(patient260,screening2902).
-has_screening(patient260,screening2903).
-has_screening(patient260,screening2904).
-has_screening(patient260,screening2905).
-has_screening(patient260,screening2906).
-has_screening(patient260,screening2907).
-has_screening(patient260,screening2908).
-has_screening(patient260,screening2909).
-has_screening(patient260,screening2910).
-has_screening(patient260,screening2911).
-has_screening(patient260,screening2912).
-has_screening(patient260,screening2913).
-has_screening(patient260,screening2914).
-has_screening(patient260,screening2915).
-has_screening(patient260,screening2916).
-has_screening(patient260,screening2917).
-has_screening(patient260,screening2918).
-has_screening(patient260,screening2919).
-has_screening(patient260,screening2920).
-has_screening(patient260,screening2921).
-has_screening(patient260,screening2922).
-has_screening(patient260,screening2923).
-has_screening(patient260,screening2924).
-has_screening(patient260,screening2925).
-has_screening(patient260,screening2926).
-has_screening(patient260,screening2927).
-has_screening(patient260,screening2928).
-has_screening(patient260,screening2929).
-has_screening(patient260,screening2930).
-has_screening(patient262,screening2931).
-has_screening(patient262,screening2932).
-has_screening(patient262,screening2933).
-has_screening(patient262,screening2934).
-has_screening(patient262,screening2935).
-has_screening(patient262,screening2936).
-has_screening(patient262,screening2937).
-has_screening(patient262,screening2938).
-has_screening(patient262,screening2939).
-has_screening(patient262,screening2940).
-has_screening(patient262,screening2941).
-has_screening(patient262,screening2942).
-has_screening(patient262,screening2943).
-has_screening(patient262,screening2944).
-has_screening(patient262,screening2945).
-has_screening(patient262,screening2946).
-has_screening(patient262,screening2947).
-has_screening(patient262,screening2948).
-has_screening(patient262,screening2949).
-has_screening(patient262,screening2950).
-has_screening(patient262,screening2951).
-has_screening(patient262,screening2952).
-has_screening(patient262,screening2953).
-has_screening(patient262,screening2954).
-has_screening(patient262,screening2955).
-has_screening(patient262,screening2956).
-has_screening(patient262,screening2957).
-has_screening(patient262,screening2958).
-has_screening(patient262,screening2959).
-has_screening(patient262,screening2960).
-has_screening(patient262,screening2961).
-has_screening(patient262,screening2962).
-has_screening(patient262,screening2963).
-has_screening(patient262,screening2964).
-has_screening(patient262,screening2965).
-has_screening(patient262,screening2966).
-has_screening(patient263,screening2967).
-has_screening(patient263,screening2968).
-has_screening(patient263,screening2969).
-has_screening(patient264,screening2970).
-has_screening(patient264,screening2971).
-has_screening(patient265,screening2972).
-has_screening(patient265,screening2973).
-has_screening(patient265,screening2974).
-has_screening(patient265,screening2975).
-has_screening(patient265,screening2976).
-has_screening(patient265,screening2977).
-has_screening(patient265,screening2978).
-has_screening(patient265,screening2979).
-has_screening(patient265,screening2980).
-has_screening(patient265,screening2981).
-has_screening(patient265,screening2982).
-has_screening(patient265,screening2983).
-has_screening(patient265,screening2984).
-has_screening(patient265,screening2985).
-has_screening(patient265,screening2986).
-has_screening(patient265,screening2987).
-has_screening(patient265,screening2988).
-has_screening(patient265,screening2989).
-has_screening(patient265,screening2990).
-has_screening(patient265,screening2991).
-has_screening(patient265,screening2992).
-has_screening(patient265,screening2993).
-has_screening(patient265,screening2994).
-has_screening(patient265,screening2995).
-has_screening(patient265,screening2996).
-has_screening(patient265,screening2997).
-has_screening(patient265,screening2998).
-has_screening(patient265,screening2999).
-has_screening(patient265,screening3000).
-has_screening(patient265,screening3001).
-has_screening(patient265,screening3002).
-has_screening(patient265,screening3003).
-has_screening(patient266,screening3004).
-has_screening(patient266,screening3005).
-has_screening(patient266,screening3006).
-has_screening(patient266,screening3007).
-has_screening(patient267,screening3008).
-has_screening(patient267,screening3009).
-has_screening(patient267,screening3010).
-has_screening(patient267,screening3011).
-has_screening(patient267,screening3012).
-has_screening(patient267,screening3013).
-has_screening(patient267,screening3014).
-has_screening(patient267,screening3015).
-has_screening(patient267,screening3016).
-has_screening(patient267,screening3017).
-has_screening(patient267,screening3018).
-has_screening(patient267,screening3019).
-has_screening(patient267,screening3020).
-has_screening(patient267,screening3021).
-has_screening(patient267,screening3022).
-has_screening(patient267,screening3023).
-has_screening(patient267,screening3024).
-has_screening(patient267,screening3025).
-has_screening(patient267,screening3026).
-has_screening(patient267,screening3027).
-has_screening(patient267,screening3028).
-has_screening(patient268,screening3029).
-has_screening(patient268,screening3030).
-has_screening(patient268,screening3031).
-has_screening(patient269,screening3032).
-has_screening(patient269,screening3033).
-has_screening(patient269,screening3034).
-has_screening(patient269,screening3035).
-has_screening(patient269,screening3036).
-has_screening(patient269,screening3037).
-has_screening(patient269,screening3038).
-has_screening(patient270,screening3039).
-has_screening(patient270,screening3040).
-has_screening(patient270,screening3041).
-has_screening(patient270,screening3042).
-has_screening(patient270,screening3043).
-has_screening(patient270,screening3044).
-has_screening(patient270,screening3045).
-has_screening(patient270,screening3046).
-has_screening(patient270,screening3047).
-has_screening(patient270,screening3048).
-has_screening(patient270,screening3049).
-has_screening(patient270,screening3050).
-has_screening(patient270,screening3051).
-has_screening(patient270,screening3052).
-has_screening(patient270,screening3053).
-has_screening(patient270,screening3054).
-has_screening(patient271,screening3055).
-has_screening(patient271,screening3056).
-has_screening(patient271,screening3057).
-has_screening(patient271,screening3058).
-has_screening(patient271,screening3059).
-has_screening(patient271,screening3060).
-has_screening(patient271,screening3061).
-has_screening(patient271,screening3062).
-has_screening(patient272,screening3063).
-has_screening(patient272,screening3064).
-has_screening(patient272,screening3065).
-has_screening(patient272,screening3066).
-has_screening(patient272,screening3067).
-has_screening(patient272,screening3068).
-has_screening(patient272,screening3069).
-has_screening(patient272,screening3070).
-has_screening(patient273,screening3071).
-has_screening(patient273,screening3072).
-has_screening(patient274,screening3073).
-has_screening(patient274,screening3074).
-has_screening(patient274,screening3075).
-has_screening(patient274,screening3076).
-has_screening(patient274,screening3077).
-has_screening(patient274,screening3078).
-has_screening(patient274,screening3079).
-has_screening(patient274,screening3080).
-has_screening(patient274,screening3081).
-has_screening(patient274,screening3082).
-has_screening(patient274,screening3083).
-has_screening(patient274,screening3084).
-has_screening(patient274,screening3085).
-has_screening(patient274,screening3086).
-has_screening(patient274,screening3087).
-has_screening(patient274,screening3088).
-has_screening(patient274,screening3089).
-has_screening(patient274,screening3090).
-has_screening(patient274,screening3091).
-has_screening(patient274,screening3092).
-has_screening(patient274,screening3093).
-has_screening(patient274,screening3094).
-has_screening(patient274,screening3095).
-has_screening(patient274,screening3096).
-has_screening(patient274,screening3097).
-has_screening(patient274,screening3098).
-has_screening(patient275,screening3099).
-has_screening(patient275,screening3100).
-has_screening(patient275,screening3101).
-has_screening(patient275,screening3102).
-has_screening(patient275,screening3103).
-has_screening(patient275,screening3104).
-has_screening(patient275,screening3105).
-has_screening(patient275,screening3106).
-has_screening(patient275,screening3107).
-has_screening(patient275,screening3108).
-has_screening(patient275,screening3109).
-has_screening(patient276,screening3110).
-has_screening(patient277,screening3111).
-has_screening(patient277,screening3112).
-has_screening(patient277,screening3113).
-has_screening(patient277,screening3114).
-has_screening(patient277,screening3115).
-has_screening(patient277,screening3116).
-has_screening(patient277,screening3117).
-has_screening(patient277,screening3118).
-has_screening(patient277,screening3119).
-has_screening(patient277,screening3120).
-has_screening(patient277,screening3121).
-has_screening(patient277,screening3122).
-has_screening(patient277,screening3123).
-has_screening(patient277,screening3124).
-has_screening(patient277,screening3125).
-has_screening(patient277,screening3126).
-has_screening(patient277,screening3127).
-has_screening(patient277,screening3128).
-has_screening(patient277,screening3129).
-has_screening(patient277,screening3130).
-has_screening(patient277,screening3131).
-has_screening(patient277,screening3132).
-has_screening(patient277,screening3133).
-has_screening(patient277,screening3134).
-has_screening(patient277,screening3135).
-has_screening(patient277,screening3136).
-has_screening(patient278,screening3137).
-has_screening(patient279,screening3138).
-has_screening(patient279,screening3139).
-has_screening(patient279,screening3140).
-has_screening(patient279,screening3141).
-has_screening(patient279,screening3142).
-has_screening(patient279,screening3143).
-has_screening(patient279,screening3144).
-has_screening(patient279,screening3145).
-has_screening(patient279,screening3146).
-has_screening(patient279,screening3147).
-has_screening(patient279,screening3148).
-has_screening(patient279,screening3149).
-has_screening(patient279,screening3150).
-has_screening(patient280,screening3151).
-has_screening(patient280,screening3152).
-has_screening(patient280,screening3153).
-has_screening(patient280,screening3154).
-has_screening(patient280,screening3155).
-has_screening(patient280,screening3156).
-has_screening(patient280,screening3157).
-has_screening(patient280,screening3158).
-has_screening(patient280,screening3159).
-has_screening(patient280,screening3160).
-has_screening(patient280,screening3161).
-has_screening(patient281,screening3162).
-has_screening(patient281,screening3163).
-has_screening(patient281,screening3164).
-has_screening(patient281,screening3165).
-has_screening(patient281,screening3166).
-has_screening(patient282,screening3167).
-has_screening(patient282,screening3168).
-has_screening(patient282,screening3169).
-has_screening(patient282,screening3170).
-has_screening(patient282,screening3171).
-has_screening(patient282,screening3172).
-has_screening(patient283,screening3173).
-has_screening(patient283,screening3174).
-has_screening(patient283,screening3175).
-has_screening(patient283,screening3176).
-has_screening(patient283,screening3177).
-has_screening(patient283,screening3178).
-has_screening(patient283,screening3179).
-has_screening(patient283,screening3180).
-has_screening(patient283,screening3181).
-has_screening(patient284,screening3182).
-has_screening(patient284,screening3183).
-has_screening(patient284,screening3184).
-has_screening(patient284,screening3185).
-has_screening(patient284,screening3186).
-has_screening(patient284,screening3187).
-has_screening(patient284,screening3188).
-has_screening(patient284,screening3189).
-has_screening(patient285,screening3190).
-has_screening(patient285,screening3191).
-has_screening(patient285,screening3192).
-has_screening(patient285,screening3193).
-has_screening(patient286,screening3194).
-has_screening(patient286,screening3195).
-has_screening(patient286,screening3196).
-has_screening(patient286,screening3197).
-has_screening(patient286,screening3198).
-has_screening(patient286,screening3199).
-has_screening(patient286,screening3200).
-has_screening(patient286,screening3201).
-has_screening(patient286,screening3202).
-has_screening(patient286,screening3203).
-has_screening(patient286,screening3204).
-has_screening(patient286,screening3205).
-has_screening(patient286,screening3206).
-has_screening(patient287,screening3207).
-has_screening(patient287,screening3208).
-has_screening(patient288,screening3209).
-has_screening(patient288,screening3210).
-has_screening(patient288,screening3211).
-has_screening(patient288,screening3212).
-has_screening(patient288,screening3213).
-has_screening(patient288,screening3214).
-has_screening(patient288,screening3215).
-has_screening(patient288,screening3216).
-has_screening(patient288,screening3217).
-has_screening(patient288,screening3218).
-has_screening(patient288,screening3219).
-has_screening(patient289,screening3220).
-has_screening(patient289,screening3221).
-has_screening(patient289,screening3222).
-has_screening(patient290,screening3223).
-has_screening(patient290,screening3224).
-has_screening(patient290,screening3225).
-has_screening(patient290,screening3226).
-has_screening(patient290,screening3227).
-has_screening(patient291,screening3228).
-has_screening(patient291,screening3229).
-has_screening(patient291,screening3230).
-has_screening(patient291,screening3231).
-has_screening(patient291,screening3232).
-has_screening(patient291,screening3233).
-has_screening(patient292,screening3234).
-has_screening(patient293,screening3235).
-has_screening(patient293,screening3236).
-has_screening(patient293,screening3237).
-has_screening(patient293,screening3238).
-has_screening(patient293,screening3239).
-has_screening(patient293,screening3240).
-has_screening(patient293,screening3241).
-has_screening(patient293,screening3242).
-has_screening(patient293,screening3243).
-has_screening(patient293,screening3244).
-has_screening(patient293,screening3245).
-has_screening(patient293,screening3246).
-has_screening(patient293,screening3247).
-has_screening(patient293,screening3248).
-has_screening(patient293,screening3249).
-has_screening(patient293,screening3250).
-has_screening(patient293,screening3251).
-has_screening(patient293,screening3252).
-has_screening(patient294,screening3253).
-has_screening(patient294,screening3254).
-has_screening(patient294,screening3255).
-has_screening(patient294,screening3256).
-has_screening(patient294,screening3257).
-has_screening(patient294,screening3258).
-has_screening(patient294,screening3259).
-has_screening(patient294,screening3260).
-has_screening(patient294,screening3261).
-has_screening(patient294,screening3262).
-has_screening(patient294,screening3263).
-has_screening(patient294,screening3264).
-has_screening(patient294,screening3265).
-has_screening(patient294,screening3266).
-has_screening(patient295,screening3267).
-has_screening(patient295,screening3268).
-has_screening(patient295,screening3269).
-has_screening(patient295,screening3270).
-has_screening(patient295,screening3271).
-has_screening(patient295,screening3272).
-has_screening(patient295,screening3273).
-has_screening(patient295,screening3274).
-has_screening(patient296,screening3275).
-has_screening(patient296,screening3276).
-has_screening(patient296,screening3277).
-has_screening(patient296,screening3278).
-has_screening(patient296,screening3279).
-has_screening(patient296,screening3280).
-has_screening(patient296,screening3281).
-has_screening(patient296,screening3282).
-has_screening(patient296,screening3283).
-has_screening(patient296,screening3284).
-has_screening(patient296,screening3285).
-has_screening(patient296,screening3286).
-has_screening(patient296,screening3287).
-has_screening(patient296,screening3288).
-has_screening(patient296,screening3289).
-has_screening(patient296,screening3290).
-has_screening(patient296,screening3291).
-has_screening(patient296,screening3292).
-has_screening(patient296,screening3293).
-has_screening(patient296,screening3294).
-has_screening(patient296,screening3295).
-has_screening(patient296,screening3296).
-has_screening(patient296,screening3297).
-has_screening(patient296,screening3298).
-has_screening(patient297,screening3299).
-has_screening(patient297,screening3300).
-has_screening(patient297,screening3301).
-has_screening(patient297,screening3302).
-has_screening(patient298,screening3303).
-has_screening(patient298,screening3304).
-has_screening(patient298,screening3305).
-has_screening(patient298,screening3306).
-has_screening(patient298,screening3307).
-has_screening(patient298,screening3308).
-has_screening(patient298,screening3309).
-has_screening(patient298,screening3310).
-has_screening(patient298,screening3311).
-has_screening(patient298,screening3312).
-has_screening(patient299,screening3313).
-has_screening(patient299,screening3314).
-has_screening(patient299,screening3315).
-has_screening(patient299,screening3316).
-has_screening(patient299,screening3317).
-has_screening(patient300,screening3318).
-has_screening(patient300,screening3319).
-has_screening(patient300,screening3320).
-has_screening(patient300,screening3321).
-has_screening(patient300,screening3322).
-has_screening(patient300,screening3323).
-has_screening(patient300,screening3324).
-has_screening(patient301,screening3325).
-has_screening(patient301,screening3326).
-has_screening(patient301,screening3327).
-has_screening(patient301,screening3328).
-has_screening(patient301,screening3329).
-has_screening(patient301,screening3330).
-has_screening(patient301,screening3331).
-has_screening(patient301,screening3332).
-has_screening(patient301,screening3333).
-has_screening(patient301,screening3334).
-has_screening(patient301,screening3335).
-has_screening(patient301,screening3336).
-has_screening(patient301,screening3337).
-has_screening(patient301,screening3338).
-has_screening(patient301,screening3339).
-has_screening(patient301,screening3340).
-has_screening(patient301,screening3341).
-has_screening(patient301,screening3342).
-has_screening(patient301,screening3343).
-has_screening(patient301,screening3344).
-has_screening(patient301,screening3345).
-has_screening(patient301,screening3346).
-has_screening(patient301,screening3347).
-has_screening(patient301,screening3348).
-has_screening(patient301,screening3349).
-has_screening(patient301,screening3350).
-has_screening(patient301,screening3351).
-has_screening(patient301,screening3352).
-has_screening(patient301,screening3353).
-has_screening(patient301,screening3354).
-has_screening(patient301,screening3355).
-has_screening(patient301,screening3356).
-has_screening(patient301,screening3357).
-has_screening(patient301,screening3358).
-has_screening(patient301,screening3359).
-has_screening(patient301,screening3360).
-has_screening(patient301,screening3361).
-has_screening(patient301,screening3362).
-has_screening(patient301,screening3363).
-has_screening(patient302,screening3364).
-has_screening(patient302,screening3365).
-has_screening(patient302,screening3366).
-has_screening(patient302,screening3367).
-has_screening(patient302,screening3368).
-has_screening(patient302,screening3369).
-has_screening(patient302,screening3370).
-has_screening(patient302,screening3371).
-has_screening(patient302,screening3372).
-has_screening(patient302,screening3373).
-has_screening(patient302,screening3374).
-has_screening(patient302,screening3375).
-has_screening(patient302,screening3376).
-has_screening(patient302,screening3377).
-has_screening(patient302,screening3378).
-has_screening(patient302,screening3379).
-has_screening(patient302,screening3380).
-has_screening(patient302,screening3381).
-has_screening(patient302,screening3382).
-has_screening(patient302,screening3383).
-has_screening(patient302,screening3384).
-has_screening(patient302,screening3385).
-has_screening(patient302,screening3386).
-has_screening(patient302,screening3387).
-has_screening(patient302,screening3388).
-has_screening(patient302,screening3389).
-has_screening(patient302,screening3390).
-has_screening(patient302,screening3391).
-has_screening(patient302,screening3392).
-has_screening(patient302,screening3393).
-has_screening(patient303,screening3394).
-has_screening(patient303,screening3395).
-has_screening(patient303,screening3396).
-has_screening(patient303,screening3397).
-has_screening(patient303,screening3398).
-has_screening(patient303,screening3399).
-has_screening(patient303,screening3400).
-has_screening(patient303,screening3401).
-has_screening(patient303,screening3402).
-has_screening(patient303,screening3403).
-has_screening(patient303,screening3404).
-has_screening(patient303,screening3405).
-has_screening(patient303,screening3406).
-has_screening(patient303,screening3407).
-has_screening(patient303,screening3408).
-has_screening(patient303,screening3409).
-has_screening(patient303,screening3410).
-has_screening(patient303,screening3411).
-has_screening(patient303,screening3412).
-has_screening(patient303,screening3413).
-has_screening(patient303,screening3414).
-has_screening(patient303,screening3415).
-has_screening(patient303,screening3416).
-has_screening(patient303,screening3417).
-has_screening(patient303,screening3418).
-has_screening(patient303,screening3419).
-has_screening(patient303,screening3420).
-has_screening(patient303,screening3421).
-has_screening(patient303,screening3422).
-has_screening(patient303,screening3423).
-has_screening(patient303,screening3424).
-has_screening(patient303,screening3425).
-has_screening(patient303,screening3426).
-has_screening(patient303,screening3427).
-has_screening(patient303,screening3428).
-has_screening(patient303,screening3429).
-has_screening(patient303,screening3430).
-has_screening(patient303,screening3431).
-has_screening(patient303,screening3432).
-has_screening(patient303,screening3433).
-has_screening(patient303,screening3434).
-has_screening(patient303,screening3435).
-has_screening(patient304,screening3436).
-has_screening(patient304,screening3437).
-has_screening(patient304,screening3438).
-has_screening(patient304,screening3439).
-has_screening(patient304,screening3440).
-has_screening(patient304,screening3441).
-has_screening(patient304,screening3442).
-has_screening(patient304,screening3443).
-has_screening(patient304,screening3444).
-has_screening(patient304,screening3445).
-has_screening(patient304,screening3446).
-has_screening(patient304,screening3447).
-has_screening(patient304,screening3448).
-has_screening(patient304,screening3449).
-has_screening(patient304,screening3450).
-has_screening(patient304,screening3451).
-has_screening(patient304,screening3452).
-has_screening(patient304,screening3453).
-has_screening(patient304,screening3454).
-has_screening(patient304,screening3455).
-has_screening(patient304,screening3456).
-has_screening(patient304,screening3457).
-has_screening(patient304,screening3458).
-has_screening(patient304,screening3459).
-has_screening(patient304,screening3460).
-has_screening(patient304,screening3461).
-has_screening(patient304,screening3462).
-has_screening(patient304,screening3463).
-has_screening(patient304,screening3464).
-has_screening(patient304,screening3465).
-has_screening(patient304,screening3466).
-has_screening(patient304,screening3467).
-has_screening(patient304,screening3468).
-has_screening(patient305,screening3469).
-has_screening(patient305,screening3470).
-has_screening(patient305,screening3471).
-has_screening(patient305,screening3472).
-has_screening(patient305,screening3473).
-has_screening(patient305,screening3474).
-has_screening(patient305,screening3475).
-has_screening(patient305,screening3476).
-has_screening(patient305,screening3477).
-has_screening(patient305,screening3478).
-has_screening(patient306,screening3479).
-has_screening(patient306,screening3480).
-has_screening(patient306,screening3481).
-has_screening(patient306,screening3482).
-has_screening(patient306,screening3483).
-has_screening(patient306,screening3484).
-has_screening(patient306,screening3485).
-has_screening(patient306,screening3486).
-has_screening(patient306,screening3487).
-has_screening(patient306,screening3488).
-has_screening(patient307,screening3489).
-has_screening(patient307,screening3490).
-has_screening(patient308,screening3491).
-has_screening(patient308,screening3492).
-has_screening(patient308,screening3493).
-has_screening(patient308,screening3494).
-has_screening(patient308,screening3495).
-has_screening(patient309,screening3496).
-has_screening(patient309,screening3497).
-has_screening(patient309,screening3498).
-has_screening(patient309,screening3499).
-has_screening(patient309,screening3500).
-has_screening(patient310,screening3501).
-has_screening(patient310,screening3502).
-has_screening(patient311,screening3503).
-has_screening(patient311,screening3504).
-has_screening(patient311,screening3505).
-has_screening(patient311,screening3506).
-has_screening(patient311,screening3507).
-has_screening(patient311,screening3508).
-has_screening(patient311,screening3509).
-has_screening(patient311,screening3510).
-has_screening(patient311,screening3511).
-has_screening(patient311,screening3512).
-has_screening(patient311,screening3513).
-has_screening(patient311,screening3514).
-has_screening(patient311,screening3515).
-has_screening(patient311,screening3516).
-has_screening(patient311,screening3517).
-has_screening(patient311,screening3518).
-has_screening(patient311,screening3519).
-has_screening(patient311,screening3520).
-has_screening(patient311,screening3521).
-has_screening(patient311,screening3522).
-has_screening(patient312,screening3523).
-has_screening(patient312,screening3524).
-has_screening(patient312,screening3525).
-has_screening(patient312,screening3526).
-has_screening(patient312,screening3527).
-has_screening(patient312,screening3528).
-has_screening(patient313,screening3529).
-has_screening(patient313,screening3530).
-has_screening(patient313,screening3531).
-has_screening(patient313,screening3532).
-has_screening(patient313,screening3533).
-has_screening(patient313,screening3534).
-has_screening(patient314,screening3535).
-has_screening(patient315,screening3536).
-has_screening(patient315,screening3537).
-has_screening(patient315,screening3538).
-has_screening(patient315,screening3539).
-has_screening(patient315,screening3540).
-has_screening(patient316,screening3541).
-has_screening(patient316,screening3542).
-has_screening(patient316,screening3543).
-has_screening(patient316,screening3544).
-has_screening(patient316,screening3545).
-has_screening(patient316,screening3546).
-has_screening(patient316,screening3547).
-has_screening(patient316,screening3548).
-has_screening(patient316,screening3549).
-has_screening(patient316,screening3550).
-has_screening(patient317,screening3551).
-has_screening(patient317,screening3552).
-has_screening(patient317,screening3553).
-has_screening(patient318,screening3554).
-has_screening(patient318,screening3555).
-has_screening(patient318,screening3556).
-has_screening(patient318,screening3557).
-has_screening(patient318,screening3558).
-has_screening(patient318,screening3559).
-has_screening(patient318,screening3560).
-has_screening(patient318,screening3561).
-has_screening(patient318,screening3562).
-has_screening(patient318,screening3563).
-has_screening(patient318,screening3564).
-has_screening(patient318,screening3565).
-has_screening(patient318,screening3566).
-has_screening(patient318,screening3567).
-has_screening(patient318,screening3568).
-has_screening(patient318,screening3569).
-has_screening(patient319,screening3570).
-has_screening(patient319,screening3571).
-has_screening(patient319,screening3572).
-has_screening(patient319,screening3573).
-has_screening(patient319,screening3574).
-has_screening(patient319,screening3575).
-has_screening(patient319,screening3576).
-has_screening(patient319,screening3577).
-has_screening(patient319,screening3578).
-has_screening(patient319,screening3579).
-has_screening(patient319,screening3580).
-has_screening(patient319,screening3581).
-has_screening(patient319,screening3582).
-has_screening(patient319,screening3583).
-has_screening(patient319,screening3584).
-has_screening(patient319,screening3585).
-has_screening(patient319,screening3586).
-has_screening(patient320,screening3587).
-has_screening(patient320,screening3588).
-has_screening(patient321,screening3589).
-has_screening(patient321,screening3590).
-has_screening(patient321,screening3591).
-has_screening(patient321,screening3592).
-has_screening(patient321,screening3593).
-has_screening(patient321,screening3594).
-has_screening(patient321,screening3595).
-has_screening(patient321,screening3596).
-has_screening(patient321,screening3597).
-has_screening(patient321,screening3598).
-has_screening(patient322,screening3599).
-has_screening(patient322,screening3600).
-has_screening(patient322,screening3601).
-has_screening(patient322,screening3602).
-has_screening(patient322,screening3603).
-has_screening(patient322,screening3604).
-has_screening(patient322,screening3605).
-has_screening(patient322,screening3606).
-has_screening(patient322,screening3607).
-has_screening(patient322,screening3608).
-has_screening(patient323,screening3609).
-has_screening(patient323,screening3610).
-has_screening(patient323,screening3611).
-has_screening(patient323,screening3612).
-has_screening(patient323,screening3613).
-has_screening(patient324,screening3614).
-has_screening(patient324,screening3615).
-has_screening(patient324,screening3616).
-has_screening(patient324,screening3617).
-has_screening(patient324,screening3618).
-has_screening(patient324,screening3619).
-has_screening(patient324,screening3620).
-has_screening(patient324,screening3621).
-has_screening(patient325,screening3622).
-has_screening(patient325,screening3623).
-has_screening(patient325,screening3624).
-has_screening(patient325,screening3625).
-has_screening(patient325,screening3626).
-has_screening(patient326,screening3627).
-has_screening(patient326,screening3628).
-has_screening(patient326,screening3629).
-has_screening(patient326,screening3630).
-has_screening(patient326,screening3631).
-has_screening(patient326,screening3632).
-has_screening(patient326,screening3633).
-has_screening(patient327,screening3634).
-has_screening(patient327,screening3635).
-has_screening(patient327,screening3636).
-has_screening(patient327,screening3637).
-has_screening(patient327,screening3638).
-has_screening(patient327,screening3639).
-has_screening(patient327,screening3640).
-has_screening(patient327,screening3641).
-has_screening(patient327,screening3642).
-has_screening(patient327,screening3643).
-has_screening(patient328,screening3644).
-has_screening(patient328,screening3645).
-has_screening(patient328,screening3646).
-has_screening(patient328,screening3647).
-has_screening(patient328,screening3648).
-has_screening(patient328,screening3649).
-has_screening(patient328,screening3650).
-has_screening(patient328,screening3651).
-has_screening(patient328,screening3652).
-has_screening(patient328,screening3653).
-has_screening(patient329,screening3654).
-has_screening(patient329,screening3655).
-has_screening(patient329,screening3656).
-has_screening(patient329,screening3657).
-has_screening(patient329,screening3658).
-has_screening(patient329,screening3659).
-has_screening(patient329,screening3660).
-has_screening(patient329,screening3661).
-has_screening(patient329,screening3662).
-has_screening(patient329,screening3663).
-has_screening(patient330,screening3664).
-has_screening(patient330,screening3665).
-has_screening(patient331,screening3666).
-has_screening(patient331,screening3667).
-has_screening(patient331,screening3668).
-has_screening(patient331,screening3669).
-has_screening(patient331,screening3670).
-has_screening(patient332,screening3671).
-has_screening(patient332,screening3672).
-has_screening(patient332,screening3673).
-has_screening(patient332,screening3674).
-has_screening(patient332,screening3675).
-has_screening(patient332,screening3676).
-has_screening(patient332,screening3677).
-has_screening(patient332,screening3678).
-has_screening(patient332,screening3679).
-has_screening(patient332,screening3680).
-has_screening(patient332,screening3681).
-has_screening(patient332,screening3682).
-has_screening(patient332,screening3683).
-has_screening(patient332,screening3684).
-has_screening(patient332,screening3685).
-has_screening(patient332,screening3686).
-has_screening(patient332,screening3687).
-has_screening(patient332,screening3688).
-has_screening(patient332,screening3689).
-has_screening(patient332,screening3690).
-has_screening(patient332,screening3691).
-has_screening(patient332,screening3692).
-has_screening(patient333,screening3693).
-has_screening(patient333,screening3694).
-has_screening(patient334,screening3695).
-has_screening(patient334,screening3696).
-has_screening(patient334,screening3697).
-has_screening(patient334,screening3698).
-has_screening(patient334,screening3699).
-has_screening(patient334,screening3700).
-has_screening(patient334,screening3701).
-has_screening(patient334,screening3702).
-has_screening(patient334,screening3703).
-has_screening(patient334,screening3704).
-has_screening(patient334,screening3705).
-has_screening(patient334,screening3706).
-has_screening(patient335,screening3707).
-has_screening(patient335,screening3708).
-has_screening(patient335,screening3709).
-has_screening(patient335,screening3710).
-has_screening(patient335,screening3711).
-has_screening(patient335,screening3712).
-has_screening(patient335,screening3713).
-has_screening(patient335,screening3714).
-has_screening(patient336,screening3715).
-has_screening(patient336,screening3716).
-has_screening(patient336,screening3717).
-has_screening(patient336,screening3718).
-has_screening(patient336,screening3719).
-has_screening(patient336,screening3720).
-has_screening(patient336,screening3721).
-has_screening(patient336,screening3722).
-has_screening(patient336,screening3723).
-has_screening(patient336,screening3724).
-has_screening(patient336,screening3725).
-has_screening(patient336,screening3726).
-has_screening(patient336,screening3727).
-has_screening(patient336,screening3728).
-has_screening(patient336,screening3729).
-has_screening(patient336,screening3730).
-has_screening(patient337,screening3731).
-has_screening(patient337,screening3732).
-has_screening(patient337,screening3733).
-has_screening(patient337,screening3734).
-has_screening(patient337,screening3735).
-has_screening(patient337,screening3736).
-has_screening(patient337,screening3737).
-has_screening(patient337,screening3738).
-has_screening(patient337,screening3739).
-has_screening(patient338,screening3740).
-has_screening(patient338,screening3741).
-has_screening(patient338,screening3742).
-has_screening(patient338,screening3743).
-has_screening(patient338,screening3744).
-has_screening(patient338,screening3745).
-has_screening(patient338,screening3746).
-has_screening(patient338,screening3747).
-has_screening(patient338,screening3748).
-has_screening(patient338,screening3749).
-has_screening(patient339,screening3750).
-has_screening(patient339,screening3751).
-has_screening(patient339,screening3752).
-has_screening(patient340,screening3753).
-has_screening(patient340,screening3754).
-has_screening(patient340,screening3755).
-has_screening(patient340,screening3756).
-has_screening(patient340,screening3757).
-has_screening(patient340,screening3758).
-has_screening(patient340,screening3759).
-has_screening(patient340,screening3760).
-has_screening(patient340,screening3761).
-has_screening(patient340,screening3762).
-has_screening(patient340,screening3763).
-has_screening(patient340,screening3764).
-has_screening(patient340,screening3765).
-has_screening(patient340,screening3766).
-has_screening(patient340,screening3767).
-has_screening(patient341,screening3768).
-has_screening(patient341,screening3769).
-has_screening(patient341,screening3770).
-has_screening(patient341,screening3771).
-has_screening(patient341,screening3772).
-has_screening(patient342,screening3773).
-has_screening(patient342,screening3774).
-has_screening(patient342,screening3775).
-has_screening(patient343,screening3776).
-has_screening(patient343,screening3777).
-has_screening(patient344,screening3778).
-has_screening(patient344,screening3779).
-has_screening(patient344,screening3780).
-has_screening(patient344,screening3781).
-has_screening(patient344,screening3782).
-has_screening(patient344,screening3783).
-has_screening(patient344,screening3784).
-has_screening(patient344,screening3785).
-has_screening(patient344,screening3786).
-has_screening(patient344,screening3787).
-has_screening(patient345,screening3788).
-has_screening(patient345,screening3789).
-has_screening(patient345,screening3790).
-has_screening(patient345,screening3791).
-has_screening(patient345,screening3792).
-has_screening(patient345,screening3793).
-has_screening(patient345,screening3794).
-has_screening(patient345,screening3795).
-has_screening(patient345,screening3796).
-has_screening(patient345,screening3797).
-has_screening(patient345,screening3798).
-has_screening(patient346,screening3799).
-has_screening(patient346,screening3800).
-has_screening(patient346,screening3801).
-has_screening(patient347,screening3802).
-has_screening(patient347,screening3803).
-has_screening(patient347,screening3804).
-has_screening(patient347,screening3805).
-has_screening(patient347,screening3806).
-has_screening(patient347,screening3807).
-has_screening(patient347,screening3808).
-has_screening(patient347,screening3809).
-has_screening(patient347,screening3810).
-has_screening(patient347,screening3811).
-has_screening(patient347,screening3812).
-has_screening(patient347,screening3813).
-has_screening(patient348,screening3814).
-has_screening(patient348,screening3815).
-has_screening(patient348,screening3816).
-has_screening(patient348,screening3817).
-has_screening(patient348,screening3818).
-has_screening(patient348,screening3819).
-has_screening(patient348,screening3820).
-has_screening(patient348,screening3821).
-has_screening(patient348,screening3822).
-has_screening(patient348,screening3823).
-has_screening(patient349,screening3824).
-has_screening(patient349,screening3825).
-has_screening(patient349,screening3826).
-has_screening(patient349,screening3827).
-has_screening(patient349,screening3828).
-has_screening(patient350,screening3829).
-has_screening(patient350,screening3830).
-has_screening(patient350,screening3831).
-has_screening(patient350,screening3832).
-has_screening(patient351,screening3833).
-has_screening(patient351,screening3834).
-has_screening(patient351,screening3835).
-has_screening(patient352,screening3836).
-has_screening(patient352,screening3837).
-has_screening(patient352,screening3838).
-has_screening(patient352,screening3839).
-has_screening(patient352,screening3840).
-has_screening(patient352,screening3841).
-has_screening(patient352,screening3842).
-has_screening(patient352,screening3843).
-has_screening(patient352,screening3844).
-has_screening(patient352,screening3845).
-has_screening(patient352,screening3846).
-has_screening(patient352,screening3847).
-has_screening(patient352,screening3848).
-has_screening(patient352,screening3849).
-has_screening(patient352,screening3850).
-has_screening(patient352,screening3851).
-has_screening(patient352,screening3852).
-has_screening(patient352,screening3853).
-has_screening(patient352,screening3854).
-has_screening(patient352,screening3855).
-has_screening(patient352,screening3856).
-has_screening(patient352,screening3857).
-has_screening(patient352,screening3858).
-has_screening(patient352,screening3859).
-has_screening(patient352,screening3860).
-has_screening(patient352,screening3861).
-has_screening(patient352,screening3862).
-has_screening(patient352,screening3863).
-has_screening(patient352,screening3864).
-has_screening(patient352,screening3865).
-has_screening(patient352,screening3866).
-has_screening(patient352,screening3867).
-has_screening(patient352,screening3868).
-has_screening(patient352,screening3869).
-has_screening(patient352,screening3870).
-has_screening(patient352,screening3871).
-has_screening(patient353,screening3872).
-has_screening(patient353,screening3873).
-has_screening(patient353,screening3874).
-has_screening(patient353,screening3875).
-has_screening(patient354,screening3876).
-has_screening(patient354,screening3877).
-has_screening(patient355,screening3878).
-has_screening(patient355,screening3879).
-has_screening(patient355,screening3880).
-has_screening(patient356,screening3881).
-has_screening(patient356,screening3882).
-has_screening(patient356,screening3883).
-has_screening(patient356,screening3884).
-has_screening(patient356,screening3885).
-has_screening(patient356,screening3886).
-has_screening(patient356,screening3887).
-has_screening(patient356,screening3888).
-has_screening(patient356,screening3889).
-has_screening(patient356,screening3890).
-has_screening(patient356,screening3891).
-has_screening(patient356,screening3892).
-has_screening(patient356,screening3893).
-has_screening(patient356,screening3894).
-has_screening(patient356,screening3895).
-has_screening(patient356,screening3896).
-has_screening(patient356,screening3897).
-has_screening(patient356,screening3898).
-has_screening(patient356,screening3899).
-has_screening(patient356,screening3900).
-has_screening(patient356,screening3901).
-has_screening(patient356,screening3902).
-has_screening(patient356,screening3903).
-has_screening(patient356,screening3904).
-has_screening(patient356,screening3905).
-has_screening(patient356,screening3906).
-has_screening(patient356,screening3907).
-has_screening(patient357,screening3908).
-has_screening(patient357,screening3909).
-has_screening(patient357,screening3910).
-has_screening(patient357,screening3911).
-has_screening(patient358,screening3912).
-has_screening(patient358,screening3913).
-has_screening(patient358,screening3914).
-has_screening(patient358,screening3915).
-has_screening(patient358,screening3916).
-has_screening(patient358,screening3917).
-has_screening(patient358,screening3918).
-has_screening(patient358,screening3919).
-has_screening(patient358,screening3920).
-has_screening(patient358,screening3921).
-has_screening(patient358,screening3922).
-has_screening(patient358,screening3923).
-has_screening(patient358,screening3924).
-has_screening(patient358,screening3925).
-has_screening(patient358,screening3926).
-has_screening(patient358,screening3927).
-has_screening(patient358,screening3928).
-has_screening(patient358,screening3929).
-has_screening(patient358,screening3930).
-has_screening(patient358,screening3931).
-has_screening(patient359,screening3932).
-has_screening(patient359,screening3933).
-has_screening(patient359,screening3934).
-has_screening(patient359,screening3935).
-has_screening(patient359,screening3936).
-has_screening(patient359,screening3937).
-has_screening(patient359,screening3938).
-has_screening(patient359,screening3939).
-has_screening(patient359,screening3940).
-has_screening(patient359,screening3941).
-has_screening(patient360,screening3942).
-has_screening(patient360,screening3943).
-has_screening(patient360,screening3944).
-has_screening(patient360,screening3945).
-has_screening(patient360,screening3946).
-has_screening(patient360,screening3947).
-has_screening(patient360,screening3948).
-has_screening(patient361,screening3949).
-has_screening(patient361,screening3950).
-has_screening(patient361,screening3951).
-has_screening(patient361,screening3952).
-has_screening(patient361,screening3953).
-has_screening(patient361,screening3954).
-has_screening(patient361,screening3955).
-has_screening(patient362,screening3956).
-has_screening(patient362,screening3957).
-has_screening(patient362,screening3958).
-has_screening(patient362,screening3959).
-has_screening(patient362,screening3960).
-has_screening(patient362,screening3961).
-has_screening(patient363,screening3962).
-has_screening(patient363,screening3963).
-has_screening(patient363,screening3964).
-has_screening(patient363,screening3965).
-has_screening(patient363,screening3966).
-has_screening(patient363,screening3967).
-has_screening(patient363,screening3968).
-has_screening(patient363,screening3969).
-has_screening(patient363,screening3970).
-has_screening(patient363,screening3971).
-has_screening(patient363,screening3972).
-has_screening(patient363,screening3973).
-has_screening(patient363,screening3974).
-has_screening(patient363,screening3975).
-has_screening(patient363,screening3976).
-has_screening(patient363,screening3977).
-has_screening(patient364,screening3978).
-has_screening(patient364,screening3979).
-has_screening(patient364,screening3980).
-has_screening(patient364,screening3981).
-has_screening(patient364,screening3982).
-has_screening(patient364,screening3983).
-has_screening(patient364,screening3984).
-has_screening(patient364,screening3985).
-has_screening(patient364,screening3986).
-has_screening(patient364,screening3987).
-has_screening(patient364,screening3988).
-has_screening(patient364,screening3989).
-has_screening(patient364,screening3990).
-has_screening(patient364,screening3991).
-has_screening(patient364,screening3992).
-has_screening(patient364,screening3993).
-has_screening(patient364,screening3994).
-has_screening(patient364,screening3995).
-has_screening(patient364,screening3996).
-has_screening(patient364,screening3997).
-has_screening(patient364,screening3998).
-has_screening(patient365,screening3999).
-has_screening(patient365,screening4000).
-has_screening(patient365,screening4001).
-has_screening(patient365,screening4002).
-has_screening(patient365,screening4003).
-has_screening(patient365,screening4004).
-has_screening(patient365,screening4005).
-has_screening(patient365,screening4006).
-has_screening(patient365,screening4007).
-has_screening(patient365,screening4008).
-has_screening(patient365,screening4009).
-has_screening(patient365,screening4010).
-has_screening(patient366,screening4011).
-has_screening(patient366,screening4012).
-has_screening(patient366,screening4013).
-has_screening(patient366,screening4014).
-has_screening(patient366,screening4015).
-has_screening(patient366,screening4016).
-has_screening(patient366,screening4017).
-has_screening(patient366,screening4018).
-has_screening(patient366,screening4019).
-has_screening(patient366,screening4020).
-has_screening(patient366,screening4021).
-has_screening(patient366,screening4022).
-has_screening(patient366,screening4023).
-has_screening(patient366,screening4024).
-has_screening(patient366,screening4025).
-has_screening(patient366,screening4026).
-has_screening(patient366,screening4027).
-has_screening(patient366,screening4028).
-has_screening(patient366,screening4029).
-has_screening(patient366,screening4030).
-has_screening(patient366,screening4031).
-has_screening(patient366,screening4032).
-has_screening(patient366,screening4033).
-has_screening(patient366,screening4034).
-has_screening(patient367,screening4035).
-has_screening(patient367,screening4036).
-has_screening(patient367,screening4037).
-has_screening(patient367,screening4038).
-has_screening(patient368,screening4039).
-has_screening(patient368,screening4040).
-has_screening(patient368,screening4041).
-has_screening(patient368,screening4042).
-has_screening(patient368,screening4043).
-has_screening(patient368,screening4044).
-has_screening(patient368,screening4045).
-has_screening(patient368,screening4046).
-has_screening(patient369,screening4047).
-has_screening(patient369,screening4048).
-has_screening(patient369,screening4049).
-has_screening(patient369,screening4050).
-has_screening(patient369,screening4051).
-has_screening(patient369,screening4052).
-has_screening(patient369,screening4053).
-has_screening(patient369,screening4054).
-has_screening(patient370,screening4055).
-has_screening(patient370,screening4056).
-has_screening(patient370,screening4057).
-has_screening(patient370,screening4058).
-has_screening(patient370,screening4059).
-has_screening(patient370,screening4060).
-has_screening(patient370,screening4061).
-has_screening(patient371,screening4062).
-has_screening(patient371,screening4063).
-has_screening(patient371,screening4064).
-has_screening(patient371,screening4065).
-has_screening(patient371,screening4066).
-has_screening(patient371,screening4067).
-has_screening(patient371,screening4068).
-has_screening(patient372,screening4069).
-has_screening(patient372,screening4070).
-has_screening(patient372,screening4071).
-has_screening(patient372,screening4072).
-has_screening(patient372,screening4073).
-has_screening(patient372,screening4074).
-has_screening(patient372,screening4075).
-has_screening(patient372,screening4076).
-has_screening(patient372,screening4077).
-has_screening(patient372,screening4078).
-has_screening(patient372,screening4079).
-has_screening(patient372,screening4080).
-has_screening(patient372,screening4081).
-has_screening(patient372,screening4082).
-has_screening(patient372,screening4083).
-has_screening(patient372,screening4084).
-has_screening(patient372,screening4085).
-has_screening(patient372,screening4086).
-has_screening(patient372,screening4087).
-has_screening(patient373,screening4088).
-has_screening(patient373,screening4089).
-has_screening(patient373,screening4090).
-has_screening(patient373,screening4091).
-has_screening(patient373,screening4092).
-has_screening(patient373,screening4093).
-has_screening(patient374,screening4094).
-has_screening(patient374,screening4095).
-has_screening(patient374,screening4096).
-has_screening(patient374,screening4097).
-has_screening(patient374,screening4098).
-has_screening(patient374,screening4099).
-has_screening(patient374,screening4100).
-has_screening(patient374,screening4101).
-has_screening(patient374,screening4102).
-has_screening(patient374,screening4103).
-has_screening(patient374,screening4104).
-has_screening(patient374,screening4105).
-has_screening(patient374,screening4106).
-has_screening(patient375,screening4107).
-has_screening(patient375,screening4108).
-has_screening(patient375,screening4109).
-has_screening(patient375,screening4110).
-has_screening(patient375,screening4111).
-has_screening(patient376,screening4112).
-has_screening(patient376,screening4113).
-has_screening(patient376,screening4114).
-has_screening(patient376,screening4115).
-has_screening(patient376,screening4116).
-has_screening(patient376,screening4117).
-has_screening(patient376,screening4118).
-has_screening(patient376,screening4119).
-has_screening(patient376,screening4120).
-has_screening(patient376,screening4121).
-has_screening(patient376,screening4122).
-has_screening(patient377,screening4123).
-has_screening(patient377,screening4124).
-has_screening(patient377,screening4125).
-has_screening(patient377,screening4126).
-has_screening(patient377,screening4127).
-has_screening(patient377,screening4128).
-has_screening(patient377,screening4129).
-has_screening(patient378,screening4130).
-has_screening(patient378,screening4131).
-has_screening(patient378,screening4132).
-has_screening(patient378,screening4133).
-has_screening(patient378,screening4134).
-has_screening(patient378,screening4135).
-has_screening(patient378,screening4136).
-has_screening(patient378,screening4137).
-has_screening(patient378,screening4138).
-has_screening(patient378,screening4139).
-has_screening(patient378,screening4140).
-has_screening(patient379,screening4141).
-has_screening(patient379,screening4142).
-has_screening(patient380,screening4143).
-has_screening(patient380,screening4144).
-has_screening(patient380,screening4145).
-has_screening(patient380,screening4146).
-has_screening(patient380,screening4147).
-has_screening(patient380,screening4148).
-has_screening(patient380,screening4149).
-has_screening(patient381,screening4150).
-has_screening(patient381,screening4151).
-has_screening(patient381,screening4152).
-has_screening(patient381,screening4153).
-has_screening(patient381,screening4154).
-has_screening(patient381,screening4155).
-has_screening(patient381,screening4156).
-has_screening(patient381,screening4157).
-has_screening(patient381,screening4158).
-has_screening(patient381,screening4159).
-has_screening(patient381,screening4160).
-has_screening(patient381,screening4161).
-has_screening(patient381,screening4162).
-has_screening(patient381,screening4163).
-has_screening(patient382,screening4164).
-has_screening(patient382,screening4165).
-has_screening(patient382,screening4166).
-has_screening(patient382,screening4167).
-has_screening(patient382,screening4168).
-has_screening(patient382,screening4169).
-has_screening(patient382,screening4170).
-has_screening(patient382,screening4171).
-has_screening(patient382,screening4172).
-has_screening(patient382,screening4173).
-has_screening(patient382,screening4174).
-has_screening(patient382,screening4175).
-has_screening(patient382,screening4176).
-has_screening(patient382,screening4177).
-has_screening(patient382,screening4178).
-has_screening(patient382,screening4179).
-has_screening(patient382,screening4180).
-has_screening(patient382,screening4181).
-has_screening(patient382,screening4182).
-has_screening(patient382,screening4183).
-has_screening(patient382,screening4184).
-has_screening(patient382,screening4185).
-has_screening(patient382,screening4186).
-has_screening(patient382,screening4187).
-has_screening(patient382,screening4188).
-has_screening(patient382,screening4189).
-has_screening(patient382,screening4190).
-has_screening(patient382,screening4191).
-has_screening(patient382,screening4192).
-has_screening(patient382,screening4193).
-has_screening(patient383,screening4194).
-has_screening(patient383,screening4195).
-has_screening(patient383,screening4196).
-has_screening(patient383,screening4197).
-has_screening(patient383,screening4198).
-has_screening(patient383,screening4199).
-has_screening(patient383,screening4200).
-has_screening(patient383,screening4201).
-has_screening(patient383,screening4202).
-has_screening(patient383,screening4203).
-has_screening(patient383,screening4204).
-has_screening(patient383,screening4205).
-has_screening(patient383,screening4206).
-has_screening(patient383,screening4207).
-has_screening(patient383,screening4208).
-has_screening(patient383,screening4209).
-has_screening(patient383,screening4210).
-has_screening(patient383,screening4211).
-has_screening(patient383,screening4212).
-has_screening(patient383,screening4213).
-has_screening(patient383,screening4214).
-has_screening(patient384,screening4215).
-has_screening(patient384,screening4216).
-has_screening(patient384,screening4217).
-has_screening(patient384,screening4218).
-has_screening(patient384,screening4219).
-has_screening(patient384,screening4220).
-has_screening(patient384,screening4221).
-has_screening(patient384,screening4222).
-has_screening(patient384,screening4223).
-has_screening(patient384,screening4224).
-has_screening(patient384,screening4225).
-has_screening(patient384,screening4226).
-has_screening(patient385,screening4227).
-has_screening(patient385,screening4228).
-has_screening(patient385,screening4229).
-has_screening(patient385,screening4230).
-has_screening(patient385,screening4231).
-has_screening(patient385,screening4232).
-has_screening(patient385,screening4233).
-has_screening(patient385,screening4234).
-has_screening(patient385,screening4235).
-has_screening(patient385,screening4236).
-has_screening(patient385,screening4237).
-has_screening(patient385,screening4238).
-has_screening(patient385,screening4239).
-has_screening(patient385,screening4240).
-has_screening(patient385,screening4241).
-has_screening(patient385,screening4242).
-has_screening(patient385,screening4243).
-has_screening(patient385,screening4244).
-has_screening(patient385,screening4245).
-has_screening(patient385,screening4246).
-has_screening(patient385,screening4247).
-has_screening(patient385,screening4248).
-has_screening(patient385,screening4249).
-has_screening(patient385,screening4250).
-has_screening(patient385,screening4251).
-has_screening(patient385,screening4252).
-has_screening(patient385,screening4253).
-has_screening(patient385,screening4254).
-has_screening(patient385,screening4255).
-has_screening(patient385,screening4256).
-has_screening(patient385,screening4257).
-has_screening(patient385,screening4258).
-has_screening(patient385,screening4259).
-has_screening(patient385,screening4260).
-has_screening(patient385,screening4261).
-has_screening(patient385,screening4262).
-has_screening(patient386,screening4263).
-has_screening(patient386,screening4264).
-has_screening(patient386,screening4265).
-has_screening(patient386,screening4266).
-has_screening(patient386,screening4267).
-has_screening(patient386,screening4268).
-has_screening(patient386,screening4269).
-has_screening(patient386,screening4270).
-has_screening(patient386,screening4271).
-has_screening(patient386,screening4272).
-has_screening(patient386,screening4273).
-has_screening(patient387,screening4274).
-has_screening(patient387,screening4275).
-has_screening(patient387,screening4276).
-has_screening(patient387,screening4277).
-has_screening(patient387,screening4278).
-has_screening(patient387,screening4279).
-has_screening(patient388,screening4280).
-has_screening(patient388,screening4281).
-has_screening(patient388,screening4282).
-has_screening(patient388,screening4283).
-has_screening(patient388,screening4284).
-has_screening(patient388,screening4285).
-has_screening(patient388,screening4286).
-has_screening(patient388,screening4287).
-has_screening(patient389,screening4288).
-has_screening(patient389,screening4289).
-has_screening(patient390,screening4290).
-has_screening(patient390,screening4291).
-has_screening(patient390,screening4292).
-has_screening(patient390,screening4293).
-has_screening(patient390,screening4294).
-has_screening(patient390,screening4295).
-has_screening(patient391,screening4296).
-has_screening(patient391,screening4297).
-has_screening(patient391,screening4298).
-has_screening(patient391,screening4299).
-has_screening(patient391,screening4300).
-has_screening(patient391,screening4301).
-has_screening(patient391,screening4302).
-has_screening(patient391,screening4303).
-has_screening(patient391,screening4304).
-has_screening(patient391,screening4305).
-has_screening(patient391,screening4306).
-has_screening(patient391,screening4307).
-has_screening(patient391,screening4308).
-has_screening(patient391,screening4309).
-has_screening(patient391,screening4310).
-has_screening(patient391,screening4311).
-has_screening(patient391,screening4312).
-has_screening(patient391,screening4313).
-has_screening(patient391,screening4314).
-has_screening(patient391,screening4315).
-has_screening(patient391,screening4316).
-has_screening(patient391,screening4317).
-has_screening(patient391,screening4318).
-has_screening(patient391,screening4319).
-has_screening(patient391,screening4320).
-has_screening(patient391,screening4321).
-has_screening(patient391,screening4322).
-has_screening(patient391,screening4323).
-has_screening(patient391,screening4324).
-has_screening(patient391,screening4325).
-has_screening(patient391,screening4326).
-has_screening(patient391,screening4327).
-has_screening(patient391,screening4328).
-has_screening(patient391,screening4329).
-has_screening(patient391,screening4330).
-has_screening(patient391,screening4331).
-has_screening(patient391,screening4332).
-has_screening(patient391,screening4333).
-has_screening(patient392,screening4334).
-has_screening(patient392,screening4335).
-has_screening(patient392,screening4336).
-has_screening(patient392,screening4337).
-has_screening(patient392,screening4338).
-has_screening(patient392,screening4339).
-has_screening(patient392,screening4340).
-has_screening(patient392,screening4341).
-has_screening(patient392,screening4342).
-has_screening(patient392,screening4343).
-has_screening(patient392,screening4344).
-has_screening(patient392,screening4345).
-has_screening(patient392,screening4346).
-has_screening(patient392,screening4347).
-has_screening(patient392,screening4348).
-has_screening(patient392,screening4349).
-has_screening(patient392,screening4350).
-has_screening(patient392,screening4351).
-has_screening(patient392,screening4352).
-has_screening(patient392,screening4353).
-has_screening(patient392,screening4354).
-has_screening(patient392,screening4355).
-has_screening(patient393,screening4356).
-has_screening(patient393,screening4357).
-has_screening(patient393,screening4358).
-has_screening(patient393,screening4359).
-has_screening(patient393,screening4360).
-has_screening(patient393,screening4361).
-has_screening(patient393,screening4362).
-has_screening(patient393,screening4363).
-has_screening(patient393,screening4364).
-has_screening(patient393,screening4365).
-has_screening(patient393,screening4366).
-has_screening(patient393,screening4367).
-has_screening(patient393,screening4368).
-has_screening(patient393,screening4369).
-has_screening(patient393,screening4370).
-has_screening(patient393,screening4371).
-has_screening(patient394,screening4372).
-has_screening(patient394,screening4373).
-has_screening(patient394,screening4374).
-has_screening(patient394,screening4375).
-has_screening(patient394,screening4376).
-has_screening(patient394,screening4377).
-has_screening(patient394,screening4378).
-has_screening(patient394,screening4379).
-has_screening(patient394,screening4380).
-has_screening(patient394,screening4381).
-has_screening(patient394,screening4382).
-has_screening(patient394,screening4383).
-has_screening(patient395,screening4384).
-has_screening(patient395,screening4385).
-has_screening(patient395,screening4386).
-has_screening(patient395,screening4387).
-has_screening(patient395,screening4388).
-has_screening(patient395,screening4389).
-has_screening(patient395,screening4390).
-has_screening(patient395,screening4391).
-has_screening(patient395,screening4392).
-has_screening(patient396,screening4393).
-has_screening(patient396,screening4394).
-has_screening(patient396,screening4395).
-has_screening(patient396,screening4396).
-has_screening(patient396,screening4397).
-has_screening(patient396,screening4398).
-has_screening(patient396,screening4399).
-has_screening(patient396,screening4400).
-has_screening(patient396,screening4401).
-has_screening(patient396,screening4402).
-has_screening(patient396,screening4403).
-has_screening(patient396,screening4404).
-has_screening(patient397,screening4405).
-has_screening(patient397,screening4406).
-has_screening(patient397,screening4407).
-has_screening(patient397,screening4408).
-has_screening(patient397,screening4409).
-has_screening(patient397,screening4410).
-has_screening(patient397,screening4411).
-has_screening(patient397,screening4412).
-has_screening(patient398,screening4413).
-has_screening(patient398,screening4414).
-has_screening(patient398,screening4415).
-has_screening(patient399,screening4416).
-has_screening(patient399,screening4417).
-has_screening(patient399,screening4418).
-has_screening(patient399,screening4419).
-has_screening(patient399,screening4420).
-has_screening(patient399,screening4421).
-has_screening(patient399,screening4422).
-has_screening(patient399,screening4423).
-has_screening(patient399,screening4424).
-has_screening(patient399,screening4425).
-has_screening(patient399,screening4426).
-has_screening(patient399,screening4427).
-has_screening(patient399,screening4428).
-has_screening(patient400,screening4429).
-has_screening(patient400,screening4430).
-has_screening(patient400,screening4431).
-has_screening(patient400,screening4432).
-has_screening(patient400,screening4433).
-has_screening(patient400,screening4434).
-has_screening(patient400,screening4435).
-has_screening(patient400,screening4436).
-has_screening(patient401,screening4437).
-has_screening(patient401,screening4438).
-has_screening(patient401,screening4439).
-has_screening(patient401,screening4440).
-has_screening(patient401,screening4441).
-has_screening(patient401,screening4442).
-has_screening(patient401,screening4443).
-has_screening(patient401,screening4444).
-has_screening(patient402,screening4445).
-has_screening(patient402,screening4446).
-has_screening(patient402,screening4447).
-has_screening(patient402,screening4448).
-has_screening(patient402,screening4449).
-has_screening(patient402,screening4450).
-has_screening(patient402,screening4451).
-has_screening(patient402,screening4452).
-has_screening(patient402,screening4453).
-has_screening(patient402,screening4454).
-has_screening(patient403,screening4455).
-has_screening(patient403,screening4456).
-has_screening(patient404,screening4457).
-has_screening(patient404,screening4458).
-has_screening(patient404,screening4459).
-has_screening(patient404,screening4460).
-has_screening(patient404,screening4461).
-has_screening(patient404,screening4462).
-has_screening(patient404,screening4463).
-has_screening(patient404,screening4464).
-has_screening(patient404,screening4465).
-has_screening(patient404,screening4466).
-has_screening(patient404,screening4467).
-has_screening(patient404,screening4468).
-has_screening(patient404,screening4469).
-has_screening(patient404,screening4470).
-has_screening(patient404,screening4471).
-has_screening(patient404,screening4472).
-has_screening(patient404,screening4473).
-has_screening(patient404,screening4474).
-has_screening(patient404,screening4475).
-has_screening(patient404,screening4476).
-has_screening(patient404,screening4477).
-has_screening(patient404,screening4478).
-has_screening(patient404,screening4479).
-has_screening(patient404,screening4480).
-has_screening(patient404,screening4481).
-has_screening(patient404,screening4482).
-has_screening(patient404,screening4483).
-has_screening(patient404,screening4484).
-has_screening(patient404,screening4485).
-has_screening(patient404,screening4486).
-has_screening(patient404,screening4487).
-has_screening(patient404,screening4488).
-has_screening(patient404,screening4489).
-has_screening(patient404,screening4490).
-has_screening(patient404,screening4491).
-has_screening(patient404,screening4492).
-has_screening(patient404,screening4493).
-has_screening(patient404,screening4494).
-has_screening(patient404,screening4495).
-has_screening(patient404,screening4496).
-has_screening(patient404,screening4497).
-has_screening(patient404,screening4498).
-has_screening(patient404,screening4499).
-has_screening(patient404,screening4500).
-has_screening(patient404,screening4501).
-has_screening(patient404,screening4502).
-has_screening(patient404,screening4503).
-has_screening(patient404,screening4504).
-has_screening(patient404,screening4505).
-has_screening(patient404,screening4506).
-has_screening(patient404,screening4507).
-has_screening(patient404,screening4508).
-has_screening(patient404,screening4509).
-has_screening(patient404,screening4510).
-has_screening(patient404,screening4511).
-has_screening(patient404,screening4512).
-has_screening(patient404,screening4513).
-has_screening(patient404,screening4514).
-has_screening(patient404,screening4515).
-has_screening(patient404,screening4516).
-has_screening(patient404,screening4517).
-has_screening(patient404,screening4518).
-has_screening(patient404,screening4519).
-has_screening(patient404,screening4520).
-has_screening(patient404,screening4521).
-has_screening(patient404,screening4522).
-has_screening(patient404,screening4523).
-has_screening(patient404,screening4524).
-has_screening(patient404,screening4525).
-has_screening(patient404,screening4526).
-has_screening(patient404,screening4527).
-has_screening(patient404,screening4528).
-has_screening(patient404,screening4529).
-has_screening(patient404,screening4530).
-has_screening(patient404,screening4531).
-has_screening(patient404,screening4532).
-has_screening(patient404,screening4533).
-has_screening(patient404,screening4534).
-has_screening(patient404,screening4535).
-has_screening(patient404,screening4536).
-has_screening(patient404,screening4537).
-has_screening(patient404,screening4538).
-has_screening(patient404,screening4539).
-has_screening(patient404,screening4540).
-has_screening(patient404,screening4541).
-has_screening(patient404,screening4542).
-has_screening(patient404,screening4543).
-has_screening(patient404,screening4544).
-has_screening(patient404,screening4545).
-has_screening(patient404,screening4546).
-has_screening(patient404,screening4547).
-has_screening(patient404,screening4548).
-has_screening(patient404,screening4549).
-has_screening(patient404,screening4550).
-has_screening(patient404,screening4551).
-has_screening(patient404,screening4552).
-has_screening(patient404,screening4553).
-has_screening(patient404,screening4554).
-has_screening(patient404,screening4555).
-has_screening(patient404,screening4556).
-has_screening(patient404,screening4557).
-has_screening(patient404,screening4558).
-has_screening(patient404,screening4559).
-has_screening(patient404,screening4560).
-has_screening(patient404,screening4561).
-has_screening(patient405,screening4562).
-has_screening(patient405,screening4563).
-has_screening(patient405,screening4564).
-has_screening(patient405,screening4565).
-has_screening(patient405,screening4566).
-has_screening(patient405,screening4567).
-has_screening(patient405,screening4568).
-has_screening(patient405,screening4569).
-has_screening(patient405,screening4570).
-has_screening(patient405,screening4571).
-has_screening(patient405,screening4572).
-has_screening(patient406,screening4573).
-has_screening(patient406,screening4574).
-has_screening(patient406,screening4575).
-has_screening(patient406,screening4576).
-has_screening(patient406,screening4577).
-has_screening(patient406,screening4578).
-has_screening(patient406,screening4579).
-has_screening(patient406,screening4580).
-has_screening(patient406,screening4581).
-has_screening(patient406,screening4582).
-has_screening(patient406,screening4583).
-has_screening(patient406,screening4584).
-has_screening(patient407,screening4585).
-has_screening(patient407,screening4586).
-has_screening(patient408,screening4587).
-has_screening(patient408,screening4588).
-has_screening(patient408,screening4589).
-has_screening(patient408,screening4590).
-has_screening(patient408,screening4591).
-has_screening(patient409,screening4592).
-has_screening(patient409,screening4593).
-has_screening(patient409,screening4594).
-has_screening(patient409,screening4595).
-has_screening(patient409,screening4596).
-has_screening(patient409,screening4597).
-has_screening(patient409,screening4598).
-has_screening(patient410,screening4599).
-has_screening(patient410,screening4600).
-has_screening(patient410,screening4601).
-has_screening(patient411,screening4602).
-has_screening(patient411,screening4603).
-has_screening(patient411,screening4604).
-has_screening(patient411,screening4605).
-has_screening(patient411,screening4606).
-has_screening(patient411,screening4607).
-has_screening(patient412,screening4608).
-has_screening(patient412,screening4609).
-has_screening(patient412,screening4610).
-has_screening(patient412,screening4611).
-has_screening(patient412,screening4612).
-has_screening(patient412,screening4613).
-has_screening(patient412,screening4614).
-has_screening(patient412,screening4615).
-has_screening(patient412,screening4616).
-has_screening(patient412,screening4617).
-has_screening(patient412,screening4618).
-has_screening(patient412,screening4619).
-has_screening(patient412,screening4620).
-has_screening(patient412,screening4621).
-has_screening(patient413,screening4622).
-has_screening(patient413,screening4623).
-has_screening(patient413,screening4624).
-has_screening(patient413,screening4625).
-has_screening(patient413,screening4626).
-has_screening(patient413,screening4627).
-has_screening(patient413,screening4628).
-has_screening(patient413,screening4629).
-has_screening(patient413,screening4630).
-has_screening(patient413,screening4631).
-has_screening(patient413,screening4632).
-has_screening(patient413,screening4633).
-has_screening(patient413,screening4634).
-has_screening(patient413,screening4635).
-has_screening(patient413,screening4636).
-has_screening(patient413,screening4637).
-has_screening(patient413,screening4638).
-has_screening(patient413,screening4639).
-has_screening(patient413,screening4640).
-has_screening(patient413,screening4641).
-has_screening(patient413,screening4642).
-has_screening(patient413,screening4643).
-has_screening(patient413,screening4644).
-has_screening(patient413,screening4645).
-has_screening(patient413,screening4646).
-has_screening(patient413,screening4647).
-has_screening(patient413,screening4648).
-has_screening(patient413,screening4649).
-has_screening(patient413,screening4650).
-has_screening(patient413,screening4651).
-has_screening(patient413,screening4652).
-has_screening(patient413,screening4653).
-has_screening(patient413,screening4654).
-has_screening(patient413,screening4655).
-has_screening(patient413,screening4656).
-has_screening(patient413,screening4657).
-has_screening(patient415,screening4658).
-has_screening(patient415,screening4659).
-has_screening(patient415,screening4660).
-has_screening(patient415,screening4661).
-has_screening(patient415,screening4662).
-has_screening(patient415,screening4663).
-has_screening(patient415,screening4664).
-has_screening(patient416,screening4665).
-has_screening(patient416,screening4666).
-has_screening(patient416,screening4667).
-has_screening(patient416,screening4668).
-has_screening(patient416,screening4669).
-has_screening(patient416,screening4670).
-has_screening(patient416,screening4671).
-has_screening(patient416,screening4672).
-has_screening(patient416,screening4673).
-has_screening(patient416,screening4674).
-has_screening(patient416,screening4675).
-has_screening(patient416,screening4676).
-has_screening(patient416,screening4677).
-has_screening(patient416,screening4678).
-has_screening(patient416,screening4679).
-has_screening(patient416,screening4680).
-has_screening(patient416,screening4681).
-has_screening(patient416,screening4682).
-has_screening(patient416,screening4683).
-has_screening(patient416,screening4684).
-has_screening(patient416,screening4685).
-has_screening(patient417,screening4686).
-has_screening(patient417,screening4687).
-has_screening(patient417,screening4688).
-has_screening(patient418,screening4689).
-has_screening(patient418,screening4690).
-has_screening(patient419,screening4691).
-has_screening(patient419,screening4692).
-has_screening(patient419,screening4693).
-has_screening(patient419,screening4694).
-has_screening(patient419,screening4695).
-has_screening(patient420,screening4696).
-has_screening(patient420,screening4697).
-has_screening(patient420,screening4698).
-has_screening(patient420,screening4699).
-has_screening(patient420,screening4700).
-has_screening(patient420,screening4701).
-has_screening(patient420,screening4702).
-has_screening(patient420,screening4703).
-has_screening(patient420,screening4704).
-has_screening(patient420,screening4705).
-has_screening(patient420,screening4706).
-has_screening(patient420,screening4707).
-has_screening(patient421,screening4708).
-has_screening(patient421,screening4709).
-has_screening(patient421,screening4710).
-has_screening(patient421,screening4711).
-has_screening(patient421,screening4712).
-has_screening(patient422,screening4713).
-has_screening(patient422,screening4714).
-has_screening(patient422,screening4715).
-has_screening(patient422,screening4716).
-has_screening(patient422,screening4717).
-has_screening(patient422,screening4718).
-has_screening(patient422,screening4719).
-has_screening(patient422,screening4720).
-has_screening(patient422,screening4721).
-has_screening(patient422,screening4722).
-has_screening(patient422,screening4723).
-has_screening(patient422,screening4724).
-has_screening(patient422,screening4725).
-has_screening(patient422,screening4726).
-has_screening(patient422,screening4727).
-has_screening(patient422,screening4728).
-has_screening(patient422,screening4729).
-has_screening(patient422,screening4730).
-has_screening(patient423,screening4731).
-has_screening(patient423,screening4732).
-has_screening(patient423,screening4733).
-has_screening(patient424,screening4734).
-has_screening(patient424,screening4735).
-has_screening(patient424,screening4736).
-has_screening(patient424,screening4737).
-has_screening(patient425,screening4738).
-has_screening(patient425,screening4739).
-has_screening(patient425,screening4740).
-has_screening(patient425,screening4741).
-has_screening(patient425,screening4742).
-has_screening(patient425,screening4743).
-has_screening(patient426,screening4744).
-has_screening(patient426,screening4745).
-has_screening(patient426,screening4746).
-has_screening(patient427,screening4747).
-has_screening(patient427,screening4748).
-has_screening(patient428,screening4749).
-has_screening(patient429,screening4750).
-has_screening(patient429,screening4751).
-has_screening(patient429,screening4752).
-has_screening(patient429,screening4753).
-has_screening(patient429,screening4754).
-has_screening(patient429,screening4755).
-has_screening(patient429,screening4756).
-has_screening(patient429,screening4757).
-has_screening(patient429,screening4758).
-has_screening(patient429,screening4759).
-has_screening(patient429,screening4760).
-has_screening(patient429,screening4761).
-has_screening(patient430,screening4762).
-has_screening(patient430,screening4763).
-has_screening(patient430,screening4764).
-has_screening(patient430,screening4765).
-has_screening(patient430,screening4766).
-has_screening(patient430,screening4767).
-has_screening(patient430,screening4768).
-has_screening(patient430,screening4769).
-has_screening(patient430,screening4770).
-has_screening(patient430,screening4771).
-has_screening(patient430,screening4772).
-has_screening(patient430,screening4773).
-has_screening(patient430,screening4774).
-has_screening(patient430,screening4775).
-has_screening(patient430,screening4776).
-has_screening(patient430,screening4777).
-has_screening(patient430,screening4778).
-has_screening(patient430,screening4779).
-has_screening(patient430,screening4780).
-has_screening(patient430,screening4781).
-has_screening(patient430,screening4782).
-has_screening(patient431,screening4783).
-has_screening(patient431,screening4784).
-has_screening(patient431,screening4785).
-has_screening(patient431,screening4786).
-has_screening(patient431,screening4787).
-has_screening(patient431,screening4788).
-has_screening(patient431,screening4789).
-has_screening(patient431,screening4790).
-has_screening(patient431,screening4791).
-has_screening(patient431,screening4792).
-has_screening(patient431,screening4793).
-has_screening(patient431,screening4794).
-has_screening(patient431,screening4795).
-has_screening(patient431,screening4796).
-has_screening(patient432,screening4797).
-has_screening(patient432,screening4798).
-has_screening(patient432,screening4799).
-has_screening(patient432,screening4800).
-has_screening(patient432,screening4801).
-has_screening(patient432,screening4802).
-has_screening(patient432,screening4803).
-has_screening(patient432,screening4804).
-has_screening(patient432,screening4805).
-has_screening(patient432,screening4806).
-has_screening(patient432,screening4807).
-has_screening(patient432,screening4808).
-has_screening(patient432,screening4809).
-has_screening(patient432,screening4810).
-has_screening(patient432,screening4811).
-has_screening(patient433,screening4812).
-has_screening(patient433,screening4813).
-has_screening(patient433,screening4814).
-has_screening(patient433,screening4815).
-has_screening(patient433,screening4816).
-has_screening(patient434,screening4817).
-has_screening(patient434,screening4818).
-has_screening(patient434,screening4819).
-has_screening(patient434,screening4820).
-has_screening(patient434,screening4821).
-has_screening(patient434,screening4822).
-has_screening(patient434,screening4823).
-has_screening(patient434,screening4824).
-has_screening(patient434,screening4825).
-has_screening(patient434,screening4826).
-has_screening(patient434,screening4827).
-has_screening(patient434,screening4828).
-has_screening(patient434,screening4829).
-has_screening(patient434,screening4830).
-has_screening(patient435,screening4831).
-has_screening(patient435,screening4832).
-has_screening(patient435,screening4833).
-has_screening(patient435,screening4834).
-has_screening(patient435,screening4835).
-has_screening(patient435,screening4836).
-has_screening(patient435,screening4837).
-has_screening(patient435,screening4838).
-has_screening(patient435,screening4839).
-has_screening(patient435,screening4840).
-has_screening(patient435,screening4841).
-has_screening(patient435,screening4842).
-has_screening(patient435,screening4843).
-has_screening(patient435,screening4844).
-has_screening(patient435,screening4845).
-has_screening(patient435,screening4846).
-has_screening(patient435,screening4847).
-has_screening(patient435,screening4848).
-has_screening(patient435,screening4849).
-has_screening(patient436,screening4850).
-has_screening(patient436,screening4851).
-has_screening(patient436,screening4852).
-has_screening(patient436,screening4853).
-has_screening(patient436,screening4854).
-has_screening(patient437,screening4855).
-has_screening(patient437,screening4856).
-has_screening(patient437,screening4857).
-has_screening(patient437,screening4858).
-has_screening(patient438,screening4859).
-has_screening(patient438,screening4860).
-has_screening(patient438,screening4861).
-has_screening(patient438,screening4862).
-has_screening(patient438,screening4863).
-has_screening(patient438,screening4864).
-has_screening(patient438,screening4865).
-has_screening(patient438,screening4866).
-has_screening(patient438,screening4867).
-has_screening(patient438,screening4868).
-has_screening(patient438,screening4869).
-has_screening(patient438,screening4870).
-has_screening(patient438,screening4871).
-has_screening(patient438,screening4872).
-has_screening(patient438,screening4873).
-has_screening(patient438,screening4874).
-has_screening(patient438,screening4875).
-has_screening(patient438,screening4876).
-has_screening(patient438,screening4877).
-has_screening(patient439,screening4878).
-has_screening(patient439,screening4879).
-has_screening(patient439,screening4880).
-has_screening(patient439,screening4881).
-has_screening(patient439,screening4882).
-has_screening(patient439,screening4883).
-has_screening(patient439,screening4884).
-has_screening(patient440,screening4885).
-has_screening(patient440,screening4886).
-has_screening(patient440,screening4887).
-has_screening(patient440,screening4888).
-has_screening(patient440,screening4889).
-has_screening(patient440,screening4890).
-has_screening(patient440,screening4891).
-has_screening(patient440,screening4892).
-has_screening(patient440,screening4893).
-has_screening(patient441,screening4894).
-has_screening(patient441,screening4895).
-has_screening(patient442,screening4896).
-has_screening(patient442,screening4897).
-has_screening(patient442,screening4898).
-has_screening(patient442,screening4899).
-has_screening(patient442,screening4900).
-has_screening(patient442,screening4901).
-has_screening(patient442,screening4902).
-has_screening(patient442,screening4903).
-has_screening(patient442,screening4904).
-has_screening(patient443,screening4905).
-has_screening(patient443,screening4906).
-has_screening(patient444,screening4907).
-has_screening(patient444,screening4908).
-has_screening(patient444,screening4909).
-has_screening(patient444,screening4910).
-has_screening(patient444,screening4911).
-has_screening(patient444,screening4912).
-has_screening(patient444,screening4913).
-has_screening(patient445,screening4914).
-has_screening(patient446,screening4915).
-has_screening(patient446,screening4916).
-has_screening(patient446,screening4917).
-has_screening(patient446,screening4918).
-has_screening(patient446,screening4919).
-has_screening(patient446,screening4920).
-has_screening(patient446,screening4921).
-has_screening(patient446,screening4922).
-has_screening(patient446,screening4923).
-has_screening(patient446,screening4924).
-has_screening(patient446,screening4925).
-has_screening(patient446,screening4926).
-has_screening(patient446,screening4927).
-has_screening(patient446,screening4928).
-has_screening(patient446,screening4929).
-has_screening(patient446,screening4930).
-has_screening(patient447,screening4931).
-has_screening(patient448,screening4932).
-has_screening(patient448,screening4933).
-has_screening(patient448,screening4934).
-has_screening(patient448,screening4935).
-has_screening(patient448,screening4936).
-has_screening(patient448,screening4937).
-has_screening(patient448,screening4938).
-has_screening(patient448,screening4939).
-has_screening(patient448,screening4940).
-has_screening(patient448,screening4941).
-has_screening(patient448,screening4942).
-has_screening(patient448,screening4943).
-has_screening(patient448,screening4944).
-has_screening(patient449,screening4945).
-has_screening(patient449,screening4946).
-has_screening(patient449,screening4947).
-has_screening(patient449,screening4948).
-has_screening(patient449,screening4949).
-has_screening(patient450,screening4950).
-has_screening(patient450,screening4951).
-has_screening(patient451,screening4952).
-has_screening(patient451,screening4953).
-has_screening(patient451,screening4954).
-has_screening(patient451,screening4955).
-has_screening(patient451,screening4956).
-has_screening(patient451,screening4957).
-has_screening(patient451,screening4958).
-has_screening(patient451,screening4959).
-has_screening(patient451,screening4960).
-has_screening(patient451,screening4961).
-has_screening(patient451,screening4962).
-has_screening(patient451,screening4963).
-has_screening(patient451,screening4964).
-has_screening(patient451,screening4965).
-has_screening(patient451,screening4966).
-has_screening(patient451,screening4967).
-has_screening(patient451,screening4968).
-has_screening(patient451,screening4969).
-has_screening(patient452,screening4970).
-has_screening(patient452,screening4971).
-has_screening(patient452,screening4972).
-has_screening(patient452,screening4973).
-has_screening(patient452,screening4974).
-has_screening(patient452,screening4975).
-has_screening(patient452,screening4976).
-has_screening(patient453,screening4977).
-has_screening(patient453,screening4978).
-has_screening(patient453,screening4979).
-has_screening(patient453,screening4980).
-has_screening(patient453,screening4981).
-has_screening(patient453,screening4982).
-has_screening(patient453,screening4983).
-has_screening(patient454,screening4984).
-has_screening(patient454,screening4985).
-has_screening(patient454,screening4986).
-has_screening(patient454,screening4987).
-has_screening(patient454,screening4988).
-has_screening(patient454,screening4989).
-has_screening(patient454,screening4990).
-has_screening(patient454,screening4991).
-has_screening(patient455,screening4992).
-has_screening(patient455,screening4993).
-has_screening(patient455,screening4994).
-has_screening(patient455,screening4995).
-has_screening(patient455,screening4996).
-has_screening(patient455,screening4997).
-has_screening(patient455,screening4998).
-has_screening(patient455,screening4999).
-has_screening(patient455,screening5000).
-has_screening(patient455,screening5001).
-has_screening(patient455,screening5002).
-has_screening(patient455,screening5003).
-has_screening(patient455,screening5004).
-has_screening(patient455,screening5005).
-has_screening(patient456,screening5006).
-has_screening(patient456,screening5007).
-has_screening(patient456,screening5008).
-has_screening(patient456,screening5009).
-has_screening(patient456,screening5010).
-has_screening(patient456,screening5011).
-has_screening(patient456,screening5012).
-has_screening(patient456,screening5013).
-has_screening(patient456,screening5014).
-has_screening(patient456,screening5015).
-has_screening(patient457,screening5016).
-has_screening(patient457,screening5017).
-has_screening(patient457,screening5018).
-has_screening(patient457,screening5019).
-has_screening(patient457,screening5020).
-has_screening(patient457,screening5021).
-has_screening(patient457,screening5022).
-has_screening(patient457,screening5023).
-has_screening(patient457,screening5024).
-has_screening(patient457,screening5025).
-has_screening(patient457,screening5026).
-has_screening(patient457,screening5027).
-has_screening(patient457,screening5028).
-has_screening(patient457,screening5029).
-has_screening(patient457,screening5030).
-has_screening(patient458,screening5031).
-has_screening(patient458,screening5032).
-has_screening(patient459,screening5033).
-has_screening(patient459,screening5034).
-has_screening(patient459,screening5035).
-has_screening(patient459,screening5036).
-has_screening(patient459,screening5037).
-has_screening(patient459,screening5038).
-has_screening(patient459,screening5039).
-has_screening(patient459,screening5040).
-has_screening(patient459,screening5041).
-has_screening(patient459,screening5042).
-has_screening(patient459,screening5043).
-has_screening(patient459,screening5044).
-has_screening(patient459,screening5045).
-has_screening(patient459,screening5046).
-has_screening(patient459,screening5047).
-has_screening(patient460,screening5048).
-has_screening(patient460,screening5049).
-has_screening(patient460,screening5050).
-has_screening(patient460,screening5051).
-has_screening(patient460,screening5052).
-has_screening(patient460,screening5053).
-has_screening(patient460,screening5054).
-has_screening(patient460,screening5055).
-has_screening(patient460,screening5056).
-has_screening(patient460,screening5057).
-has_screening(patient461,screening5058).
-has_screening(patient461,screening5059).
-has_screening(patient461,screening5060).
-has_screening(patient461,screening5061).
-has_screening(patient461,screening5062).
-has_screening(patient461,screening5063).
-has_screening(patient461,screening5064).
-has_screening(patient461,screening5065).
-has_screening(patient461,screening5066).
-has_screening(patient461,screening5067).
-has_screening(patient461,screening5068).
-has_screening(patient461,screening5069).
-has_screening(patient461,screening5070).
-has_screening(patient461,screening5071).
-has_screening(patient461,screening5072).
-has_screening(patient461,screening5073).
-has_screening(patient461,screening5074).
-has_screening(patient461,screening5075).
-has_screening(patient461,screening5076).
-has_screening(patient461,screening5077).
-has_screening(patient461,screening5078).
-has_screening(patient461,screening5079).
-has_screening(patient461,screening5080).
-has_screening(patient461,screening5081).
-has_screening(patient461,screening5082).
-has_screening(patient461,screening5083).
-has_screening(patient461,screening5084).
-has_screening(patient461,screening5085).
-has_screening(patient461,screening5086).
-has_screening(patient461,screening5087).
-has_screening(patient461,screening5088).
-has_screening(patient461,screening5089).
-has_screening(patient461,screening5090).
-has_screening(patient461,screening5091).
-has_screening(patient461,screening5092).
-has_screening(patient461,screening5093).
-has_screening(patient461,screening5094).
-has_screening(patient461,screening5095).
-has_screening(patient461,screening5096).
-has_screening(patient461,screening5097).
-has_screening(patient461,screening5098).
-has_screening(patient461,screening5099).
-has_screening(patient461,screening5100).
-has_screening(patient461,screening5101).
-has_screening(patient461,screening5102).
-has_screening(patient461,screening5103).
-has_screening(patient461,screening5104).
-has_screening(patient461,screening5105).
-has_screening(patient461,screening5106).
-has_screening(patient461,screening5107).
-has_screening(patient461,screening5108).
-has_screening(patient461,screening5109).
-has_screening(patient461,screening5110).
-has_screening(patient461,screening5111).
-has_screening(patient461,screening5112).
-has_screening(patient461,screening5113).
-has_screening(patient461,screening5114).
-has_screening(patient461,screening5115).
-has_screening(patient461,screening5116).
-has_screening(patient461,screening5117).
-has_screening(patient461,screening5118).
-has_screening(patient461,screening5119).
-has_screening(patient461,screening5120).
-has_screening(patient461,screening5121).
-has_screening(patient461,screening5122).
-has_screening(patient462,screening5123).
-has_screening(patient462,screening5124).
-has_screening(patient462,screening5125).
-has_screening(patient462,screening5126).
-has_screening(patient462,screening5127).
-has_screening(patient462,screening5128).
-has_screening(patient462,screening5129).
-has_screening(patient462,screening5130).
-has_screening(patient462,screening5131).
-has_screening(patient462,screening5132).
-has_screening(patient462,screening5133).
-has_screening(patient462,screening5134).
-has_screening(patient462,screening5135).
-has_screening(patient462,screening5136).
-has_screening(patient462,screening5137).
-has_screening(patient462,screening5138).
-has_screening(patient462,screening5139).
-has_screening(patient462,screening5140).
-has_screening(patient462,screening5141).
-has_screening(patient462,screening5142).
-has_screening(patient462,screening5143).
-has_screening(patient462,screening5144).
-has_screening(patient462,screening5145).
-has_screening(patient462,screening5146).
-has_screening(patient462,screening5147).
-has_screening(patient462,screening5148).
-has_screening(patient463,screening5149).
-has_screening(patient463,screening5150).
-has_screening(patient463,screening5151).
-has_screening(patient463,screening5152).
-has_screening(patient463,screening5153).
-has_screening(patient463,screening5154).
-has_screening(patient464,screening5155).
-has_screening(patient464,screening5156).
-has_screening(patient464,screening5157).
-has_screening(patient465,screening5158).
-has_screening(patient465,screening5159).
-has_screening(patient465,screening5160).
-has_screening(patient465,screening5161).
-has_screening(patient465,screening5162).
-has_screening(patient465,screening5163).
-has_screening(patient465,screening5164).
-has_screening(patient465,screening5165).
-has_screening(patient465,screening5166).
-has_screening(patient465,screening5167).
-has_screening(patient465,screening5168).
-has_screening(patient465,screening5169).
-has_screening(patient465,screening5170).
-has_screening(patient465,screening5171).
-has_screening(patient465,screening5172).
-has_screening(patient465,screening5173).
-has_screening(patient465,screening5174).
-has_screening(patient465,screening5175).
-has_screening(patient465,screening5176).
-has_screening(patient465,screening5177).
-has_screening(patient466,screening5178).
-has_screening(patient466,screening5179).
-has_screening(patient466,screening5180).
-has_screening(patient466,screening5181).
-has_screening(patient466,screening5182).
-has_screening(patient466,screening5183).
-has_screening(patient466,screening5184).
-has_screening(patient466,screening5185).
-has_screening(patient466,screening5186).
-has_screening(patient466,screening5187).
-has_screening(patient466,screening5188).
-has_screening(patient466,screening5189).
-has_screening(patient466,screening5190).
-has_screening(patient466,screening5191).
-has_screening(patient466,screening5192).
-has_screening(patient466,screening5193).
-has_screening(patient466,screening5194).
-has_screening(patient466,screening5195).
-has_screening(patient466,screening5196).
-has_screening(patient466,screening5197).
-has_screening(patient466,screening5198).
-has_screening(patient467,screening5199).
-has_screening(patient467,screening5200).
-has_screening(patient467,screening5201).
-has_screening(patient467,screening5202).
-has_screening(patient468,screening5203).
-has_screening(patient468,screening5204).
-has_screening(patient468,screening5205).
-has_screening(patient468,screening5206).
-has_screening(patient468,screening5207).
-has_screening(patient468,screening5208).
-has_screening(patient468,screening5209).
-has_screening(patient468,screening5210).
-has_screening(patient468,screening5211).
-has_screening(patient468,screening5212).
-has_screening(patient468,screening5213).
-has_screening(patient468,screening5214).
-has_screening(patient468,screening5215).
-has_screening(patient468,screening5216).
-has_screening(patient468,screening5217).
-has_screening(patient468,screening5218).
-has_screening(patient468,screening5219).
-has_screening(patient468,screening5220).
-has_screening(patient468,screening5221).
-has_screening(patient468,screening5222).
-has_screening(patient468,screening5223).
-has_screening(patient468,screening5224).
-has_screening(patient468,screening5225).
-has_screening(patient468,screening5226).
-has_screening(patient469,screening5227).
-has_screening(patient469,screening5228).
-has_screening(patient469,screening5229).
-has_screening(patient469,screening5230).
-has_screening(patient469,screening5231).
-has_screening(patient469,screening5232).
-has_screening(patient469,screening5233).
-has_screening(patient469,screening5234).
-has_screening(patient470,screening5235).
-has_screening(patient470,screening5236).
-has_screening(patient470,screening5237).
-has_screening(patient470,screening5238).
-has_screening(patient471,screening5239).
-has_screening(patient471,screening5240).
-has_screening(patient471,screening5241).
-has_screening(patient471,screening5242).
-has_screening(patient471,screening5243).
-has_screening(patient471,screening5244).
-has_screening(patient471,screening5245).
-has_screening(patient471,screening5246).
-has_screening(patient471,screening5247).
-has_screening(patient471,screening5248).
-has_screening(patient471,screening5249).
-has_screening(patient472,screening5250).
-has_screening(patient472,screening5251).
-has_screening(patient472,screening5252).
-has_screening(patient472,screening5253).
-has_screening(patient472,screening5254).
-has_screening(patient472,screening5255).
-has_screening(patient472,screening5256).
-has_screening(patient472,screening5257).
-has_screening(patient472,screening5258).
-has_screening(patient473,screening5259).
-has_screening(patient473,screening5260).
-has_screening(patient473,screening5261).
-has_screening(patient473,screening5262).
-has_screening(patient473,screening5263).
-has_screening(patient473,screening5264).
-has_screening(patient473,screening5265).
-has_screening(patient473,screening5266).
-has_screening(patient473,screening5267).
-has_screening(patient473,screening5268).
-has_screening(patient473,screening5269).
-has_screening(patient473,screening5270).
-has_screening(patient473,screening5271).
-has_screening(patient473,screening5272).
-has_screening(patient473,screening5273).
-has_screening(patient473,screening5274).
-has_screening(patient473,screening5275).
-has_screening(patient473,screening5276).
-has_screening(patient473,screening5277).
-has_screening(patient473,screening5278).
-has_screening(patient473,screening5279).
-has_screening(patient474,screening5280).
-has_screening(patient474,screening5281).
-has_screening(patient474,screening5282).
-has_screening(patient474,screening5283).
-has_screening(patient474,screening5284).
-has_screening(patient474,screening5285).
-has_screening(patient474,screening5286).
-has_screening(patient474,screening5287).
-has_screening(patient474,screening5288).
-has_screening(patient474,screening5289).
-has_screening(patient474,screening5290).
-has_screening(patient474,screening5291).
-has_screening(patient476,screening5292).
-has_screening(patient476,screening5293).
-has_screening(patient477,screening5294).
-has_screening(patient477,screening5295).
-has_screening(patient477,screening5296).
-has_screening(patient477,screening5297).
-has_screening(patient477,screening5298).
-has_screening(patient477,screening5299).
-has_screening(patient477,screening5300).
-has_screening(patient477,screening5301).
-has_screening(patient477,screening5302).
-has_screening(patient477,screening5303).
-has_screening(patient477,screening5304).
-has_screening(patient477,screening5305).
-has_screening(patient477,screening5306).
-has_screening(patient478,screening5307).
-has_screening(patient478,screening5308).
-has_screening(patient478,screening5309).
-has_screening(patient478,screening5310).
-has_screening(patient478,screening5311).
-has_screening(patient479,screening5312).
-has_screening(patient479,screening5313).
-has_screening(patient479,screening5314).
-has_screening(patient479,screening5315).
-has_screening(patient480,screening5316).
-has_screening(patient480,screening5317).
-has_screening(patient480,screening5318).
-has_screening(patient480,screening5319).
-has_screening(patient480,screening5320).
-has_screening(patient480,screening5321).
-has_screening(patient481,screening5322).
-has_screening(patient481,screening5323).
-has_screening(patient481,screening5324).
-has_screening(patient481,screening5325).
-has_screening(patient481,screening5326).
-has_screening(patient481,screening5327).
-has_screening(patient481,screening5328).
-has_screening(patient481,screening5329).
-has_screening(patient481,screening5330).
-has_screening(patient481,screening5331).
-has_screening(patient482,screening5332).
-has_screening(patient482,screening5333).
-has_screening(patient482,screening5334).
-has_screening(patient482,screening5335).
-has_screening(patient482,screening5336).
-has_screening(patient482,screening5337).
-has_screening(patient482,screening5338).
-has_screening(patient482,screening5339).
-has_screening(patient482,screening5340).
-has_screening(patient482,screening5341).
-has_screening(patient482,screening5342).
-has_screening(patient482,screening5343).
-has_screening(patient482,screening5344).
-has_screening(patient482,screening5345).
-has_screening(patient482,screening5346).
-has_screening(patient482,screening5347).
-has_screening(patient482,screening5348).
-has_screening(patient482,screening5349).
-has_screening(patient482,screening5350).
-has_screening(patient482,screening5351).
-has_screening(patient482,screening5352).
-has_screening(patient482,screening5353).
-has_screening(patient482,screening5354).
-has_screening(patient482,screening5355).
-has_screening(patient482,screening5356).
-has_screening(patient482,screening5357).
-has_screening(patient482,screening5358).
-has_screening(patient482,screening5359).
-has_screening(patient483,screening5360).
-has_screening(patient483,screening5361).
-has_screening(patient483,screening5362).
-has_screening(patient484,screening5363).
-has_screening(patient484,screening5364).
-has_screening(patient484,screening5365).
-has_screening(patient484,screening5366).
-has_screening(patient484,screening5367).
-has_screening(patient484,screening5368).
-has_screening(patient484,screening5369).
-has_screening(patient484,screening5370).
-has_screening(patient484,screening5371).
-has_screening(patient485,screening5372).
-has_screening(patient485,screening5373).
-has_screening(patient485,screening5374).
-has_screening(patient485,screening5375).
-has_screening(patient485,screening5376).
-has_screening(patient486,screening5377).
-has_screening(patient486,screening5378).
-has_screening(patient486,screening5379).
-has_screening(patient486,screening5380).
-has_screening(patient486,screening5381).
-has_screening(patient486,screening5382).
-has_screening(patient486,screening5383).
-has_screening(patient486,screening5384).
-has_screening(patient486,screening5385).
-has_screening(patient486,screening5386).
-has_screening(patient486,screening5387).
-has_screening(patient486,screening5388).
-has_screening(patient486,screening5389).
-has_screening(patient486,screening5390).
-has_screening(patient486,screening5391).
-has_screening(patient486,screening5392).
-has_screening(patient486,screening5393).
-has_screening(patient486,screening5394).
-has_screening(patient486,screening5395).
-has_screening(patient486,screening5396).
-has_screening(patient486,screening5397).
-has_screening(patient486,screening5398).
-has_screening(patient486,screening5399).
-has_screening(patient486,screening5400).
-has_screening(patient486,screening5401).
-has_screening(patient486,screening5402).
-has_screening(patient486,screening5403).
-has_screening(patient486,screening5404).
-has_screening(patient486,screening5405).
-has_screening(patient486,screening5406).
-has_screening(patient486,screening5407).
-has_screening(patient486,screening5408).
-has_screening(patient486,screening5409).
-has_screening(patient486,screening5410).
-has_screening(patient486,screening5411).
-has_screening(patient486,screening5412).
-has_screening(patient486,screening5413).
-has_screening(patient486,screening5414).
-has_screening(patient486,screening5415).
-has_screening(patient486,screening5416).
-has_screening(patient486,screening5417).
-has_screening(patient486,screening5418).
-has_screening(patient486,screening5419).
-has_screening(patient486,screening5420).
-has_screening(patient486,screening5421).
-has_screening(patient486,screening5422).
-has_screening(patient486,screening5423).
-has_screening(patient486,screening5424).
-has_screening(patient486,screening5425).
-has_screening(patient486,screening5426).
-has_screening(patient486,screening5427).
-has_screening(patient486,screening5428).
-has_screening(patient486,screening5429).
-has_screening(patient486,screening5430).
-has_screening(patient486,screening5431).
-has_screening(patient486,screening5432).
-has_screening(patient486,screening5433).
-has_screening(patient486,screening5434).
-has_screening(patient486,screening5435).
-has_screening(patient486,screening5436).
-has_screening(patient486,screening5437).
-has_screening(patient486,screening5438).
-has_screening(patient486,screening5439).
-has_screening(patient486,screening5440).
-has_screening(patient486,screening5441).
-has_screening(patient486,screening5442).
-has_screening(patient486,screening5443).
-has_screening(patient486,screening5444).
-has_screening(patient486,screening5445).
-has_screening(patient486,screening5446).
-has_screening(patient486,screening5447).
-has_screening(patient486,screening5448).
-has_screening(patient486,screening5449).
-has_screening(patient486,screening5450).
-has_screening(patient486,screening5451).
-has_screening(patient486,screening5452).
-has_screening(patient486,screening5453).
-has_screening(patient486,screening5454).
-has_screening(patient486,screening5455).
-has_screening(patient486,screening5456).
-has_screening(patient486,screening5457).
-has_screening(patient486,screening5458).
-has_screening(patient486,screening5459).
-has_screening(patient486,screening5460).
-has_screening(patient487,screening5461).
-has_screening(patient487,screening5462).
-has_screening(patient487,screening5463).
-has_screening(patient487,screening5464).
-has_screening(patient487,screening5465).
-has_screening(patient487,screening5466).
-has_screening(patient487,screening5467).
-has_screening(patient488,screening5468).
-has_screening(patient488,screening5469).
-has_screening(patient488,screening5470).
-has_screening(patient488,screening5471).
-has_screening(patient488,screening5472).
-has_screening(patient488,screening5473).
-has_screening(patient488,screening5474).
-has_screening(patient488,screening5475).
-has_screening(patient488,screening5476).
-has_screening(patient488,screening5477).
-has_screening(patient488,screening5478).
-has_screening(patient488,screening5479).
-has_screening(patient488,screening5480).
-has_screening(patient488,screening5481).
-has_screening(patient488,screening5482).
-has_screening(patient488,screening5483).
-has_screening(patient488,screening5484).
-has_screening(patient488,screening5485).
-has_screening(patient488,screening5486).
-has_screening(patient488,screening5487).
-has_screening(patient488,screening5488).
-has_screening(patient488,screening5489).
-has_screening(patient488,screening5490).
-has_screening(patient488,screening5491).
-has_screening(patient488,screening5492).
-has_screening(patient488,screening5493).
-has_screening(patient488,screening5494).
-has_screening(patient488,screening5495).
-has_screening(patient488,screening5496).
-has_screening(patient488,screening5497).
-has_screening(patient488,screening5498).
-has_screening(patient488,screening5499).
-has_screening(patient488,screening5500).
-has_screening(patient488,screening5501).
-has_screening(patient488,screening5502).
-has_screening(patient488,screening5503).
-has_screening(patient488,screening5504).
-has_screening(patient488,screening5505).
-has_screening(patient488,screening5506).
-has_screening(patient488,screening5507).
-has_screening(patient488,screening5508).
-has_screening(patient488,screening5509).
-has_screening(patient488,screening5510).
-has_screening(patient488,screening5511).
-has_screening(patient488,screening5512).
-has_screening(patient488,screening5513).
-has_screening(patient488,screening5514).
-has_screening(patient488,screening5515).
-has_screening(patient488,screening5516).
-has_screening(patient488,screening5517).
-has_screening(patient488,screening5518).
-has_screening(patient488,screening5519).
-has_screening(patient488,screening5520).
-has_screening(patient488,screening5521).
-has_screening(patient489,screening5522).
-has_screening(patient489,screening5523).
-has_screening(patient489,screening5524).
-has_screening(patient489,screening5525).
-has_screening(patient489,screening5526).
-has_screening(patient489,screening5527).
-has_screening(patient489,screening5528).
-has_screening(patient489,screening5529).
-has_screening(patient489,screening5530).
-has_screening(patient489,screening5531).
-has_screening(patient490,screening5532).
-has_screening(patient490,screening5533).
-has_screening(patient490,screening5534).
-has_screening(patient490,screening5535).
-has_screening(patient490,screening5536).
-has_screening(patient490,screening5537).
-has_screening(patient490,screening5538).
-has_screening(patient490,screening5539).
-has_screening(patient490,screening5540).
-has_screening(patient490,screening5541).
-has_screening(patient491,screening5542).
-has_screening(patient491,screening5543).
-has_screening(patient491,screening5544).
-has_screening(patient491,screening5545).
-has_screening(patient491,screening5546).
-has_screening(patient491,screening5547).
-has_screening(patient491,screening5548).
-has_screening(patient491,screening5549).
-has_screening(patient491,screening5550).
-has_screening(patient491,screening5551).
-has_screening(patient491,screening5552).
-has_screening(patient491,screening5553).
-has_screening(patient491,screening5554).
-has_screening(patient492,screening5555).
-has_screening(patient492,screening5556).
-has_screening(patient492,screening5557).
-has_screening(patient492,screening5558).
-has_screening(patient493,screening5559).
-has_screening(patient493,screening5560).
-has_screening(patient493,screening5561).
-has_screening(patient493,screening5562).
-has_screening(patient494,screening5563).
-has_screening(patient494,screening5564).
-has_screening(patient494,screening5565).
-has_screening(patient494,screening5566).
-has_screening(patient494,screening5567).
-has_screening(patient494,screening5568).
-has_screening(patient494,screening5569).
-has_screening(patient494,screening5570).
-has_screening(patient494,screening5571).
-has_screening(patient494,screening5572).
-has_screening(patient494,screening5573).
-has_screening(patient494,screening5574).
-has_screening(patient494,screening5575).
-has_screening(patient494,screening5576).
-has_screening(patient494,screening5577).
-has_screening(patient494,screening5578).
-has_screening(patient494,screening5579).
-has_screening(patient494,screening5580).
-has_screening(patient494,screening5581).
-has_screening(patient494,screening5582).
-has_screening(patient494,screening5583).
-has_screening(patient494,screening5584).
-has_screening(patient494,screening5585).
-has_screening(patient494,screening5586).
-has_screening(patient494,screening5587).
-has_screening(patient494,screening5588).
-has_screening(patient494,screening5589).
-has_screening(patient494,screening5590).
-has_screening(patient494,screening5591).
-has_screening(patient494,screening5592).
-has_screening(patient494,screening5593).
-has_screening(patient494,screening5594).
-has_screening(patient494,screening5595).
-has_screening(patient494,screening5596).
-has_screening(patient494,screening5597).
-has_screening(patient494,screening5598).
-has_screening(patient494,screening5599).
-has_screening(patient494,screening5600).
-has_screening(patient494,screening5601).
-has_screening(patient494,screening5602).
-has_screening(patient494,screening5603).
-has_screening(patient494,screening5604).
-has_screening(patient494,screening5605).
-has_screening(patient494,screening5606).
-has_screening(patient494,screening5607).
-has_screening(patient494,screening5608).
-has_screening(patient494,screening5609).
-has_screening(patient494,screening5610).
-has_screening(patient494,screening5611).
-has_screening(patient494,screening5612).
-has_screening(patient494,screening5613).
-has_screening(patient494,screening5614).
-has_screening(patient494,screening5615).
-has_screening(patient494,screening5616).
-has_screening(patient494,screening5617).
-has_screening(patient494,screening5618).
-has_screening(patient494,screening5619).
-has_screening(patient494,screening5620).
-has_screening(patient494,screening5621).
-has_screening(patient494,screening5622).
-has_screening(patient495,screening5623).
-has_screening(patient495,screening5624).
-has_screening(patient495,screening5625).
-has_screening(patient495,screening5626).
-has_screening(patient495,screening5627).
-has_screening(patient495,screening5628).
-has_screening(patient495,screening5629).
-has_screening(patient495,screening5630).
-has_screening(patient495,screening5631).
-has_screening(patient495,screening5632).
-has_screening(patient495,screening5633).
-has_screening(patient495,screening5634).
-has_screening(patient495,screening5635).
-has_screening(patient495,screening5636).
-has_screening(patient495,screening5637).
-has_screening(patient495,screening5638).
-has_screening(patient496,screening5639).
-has_screening(patient496,screening5640).
-has_screening(patient496,screening5641).
-has_screening(patient496,screening5642).
-has_screening(patient496,screening5643).
-has_screening(patient496,screening5644).
-has_screening(patient496,screening5645).
-has_screening(patient496,screening5646).
-has_screening(patient496,screening5647).
-has_screening(patient496,screening5648).
-has_screening(patient496,screening5649).
-has_screening(patient496,screening5650).
-has_screening(patient496,screening5651).
-has_screening(patient497,screening5652).
-has_screening(patient497,screening5653).
-has_screening(patient497,screening5654).
-has_screening(patient497,screening5655).
-has_screening(patient498,screening5656).
-has_screening(patient498,screening5657).
-has_screening(patient499,screening5658).
-has_screening(patient499,screening5659).
-has_screening(patient499,screening5660).
-has_screening(patient499,screening5661).
-has_screening(patient499,screening5662).
-has_screening(patient499,screening5663).
-has_screening(patient500,screening5664).
-has_screening(patient500,screening5665).
-has_screening(patient500,screening5666).
-has_screening(patient500,screening5667).
-has_screening(patient500,screening5668).
-has_screening(patient500,screening5669).
-has_screening(patient500,screening5670).
-has_screening(patient500,screening5671).
-has_screening(patient500,screening5672).
-has_screening(patient500,screening5673).
-has_screening(patient500,screening5674).
-has_screening(patient500,screening5675).
-has_screening(patient500,screening5676).
-has_screening(patient500,screening5677).
-has_screening(patient500,screening5678).
-has_screening(patient500,screening5679).
-has_screening(patient500,screening5680).
-has_screening(patient500,screening5681).
-has_screening(patient500,screening5682).
-has_screening(patient500,screening5683).
-has_screening(patient500,screening5684).
-has_screening(patient500,screening5685).
-has_screening(patient500,screening5686).
-has_screening(patient500,screening5687).
-has_screening(patient500,screening5688).
-has_screening(patient500,screening5689).
-has_screening(patient500,screening5690).
-has_screening(patient500,screening5691).
-has_sex(patient001,male).
-has_sex(patient002,male).
-has_sex(patient003,male).
-has_sex(patient004,male).
-has_sex(patient005,female).
-has_sex(patient006,male).
-has_sex(patient007,male).
-has_sex(patient008,male).
-has_sex(patient009,male).
-has_sex(patient010,male).
-has_sex(patient011,female).
-has_sex(patient012,female).
-has_sex(patient013,female).
-has_sex(patient014,female).
-has_sex(patient015,female).
-has_sex(patient016,female).
-has_sex(patient017,female).
-has_sex(patient018,female).
-has_sex(patient019,female).
-has_sex(patient020,female).
-has_sex(patient021,female).
-has_sex(patient022,female).
-has_sex(patient023,female).
-has_sex(patient024,female).
-has_sex(patient025,female).
-has_sex(patient026,female).
-has_sex(patient027,female).
-has_sex(patient028,female).
-has_sex(patient029,female).
-has_sex(patient030,female).
-has_sex(patient031,female).
-has_sex(patient032,female).
-has_sex(patient033,female).
-has_sex(patient034,female).
-has_sex(patient035,female).
-has_sex(patient036,female).
-has_sex(patient037,female).
-has_sex(patient038,female).
-has_sex(patient039,female).
-has_sex(patient040,female).
-has_sex(patient041,female).
-has_sex(patient042,female).
-has_sex(patient043,female).
-has_sex(patient044,female).
-has_sex(patient045,female).
-has_sex(patient046,female).
-has_sex(patient047,female).
-has_sex(patient048,female).
-has_sex(patient049,female).
-has_sex(patient050,female).
-has_sex(patient051,female).
-has_sex(patient052,female).
-has_sex(patient053,female).
-has_sex(patient054,female).
-has_sex(patient055,female).
-has_sex(patient056,female).
-has_sex(patient057,female).
-has_sex(patient058,female).
-has_sex(patient059,female).
-has_sex(patient060,female).
-has_sex(patient061,female).
-has_sex(patient062,female).
-has_sex(patient063,female).
-has_sex(patient064,female).
-has_sex(patient065,female).
-has_sex(patient066,female).
-has_sex(patient067,female).
-has_sex(patient068,female).
-has_sex(patient069,female).
-has_sex(patient070,female).
-has_sex(patient071,female).
-has_sex(patient072,female).
-has_sex(patient073,female).
-has_sex(patient074,female).
-has_sex(patient075,female).
-has_sex(patient076,female).
-has_sex(patient077,female).
-has_sex(patient078,female).
-has_sex(patient079,female).
-has_sex(patient080,female).
-has_sex(patient081,female).
-has_sex(patient082,female).
-has_sex(patient083,female).
-has_sex(patient084,female).
-has_sex(patient085,female).
-has_sex(patient086,female).
-has_sex(patient087,female).
-has_sex(patient088,female).
-has_sex(patient089,female).
-has_sex(patient090,female).
-has_sex(patient091,female).
-has_sex(patient092,female).
-has_sex(patient093,female).
-has_sex(patient094,female).
-has_sex(patient095,female).
-has_sex(patient096,female).
-has_sex(patient097,female).
-has_sex(patient098,female).
-has_sex(patient099,female).
-has_sex(patient100,male).
-has_sex(patient101,female).
-has_sex(patient102,female).
-has_sex(patient103,female).
-has_sex(patient104,female).
-has_sex(patient105,female).
-has_sex(patient106,female).
-has_sex(patient107,female).
-has_sex(patient108,female).
-has_sex(patient109,female).
-has_sex(patient110,female).
-has_sex(patient111,female).
-has_sex(patient112,female).
-has_sex(patient113,female).
-has_sex(patient114,female).
-has_sex(patient115,female).
-has_sex(patient116,female).
-has_sex(patient117,female).
-has_sex(patient118,female).
-has_sex(patient119,female).
-has_sex(patient120,female).
-has_sex(patient121,female).
-has_sex(patient122,female).
-has_sex(patient123,female).
-has_sex(patient124,female).
-has_sex(patient125,male).
-has_sex(patient126,female).
-has_sex(patient127,female).
-has_sex(patient128,female).
-has_sex(patient129,female).
-has_sex(patient130,female).
-has_sex(patient131,female).
-has_sex(patient132,female).
-has_sex(patient133,female).
-has_sex(patient134,female).
-has_sex(patient135,female).
-has_sex(patient136,female).
-has_sex(patient137,female).
-has_sex(patient138,female).
-has_sex(patient139,female).
-has_sex(patient140,female).
-has_sex(patient141,female).
-has_sex(patient142,female).
-has_sex(patient143,female).
-has_sex(patient144,female).
-has_sex(patient145,female).
-has_sex(patient146,female).
-has_sex(patient147,female).
-has_sex(patient148,female).
-has_sex(patient149,female).
-has_sex(patient150,female).
-has_sex(patient151,female).
-has_sex(patient152,female).
-has_sex(patient153,female).
-has_sex(patient154,female).
-has_sex(patient155,male).
-has_sex(patient156,male).
-has_sex(patient157,male).
-has_sex(patient158,male).
-has_sex(patient159,male).
-has_sex(patient160,male).
-has_sex(patient161,male).
-has_sex(patient162,male).
-has_sex(patient163,male).
-has_sex(patient164,male).
-has_sex(patient165,male).
-has_sex(patient166,male).
-has_sex(patient167,male).
-has_sex(patient168,male).
-has_sex(patient169,male).
-has_sex(patient170,male).
-has_sex(patient171,male).
-has_sex(patient172,male).
-has_sex(patient173,male).
-has_sex(patient174,male).
-has_sex(patient175,male).
-has_sex(patient176,male).
-has_sex(patient177,male).
-has_sex(patient178,male).
-has_sex(patient179,male).
-has_sex(patient180,male).
-has_sex(patient181,male).
-has_sex(patient182,male).
-has_sex(patient183,male).
-has_sex(patient184,male).
-has_sex(patient185,male).
-has_sex(patient186,male).
-has_sex(patient187,male).
-has_sex(patient188,male).
-has_sex(patient189,male).
-has_sex(patient190,male).
-has_sex(patient191,male).
-has_sex(patient192,male).
-has_sex(patient193,male).
-has_sex(patient194,male).
-has_sex(patient195,male).
-has_sex(patient196,male).
-has_sex(patient197,male).
-has_sex(patient198,male).
-has_sex(patient199,male).
-has_sex(patient200,male).
-has_sex(patient201,male).
-has_sex(patient202,male).
-has_sex(patient203,male).
-has_sex(patient204,male).
-has_sex(patient205,male).
-has_sex(patient206,male).
-has_sex(patient207,male).
-has_sex(patient208,male).
-has_sex(patient209,male).
-has_sex(patient210,male).
-has_sex(patient211,male).
-has_sex(patient212,male).
-has_sex(patient213,male).
-has_sex(patient214,male).
-has_sex(patient215,male).
-has_sex(patient216,male).
-has_sex(patient217,male).
-has_sex(patient218,male).
-has_sex(patient219,male).
-has_sex(patient220,male).
-has_sex(patient221,male).
-has_sex(patient222,male).
-has_sex(patient223,male).
-has_sex(patient224,male).
-has_sex(patient225,male).
-has_sex(patient226,male).
-has_sex(patient227,male).
-has_sex(patient228,male).
-has_sex(patient229,male).
-has_sex(patient230,male).
-has_sex(patient231,male).
-has_sex(patient232,male).
-has_sex(patient233,male).
-has_sex(patient234,male).
-has_sex(patient235,male).
-has_sex(patient236,male).
-has_sex(patient237,male).
-has_sex(patient238,male).
-has_sex(patient239,male).
-has_sex(patient240,male).
-has_sex(patient241,male).
-has_sex(patient242,male).
-has_sex(patient243,male).
-has_sex(patient244,male).
-has_sex(patient245,male).
-has_sex(patient246,male).
-has_sex(patient247,male).
-has_sex(patient248,male).
-has_sex(patient249,male).
-has_sex(patient250,male).
-has_sex(patient251,male).
-has_sex(patient252,male).
-has_sex(patient253,male).
-has_sex(patient254,male).
-has_sex(patient255,male).
-has_sex(patient256,male).
-has_sex(patient257,male).
-has_sex(patient258,male).
-has_sex(patient259,male).
-has_sex(patient260,male).
-has_sex(patient261,male).
-has_sex(patient262,male).
-has_sex(patient263,male).
-has_sex(patient264,male).
-has_sex(patient265,male).
-has_sex(patient266,male).
-has_sex(patient267,male).
-has_sex(patient268,male).
-has_sex(patient269,male).
-has_sex(patient270,male).
-has_sex(patient271,male).
-has_sex(patient272,male).
-has_sex(patient273,male).
-has_sex(patient274,male).
-has_sex(patient275,male).
-has_sex(patient276,male).
-has_sex(patient277,male).
-has_sex(patient278,male).
-has_sex(patient279,male).
-has_sex(patient280,male).
-has_sex(patient281,male).
-has_sex(patient282,male).
-has_sex(patient283,male).
-has_sex(patient284,male).
-has_sex(patient285,male).
-has_sex(patient286,male).
-has_sex(patient287,male).
-has_sex(patient288,male).
-has_sex(patient289,male).
-has_sex(patient290,male).
-has_sex(patient291,male).
-has_sex(patient292,male).
-has_sex(patient293,male).
-has_sex(patient294,male).
-has_sex(patient295,male).
-has_sex(patient296,male).
-has_sex(patient297,male).
-has_sex(patient298,male).
-has_sex(patient299,male).
-has_sex(patient300,male).
-has_sex(patient301,male).
-has_sex(patient302,male).
-has_sex(patient303,male).
-has_sex(patient304,male).
-has_sex(patient305,male).
-has_sex(patient306,male).
-has_sex(patient307,male).
-has_sex(patient308,male).
-has_sex(patient309,male).
-has_sex(patient310,male).
-has_sex(patient311,male).
-has_sex(patient312,male).
-has_sex(patient313,male).
-has_sex(patient314,male).
-has_sex(patient315,male).
-has_sex(patient316,male).
-has_sex(patient317,male).
-has_sex(patient318,male).
-has_sex(patient319,male).
-has_sex(patient320,male).
-has_sex(patient321,male).
-has_sex(patient322,male).
-has_sex(patient323,male).
-has_sex(patient324,male).
-has_sex(patient325,male).
-has_sex(patient326,male).
-has_sex(patient327,male).
-has_sex(patient328,male).
-has_sex(patient329,male).
-has_sex(patient330,male).
-has_sex(patient331,male).
-has_sex(patient332,male).
-has_sex(patient333,male).
-has_sex(patient334,male).
-has_sex(patient335,male).
-has_sex(patient336,male).
-has_sex(patient337,male).
-has_sex(patient338,male).
-has_sex(patient339,female).
-has_sex(patient340,male).
-has_sex(patient341,male).
-has_sex(patient342,male).
-has_sex(patient343,male).
-has_sex(patient344,male).
-has_sex(patient345,male).
-has_sex(patient346,male).
-has_sex(patient347,male).
-has_sex(patient348,male).
-has_sex(patient349,male).
-has_sex(patient350,male).
-has_sex(patient351,male).
-has_sex(patient352,male).
-has_sex(patient353,male).
-has_sex(patient354,male).
-has_sex(patient355,male).
-has_sex(patient356,male).
-has_sex(patient357,male).
-has_sex(patient358,male).
-has_sex(patient359,male).
-has_sex(patient360,male).
-has_sex(patient361,male).
-has_sex(patient362,male).
-has_sex(patient363,male).
-has_sex(patient364,male).
-has_sex(patient365,male).
-has_sex(patient366,male).
-has_sex(patient367,male).
-has_sex(patient368,male).
-has_sex(patient369,male).
-has_sex(patient370,male).
-has_sex(patient371,male).
-has_sex(patient372,male).
-has_sex(patient373,male).
-has_sex(patient374,male).
-has_sex(patient375,male).
-has_sex(patient376,male).
-has_sex(patient377,male).
-has_sex(patient378,male).
-has_sex(patient379,male).
-has_sex(patient380,male).
-has_sex(patient381,male).
-has_sex(patient382,male).
-has_sex(patient383,male).
-has_sex(patient384,male).
-has_sex(patient385,male).
-has_sex(patient386,male).
-has_sex(patient387,male).
-has_sex(patient388,male).
-has_sex(patient389,male).
-has_sex(patient390,male).
-has_sex(patient391,male).
-has_sex(patient392,male).
-has_sex(patient393,male).
-has_sex(patient394,male).
-has_sex(patient395,male).
-has_sex(patient396,male).
-has_sex(patient397,male).
-has_sex(patient398,male).
-has_sex(patient399,male).
-has_sex(patient400,male).
-has_sex(patient401,male).
-has_sex(patient402,male).
-has_sex(patient403,male).
-has_sex(patient404,male).
-has_sex(patient405,male).
-has_sex(patient406,male).
-has_sex(patient407,male).
-has_sex(patient408,male).
-has_sex(patient409,male).
-has_sex(patient410,male).
-has_sex(patient411,male).
-has_sex(patient412,male).
-has_sex(patient413,male).
-has_sex(patient414,male).
-has_sex(patient415,male).
-has_sex(patient416,male).
-has_sex(patient417,male).
-has_sex(patient418,male).
-has_sex(patient419,male).
-has_sex(patient420,male).
-has_sex(patient421,male).
-has_sex(patient422,male).
-has_sex(patient423,male).
-has_sex(patient424,male).
-has_sex(patient425,male).
-has_sex(patient426,male).
-has_sex(patient427,male).
-has_sex(patient428,male).
-has_sex(patient429,male).
-has_sex(patient430,male).
-has_sex(patient431,male).
-has_sex(patient432,male).
-has_sex(patient433,male).
-has_sex(patient434,male).
-has_sex(patient435,male).
-has_sex(patient436,male).
-has_sex(patient437,male).
-has_sex(patient438,male).
-has_sex(patient439,male).
-has_sex(patient440,male).
-has_sex(patient441,male).
-has_sex(patient442,male).
-has_sex(patient443,male).
-has_sex(patient444,male).
-has_sex(patient445,male).
-has_sex(patient446,male).
-has_sex(patient447,male).
-has_sex(patient448,male).
-has_sex(patient449,male).
-has_sex(patient450,male).
-has_sex(patient451,male).
-has_sex(patient452,male).
-has_sex(patient453,male).
-has_sex(patient454,male).
-has_sex(patient455,male).
-has_sex(patient456,male).
-has_sex(patient457,male).
-has_sex(patient458,male).
-has_sex(patient459,male).
-has_sex(patient460,male).
-has_sex(patient461,male).
-has_sex(patient462,male).
-has_sex(patient463,male).
-has_sex(patient464,male).
-has_sex(patient465,male).
-has_sex(patient466,male).
-has_sex(patient467,male).
-has_sex(patient468,male).
-has_sex(patient469,male).
-has_sex(patient470,male).
-has_sex(patient471,male).
-has_sex(patient472,male).
-has_sex(patient473,male).
-has_sex(patient474,male).
-has_sex(patient475,male).
-has_sex(patient476,male).
-has_sex(patient477,male).
-has_sex(patient478,male).
-has_sex(patient479,male).
-has_sex(patient480,male).
-has_sex(patient481,male).
-has_sex(patient482,male).
-has_sex(patient483,male).
-has_sex(patient484,male).
-has_sex(patient485,male).
-has_sex(patient486,male).
-has_sex(patient487,male).
-has_sex(patient488,male).
-has_sex(patient489,male).
-has_sex(patient490,male).
-has_sex(patient491,male).
-has_sex(patient492,male).
-has_sex(patient493,male).
-has_sex(patient494,male).
-has_sex(patient495,male).
-has_sex(patient496,male).
-has_sex(patient497,male).
-has_sex(patient498,male).
-has_sex(patient499,male).
-has_sex(patient500,female).
-patient(patient001).
-patient(patient002).
-patient(patient003).
-patient(patient004).
-patient(patient005).
-patient(patient006).
-patient(patient007).
-patient(patient008).
-patient(patient009).
-patient(patient010).
-patient(patient011).
-patient(patient012).
-patient(patient013).
-patient(patient014).
-patient(patient015).
-patient(patient016).
-patient(patient017).
-patient(patient018).
-patient(patient019).
-patient(patient020).
-patient(patient021).
-patient(patient022).
-patient(patient023).
-patient(patient024).
-patient(patient025).
-patient(patient026).
-patient(patient027).
-patient(patient028).
-patient(patient029).
-patient(patient030).
-patient(patient031).
-patient(patient032).
-patient(patient033).
-patient(patient034).
-patient(patient035).
-patient(patient036).
-patient(patient037).
-patient(patient038).
-patient(patient039).
-patient(patient040).
-patient(patient041).
-patient(patient042).
-patient(patient043).
-patient(patient044).
-patient(patient045).
-patient(patient046).
-patient(patient047).
-patient(patient048).
-patient(patient049).
-patient(patient050).
-patient(patient051).
-patient(patient052).
-patient(patient053).
-patient(patient054).
-patient(patient055).
-patient(patient056).
-patient(patient057).
-patient(patient058).
-patient(patient059).
-patient(patient060).
-patient(patient061).
-patient(patient062).
-patient(patient063).
-patient(patient064).
-patient(patient065).
-patient(patient066).
-patient(patient067).
-patient(patient068).
-patient(patient069).
-patient(patient070).
-patient(patient071).
-patient(patient072).
-patient(patient073).
-patient(patient074).
-patient(patient075).
-patient(patient076).
-patient(patient077).
-patient(patient078).
-patient(patient079).
-patient(patient080).
-patient(patient081).
-patient(patient082).
-patient(patient083).
-patient(patient084).
-patient(patient085).
-patient(patient086).
-patient(patient087).
-patient(patient088).
-patient(patient089).
-patient(patient090).
-patient(patient091).
-patient(patient092).
-patient(patient093).
-patient(patient094).
-patient(patient095).
-patient(patient096).
-patient(patient097).
-patient(patient098).
-patient(patient099).
-patient(patient100).
-patient(patient101).
-patient(patient102).
-patient(patient103).
-patient(patient104).
-patient(patient105).
-patient(patient106).
-patient(patient107).
-patient(patient108).
-patient(patient109).
-patient(patient110).
-patient(patient111).
-patient(patient112).
-patient(patient113).
-patient(patient114).
-patient(patient115).
-patient(patient116).
-patient(patient117).
-patient(patient118).
-patient(patient119).
-patient(patient120).
-patient(patient121).
-patient(patient122).
-patient(patient123).
-patient(patient124).
-patient(patient125).
-patient(patient126).
-patient(patient127).
-patient(patient128).
-patient(patient129).
-patient(patient130).
-patient(patient131).
-patient(patient132).
-patient(patient133).
-patient(patient134).
-patient(patient135).
-patient(patient136).
-patient(patient137).
-patient(patient138).
-patient(patient139).
-patient(patient140).
-patient(patient141).
-patient(patient142).
-patient(patient143).
-patient(patient144).
-patient(patient145).
-patient(patient146).
-patient(patient147).
-patient(patient148).
-patient(patient149).
-patient(patient150).
-patient(patient151).
-patient(patient152).
-patient(patient153).
-patient(patient154).
-patient(patient155).
-patient(patient156).
-patient(patient157).
-patient(patient158).
-patient(patient159).
-patient(patient160).
-patient(patient161).
-patient(patient162).
-patient(patient163).
-patient(patient164).
-patient(patient165).
-patient(patient166).
-patient(patient167).
-patient(patient168).
-patient(patient169).
-patient(patient170).
-patient(patient171).
-patient(patient172).
-patient(patient173).
-patient(patient174).
-patient(patient175).
-patient(patient176).
-patient(patient177).
-patient(patient178).
-patient(patient179).
-patient(patient180).
-patient(patient181).
-patient(patient182).
-patient(patient183).
-patient(patient184).
-patient(patient185).
-patient(patient186).
-patient(patient187).
-patient(patient188).
-patient(patient189).
-patient(patient190).
-patient(patient191).
-patient(patient192).
-patient(patient193).
-patient(patient194).
-patient(patient195).
-patient(patient196).
-patient(patient197).
-patient(patient198).
-patient(patient199).
-patient(patient200).
-patient(patient201).
-patient(patient202).
-patient(patient203).
-patient(patient204).
-patient(patient205).
-patient(patient206).
-patient(patient207).
-patient(patient208).
-patient(patient209).
-patient(patient210).
-patient(patient211).
-patient(patient212).
-patient(patient213).
-patient(patient214).
-patient(patient215).
-patient(patient216).
-patient(patient217).
-patient(patient218).
-patient(patient219).
-patient(patient220).
-patient(patient221).
-patient(patient222).
-patient(patient223).
-patient(patient224).
-patient(patient225).
-patient(patient226).
-patient(patient227).
-patient(patient228).
-patient(patient229).
-patient(patient230).
-patient(patient231).
-patient(patient232).
-patient(patient233).
-patient(patient234).
-patient(patient235).
-patient(patient236).
-patient(patient237).
-patient(patient238).
-patient(patient239).
-patient(patient240).
-patient(patient241).
-patient(patient242).
-patient(patient243).
-patient(patient244).
-patient(patient245).
-patient(patient246).
-patient(patient247).
-patient(patient248).
-patient(patient249).
-patient(patient250).
-patient(patient251).
-patient(patient252).
-patient(patient253).
-patient(patient254).
-patient(patient255).
-patient(patient256).
-patient(patient257).
-patient(patient258).
-patient(patient259).
-patient(patient260).
-patient(patient261).
-patient(patient262).
-patient(patient263).
-patient(patient264).
-patient(patient265).
-patient(patient266).
-patient(patient267).
-patient(patient268).
-patient(patient269).
-patient(patient270).
-patient(patient271).
-patient(patient272).
-patient(patient273).
-patient(patient274).
-patient(patient275).
-patient(patient276).
-patient(patient277).
-patient(patient278).
-patient(patient279).
-patient(patient280).
-patient(patient281).
-patient(patient282).
-patient(patient283).
-patient(patient284).
-patient(patient285).
-patient(patient286).
-patient(patient287).
-patient(patient288).
-patient(patient289).
-patient(patient290).
-patient(patient291).
-patient(patient292).
-patient(patient293).
-patient(patient294).
-patient(patient295).
-patient(patient296).
-patient(patient297).
-patient(patient298).
-patient(patient299).
-patient(patient300).
-patient(patient301).
-patient(patient302).
-patient(patient303).
-patient(patient304).
-patient(patient305).
-patient(patient306).
-patient(patient307).
-patient(patient308).
-patient(patient309).
-patient(patient310).
-patient(patient311).
-patient(patient312).
-patient(patient313).
-patient(patient314).
-patient(patient315).
-patient(patient316).
-patient(patient317).
-patient(patient318).
-patient(patient319).
-patient(patient320).
-patient(patient321).
-patient(patient322).
-patient(patient323).
-patient(patient324).
-patient(patient325).
-patient(patient326).
-patient(patient327).
-patient(patient328).
-patient(patient329).
-patient(patient330).
-patient(patient331).
-patient(patient332).
-patient(patient333).
-patient(patient334).
-patient(patient335).
-patient(patient336).
-patient(patient337).
-patient(patient338).
-patient(patient339).
-patient(patient340).
-patient(patient341).
-patient(patient342).
-patient(patient343).
-patient(patient344).
-patient(patient345).
-patient(patient346).
-patient(patient347).
-patient(patient348).
-patient(patient349).
-patient(patient350).
-patient(patient351).
-patient(patient352).
-patient(patient353).
-patient(patient354).
-patient(patient355).
-patient(patient356).
-patient(patient357).
-patient(patient358).
-patient(patient359).
-patient(patient360).
-patient(patient361).
-patient(patient362).
-patient(patient363).
-patient(patient364).
-patient(patient365).
-patient(patient366).
-patient(patient367).
-patient(patient368).
-patient(patient369).
-patient(patient370).
-patient(patient371).
-patient(patient372).
-patient(patient373).
-patient(patient374).
-patient(patient375).
-patient(patient376).
-patient(patient377).
-patient(patient378).
-patient(patient379).
-patient(patient380).
-patient(patient381).
-patient(patient382).
-patient(patient383).
-patient(patient384).
-patient(patient385).
-patient(patient386).
-patient(patient387).
-patient(patient388).
-patient(patient389).
-patient(patient390).
-patient(patient391).
-patient(patient392).
-patient(patient393).
-patient(patient394).
-patient(patient395).
-patient(patient396).
-patient(patient397).
-patient(patient398).
-patient(patient399).
-patient(patient400).
-patient(patient401).
-patient(patient402).
-patient(patient403).
-patient(patient404).
-patient(patient405).
-patient(patient406).
-patient(patient407).
-patient(patient408).
-patient(patient409).
-patient(patient410).
-patient(patient411).
-patient(patient412).
-patient(patient413).
-patient(patient414).
-patient(patient415).
-patient(patient416).
-patient(patient417).
-patient(patient418).
-patient(patient419).
-patient(patient420).
-patient(patient421).
-patient(patient422).
-patient(patient423).
-patient(patient424).
-patient(patient425).
-patient(patient426).
-patient(patient427).
-patient(patient428).
-patient(patient429).
-patient(patient430).
-patient(patient431).
-patient(patient432).
-patient(patient433).
-patient(patient434).
-patient(patient435).
-patient(patient436).
-patient(patient437).
-patient(patient438).
-patient(patient439).
-patient(patient440).
-patient(patient441).
-patient(patient442).
-patient(patient443).
-patient(patient444).
-patient(patient445).
-patient(patient446).
-patient(patient447).
-patient(patient448).
-patient(patient449).
-patient(patient450).
-patient(patient451).
-patient(patient452).
-patient(patient453).
-patient(patient454).
-patient(patient455).
-patient(patient456).
-patient(patient457).
-patient(patient458).
-patient(patient459).
-patient(patient460).
-patient(patient461).
-patient(patient462).
-patient(patient463).
-patient(patient464).
-patient(patient465).
-patient(patient466).
-patient(patient467).
-patient(patient468).
-patient(patient469).
-patient(patient470).
-patient(patient471).
-patient(patient472).
-patient(patient473).
-patient(patient474).
-patient(patient475).
-patient(patient476).
-patient(patient477).
-patient(patient478).
-patient(patient479).
-patient(patient480).
-patient(patient481).
-patient(patient482).
-patient(patient483).
-patient(patient484).
-patient(patient485).
-patient(patient486).
-patient(patient487).
-patient(patient488).
-patient(patient489).
-patient(patient490).
-patient(patient491).
-patient(patient492).
-patient(patient493).
-patient(patient494).
-patient(patient495).
-patient(patient496).
-patient(patient497).
-patient(patient498).
-patient(patient499).
-patient(patient500).
 screening(screening001).
 screening(screening002).
 screening(screening003).
@@ -71974,3 +64465,5 @@ zinc_sulfate_turbidity_test_level(screening996,6).
 zinc_sulfate_turbidity_test_level(screening997,6).
 zinc_sulfate_turbidity_test_level(screening998,4).
 zinc_sulfate_turbidity_test_level(screening999,5).
+
+:- end_bg.

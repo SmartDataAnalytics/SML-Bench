@@ -93,24 +93,35 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
         '..', '..', learning_task_dir_name, task_id, cplint_dir_name,
         data_dir_name, tool_specific_data_dir)
     
-    
-    ## For slipcover the examples, the settings, the background knowledge, the initial knowledge go all in one file.
-    ## and some predicates must be set (e.g. :- sc.)
-    
     _log.debug("Converting the dataset in a supported format by SLIPCOVER.")
     # open the file that will be taken as input by SLIPCOVER
     out = open(os.path.join(target_dir, file_name_base + '.pl'), 'w')
-
-    # open a temporary file that will contain the merge of all the programs
     
+    ## For slipcover the examples, the settings, the background knowledge, the initial knowledge go all in one file.
+    ## and some predicates must be set (e.g. :- sc.)
+    out.write(":- sc.\n")
+    out.flush()
+    
+        # add the language biases
+    # ../../learningtasks/<task_id>/cplint/data/slipcover/*.pl
+    #                    --> <target_dir>/<file_name_base>.pl
+    if os.path.isdir(tool_specific_dir):
+        for f_name in os.listdir(tool_specific_dir):
+            if f_name.endswith('.pl'):
+                subprocess.call(['cat', f_name], cwd=tool_specific_dir,
+                                stdout=out)   
+    
+    out.flush()
+
+    # open a temporary file that will contain the merge of all the programs (ONLY ONE FILE IS SUPPORTED!!)  
     # merge all kb files into one
     # ../../learningtasks/<task_id>/cplint/data/*.pl  # merged!
     #                    --> <target_dir>/<file_name_base>.pl
     for f_name in os.listdir(data_dir):
         if f_name.endswith('.pl'):
             subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
-    
-    out.flush()
+            
+    out.flush() 
     
     extract_inter_script_path = os.path.join(os.getcwd(),extract_inter_script)
     
@@ -142,15 +153,6 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
     subprocess.call(['cat', file_neg_converted_path], cwd=target_dir, stdout=out)
     # remove file containing the converted negative examples
     os.remove(file_neg_converted_path)
-    
-    # add the language biases
-    # ../../learningtasks/<task_id>/cplint/data/slipcover/*.pl
-    #                    --> <target_dir>/<file_name_base>.pl
-    if os.path.isdir(tool_specific_dir):
-        for f_name in os.listdir(tool_specific_dir):
-            if f_name.endswith('.pl'):
-                subprocess.call(['cat', f_name], cwd=tool_specific_dir,
-                                stdout=out)
     
     # all examples in one fold
     out.write("fold(all,F) :- findall(I,int(I),F).")
@@ -234,9 +236,10 @@ def create_exec_script(swipl_executable, slipcover_script_path, input_file_path,
 
     settings_str = settings_str[:-1]
     
-    cmd = ("echo \"consult('%s'),%s,induce([all],P),print(P),halt.\" | %s %s 1> %s\n" %  
+    cmd = ("echo \"consult('%s'),%s,induce([all],P),numbervars(P,0,_),print(P),halt.\" | %s %s 1> %s\n" %  
         (input_file_path,settings_str,swipl_executable,slipcover_script_path,slipcover_rules_path))
-
+    #cmd = ("echo \"consult('%s'),%s,induce([all],P),print(P),halt.\" | %s %s 1> %s\n" %  
+    #    (input_file_path,settings_str,swipl_executable,slipcover_script_path,slipcover_rules_path))
 
     # write the train script
     with open(file_path, 'w') as f:

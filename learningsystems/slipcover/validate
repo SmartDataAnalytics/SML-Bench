@@ -53,6 +53,9 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
     # copy the file that will be taken as input by SLIPCOVER
     out = open(os.path.join(target_dir, file_name_base + '.pl'), 'w')
     
+    out.write(":- sc.\n")
+    out.flush()
+    
     # merge all kb files into one
     # ../../learningtasks/<task_id>/cplint/data/*.pl  # merged!
     #                    --> <target_dir>/<file_name_base>.pl
