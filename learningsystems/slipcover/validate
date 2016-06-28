@@ -120,7 +120,7 @@ def validate(prolog, slipcover_executable, learned_clauses, target_dir, knowledg
     
     command = prolog + " --quiet -l " + slipcover_executable + " -g "
     args = shlex.split(command)
-    args.append("consult(\'%s\'),test_no_area(%s,[all],NPos,NNeg,Results)," % (knowledge_file_path, learned_clauses.strip()) +
+    args.append("consult(\'%s\'),test_prob(%s,[all],NPos,NNeg,Results)," % (knowledge_file_path, learned_clauses.strip()) +
                 "writeln(NPos),writeln(NNeg),use_module(convert_results),convert_results(Results, ConvResults),printlist(ConvResults),halt.") 
                 
     
