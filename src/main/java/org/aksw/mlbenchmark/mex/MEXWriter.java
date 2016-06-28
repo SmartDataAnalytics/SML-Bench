@@ -42,12 +42,37 @@ public class MEXWriter {
 		for (String dataset : log.getLearningTasks()) {
 			for (String learningProblem : log.getLearningProblems(dataset)) {
 				for (String tool : log.getLearningSystems()) {
+					ScenarioSystem scenarioSystem =
+							new Scenario(dataset, learningProblem).addSystem(log.getLearningSystemInfo(tool));
+
+					// FIXME: take config from fold 0 sufficient?
+					Configuration toolConf =
+							log.getLearningSystemConfig(scenarioSystem, 0);
+
+					// mex-core:ExperimentConfiguration
+					String conf = mex.addConfiguration();
+
+					// mex-algo:Tool
+					mex.Configuration(conf).setTool(tool, "0.0");
+
+					Iterator<String> keyIt = toolConf.getKeys();
+					String key, val;
+
+					while (keyIt.hasNext()) {
+						key = keyIt.next();
+						// FIXME: all learning system config entries should go into one ini section
+						if (nonConfigKeys.contains(key)) continue;
+
+						val = toolConf.getString(key);
+
+						// mex-algo:ToolParameter
+						// TODO: add IPL tools and parameters to MEX ontology
+						mex.Configuration(conf).addToolParameters(key, val);
+					}
+
 					int numFolds = log.getNumFolds();
 					for (int fold=0; fold<numFolds; fold++) {
-						addResults(mex,
-								new Scenario(dataset, learningProblem)
-										.addSystem(log.getLearningSystemInfo(tool)),
-								fold, numFolds, log);
+						addResults(mex, conf, scenarioSystem, fold, numFolds, log);
 					}
 				}
 			}
@@ -57,24 +82,23 @@ public class MEXWriter {
 				"http://sml-bench.aksw.org/res/", mex, MEXConstant.EnumRDFFormats.TTL);
 	}
 
-	private void addResults(MyMEX mex, ScenarioSystem scenarioSystem, int fold, int numFolds, BenchmarkLog log) throws Exception {
+	private void addResults(MyMEX mex, String conf, ScenarioSystem scenarioSystem, int fold, int numFolds, BenchmarkLog log) throws Exception {
 
 		// ----------------------------- mex-core -----------------------------
-		// mex-core:ExperimentConfiguration
-		String conf = mex.addConfiguration();
-
 		// mex-core:Execution
 		String exec = mex.Configuration(conf).addExecution(
 				EnumExecutionsType.SINGLE, EnumPhases.VALIDATION);
-		// TODO
+
+		// TODO mex-core:Execution > startedAtTime
 		//mex.Configuration(conf).setExecutionStartTime(exec, startTime);
-		// TODO
+
+		// TODO mex-core:Execution > endedAtTime
 		//mex.Configuration(conf).setExecutionEndTime(exec, endTime);
 
-		// mex-core:HardwareConfiguration
-		// TODO
+		// TODO mex-core:HardwareConfiguration
 		// mex.Configuration(conf).setHardwareConfiguration(os, EnumProcessors.INTEL_COREI5, EnumRAM.SIZE_16GB, hd, EnumCaches.CACHE_2MB);
-		// FIXME: hard coded (did this jus for now since we don't support other sampling methods)
+
+		// FIXME: hard coded (did this just for now since we don't support other sampling methods)
 		// TODO: determine sampling method
 		mex.Configuration(conf).setSamplingMethod(EnumSamplingMethods.N_FOLDS_CROSS_VALIDATION, numFolds);
 
@@ -105,8 +129,8 @@ public class MEXWriter {
 
 		// mex-core:SamplingMethod
 		// FIXME: adapt to other cases of train/test, ...
-		mex.Configuration(conf).setSamplingMethod(
-				EnumSamplingMethods.N_FOLDS_CROSS_VALIDATION, numFolds);
+//		mex.Configuration(conf).setSamplingMethod(
+//				EnumSamplingMethods.N_FOLDS_CROSS_VALIDATION, numFolds);
 		// --------------------------------------------------------------------
 
 		// ----------------------------- mex-algo -----------------------------
@@ -124,31 +148,9 @@ public class MEXWriter {
 
 		// mex-algo:AlgorithmClass
 		// TODO: Add the ILP tools to MEX ontology
+		// --------------------------------------------------------------------
 
-		// mex-algo:Tool
-		// TODO: add the ILP tools to MEX ontology
-		mex.Configuration(conf).setTool(scenarioSystem.getLearningSystem(), "0.0");
-
-		// mex-algo:ToolParameter
-		// TODO: add IPL tools and parameters to MEX ontology
-		Configuration toolConf =
-				log.getLearningSystemConfig(scenarioSystem, fold);
-		Iterator<String> keyIt = toolConf.getKeys();
-
-		String key;
-		String val;
-		while (keyIt.hasNext()) {
-			// FIXME: all learning system config entries should go into one ini section
-			key = keyIt.next();
-			if (nonConfigKeys.contains(key)) continue;
-
-			val = toolConf.getString(key);
-
-			mex.Configuration(conf).addToolParameters(key, val);
-		}
-		// --------------------------------------------------------
-
-		// ----------------------- mex-perf -----------------------
+		// ----------------------------- mex-perf -----------------------------
 		Configuration res = log.getValidationResults(scenarioSystem, fold);
 
 		if (res.containsKey(BenchmarkLog.tp) &&
@@ -196,14 +198,13 @@ public class MEXWriter {
 		} else {
 			mex.Configuration(conf).Execution(exec).setErrorMessage("An error occurred");
 		}
-		// --------------------------------------------------------
+		// --------------------------------------------------------------------
 
 	}
 
 
 	private DatasetInfo buildDatasetInfo(String datasetPath) {
 		String datasetInfoFilePath = datasetPath + File.separator + datasetInfoFileName;
-		//		Model model = new ModelCom(Graph.emptyGraph);
 		String landingPageURI ="";
 		String description = "";
 		String name = "";
