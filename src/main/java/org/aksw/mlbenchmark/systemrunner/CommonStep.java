@@ -225,6 +225,7 @@ public abstract class CommonStep {
             if (systemType == Constants.SystemType.PROBABILISTIC || 
                     MeasureMethod.getType(m) == MeasureMethodNumericValued.class) {
                 try {
+                    CrossValidationRunner.logger.info("Probabilistic measures");
                     List<String> values = result.getList(String.class, "values");
                     List<ClassificationResult> classificationResults = new LinkedList<>();
                     for (String value : values) {

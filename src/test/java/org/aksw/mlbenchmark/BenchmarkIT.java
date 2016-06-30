@@ -67,7 +67,7 @@ public class BenchmarkIT {
         Benchmark.main(args);
     }
 
-    //@Test
+    @Test
     public void testMain3() throws ConfigLoaderException {
         System.out.println("main");
         String configFile = "src/main/resources/leap.plist";
@@ -76,7 +76,7 @@ public class BenchmarkIT {
         Benchmark.main(args);
     }
 
-    @Test
+    //@Test
     public void testMain4() throws ConfigLoaderException {
         System.out.println("main");
         String configFile = "src/main/resources/trains.plist";
