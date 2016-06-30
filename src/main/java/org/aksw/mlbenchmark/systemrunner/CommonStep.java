@@ -222,8 +222,9 @@ public abstract class CommonStep {
         List<String> measures = parent.getBenchmarkRunner().getConfig().getMeasures();
         Constants.SystemType systemType = lsi.getConfig().getSystemType();
         for (String m : measures) {
-            if (systemType == Constants.SystemType.PROBABILISTIC || 
-                    MeasureMethod.getType(m) == MeasureMethodNumericValued.class) {
+            CrossValidationRunner.logger.info("Computing measure " + m);
+            if (systemType == Constants.SystemType.PROBABILISTIC
+                    || MeasureMethod.getType(m) == MeasureMethodNumericValued.class) {
                 try {
                     CrossValidationRunner.logger.info("Probabilistic measures");
                     List<String> values = result.getList(String.class, "values");
@@ -247,7 +248,8 @@ public abstract class CommonStep {
                     parent.getResultset().setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
                 }
 
-            } else if (systemType == Constants.SystemType.DISCRETE) {
+            } else if (systemType == Constants.SystemType.DISCRETE
+                    && MeasureMethod.getType(m) == MeasureMethodTwoValued.class) {
                 try {
                     int tp = result.getInt("tp");
                     int fn = result.getInt("fn");
