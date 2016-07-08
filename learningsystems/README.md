@@ -15,7 +15,7 @@ We currently support the following learning systems:
   - [TopLog](toplog/README.md)
 - [Golem](golem/README.md)
 - [Progol](progol/README.md)
-
+- [SLIPCOVER](slipcover/README.md)
 
 How to add your own tool
 ------------------------
