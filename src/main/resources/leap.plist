@@ -1,7 +1,7 @@
 {
   config = 1;
   learningsystems = ( dllearner );
-  scenarios = ( father/2 );
+  scenarios = ( father/prob1 );
   measures = ( aucroc, aucpr );
   framework = {
     crossValidationFolds = 2;
