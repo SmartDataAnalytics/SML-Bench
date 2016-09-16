@@ -61,7 +61,7 @@
 	</licenses>
 
 	<properties>
-		<compiler.version>1.7</compiler.version>
+		<compiler.version>1.8</compiler.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -148,6 +148,21 @@
 			<artifactId>log4mex</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+
+		<!-- CLI options parser -->
+		<dependency>
+			<groupId>net.sf.jopt-simple</groupId>
+			<artifactId>jopt-simple</artifactId>
+			<version>5.0.2</version>
+		</dependency>
+
+		<!-- OWL API -->
+		<dependency>
+			<groupId>net.sourceforge.owlapi</groupId>
+			<artifactId>owlapi-distribution</artifactId>
+			<version>5.0.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -160,8 +175,8 @@
 					<verbose>true</verbose>
 					<fork>true</fork>
 					<compilerVersion>${compiler.version}</compilerVersion>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>${compiler.version}</source>
+					<target>${compiler.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>
