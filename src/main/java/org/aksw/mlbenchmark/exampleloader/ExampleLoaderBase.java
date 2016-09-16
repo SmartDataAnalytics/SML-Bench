@@ -24,6 +24,10 @@ public class ExampleLoaderBase {
 		reader.close();
 	}
 
+	public void loadExamples(String fileName) throws IOException {
+		loadExamples(new File(fileName));
+	}
+
 	public void writeExamples(File output) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(output));
 		writeExamples(writer);

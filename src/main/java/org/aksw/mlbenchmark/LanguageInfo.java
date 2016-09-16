@@ -6,11 +6,11 @@ import org.aksw.mlbenchmark.languages.PrologLanguageInfo;
 import org.apache.commons.lang3.NotImplementedException;
 
 /**
- * Created by Simon Bin on 16-4-28.
+ * Factory for LanguageInfoBase implementations
  */
 public class LanguageInfo {
-	public static LanguageInfoBase forLanguage(String language) {
-		switch (Constants.LANGUAGES.valueOf(language.toUpperCase())) {
+	public static LanguageInfoBase forLanguage(Constants.LANGUAGES language) {
+		switch (language) {
 
 			case OWL: return new OwlLanguageInfo();
 

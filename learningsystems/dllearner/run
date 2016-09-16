@@ -5,6 +5,8 @@ start_dir="$(pwd)"
 cd "$(dirname "$0")"
 program_dir="$(pwd)"
 
+step="train"
+
 . ./common.sh
 
 if [ -z "$SMLB_LOADINGTIME" ]; then
@@ -19,11 +21,9 @@ fi
 common_config
 
 add_conf
-add_conf acc.type '=' '"gen_fmeasure"'
-add_conf alg.type '=' '"celoe"'
-add_conf alg.writeSearchTree '=' false
+add_conf "$algorithm_const.writeSearchTree" '=' false
 
-add_conf alg.maxExecutionTimeInSeconds '=' "$maxExecutionTime"
+add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
 
 $dllearner_file "$conf" | tee "$tmpdir"/output.log
 #cp "$tmpdir"/output.log test.log

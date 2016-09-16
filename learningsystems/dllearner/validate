@@ -5,6 +5,8 @@ start_dir="$(pwd)"
 cd "$(dirname "$0")"
 program_dir="$(pwd)"
 
+step="validate"
+
 . ./common.sh
 
 add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
