@@ -193,12 +193,10 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>appassembler-maven-plugin</artifactId>
-                <version>1.9</version>
+                <version>1.10</version>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>assemble</goal>
-                        </goals>
+                        <goals>assemble</goals>
                     </execution>
                 </executions>
                 <configuration>
@@ -211,6 +209,10 @@
                         <program>
                             <mainClass>org.aksw.mlbenchmark.Benchmark</mainClass>
                             <id>smlbench</id>
+                        </program>
+                        <program>
+                            <mainClass>org.aksw.mlbenchmark.util.OntologyMerger</mainClass>
+                            <id>merge</id>
                         </program>
                     </programs>
                 </configuration>
