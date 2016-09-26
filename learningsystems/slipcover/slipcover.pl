@@ -80,6 +80,7 @@ default_setting_sc(background_clauses,50).
 default_setting_sc(specialization,bottom).
 %setting_sc(specialization,mode).
 /* allowed values: mode,bottom */
+default_setting_sc(specialize_head,false).
 
 default_setting_sc(seed,rand(10,1231,3032)).  
 default_setting_sc(score,ll).
@@ -117,7 +118,7 @@ induce(Folds,R):-
 %  generate_clauses(R0,R,0,[],_Th).
 
 /** 
- * induce(+TrainFolds:list_of_atoms,+TrainFolds:list_of_atoms,-P:probabilistic_program,-LL:float,-AUCROC:float,-ROC:dict,-AUCPR:float,-PR:dict) is det
+ * induce(+TrainFolds:list_of_atoms,+TestFolds:list_of_atoms,-P:probabilistic_program,-LL:float,-AUCROC:float,-ROC:dict,-AUCPR:float,-PR:dict) is det
  *
  * The predicate performs structure learning using the folds indicated in 
  * TrainFolds for training. 
@@ -134,7 +135,7 @@ induce(TrainFolds,TestFolds,ROut,LL,AUCROC,ROC,AUCPR,PR):-
   test(ROut,TestFolds,LL,AUCROC,ROC,AUCPR,PR).
 
 /** 
- * test(-P:probabilistic_program,+TrainFolds:list_of_atoms,-LL:float,-AUCROC:float,-ROC:dict,-AUCPR:float,-PR:dict) is det
+ * test(+P:probabilistic_program,+TestFolds:list_of_atoms,-LL:float,-AUCROC:float,-ROC:dict,-AUCPR:float,-PR:dict) is det
  *
  * The predicate takes as input in P a probabilistic program,
  * tests P on the folds indicated in TestFolds and returns the
@@ -177,7 +178,7 @@ test(P,TestFolds,LL,AUCROC,ROC,AUCPR,PR):-
   retract_all(RFRef).
 
 /** 
- * test_prob(-P:probabilistic_program,+TrainFolds:list_of_atoms,-NPos:int,-NNeg:int,-Results:list) is det
+ * test_prob(+P:probabilistic_program,+TestFolds:list_of_atoms,-NPos:int,-NNeg:int,-Results:list) is det
  *
  * The predicate takes as input in P a probabilistic program,
  * tests P on the folds indicated in TestFolds and returns 
@@ -185,7 +186,7 @@ test(P,TestFolds,LL,AUCROC,ROC,AUCPR,PR):-
  * and in Results a list containing the probabilistic result for each query contained in TestFolds.
  */
 test_prob(P,TestFolds,NPos,NNeg,Results) :-
-  write2('Testing\n'),
+		%  write2('Testing\n'),
   input_mod(M),
   make_dynamic(M),
   findall(Exs,(member(F,TestFolds),M:fold(F,Exs)),L),
@@ -207,6 +208,7 @@ test_prob(P,TestFolds,NPos,NNeg,Results) :-
   ),
   set_sc(compiling,off),
   test_no_area([TE],NPos,NNeg,Results),
+  % write(Results), 
   (M:bg(RBG0)->
     retract_all(ThBGRef),
 %    retract_all(RBGRFRef),
@@ -509,7 +511,7 @@ induce_parameters(Folds,R):-
   ).
 
 /** 
- * induce_par(+TrainFolds:list_of_atoms,+TrainFolds:list_of_atoms,-P:probabilistic_program,-LL:float,-AUCROC:float,-ROC:dict,-AUCPR:float,-PR:dict) is det
+ * induce_par(+TrainFolds:list_of_atoms,+TestFolds:list_of_atoms,-P:probabilistic_program,-LL:float,-AUCROC:float,-ROC:dict,-AUCPR:float,-PR:dict) is det
  *
  * The predicate learns the parameters of the program stored in the in/1 fact
  * of the input file using the folds indicated in TrainFolds for training. 
@@ -1233,26 +1235,26 @@ write_disj_clause(S,(H:-B)):-
 
 
 write_head(S,[A:1.0|_Rest]):-!,
-  format(S,"~p:1.0",[A]).
+  format(S,"~q:1.0",[A]).
   
 write_head(S,[A:P,'':_P]):-!, 
-  format(S,"~p:~g",[A,P]).
+  format(S,"~q:~g",[A,P]).
 
 write_head(S,[A:P]):-!,
-  format(S,"~p:~g",[A,P]).
+  format(S,"~q:~g",[A,P]).
 
 write_head(S,[A:P|Rest]):-
-  format(S,"~p:~g ; ",[A,P]),
+  format(S,"~q:~g ; ",[A,P]),
   write_head(S,Rest).
 
 write_body(S,[]):-!,
   format(S,"  true.~n~n",[]).
 
 write_body(S,[A]):-!,
-  format(S,"  ~p.~n~n",[A]).
+  format(S,"  ~q.~n~n",[A]).
     
 write_body(S,[A|T]):-
-  format(S,"  ~p,~n",[A]),
+  format(S,"  ~q,~n",[A]),
   write_body(S,T).
 
 /** 
@@ -1294,10 +1296,15 @@ deduct(NM,Mod,DB,InTheory0,InTheory):-
   sample(1,DB,Sampled,DB1),
   (Sampled=[M]->
     generate_head(O,M,Mod,[],HL),
-    generate_body(HL,Mod,InTheory1),
-    append(InTheory0,InTheory1,InTheory2),
-    NM1 is NM-1,
-    deduct(NM1,Mod,DB1,InTheory2,InTheory)
+    ( HL \== [] ->
+       (generate_body(HL,Mod,InTheory1),
+    	append(InTheory0,InTheory1,InTheory2),
+    	NM1 is NM-1,
+    	deduct(NM1,Mod,DB1,InTheory2,InTheory)
+       )
+      ;
+       deduct(NM,Mod,DB,InTheory0,InTheory)
+    )
   ;
     InTheory=InTheory0
   ).
@@ -1438,7 +1445,7 @@ generate_body([(A,H,Det)|T],Mod,[(rule(R,HP,[],BodyList),-1e20)|CL0]):-!,
   gen_head(Head,Prob,HP),
   copy_term((HP,BodyList),(HeadV,BodyListV)),
   numbervars((HeadV,BodyListV),0,_V),
-  format2("Bottom clause: example ~p~nClause~n",[H]),
+  format2("Bottom clause: example ~q~nClause~n",[H]),
   write_disj_clause2(user_output,(HeadV:-BodyListV)),
   generate_body(T,Mod,CL0).
 
@@ -1457,7 +1464,7 @@ generate_body([(A,H)|T],Mod,[(rule(R,[Head:0.5,'':0.5],[],BodyList),-1e20)|CL0])
   get_next_rule_number(R),
   copy_term((Head,BodyList),(HeadV,BodyListV)),
   numbervars((HeadV,BodyListV),0,_V),
-  format2("Bottom clause: example ~p~nClause~n~p:0.5 :-~n",[H,HeadV]),
+  format2("Bottom clause: example ~q~nClause~n~q:0.5 :-~n",[H,HeadV]),
   write_body2(user_output,BodyListV),
   generate_body(T,Mod,CL0).
 
@@ -1496,12 +1503,14 @@ variabilize_args([C|T],[# _Ty|TT],[C|TV],A0,A):-!,
 variabilize_args([C|T],[-# _Ty|TT],[C|TV],A0,A):-!,
   variabilize_args(T,TT,TV,A0,A).
 
-variabilize_args([C|T],[_Ty|TT],[V|TV],A0,A):-
-  member(C/V,A0),!,
+variabilize_args([C|T],[Ty|TT],[V|TV],A0,A):-
+  (Ty = +Ty1;Ty = -Ty1),
+  member(C/Ty1/V,A0),!,
   variabilize_args(T,TT,TV,A0,A).
 
-variabilize_args([C|T],[_Ty|TT],[V|TV],A0,A):-
-  variabilize_args(T,TT,TV,[C/V|A0],A).
+variabilize_args([C|T],[Ty|TT],[V|TV],A0,A):-
+  (Ty = +Ty1;Ty = -Ty1),
+  variabilize_args(T,TT,TV,[C/Ty1/V|A0],A).
 
 
 cycle_modeb(ArgsTypes,Args,ArgsTypes,Args,_Mod,_BL,L,L,L,_,_M):-!.
@@ -1904,11 +1913,12 @@ specialize_rule(Rule,M,SpecRule,Lit):-
   specialize_rule(BLS,Rule,M,SpecRule,Lit).
 
 %specializes the clause's head
-specialize_rule(rule(ID,LH,BL,Lits),_M,rule(ID,LH2,BL,Lits),Lit):-
+specialize_rule(rule(ID,LH,BL,Lits),M,rule(ID,LH2,BL,Lits),Lit):-
+  M:local_setting(specialize_head,true),
 	length(LH,L), 
 	L>2,
 	delete_one(LH,LH1,Lit),  %deletes Lit
-	Lit\=' ',
+	Lit\='',
 	update_head1(LH1,L-1,LH2).  %updates parameters
 
 update_head1([],_N,[]):-!.
@@ -3472,6 +3482,7 @@ term_expansion_int(Head, ((Head1:-pita:one(Env,One)),[def_rule(Head,[],true)])) 
 sandbox:safe_primitive(slipcover:induce_par(_,_)).
 sandbox:safe_primitive(slipcover:induce(_,_)).
 sandbox:safe_primitive(slipcover:test(_,_,_,_,_,_,_)).
+sandbox:safe_primitive(slipcover:test_prob(_,_,_,_,_)).
 sandbox:safe_primitive(slipcover:set_sc(_,_)).
 
 %sandbox:safe_primitive(prolog_load_context(_,_)).
@@ -3516,7 +3527,7 @@ test(TestSet,CLL,AUCROC,ROC,AUCPR,PR):-
 %  format(SA,"Fold;\tCLL;\t AUCROC;\t AUCPR~n",[]),
   test_folds(TestSet,[],LG,0,_Pos,0,_Neg,0,CLL),
 %  format(S,"cll(all,post,~d,~d,[",[Pos,Neg]),
-%  writes(LG1,S),
+%  write_prob(LG),
   compute_areas_diagrams(LG,AUCROC,ROC,AUCPR,PR).
 /*
   ROC = c3{data:_{x:x, rows:[x-'ROC'|ROC0]},
@@ -3732,16 +3743,28 @@ find_ex_pred_cw([],_DB,LG,LG,Pos,Pos,Neg,Neg).
 
 find_ex_pred_cw([P/A|T],DB,LG0,LG,Pos0,Pos,Neg0,Neg):-
   functor(At,P,A),
-  get_types(At,Types),
-  remove_duplicates(Types,Types1),
+  findall(Types,get_types(At,Types),LT),
+  append(LT,LLT),
+  remove_duplicates(LLT,Types1),
   find_ex_db_cw(DB,At,Types1,LG0,LG1,Pos0,Pos1,Neg0,Neg1),
   find_ex_pred_cw(T,DB,LG1,LG,Pos1,Pos,Neg1,Neg).
+
+get_types(At,[]):-
+  At=..[_],!.
 
 get_types(At,Types):-
   input_mod(M),
   M:modeh(_,At),
   At=..[_|Args],
   get_args(Args,Types).
+
+get_types(At,Types):-
+  input_mod(M),
+  M:modeh(_,HT,_,_),
+  member(At,HT),
+  At=..[_|Args],
+  get_args(Args,Types).
+
 
 get_args([],[]).
 
@@ -3840,7 +3863,7 @@ find_ex_db_cw([H|T],At,Types,LG0,LG,Pos0,Pos,Neg0,Neg):-
   input_mod(M),
   get_constants(Types,H,C),
   At=..[P|L],
-  get_types(At,TypesA),
+  get_types(At,TypesA),!,
   length(L,N),
   length(LN,N),
   At1=..[P,H|LN],
@@ -3875,7 +3898,8 @@ compute_CLL_atoms([\+ H|T],N,CLL0,CLL1,[PG- (\+ H)|T1]):-!,
   end_test(Env),!,
   PG1 is 1-PG,
   (PG1=:=0.0->
-    CLL2 is CLL0-10
+    setting_sc(logzero,LZ),
+    CLL2 is CLL0+LZ
   ;
     CLL2 is CLL0+ log(PG1)
   ),		
@@ -3892,7 +3916,8 @@ compute_CLL_atoms([H|T],N,CLL0,CLL1,[PG-H|T1]):-
   ret_prob(Env,BDD,PG),
   end_test(Env),!,
   (PG=:=0.0->
-    CLL2 is CLL0-10
+    setting_sc(logzero,LZ),
+    CLL2 is CLL0+LZ
   ;	
     CLL2 is CLL0+ log(PG)
   ),
@@ -3901,11 +3926,12 @@ compute_CLL_atoms([H|T],N,CLL0,CLL1,[PG-H|T1]):-
 
 
 writes([H-H1],S):-
-  format(S,"~f - (~p)]).~n~n",[H,H1]).
+  format(S,"~f - (~q)]).~n~n",[H,H1]).
 
 writes([H-H1|T],S):-
-  format(S,"~f - (~p),~n",[H,H1]),
+  format(S,"~f - (~q),~n",[H,H1]),
   writes(T,S).
+
 
 write_p(P,S):-
   get_xy(P,PX,PY),

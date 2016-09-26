@@ -15,6 +15,8 @@ car(car_101).  car(car_102).
 shape(elipse).  shape(hexagon).  shape(rectangle).  shape(u_shaped).
 shape(triangle). shape(circle). shape(nil).
 
+train(east1).  train(east2).  train(east3).  train(east4).  train(east5).
+train(west6).  train(west7).  train(west8).  train(west9).  train(west10).
 
 % eastbound train 1
 short(car_12).      % 0
@@ -230,8 +232,5 @@ has_car(west9,car_94).
 
 has_car(west10,car_101).
 has_car(west10,car_102).
-
-train(east1).  train(east2).  train(east3).  train(east4).  train(east5).
-train(west6).  train(west7).  train(west8).  train(west9).  train(west10).
 
 
