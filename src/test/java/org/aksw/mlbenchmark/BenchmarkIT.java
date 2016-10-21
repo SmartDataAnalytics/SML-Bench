@@ -58,7 +58,7 @@ public class BenchmarkIT {
         Benchmark.main(args);
     }
 
-    @Test
+    //@Test
     public void testMain2() throws ConfigLoaderException {
         System.out.println("main");
         String configFile = "src/main/resources/trains.plist";
@@ -80,6 +80,15 @@ public class BenchmarkIT {
     public void testMain4() throws ConfigLoaderException {
         System.out.println("main");
         String configFile = "src/main/resources/trains.plist";
+        String[] args = new String[1];
+        args[0] = configFile;
+        Benchmark.main(args);
+    }
+    
+    @Test
+    public void testMain5() throws ConfigLoaderException {
+        System.out.println("main");
+        String configFile = "src/main/resources/test_5.plist";
         String[] args = new String[1];
         args[0] = configFile;
         Benchmark.main(args);
