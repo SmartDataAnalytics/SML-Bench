@@ -17,12 +17,12 @@ package org.aksw.mlbenchmark.validation.measures.exceptions;
 
 /**
  *
- * @author Giuseppe Cota <giuseppe.cota@unife.it>
+ * @author giuseppe
  */
-public class CurvePointGenerationException extends ProbabilisticResultOrderException {
+public class ProbabilisticResultOrderException extends Exception {
     
-    public CurvePointGenerationException(String msg) {
-        super(msg);
+    public ProbabilisticResultOrderException(String message) {
+        super(message);
     }
     
 }
