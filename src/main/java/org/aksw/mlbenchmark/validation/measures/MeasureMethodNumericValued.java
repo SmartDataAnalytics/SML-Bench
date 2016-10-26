@@ -27,7 +27,8 @@ public interface MeasureMethodNumericValued {
     
     final static Logger logger = LoggerFactory.getLogger(MeasureMethodNumericValued.class);
     
-    public List<? extends Point> getCurvePoints();
-    
-    public double getAUC();
+    public double getMeasure();
+//    public List<? extends Point> getCurvePoints();
+//    
+//    public double getAUC();
 }

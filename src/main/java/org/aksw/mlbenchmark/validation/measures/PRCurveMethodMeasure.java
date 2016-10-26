@@ -27,7 +27,7 @@ import org.aksw.mlbenchmark.validation.measures.exceptions.CurvePointGenerationE
  *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
-public class PRCurveMethodMeasure extends AbstractMeasureMethodNumeric {
+public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
 
     public PRCurveMethodMeasure(int nPos, int nNeg, List<ClassificationResult> results) {
         super(nPos, nNeg, results);
@@ -128,6 +128,13 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumeric {
 
     }
 
+    /**
+     * It creates a set of new points between two points of the curve.
+     * @param a
+     * @param b
+     * @return
+     * @throws CurvePointGenerationException 
+     */
     private List<PRPoint> interpolate(ConfusionPoint a, ConfusionPoint b) throws CurvePointGenerationException {
         List<PRPoint> interPoints = new LinkedList<>();
         double tpA = a.getTP();

@@ -20,12 +20,13 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.validation.measures.exceptions.ProbabilisticResultOrderException;
 
 /**
  *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
-public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumericValued {
+public abstract class AbstractMeasureMethodNumericCurve implements MeasureMethodNumericValued {
 
     // total number of positive examples
     protected int nPos;
@@ -34,17 +35,18 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
 
     protected List<ConfusionPoint> curvePoints;
 
-    public AbstractMeasureMethodNumeric(int nPos, int nNeg, List<ClassificationResult> results) {
+    public AbstractMeasureMethodNumericCurve(int nPos, int nNeg, List<ClassificationResult> results) {
         this.nPos = nPos;
         this.nNeg = nNeg;
         try {
             this.curvePoints = convertIntoCurvePoints(results);
-        } catch (CurvePointGenerationException e) {
+        } catch (ProbabilisticResultOrderException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private List<ConfusionPoint> convertIntoCurvePoints(List<ClassificationResult> results) throws CurvePointGenerationException {
+    private List<ConfusionPoint> convertIntoCurvePoints(List<ClassificationResult> results)
+            throws ProbabilisticResultOrderException {
         List<ConfusionPoint> curvePoints = new LinkedList<>();
         Collections.sort(results, Collections.reverseOrder());
         int truePos = 0;
@@ -54,11 +56,9 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
             if (res.getProb() < fPrev) {
                 curvePoints.add(new ConfusionPoint(falsePos, truePos));
                 fPrev = res.getProb();
-            } else {
-                if (res.getProb() > fPrev) {
-                    throw new CurvePointGenerationException("current score: " + res.getProb()
-                            + " is greater than previous one: " + fPrev);
-                }
+            } else if (res.getProb() > fPrev) {
+                throw new ProbabilisticResultOrderException("current score: " + res.getProb()
+                        + " is greater than previous one: " + fPrev);
             }
             if (res.getClassification() == Constants.ExType.POS) {
                 truePos++;
@@ -75,7 +75,7 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
      * @param points
      * @return
      */
-    protected double getAUC(List<? extends Point> points) {
+    protected static double getAUC(List<? extends Point> points) {
         double area = 0;
         double x = points.get(0).getX();
         double y = points.get(0).getY();
@@ -95,7 +95,17 @@ public abstract class AbstractMeasureMethodNumeric implements MeasureMethodNumer
      * @param height
      * @return
      */
-    private double trapezoidArea(double base1, double base2, double height) {
+    private static double trapezoidArea(double base1, double base2, double height) {
         return (base1 + base2) * height / 2;
     }
+
+    public abstract List<? extends Point> getCurvePoints();
+
+    public abstract double getAUC();
+
+    @Override
+    public double getMeasure() {
+        return getAUC();
+    }
+
 }

@@ -26,6 +26,8 @@ public class MeasureMethod {
                 return MeasureMethodNumericValued.class;
             case "aucpr":
                 return MeasureMethodNumericValued.class;
+            case "maxacc":
+                return MeasureMethodNumericValued.class;
             default:
                 throw new NotImplementedException("Measure " + method + " not implemented or not mapped.");
         }
@@ -57,6 +59,8 @@ public class MeasureMethod {
                 return new ROCCurveMethodMeasure(nPos, nNeg, cResults);
             case "aucpr":
                 return new PRCurveMethodMeasure(nPos, nNeg, cResults);
+            case "maxacc":
+                return new MaxAccuracyMeasure(nPos, nNeg, cResults);
             default:
                 throw new NotImplementedException("Measure " + method + " not implemented or not mapped.");
         }

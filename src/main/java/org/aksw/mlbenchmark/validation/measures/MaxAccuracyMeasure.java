@@ -18,14 +18,13 @@ package org.aksw.mlbenchmark.validation.measures;
 import java.util.Collections;
 import java.util.List;
 import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.validation.measures.exceptions.CurvePointGenerationException;
 import org.aksw.mlbenchmark.validation.measures.exceptions.ProbabilisticResultOrderException;
 
 /**
  *
  * @author giuseppe
  */
-public class MaxAccuracyMeasure {
+public class MaxAccuracyMeasure implements MeasureMethodNumericValued {
 
     // total number of positive examples
     protected int nPos;
@@ -65,5 +64,14 @@ public class MaxAccuracyMeasure {
             }
         }
         return maxAccuracy;
+    }
+
+    @Override
+    public double getMeasure() {
+        try {
+        return getMaxAccuracy();
+        } catch (ProbabilisticResultOrderException ex) {
+            throw new RuntimeException(ex);
+        }
     }
 }

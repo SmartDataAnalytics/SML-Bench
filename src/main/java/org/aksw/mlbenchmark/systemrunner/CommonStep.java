@@ -239,7 +239,8 @@ public abstract class CommonStep {
 //                    for (String m : measures) {
                     MeasureMethodNumericValued method = MeasureMethod.create(
                             m, testingPos.size(), testingNeg.size(), classificationResults);
-                    double measure = method.getAUC();
+                    
+                    double measure = method.getMeasure();
                     parent.getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
 //                    }
                 } catch (Exception e) {

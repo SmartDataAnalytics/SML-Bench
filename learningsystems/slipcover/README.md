@@ -17,7 +17,7 @@ Moreover, in order to make sure you have a foreign library that matches your arc
 ```
 	?- pack_rebuild(cplint).
 ```
-Finally `slipcover.pl` should be moved to `SML-Bench/learningsystem/slipcover`:
+<!--Finally `slipcover.pl` should be moved to `SML-Bench/learningsystem/slipcover`:
 ```
 	cp ~/lib/swipl/pack/cplint/prolog/slipcover.pl SML-Bench/learningsystem/slipcover
-```
+```-->

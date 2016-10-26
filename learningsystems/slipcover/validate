@@ -186,7 +186,7 @@ def find_slipcover_script():
     else:
         try:
             slipcover_script_path = subprocess.check_output(
-                ['locate', slipcover_script_name])
+                ['locate', slipcover_script_name]).strip().split('\n')[0]
         except subprocess.CalledProcessError:
             slipcover_script_path = ''
 

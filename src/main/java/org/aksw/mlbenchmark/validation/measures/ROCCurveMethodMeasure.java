@@ -26,7 +26,7 @@ import java.util.List;
  *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
-public class ROCCurveMethodMeasure extends AbstractMeasureMethodNumeric {
+public class ROCCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
 
     public ROCCurveMethodMeasure(int nPos, int nNeg, List<ClassificationResult> results) {
         super(nPos, nNeg, results);
