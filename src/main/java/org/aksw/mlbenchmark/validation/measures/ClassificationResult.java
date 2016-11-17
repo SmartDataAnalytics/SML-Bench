@@ -40,6 +40,14 @@ public class ClassificationResult implements Comparable<ClassificationResult> {
     public ExType getClassification() {
         return this.classType;
     }
+    
+    public boolean isPositive() {
+        return this.classType == ExType.POS;
+    }
+    
+    public boolean isNegative() {
+        return this.classType == ExType.NEG;
+    }
 
     public Double getProb() {
         return this.value;

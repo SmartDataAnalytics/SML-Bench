@@ -69,7 +69,7 @@ public class MaxAccuracyMeasure implements MeasureMethodNumericValued {
     @Override
     public double getMeasure() {
         try {
-        return getMaxAccuracy();
+            return getMaxAccuracy();
         } catch (ProbabilisticResultOrderException ex) {
             throw new RuntimeException(ex);
         }

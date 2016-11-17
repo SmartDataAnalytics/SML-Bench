@@ -2,7 +2,7 @@
   config = 1;
   learningsystems = ( dllearner );
   scenarios = ( father/prob1 );
-  measures = ( aucroc, aucpr, maxacc );
+  measures = ( aucroc, aucpr, maxacc, ll );
   framework = {
     crossValidationFolds = 2;
     threads = 2; // not implemented yet

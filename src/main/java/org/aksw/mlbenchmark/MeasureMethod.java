@@ -22,11 +22,13 @@ public class MeasureMethod {
                 return MeasureMethodTwoValued.class;
             case "weighted.predacc":
                 return MeasureMethodTwoValued.class;
-            case "aucroc":
+            case "aucroc": // Area Under the Curve 
                 return MeasureMethodNumericValued.class;
-            case "aucpr":
+            case "aucpr": // Area Under the Curve Precision-Recall (AUCPR)
                 return MeasureMethodNumericValued.class;
-            case "maxacc":
+            case "maxacc": // Max Accuracy
+                return MeasureMethodNumericValued.class;
+            case "ll": // Log-likelihood
                 return MeasureMethodNumericValued.class;
             default:
                 throw new NotImplementedException("Measure " + method + " not implemented or not mapped.");
@@ -61,6 +63,8 @@ public class MeasureMethod {
                 return new PRCurveMethodMeasure(nPos, nNeg, cResults);
             case "maxacc":
                 return new MaxAccuracyMeasure(nPos, nNeg, cResults);
+            case "ll":
+                return new LogLikelihoodMeasure(nPos, nNeg, cResults);
             default:
                 throw new NotImplementedException("Measure " + method + " not implemented or not mapped.");
         }
