@@ -13,149 +13,156 @@ import java.util.Random;
 
 /**
  * This class is a wrapper for the benchmark root configuration. It provides
- * convenience methods and constants.
- * Convenience and constants for the benchmark root config
+ * convenience methods and constants. Convenience and constants for the
+ * benchmark root config
  */
 public class BenchmarkConfig {
-	private final HierarchicalConfiguration<ImmutableNode> config;
 
-	/**
-	 * create a new BenchmarkConfig which configures a SMLBench run
-	 * @param config the apache commons configuration
-	 */
-	public BenchmarkConfig(HierarchicalConfiguration<ImmutableNode> config) {
-		this.config = config;
-	}
+    private final HierarchicalConfiguration<ImmutableNode> config;
 
-	/**
-	 * @return the underlying apache commons configuration object
-	 */
-	public HierarchicalConfiguration<ImmutableNode> getConfig() {
-		return config;
-	}
+    /**
+     * create a new BenchmarkConfig which configures a SMLBench run
+     *
+     * @param config the apache commons configuration
+     */
+    public BenchmarkConfig(HierarchicalConfiguration<ImmutableNode> config) {
+        this.config = config;
+    }
 
-	/**
-	 * @return the learning systems that should be executed
-	 */
-	public List<String> getLearningSystems() {
-		return config.getList(String.class, "learningsystems");
-	}
+    /**
+     * @return the underlying apache commons configuration object
+     */
+    public HierarchicalConfiguration<ImmutableNode> getConfig() {
+        return config;
+    }
 
-	/**
-	 * @return the random seed for deterministic fold generation
-	 */
-	public long getSeed() {
-		return config.getLong("framework.seed", new Random().nextLong());
-	}
+    /**
+     * @return the learning systems that should be executed
+     */
+    public List<String> getLearningSystems() {
+        return config.getList(String.class, "learningsystems");
+    }
 
-	/**
-	 * @return number of folds for n-fold cross validation
-	 */
-	public int getCrossValidationFolds() {
-		return config.getInt("framework.crossValidationFolds", 1);
-	}
+    /**
+     * @return the random seed for deterministic fold generation
+     */
+    public long getSeed() {
+        return config.getLong("framework.seed", new Random().nextLong());
+    }
 
-	/**
-	 * @return whether to use leave 1 out cross validation
-	 */
-	public boolean isLeaveOneOut() {
-		return config.getBoolean("framework.leaveOneOut", false);
-	}
+    /**
+     * @return number of folds for n-fold cross validation
+     */
+    public int getCrossValidationFolds() {
+        return config.getInt("framework.crossValidationFolds", 1);
+    }
 
-	/**
-	 * @return number of threads to use for parallelisation
-	 */
-	public int getThreadsCount() {
-		return config.getInt("framework.threads", 1);
-	}
+    /**
+     * @return whether to use leave 1 out cross validation
+     */
+    public boolean isLeaveOneOut() {
+        return config.getBoolean("framework.leaveOneOut", false);
+    }
 
-	/**
-	 * @param s a configuration key
-	 * @return whether the configuration contains this key
-	 */
-/*
+    /**
+     * @return number of threads to use for parallelisation
+     */
+    public int getThreadsCount() {
+        return config.getInt("framework.threads", 1);
+    }
+
+    /**
+     * @param s a configuration key
+     * @return whether the configuration contains this key
+     */
+    /*
 	public boolean containsKey(String s) {
 		return config.containsKey(s);
 	}
-*/
+     */
+    /**
+     * @return output file name for mex
+     */
+    public String getMexOutputFile() {
+        return config.getString("mex.outputFile", null);
+    }
 
-	/**
-	 * @return output file name for mex
-	 */
-	public String getMexOutputFile() {
-		return config.getString("mex.outputFile", null);
-	}
+    /**
+     * @return list of scenarios to run
+     */
+    public List<String> getScenarios() {
+        return config.getList(String.class, "scenarios");
+    }
 
-	/**
-	 * @return list of scenarios to run
-	 */
-	public List<String> getScenarios() {
-		return config.getList(String.class, "scenarios");
-	}
+    /**
+     * @return whether to delete the working directory after benchmark finishes
+     */
+    public boolean isDeleteWorkDir() {
+        return config.getBoolean("deleteWorkDir", false);
+    }
 
-	/**
-	 * @return whether to delete the working directory after benchmark finishes
-	 */
-	public boolean isDeleteWorkDir() {
-		return config.getBoolean("deleteWorkDir", false);
-	}
+    /**
+     * @param defaultValue default value if not configured
+     * @return the output file name for results
+     */
+    public String getResultOutputFile(String defaultValue) {
+        return config.getString("resultOutput", defaultValue);
+    }
 
-	/**
-	 * @param defaultValue default value if not configured
-	 * @return the output file name for results
-	 */
-	public String getResultOutputFile(String defaultValue) {
-		return config.getString("resultOutput", defaultValue);
-	}
+    public String getResultOutputFile() {
+        return config.getString("resultOutput");
+    }
 
-	public String getResultOutputFile() {
-		return config.getString("resultOutput");
-	}
+    /**
+     * @param learningSystem the learning system
+     * @return an apache commons config subconfiguration for the learning system
+     */
+    public Configuration getLearningSystemConfiguration(String learningSystem) {
+        return config.subset("learningsystems." + learningSystem);
+    }
 
-	/**
-	 * @param learningSystem the learning system
-	 * @return an apache commons config subconfiguration for the learning system
-	 */
-	public Configuration getLearningSystemConfiguration(String learningSystem) {
-		return config.subset("learningsystems." + learningSystem);
-	}
+    /**
+     * @param lsi learning system info
+     * @return an apache commons config subconfiguration for the learning system
+     */
+    public Configuration getLearningSystemConfiguration(LearningSystemInfo lsi) {
+        return getLearningSystemConfiguration(lsi.asString());
+    }
 
-	/**
-	 * @param lsi learning system info
-	 * @return an apache commons config subconfiguration for the learning system
-	 */
-	public Configuration getLearningSystemConfiguration(LearningSystemInfo lsi) {
-		return getLearningSystemConfiguration(lsi.asString());
-	}
+    /**
+     * @param task the learning task name
+     * @return an apache commons config subconfiguration for the learning task
+     */
+    public Configuration getLearningTaskConfiguration(String task) {
+        return config.subset("learningtask." + task);
+    }
 
-	/**
-	 * @param task the learning task name
-	 * @return an apache commons config subconfiguration for the learning task
-	 */
-	public Configuration getLearningTaskConfiguration(String task) {
-		return config.subset("learningtask." + task);
-	}
+    /**
+     * @param scn the scenario
+     * @return an apache commons config subconfiguration for the learning
+     * problem
+     */
+    public Configuration getLearningProblemConfiguration(ScenarioAttributes scn) {
+        return config.subset("learningproblem." + scn.getTask() + "." + scn.getProblem());
+    }
 
-	/**
-	 * @param scn the scenario
-	 * @return an apache commons config subconfiguration for the learning problem
-	 */
-	public Configuration getLearningProblemConfiguration(ScenarioAttributes scn) {
-		return config.subset("learningproblem." + scn.getTask() + "." + scn.getProblem());
-	}
+    /**
+     * @return list of desired measures in validation
+     */
+    public List<String> getMeasures() {
+        return config.getList(String.class, "measures", Arrays.asList("pred_acc"));
+    }
 
-	/**
-	 * @return list of desired measures in validation
-	 */
-	public List<String> getMeasures() {
-		return config.getList(String.class, "measures", Arrays.asList("pred_acc"));
-	}
-
-	/**
-	 * @return the configures maximum execution time in seconds for each training step
-	 */
-	public long getMaxExecutionTime() {
-		return config.getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime);
-	}
+    /**
+     * @return the configures maximum execution time in seconds for each
+     * training step
+     */
+    public long getMaxExecutionTime() {
+        return config.getLong("framework.maxExecutionTime", Constants.DefaultMaxExecutionTime);
+    }
+    
+    public Configuration getDistributionConfiguration() {
+        return config.subset("distribution.");
+    }
 
 }

@@ -19,9 +19,12 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.*;
+import org.aksw.mlbenchmark.config.DistributionConfig;
 import org.aksw.mlbenchmark.validation.measures.ClassificationResult;
 import org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued;
 import org.apache.commons.lang3.NotImplementedException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Actions shared between several types of steps (Cross Validation etc.)
@@ -36,6 +39,8 @@ public abstract class CommonStep {
     protected final SystemRunner parent;
     protected Constants.State state;
     protected String trainingResultFile;
+
+    private static final Logger logger = LoggerFactory.getLogger(CommonStep.class);
 
     public CommonStep(SystemRunner parent, ScenarioSystem ss, ConfigLoader learningProblemConfigLoader) {
         this.parent = parent;
@@ -151,7 +156,25 @@ public abstract class CommonStep {
         saveLearningSystemsConfig(configFile);
 
         final long now = System.nanoTime();
-        state = simpleProcessRunner("./run", args, cc, parent.getBenchmarkRunner().getConfig().getMaxExecutionTime(), trainingResultFile, "learning system");
+        String command;
+        Configuration distribution = parent.getBenchmarkRunner().getConfig().getDistributionConfiguration();
+        if (!distribution.isEmpty()) {
+            DistributionConfig distributionConfig = new DistributionConfig(distribution);
+            switch (distributionConfig.getDistributionType()) {
+                case NONE:
+                    command = "./run";
+                    break;
+                case OPENMPI:
+                    command = "./runmpi";
+                    break;
+                default:
+                    logger.warn("Unknown distributon type");
+                    command = "./run";
+            }
+        } else {
+            command = "./run";
+        }
+        state = simpleProcessRunner(command, args, cc, parent.getBenchmarkRunner().getConfig().getMaxExecutionTime(), trainingResultFile, "learning system");
         long duration = System.nanoTime() - now;
         File outputFileFile = new File(trainingResultFile);
         String resultKey = getResultKey();
@@ -189,10 +212,13 @@ public abstract class CommonStep {
 
         List<String> args = new LinkedList<>();
         args.add(configFile);
-
+        
+        final long now = System.currentTimeMillis();
         state = simpleProcessRunner("./validate", args, cc, 0, outputFile, "validation system");
-
+        long duration = System.currentTimeMillis() - now;
+        
         String resultKey = getResultKey();
+        parent.getResultset().setProperty(resultKey + "." + "validationDuration", duration / 1000); 
         HierarchicalConfiguration<ImmutableNode> result = null;
         if (state.equals(Constants.State.OK)) {
             try {
@@ -213,7 +239,7 @@ public abstract class CommonStep {
             Iterator<String> keys = result.getKeys();
             while (keys.hasNext()) {
                 String key = keys.next();
-                parent.getResultset().setProperty(resultKey + "." + "ValidationRaw" + "." + key, result.getProperty(key));
+                parent.getResultset().setProperty(resultKey + "." + "validationRaw" + "." + key, result.getProperty(key));
             }
         }
         // Here all the measures are computed
@@ -230,7 +256,8 @@ public abstract class CommonStep {
                     List<String> values = result.getList(String.class, "values");
                     List<ClassificationResult> classificationResults = new LinkedList<>();
                     for (String value : values) {
-                        String[] v = value.split("-");
+                        int ind = value.lastIndexOf("-");
+                        String[] v = {value.substring(0, ind), value.substring(ind + 1)};
                         Double param = new BigDecimal(v[0]).doubleValue();
 //                        Double param = Double.parseDouble(v[0]);
                         Constants.ExType exType = Constants.ExType.valueOf(v[1].toUpperCase());
@@ -239,7 +266,7 @@ public abstract class CommonStep {
 //                    for (String m : measures) {
                     MeasureMethodNumericValued method = MeasureMethod.create(
                             m, testingPos.size(), testingNeg.size(), classificationResults);
-                    
+
                     double measure = method.getMeasure();
                     parent.getResultset().setProperty(resultKey + "." + "measure" + "." + m, measure);
 //                    }
