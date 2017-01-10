@@ -15,10 +15,12 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import org.aksw.mlbenchmark.Constants;
+import static org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued.SCALE;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,14 +45,18 @@ public class ROCCurveMethodMeasureTest {
                 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1);
         for (int i = 0; i < listParams.size(); i++) {
             if (listClasses.get(i) == 1) {
-                classificationResults.add(new ClassificationResult(listParams.get(i), Constants.ExType.POS));
+                classificationResults.add(new ClassificationResult(
+                        BigDecimal.valueOf(listParams.get(i)),
+                        Constants.ExType.POS));
             } else {
-                classificationResults.add(new ClassificationResult(listParams.get(i), Constants.ExType.NEG));
+                classificationResults.add(new ClassificationResult(
+                        BigDecimal.valueOf(listParams.get(i)),
+                        Constants.ExType.NEG));
             }
         }
         int nPos = 7;
         int nNeg = 6;
-        instance = new ROCCurveMethodMeasure(nPos, nNeg,classificationResults);
+        instance = new ROCCurveMethodMeasure(nPos, nNeg, classificationResults);
     }
 
     @BeforeClass
@@ -79,7 +85,7 @@ public class ROCCurveMethodMeasureTest {
 
         // expected results
         List<Double> expFPRAxis = Arrays.asList(
-                0.0,
+                0.00000,
                 0.0,
                 0.0,
                 0.16666666666666666,
@@ -93,7 +99,7 @@ public class ROCCurveMethodMeasureTest {
                 1.0,
                 1.0);
         List<Double> expTPRAxis = Arrays.asList(
-                0.0,
+                0.00000,
                 0.14285714285714285,
                 0.2857142857142857,
                 0.2857142857142857,
@@ -108,7 +114,9 @@ public class ROCCurveMethodMeasureTest {
                 1.0);
         List<ROCPoint> expResult = new LinkedList<>();
         for (int i = 0; i < expTPRAxis.size(); i++) {
-            expResult.add(new ROCPoint(expFPRAxis.get(i), expTPRAxis.get(i)));
+            expResult.add(new ROCPoint(
+                    BigDecimal.valueOf(expFPRAxis.get(i)), 
+                    BigDecimal.valueOf(expTPRAxis.get(i))));
         }
 
         List<? extends Point> result = instance.getCurvePoints();
@@ -116,12 +124,14 @@ public class ROCCurveMethodMeasureTest {
     }
 
     @Test
-    public void testGetAUC() {
+    public void testGetMeasure() {
 //        List<? extends Point> result = instance.getListMeasures(classificationResults);
-        double auc = instance.getAUC();
+        double result = instance.getMeasure();
         double expResult = 0.6547619047619048;
-        double lim = 0.0001;
-        assertTrue(auc <= expResult + lim && auc >= expResult - lim);
+        expResult = Math.round(expResult * Math.pow(10D, SCALE)) / Math.pow(10D, SCALE);
+        double lim = 0.000;
+//        assertTrue(result <= expResult + lim && result >= expResult - lim);
+        assertEquals(expResult, result, lim);
     }
 
 }

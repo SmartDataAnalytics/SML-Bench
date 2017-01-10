@@ -43,6 +43,7 @@ if [ $is_probabilistic -eq 1 ]; then
 	#add_conf reasoner.sources '= { ks }' 
 	add_conf
 	add_conf probReasoner.type '=' '"org.dllearner.core.probabilistic.unife.BUNDLE"'
+        add_conf probReasoner.bddFType '=' '"j"'
 	add_conf probReasoner.sources '= { ks }' 
 	$dllearner_file "$conf" | tee "$tmpdir"/output.log
 else

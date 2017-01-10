@@ -15,6 +15,7 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
 import org.aksw.mlbenchmark.Constants.ExType;
 
 /**
@@ -26,13 +27,13 @@ public class ClassificationResult implements Comparable<ClassificationResult> {
     /**
      * 
      */
-    private final Double value;
+    private final BigDecimal value;
     /**
      * The original class of the example 
      */
     private final ExType classType;
 
-    public ClassificationResult(double paramDouble, ExType paramInt) {
+    public ClassificationResult(BigDecimal paramDouble, ExType paramInt) {
         this.value = paramDouble;
         this.classType = paramInt;
     }
@@ -49,20 +50,20 @@ public class ClassificationResult implements Comparable<ClassificationResult> {
         return this.classType == ExType.NEG;
     }
 
-    public Double getProb() {
+    public BigDecimal getProb() {
         return this.value;
     }
 
     @Override
     public int compareTo(ClassificationResult o) {
-        Double d = (o).getProb();
-        if (this.value < d) {
+        BigDecimal d = o.getProb();
+        if (this.value.compareTo(d) < 0) {
             return -1;
         }
-        if (this.value > d) {
+        if (this.value.compareTo(d) > 0) {
             return 1;
         }
-        ExType i = (o).getClassification();
+        ExType i = o.getClassification();
         if (i == this.classType) {
             return 0;
         }

@@ -15,6 +15,8 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
+
 /**
  * This class contains information for the confusion matrix associated to each
  * point of the curve.
@@ -29,16 +31,16 @@ public class ConfusionPoint extends Point{
 //    private int fp;
 
     public ConfusionPoint(int fp, int tp) {
-        super(fp,tp);
+        super(new BigDecimal(fp),new BigDecimal(tp));
     }
     
     public int getFP() {
-        Double d = getX();
+        BigDecimal d = getX();
         return d.intValue();
     }
     
     public int getTP() {
-        Double d = getY();
+        BigDecimal d = getY();
         return d.intValue();
     }
 

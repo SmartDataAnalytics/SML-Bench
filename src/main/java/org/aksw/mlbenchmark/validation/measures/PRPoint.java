@@ -15,21 +15,23 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
 public class PRPoint extends Point {
 
-        PRPoint(double recall, double precision) {
+        PRPoint(BigDecimal recall, BigDecimal precision) {
             super(recall, precision);
         }
 
-        double getRecall() {
+        BigDecimal getRecall() {
             return getX();
         }
 
-        double getPrecision() {
+        BigDecimal getPrecision() {
             return getY();
         }
 

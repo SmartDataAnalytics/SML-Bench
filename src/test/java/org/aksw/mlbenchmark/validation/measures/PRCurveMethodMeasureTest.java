@@ -15,10 +15,12 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import org.aksw.mlbenchmark.Constants;
+import static org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued.SCALE;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -41,11 +43,15 @@ public class PRCurveMethodMeasureTest {
                 0.6, 0.55, 0.9, 0.8, 0.7, 0.55, 0.54, 0.53, 0.52, 0.51, 0.505, 0.34, 0.3);
         List<Integer> listClasses = Arrays.asList(
                 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1);
-        for (int i = 0; i < listParams.size(); i++) {
+for (int i = 0; i < listParams.size(); i++) {
             if (listClasses.get(i) == 1) {
-                classificationResults.add(new ClassificationResult(listParams.get(i), Constants.ExType.POS));
+                classificationResults.add(new ClassificationResult(
+                        BigDecimal.valueOf(listParams.get(i)),
+                        Constants.ExType.POS));
             } else {
-                classificationResults.add(new ClassificationResult(listParams.get(i), Constants.ExType.NEG));
+                classificationResults.add(new ClassificationResult(
+                        BigDecimal.valueOf(listParams.get(i)),
+                        Constants.ExType.NEG));
             }
         }
         int nPos = 7;
@@ -107,7 +113,9 @@ public class PRCurveMethodMeasureTest {
                 0.5384615384615384);
         List<ROCPoint> expResult = new LinkedList<>();
         for (int i = 0; i < expPrecisionAxis.size(); i++) {
-            expResult.add(new ROCPoint(expRecallAxis.get(i), expPrecisionAxis.get(i)));
+            expResult.add(new ROCPoint(
+                    BigDecimal.valueOf(expRecallAxis.get(i)), 
+                    BigDecimal.valueOf(expPrecisionAxis.get(i))));
         }
 
         List<? extends Point> result = instance.getCurvePoints();
@@ -115,12 +123,14 @@ public class PRCurveMethodMeasureTest {
     }
     
      @Test
-    public void testGetAUC() {
+    public void testGetMeasure() {
         //List<? extends Point> result = instance.getListMeasures(classificationResults);
-        double auc = instance.getAUC();
+        double result = instance.getMeasure();
         double expResult = 0.7434502005930577;
-        double lim = 0.0001;
-        assertTrue(auc <= expResult + lim && auc >= expResult - lim);
+        expResult = Math.round(expResult * Math.pow(10D, SCALE)) / Math.pow(10D, SCALE);
+        double lim = 0.000;
+        assertEquals(expResult, result, lim);
+        assertTrue(result <= expResult + lim && result >= expResult - lim);
     }
 
 }

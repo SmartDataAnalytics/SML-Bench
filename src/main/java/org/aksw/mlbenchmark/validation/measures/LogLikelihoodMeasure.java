@@ -15,10 +15,10 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Collections;
 import java.util.List;
-import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.validation.measures.exceptions.ProbabilisticResultOrderException;
 
 /**
  *
@@ -41,7 +41,8 @@ public class LogLikelihoodMeasure implements MeasureMethodNumericValued {
 
     @Override
     public double getMeasure() {
-        return getLogLikelihood();
+        double LL = getLogLikelihood();
+        return Math.round(LL * Math.pow(10D, SCALE)) / Math.pow(10D, SCALE);
     }
 
     private double getLogLikelihood() {
@@ -50,9 +51,10 @@ public class LogLikelihoodMeasure implements MeasureMethodNumericValued {
 
         for (ClassificationResult res : results) {
             if (res.isPositive()) {
-                LL += Math.log(res.getProb());
+                LL += Math.log(res.getProb().setScale(SCALE, ROUNDINGMODE).doubleValue());
             } else {
-                LL += Math.log(1 - res.getProb());
+                LL += Math.log(new BigDecimal(1).subtract(res.getProb())
+                        .setScale(SCALE, ROUNDINGMODE).doubleValue());
             }
 
         }

@@ -15,6 +15,8 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Collections;
 import java.util.List;
 import org.aksw.mlbenchmark.Constants;
@@ -39,21 +41,22 @@ public class MaxAccuracyMeasure implements MeasureMethodNumericValued {
         this.results = results;
     }
 
-    double getMaxAccuracy()
+    BigDecimal getMaxAccuracy()
             throws ProbabilisticResultOrderException {
         Collections.sort(results, Collections.reverseOrder());
-        Double maxAccuracy = 0D;
+        BigDecimal maxAccuracy = new BigDecimal(0);
         int truePos = 0;
         int trueNeg = nNeg;
-        Double fPrev = Double.MAX_VALUE;
+        BigDecimal fPrev = BigDecimal.valueOf(Double.MAX_VALUE);
         for (ClassificationResult res : results) {
-            if (res.getProb() <= fPrev) {
-                Double accuracy = (double) (truePos + trueNeg) / (nPos + nNeg);
+            if (res.getProb().compareTo(fPrev) <= 0) {
+                BigDecimal accuracy = new BigDecimal(truePos + trueNeg)
+                        .divide(new BigDecimal(nPos + nNeg), SCALE, ROUNDINGMODE);
                 fPrev = res.getProb();
-                if (accuracy > maxAccuracy) {
+                if (accuracy.compareTo(maxAccuracy) > 0) {
                     maxAccuracy = accuracy;
                 }
-            } else if (res.getProb() > fPrev) {
+            } else if (res.getProb().compareTo(fPrev) > 0) {
                 throw new ProbabilisticResultOrderException("current score: " + res.getProb()
                         + " is greater than previous one: " + fPrev);
             }
@@ -69,7 +72,7 @@ public class MaxAccuracyMeasure implements MeasureMethodNumericValued {
     @Override
     public double getMeasure() {
         try {
-            return getMaxAccuracy();
+            return getMaxAccuracy().setScale(SCALE, ROUNDINGMODE).doubleValue();
         } catch (ProbabilisticResultOrderException ex) {
             throw new RuntimeException(ex);
         }

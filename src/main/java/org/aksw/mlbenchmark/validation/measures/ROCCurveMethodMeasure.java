@@ -15,6 +15,7 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -43,15 +44,21 @@ public class ROCCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
 
             //rocPoints.add(new ROCPoint(0.0, 0.0));
         for (ConfusionPoint p : this.curvePoints) {
-            rocPoints.add(new ROCPoint((double) p.getFP() / nNeg, (double) p.getTP() / nPos));
+            rocPoints.add(new ROCPoint(
+                    new BigDecimal(p.getFP()).divide(new BigDecimal(nNeg), SCALE, ROUNDINGMODE), 
+                    new BigDecimal(p.getTP()).divide(new BigDecimal(nPos), SCALE, ROUNDINGMODE)
+            ));
         }
-        rocPoints.add(new ROCPoint(1.0, 1.0));
+        rocPoints.add(new ROCPoint(
+                BigDecimal.ONE, 
+                BigDecimal.ONE
+        ));
 
         return rocPoints;
     }
 
     @Override
-    public double getAUC() {
+    public BigDecimal getAUC() {
         List<? extends Point> rocPoints = getCurvePoints();
         return getAUC(rocPoints);
     }

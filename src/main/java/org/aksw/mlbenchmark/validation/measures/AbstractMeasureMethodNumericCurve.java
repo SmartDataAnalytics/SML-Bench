@@ -15,6 +15,8 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import org.aksw.mlbenchmark.validation.measures.exceptions.CurvePointGenerationException;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -51,12 +53,12 @@ public abstract class AbstractMeasureMethodNumericCurve implements MeasureMethod
         Collections.sort(results, Collections.reverseOrder());
         int truePos = 0;
         int falsePos = 0;
-        double fPrev = Double.MAX_VALUE;
+        BigDecimal fPrev = BigDecimal.valueOf(Double.MAX_VALUE);
         for (ClassificationResult res : results) {
-            if (res.getProb() < fPrev) {
+            if (res.getProb().compareTo(fPrev) < 0) {
                 curvePoints.add(new ConfusionPoint(falsePos, truePos));
                 fPrev = res.getProb();
-            } else if (res.getProb() > fPrev) {
+            } else if (res.getProb().compareTo(fPrev) > 0) {
                 throw new ProbabilisticResultOrderException("current score: " + res.getProb()
                         + " is greater than previous one: " + fPrev);
             }
@@ -75,12 +77,12 @@ public abstract class AbstractMeasureMethodNumericCurve implements MeasureMethod
      * @param points
      * @return
      */
-    protected static double getAUC(List<? extends Point> points) {
-        double area = 0;
-        double x = points.get(0).getX();
-        double y = points.get(0).getY();
+    protected static BigDecimal getAUC(List<? extends Point> points) {
+        BigDecimal area = new BigDecimal(0);
+        BigDecimal x = points.get(0).getX();
+        BigDecimal y = points.get(0).getY();
         for (Point p : points.subList(1, points.size())) {
-            area += trapezoidArea(p.getY(), y, (p.getX() - x));
+            area = area.add(trapezoidArea(p.getY(), y, p.getX().subtract(x)));
             x = p.getX();
             y = p.getY();
         }
@@ -95,17 +97,18 @@ public abstract class AbstractMeasureMethodNumericCurve implements MeasureMethod
      * @param height
      * @return
      */
-    private static double trapezoidArea(double base1, double base2, double height) {
-        return (base1 + base2) * height / 2;
+    private static BigDecimal trapezoidArea(BigDecimal base1, BigDecimal base2, BigDecimal height) {
+        BigDecimal sumBases = base1.add(base2);
+        return sumBases.multiply(height).divide(new BigDecimal(2), SCALE, ROUNDINGMODE);
     }
 
     public abstract List<? extends Point> getCurvePoints();
 
-    public abstract double getAUC();
+    public abstract BigDecimal getAUC();
 
     @Override
     public double getMeasure() {
-        return getAUC();
+        return getAUC().setScale(SCALE, ROUNDINGMODE).doubleValue();
     }
 
 }

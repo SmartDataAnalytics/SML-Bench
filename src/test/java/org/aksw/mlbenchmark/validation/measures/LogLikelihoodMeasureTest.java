@@ -15,10 +15,12 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import org.aksw.mlbenchmark.Constants;
+import static org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued.SCALE;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -68,9 +70,13 @@ public class LogLikelihoodMeasureTest {
                 1, 1, 1, 0, 0, 0, 0, 1, 1, 0);
         for (int i = 0; i < listParams.size(); i++) {
             if (listClasses.get(i) == 1) {
-                classificationResults.add(new ClassificationResult(listParams.get(i), Constants.ExType.POS));
+                classificationResults.add(new ClassificationResult(
+                        BigDecimal.valueOf(listParams.get(i)), 
+                        Constants.ExType.POS));
             } else {
-                classificationResults.add(new ClassificationResult(listParams.get(i), Constants.ExType.NEG));
+                classificationResults.add(new ClassificationResult(
+                        BigDecimal.valueOf(listParams.get(i)),
+                        Constants.ExType.NEG));
             }
         }
         int nPos = 5;
@@ -79,10 +85,10 @@ public class LogLikelihoodMeasureTest {
         double expResult = -6.68993378200733;
         double result = instance.getMeasure();
         // approximation
-        expResult = Math.round(expResult * Math.pow(10D, 6)) / Math.pow(10D, 6);
-        result = Math.round(result * Math.pow(10D, 6)) / Math.pow(10D, 6);
+        expResult = Math.round(expResult * Math.pow(10D, SCALE)) / Math.pow(10D, SCALE);
+        //result = Math.round(result * Math.pow(10D, SCALE)) / Math.pow(10D, SCALE);
         // assert equality
         assertEquals(expResult, result, 0.0);
     }
-
+    
 }

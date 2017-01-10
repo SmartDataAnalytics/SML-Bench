@@ -15,6 +15,11 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import static org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued.ROUNDINGMODE;
+import static org.aksw.mlbenchmark.validation.measures.MeasureMethodNumericValued.SCALE;
+
 
 /**
  * Custom class that represent a point in a Cartesian XY plane
@@ -24,32 +29,32 @@ package org.aksw.mlbenchmark.validation.measures;
 public class Point {
 
     // z-axis
-    private double x;
+    private BigDecimal x;
     // y-axis
-    private double y;
+    private BigDecimal y;
 
-    public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public Point(BigDecimal x, BigDecimal y) {
+        this.x = x.setScale(SCALE, ROUNDINGMODE);
+        this.y = y.setScale(SCALE, ROUNDINGMODE);
     }
 
     /**
      * @return the x
      */
-    public double getX() {
+    public BigDecimal getX() {
         return x;
     }
 
     /**
      * @return the y
      */
-    public double getY() {
+    public BigDecimal getY() {
         return y;
     }
 
     @Override
     public boolean equals(Object o) {
-        return ((Point) o).x==this.x && ((Point)o).y == this.y;
+        return ((Point) o).x.compareTo(this.x) == 0 && ((Point)o).y.compareTo(this.y) == 0;
     }
 
 }

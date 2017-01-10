@@ -15,12 +15,14 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
+
     /**
      * This class represents a point in the Receiver-Operating Characteristics curve. 
      */
     public class ROCPoint extends Point {
 
-        ROCPoint(double fpr, double tpr) {
+        ROCPoint(BigDecimal fpr, BigDecimal tpr) {
             super(fpr, tpr);
         }
 
@@ -28,7 +30,7 @@ package org.aksw.mlbenchmark.validation.measures;
          * It returns the false positive rate
          * @return False positive rate
          */
-        double getFPR() {
+        BigDecimal getFPR() {
             return getX();
         }
 
@@ -36,7 +38,7 @@ package org.aksw.mlbenchmark.validation.measures;
          * It returns the true positive rate
          * @return True positive rate
          */
-        double getTPR() {
+        BigDecimal getTPR() {
             return getY();
         }
 

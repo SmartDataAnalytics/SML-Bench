@@ -15,6 +15,7 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 import org.aksw.mlbenchmark.validation.measures.exceptions.CurvePointGenerationException;
@@ -42,7 +43,10 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
             if (curvePoints.size() > 1) {
                 ConfusionPoint next = curvePoints.get(1);
                 // 
-                prPoints.add(new PRPoint(0.0, (double) next.getTP() / (next.getTP() + next.getFP())));
+                prPoints.add(new PRPoint(
+                        new BigDecimal(0), 
+                        new BigDecimal(next.getTP()).divide(
+                                new BigDecimal(next.getTP() + next.getFP()), SCALE, ROUNDINGMODE)));
                 /*
                 if (next.getTP() == 1 && next.getFP() == 0) {
                     prPoints.add(new PRPoint(0.0, 1.0));
@@ -54,7 +58,9 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
                 }
                 */
             } else {
-                prPoints.add(new PRPoint(0.0, (double) nPos / (nPos + nNeg)));
+                prPoints.add(new PRPoint(
+                        new BigDecimal(0), 
+                        new BigDecimal(nPos).divide(new BigDecimal(nPos + nNeg), SCALE, ROUNDINGMODE)));
             }
 
             for (ConfusionPoint b : curvePoints.subList(1, curvePoints.size())) {
@@ -67,10 +73,13 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
                 }
 
                 a = b;
-                prPoints.add(new PRPoint((double) b.getTP() / nPos,
-                        (double) b.getTP() / (b.getTP() + b.getFP())));
+                prPoints.add(new PRPoint(
+                        new BigDecimal(b.getTP()).divide(new BigDecimal(nPos), SCALE, ROUNDINGMODE),
+                        new BigDecimal(b.getTP()).divide(new BigDecimal(b.getTP() + b.getFP()), SCALE, ROUNDINGMODE)));
             }
-            prPoints.add(new PRPoint(1.0, (double) nPos / (nPos + nNeg)));
+            prPoints.add(new PRPoint(
+                    BigDecimal.ONE, 
+                    new BigDecimal(nPos).divide(new BigDecimal(nPos + nNeg), SCALE, ROUNDINGMODE)));
         } catch (CurvePointGenerationException e) {
             throw new RuntimeException(e);
         }
@@ -79,14 +88,17 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
     }
 
     @Override
-    public double getAUC() {
+    public BigDecimal getAUC() {
         List<PRPoint> prPoints = new LinkedList<>();
         try {
             ConfusionPoint a = curvePoints.get(0); // (0,0)
             if (curvePoints.size() > 1) {
                 ConfusionPoint next = curvePoints.get(1);
                 // 
-                prPoints.add(new PRPoint(0.0, (double) next.getTP() / (next.getTP() + next.getFP())));
+                prPoints.add(new PRPoint(
+                        BigDecimal.ZERO, 
+                        new BigDecimal(next.getTP())
+                                .divide(new BigDecimal(next.getTP() + next.getFP()), SCALE, ROUNDINGMODE)));
                 /*
                 if (next.getTP() == 1 && next.getFP() == 0) {
                     prPoints.add(new PRPoint(0.0, 1.0));
@@ -100,7 +112,9 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
 //                            + "First point TP=" + next.getTP() + " FP=" + next.getFP());
                 }*/
             } else {
-                prPoints.add(new PRPoint(0.0, (double) nPos / (nPos + nNeg)));
+                prPoints.add(new PRPoint(
+                        BigDecimal.ZERO, 
+                        new BigDecimal(nPos).divide(new BigDecimal(nPos + nNeg), SCALE, ROUNDINGMODE)));
             }
 
             for (ConfusionPoint b : curvePoints.subList(1, curvePoints.size())) {
@@ -116,10 +130,13 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
                     prPoints.addAll(interPRPoints);
                 }
                 a = b;
-                prPoints.add(new PRPoint((double) b.getTP() / nPos,
-                        (double) b.getTP() / (b.getTP() + b.getFP())));
+                prPoints.add(new PRPoint(
+                        new BigDecimal(b.getTP()).divide(new BigDecimal(nPos), SCALE, ROUNDINGMODE),
+                        new BigDecimal(b.getTP()).divide(new BigDecimal(b.getTP() + b.getFP()), SCALE, ROUNDINGMODE)));
             }
-            prPoints.add(new PRPoint(1.0, (double) nPos / (nPos + nNeg)));
+            prPoints.add(new PRPoint(
+                    BigDecimal.ONE, 
+                    new BigDecimal(nPos).divide(new BigDecimal(nPos + nNeg), SCALE, ROUNDINGMODE)));
         } catch (CurvePointGenerationException e) {
             throw new RuntimeException(e);
         }
@@ -135,13 +152,15 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
      * @return
      * @throws CurvePointGenerationException 
      */
-    private List<PRPoint> interpolate(ConfusionPoint a, ConfusionPoint b) throws CurvePointGenerationException {
+    private List<PRPoint> interpolate(ConfusionPoint a, ConfusionPoint b) 
+            throws CurvePointGenerationException {
         List<PRPoint> interPoints = new LinkedList<>();
-        double tpA = a.getTP();
-        double tpB = b.getTP();
-        double fpA = a.getFP();
-        double fpB = b.getFP();
-        double d1 = tpB - tpA;
+        int tpA = a.getTP();
+        int tpB = b.getTP();
+        int fpA = a.getFP();
+        int fpB = b.getFP();
+        int d1 = tpB - tpA;
+        int d2 = fpB - fpA;
         if (tpB == tpA) {
             throw new CurvePointGenerationException("Division per 0 during interpolation!");
         }
@@ -149,8 +168,9 @@ public class PRCurveMethodMeasure extends AbstractMeasureMethodNumericCurve {
             throw new CurvePointGenerationException("Impossible condition during interpolation: tpB < tpA");
         }
         for (int x = 1; x <= d1; x++) {
-            double recall = (tpA + x) / nPos;
-            double precision = (tpA + x) / (tpA + x + fpA + (fpB - fpA) / d1 * x);
+            BigDecimal recall =  new BigDecimal(tpA + x).divide(new BigDecimal(nPos), SCALE, ROUNDINGMODE);
+            BigDecimal s = new BigDecimal(d2).divide(new BigDecimal(d1), SCALE, ROUNDINGMODE).multiply(new BigDecimal(x));
+            BigDecimal precision = new BigDecimal(tpA + x).divide(new BigDecimal(tpA + x + fpA).add(s), SCALE, ROUNDINGMODE);
             interPoints.add(new PRPoint(recall, precision));
         }
 

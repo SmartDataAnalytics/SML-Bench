@@ -258,7 +258,7 @@ public abstract class CommonStep {
                     for (String value : values) {
                         int ind = value.lastIndexOf("-");
                         String[] v = {value.substring(0, ind), value.substring(ind + 1)};
-                        Double param = new BigDecimal(v[0]).doubleValue();
+                        BigDecimal param = new BigDecimal(v[0]);
 //                        Double param = Double.parseDouble(v[0]);
                         Constants.ExType exType = Constants.ExType.valueOf(v[1].toUpperCase());
                         classificationResults.add(new ClassificationResult(param, exType));

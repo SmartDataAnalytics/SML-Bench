@@ -15,7 +15,7 @@
  */
 package org.aksw.mlbenchmark.validation.measures;
 
-import java.util.List;
+import java.math.RoundingMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +24,10 @@ import org.slf4j.LoggerFactory;
  * @author Giuseppe Cota <giuseppe.cota@unife.it>
  */
 public interface MeasureMethodNumericValued {
+    
+    public final static int SCALE = 5;
+    
+    public final static RoundingMode ROUNDINGMODE = RoundingMode.HALF_UP;
     
     final static Logger logger = LoggerFactory.getLogger(MeasureMethodNumericValued.class);
     
