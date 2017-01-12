@@ -196,7 +196,9 @@
                 <version>1.10</version>
                 <executions>
                     <execution>
-                        <goals>assemble</goals>
+                        <goals>
+                            <goal>assemble</goal>
+                        </goals>
                     </execution>
                 </executions>
                 <configuration>
