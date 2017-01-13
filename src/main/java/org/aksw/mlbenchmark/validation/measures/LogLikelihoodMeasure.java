@@ -30,6 +30,10 @@ public class LogLikelihoodMeasure implements MeasureMethodNumericValued {
     protected int nPos;
     // total number of negative examples
     protected int nNeg;
+    // minimum value of Log-likelihood
+    private double LOGZERO;
+
+    private double limit = 0.00001;
 
     protected List<ClassificationResult> results;
 
@@ -37,6 +41,7 @@ public class LogLikelihoodMeasure implements MeasureMethodNumericValued {
         this.nPos = nPos;
         this.nNeg = nNeg;
         this.results = results;
+        LOGZERO = Math.round(Math.log(limit) * Math.pow(10, SCALE) / Math.pow(10, SCALE));
     }
 
     @Override
@@ -50,11 +55,16 @@ public class LogLikelihoodMeasure implements MeasureMethodNumericValued {
         Double LL = 0D;
 
         for (ClassificationResult res : results) {
+            double prob;
             if (res.isPositive()) {
-                LL += Math.log(res.getProb().setScale(SCALE, ROUNDINGMODE).doubleValue());
+                prob = res.getProb().setScale(SCALE, ROUNDINGMODE).doubleValue();
             } else {
-                LL += Math.log(new BigDecimal(1).subtract(res.getProb())
-                        .setScale(SCALE, ROUNDINGMODE).doubleValue());
+                prob = new BigDecimal(1).subtract(res.getProb()).setScale(SCALE, ROUNDINGMODE).doubleValue();
+            }
+            if (prob < limit) {
+                LL += LOGZERO;
+            } else {
+                LL += Math.log(prob);
             }
 
         }

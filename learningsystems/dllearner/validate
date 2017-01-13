@@ -33,6 +33,7 @@ if [ $is_probabilistic -eq 1 ]; then
 	rm_conf "^\s*${structurelearner_const}\..*\s*=.*$"
 	rm_conf "^\s*${lp_param_const}\..*\s*=.*$"
 	rm_conf "^\s*${measure_const}\..*\s*=.*$"
+	rm_conf "^\s*${lp_const}\.accuracyMethod.*\s*=.*$"
 	rm_conf "^\s*ks.*\.type\s*=.*$"
 	rm_conf "^\s*ks.*\.fileName\s*=.*$"
 	add_conf
