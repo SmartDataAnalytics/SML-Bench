@@ -15,6 +15,8 @@ public class LanguageInfo {
 			case OWL: return new OwlLanguageInfo();
 
 			case PROLOG: return new PrologLanguageInfo();
+                            
+                        case CPLINT: return new PrologLanguageInfo();
 
 			default: throw new NotImplementedException("No Language Info for " + language);
 

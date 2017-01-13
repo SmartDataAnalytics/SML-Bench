@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -e
 #export
 
 start_dir="$(pwd)"
@@ -21,14 +21,24 @@ fi
 common_config
 
 add_conf
-add_conf "$algorithm_const.writeSearchTree" '=' false
+#add_conf "$algorithm_const.writeSearchTree" '=' false
 
-add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
+set -x
+if [ $structurelearner_is_set -eq 1 ]; then
+	echo "Structure learning algorithm"
+	add_conf "$structurelearner_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
+	add_conf "$structurelearner_const.outputFile" '=' '"'$result_output_file'"'
+	$dllearner_file "$conf" | tee "$tmpdir"/output.log
+else
+	add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
+	$dllearner_file "$conf" | tee "$tmpdir"/output.log
+	#cp "$tmpdir"/output.log test.log
+	# we only check the first result for the benchmark
+	sed '0,/^solutions:/d' "$tmpdir"/output.log | grep '^1: ' \
+	   | sed -e 's,^1: ,,' -e 's, ([^)]*)$,,' > "$result_output_file"
 
-$dllearner_file "$conf" | tee "$tmpdir"/output.log
-#cp "$tmpdir"/output.log test.log
-# we only check the first result for the benchmark
-sed '0,/^solutions:/d' "$tmpdir"/output.log | grep '^1: ' \
-   | sed -e 's,^1: ,,' -e 's, ([^)]*)$,,' > "$result_output_file"
+	#cat "$conf"
+fi
+set +x
 
-#cat "$conf"
+

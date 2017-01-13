@@ -1,0 +1,259 @@
+#!/usr/bin/env python
+
+import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
+import logging
+import os
+import io
+import sys
+import stat
+import subprocess
+# import platform
+import atexit
+import signal
+import ctypes
+import shlex
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+learning_task_dir_name = 'learningtasks'
+cplint_dir_name = 'cplint'
+data_dir_name = 'data'
+tool_specific_data_dir = 'slipcover'
+lp_dir_name = 'lp'
+swipl_executable_name = 'swipl'
+slipcover_script_name = 'slipcover.pl'
+validate_script_file_name = 'validate.sh'
+extract_inter_script = "extract_facts.pl"
+
+class NoSwiplInstallationFoundException(Exception):
+    """Raised when no installed SWI-Prolog could be found."""
+
+class NoSLIPCOVERScriptFound(Exception):
+    """Raised when no SLIPCOVER script could be found"""
+    
+def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos_path,
+                      file_neg_path, prolog):
+    """
+    """
+    
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            cplint_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, cplint_dir_name,
+        data_dir_name, tool_specific_data_dir)
+    extract_inter_script_path = os.path.join(os.getcwd(), extract_inter_script)
+    
+    # copy the file that will be taken as input by SLIPCOVER
+    out = open(os.path.join(target_dir, file_name_base + '.pl'), 'w')
+    
+    out.write(":- sc.\n")
+    out.flush()
+    
+    # merge all kb files into one
+    # ../../learningtasks/<task_id>/cplint/data/*.pl  # merged!
+    #                    --> <target_dir>/<file_name_base>.pl
+    for f_name in os.listdir(data_dir):
+        if f_name.endswith('.pl'):
+            subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+    
+    # convert the positive examples
+    file_pos_converted_path = os.path.join(target_dir, "file_pos_converted.pl")
+    
+    command = prolog + " --quiet -l " + extract_inter_script_path + " -g "
+
+    args = shlex.split(command)
+    args.append("extract_pos_examples(\'%s\',\'%s\'),halt." % (file_pos_path, file_pos_converted_path))
+    
+    subprocess.call(args, cwd=os.getcwd())
+    # copy the converted negative examples
+    subprocess.call(['cat', file_pos_converted_path], cwd=target_dir, stdout=out)
+    # remove file containing the converted positive examples
+    os.remove(file_pos_converted_path)
+    
+    # convert the negative examples
+    file_neg_converted_path = os.path.join(target_dir, "file_neg_converted.pl")
+    
+    command = prolog + " --quiet -l " + extract_inter_script_path + " -g "
+
+    args = shlex.split(command)
+    args.append("extract_neg_examples(\'%s\',\'%s\'),halt." % (file_neg_path, file_neg_converted_path))
+    
+    subprocess.call(args, cwd=os.getcwd())
+    # copy converted negative examples
+    subprocess.call(['cat', file_neg_converted_path], cwd=target_dir, stdout=out)
+    # remove file containing the converted negative examples
+    os.remove(file_neg_converted_path)
+    
+    # add the language biases
+    # ../../learningtasks/<task_id>/cplint/data/slipcover/*.pl
+    #                    --> <target_dir>/<file_name_base>.pl
+    if os.path.isdir(tool_specific_dir):
+        for f_name in os.listdir(tool_specific_dir):
+            if f_name.endswith('.pl'):
+                subprocess.call(['cat', f_name], cwd=tool_specific_dir,
+                                stdout=out)
+    
+    # all examples in one fold
+    out.write("fold(all,F) :- findall(I,int(I),F).")
+    out.close()
+    
+    return os.path.join(target_dir, file_name_base + ".pl")
+
+
+def validate(prolog, slipcover_executable, learned_clauses, target_dir, knowledge_file_path):
+    
+    #file_path = os.path.join(target_dir, validate_script_file_name)
+    output_results_temp = os.path.join(target_dir, "output_results_temp")
+    out = open(output_results_temp, 'w+')
+    
+    #command = ("echo \"consult(\'%s\'),test_no_area(%s,[all],NPos,NNeg,Results)," % (knowledge_file_path, learned_clauses.strip()) +
+    #           "writeln(NPos),writeln(NNeg),use_module(convert_results),convert_results(Results, ConvResults),printlist(ConvResults),halt.\""+
+    #           " | %s %s \n" %  
+    #    (prolog,slipcover_executable))
+    
+    command = prolog + " --quiet -l " + slipcover_executable + " -g "
+    args = shlex.split(command)
+    args.append("consult(\'%s\'),test_prob(%s,[all],NPos,NNeg,LL,Results)," % (knowledge_file_path, learned_clauses.strip()) +
+                "writeln(NPos),writeln(NNeg),use_module(convert_results),convert_results(Results, ConvResults),printlist(ConvResults),halt.") 
+                
+    
+    # write the train script
+    #with open(file_path, 'w') as f:
+    #    f.write("#!/bin/bash\n\n")
+    #    f.write(command)
+
+    # make the train script executable
+    #os.chmod(file_path, stat.S_IRWXU)
+    
+    #subprocess.call(file_path, cwd=os.getcwd(), stdout=out)
+    subprocess.call(args, cwd=os.getcwd(), stdout=out)
+    out.flush()
+    out.seek(0, os.SEEK_SET)
+    
+    nPos = int(out.readline())
+    nNeg = int(out.readline())
+    
+    results = out.readlines()
+    
+    #command = prolog + " --quiet -l " + slipcover_executable + " -g "
+    #args = shlex.split(command)
+    
+    
+    out.close()
+    return nPos, nNeg, results
+
+def write_config(nPos, nNeg, results, system_type, output_file_path):
+    out = open(output_file_path, 'w')
+    
+    out.write("pos: %i" % nPos + os.linesep + 
+              "neg: %i" % nNeg + os.linesep)
+    
+    out.write("values: ")
+    out.write("" + results[0].strip() + "")
+    for result in results[1:]:
+        if result.strip():
+            out.write(", " + result.strip() + "")
+            
+    #out.write("\n)")
+    
+    
+def find_swipl():
+    swipl_exec_path = subprocess.check_output(['which', swipl_executable_name])
+    swipl_exec_path = swipl_exec_path.strip()
+
+    if swipl_exec_path == '':
+        msg = 'No SWI-Prolog installation could be found. Please make sure you ' \
+                  'have SWI-Prolog installed via your package manager or download ' \
+                  'and manually install it ' \
+                  'from http://www.swi-prolog.org/Download.html'
+        raise NoSwiplInstallationFoundException(msg)
+
+    return swipl_exec_path
+
+# It finds where is the script 'slipcover.pl' 
+def find_slipcover_script():
+    if os.path.isfile(os.path.join(os.getcwd(), slipcover_script_name)):
+        # SLIPCOVER executable resides in the same directory
+        return os.path.join(os.getcwd(), slipcover_script_name)
+
+    else:
+        try:
+            slipcover_script_path = subprocess.check_output(
+                ['locate', slipcover_script_name]).strip().split('\n')[0]
+        except subprocess.CalledProcessError:
+            slipcover_script_path = ''
+
+        if slipcover_script_path == '':
+            msg = 'No %s script could be found. Please download it ' \
+                  'from https://sites.google.com/a/unife.it/ml/slipcover ' \
+                  'or copy it from ~/lib/swipl/pack/cplint/prolog after ' \
+                  'you have installed the cplint pack ' \
+                  'and put it into the learning ' \
+                  'system\'s directory' % (slipcover_script_name)
+            raise NoSLIPCOVERScriptFound(msg)
+
+        return slipcover_script_path
+
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.' + setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.' + setting] = raw_value
+
+    return settings
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('config_file')
+    args = argparser.parse_args()
+    # read the configuration file
+    cfg = read_config(args.config_file)
+    
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    input_file = cfg['input']
+    output_file_path = cfg['output']
+    # read the learned theory 
+#    learned_clauses = []
+#    with open(input_file) as res:
+#        for line in res.readlines():
+#            learned_clauses.append(line.strip())
+
+    learned_clauses = ""
+    with open(input_file, 'r') as res:
+        learned_clauses = res.read()
+            
+    file_name_base = learning_task_id + '_' + learning_problem_id
+    target_dir = cfg['data.workdir']
+    _log.debug('Target dir is %s' % target_dir)
+    swipl_executable = find_swipl()
+    slipcover_script_path = find_slipcover_script()
+    # copy input files for execution
+    knowledge_file_path = copy_files_around(learning_task_id, learning_problem_id, target_dir,
+                                            file_name_base, cfg['filename.pos'], cfg['filename.neg'], prolog=swipl_executable)
+    # validation execution!
+    nPos, nNeg, results = validate(swipl_executable, slipcover_script_path, learned_clauses, target_dir, knowledge_file_path)
+    # write the output configuration file
+    write_config(nPos, nNeg, results, cfg['type'], output_file_path)
+    
+    _log.debug('SLIPCOVER run test finished.')
+    _log.debug('Results written to %s' % output_file_path)

@@ -15,7 +15,7 @@ We currently support the following learning systems:
   - [TopLog](toplog/README.md)
 - [Golem](golem/README.md)
 - [Progol](progol/README.md)
-
+- [SLIPCOVER](slipcover/README.md)
 
 How to add your own tool
 ------------------------
@@ -24,7 +24,7 @@ The benchmarking framework assumes to find for each tool to consider a folder na
 
 ```bash
 $ ls learningsystems/
-aleph  dllearner  funclog  golem  progol  progolem  README.md  toplog
+aleph  dllearner  funclog  golem  progol  progolem  README.md  slipcover toplog
 ```
 
 To add a new tool just create a new directory under `learningsystems` named as your tool identifier, e.g. `mytool`. Inside the `mytool` directory there should be at least two executable files named `run` and `validate`. Furthermore, a file `system.ini` should be provided that specifies the language of the knowledge base and input examples. The purpose of the `run` executable is to run your inductive learning tool, writing the learned hypotheses to a file. Currently, the expected parameters are:

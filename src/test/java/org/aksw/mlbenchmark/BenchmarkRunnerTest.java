@@ -15,12 +15,10 @@
  */
 package org.aksw.mlbenchmark;
 
-import java.io.File;
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
-import org.apache.commons.configuration2.AbstractConfiguration;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.BaseHierarchicalConfiguration;
 import org.junit.After;
@@ -29,13 +27,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.ClassRule;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import static org.mockito.Mockito.*;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
-import org.mockito.runners.MockitoJUnitRunner;
 
 
 /**
@@ -291,7 +283,7 @@ public class BenchmarkRunnerTest {
         System.out.println("run");
         instance.run();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 //
 //    /**

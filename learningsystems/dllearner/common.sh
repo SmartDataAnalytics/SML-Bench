@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 tool_name=dllearner
 
 learning_task_dir_name=learningtasks
@@ -20,6 +20,7 @@ algorithm_is_set=0
 lp_is_set=0
 reasoner_is_set=0
 measure_is_set=0
+structurelearner_is_set=0
 
 find_dllearner() {
     set -- */bin/"$dllearner_executable_name" bin/"$dllearner_executable_name"
@@ -36,6 +37,10 @@ add_conf() {
 
 remove_blanks() {
     grep -v '^\s*\(;\|\s*$\)'
+}
+
+rm_conf() {
+	sed '/'$@'/d' $conf > temp && mv temp $conf
 }
 
 quote_examples() {
@@ -85,7 +90,11 @@ read_lp_conf() {
                 elif [ $key1 = $measure_const ]
                 then
                     measure_is_set=1
-                fi
+
+				elif [ $key1 = $structurelearner_const ]
+				then 
+					structurelearner_is_set=1
+				fi
             fi
 
             # Do not add an algorithm to the config if common.sh is sourced
@@ -113,6 +122,7 @@ fi
 learning_task="$SMLB_LEARNINGTASK"
 learning_problem="$SMLB_LEARNINGPROBLEM"
 result_output_file="$SMLB_OUTPUT"
+measures=(${SMLB_MEASURES//:/ })  
 
 # define directory names
 task_dir="$learning_task_dir_name"/"$learning_task"

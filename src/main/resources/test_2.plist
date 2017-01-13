@@ -1,0 +1,13 @@
+{
+  config = 1;
+  learningsystems = ( slipcover );
+  scenarios = ( trains/1, mutagenesis/42, hepatitis/1, carcinogenesis/1);
+  measures = ( aucroc, aucpr );
+  framework = {
+    crossValidationFolds = 2;
+    threads = 2; // not implemented yet
+    maxExecutionTime = 3000
+  };
+  //resultOutput = testResult.prop;
+  resultOutput = testResult.xml;
+}

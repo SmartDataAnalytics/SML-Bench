@@ -60,10 +60,10 @@
         </license>
     </licenses>
 
-	<properties>
-		<compiler.version>1.8</compiler.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <properties>
+        <compiler.version>1.8</compiler.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <repositories>
         <repository>
@@ -160,19 +160,23 @@
             <artifactId>jena-core</artifactId>
             <version>2.13.0</version>
         </dependency>
-
-        <!-- CLI options parser -->
         <dependency>
             <groupId>net.sf.jopt-simple</groupId>
             <artifactId>jopt-simple</artifactId>
-            <version>5.0.2</version>
+            <version>5.0.3</version>
+            <type>jar</type>
         </dependency>
-
-        <!-- OWL API -->
+        <dependency>
+            <groupId>net.sourceforge.owlapi</groupId>
+            <artifactId>owlapi-apibinding</artifactId>
+            <version>5.0.2</version>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>net.sourceforge.owlapi</groupId>
             <artifactId>owlapi-distribution</artifactId>
             <version>5.0.2</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 
@@ -186,8 +190,8 @@
                     <verbose>true</verbose>
                     <fork>true</fork>
                     <compilerVersion>${compiler.version}</compilerVersion>
-                    <source>${compiler.version}</source>
-                    <target>${compiler.version}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>

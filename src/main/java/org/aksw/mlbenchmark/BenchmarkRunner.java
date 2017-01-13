@@ -3,7 +3,7 @@ package org.aksw.mlbenchmark;
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioLangAttributes;
-import org.aksw.mlbenchmark.mex.MEXWriter;
+//import org.aksw.mlbenchmark.mex.MEXWriter;
 import org.aksw.mlbenchmark.systemrunner.AccuracyRunner;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.aksw.mlbenchmark.systemrunner.SystemRunner;
@@ -297,10 +297,10 @@ public class BenchmarkRunner {
 		finalizeExecutor();
 
 		if (mexOutputFilePath != null) {
-			MEXWriter mexWriter = new MEXWriter();
+			//MEXWriter mexWriter = new MEXWriter();
 
 			try {
-				mexWriter.write(benchmarkLog, mexOutputFilePath);
+				//mexWriter.write(benchmarkLog, mexOutputFilePath);
 				logger.info("wrote MEX file to " + mexOutputFilePath + ".ttl");
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -1,0 +1,167 @@
+#!/usr/bin/env python
+
+import os
+import subprocess
+import logging
+import shlex
+import argparse
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+data_dir_name = 'data'
+tool_specific_data_dir = 'slipcover'
+extract_inter_script = "extract_facts.pl"
+swipl_executable_name = 'swipl'
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+class NoSwiplInstallationFoundException(Exception):
+    """Raised when no installed SWI-Prolog could be found."""
+
+class NoSLIPCOVERScriptFound(Exception):
+    """Raised when no SLIPCOVER script could be found"""
+
+def preprocessing(task_id, lp_id, target_dir, file_name_base, prolog):
+    """Finds all the files necessary to run slipcover:
+    - ../../learningtasks/<task_id>/prolog/data/slipcover/*.pl
+                            --> <target_dir>/<file_name_base>.pl
+    - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.pl
+    """
+    # <file_name_base>.b (background knowledge)
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            prolog_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        data_dir_name, tool_specific_data_dir)
+    
+    
+    # # For slipcover the examples, the settings, the background knowledge, the initial knowledge go all in one file.
+    # # and some predicates must be set (e.g. :- sc.)
+
+
+    # open a temporary file that will contain the merge of all the programs
+    bg_temp_path = os.path.join(target_dir, "background_knowledge_temp.pl") 
+    temp_kb = open(bg_temp_path, 'w')
+    # merge all kb files into one
+    # ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+    #                    --> <target_dir>/<file_name_base>.pl
+    for f_name in os.listdir(data_dir):
+        if f_name.endswith('.pl'):
+            subprocess.call(['cat', f_name], cwd=data_dir, stdout=temp_kb)
+    temp_kb.close()
+    
+    # open the file that will contain the background knowledge of SLIPCOVER
+    out = open(os.path.join(target_dir, file_name_base + '.pl'), 'w')
+    _log.debug("Creating background knowledge for SLIPCOVER.")
+    out.write(":- sc.\n")
+    # Extract the interpretations and save the new kb.
+    # A prolog script will be used, therefore it should be checked if we have SWI-Prolog installed
+    out.write(":- begin_bg.\n")
+    out.flush()
+    extract_inter_script_path = os.path.join(os.getcwd(), extract_inter_script)
+    # extracted interpretations file path 
+    inter_temp_path = os.path.join(target_dir, "output_interpretations.pl")
+    command = prolog + " --quiet -l " + extract_inter_script_path + " -g "
+    # subprocess.call([prolog,"-l " + extract_inter_script_path, 
+    #                  "-g extract(%s,%s,%s,%s)." % (bg_temp_path,file_pos,file_neg,inter_temp_path)],
+    #                 cwd=tool_specific_dir, stdout=out)
+    args = shlex.split(command)
+    args.append("extract(\'%s\',\'%s\'),halt." % (bg_temp_path, inter_temp_path))
+    
+    subprocess.call(args, cwd=tool_specific_dir, stdout=out)
+    out.write(":- end_bg.\n")
+    out.flush()
+    # remove the old merged kb
+    os.remove(bg_temp_path)
+    # add the language biases
+    # ../../learningtasks/<task_id>/prolog/data/slipcover/*.pl
+    #                    --> <target_dir>/<file_name_base>.pl
+    if os.path.isdir(tool_specific_dir):
+        for f_name in os.listdir(tool_specific_dir):
+            if f_name.endswith('.pl'):
+                subprocess.call(['cat', f_name], cwd=tool_specific_dir, stdout=out)
+    # add the extracted facts
+    subprocess.call(['cat', inter_temp_path], stdout=out)
+    # remove file containing the extracted interpretations
+    os.remove(inter_temp_path)
+    # all examples in one fold
+    # out.write("fold(all,F) :- findall(I,int(I),F).")
+    # close the final file 
+    out.close()
+    _log.debug("Conversion completed")
+    # return the final file
+    return os.path.join(target_dir, file_name_base + ".pl")
+
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.' + setting] = raw_value
+
+    for item in conf.items('data'):
+        setting, raw_value = item
+        settings['data.' + setting] = raw_value
+    
+    for item in conf.items('preprocessing'):
+            setting, raw_value = item
+            settings['preprocessing.'+setting] = raw_value
+        
+    return settings
+
+def find_swipl():
+    swipl_exec_path = subprocess.check_output(['which', swipl_executable_name])
+    swipl_exec_path = swipl_exec_path.strip()
+
+    if swipl_exec_path == '':
+        msg = 'No SWI-Prolog installation could be found. Please make sure you ' \
+                  'have SWI-Prolog installed via your package manager or download ' \
+                  'and manually install it ' \
+                  'from http://www.swi-prolog.org/Download.html'
+        raise NoSwiplInstallationFoundException(msg)
+
+    return swipl_exec_path
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('config_file')
+    args = argparser.parse_args()
+
+    cfg = read_config(args.config_file)
+    
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    
+    _log.debug('Preprocessing learning task %s with learning problem %s' % (
+        learning_task_id, learning_problem_id))
+    
+    output_file = cfg['preprocessing.output']
+    
+    file_name_base = learning_task_id + '_' + learning_problem_id + '_preproc'
+    
+    target_dir = cfg['data.workdir']
+    _log.debug('Target dir is %s' % target_dir)
+    
+    swipl_executable = find_swipl()
+    knowledge_file_path = preprocessing(learning_task_id, learning_problem_id, target_dir,
+                      file_name_base, prolog=swipl_executable)
+    
+    with open(output_file, 'w') as out:
+        out.write("knowledge: " + knowledge_file_path)
+    
+    _log.debug('Preprocessing SLIPCOVER')
+    
