@@ -63,6 +63,7 @@
 	<properties>
 		<compiler.version>1.8</compiler.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <argLine>-Dlog4j.configuration=log4j.properties</argLine>
 	</properties>
 
     <repositories>
@@ -243,9 +244,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
-                <configuration>
-                    <argLine>${argLine} -Dlog4j.configuration=log4j.properties</argLine>
-                </configuration>
             </plugin>
                         
             <plugin>
