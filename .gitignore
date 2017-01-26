@@ -31,3 +31,6 @@ sml-temp*
 learningsystems/progolem/source/*
 learningsystems/dllearner/log
 learningsystems/progol/progol
+
+# log files (PW: Not sure whether this is breaks something. If so, feel free to remove it.)
+*.log
