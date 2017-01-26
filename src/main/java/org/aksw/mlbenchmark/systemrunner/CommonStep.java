@@ -1,6 +1,18 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import org.aksw.mlbenchmark.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Set;
+
+import org.aksw.mlbenchmark.ConfigLoader;
+import org.aksw.mlbenchmark.ConfigLoaderException;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.MeasureMethod;
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
 import org.aksw.mlbenchmark.process.ProcessRunner;
@@ -14,10 +26,6 @@ import org.apache.commons.configuration2.ex.ConversionException;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.exec.ExecuteException;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
 
 /**
  * Actions shared between several types of steps (Cross Validation etc.)
@@ -67,6 +75,7 @@ public abstract class CommonStep {
 		cc.addConfiguration(lsi.getCommonsConfig());
 		cc.addConfiguration(parent.getBenchmarkRunner().getCommonsConfig());
 		BaseConfiguration defaultConfig = new BaseConfiguration();
+		// FIXME: Why 0.86?
 		defaultConfig.setProperty("maxExecutionTime", (long) (new BenchmarkConfig(cc).getMaxExecutionTime() * 0.86));
 		cc.addConfiguration(defaultConfig);
 		return cc;
