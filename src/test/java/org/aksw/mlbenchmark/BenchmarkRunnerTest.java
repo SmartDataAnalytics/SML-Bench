@@ -51,7 +51,7 @@ public class BenchmarkRunnerTest {
     static Integer crossValidationFolds = 3;
     static Boolean leaveOneOut = false;
     static Integer threadsCount = 3;
-    static String mexOutputFile = "/path/file.o";
+    static String mexOutputFile = "/tmp/smlbench_outfile";
     static List<String> learningSystem = Arrays.asList("dllearner", "golem");
     static List<String> scenarios = Arrays.asList("carcinogenesis/1", "mutagenesis/42");
     
@@ -286,13 +286,13 @@ public class BenchmarkRunnerTest {
     /**
      * Test of run method, of class BenchmarkRunner.
      */
-    @Test
-    public void testRun() {
-        System.out.println("run");
-        instance.run();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testRun() {
+//        System.out.println("run");
+//        instance.run();
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 //
 //    /**
 //     * Test of getSystemLanguage method, of class BenchmarkRunner.
