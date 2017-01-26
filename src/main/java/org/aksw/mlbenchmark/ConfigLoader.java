@@ -1,11 +1,24 @@
 package org.aksw.mlbenchmark;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.aksw.mlbenchmark.config.FlatConfigHierarchicalConverter;
 import org.aksw.mlbenchmark.config.INIConfigurationWriteDotkeys;
 import org.aksw.mlbenchmark.config.INIConfigurationWriteLists;
 import org.aksw.mlbenchmark.config.PropertiesConfigurationFromDotkeys;
 import org.apache.commons.collections.IteratorUtils;
-import org.apache.commons.configuration2.*;
+import org.apache.commons.configuration2.BaseConfiguration;
+import org.apache.commons.configuration2.CombinedConfiguration;
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.FileBasedConfiguration;
+import org.apache.commons.configuration2.HierarchicalConfiguration;
+import org.apache.commons.configuration2.INIConfiguration;
+import org.apache.commons.configuration2.ImmutableHierarchicalConfiguration;
+import org.apache.commons.configuration2.PropertiesConfiguration;
 import org.apache.commons.configuration2.builder.BuilderParameters;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
@@ -18,12 +31,6 @@ import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Loading of config files
@@ -39,12 +46,17 @@ public class ConfigLoader {
 	}
 
 	/**
-	 * tries to find a config file with the given prefix and a set of implemented extensions
-	 * @param prefix
-	 * @return
+	 * Tries to find a config file with the given prefix and a set of
+	 * implemented extensions
+	 * 
+	 * @param prefix The configuration file name without file suffix
+	 * @return In case of success a ConfigLoader object with the loaded config;
+	 * 		null otherwise
 	 */
 	public static ConfigLoader findConfig(String prefix) {
-		final String[] extns = { ".plist", ".xml", ".ini", ".conf", ".prop", ".properties" };
+		final String[] extns = { ".plist", ".xml", ".ini", ".conf", ".prop",
+				".properties" };
+		
 		for (String ext: extns) {
 			try {
 				return new ConfigLoader(prefix + ext).load();
@@ -52,6 +64,7 @@ public class ConfigLoader {
 				// ignore any errors
 			}
 		}
+		
 		return null;
 	}
 
@@ -68,9 +81,6 @@ public class ConfigLoader {
 		} else if (filename.endsWith(".ini") || filename.endsWith(".conf")) {
 			config = FlatConfigHierarchicalConverter.convert(loadINIFile());
 		} else if (filename.endsWith(".prop") || filename.endsWith(".properties")) {
-			//CombinedConfiguration config2 = new CombinedConfiguration();
-			//config2.addConfiguration(loadFile(PropertiesConfiguration.class));
-			//config = config2;
 			config = FlatConfigHierarchicalConverter.convert(loadFile(PropertiesConfiguration.class));
 		} else {
 			throw new ConfigLoaderException("Loading of config type not implemented yet.");
@@ -120,7 +130,7 @@ public class ConfigLoader {
 
 	}
 
-	private HierarchicalConfiguration<ImmutableNode> loadINIFile() throws ConfigLoaderException {
+	protected HierarchicalConfiguration<ImmutableNode> loadINIFile() throws ConfigLoaderException {
 		final String MAIN_SECTION = "main";
 		HierarchicalConfiguration<ImmutableNode> ini = loadFile(INIConfiguration.class);
 		CombinedConfiguration comb = new CombinedConfiguration();
@@ -140,7 +150,7 @@ public class ConfigLoader {
 		return config;
 	}
 
-	private <T extends FileBasedConfiguration>
+	protected <T extends FileBasedConfiguration>
 	T loadFile(Class<T> type) throws ConfigLoaderException {
 		Parameters params = new Parameters();
 		List<BuilderParameters> config = new ArrayList<BuilderParameters>();
@@ -169,14 +179,6 @@ public class ConfigLoader {
 			throw new ConfigLoaderException(cex.getMessage(), cex);
 		}
 	}
-
-	/*
-	public static void main(String[] args) throws ConfigLoaderException, IOException, ConfigurationException {
-		XMLPropertyListConfiguration xml = new XMLPropertyListConfiguration(cl.config());
-		xml.initFileLocator(FileLocatorUtils.fileLocator().create());
-		xml.write(new FileWriter("out.xml"));
-	}
-	*/
 
 	public static void main(String[] args) throws ConfigLoaderException, ConfigurationException, IOException {
 		logger.info("---- testing ini ----");
