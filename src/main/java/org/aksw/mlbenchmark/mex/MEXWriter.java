@@ -27,6 +27,12 @@ import com.hp.hpl.jena.rdf.model.impl.PropertyImpl;
 import com.hp.hpl.jena.rdf.model.impl.ResourceImpl;
 import com.hp.hpl.jena.vocabulary.RDF;
 
+/**
+ * Class to write out the benchmark results as RDF data using the MEX ontology.
+ * Since the MEX ontology is still under development there are some open issues
+ * that will be fixed soon:
+ * -
+ */
 public class MEXWriter {
 	private String authorName = "SML-Bench";
 	private String authorEmailAddress = "sml-bench@googlegroups.com";
@@ -35,51 +41,98 @@ public class MEXWriter {
 			"learningproblem", "step", "output", "configFormat",
 			"learningsystems", "scenarios", "maxExecutionTime");
 
-	public void write(BenchmarkLog log, String filePath) throws Exception {
+	/**
+	 * Main method to be called to write out the benchmark results collected
+	 * in a BenchmarkLog object.
+	 * 
+	 * @param log The benchmark results
+	 * @param filePath File path where to save the MEX RDF file
+	 * @throws Exception Thrown in log4mex
+	 */
+	public final void write(BenchmarkLog log, String filePath) throws Exception {
 		MyMEX mex = new MyMEX();
 		mex.setAuthor(authorName, authorEmailAddress);
 
 		for (String dataset : log.getLearningTasks()) {
 			for (String learningProblem : log.getLearningProblems(dataset)) {
 				for (String tool : log.getLearningSystems()) {
-					ScenarioSystem scenarioSystem =
-							new Scenario(dataset, learningProblem).addSystem(log.getLearningSystemInfo(tool));
-
-					// FIXME: take config from fold 0 sufficient?
-					Configuration toolConf =
-							log.getLearningSystemConfig(scenarioSystem, 0);
-
-					// mex-core:ExperimentConfiguration
-					String conf = mex.addConfiguration();
-
-					// mex-algo:Tool
-					mex.Configuration(conf).setTool(tool, "0.0");
-
-					Iterator<String> keyIt = toolConf.getKeys();
-					String key, val;
-
-					while (keyIt.hasNext()) {
-						key = keyIt.next();
-						// FIXME: all learning system config entries should go into one ini section
-						if (nonConfigKeys.contains(key)) continue;
-
-						val = toolConf.getString(key);
-
-						// mex-algo:ToolParameter
-						// TODO: add IPL tools and parameters to MEX ontology
-						mex.Configuration(conf).addToolParameters(key, val);
-					}
-
-					int numFolds = log.getNumFolds();
-					for (int fold=0; fold<numFolds; fold++) {
-						addResults(mex, conf, scenarioSystem, fold, numFolds, log);
-					}
+					addResults(mex, log, dataset, learningProblem, tool);
 				}
 			}
 		}
 
+		// TODO: handle file suffix
 		MEXSerializer.getInstance().saveToDisk(filePath,
 				"http://sml-bench.aksw.org/res/", mex, MEXConstant.EnumRDFFormats.TTL);
+	}
+	
+	/**
+	 * Extracts all the necessary bits to describe a mex:Experiment, i.e. the
+	 * mex:Configuration with
+	 * - a mex:Dataset (dataset parameter)
+	 * - a mex:Execution comprising
+	 *   - the (positive and negative) mex:Example instances (given by the
+	 *     parameter learningProblem)
+	 *   - the mex:Tool or mex:Algrotithm (defined by the tool parameter)
+	 * @param mex The overall benchmark description object
+	 * @param log The benchmarking results
+	 * @param dataset The id of an SML-Bench benchmark dataset
+	 * @param learningProblem The id of an SML-Bench learning problem
+	 * @param tool The id of an SML-Bench learning system
+	 * @throws Exception Whatever is thrown in log4mex
+	 */
+	private void addResults(MyMEX mex, BenchmarkLog log, String dataset,
+			String learningProblem, String tool) throws Exception {
+		
+		ScenarioSystem scenarioSystem =
+				new Scenario(dataset, learningProblem).addSystem(
+						log.getLearningSystemInfo(tool));
+
+		/*
+		 * Currently, the tool (or learning system) configuration is held per
+		 * fold, i.e. the benchmark results log contains the detailed settings
+		 * applied for each fold. This means that each fold configuration
+		 * differs in
+		 * - the actual positive and negative example files (which obviously
+		 *   define the fold)
+		 * - working and output directories
+		 * 
+		 * However all the individual tool specific settings like noise, sample
+		 * sizes, i, j, ... remain the same across all fold configuration
+		 * files. Thus I'm picking the config of fold 0 here as a
+		 * representative here.
+		 * 
+		 * Further down this tool config will be filtered, ignoring all these
+		 * fold-specific entries (skipping all entries from
+		 * this.nonConfigKeys).
+		 */
+		Configuration toolConf = log.getLearningSystemConfig(scenarioSystem, 0);
+
+		// mex-core:ExperimentConfiguration
+		String conf = mex.addConfiguration();
+
+		// mex-algo:Tool
+		mex.Configuration(conf).setTool(tool, "0.0");
+
+		Iterator<String> keyIt = toolConf.getKeys();
+		String key, val;
+
+		while (keyIt.hasNext()) {
+			key = keyIt.next();
+			// FIXME: all learning system config entries should go into one ini section
+			if (nonConfigKeys.contains(key)) continue;
+
+			val = toolConf.getString(key);
+
+			// mex-algo:ToolParameter
+			// TODO: add IPL tools and parameters to MEX ontology
+			mex.Configuration(conf).addToolParameters(key, val);
+		}
+
+		int numFolds = log.getNumFolds();
+		for (int fold=0; fold<numFolds; fold++) {
+			addResults(mex, conf, scenarioSystem, fold, numFolds, log);
+		}
 	}
 
 	private void addResults(MyMEX mex, String conf, ScenarioSystem scenarioSystem, int fold, int numFolds, BenchmarkLog log) throws Exception {
@@ -201,7 +254,6 @@ public class MEXWriter {
 		// --------------------------------------------------------------------
 
 	}
-
 
 	private DatasetInfo buildDatasetInfo(String datasetPath) {
 		String datasetInfoFilePath = datasetPath + File.separator + datasetInfoFileName;
