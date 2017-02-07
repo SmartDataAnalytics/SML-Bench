@@ -353,7 +353,7 @@ public class ConfigLoader {
 			
 			return config2;
 			
-		} catch(ConfigurationException cex) {
+		} catch (ConfigurationException cex) {
 			throw new ConfigLoaderException(cex.getMessage(), cex);
 		}
 	}
