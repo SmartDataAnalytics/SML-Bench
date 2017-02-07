@@ -1,0 +1,31 @@
+@prefix : <http://sml-bench.aksw.org/datasets/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix mexc: <http://mex.aksw.org/mex-core#> .
+@prefix sbo: <http://sml-bench.aksw.org/ont#> .
+
+:animals_owl
+    a
+        void:Dataset ,
+        mexc:Dataset ,
+        [
+            a owl:Restriction ;
+            owl:onProperty sbo:expressedInKRLanguage ;
+            owl:someValuesFrom sbo:OWL
+        ] ;
+    dcterms:title "Animals" ;
+    dcterms:description "Simple dataset containing descriptions of several species to predict the classes mammal, fish, reptile and bird";
+    dcterms:source <http://www.iwlab.org/our-lab/our-staff/yy/SampleData/m1> ;
+    dcterms:issued "2017-02-06"^^xsd:date ;
+    dcterms:subject <http://dbpedia.org/resource/Animals> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Animal> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Mammals> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Fish> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Reptiles> ;
+    dcterms:subject <http://dbpedia.org/resource/Category:Birds> ;
+    dcat:byteSize "62556"^^xsd:decimal ;
+    owl:versionInfo "0.1"^^xsd:string.
+
