@@ -1,0 +1,10 @@
+animal(trout). 
+animal(herring). 
+animal(shark). 
+animal(lizard). 
+animal(crocodile). 
+animal(t_rex). 
+animal(turtle). 
+animal(eagle). 
+animal(ostrich). 
+animal(penguin).
