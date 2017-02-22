@@ -1,5 +1,6 @@
 package org.aksw.mlbenchmark;
 
+import org.aksw.mlbenchmark.container.LanguageInfo;
 import org.aksw.mlbenchmark.languages.LanguageInfoBase;
 
 /**
@@ -12,9 +13,35 @@ public class Constants {
 	public static final String LEARNINGTASKS = "learningtasks";
 	/** the folder name containing the learning problems */
 	public static final String LEARNINGPROBLEMS = "lp";
+	public static final String LEARNING_SYSTEM_OUTPUT_FILE_NAME = "lsoutput.log";
 
 	/** the config file name for learning system specific config */
 	public static final String LEARNINGSYSTEMCONFIG = "system";
+	
+	/**
+	 * The string separating a learning system's name from an optional
+	 * learning system identifier in case multiple instances of one learning
+	 * system are in use.
+	 */
+	public static final String LEARNINGSYSTEM_ID_SEPARATOR = "-";
+	
+	// config keys
+	public static final String WORKDIR_KEY = "filename.workdir";
+	public static final String POS_EXAMPLE_FILE_KEY = "filename.pos";
+	public static final String NEG_EXAMPLE_FILE_KEY = "filename.neg";
+	public static final String MAX_EXECUTION_TIME_KEY = "framework.maxExecutionTime";
+	public static final String MEASURES_KEY = "framework.measures";
+	public static final String SEED_KEY = "framework.currentSeed";
+	public static final String OUTPUT_FILE_KEY = "filename.output";
+	public static final String INPUT_FILE_KEY = "filename.input";
+	public static final String LEARNING_TASK_KEY = "learningtask";
+	public static final String LEARNING_PROBLEM_KEY = "learningproblem";
+	public static final String LEARNING_SYSTEM_KEY = "learningsystem";
+	public static final String STEP_KEY = "step";
+	public static final String STEP_TRAIN = "train";
+	public static final String STEP_VALIDATE = "validate";
+	public static final String LEARNING_SYSTEMS_KEY = "learningsystems";
+	public static final String LS_SPECIFIC_SETTINGS_KEY = "settings";
 
 	/** the default maximum execution time in seconds for the training step */
 	public static final long DefaultMaxExecutionTime = 35; // seconds
@@ -41,4 +68,6 @@ public class Constants {
 	}
 
 	public enum State { RUNNING, OK, TIMEOUT, FAILURE, ERROR }
+	
+	public enum Stage { TRAINING, VALIDATION }
 }
