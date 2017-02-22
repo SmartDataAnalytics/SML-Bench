@@ -291,10 +291,6 @@ def read_config(path):
         setting, raw_value = item
         settings['filename.'+setting] = raw_value
 
-    for item in conf.items('data'):
-        setting, raw_value = item
-        settings['data.'+setting] = raw_value
-
     return settings
 
 
@@ -307,8 +303,8 @@ if __name__ == '__main__':
 
     learning_task_id = cfg['learningtask']
     learning_problem_id = cfg['learningproblem']
-    input_file = cfg['input']
-    output_file_name = cfg['output']
+    input_file = cfg['filename.input']
+    output_file_name = cfg['filename.output']
     _log.debug('Validating solution learning task %s with learning '
                'problem %s' % (learning_task_id, learning_problem_id))
 
@@ -318,7 +314,7 @@ if __name__ == '__main__':
             results.append(line.strip())
 
     file_name_base = learning_task_id + '_' + learning_problem_id
-    target_dir = cfg['data.workdir']
+    target_dir = cfg['filename.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
     pos_examples = read_examples(cfg['filename.pos'])
