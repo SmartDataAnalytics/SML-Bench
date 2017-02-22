@@ -1,56 +1,66 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import org.aksw.mlbenchmark.ConfigLoader;
-import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.container.ScenarioSystem;
-import org.apache.commons.configuration2.BaseConfiguration;
+import java.util.Set;
 
-import java.io.File;
-import java.util.*;
+import org.aksw.mlbenchmark.BenchmarkLog;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.Scenario;
+import org.aksw.mlbenchmark.container.ScenarioSystem;
+import org.aksw.mlbenchmark.examples.CrossValidation;
+import org.aksw.mlbenchmark.util.FileFinder;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * Single step of cross validation
  */
 class CrossValidationStep extends CommonStep {
-	protected CrossValidationRunner parent;
+//	protected CrossValidationRunner parent;
 	private final int fold;
+	private final ScenarioSystem ss;
 	//private String trainingResultFile;
 
-	public CrossValidationStep(CrossValidationRunner parent, ScenarioSystem ss, ConfigLoader learningProblemConfigLoader, int fold) {
-		super(parent, ss, learningProblemConfigLoader);
-		this.parent = parent;
+	public CrossValidationStep(Scenario scenario, LearningSystemInfo lsi,
+			CrossValidation examples, Configuration runtimeConfig, int fold,
+			FileFinder fileFinder, BenchmarkLog log) {
+		
+		super(scenario, lsi, examples, runtimeConfig, fileFinder, log);
 		this.fold = fold;
+		this.ss = scenario.addSystem(lsi);
+	}
+	
+	@Override
+	public Set<String> getPositiveTrainingExamples() {
+		return ((CrossValidation) examples).getTrainingSet(Constants.ExType.POS, this.fold);
+	}
+	
+	@Override
+	public Set<String> getNegativeTrainingExamples() {
+		return ((CrossValidation) examples).getTrainingSet(Constants.ExType.NEG, this.fold);
 	}
 
-	public String getResultDir() {
-		return CrossValidationRunner.getResultDir(ss, fold);
+	@Override
+	public Set<String> getPositiveValidationExamples() {
+		return ((CrossValidation) examples).getTestingSet(Constants.ExType.POS, this.fold);
+	}
+	
+	@Override
+	public Set<String> getNegativeValidationExamples() {
+		return ((CrossValidation) examples).getTestingSet(Constants.ExType.NEG, this.fold);
 	}
 
+	@Override
+	protected void saveLearningSystemConfig(String configFilePath) {
+		log.saveLearningSystemConfig(ss, fold, configFilePath);
+	}
+
+	@Override
+	protected void saveResultSet(Configuration result) {
+		log.saveResultSet(ss, fold, result);
+	}
+	
+	@Override
 	public String getResultKey() {
-		return CrossValidationRunner.getResultKey(ss, fold);
-	}
-
-	public Set<String> getTrainingExamples(Constants.LANGUAGES lang, Constants.ExType type) {
-		return parent.getLanguageFolds(lang).getTrainingSet(type, fold);
-	}
-
-	public Set<String> getValidateExamples(Constants.LANGUAGES lang, Constants.ExType type) {
-		return parent.getLanguageFolds(lang).getTestingSet(type, fold);
-	}
-
-	protected BaseConfiguration getBaseConfiguration(File dir, String posFilename, String negFilename) {
-		return parent.getBaseConfiguration(ss, fold, dir, posFilename, negFilename, trainingResultFile);
-	}
-
-	protected BaseConfiguration getValidateConfiguration(File dir, String posFilename, String negFilename, String outputFilename) {
-		return parent.getValidateConfiguration(ss, new File(trainingResultFile), fold, dir, posFilename, negFilename, outputFilename);
-	}
-
-	protected void saveLearningSystemsConfig(String configFile) {
-		parent.getBenchmarkRunner().getBenchmarkLog().saveLearningSystemConfig(ss, fold, configFile);
-	}
-
-	protected void saveResultSet() {
-		parent.getBenchmarkRunner().getBenchmarkLog().saveResultSet(ss, fold, parent.getResultset());
+		return ss.getTask() + "." + ss.getProblem() + "." + "fold-" + fold + "." + ss.getLearningSystem();
 	}
 }

@@ -1,65 +1,69 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import org.aksw.mlbenchmark.ConfigLoader;
-import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.container.ScenarioSystem;
-import org.apache.commons.configuration2.BaseConfiguration;
-
-import java.io.File;
 import java.util.Set;
+
+import org.aksw.mlbenchmark.BenchmarkLog;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.Scenario;
+import org.aksw.mlbenchmark.container.ScenarioSystem;
+import org.aksw.mlbenchmark.examples.PosNegExamples;
+import org.aksw.mlbenchmark.util.FileFinder;
+import org.apache.commons.configuration2.BaseConfiguration;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * A step processing all the input examples (no folds, validation equals training)
  */
 public class AbsoluteStep extends CommonStep {
-	protected final AccuracyRunner parent;
+	private final ScenarioSystem ss;
 
-	public AbsoluteStep(AccuracyRunner parent, ScenarioSystem ss, ConfigLoader learningProblemConfigLoader) {
-		super(parent, ss, learningProblemConfigLoader);
-		this.parent = parent;
+	public AbsoluteStep(Scenario scenario, LearningSystemInfo lsi,
+			PosNegExamples examples, Configuration runtimeConfig,
+			FileFinder fileFinder, BenchmarkLog log) {
+		super(scenario, lsi, examples, runtimeConfig, fileFinder, log);
+		this.ss = scenario.addSystem(lsi);
 	}
-
-	public String getResultDir() {
-		return parent.getResultDir(ss);
-	}
-
-	public String getResultKey() {
-		return parent.getResultKey(ss);
-	}
-
-	public Set<String> getLanguageExamples(Constants.LANGUAGES lang, Constants.ExType type) {
-		return parent.getLanguageExamples(lang, type);
-	}
-
-	public Set<String> getTrainingExamples(Constants.LANGUAGES lang, Constants.ExType type) {
-		return getLanguageExamples(lang, type);
-	}
-
-	public Set<String> getValidateExamples(Constants.LANGUAGES lang, Constants.ExType type) {
-		return getLanguageExamples(lang, type);
+	
+	@Override
+	protected String getResultKey() {
+		return AccuracyRunner.getResultKey(scenario.addSystem(lsi));
 	}
 
 	@Override
-	protected void saveLearningSystemsConfig(String configFile) {
-		parent.getBenchmarkRunner().getBenchmarkLog().saveAbsoluteLearningSystemConfig(ss, configFile);
+	public Configuration validate() {
+		return new BaseConfiguration(); // = empty results set
 	}
 
 	@Override
-	protected void saveResultSet() {
-		parent.getBenchmarkRunner().getBenchmarkLog().saveAbsoluteResultSet(ss, parent.getResultset());
-	}
-
-	protected BaseConfiguration getBaseConfiguration(File dir, String posFilename, String negFilename) {
-		return parent.getBaseConfiguration(ss, dir, posFilename, negFilename, trainingResultFile);
+	protected Set<String> getPositiveTrainingExamples() {
+		return ((PosNegExamples) examples).get(Constants.ExType.POS);
 	}
 
 	@Override
-	protected BaseConfiguration getValidateConfiguration(File dir, String posFilename, String negFilename, String outputFilename) {
-		return parent.getValidateConfiguration(ss, new File(trainingResultFile), dir, posFilename, negFilename, outputFilename);
+	protected Set<String> getNegativeTrainingExamples() {
+		return ((PosNegExamples) examples).get(Constants.ExType.NEG);
 	}
 
 	@Override
-	public void validate() {
+	protected Set<String> getPositiveValidationExamples() {
+		throw new RuntimeException("There are no validation examples for a "
+				+ "train-only system runner");
+	}
 
+	@Override
+	protected Set<String> getNegativeValidationExamples() {
+		throw new RuntimeException("There are no validation examples for a "
+				+ "train-only system runner");
+	}
+
+	@Override
+	protected void saveLearningSystemConfig(String configFilePath) {
+		log.saveAbsoluteLearningSystemConfig(ss, configFilePath);
+	}
+
+	@Override
+	protected void saveResultSet(Configuration result) {
+		log.saveAbsoluteResultSet(ss, result);
 	}
 }
