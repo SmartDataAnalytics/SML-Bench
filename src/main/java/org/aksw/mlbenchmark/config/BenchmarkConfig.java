@@ -1,5 +1,9 @@
 package org.aksw.mlbenchmark.config;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 import org.aksw.mlbenchmark.Constants;
 import org.aksw.mlbenchmark.LearningSystemInfo;
 import org.aksw.mlbenchmark.container.ScenarioAttributes;
@@ -7,14 +11,9 @@ import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
-
 /**
  * This class is a wrapper for the benchmark root configuration. It provides
  * convenience methods and constants.
- * Convenience and constants for the benchmark root config
  */
 public class BenchmarkConfig {
 	private final HierarchicalConfiguration<ImmutableNode> config;
@@ -35,6 +34,25 @@ public class BenchmarkConfig {
 	}
 
 	/**
+	 * Returns the learning systems that should be executed. These are those
+	 * declared by the `learningsystems` parameter. But since the current
+	 * configuration approach also allows to provide different configurations
+	 * for a single tool, a bit more care has to be taken here. Given the
+	 * following example
+	 * 
+	 *   learningsystems=aleph,dllearner-1,dllearner-2
+	 * 
+	 *   learningsystems.dllearner-1.type = dllearner
+	 *   learningsystems.dllearner-2.alg.type = celoe
+	 * 
+	 *   learningsystems.dllearner-2.type = dllearner
+	 *   learningsystems.dllearner-2.alg.type = ocel
+	 * 
+	 * the learning systems to return aren't 'aleph', 'dllearner-1' and
+	 * 'dllearner-2' but just 'aleph' and 'dllearner' since the '-1' and '-2'
+	 * suffixes just refer to the two different configurations of the dllearner
+	 * learning system.
+	 * 
 	 * @return the learning systems that should be executed
 	 */
 	public List<String> getLearningSystems() {
@@ -68,16 +86,6 @@ public class BenchmarkConfig {
 	public int getThreadsCount() {
 		return config.getInt("framework.threads", 1);
 	}
-
-	/**
-	 * @param s a configuration key
-	 * @return whether the configuration contains this key
-	 */
-/*
-	public boolean containsKey(String s) {
-		return config.containsKey(s);
-	}
-*/
 
 	/**
 	 * @return output file name for mex
@@ -116,11 +124,14 @@ public class BenchmarkConfig {
 	 * @param learningSystem the learning system
 	 * @return an apache commons config subconfiguration for the learning system
 	 */
-	public Configuration getLearningSystemConfiguration(String learningSystem) {
+	private Configuration getLearningSystemConfiguration(String learningSystem) {
 		return config.subset("learningsystems." + learningSystem);
 	}
 
 	/**
+	 * Extract a sub-configuration from the configuration passed by the user.
+	 * The extracted sub-configuration should contain information about
+	 * learning system
 	 * @param lsi learning system info
 	 * @return an apache commons config subconfiguration for the learning system
 	 */
