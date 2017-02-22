@@ -61,7 +61,6 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 		}
 
 		writeAllFolds();
-
 	}
 
 	private void writeAllFolds() {
@@ -109,15 +108,25 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 				continue;
 			}
 
-/*			parent.getExecutorService().submit(
-					new Runnable() {
-						@Override
-						public void run() { */
-
 			ScenarioSystem ss = scn.addSystem(lsi);
-			ConfigLoader learningProblemConfigLoader =
-					ConfigLoader.findConfig(parent.getLearningProblemDir(ss) + "/" + system);
 
+			CombinedConfiguration lsConfig = new CombinedConfiguration();
+			lsConfig.setNodeCombiner(new MergeCombiner());
+			lsConfig.addConfiguration(getBenchmarkRunner().getCommonsConfig());
+			
+			File configFilePath =
+					new File(parent.getLearningProblemDir(ss), lsi.getLearningSystem());
+			HierarchicalConfiguration<ImmutableNode> lpSpecificConfig =
+					ConfigLoader.findConfig(configFilePath.getAbsolutePath());
+
+			if (lpSpecificConfig != null) {
+				lsConfig.addConfiguration(lpSpecificConfig, system);
+			}
+			lsConfig.addProperty(Constants.MEASURES_KEY, parent.getConfig().getMeasures());
+			lsConfig.addProperty(Constants.MAX_EXECUTION_TIME_KEY,
+					parent.getConfig().getMaxExecutionTime());
+			lsConfig.addProperty(Constants.SEED_KEY, parent.getSeed());
+			
 			parent.getBenchmarkLog().saveLearningSystemInfo(lsi);
 
 			for (int fold = 0; fold < parent.getFolds(); ++fold) {
@@ -126,16 +135,18 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 						ss.getProblem() + " with " + ss.getLearningSystem() +
 						", fold " + fold);
 
-				CommonStep step = new CrossValidationStep(this, ss, learningProblemConfigLoader, fold);
-				step.train();
+				CommonStep step = new CrossValidationStep(scn, lsi,
+						languageFolds.get(lsi.getLanguage()), lsConfig,
+						fold,  fileFinder, parent.getBenchmarkLog());
+
+				Configuration results = step.train();
+				updateResultSet(results);
 
 				if (step.isStateOk()) {
-					step.validate();
+					results = step.validate();
+					updateResultSet(results);
 				}
 			}
-
-/*						}
-			}); */
 		}
 	}
 	
@@ -156,30 +167,4 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 	public static String getResultDir(ScenarioSystem ss, int fold) {
 		return ss.getTask() + "/" + ss.getProblem() + "/" + "fold-" + fold + "/" + ss.getLearningSystem();
 	}
-
-	public static BaseConfiguration getBaseConfiguration(ScenarioAttributes scn,
-			int fold, File dir, String posFilename, String negFilename, String outputFile) {
-
-		BaseConfiguration baseConfig = new BaseConfiguration();
-		baseConfig.setProperty("data.workdir", dir.getAbsolutePath());
-		baseConfig.setProperty("framework.currentFold", fold);
-		baseConfig.setProperty("learningtask", scn.getTask());
-		baseConfig.setProperty("learningproblem", scn.getProblem());
-		baseConfig.setProperty("step", "train");
-
-		baseConfig.setProperty("filename.pos", posFilename);
-		baseConfig.setProperty("filename.neg", negFilename);
-		baseConfig.setProperty("output", outputFile);
-		return baseConfig;
-	}
-
-	public static BaseConfiguration getValidateConfiguration(ScenarioAttributes scn,
-			File trainingResultFile, int fold, File dir, String posFilename,
-			String negFilename, String outputFile) {
-		BaseConfiguration baseConfig = getBaseConfiguration(scn, fold, dir, posFilename, negFilename, outputFile);
-		baseConfig.setProperty("step", "validate");
-		baseConfig.setProperty("input", trainingResultFile.getAbsolutePath());
-		return baseConfig;
-	}
-
 }

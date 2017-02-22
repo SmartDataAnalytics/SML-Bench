@@ -91,11 +91,15 @@ public class AccuracyRunner extends AbstractSystemRunner {
 			
 			logger.info("executing scenario " + ss.getTask() + "/" + ss.getProblem() + " with " + ss.getLearningSystem());
 
-			CommonStep step = new AbsoluteStep(this, ss, learningProblemConfigLoader);
-			step.train();
+			CommonStep step = new AbsoluteStep(
+					scn, lsi, languageExamples.get(lsi.getLanguage()),
+					lsConfig, fileFinder, parent.getBenchmarkLog());
+			Configuration result = step.train();
+			updateResultSet(result);
 
 			if (step.isStateOk()) {
-				step.validate();
+				result = step.validate();
+				updateResultSet(result);
 			}
 		}
 	}
