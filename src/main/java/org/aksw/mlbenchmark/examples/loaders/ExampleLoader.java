@@ -1,4 +1,4 @@
-package org.aksw.mlbenchmark;
+package org.aksw.mlbenchmark.examples.loaders;
 
 import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
 import org.aksw.mlbenchmark.exampleloader.OwlExampleLoader;

@@ -1,4 +1,4 @@
-package org.aksw.mlbenchmark;
+package org.aksw.mlbenchmark.examples;
 
 import java.util.*;
 

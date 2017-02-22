@@ -1,4 +1,4 @@
-package org.aksw.mlbenchmark;
+package org.aksw.mlbenchmark.container;
 
 import org.aksw.mlbenchmark.languages.LanguageInfoBase;
 import org.aksw.mlbenchmark.languages.OwlLanguageInfo;

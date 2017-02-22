@@ -1,4 +1,4 @@
-package org.aksw.mlbenchmark.config;
+package org.aksw.mlbenchmark.util;
 
 import java.util.Iterator;
 

@@ -1,4 +1,4 @@
-package org.aksw.mlbenchmark.exampleloader;
+package org.aksw.mlbenchmark.examples.loaders;
 
 /**
  * Created by Simon Bin on 16-4-27.

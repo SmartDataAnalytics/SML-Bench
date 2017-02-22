@@ -1,4 +1,4 @@
-package org.aksw.mlbenchmark.exampleloader;
+package org.aksw.mlbenchmark.examples.loaders;
 
 import java.io.*;
 import java.util.Collection;
