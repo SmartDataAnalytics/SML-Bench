@@ -1,5 +1,7 @@
 package org.aksw.mlbenchmark.container;
 
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.Constants.LANGUAGES;
 import org.aksw.mlbenchmark.languages.LanguageInfoBase;
 import org.aksw.mlbenchmark.languages.OwlLanguageInfo;
 import org.aksw.mlbenchmark.languages.PrologLanguageInfo;
