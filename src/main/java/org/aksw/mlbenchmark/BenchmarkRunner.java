@@ -383,7 +383,7 @@ public class BenchmarkRunner {
 	 */
 	public LearningSystemInfo getSystemInfo(String system) {
 		if (!systemInfos.containsKey(system)) {
-			systemInfos.put(system, new LearningSystemInfo(this, system));
+			systemInfos.put(system, new LearningSystemInfo(config, system, fileFinder));
 		}
 		return systemInfos.get(system);
 	}
