@@ -15,10 +15,8 @@ import org.apache.commons.configuration2.Configuration;
  * Single step of cross validation
  */
 class CrossValidationStep extends CommonStep {
-//	protected CrossValidationRunner parent;
 	private final int fold;
 	private final ScenarioSystem ss;
-	//private String trainingResultFile;
 
 	public CrossValidationStep(Scenario scenario, LearningSystemInfo lsi,
 			CrossValidation examples, Configuration runtimeConfig, int fold,

@@ -26,7 +26,6 @@ import org.apache.commons.configuration2.Configuration;
  */
 public class LearningSystemInfo {
 	private final String learningSystem;
-//	private final BenchmarkRunner br;
 	private final String identifier;
 	private LearningSystemConfig config;
 	private final FileFinder fileFinder;
@@ -54,7 +53,6 @@ public class LearningSystemInfo {
 			this.learningSystem = parts[0];
 			this.identifier = parts[1];
 		}
-//		this.br = parent;
 		this.fileFinder = fileFinder;
 		this.config = new LearningSystemConfig(runtimeConfig, this);
 	}
