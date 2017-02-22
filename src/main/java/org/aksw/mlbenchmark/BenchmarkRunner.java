@@ -36,13 +36,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * The main runner for the SMLBench framework, will execute one benchmark configuration (without saving of results)
+ * The main runner for the SMLBench framework, will execute one benchmark
+ * configuration (without saving of results)
  */
 public class BenchmarkRunner {
 	static final Logger logger = LoggerFactory.getLogger(BenchmarkRunner.class);
 	/** the directory at BenchmarkRunner creation time */
 	private final String currentDir;
-	/** the url to the class files source */
+	/** the URL to the class files source */
 	private final URL sourceDir;
 	/** the detected root directory of SMLBench */
 	private final String rootDir;
@@ -256,7 +257,7 @@ public class BenchmarkRunner {
 	}
 
 	/**
-	 * @return the underlying commins config of the BenchmarkConfig
+	 * @return the underlying commons config of the BenchmarkConfig
 	 */
 	public HierarchicalConfiguration<ImmutableNode> getCommonsConfig() {
 		return config.getConfig();
@@ -338,14 +339,6 @@ public class BenchmarkRunner {
 		runScenario(Scenario.fromString(scn));
 	}
 
-	/**
-	 * run a single scenario
-	 * @param task learning task name
-	 * @param problem learning problem name/number
-	 */
-	private void runScenario(String task, String problem) {
-		runScenario(new Scenario(task, problem));
-	}
 	/**
 	 * run a single scenario, dispatch to some systemrunner according to config
 	 * @param scn scenario
