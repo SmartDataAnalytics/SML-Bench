@@ -85,21 +85,27 @@ def find_golem():
         return exec_file_name
 
 
-def get_settings(learning_task, lp_id):
+def get_settings(learning_task, lp_id, cfg):
     config_file_path = os.path.join('..', '..', learning_task_dir_name,
                                     learning_task, prolog_dir_name,
                                     lp_dir_name, lp_id, config_file_name)
 
-    if not os.path.isfile(config_file_path):
-        return {}
-
-    conf = configparser.ConfigParser()
-    conf.read(config_file_path)
-
     settings = {}
-    for item in conf.items('main'):
-        setting, raw_value = item
-        settings[setting] = raw_value
+    
+    if os.path.isfile(config_file_path):
+
+        conf = configparser.ConfigParser()
+        conf.read(config_file_path)
+
+        for item in conf.items('main'):
+            setting, raw_value = item
+            settings[setting] = raw_value
+
+    for k, v in cfg.items():
+        if k.startswith('settings'):
+            # 'settings.caching' --> 'caching'
+            k = k.split('.', 1)[1]
+            settings[k] = v
 
     return settings
 
@@ -117,9 +123,9 @@ def read_config(path):
         setting, raw_value = item
         settings['filename.'+setting] = raw_value
 
-    for item in conf.items('data'):
+    for item in conf.items('settings'):
         setting, raw_value = item
-        settings['data.'+setting] = raw_value
+        settings['settings.'+setting] = raw_value
 
     return settings
 
@@ -158,7 +164,7 @@ def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos,
                 subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
         out.flush()
 
-        settings = get_settings(task_id, lp_id)
+        settings = get_settings(task_id, lp_id, cfg)
 
         for k, v in settings.items():
             out.write(settings_pattern % (k, v))
@@ -209,13 +215,13 @@ if __name__ == '__main__':
     cfg = read_config(args.config_file)
     learning_task_id = cfg['learningtask']
     learning_problem_id = cfg['learningproblem']
-    output_file = cfg['output']
+    output_file = cfg['filename.output']
     _log.debug('Running learning task %s with learning problem %s' % (
         learning_task_id, learning_problem_id))
 
     file_name_base = learning_task_id + '_' + learning_problem_id
     # file_name_base = 'data'
-    target_dir = cfg['data.workdir']
+    target_dir = cfg['filename.workdir']
     _log.debug('Target dir is %s' % target_dir)
 
     copy_files_around(learning_task_id, learning_problem_id, target_dir,
