@@ -1,7 +1,6 @@
 package org.aksw.mlbenchmark.examples.loaders;
 
 import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.Constants.LANGUAGES;
 import org.apache.commons.lang3.NotImplementedException;
 
 /**
