@@ -1,5 +1,13 @@
 package org.aksw.mlbenchmark.config;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.regex.Pattern;
+
 import org.aksw.mlbenchmark.ConfigLoader;
 import org.aksw.mlbenchmark.ConfigLoaderException;
 import org.apache.commons.configuration2.Configuration;
@@ -14,14 +22,6 @@ import org.apache.commons.configuration2.tree.ExpressionEngine;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.regex.Pattern;
 
 /**
  * Convert property files to hierarchical config layout (like HierarchicalConfigurationConverter)
@@ -73,7 +73,7 @@ public class FlatConfigHierarchicalConverter {
 	}
 
 	public static void main(String[] args) throws ConfigLoaderException, IOException, ConfigurationException {
-		HierarchicalConfiguration<ImmutableNode> config = new ConfigLoader("test.ini").load().config();
+		HierarchicalConfiguration<ImmutableNode> config = ConfigLoader.load("test.ini");
 		PropertyListConfiguration c1 = new PropertyListConfiguration(config);
 		PropertyListConfiguration c2 = new PropertyListConfiguration();
 		process(config, c2);

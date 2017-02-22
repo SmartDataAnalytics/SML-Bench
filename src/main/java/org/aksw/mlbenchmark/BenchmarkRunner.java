@@ -1,5 +1,22 @@
 package org.aksw.mlbenchmark;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioLangAttributes;
@@ -16,16 +33,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.NotImplementedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 /**
  * The main runner for the SMLBench framework, will execute one benchmark configuration (without saving of results)
@@ -113,7 +120,7 @@ public class BenchmarkRunner {
 	 */
 	public BenchmarkRunner(String configFilename) throws ConfigLoaderException {
 		// load the properties file
-		this(new ConfigLoader(configFilename).loadWithInfo().config());
+		this(ConfigLoader.load(configFilename));
 	}
 
 	/**

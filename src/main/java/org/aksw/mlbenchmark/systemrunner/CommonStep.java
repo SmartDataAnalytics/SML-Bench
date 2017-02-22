@@ -65,9 +65,9 @@ public abstract class CommonStep {
 		List<String> families = lsi.getFamilies();
 		if (families != null) {
 			for (String family : families) {
-				ConfigLoader famLpCL = ConfigLoader.findConfig(parent.getBenchmarkRunner().getLearningProblemDir(ss) + "/" + family);
-				if (famLpCL != null) {
-					cc.addConfiguration(famLpCL.config());
+				Configuration famLpConfig = ConfigLoader.findConfig(parent.getBenchmarkRunner().getLearningProblemDir(ss) + "/" + family);
+				if (famLpConfig != null) {
+					cc.addConfiguration(famLpConfig);
 				}
 			}
 		}

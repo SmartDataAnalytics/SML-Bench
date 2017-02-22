@@ -1,16 +1,22 @@
 package org.aksw.mlbenchmark;
 
-import com.google.common.collect.Sets;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
-import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
+import org.aksw.mlbenchmark.examples.loaders.ExampleLoader;
+import org.aksw.mlbenchmark.examples.loaders.ExampleLoaderBase;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
+import com.google.common.collect.Sets;
 
 public class BenchmarkLog {
 	public static final String tp = "tp";
@@ -218,7 +224,7 @@ public class BenchmarkLog {
 			String configFilePath = configPaths.get(scenarioSystem.getTask()).get(
 					scenarioSystem.getProblem()).get(scenarioSystem.getLearningSystem()).get(fold);
 
-			return new ConfigLoader(configFilePath).loadWithInfo().config();
+			return ConfigLoader.load(configFilePath);
 		}
 	}
 

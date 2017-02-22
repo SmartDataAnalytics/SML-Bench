@@ -35,48 +35,48 @@ public class ConfigLoaderTest {
 	public void testFindConfig() {
 		// plist
 		File filePath = new File(testResourcesDir + "example1");
-		ConfigLoader confLoader =
+		Configuration config =
 				ConfigLoader.findConfig(filePath.getAbsolutePath());
-		assertTrue(confLoader != null);
+		assertTrue(config != null);
 		
 		// xml
 		filePath = new File(testResourcesDir + "example2");
-		confLoader = ConfigLoader.findConfig(filePath.getAbsolutePath());
-		assertTrue(confLoader != null);
+		config = ConfigLoader.findConfig(filePath.getAbsolutePath());
+		assertTrue(config != null);
 		
 		// ini
 		filePath = new File(testResourcesDir + "example3");
-		confLoader = ConfigLoader.findConfig(filePath.getAbsolutePath());
-		assertTrue(confLoader != null);
+		config = ConfigLoader.findConfig(filePath.getAbsolutePath());
+		assertTrue(config != null);
 		
 		// conf
 		filePath = new File(testResourcesDir + "example4");
-		confLoader = ConfigLoader.findConfig(filePath.getAbsolutePath());
-		assertTrue(confLoader != null);
+		config = ConfigLoader.findConfig(filePath.getAbsolutePath());
+		assertTrue(config != null);
 		
 		// prop
 		filePath = new File(testResourcesDir + "example5");
-		confLoader = ConfigLoader.findConfig(filePath.getAbsolutePath());
-		assertTrue(confLoader != null);
+		config = ConfigLoader.findConfig(filePath.getAbsolutePath());
+		assertTrue(config != null);
 		
 		// properties
 		filePath = new File(testResourcesDir + "example6");
-		confLoader = ConfigLoader.findConfig(filePath.getAbsolutePath());
-		assertTrue(confLoader != null);
+		config = ConfigLoader.findConfig(filePath.getAbsolutePath());
+		assertTrue(config != null);
 		
 		// not implemented, yet
 		filePath = new File(testResourcesDir + "example7");
-		confLoader = ConfigLoader.findConfig(filePath.getAbsolutePath());
-		assertFalse(confLoader != null);
+		config = ConfigLoader.findConfig(filePath.getAbsolutePath());
+		assertFalse(config != null);
 	}
 
 	@Test
 	public void testLoad() {
 		// plist
 		File filePath = new File(testResourcesDir + "example1.plist");
-		ConfigLoader confLoader;
+		Configuration config;
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
@@ -84,7 +84,7 @@ public class ConfigLoaderTest {
 		// xml
 		filePath = new File(testResourcesDir + "example2.xml");
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
@@ -92,7 +92,7 @@ public class ConfigLoaderTest {
 		// ini
 		filePath = new File(testResourcesDir + "example3.ini");
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
@@ -100,7 +100,7 @@ public class ConfigLoaderTest {
 		// conf
 		filePath = new File(testResourcesDir + "example4.conf");
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
@@ -108,7 +108,7 @@ public class ConfigLoaderTest {
 		// prop
 		filePath = new File(testResourcesDir + "example5.prop");
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
@@ -116,7 +116,7 @@ public class ConfigLoaderTest {
 		// properties
 		filePath = new File(testResourcesDir + "example6.properties");
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
@@ -124,7 +124,7 @@ public class ConfigLoaderTest {
 		// not implemented, yet
 		filePath = new File(testResourcesDir + "example7.dummy");
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 			fail();
 		} catch (ConfigLoaderException e) {
 			// expected to throw exception
@@ -133,7 +133,7 @@ public class ConfigLoaderTest {
 		// file does not exist
 		filePath = new File(testResourcesDir + "example8");
 		try {
-			confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
+			config = ConfigLoader.load(filePath.getAbsolutePath());
 			fail();
 		} catch (ConfigLoaderException e) {
 			// expected to throw an exception
@@ -144,85 +144,94 @@ public class ConfigLoaderTest {
 	public void testWrite() throws ConfigLoaderException, IOException, ConfigurationException {
 		File tmpDir = Files.createTempDir();
 		File filePath = new File(testResourcesDir + "example1.plist");
-		ConfigLoader confLoader = new ConfigLoader(filePath.getAbsolutePath()).load();
-		HierarchicalConfiguration<ImmutableNode> conf = confLoader.config();
+		Configuration config = ConfigLoader.load(filePath.getAbsolutePath());
 		
 		// plist
 		File outFile = new File(tmpDir, "out.plist");
-		ConfigLoader.write(conf, outFile);
+		ConfigLoader.write(config, outFile);
 		
 		try {
 			PropertyListConfiguration readBackConf =
-					new ConfigLoader(outFile.getAbsolutePath()).loadFile(
-							PropertyListConfiguration.class);
-			assertEquals(conf.size(), readBackConf.size());
+					ConfigLoader.loadFile(
+							PropertyListConfiguration.class,
+							outFile.getAbsolutePath());
+			
+			assertEquals(config.size(), readBackConf.size());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
 		
 		// xml
 		outFile = new File(tmpDir, "out.xml");
-		ConfigLoader.write(conf, outFile);
+		ConfigLoader.write(config, outFile);
 		
 		try {
 			XMLPropertyListConfiguration readBackConf =
-					new ConfigLoader(outFile.getAbsolutePath()).loadFile(
-							XMLPropertyListConfiguration.class);
-			assertEquals(conf.size(), readBackConf.size());
+					ConfigLoader.loadFile(
+							XMLPropertyListConfiguration.class,
+							outFile.getAbsolutePath());
+			
+			assertEquals(config.size(), readBackConf.size());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
 		
 		// ini
 		outFile = new File(tmpDir, "out.ini");
-		ConfigLoader.write(conf, outFile);
+		ConfigLoader.write(config, outFile);
 
 		try {
 			PropertyListConfiguration readBackConf =
 					FlatConfigHierarchicalConverter.convert(
-							new ConfigLoader(outFile.getAbsolutePath()).loadINIFile());
-			assertEquals(conf.size(), readBackConf.size());
+							ConfigLoader.loadINIFile(outFile.getAbsolutePath()));
+			
+			assertEquals(config.size(), readBackConf.size());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
 		
 		// conf
 		outFile = new File(tmpDir, "out.conf");
-		ConfigLoader.write(conf, outFile);
+		ConfigLoader.write(config, outFile);
 
 		try {
 			PropertyListConfiguration readBackConf =
 					FlatConfigHierarchicalConverter.convert(
-							new ConfigLoader(outFile.getAbsolutePath()).loadINIFile());
-			assertEquals(conf.size(), readBackConf.size());
+							ConfigLoader.loadINIFile(outFile.getAbsolutePath()));
+			
+			assertEquals(config.size(), readBackConf.size());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
 		
 		// prop
 		outFile = new File(tmpDir, "out.prop");
-		ConfigLoader.write(conf, outFile);
+		ConfigLoader.write(config, outFile);
 		
 		try {
 			PropertyListConfiguration readBackConf =
 					FlatConfigHierarchicalConverter.convert(
-							new ConfigLoader(outFile.getAbsolutePath()).loadFile(
-									PropertiesConfiguration.class));
-			assertEquals(conf.size(), readBackConf.size());
+							ConfigLoader.loadFile(
+									PropertiesConfiguration.class,
+									outFile.getAbsolutePath()));
+			
+			assertEquals(config.size(), readBackConf.size());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
 		
 		// properties
 		outFile = new File(tmpDir, "out.properties");
-		ConfigLoader.write(conf, outFile);
+		ConfigLoader.write(config, outFile);
 		
 		try {
 			PropertyListConfiguration readBackConf =
 					FlatConfigHierarchicalConverter.convert(
-							new ConfigLoader(outFile.getAbsolutePath()).loadFile(
-									PropertiesConfiguration.class));
-			assertEquals(conf.size(), readBackConf.size());
+							ConfigLoader.loadFile(
+									PropertiesConfiguration.class,
+									outFile.getAbsolutePath()));
+			
+			assertEquals(config.size(), readBackConf.size());
 		} catch (ConfigLoaderException e) {
 			fail();
 		}
@@ -255,8 +264,8 @@ public class ConfigLoaderTest {
 		 * }
 		 */
 		File filePath = new File(testResourcesDir + "example1.plist");
-		ConfigLoader confLoader = new ConfigLoader(filePath.getAbsolutePath());
-		conf = confLoader.loadFile(PropertyListConfiguration.class);
+		conf = ConfigLoader.loadFile(
+				PropertyListConfiguration.class, filePath.getAbsolutePath());
 		
 		int expectedNumEntries = 7;
 		assertEquals(expectedNumEntries, conf.size());
@@ -348,8 +357,8 @@ public class ConfigLoaderTest {
 		 * </plist>
 		 */
 		filePath = new File(testResourcesDir + "example2.xml");
-		confLoader = new ConfigLoader(filePath.getAbsolutePath());
-		conf = confLoader.loadFile(XMLPropertyListConfiguration.class);
+		conf = ConfigLoader.loadFile(
+				XMLPropertyListConfiguration.class, filePath.getAbsolutePath());
 		
 		expectedNumEntries = 11;
 		assertEquals(expectedNumEntries, conf.size());
@@ -404,8 +413,8 @@ public class ConfigLoaderTest {
 		 */
 		
 		filePath = new File(testResourcesDir + "example3.ini");
-		confLoader = new ConfigLoader(filePath.getAbsolutePath());
-		conf = confLoader.loadFile(INIConfiguration.class);
+		conf = ConfigLoader.loadFile(
+				INIConfiguration.class, filePath.getAbsolutePath());
 		
 		expectedNumEntries = 7;
 		
@@ -446,8 +455,8 @@ public class ConfigLoaderTest {
 		 * foo=bar
 		 */
 		filePath = new File(testResourcesDir + "example4.conf");
-		confLoader = new ConfigLoader(filePath.getAbsolutePath());
-		conf = confLoader.loadFile(INIConfiguration.class);
+		conf = ConfigLoader.loadFile(
+				INIConfiguration.class, filePath.getAbsolutePath());
 		
 		expectedNumEntries = 7;
 		
@@ -496,8 +505,9 @@ public class ConfigLoaderTest {
 		 * second.prop = ${first.prop}/second
 		 */
 		filePath = new File(testResourcesDir + "example5.prop");
-		confLoader = new ConfigLoader(filePath.getAbsolutePath());
-		conf = confLoader.loadFile(PropertiesConfiguration.class);
+		conf = ConfigLoader.loadFile(
+				PropertiesConfiguration.class, filePath.getAbsolutePath());
+		
 		expectedNumEntries = 8;
 		
 		assertEquals("value", conf.getString("key"));
@@ -548,8 +558,9 @@ public class ConfigLoaderTest {
 		 * second.prop = ${first.prop}/second
 		 */
 		filePath = new File(testResourcesDir + "example6.properties");
-		confLoader = new ConfigLoader(filePath.getAbsolutePath());
-		conf = confLoader.loadFile(PropertiesConfiguration.class);
+		conf = ConfigLoader.loadFile(
+				PropertiesConfiguration.class, filePath.getAbsolutePath());
+		
 		expectedNumEntries = 8;
 		
 		assertEquals("value", conf.getString("key"));
@@ -593,8 +604,8 @@ public class ConfigLoaderTest {
 		 * foo=bar
 		 */
 		File filePath = new File(testResourcesDir + "example3.ini");
-		ConfigLoader confLoader = new ConfigLoader(filePath.getAbsolutePath());
-		HierarchicalConfiguration<ImmutableNode> conf = confLoader.loadINIFile();
+		HierarchicalConfiguration<ImmutableNode> conf =
+				ConfigLoader.loadINIFile(filePath.getAbsolutePath());
 		
 		assertEquals(7, conf.size());
 		assertEquals("bar", conf.getString("foo"));

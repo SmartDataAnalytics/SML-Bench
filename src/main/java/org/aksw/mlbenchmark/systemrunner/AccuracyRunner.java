@@ -54,14 +54,24 @@ public class AccuracyRunner extends AbstractSystemRunner {
 				continue;
 			}
 
-			/*			parent.getExecutorService().submit(
-					new Runnable() {
-						@Override
-						public void run() { */
-
 			ScenarioSystem ss = scn.addSystem(lsi);
-			ConfigLoader learningProblemConfigLoader = ConfigLoader.findConfig(parent.getLearningProblemDir(ss) + "/" + system);
+			
+			CombinedConfiguration lsConfig = new CombinedConfiguration();
+			lsConfig.setNodeCombiner(new MergeCombiner());
+			lsConfig.addConfiguration(getBenchmarkRunner().getCommonsConfig());
+			
+			File lpSpecificConfigFile =
+					new File(parent.getLearningProblemDir(ss), system);
+			Configuration learningProblemConfig =
+					ConfigLoader.findConfig(lpSpecificConfigFile.getAbsolutePath());
 
+			if (learningProblemConfig != null) {
+				lsConfig.addConfiguration(learningProblemConfig, system);
+			}
+			lsConfig.addProperty(Constants.MEASURES_KEY, parent.getConfig().getMeasures());
+			lsConfig.addProperty(
+					Constants.MAX_EXECUTION_TIME_KEY,
+					parent.getConfig().getMaxExecutionTime());
 			parent.getBenchmarkLog().saveLearningSystemInfo(lsi);
 
 			logger.info("executing scenario " + ss.getTask() + "/" + ss.getProblem() + " with " + ss.getLearningSystem());
@@ -72,12 +82,9 @@ public class AccuracyRunner extends AbstractSystemRunner {
 			if (step.isStateOk()) {
 				step.validate();
 			}
-
-			/*						}
-					}); */
 		}
 	}
-
+	
 	/**
 	 * @param scenarioSystem the Scenario and LearningSystem
 	 * @return the key in the resultset configuration output for a single cross validation fold

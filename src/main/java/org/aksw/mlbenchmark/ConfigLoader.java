@@ -46,27 +46,9 @@ import org.slf4j.LoggerFactory;
  * - Finding a configuration file by file name without file ending
  * - Loading a configuration stored in one of the formats above
  * - Writing a given configuration to file
- * 
- * This implementation holds the actual file to load as an instance attribute
- * and cannot be re-used across several files.
- * 
- * TODO: IMHO (Patrick) all this functionality can be implemented in a static fashion
  */
 public class ConfigLoader {
 	static final Logger logger = LoggerFactory.getLogger(ConfigLoader.class);
-	/** The file path pointing to the file to load */
-	private final String filename;
-	/** The configuration already read in (or null if nothing read, yet) */
-	private HierarchicalConfiguration<ImmutableNode> config;
-	/**
-	 * Switch defining whether to log on INFO (loadLogInfo = false) or
-	 * DEBUG level (loadLogInfo = true)
-	 */
-	private boolean loadLogInfo;
-
-	public ConfigLoader(String filename) {
-		this.filename = filename;
-	}
 
 	/**
 	 * Tries to find a config file with the given prefix and a set of
@@ -76,13 +58,13 @@ public class ConfigLoader {
 	 * @return In case of success a ConfigLoader object with the loaded config;
 	 * 		null otherwise
 	 */
-	public static ConfigLoader findConfig(String prefix) {
+	public static HierarchicalConfiguration<ImmutableNode> findConfig(String prefix) {
 		final String[] extns = { ".plist", ".xml", ".ini", ".conf", ".prop",
 				".properties" };
 		
 		for (String ext: extns) {
 			try {
-				return new ConfigLoader(prefix + ext).load();
+				return ConfigLoader.load(prefix + ext);
 			} catch (ConfigLoaderException e) {
 				// ignore any errors
 			}
@@ -92,36 +74,32 @@ public class ConfigLoader {
 	}
 
 	/**
-	 * Same as ConfigLoader.load( ) but logging on INFO instead of DEBUG level
-	 */
-	public final ConfigLoader loadWithInfo() throws ConfigLoaderException {
-		loadLogInfo = true;
-		return load();
-	}
-
-	/**
 	 * Does the actual loading of a configuration file choosing the right
 	 * loading procedure for a given configuration file format (determined by
 	 * file suffix).
 	 */
-	public final ConfigLoader load() throws ConfigLoaderException {
-		if (filename.endsWith(".plist")) {
-			config = loadFile(PropertyListConfiguration.class);
+	public static final HierarchicalConfiguration<ImmutableNode> load(
+			String filePath) throws ConfigLoaderException {
 		
-		} else if (filename.endsWith(".xml")) {
-			config = loadFile(XMLPropertyListConfiguration.class);
+		HierarchicalConfiguration<ImmutableNode> config;
 		
-		} else if (filename.endsWith(".ini") || filename.endsWith(".conf")) {
-			config = FlatConfigHierarchicalConverter.convert(loadINIFile());
+		if (filePath.endsWith(".plist")) {
+			config = loadFile(PropertyListConfiguration.class, filePath);
 		
-		} else if (filename.endsWith(".prop") || filename.endsWith(".properties")) {
+		} else if (filePath.endsWith(".xml")) {
+			config = loadFile(XMLPropertyListConfiguration.class, filePath);
+		
+		} else if (filePath.endsWith(".ini") || filePath.endsWith(".conf")) {
+			config = FlatConfigHierarchicalConverter.convert(loadINIFile(filePath));
+		
+		} else if (filePath.endsWith(".prop") || filePath.endsWith(".properties")) {
 			config = FlatConfigHierarchicalConverter.convert(
-					loadFile(PropertiesConfiguration.class));
+					loadFile(PropertiesConfiguration.class, filePath));
 		
 		} else {
 			throw new ConfigLoaderException("Loading of config type not implemented yet.");
 		}
-		return this;
+		return config;
 	}
 
 	/**
@@ -286,11 +264,14 @@ public class ConfigLoader {
 	 * these two dots are replaced by just one dot
 	 * (--> ("nested.nested.foo", "bar"))
 	 */
-	protected HierarchicalConfiguration<ImmutableNode> loadINIFile() throws ConfigLoaderException {
+	protected static HierarchicalConfiguration<ImmutableNode> loadINIFile(
+			String filePath) throws ConfigLoaderException {
+		
 		final String MAIN_SECTION = "main";
 		final int MAIN_SECTION_SUBKEY_STRING_INDEX = MAIN_SECTION.length() + 1;
 		
-		HierarchicalConfiguration<ImmutableNode> ini = loadFile(INIConfiguration.class);
+		HierarchicalConfiguration<ImmutableNode> ini =
+				loadFile(INIConfiguration.class, filePath);
 		CombinedConfiguration comb = new CombinedConfiguration();
 		
 		Iterator<String> keysIt = ini.getKeys();
@@ -310,10 +291,6 @@ public class ConfigLoader {
 		return comb;
 	}
 
-	public HierarchicalConfiguration<ImmutableNode> config() {
-		return config;
-	}
-
 	/**
 	 * Loads a configuration file of a certain type (given as parameter type).
 	 * 
@@ -323,12 +300,12 @@ public class ConfigLoader {
 	 * @return The configuration object containing the settings read
 	 * @throws ConfigLoaderException
 	 */
-	protected <T extends FileBasedConfiguration> T loadFile(Class<T> type)
-			throws ConfigLoaderException {
+	protected static <T extends FileBasedConfiguration> T loadFile(
+			Class<T> type, String filePath) throws ConfigLoaderException {
 		
 		Parameters params = new Parameters();
 		List<BuilderParameters> config = new ArrayList<BuilderParameters>();
-		config.add(params.fileBased().setFileName(filename));
+		config.add(params.fileBased().setFileName(filePath));
 		config.add(params.basic().setThrowExceptionOnMissing(true));
 		
 		if (INIConfiguration.class.isAssignableFrom(type)
@@ -344,12 +321,7 @@ public class ConfigLoader {
 
 		try {
 			T config2 = builder.getConfiguration();
-			
-			if (loadLogInfo) {
-				logger.info("Loaded config file " + builder.getFileHandler().getPath());
-			} else if (logger.isDebugEnabled()) {
-				logger.debug("Loaded config file (internal) " + builder.getFileHandler().getPath());
-			}
+			logger.debug("Loaded config file " + builder.getFileHandler().getPath());
 			
 			return config2;
 			
@@ -358,12 +330,15 @@ public class ConfigLoader {
 		}
 	}
 
-	public static void main(String[] args) throws ConfigLoaderException, ConfigurationException, IOException {
+	public static void main(String[] args) throws ConfigLoaderException,
+			ConfigurationException, IOException {
+		
 		logger.info("---- testing ini ----");
-		HierarchicalConfiguration<ImmutableNode> conf = new ConfigLoader("test.ini").load().config();
+		HierarchicalConfiguration<ImmutableNode> conf = ConfigLoader.load("test.ini");
 		INIConfiguration iniConfiguration = new INIConfigurationWriteDotkeys(conf);
 		iniConfiguration.write(new FileWriter("test2.ini"));
-		PropertiesConfiguration propertiesConfiguration = new PropertiesConfigurationFromDotkeys();
+		PropertiesConfiguration propertiesConfiguration =
+				new PropertiesConfigurationFromDotkeys();
 		propertiesConfiguration.copy(conf);
 		propertiesConfiguration.write(new FileWriter("test2.prop"));
 		//new Hierarchicalconfigurationcon
@@ -372,7 +347,7 @@ public class ConfigLoader {
 
 		new PropertyListConfiguration(conf).write(new FileWriter("test-from-ini.plist"));
 		logger.info("---- testing plist ----");
-		HierarchicalConfiguration<ImmutableNode> config1 = new ConfigLoader("test.plist").load().config();
+		HierarchicalConfiguration<ImmutableNode> config1 = ConfigLoader.load("test.plist");
 		//testing.conf(config1);
 		PropertyListConfiguration plc = new PropertyListConfiguration(config1);
 		plc.write(new FileWriter("test-copy.plist"));

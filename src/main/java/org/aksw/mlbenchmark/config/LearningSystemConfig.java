@@ -1,13 +1,18 @@
 package org.aksw.mlbenchmark.config;
 
-import org.aksw.mlbenchmark.*;
+import java.util.List;
+
+import org.aksw.mlbenchmark.ConfigLoader;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.container.LanguageInfo;
 import org.aksw.mlbenchmark.languages.LanguageInfoBase;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.CombinedConfiguration;
 import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.HierarchicalConfiguration;
+import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.commons.configuration2.tree.MergeCombiner;
-
-import java.util.List;
 
 /**
  * Configuration specific to LearningSystems (wrapping the underlying key-value config)
@@ -22,19 +27,22 @@ public class LearningSystemConfig {
 		// FIXME: we need to find a generic way to determine the language
 		defaultConfig.setProperty(LANGUAGEKEY, lsi.hasType("dllearner") ? "owl" : "prolog");
 		BenchmarkConfig runtimeConfig = br.getConfig();
-                // Extract a subconfiguration from the configuration passed by the user.
-                // The extracted subconfiguration should contain information about 
-                // learning system
+		// Extract a sub-configuration from the configuration passed by the user.
+		// The extracted sub-configuration should contain information about
+		// learning system
 		Configuration lsRuntimeConfig = runtimeConfig.getLearningSystemConfiguration(lsi);
-		ConfigLoader systemCL = ConfigLoader.findConfig(lsi.getDir()+"/"+ Constants.LEARNINGSYSTEMCONFIG);
+		
+		HierarchicalConfiguration<ImmutableNode> systemConf =
+				ConfigLoader.findConfig(lsi.getDir()+"/"+ Constants.LEARNINGSYSTEMCONFIG);
+		
 		CombinedConfiguration cc = new CombinedConfiguration();
 		cc.setNodeCombiner(new MergeCombiner());
 		cc.addConfiguration(lsRuntimeConfig);
-		if (systemCL != null) {
-			cc.addConfiguration(systemCL.config());
+		if (systemConf != null) {
+			cc.addConfiguration(systemConf);
 		}
 		cc.addConfiguration(defaultConfig);
-                this.config = cc;
+			this.config = cc;
 		defaultConfig.setProperty("configFormat", Constants.LANGUAGES.OWL.equals(getLanguage()) ? "prop" : "conf");
 	}
 
