@@ -22,11 +22,10 @@ public class LearningSystemConfig {
 	private final String FILENAMEKEY = "filename";
 	final String LANGUAGEKEY = "language";
 
-	public LearningSystemConfig(BenchmarkRunner br, LearningSystemInfo lsi) {
+	public LearningSystemConfig(BenchmarkConfig runtimeConfig, LearningSystemInfo lsi) {
 		Configuration defaultConfig = new BaseConfiguration();
 		// FIXME: we need to find a generic way to determine the language
 		defaultConfig.setProperty(LANGUAGEKEY, lsi.hasType("dllearner") ? "owl" : "prolog");
-		BenchmarkConfig runtimeConfig = br.getConfig();
 		// Extract a sub-configuration from the configuration passed by the user.
 		// The extracted sub-configuration should contain information about
 		// learning system
@@ -44,10 +43,6 @@ public class LearningSystemConfig {
 		cc.addConfiguration(defaultConfig);
 			this.config = cc;
 		defaultConfig.setProperty("configFormat", Constants.LANGUAGES.OWL.equals(getLanguage()) ? "prop" : "conf");
-	}
-
-	public LearningSystemConfig(BenchmarkRunner br, String learningSystem) {
-		this(br, br.getSystemInfo(learningSystem));
 	}
 
 	public LanguageInfoBase getLanguageInfo() {

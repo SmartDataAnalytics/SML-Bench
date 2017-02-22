@@ -1,12 +1,14 @@
 package org.aksw.mlbenchmark.config;
 
-import org.aksw.mlbenchmark.BenchmarkRunner;
-import org.apache.commons.configuration2.BaseHierarchicalConfiguration;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
+import java.io.File;
 import java.util.Collections;
 
-import static junit.framework.Assert.assertTrue;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.util.FileFinder;
+import org.apache.commons.configuration2.BaseHierarchicalConfiguration;
+import org.junit.Test;
 
 /**
  * Tests for LearningSystemConfig
@@ -16,9 +18,17 @@ public class LearningSystemConfigTest {
 	public void testConfigFormat() {
 		BaseHierarchicalConfiguration config = new BaseHierarchicalConfiguration();
 		config.setProperty("learningsystems", Collections.singletonList("dllearner"));
-		BenchmarkRunner benchmarkRunner = new BenchmarkRunner(config);
-		LearningSystemConfig learningSystemConfig = new LearningSystemConfig(benchmarkRunner, "dllearner");
+		BenchmarkConfig benchmarkConfig = new BenchmarkConfig(config);
+		
+		FileFinder fileFinder = new FileFinder(new File("."));
+
+		LearningSystemInfo lsi = new LearningSystemInfo(
+				benchmarkConfig, "dllearner", fileFinder);
+		LearningSystemConfig learningSystemConfig =
+				new LearningSystemConfig(benchmarkConfig, lsi);
+		
 		String configFormat = learningSystemConfig.getConfigFormat();
-		assertTrue("config format for dllearner does not equal prop ["+configFormat+"]", "prop".equals(configFormat));
+		
+		assertEquals("prop", configFormat);
 	}
 }
