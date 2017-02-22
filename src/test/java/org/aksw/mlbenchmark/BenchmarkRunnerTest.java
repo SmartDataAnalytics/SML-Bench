@@ -15,12 +15,18 @@
  */
 package org.aksw.mlbenchmark;
 
-import java.io.File;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
+
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
-import org.apache.commons.configuration2.AbstractConfiguration;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.BaseHierarchicalConfiguration;
 import org.junit.After;
@@ -28,14 +34,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import org.junit.ClassRule;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import static org.mockito.Mockito.*;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
-import org.mockito.runners.MockitoJUnitRunner;
 
 
 /**
@@ -56,7 +54,7 @@ public class BenchmarkRunnerTest {
     static List<String> scenarios = Arrays.asList("carcinogenesis/1", "mutagenesis/42");
     
     // initialize the Mokito classes
-//    @ClassRule 
+//    @ClassRule
 //    public static MockitoRule mockitoRule = MockitoJUnit.rule();
 
     public BenchmarkRunnerTest() {
@@ -132,7 +130,6 @@ public class BenchmarkRunnerTest {
      */
     @Test
     public void testGetTempDirectory() {
-        System.out.println("getTempDirectory");
         Path result = instance.getTempDirectory();
         assertTrue(result.toFile().exists());
     }
@@ -156,7 +153,6 @@ public class BenchmarkRunnerTest {
      */
     @Test
     public void testGetSeed() {
-        System.out.println("getSeed");
         Long result = instance.getSeed();
         assertEquals(seed, result);
     }
@@ -166,7 +162,6 @@ public class BenchmarkRunnerTest {
      */
     @Test
     public void testGetFolds() {
-        System.out.println("getFolds");
         Integer result = instance.getFolds();
         assertEquals(crossValidationFolds, result);
     }
@@ -176,7 +171,6 @@ public class BenchmarkRunnerTest {
      */
     @Test
     public void testGetLearningSystemDir() {
-        System.out.println("getLearningSystemDir");
         String learningSystem = "golem";
         String expResult = instance.getLearningSystemsDir() + "/" + learningSystem;
         String result = instance.getLearningSystemDir(learningSystem);
@@ -188,7 +182,6 @@ public class BenchmarkRunnerTest {
      */
     @Test
     public void testGetLearningTasksDir() {
-        System.out.println("getLearningTasksDir");
         String result = instance.getLearningTasksDir();
         assertTrue(result.endsWith(Constants.LEARNINGTASKS) || result.endsWith(Constants.LEARNINGTASKS + "/"));
     }
