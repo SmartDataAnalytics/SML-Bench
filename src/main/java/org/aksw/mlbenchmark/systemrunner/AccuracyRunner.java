@@ -4,18 +4,13 @@ import org.aksw.mlbenchmark.*;
 import org.aksw.mlbenchmark.container.ScenarioAttributes;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
-import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
+import org.aksw.mlbenchmark.examples.PosNegExamples;
+import org.aksw.mlbenchmark.examples.loaders.ExampleLoader;
+import org.aksw.mlbenchmark.examples.loaders.ExampleLoaderBase;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by Simon Bin on 16-5-24.
@@ -23,14 +18,14 @@ import java.util.Set;
 public class AccuracyRunner extends AbstractSystemRunner {
 	final static Logger logger = LoggerFactory.getLogger(AccuracyRunner.class);
 	private final Set<Constants.LANGUAGES> failedLang = new HashSet<>();
-	private final Map<Constants.LANGUAGES, HashMap<Constants.ExType, Set<String>>> languageExamples = new HashMap<>();
+	private final Map<Constants.LANGUAGES, PosNegExamples> languageExamples = new HashMap<>();
 
 	public AccuracyRunner(BenchmarkRunner parent, Scenario scn, Configuration baseConf) {
 		super(parent, scn, baseConf);
 		for (final Constants.LANGUAGES lang : parent.getDesiredLanguages()) {
 			ScenarioLang sl = scn.addLanguage(lang);
 
-			languageExamples.put(lang, new HashMap<Constants.ExType, Set<String> > ());
+			languageExamples.put(lang, new PosNegExamples());
 			try {
 				for (Constants.ExType ex : Constants.ExType.values()) {
 					ExampleLoaderBase el = ExampleLoader.forLanguage(lang);

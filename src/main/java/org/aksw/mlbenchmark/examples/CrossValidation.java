@@ -1,6 +1,14 @@
 package org.aksw.mlbenchmark.examples;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
+import java.util.TreeMap;
+
+import org.aksw.mlbenchmark.Constants;
 
 /**
  * Performs cross validation for the given problem. Supports
@@ -9,7 +17,7 @@ import java.util.*;
  * @author Jens Lehmann
  *
  */
-public class CrossValidation {
+public class CrossValidation implements ExamplesSplit {
 
 	private final int folds;
 	private final long seed;
