@@ -24,6 +24,7 @@ import org.aksw.mlbenchmark.mex.MEXWriter;
 import org.aksw.mlbenchmark.systemrunner.AccuracyRunner;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.aksw.mlbenchmark.systemrunner.SystemRunner;
+import org.aksw.mlbenchmark.util.FileFinder;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.HierarchicalConfiguration;
@@ -61,6 +62,7 @@ public class BenchmarkRunner {
 	private BenchmarkLog benchmarkLog;
 	private String mexOutputFilePath = null;
 	private boolean leaveOneOut;
+	private final FileFinder fileFinder;
 
 	/**
 	 * create a BenchmarkRunner
@@ -69,12 +71,13 @@ public class BenchmarkRunner {
 	public BenchmarkRunner(BenchmarkConfig config) {
 		benchmarkLog = new BenchmarkLog();
 		benchmarkLog.saveBenchmarkConfig(config);
-
+		
 		File file1 = new File(new File(".").getAbsolutePath());
 		currentDir = (file1.getName().equals(".") ? file1.getParentFile() : file1).getAbsolutePath();
 		sourceDir = BenchmarkRunner.class.getProtectionDomain().getCodeSource().getLocation();
 		logger.info("source dir = " + sourceDir);
 		rootDir = new File(sourceDir.getPath()).getParentFile().getParentFile().getAbsolutePath();
+		fileFinder = new FileFinder(rootDir);
 		logger.info("root = " + rootDir);
 		File[] files = new File(getLearningSystemsDir()).listFiles();
 		if (files != null) {
@@ -423,5 +426,9 @@ public class BenchmarkRunner {
 	 */
 	public String getExamplesFile(ScenarioLang sl, Constants.ExType type) {
 		return getLearningProblemDir(sl) + "/" + type.asString() + sl.getLanguage().getInfo().exampleExtension();
+	}
+	
+	public String getRootDir() {
+		return rootDir;
 	}
 }

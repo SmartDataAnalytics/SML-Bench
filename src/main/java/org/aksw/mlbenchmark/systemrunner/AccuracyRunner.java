@@ -1,14 +1,28 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import org.aksw.mlbenchmark.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+import org.aksw.mlbenchmark.BenchmarkRunner;
+import org.aksw.mlbenchmark.ConfigLoader;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.Scenario;
 import org.aksw.mlbenchmark.container.ScenarioAttributes;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
 import org.aksw.mlbenchmark.examples.PosNegExamples;
 import org.aksw.mlbenchmark.examples.loaders.ExampleLoader;
 import org.aksw.mlbenchmark.examples.loaders.ExampleLoaderBase;
+import org.aksw.mlbenchmark.util.FileFinder;
 import org.apache.commons.configuration2.BaseConfiguration;
+import org.apache.commons.configuration2.CombinedConfiguration;
 import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,8 +55,12 @@ public class AccuracyRunner extends AbstractSystemRunner {
 
 	@Override
 	public void run() {
+		FileFinder fileFinder = new FileFinder(parent.getRootDir(), scn);
+		
 		for (final String system: parent.getDesiredSystems()) {
 			final LearningSystemInfo lsi = parent.getSystemInfo(system);
+			fileFinder = fileFinder.updateLearningSytemInfo(lsi);
+			
 			final Constants.LANGUAGES lang = lsi.getLanguage();
 			if (failedLang.contains(lang)) {
 				logger.warn("skipping system " + system + " because examples are missing");
@@ -69,6 +87,8 @@ public class AccuracyRunner extends AbstractSystemRunner {
 					parent.getConfig().getMaxExecutionTime());
 			parent.getBenchmarkLog().saveLearningSystemInfo(lsi);
 
+			fileFinder = fileFinder.updateWorkDir(new File(getResultDir(ss)));
+			
 			logger.info("executing scenario " + ss.getTask() + "/" + ss.getProblem() + " with " + ss.getLearningSystem());
 
 			CommonStep step = new AbsoluteStep(this, ss, learningProblemConfigLoader);

@@ -13,16 +13,19 @@ import java.util.Set;
 import org.aksw.mlbenchmark.BenchmarkRunner;
 import org.aksw.mlbenchmark.ConfigLoader;
 import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.CrossValidation;
-import org.aksw.mlbenchmark.ExampleLoader;
 import org.aksw.mlbenchmark.LearningSystemInfo;
 import org.aksw.mlbenchmark.Scenario;
-import org.aksw.mlbenchmark.container.ScenarioAttributes;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
-import org.aksw.mlbenchmark.exampleloader.ExampleLoaderBase;
-import org.apache.commons.configuration2.BaseConfiguration;
+import org.aksw.mlbenchmark.examples.CrossValidation;
+import org.aksw.mlbenchmark.examples.loaders.ExampleLoader;
+import org.aksw.mlbenchmark.examples.loaders.ExampleLoaderBase;
+import org.aksw.mlbenchmark.util.FileFinder;
+import org.apache.commons.configuration2.CombinedConfiguration;
 import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.configuration2.HierarchicalConfiguration;
+import org.apache.commons.configuration2.tree.ImmutableNode;
+import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -94,8 +97,12 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 
 	@Override
 	public void run() {
-		for (final String system: parent.getDesiredSystems()) {
+		FileFinder fileFinder = new FileFinder(parent.getRootDir(), scn);
+		
+		for (final String system : parent.getDesiredSystems()) {
 			final LearningSystemInfo lsi = parent.getSystemInfo(system);
+			fileFinder = fileFinder.updateLearningSytemInfo(lsi);
+			
 			final Constants.LANGUAGES lang = lsi.getLanguage();
 			if (failedLang.contains(lang)) {
 				logger.warn("skipping system " + system + " because examples are missing");
@@ -114,6 +121,7 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 			parent.getBenchmarkLog().saveLearningSystemInfo(lsi);
 
 			for (int fold = 0; fold < parent.getFolds(); ++fold) {
+				fileFinder = fileFinder.updateWorkDir(new File(parent.getTempDirectory().toString(), getResultDir(ss, fold)));
 				logger.info("executing scenario " + ss.getTask() + "/" +
 						ss.getProblem() + " with " + ss.getLearningSystem() +
 						", fold " + fold);
@@ -124,14 +132,13 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 				if (step.isStateOk()) {
 					step.validate();
 				}
-
 			}
 
 /*						}
 			}); */
 		}
 	}
-
+	
 	/**
 	 * @param scenarioSystem the Scenario and LearningSystem
 	 * @param fold the fold

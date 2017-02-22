@@ -1,9 +1,11 @@
 package org.aksw.mlbenchmark;
 
-import org.aksw.mlbenchmark.config.LearningSystemConfig;
-import org.apache.commons.configuration2.Configuration;
-
 import java.util.List;
+
+import org.aksw.mlbenchmark.config.BenchmarkConfig;
+import org.aksw.mlbenchmark.config.LearningSystemConfig;
+import org.aksw.mlbenchmark.util.FileFinder;
+import org.apache.commons.configuration2.Configuration;
 
 /**
  * All useful information about a LearningSystem in the context of a BenchmarkRunner
@@ -16,16 +18,18 @@ public class LearningSystemInfo {
 	final String learningSystem;
 	final BenchmarkRunner br;
 	private LearningSystemConfig config;
+	private final FileFinder fileFinder;
 
 	/**
 	 * create a new learning system information
 	 * @param parent the benchmark runner in which context to create this info
 	 * @param learningSystem the learning system for which to load the config
 	 */
-	public LearningSystemInfo(BenchmarkRunner parent, String learningSystem) {
+	public LearningSystemInfo(BenchmarkRunner parent, String learningSystem, FileFinder fileFinder) {
 		this.learningSystem = learningSystem.toLowerCase();
 		this.br = parent;
 		this.config = new LearningSystemConfig(br, this);
+		this.fileFinder = fileFinder;
 	}
 
 	public String asString() {
@@ -36,7 +40,7 @@ public class LearningSystemInfo {
 	 * @return the directory containing this learning system
 	 */
 	public String getDir() {
-		return br.getLearningSystemDir(learningSystem);
+		return fileFinder.getLearningSystemDir(learningSystem).getAbsolutePath();
 	}
 
 	public Constants.LANGUAGES getLanguage() {
