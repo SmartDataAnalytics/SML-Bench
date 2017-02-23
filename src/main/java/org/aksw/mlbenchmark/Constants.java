@@ -30,6 +30,7 @@ public class Constants {
 	public static final String POS_EXAMPLE_FILE_KEY = "filename.pos";
 	public static final String NEG_EXAMPLE_FILE_KEY = "filename.neg";
 	public static final String MAX_EXECUTION_TIME_KEY = "framework.maxExecutionTime";
+	public static final String LS_MAX_EXECUTION_TIME_KEY = "maxExecutionTime";
 	public static final String MEASURES_KEY = "framework.measures";
 	public static final String SEED_KEY = "framework.currentSeed";
 	public static final String OUTPUT_FILE_KEY = "filename.output";

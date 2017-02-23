@@ -286,6 +286,8 @@ public abstract class CommonStep {
 		trainConfig.addProperty(Constants.LEARNING_TASK_KEY, scenario.getTask());
 		trainConfig.addProperty(Constants.LEARNING_PROBLEM_KEY, scenario.getProblem());
 		trainConfig.addProperty(Constants.STEP_KEY, Constants.STEP_TRAIN);
+		trainConfig.addProperty(Constants.LS_MAX_EXECUTION_TIME_KEY,
+				runtimeConfig.getString(Constants.MAX_EXECUTION_TIME_KEY));
 		
 		// learning system settings
 		// settings declared for all learning system instances of type lsi.getLearningSystem
