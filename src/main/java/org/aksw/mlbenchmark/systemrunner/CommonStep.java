@@ -249,7 +249,7 @@ public abstract class CommonStep {
 	protected abstract Set<String> getNegativeValidationExamples();
 	protected abstract void saveLearningSystemConfig(String configFilePath);
 	protected abstract String getResultKey();
-	protected abstract void saveResultSet(Configuration config);
+	protected abstract void saveResultSet(Configuration result);
 
 	/**
 	 * Collects all the settings needed to run a learning system. These
