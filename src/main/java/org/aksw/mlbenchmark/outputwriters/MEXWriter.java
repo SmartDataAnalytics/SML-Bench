@@ -1,4 +1,4 @@
-package org.aksw.mlbenchmark.mex;
+package org.aksw.mlbenchmark.outputwriters;
 
 import java.io.File;
 import java.util.Arrays;

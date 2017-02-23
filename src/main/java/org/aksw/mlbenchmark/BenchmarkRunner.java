@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioLang;
 import org.aksw.mlbenchmark.container.ScenarioLangAttributes;
-import org.aksw.mlbenchmark.mex.MEXWriter;
+import org.aksw.mlbenchmark.outputwriters.MEXWriter;
 import org.aksw.mlbenchmark.systemrunner.AccuracyRunner;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.aksw.mlbenchmark.systemrunner.SystemRunner;

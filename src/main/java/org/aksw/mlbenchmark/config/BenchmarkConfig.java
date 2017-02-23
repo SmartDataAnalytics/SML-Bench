@@ -91,7 +91,7 @@ public class BenchmarkConfig {
 	 * @return output file name for mex
 	 */
 	public String getMexOutputFile() {
-		return config.getString("mex.outputFile", null);
+		return config.getString("outputfile.mex", null);
 	}
 
 	/**
