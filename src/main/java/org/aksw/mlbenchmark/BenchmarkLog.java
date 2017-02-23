@@ -101,7 +101,7 @@ public class BenchmarkLog {
 		Configuration resConfig = results.getResult(scenarioSystem, fold);
 
 		String prefix = CrossValidationRunner.getResultKey(scenarioSystem, fold)
-				+ ".ValidationRaw.";
+				+ ".ValidationRaw";
 		return resConfig.subset(prefix);
 	}
 
