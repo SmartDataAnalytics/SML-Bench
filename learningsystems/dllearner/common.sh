@@ -91,7 +91,7 @@ read_lp_conf() {
             # Do not add an algorithm to the config if common.sh is sourced
             # in the evaluation step. There another component for validation
             # will be invoked.
-            if [ $step != "validate" -o $key1 != $algorithm_const ]
+            if [ $SMLB_STEP != "validate" -o $key1 != $algorithm_const ]
             then
                 add_conf "$key1.$key2 = $val"
             fi
@@ -105,20 +105,23 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-if [ -z "$SMLB_DATA_WORKDIR" ]; then
+# export config options by: UPPERCASE, replace . with _, prefix with SMLB_
+# keep this in sync with ProcessRunner#updateEnvironment
+if [ -z "$SMLB_FILENAME_WORKDIR" ]; then
     eval "$(cat "$1" | awk -F ' = ' '{gsub("[.]","_",$1); $1="SMLB_" toupper($1); printf "%s=\"%s\"\n",$1,$2}')"
 fi
 
 # save parameters to variables
 learning_task="$SMLB_LEARNINGTASK"
 learning_problem="$SMLB_LEARNINGPROBLEM"
-result_output_file="$SMLB_OUTPUT"
+result_output_file="$SMLB_FILENAME_OUTPUT"
 
 # define directory names
 task_dir="$learning_task_dir_name"/"$learning_task"
 data_dir="$learning_task_dir_name"/"$learning_task"/"$owl_dir_name"/"$data_dir_name"
 task_config_file="$learning_task_dir_name"/"$learning_task"/"$owl_dir_name"/config.properties
 lp_dir="$task_dir"/"$owl_dir_name"/"$lp_dir_name"/"$learning_problem"
+# TODO: The Java app should load this
 lp_config_file="$lp_dir"/dllearner.conf
 echo $lp_config_file
 
@@ -142,7 +145,7 @@ if [ ! -d ../../"$lp_dir" ]; then
 fi
 
 # create working directory
-tmpdir="$SMLB_DATA_WORKDIR"
+tmpdir="$SMLB_FILENAME_WORKDIR"
 conf="$tmpdir"/run.conf
 #trap 'rm -rf "$TMPDIR"' 0
 

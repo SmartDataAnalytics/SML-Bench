@@ -27,7 +27,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by Simon Bin on 16-5-24.
+ * A runner without cross validation, purely going for absolute measures
+ * (so a 100% solution is easily achieved when matching on instance data explicitly)
  */
 public class AccuracyRunner extends AbstractSystemRunner {
 	final static Logger logger = LoggerFactory.getLogger(AccuracyRunner.class);

@@ -5,11 +5,10 @@ start_dir="$(pwd)"
 cd "$(dirname "$0")"
 program_dir="$(pwd)"
 
-step="train"
-
 . ./common.sh
 
 if [ -z "$SMLB_LOADINGTIME" ]; then
+    # default loading time, is substracted from maxExecutionTime
     SMLB_LOADINGTIME=10
 fi
 if [ -n "$SMLB_TOOL_MAXEXECUTIONTIME" ]; then
