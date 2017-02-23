@@ -61,7 +61,6 @@ public class BenchmarkRunner {
 	private long seed;
 	private PropertyListConfiguration resultset = new PropertyListConfiguration();
 	private BenchmarkLog benchmarkLog;
-	private String mexOutputFilePath = null;
 	private boolean leaveOneOut;
 	private final FileFinder fileFinder;
 
@@ -97,7 +96,6 @@ public class BenchmarkRunner {
 		folds = config.getCrossValidationFolds();
 		leaveOneOut = config.isLeaveOneOut();
 		threads = config.getThreadsCount();
-		mexOutputFilePath = config.getMexOutputFile();
 
 		if (threads == 1) {
 			executorService = Executors.newSingleThreadExecutor();
@@ -307,11 +305,11 @@ public class BenchmarkRunner {
 
 		finalizeExecutor();
 
-		if (mexOutputFilePath != null) {
-			MEXWriter mexWriter = new MEXWriter();
+		if (config.getMexOutputFile() != null) {
+			String mexOutputFilePath = config.getMexOutputFile();
 
 			try {
-				mexWriter.write(benchmarkLog, mexOutputFilePath);
+				MEXWriter.write(benchmarkLog, mexOutputFilePath);
 				logger.info("wrote MEX file to " + mexOutputFilePath + ".ttl");
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -34,10 +34,10 @@ import com.hp.hpl.jena.vocabulary.RDF;
  * -
  */
 public class MEXWriter {
-	private String authorName = "SML-Bench";
-	private String authorEmailAddress = "sml-bench@googlegroups.com";
+	private static String authorName = "SML-Bench";
+	private static String authorEmailAddress = "sml-bench@googlegroups.com";
 	private static String datasetInfoFileName = "dataset.ttl";
-	private List<String> nonConfigKeys = Arrays.asList("learningtask",
+	private static List<String> nonConfigKeys = Arrays.asList("learningtask",
 			"learningproblem", "step", "output", "configFormat",
 			"learningsystems", "scenarios", "maxExecutionTime");
 
@@ -49,7 +49,7 @@ public class MEXWriter {
 	 * @param filePath File path where to save the MEX RDF file
 	 * @throws Exception Thrown in log4mex
 	 */
-	public final void write(BenchmarkLog log, String filePath) throws Exception {
+	public static void write(BenchmarkLog log, String filePath) throws Exception {
 		MyMEX mex = new MyMEX();
 		mex.setAuthor(authorName, authorEmailAddress);
 
@@ -81,7 +81,7 @@ public class MEXWriter {
 	 * @param tool The id of an SML-Bench learning system
 	 * @throws Exception Whatever is thrown in log4mex
 	 */
-	private void addResults(MyMEX mex, BenchmarkLog log, String dataset,
+	private static void addResults(MyMEX mex, BenchmarkLog log, String dataset,
 			String learningProblem, String tool) throws Exception {
 		
 		ScenarioSystem scenarioSystem =
@@ -135,7 +135,7 @@ public class MEXWriter {
 		}
 	}
 
-	private void addResults(MyMEX mex, String conf, ScenarioSystem scenarioSystem, int fold, int numFolds, BenchmarkLog log) throws Exception {
+	private static void addResults(MyMEX mex, String conf, ScenarioSystem scenarioSystem, int fold, int numFolds, BenchmarkLog log) throws Exception {
 
 		// ----------------------------- mex-core -----------------------------
 		// mex-core:Execution
@@ -255,7 +255,7 @@ public class MEXWriter {
 
 	}
 
-	private DatasetInfo buildDatasetInfo(String datasetPath) {
+	private static DatasetInfo buildDatasetInfo(String datasetPath) {
 		String datasetInfoFilePath = datasetPath + File.separator + datasetInfoFileName;
 		String landingPageURI ="";
 		String description = "";
@@ -294,7 +294,7 @@ public class MEXWriter {
 		return new DatasetInfo(landingPageURI, description, name);
 	}
 
-	class DatasetInfo {
+	static class DatasetInfo {
 		String landingPageURI;
 		String description;
 		String name;
