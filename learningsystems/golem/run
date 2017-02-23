@@ -123,9 +123,10 @@ def read_config(path):
         setting, raw_value = item
         settings['filename.'+setting] = raw_value
 
-    for item in conf.items('settings'):
-        setting, raw_value = item
-        settings['settings.'+setting] = raw_value
+    if conf.has_section('settings'):
+        for item in conf.items('settings'):
+            setting, raw_value = item
+            settings['settings.'+setting] = raw_value
 
     return settings
 
