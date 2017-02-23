@@ -109,7 +109,9 @@ public class AccuracyRunner extends AbstractSystemRunner {
 	 * @return the key in the resultset configuration output for a single cross validation fold
 	 */
 	public static String getResultKey(ScenarioSystem scenarioSystem) {
-		return scenarioSystem.getTask() + "." + scenarioSystem.getProblem() + "." + "absolute" + "." + scenarioSystem.getLearningSystem();
+		return scenarioSystem.getTask() + "." + scenarioSystem.getProblem()
+				+ "." + Constants.ABSOLUTE_RESULT_KEY_PART + "."
+				+ scenarioSystem.getLearningSystem();
 	}
 
 	/**

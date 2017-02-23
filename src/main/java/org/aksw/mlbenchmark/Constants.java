@@ -42,6 +42,11 @@ public class Constants {
 	public static final String STEP_VALIDATE = "validate";
 	public static final String LEARNING_SYSTEMS_KEY = "learningsystems";
 	public static final String LS_SPECIFIC_SETTINGS_KEY = "settings";
+	public static final String TRUE_POSITIVES_KEY = "tp";
+	public static final String TRUE_NEGATIVES_KEY = "tn";
+	public static final String FALSE_POSITIVES_KEY = "fp";
+	public static final String FALSE_NEGATIVES_KEY = "fn";
+	public static final String ABSOLUTE_RESULT_KEY_PART = "absolute";
 
 	/** the default maximum execution time in seconds for the training step */
 	public static final long DefaultMaxExecutionTime = 35; // seconds
