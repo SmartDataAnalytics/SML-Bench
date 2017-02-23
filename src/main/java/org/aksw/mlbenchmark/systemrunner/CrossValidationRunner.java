@@ -146,6 +146,8 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 					results = step.validate();
 					updateResultSet(results);
 				}
+				
+				step.saveResultSet(getResultset());
 			}
 		}
 	}

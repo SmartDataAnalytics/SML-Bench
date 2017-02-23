@@ -105,6 +105,8 @@ public class AccuracyRunner extends AbstractSystemRunner {
 				result = step.validate();
 				updateResultSet(result);
 			}
+			
+			step.saveResultSet(getResultset());
 		}
 	}
 	

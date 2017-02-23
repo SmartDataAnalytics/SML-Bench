@@ -204,8 +204,6 @@ public abstract class CommonStep {
 		results.setProperty(resultKey + "." + "validationResult", state.toString().toLowerCase());
 
 		if (!state.equals(Constants.State.OK)) {
-			saveResultSet(results);
-
 			return results;
 		}
 
@@ -238,8 +236,6 @@ public abstract class CommonStep {
 					state.toString().toLowerCase());
 		}
 
-		saveResultSet(results);
-		
 		return results;
 	}
 
