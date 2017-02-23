@@ -315,6 +315,16 @@ public class BenchmarkRunner {
 				e.printStackTrace();
 			}
 		}
+		
+		if (config.getCSVOutputFile() != null) {
+			String csvOutputFilePath = config.getCSVOutputFile();
+			try {
+				CSVWriter.write(benchmarkLog, csvOutputFilePath);
+				logger.info("wrote CSV file to " + csvOutputFilePath);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	/**

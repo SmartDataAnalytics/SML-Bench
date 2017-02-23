@@ -94,6 +94,9 @@ public class BenchmarkConfig {
 		return config.getString("outputfile.mex", null);
 	}
 
+	public String getCSVOutputFile() {
+		return config.getString("outputfile.csv", null);
+	}
 	/**
 	 * @return list of scenarios to run
 	 */
