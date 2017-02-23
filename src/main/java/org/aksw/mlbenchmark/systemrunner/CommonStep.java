@@ -196,7 +196,7 @@ public abstract class CommonStep {
 				rawValRes = ConfigLoader.load(outputFile.getAbsolutePath());
 			} catch (ConfigLoaderException e) {
 				CrossValidationRunner.logger.warn("could not load validation result: " + e.getMessage());
-				state = Constants.State.FAILURE;
+				state = Constants.State.ERROR;
 			}
 		}
 		
@@ -386,7 +386,7 @@ public abstract class CommonStep {
 			} else {
 				CrossValidationRunner.logger.warn(info + " " + lsi.toString() +
 						" did not finish cleanly: " + e.getMessage());
-				state = Constants.State.FAILURE;
+				state = Constants.State.ERROR;
 			}
 		
 		} catch (IOException e) {
@@ -401,7 +401,7 @@ public abstract class CommonStep {
 			if (state.equals(Constants.State.OK) && !file.isFile()) {
 				CrossValidationRunner.logger.warn(info + " " + lsi.toString() +
 						" did not produce an output");
-				state = Constants.State.FAILURE;
+				state = Constants.State.ERROR;
 			}
 		}
 		return state;

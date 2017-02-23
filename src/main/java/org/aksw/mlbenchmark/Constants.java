@@ -74,7 +74,26 @@ public class Constants {
 		}
 	}
 
-	public enum State { RUNNING, OK, TIMEOUT, FAILURE, ERROR }
+	public enum State {
+		RUNNING, OK, TIMEOUT, ERROR, NO_RESULT;
+		
+		public static State getStateFor(String stateString) {
+			if (stateString == null) {
+				int a = 23; a = a +2;
+			}
+			String s = stateString.toUpperCase();
+			if (s.equals(State.ERROR.toString()))
+				return State.ERROR;
+			else if (s.equals(State.NO_RESULT.toString()))
+				return State.NO_RESULT;
+			else if (s.equals(State.RUNNING.toString()))
+				return State.RUNNING;
+			else if (s.equals(State.TIMEOUT.toString()))
+				return State.TIMEOUT;
+			else
+				return State.OK;
+		}
+	}
 	
 	public enum Stage { TRAINING, VALIDATION }
 }
