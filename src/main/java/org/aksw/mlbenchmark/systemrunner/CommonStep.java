@@ -124,9 +124,7 @@ public abstract class CommonStep {
 		ResultLoaderBase resultLoader = new ResultLoaderBase();
 		try {
 			resultLoader.loadResults(trainingResultFile);
-			result.setProperty(getResultKey() + "." + "trainingRaw",
-					resultLoader.getResults());
-
+			
 		} catch (IOException e) {
 			// training output is rubbish
 			CrossValidationRunner.logger.warn("learning system " +
