@@ -12,6 +12,7 @@ import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
 import org.aksw.mlbenchmark.examples.loaders.ExampleLoader;
 import org.aksw.mlbenchmark.examples.loaders.ExampleLoaderBase;
+import org.aksw.mlbenchmark.systemrunner.AccuracyRunner;
 import org.aksw.mlbenchmark.systemrunner.CrossValidationRunner;
 import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
@@ -102,6 +103,13 @@ public class BenchmarkLog {
 
 		String prefix = CrossValidationRunner.getResultKey(scenarioSystem, fold)
 				+ ".ValidationRaw";
+		return resConfig.subset(prefix);
+	}
+	
+	public Configuration getSingleFoldValidationResults(ScenarioSystem scenarioSystem) {
+		Configuration resConfig = results.getResult(scenarioSystem, 0);
+		String prefix = AccuracyRunner.getResultKey(scenarioSystem) + ".ValidationRaw";
+
 		return resConfig.subset(prefix);
 	}
 

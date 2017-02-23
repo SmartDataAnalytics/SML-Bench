@@ -87,7 +87,11 @@ public class AccuracyRunner extends AbstractSystemRunner {
 					parent.getConfig().getMaxExecutionTime());
 			parent.getBenchmarkLog().saveLearningSystemInfo(lsi);
 
-			fileFinder = fileFinder.updateWorkDir(new File(getResultDir(ss)));
+			File workingDir = new File(
+					parent.getTempDirectory().toAbsolutePath().toString(),
+					getResultDir(ss));
+			workingDir.mkdirs();
+			fileFinder = fileFinder.updateWorkDir(workingDir);
 			
 			logger.info("executing scenario " + ss.getTask() + "/" + ss.getProblem() + " with " + ss.getLearningSystem());
 

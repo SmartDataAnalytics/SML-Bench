@@ -9,7 +9,6 @@ import org.aksw.mlbenchmark.Scenario;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
 import org.aksw.mlbenchmark.examples.PosNegExamples;
 import org.aksw.mlbenchmark.util.FileFinder;
-import org.apache.commons.configuration2.BaseConfiguration;
 import org.apache.commons.configuration2.Configuration;
 
 /**
@@ -31,11 +30,6 @@ public class AbsoluteStep extends CommonStep {
 	}
 
 	@Override
-	public Configuration validate() {
-		return new BaseConfiguration(); // = empty results set
-	}
-
-	@Override
 	protected Set<String> getPositiveTrainingExamples() {
 		return ((PosNegExamples) examples).get(Constants.ExType.POS);
 	}
@@ -47,14 +41,12 @@ public class AbsoluteStep extends CommonStep {
 
 	@Override
 	protected Set<String> getPositiveValidationExamples() {
-		throw new RuntimeException("There are no validation examples for a "
-				+ "train-only system runner");
+		return getPositiveTrainingExamples();
 	}
 
 	@Override
 	protected Set<String> getNegativeValidationExamples() {
-		throw new RuntimeException("There are no validation examples for a "
-				+ "train-only system runner");
+		return getNegativeTrainingExamples();
 	}
 
 	@Override
