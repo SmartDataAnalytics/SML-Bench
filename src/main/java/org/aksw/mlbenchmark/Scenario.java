@@ -16,10 +16,12 @@ public class Scenario implements ScenarioAttributes {
 		this.problem = problem;
 	}
 
+	@Override
 	public String getProblem() {
 		return problem;
 	}
 
+	@Override
 	public String getTask() {
 		return task;
 	}
@@ -37,5 +39,10 @@ public class Scenario implements ScenarioAttributes {
 
 	public ScenarioSystem addSystem(LearningSystemInfo system) {
 		return new ScenarioSystem(this, system);
+	}
+	
+	@Override
+	public String toString() {
+		return task + "/" + problem;
 	}
 }
