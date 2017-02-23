@@ -1,21 +1,6 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Set;
-
-import org.aksw.mlbenchmark.BenchmarkLog;
-import org.aksw.mlbenchmark.ConfigLoader;
-import org.aksw.mlbenchmark.ConfigLoaderException;
-import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.LearningSystemInfo;
-import org.aksw.mlbenchmark.MeasureMethod;
-import org.aksw.mlbenchmark.Scenario;
+import org.aksw.mlbenchmark.*;
 import org.aksw.mlbenchmark.examples.ExamplesSplit;
 import org.aksw.mlbenchmark.process.ProcessRunner;
 import org.aksw.mlbenchmark.resultloader.ResultLoaderBase;
@@ -29,6 +14,12 @@ import org.apache.commons.configuration2.ex.ConversionException;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.exec.ExecuteException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * Actions shared between several types of steps (Cross Validation etc.). Each
@@ -38,6 +29,7 @@ import org.apache.commons.exec.ExecuteException;
  * - on one learning problem
  */
 public abstract class CommonStep {
+	final static Logger logger = LoggerFactory.getLogger(CommonStep.class);
 	protected final LearningSystemInfo lsi;
 	protected final Scenario scenario;
 	protected final Configuration runtimeConfig;
@@ -94,14 +86,14 @@ public abstract class CommonStep {
 
 		Set<String> trainingPos = getPositiveTrainingExamples();
 		Set<String> trainingNeg = getNegativeTrainingExamples();
-		AbstractSystemRunner.writeExamplesFiles(lsi.getLanguage(),
+		Helper.writeExamplesFiles(lsi.getLanguage(),
 				posFile.getAbsolutePath(), trainingPos,
 				negFile.getAbsolutePath(), trainingNeg);
 
 		// 2) prepare and write config for learning system ----------
 		File configFile = new File(trainDir, "config." + lsi.getConfigFormat());
 		Configuration cc = collectTrainingConfig(runtimeConfig);
-		AbstractSystemRunner.writeConfig(configFile.getAbsolutePath(), cc);
+		Helper.writeConfig(configFile.getAbsolutePath(), cc);
 		saveLearningSystemConfig(configFile.getAbsolutePath());
 
 		// 3) invoke learning system ------------------------------------------
@@ -127,7 +119,7 @@ public abstract class CommonStep {
 			
 		} catch (IOException e) {
 			// training output is rubbish
-			CrossValidationRunner.logger.warn("learning system " +
+			logger.warn("learning system " +
 					lsi.asString() + " result cannot be read: " + e.getMessage());
 			state = Constants.State.ERROR;
 		}
@@ -169,14 +161,14 @@ public abstract class CommonStep {
 		Set<String> testingPos = getPositiveValidationExamples();
 		Set<String> testingNeg = getNegativeValidationExamples();
 		
-		AbstractSystemRunner.writeExamplesFiles(lsi.getLanguage(),
+		Helper.writeExamplesFiles(lsi.getLanguage(),
 				posFilename.getAbsolutePath(), testingPos,
 				negFilename.getAbsolutePath(), testingNeg);
 
 		// 2) prepare and write config file -----------------------------------
 		File configFile = new File(validateDir, "config." + lsi.getConfigFormat());
 		Configuration cc = collectValidationConfig(runtimeConfig);
-		AbstractSystemRunner.writeConfig(configFile.getAbsolutePath(), cc);
+		Helper.writeConfig(configFile.getAbsolutePath(), cc);
 
 		// 3) invoke the validation executable --------------------------------
 		List<String> args = new LinkedList<>();
@@ -193,7 +185,7 @@ public abstract class CommonStep {
 			try {
 				rawValRes = ConfigLoader.load(outputFile.getAbsolutePath());
 			} catch (ConfigLoaderException e) {
-				CrossValidationRunner.logger.warn("could not load validation result: " + e.getMessage());
+				logger.warn("could not load validation result: " + e.getMessage());
 				state = Constants.State.ERROR;
 			}
 		}
@@ -228,7 +220,7 @@ public abstract class CommonStep {
 				results.setProperty(resultKey + "." + "measure" + "." + m, measure);
 			}
 		} catch (ConversionException | NoSuchElementException e) {
-			CrossValidationRunner.logger.warn("invalid validation results: " + e.getMessage());
+			logger.warn("invalid validation results: " + e.getMessage());
 			state = Constants.State.ERROR;
 			results.setProperty(resultKey + "." + "validationResult",
 					state.toString().toLowerCase());
@@ -294,14 +286,14 @@ public abstract class CommonStep {
 		Iterator<String> keysIt = runtimeConfig.getKeys(
 				Constants.LEARNING_SYSTEMS_KEY + "." + lsi.getLearningSystem());
 		extractLearningSystemSettings(keysIt, runtimeConfig, trainConfig);
-		
+
 		if (lsi.getIdentifier() != null) {
 			// settings declared for a specific instance with identifier lsi.getIdentifier()
 			keysIt = runtimeConfig.getKeys(
 					Constants.LEARNING_SYSTEMS_KEY + "." + lsi.asString());
 			extractLearningSystemSettings(keysIt, runtimeConfig, trainConfig);
 		}
-		
+
 		return trainConfig;
 	}
 	
@@ -375,18 +367,18 @@ public abstract class CommonStep {
 		
 		} catch (ExecuteException e) {
 			if (e.getExitValue() == 143) {
-				CrossValidationRunner.logger.warn(info + " " + lsi.toString() +
+				logger.warn(info + " " + lsi.toString() +
 						" was canceled due to timeout");
 				state = Constants.State.TIMEOUT;
 			
 			} else {
-				CrossValidationRunner.logger.warn(info + " " + lsi.toString() +
+				logger.warn(info + " " + lsi.toString() +
 						" did not finish cleanly: " + e.getMessage());
 				state = Constants.State.ERROR;
 			}
 		
 		} catch (IOException e) {
-			CrossValidationRunner.logger.warn(info + " " + lsi.toString() +
+			logger.warn(info + " " + lsi.toString() +
 					" could not execute: " + e.getMessage() + "[" + e.getClass() + "]");
 			state = Constants.State.ERROR;
 		}
@@ -395,7 +387,7 @@ public abstract class CommonStep {
 			File file = new File(expectedOutput);
 			
 			if (state.equals(Constants.State.OK) && !file.isFile()) {
-				CrossValidationRunner.logger.warn(info + " " + lsi.toString() +
+				logger.warn(info + " " + lsi.toString() +
 						" did not produce an output");
 				state = Constants.State.ERROR;
 			}

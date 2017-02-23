@@ -1,13 +1,5 @@
 package org.aksw.mlbenchmark.config;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.regex.Pattern;
-
 import org.aksw.mlbenchmark.ConfigLoader;
 import org.aksw.mlbenchmark.ConfigLoaderException;
 import org.apache.commons.configuration2.Configuration;
@@ -22,6 +14,15 @@ import org.apache.commons.configuration2.tree.ExpressionEngine;
 import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * Convert property files to hierarchical config layout (like HierarchicalConfigurationConverter)
@@ -70,6 +71,17 @@ public class FlatConfigHierarchicalConverter {
 		PropertyListConfiguration ret = new PropertyListConfiguration();
 		process(temp, ret);
 		return ret;
+	}
+
+	public static String convertAsString(Configuration config) {
+		PropertyListConfiguration convert = convert(config);
+		StringWriter out = new StringWriter();
+		try {
+			convert.write(out);
+		} catch (ConfigurationException e) {
+			e.printStackTrace();
+		}
+		return out.getBuffer().toString();
 	}
 
 	public static void main(String[] args) throws ConfigLoaderException, IOException, ConfigurationException {

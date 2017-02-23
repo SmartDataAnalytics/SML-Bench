@@ -29,28 +29,6 @@ public abstract class AbstractSystemRunner implements SystemRunner {
 		this.scn = scn;
 	}
 
-	public static void writeConfig(String configFile, Configuration cc) {
-		try {
-			ConfigLoader.write(cc, new File(configFile));
-		} catch (IOException | ConfigLoaderException | ConfigurationException e) {
-			throw new RuntimeException("Writing scenario config failed", e);
-		}
-	}
-
-	public static void writeExamplesFiles(Constants.LANGUAGES lang, String posFilename, Set<String> testingPos, String negFilename, Set<String> testingNeg) {
-		try {
-			ExampleLoaderBase posWriter = ExampleLoader.forLanguage(lang);
-			posWriter.setExamples(testingPos);
-			posWriter.writeExamples(new File(posFilename));
-
-			ExampleLoaderBase negWriter = ExampleLoader.forLanguage(lang);
-			negWriter.setExamples(testingNeg);
-			negWriter.writeExamples(new File(negFilename));
-		} catch (IOException e) {
-			throw new RuntimeException("Could not write examples file", e);
-		}
-	}
-	
 	protected void updateResultSet(Configuration results) {
 		Iterator<String> keysIt = results.getKeys();
 		String key;

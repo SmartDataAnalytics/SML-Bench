@@ -1,26 +1,8 @@
 package org.aksw.mlbenchmark;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import org.aksw.mlbenchmark.config.CustomListDelimiterHandler;
-import org.aksw.mlbenchmark.config.FlatConfigHierarchicalConverter;
-import org.aksw.mlbenchmark.config.INIConfigurationWriteDotkeys;
-import org.aksw.mlbenchmark.config.INIConfigurationWriteLists;
-import org.aksw.mlbenchmark.config.PropertiesConfigurationFromDotkeys;
+import org.aksw.mlbenchmark.config.*;
 import org.apache.commons.collections.IteratorUtils;
-import org.apache.commons.configuration2.BaseConfiguration;
-import org.apache.commons.configuration2.CombinedConfiguration;
-import org.apache.commons.configuration2.Configuration;
-import org.apache.commons.configuration2.FileBasedConfiguration;
-import org.apache.commons.configuration2.HierarchicalConfiguration;
-import org.apache.commons.configuration2.INIConfiguration;
-import org.apache.commons.configuration2.ImmutableHierarchicalConfiguration;
-import org.apache.commons.configuration2.PropertiesConfiguration;
+import org.apache.commons.configuration2.*;
 import org.apache.commons.configuration2.builder.BuilderParameters;
 import org.apache.commons.configuration2.builder.FileBasedConfigurationBuilder;
 import org.apache.commons.configuration2.builder.fluent.Parameters;
@@ -34,6 +16,11 @@ import org.apache.commons.configuration2.tree.ImmutableNode;
 import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Class to handle configuration files in multiple formats like
@@ -102,21 +89,7 @@ public class ConfigLoader {
 		return config;
 	}
 
-	/**
-	 * Writes out a given configuration to file. The format in which the given
-	 * configuration will be written out is determined by the file suffix of
-	 * the target file.
-	 * 
-	 * @param config The configuration to write to file
-	 * @param output The target file
-	 * @throws IOException
-	 * @throws ConfigurationException
-	 * @throws ConfigLoaderException
-	 */
-	public static void write(Configuration config, File output)
-			throws IOException, ConfigurationException, ConfigLoaderException {
-		
-		String filename = output.getAbsolutePath();
+	private static void write(Configuration config, String filename, Writer writer) throws ConfigLoaderException, IOException, ConfigurationException {
 		PropertyListConfiguration conf = FlatConfigHierarchicalConverter.convert(config);
 		/* The CustomListDelimiterHandler is used here mainly because the
 		 * actual default (i.e. DefaultListDelimiterHandler) caused errors
@@ -124,22 +97,22 @@ public class ConfigLoader {
 		 * unlikely to occur in real SML-Bench configurations). */
 		ListDelimiterHandler delim = new CustomListDelimiterHandler(',');
 		FileBasedConfiguration out;
-		
+
 		if (filename.endsWith(".plist")) {
 			out = conf;
-		
+
 		} else if (filename.endsWith(".xml")) {
 			XMLPropertyListConfiguration xml = new XMLPropertyListConfiguration(conf);
 			xml.initFileLocator(FileLocatorUtils.fileLocator().create());
 			out = xml;
-		
+
 		} else if (filename.endsWith(".ini") || filename.endsWith(".conf")) {
 			CombinedConfiguration cc = new CombinedConfiguration();
 			cc.setNodeCombiner(new MergeCombiner());
 			BaseConfiguration main = new BaseConfiguration();
 			for (ImmutableHierarchicalConfiguration x : conf.immutableChildConfigurationsAt("")) {
 				List<String> list = IteratorUtils.toList(x.getKeys());
-				
+
 				if (list.size() == 1 && list.get(0).isEmpty()) {
 					/*
 					 * The assumptions made here are:
@@ -156,47 +129,47 @@ public class ConfigLoader {
 					 *     (which is accessed here via
 					 *     x.getArray(Object.class, "") to be as generic as
 					 *     possible)
-					 * 
+					 *
 					 * All such top level properties will be added to a main
 					 * 'section' or sub-configuration to comply with the INI
 					 * file format which requires all properties to belong to a
 					 * certain configuration section.
-					 * 
+					 *
 					 * Example:
-					 * 
+					 *
 					 * Input:
 					 * {
 					 *     foo = "bar";
 					 * }
-					 * 
+					 *
 					 * Processed as:
 					 * x.getRootElementName()
 					 * 	 (java.lang.String) foo
-					 * 
+					 *
 					 * list
 					 * 	 (java.util.ArrayList<E>) []
-					 * 
+					 *
 					 * list.size()
 					 * 	 (int) 1
-					 * 
+					 *
 					 * x.getArray(Object.class, "")
 					 * 	 (java.lang.Object[]) [bar]
 					 */
 					main.setProperty(x.getRootElementName(), x.getArray(Object.class, ""));
-				
+
 				} else {
 					/* This branch is taken for all nested properties like
-					 * 
+					 *
 					 *  nested.key1 = value1
 					 *  nested.key2 = value
-					 * 
+					 *
 					 * Here the common first part of the nested keys is stored
 					 * in x's root element name ("nested"), the remainder of
 					 * the keys is stored as actual keys (["key1", "key2"])
 					 * with their corresponding values.
-					 * 
+					 *
 					 * Example:
-					 * 
+					 *
 					 * Input:
 					 * {
 					 *     nested =
@@ -209,21 +182,21 @@ public class ConfigLoader {
 					 *         }
 					 *     }
 					 * }
-					 * 
+					 *
 					 * Processed as:
-					 * 
+					 *
 					 * x.getRootElementName()
 					 * 	 (java.lang.String) nested
-					 * 
+					 *
 					 * IteratorUtils.toList(x.getKeys())
 					 * 	 (java.util.ArrayList<E>) [key1, key2, nested.foo]
-					 * 
+					 *
 					 * x.getArray(Object.class, "key1")
 					 * 	 (java.lang.Object[]) [value1]
-					 * 
+					 *
 					 * x.getArray(Object.class, "key2")
 					 * 	 (java.lang.Object[]) [value]
-					 * 
+					 *
 					 * x.getArray(Object.class, "nested.foo")
 					 * 	 (java.lang.Object[]) [bar]
 					 */
@@ -237,19 +210,56 @@ public class ConfigLoader {
 
 			iniConfiguration.setListDelimiterHandler(delim);
 			out = iniConfiguration;
-			
+
 		} else if (filename.endsWith(".prop") || filename.endsWith(".properties")) {
 			PropertiesConfiguration propertiesConfiguration =
 					new PropertiesConfigurationFromDotkeys();
 			propertiesConfiguration.copy(conf);
 			propertiesConfiguration.setListDelimiterHandler(delim);
 			out = propertiesConfiguration;
-		
+
 		} else {
 			throw new ConfigLoaderException("Writing of config type not implemented yet.");
 		}
 
-		out.write(new FileWriter(output));
+		out.write(writer);
+	}
+
+	/**
+	 * Writes out a given configuration as string. The format in which the given
+	 * configuration will be written out is determined by the file suffix of
+	 * the target file.
+	 *
+	 * @param config The configuration to write to file
+	 * @param filename The hypothetic filename decides the output format
+	 * @throws ConfigurationException
+	 * @throws ConfigLoaderException
+	 */
+	public static String writeAsString(Configuration config, String filename) throws ConfigLoaderException, ConfigurationException {
+		StringWriter stringWriter = new StringWriter();
+		try {
+			write(config, filename, stringWriter);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return stringWriter.getBuffer().toString();
+	}
+	/**
+	 * Writes out a given configuration to file. The format in which the given
+	 * configuration will be written out is determined by the file suffix of
+	 * the target file.
+	 * 
+	 * @param config The configuration to write to file
+	 * @param output The target file
+	 * @throws IOException
+	 * @throws ConfigurationException
+	 * @throws ConfigLoaderException
+	 */
+	public static void write(Configuration config, File output)
+			throws IOException, ConfigurationException, ConfigLoaderException {
+		
+		String filename = output.getAbsolutePath();
+		write(config, filename, new FileWriter(output));
 	}
 
 	/**
