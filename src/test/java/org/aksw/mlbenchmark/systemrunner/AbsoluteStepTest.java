@@ -2,7 +2,6 @@ package org.aksw.mlbenchmark.systemrunner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.util.HashMap;
@@ -389,37 +388,5 @@ public class AbsoluteStepTest {
 		
 		assertEquals(examples.get(Constants.ExType.NEG),
 				step.getNegativeTrainingExamples());
-	}
-
-	@Test
-	public void testGetPositiveValidationExamples() {
-		LearningSystemInfo lsi = new LearningSystemInfo(
-				new BenchmarkConfig(runtimeConfig), "aleph", fileFinder);
-		FileFinder alephFileFinder = fileFinder.updateLearningSytemInfo(lsi);
-		AbsoluteStep step = new AbsoluteStep(scenario, lsi, examples,
-				runtimeConfig, alephFileFinder, log);
-		
-		try {
-			step.getPositiveValidationExamples();
-			fail("Should have thrown an exception");
-		} catch (RuntimeException e) {
-			// Test passed
-		}
-	}
-	
-	@Test
-	public void testGetNegativeValidationExamples() {
-		LearningSystemInfo lsi = new LearningSystemInfo(
-				new BenchmarkConfig(runtimeConfig), "aleph", fileFinder);
-		FileFinder alephFileFinder = fileFinder.updateLearningSytemInfo(lsi);
-		AbsoluteStep step = new AbsoluteStep(scenario, lsi, examples,
-				runtimeConfig, alephFileFinder, log);
-		
-		try {
-			step.getNegativeValidationExamples();
-			fail("Should have thrown an exception");
-		} catch (RuntimeException e) {
-			// Test passed
-		}
 	}
 }
