@@ -46,7 +46,9 @@ public class Constants {
 	public static final String TRUE_NEGATIVES_KEY = "tn";
 	public static final String FALSE_POSITIVES_KEY = "fp";
 	public static final String FALSE_NEGATIVES_KEY = "fn";
+	public static final String TRAIN_STATUS_KEY_PART = "train_status";
 	public static final String ABSOLUTE_RESULT_KEY_PART = "absolute";
+	public static final String TRAINING_RES_RAW_KEY_PART = "trainingRaw";
 
 	/** the default maximum execution time in seconds for the training step */
 	public static final long DefaultMaxExecutionTime = 35; // seconds

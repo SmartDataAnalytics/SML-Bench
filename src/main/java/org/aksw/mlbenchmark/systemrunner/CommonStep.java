@@ -128,14 +128,22 @@ public abstract class CommonStep {
 					resultLoader.getResults());
 
 		} catch (IOException e) {
+			// training output is rubbish
 			CrossValidationRunner.logger.warn("learning system " +
 					lsi.asString() + " result cannot be read: " + e.getMessage());
 			state = Constants.State.ERROR;
 		}
 
-		result.setProperty(getResultKey() + "." + "trainingResult",
-				state.toString().toLowerCase());
+		// result is empty
+		if (resultLoader.isEmpty())
+			state = Constants.State.NO_RESULT;
 		
+		result.setProperty(
+				getResultKey() + "." + Constants.TRAINING_RES_RAW_KEY_PART,
+				resultLoader.getResults());
+		
+		result.setProperty(getResultKey() + "." + Constants.TRAIN_STATUS_KEY_PART,
+				state.toString().toLowerCase());
 		return result;
 	}
 
