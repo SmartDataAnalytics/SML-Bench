@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.aksw.mlbenchmark.Constants.State;
 import org.aksw.mlbenchmark.config.BenchmarkConfig;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
 import org.aksw.mlbenchmark.examples.loaders.ExampleLoader;
@@ -20,11 +21,6 @@ import org.apache.commons.configuration2.Configuration;
 import com.google.common.collect.Sets;
 
 public class BenchmarkLog {
-	public static final String tp = "tp";
-	public static final String fp = "fp";
-	public static final String tn = "tn";
-	public static final String fn = "fn";
-
 	/**
 	 * Contains
 	 * - learning systems to run ["learningsystems"]
@@ -196,6 +192,74 @@ public class BenchmarkLog {
 			e.printStackTrace();
 			return new BaseConfiguration();
 		}
+	}
+	
+	public Constants.State getSingleFoldTrainingState(ScenarioSystem ss) {
+		Configuration res = results.getResult(ss, 0);
+		String stateStr = res.getString(
+				AccuracyRunner.getResultKey(ss) + "." + Constants.TRAIN_STATUS_KEY_PART);
+		
+		return Constants.State.getStateFor(stateStr);
+	}
+	
+	public Constants.State getTrainingState(ScenarioSystem ss, int fold) {
+		Configuration res = results.getResult(ss, fold);
+		String stateStr = res.getString(
+				AccuracyRunner.getResultKey(ss) + "." + Constants.TRAIN_STATUS_KEY_PART);
+		
+		return Constants.State.getStateFor(stateStr);
+	}
+	
+	/**
+	 * Returns an overall training state for a n-fold cross validation
+	 * experiment. In case the status was the same for all folds, the state to
+	 * return is obvious. For all other cases the best achieved status is
+	 * returned, where 'best' is determined by this order:
+	 * 
+	 *   OK > TIMEOUT > NO_RESULT > ERROR
+	 * 
+	 * RUNNING is ignored here, since it is assumed that the experiment
+	 * finished when calling this method.
+	 * 
+	 * @param ss Scenario + system describing which experiment we refer to
+	 * @return The overall training state
+	 */
+	public Constants.State getTrainingState(ScenarioSystem ss) {
+		Map<Constants.State, Integer> states = new HashMap<Constants.State, Integer>();
+		
+		for (int i=0; i<getNumFolds(); i++) {
+			Configuration res = results.getResult(ss, i);
+			String stateStr = res.getString(
+					CrossValidationRunner.getResultKey(ss, i) + "."
+							+ Constants.TRAIN_STATUS_KEY_PART);
+			Constants.State s = Constants.State.getStateFor(stateStr);
+			
+			if (!states.containsKey(s))
+				states.put(s, 0);
+			int tmp = states.get(s);
+			states.put(s, ++tmp);
+		}
+		
+		boolean containsOK = false;
+		boolean containsTimeout = false;
+		boolean containsNoResult = false;
+		for (State state : states.keySet()) {
+			// e.g. if there were errors or timeouts in all folds
+			if (states.get(state) == states.size())
+				return state;
+			
+			if (state.equals(Constants.State.OK))
+				containsOK = true;
+			if (state.equals(Constants.State.TIMEOUT))
+				containsOK = true;
+			if (state.equals(Constants.State.NO_RESULT))
+				containsOK = true;
+		}
+		
+		if (containsOK) return Constants.State.OK;
+		if (containsTimeout) return Constants.State.TIMEOUT;
+		if (containsNoResult) return Constants.State.NO_RESULT;
+		return Constants.State.ERROR;
 	}
 
 	// ------------------------------------------------------------------------

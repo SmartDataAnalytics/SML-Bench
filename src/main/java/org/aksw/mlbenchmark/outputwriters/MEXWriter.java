@@ -14,6 +14,7 @@ import org.aksw.mex.util.MEXEnum.EnumMeasures;
 import org.aksw.mex.util.MEXEnum.EnumPhases;
 import org.aksw.mex.util.MEXEnum.EnumSamplingMethods;
 import org.aksw.mlbenchmark.BenchmarkLog;
+import org.aksw.mlbenchmark.Constants;
 import org.aksw.mlbenchmark.Scenario;
 import org.aksw.mlbenchmark.container.ScenarioSystem;
 import org.apache.commons.configuration2.Configuration;
@@ -206,15 +207,15 @@ public class MEXWriter {
 		// ----------------------------- mex-perf -----------------------------
 		Configuration res = log.getValidationResults(scenarioSystem, fold);
 
-		if (res.containsKey(BenchmarkLog.tp) &&
-				res.containsKey(BenchmarkLog.fp) &&
-				res.containsKey(BenchmarkLog.tn) &&
-				res.containsKey(BenchmarkLog.fn)) {
+		if (res.containsKey(Constants.TRUE_POSITIVES_KEY) &&
+				res.containsKey(Constants.FALSE_POSITIVES_KEY) &&
+				res.containsKey(Constants.TRUE_NEGATIVES_KEY) &&
+				res.containsKey(Constants.FALSE_NEGATIVES_KEY)) {
 
-			int tp = res.getInt(BenchmarkLog.tp);
-			int fp = res.getInt(BenchmarkLog.fp);
-			int tn = res.getInt(BenchmarkLog.tn);
-			int fn = res.getInt(BenchmarkLog.fn);
+			int tp = res.getInt(Constants.TRUE_POSITIVES_KEY);
+			int fp = res.getInt(Constants.FALSE_POSITIVES_KEY);
+			int tn = res.getInt(Constants.TRUE_NEGATIVES_KEY);
+			int fn = res.getInt(Constants.FALSE_NEGATIVES_KEY);
 			mex.Configuration(conf).Execution(exec).addPerformance(
 					EnumMeasures.TRUEPOSITIVE, tp);
 			mex.Configuration(conf).Execution(exec).addPerformance(
