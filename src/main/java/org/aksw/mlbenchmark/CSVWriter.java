@@ -133,7 +133,7 @@ public class CSVWriter {
 	}
 	
 	private static double accuracy(Result res) {
-		return (res.tp + res.tn) / (res.tp + res.fp + res.tn + res.fn);
+		return (res.tp + res.tn) / ((double) (res.tp + res.fp + res.tn + res.fn));
 	}
 	
 	private static double fScore(Result res) {
@@ -143,12 +143,12 @@ public class CSVWriter {
 	private static double precision(Result res) {
 		if (res.tp + res.fp == 0) return 0;
 		
-		return res.tp / (res.tp + res.fp);
+		return res.tp / ((double) (res.tp + res.fp));
 	}
 	
 	private static double recall(Result res) {
 		if (res.tp + res.fn == 0) return 0;
-		return res.tp / (res.tp + res.fn);
+		return res.tp / ((double) (res.tp + res.fn));
 	}
 	
 	static class Stats {
@@ -163,6 +163,11 @@ public class CSVWriter {
 	
 	static class Result {
 		int tp, tn, fp, fn;
+		
+		@Override
+		public String toString() {
+			return "tp: " + tp + "; tn: " + tn + " ; fp: " + fp + " ; fn: " + fn;
+		}
 	}
 	
 	static class Values extends ArrayList<String> {
