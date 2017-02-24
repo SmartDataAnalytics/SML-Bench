@@ -9,7 +9,7 @@ program_dir="$(pwd)"
 
 add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
 # we need to escape \" with %22 for the dllearner config parser
-add_conf cli.expression '=' '"'"$(cat "$SMLB_INPUT" | sed -e 's.".%22.g')"'"'
+add_conf cli.expression '=' '"'"$(cat "$SMLB_FILENAME_INPUT" | sed -e 's.".%22.g')"'"'
 add_conf
 
 common_config
