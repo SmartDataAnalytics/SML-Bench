@@ -143,8 +143,8 @@ public class CrossValidationRunner extends AbstractSystemRunner {
 				updateResultSet(results);
 
 				if (step.isStateOk()) {
-					results = step.validate();
-					updateResultSet(results);
+					Configuration valResults = step.validate();
+					updateResultSet(valResults);
 				}
 				
 				step.saveResultSet(getResultset());

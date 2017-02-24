@@ -80,7 +80,7 @@ public class Constants {
 		
 		public static State getStateFor(String stateString) {
 			if (stateString == null) {
-				int a = 23; a = a +2;
+				throw new RuntimeException("State string was null");
 			}
 			String s = stateString.toUpperCase();
 			if (s.equals(State.ERROR.toString()))
