@@ -245,15 +245,15 @@ public class BenchmarkLog {
 		boolean containsNoResult = false;
 		for (State state : states.keySet()) {
 			// e.g. if there were errors or timeouts in all folds
-			if (states.get(state) == states.size())
+			if (states.get(state) == getNumFolds())
 				return state;
 			
 			if (state.equals(Constants.State.OK))
 				containsOK = true;
 			if (state.equals(Constants.State.TIMEOUT))
-				containsOK = true;
+				containsTimeout = true;
 			if (state.equals(Constants.State.NO_RESULT))
-				containsOK = true;
+				containsNoResult = true;
 		}
 		
 		if (containsOK) return Constants.State.OK;
