@@ -1,6 +1,21 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import org.aksw.mlbenchmark.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Set;
+
+import org.aksw.mlbenchmark.BenchmarkLog;
+import org.aksw.mlbenchmark.ConfigLoader;
+import org.aksw.mlbenchmark.ConfigLoaderException;
+import org.aksw.mlbenchmark.Constants;
+import org.aksw.mlbenchmark.LearningSystemInfo;
+import org.aksw.mlbenchmark.MeasureMethod;
+import org.aksw.mlbenchmark.Scenario;
 import org.aksw.mlbenchmark.examples.ExamplesSplit;
 import org.aksw.mlbenchmark.process.ProcessRunner;
 import org.aksw.mlbenchmark.resultloader.ResultLoaderBase;
@@ -16,10 +31,6 @@ import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.exec.ExecuteException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
 
 /**
  * Actions shared between several types of steps (Cross Validation etc.). Each
@@ -113,24 +124,26 @@ public abstract class CommonStep {
 		result.setProperty(getResultKey() + "." + "duration",
 				duration / 1000000000); // nanoseconds -> seconds
 
-		ResultLoaderBase resultLoader = new ResultLoaderBase();
-		try {
-			resultLoader.loadResults(trainingResultFile);
-			
-		} catch (IOException e) {
-			// training output is rubbish
-			logger.warn("learning system " +
-					lsi.asString() + " result cannot be read: " + e.getMessage());
-			state = Constants.State.ERROR;
-		}
+		if (state.equals(Constants.State.OK)) {
+			ResultLoaderBase resultLoader = new ResultLoaderBase();
+			try {
+				resultLoader.loadResults(trainingResultFile);
+				
+			} catch (IOException e) {
+				// training output is rubbish
+				logger.warn("learning system " +
+						lsi.asString() + " result cannot be read: " + e.getMessage());
+				state = Constants.State.ERROR;
+			}
+	
+			// result is empty
+			if (resultLoader.isEmpty())
+				state = Constants.State.NO_RESULT;
 
-		// result is empty
-		if (resultLoader.isEmpty())
-			state = Constants.State.NO_RESULT;
-		
-		result.setProperty(
-				getResultKey() + "." + Constants.TRAINING_RES_RAW_KEY_PART,
-				resultLoader.getResults());
+			result.setProperty(
+					getResultKey() + "." + Constants.TRAINING_RES_RAW_KEY_PART,
+					resultLoader.getResults());
+		}
 		
 		result.setProperty(getResultKey() + "." + Constants.TRAIN_STATUS_KEY_PART,
 				state.toString().toLowerCase());
