@@ -1,0 +1,8 @@
+animal(-animal)
+has_milk(+animal)
+has_gills(+animal)
+has_covering(+animal,#covering)
+has_legs(+animal,+integer)
+homeothermic(+animal)
+has_eggs(+animal)
+habitat(+animal,#habitat)
