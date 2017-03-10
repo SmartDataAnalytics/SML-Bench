@@ -108,7 +108,8 @@ fi
 # export config options by: UPPERCASE, replace . with _, prefix with SMLB_
 # keep this in sync with ProcessRunner#updateEnvironment
 if [ -z "$SMLB_FILENAME_WORKDIR" ]; then
-    eval "$(cat "$1" | awk -F ' = ' '{gsub("[.]","_",$1); $1="SMLB_" toupper($1); printf "%s=\"%s\"\n",$1,$2}')"
+    eval "$(cat "$1" | grep -v 'settings.' | awk -F ' = ' '{gsub("[.]","_",$1); $1="SMLB_" toupper($1); printf "%s=\"%s\"\n",$1,$2}')"
+    eval "$(cat "$1" | grep 'settings.' | sed 's/\"/\\"/g' | awk -F ' = ' '{gsub("[.]","_",$1); $1="SMLB_" $1; printf "%s=%s\n",$1,$2}')"
 fi
 
 # save parameters to variables
@@ -161,10 +162,54 @@ common_config() {
     if [ -f ../../"$lp_config_file" ]; then
         read_lp_conf ../../"$lp_config_file"
     fi
-    
+
     if [ -n "$prefix" ]; then
 	    add_conf 'prefixes = [ ("ex","'"$prefix"'") ]'
     fi
+
+
+    # get all settings that were put under the 'settings' namespace
+    for setting in $(set | grep 'SMLB_settings')
+    do
+        setting=$(echo "$setting" | sed 's/SMLB_settings_//g')
+        wholekey=$(echo "$setting" | awk -F ' *= *' '{print $1}')
+        cleankey=$(echo "$wholekey" | sed 's/_/./g')
+        val=$(echo "$setting" | awk -F ' *= *' '{print $2}')
+
+        add_conf "$cleankey=$(echo $val | sed "s/'//g")"
+
+        # In case a component is defined in SMLB_settings_* a flag has
+        # to be set.
+        # A component is defined whenever a '.type' appears in the setting,
+        # e.g. algorithm.type = "eltl". Then, it has to be checked which
+        # kind of component was defined and the <component_type>_is_set
+        # flag has to be updated accordingly. For all components with
+        # <component_type>_is_set = 0 default components will be configured
+        # further below.
+        if [ $(echo "$cleankey" | grep -c "type") -ge 1 ]
+        then
+            if [ $(echo "$cleankey" | grep -c "$algorithm_const") -ge 1 ]
+            then
+                algorithm_is_set=1
+            fi
+
+            if [ $(echo "$cleankey" | grep -c "$reasoner_const") -ge 1 ]
+            then
+                reasoner_is_set=1
+            fi
+            
+            if [ $(echo "$cleankey" | grep -c "$measure_const") -ge 1 ]
+            then
+                measure_is_set=1
+            fi
+    
+            if [ $(echo "$cleankey" | grep -c "$lp_const") -ge 1 ]
+            then
+                lp_is_set=1
+            fi
+        fi
+    done
+
 
     if [ $algorithm_is_set -eq 0 ]
     then
