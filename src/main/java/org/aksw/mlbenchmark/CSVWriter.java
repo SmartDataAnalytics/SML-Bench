@@ -137,7 +137,10 @@ public class CSVWriter {
 	}
 	
 	private static double fScore(Result res) {
-		return 2 * (precision(res) * recall(res)) / (precision(res) + recall(res));
+		double precision = precision(res);
+		double recall = recall(res);
+		return (precision + recall == 0) ? 0 :
+			(2 * (precision * recall) / (precision + recall));
 	}
 	
 	private static double precision(Result res) {
