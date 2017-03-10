@@ -44,7 +44,7 @@ public class ProcessRunner {
 			} catch (FileNotFoundException e1) {
 				logger.warn("could not set log file output");
 			}
-			updateEnvironment(environment, configuration);
+//			updateEnvironment(environment, configuration);
 		}
 		if (timeout > 0) {
 			e.setWatchdog(new ExecuteWatchdog(timeout * 1000)); // seconds -> milliseconds
