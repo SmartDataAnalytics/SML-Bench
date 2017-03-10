@@ -27,7 +27,7 @@ add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
 $dllearner_file "$conf" | tee "$tmpdir"/output.log
 #cp "$tmpdir"/output.log test.log
 # we only check the first result for the benchmark
-sed '0,/^solutions:/d' "$tmpdir"/output.log | grep '^1: ' \
+sed '0,/^solutions.*:/d' "$tmpdir"/output.log | grep '^1: ' \
    | sed -e 's,^1: ,,' -e 's, ([^)]*)$,,' > "$result_output_file"
 
 #cat "$conf"
