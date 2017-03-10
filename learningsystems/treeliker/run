@@ -364,7 +364,7 @@ if __name__ == '__main__':
 
     jar_path = find_treeliker_jar()
     executable_list = [
-        '/usr/bin/java', '-Xmx1G', '-cp', jar_path,
+        '/usr/bin/java', '-Xmx2G', '-cp', jar_path,
         'ida.ilp.treeLiker.TreeLikerMain', '-batch',
         os.path.join(target_dir, batch_file_name_template % file_name_base)]
     check_call_and_terminate(executable_list, cwd=target_dir)
