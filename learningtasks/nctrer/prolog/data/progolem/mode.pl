@@ -60,5 +60,6 @@
 :- modeb(1,structure_parent_smiles(+molecule,-smilesparstruc)).
 :- modeb(1,structure_shown(+molecule,-shownstruc)).
 :- modeb(1,structure_smiles(+molecule,-smilesstruc)).
+:- modeb(1,symbol(+atom_symbol)).
 :- modeb(1,triple_bond(+bond)).
 :- modeb(1,unmarked(+bond)).

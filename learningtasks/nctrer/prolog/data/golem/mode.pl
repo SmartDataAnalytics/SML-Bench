@@ -60,6 +60,7 @@
 !- mode(structure_parent_smiles(+,-)).
 !- mode(structure_shown(+,-)).
 !- mode(structure_smiles(+,-)).
+!- mode(symbol(+)).
 !- mode(triple_bond(+)).
 !- mode(unmarked(+)).
 
@@ -124,6 +125,7 @@
 !- determination(molecule/1,structure_parent_smiles/2).
 !- determination(molecule/1,structure_shown/2).
 !- determination(molecule/1,structure_smiles/2).
+!- determination(molecule/1,symbol/1).
 !- determination(molecule/1,triple_bond/1).
 !- determination(molecule/1,unmarked/1).
 

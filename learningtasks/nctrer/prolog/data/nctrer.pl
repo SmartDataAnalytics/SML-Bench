@@ -95311,6 +95311,16 @@ studytype(molecule96,'Receptor Binding').
 studytype(molecule97,'Receptor Binding').
 studytype(molecule98,'Receptor Binding').
 studytype(molecule99,'Receptor Binding').
+symbol(c).
+symbol(cl).
+symbol(f).
+symbol(h).
+symbol(n).
+symbol(na).
+symbol(o).
+symbol(p).
+symbol(s).
+symbol(si).
 testsubstance_casrn(molecule1,'446-72-0').
 testsubstance_casrn(molecule10,'528-48-3').
 testsubstance_casrn(molecule100,'77-09-8').

@@ -60,6 +60,7 @@
 :- modeb(1,structure_parent_smiles(+molecule,-smilesparstruc)).
 :- modeb(1,structure_shown(+molecule,-shownstruc)).
 :- modeb(1,structure_smiles(+molecule,-smilesstruc)).
+:- modeb(1,symbol(+atom_symbol)).
 :- modeb(1,triple_bond(+bond)).
 :- modeb(1,unmarked(+bond)).
 
@@ -124,5 +125,6 @@
 :- determination(molecule/1,structure_parent_smiles/2).
 :- determination(molecule/1,structure_shown/2).
 :- determination(molecule/1,structure_smiles/2).
+:- determination(molecule/1,symbol/1).
 :- determination(molecule/1,triple_bond/1).
 :- determination(molecule/1,unmarked/1).
