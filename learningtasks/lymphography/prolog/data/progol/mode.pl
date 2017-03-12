@@ -44,7 +44,3 @@
 :- modeb(1,regenerationof8(+lymph))?
 :- modeb(1,sf16_chalices(+lymph))?
 :- modeb(1,sf16_vesicles(+lymph))?
-:- modeb(1,target1_normalfind(+lymph))?
-:- modeb(1,target2_metastases(+lymph))?
-:- modeb(1,target3_malignlymph(+lymph))?
-:- modeb(1,target4_fibrosis(+lymph))?

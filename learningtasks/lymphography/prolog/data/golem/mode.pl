@@ -44,10 +44,6 @@
 !- mode(regenerationof8(+)).
 !- mode(sf16_chalices(+)).
 !- mode(sf16_vesicles(+)).
-!- mode(target1_normalfind(+)).
-!- mode(target2_metastases(+)).
-!- mode(target3_malignlymph(+)).
-!- mode(target4_fibrosis(+)).
 
 !- determination(ex/1,bl_of_lymph_c4/1).
 !- determination(ex/1,blockofaffere3/1).
@@ -94,8 +90,3 @@
 !- determination(ex/1,regenerationof8/1).
 !- determination(ex/1,sf16_chalices/1).
 !- determination(ex/1,sf16_vesicles/1).
-!- determination(ex/1,target1_normalfind/1).
-!- determination(ex/1,target2_metastases/1).
-!- determination(ex/1,target3_malignlymph/1).
-!- determination(ex/1,target4_fibrosis/1).
-
