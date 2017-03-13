@@ -18,6 +18,7 @@ hs_err_pid*
 .settings/
 .idea/
 *.iml
+catalog-v001.xml
 
 # tmp files
 *.swp
