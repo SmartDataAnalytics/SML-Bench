@@ -357,7 +357,7 @@ if __name__ == '__main__':
     file_name_neg = cfg['filename.neg']
 
     settings = dict(
-        {(k, v) for k, v in cfg.items() if k.startswith('settings.')})
+        {(k.split('.', 1)[1], v) for k, v in cfg.items() if k.startswith('settings.')})
     copy_files_and_create_examples(
         learning_task_id, learning_problem_id, target_dir, file_name_base,
         cfg['filename.neg'], cfg['filename.pos'], settings)
