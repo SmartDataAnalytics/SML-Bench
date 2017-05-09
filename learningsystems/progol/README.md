@@ -3,8 +3,8 @@
 ## Description
 
 [Progol](http://www.doc.ic.ac.uk/~shm/progol.html) is an ILP tool developed by
-[Stephen Muggleton](http://wp.doc.ic.ac.uk/shm/) which applies the idea of [reverse
-entailment](http://www.doc.ic.ac.uk/~shm/Papers/InvEnt.pdf).
+[Stephen Muggleton](http://wp.doc.ic.ac.uk/shm/) which applies the idea of [Mode-Directed Inverse
+Entailment](http://www.doc.ic.ac.uk/~shm/Papers/InvEnt.pdf).
 It is written in C and the source code is provided 'free of charge for academic research and teaching only.'
 
 ## Installation
