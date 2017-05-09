@@ -1,26 +1,114 @@
-#!/bin/sh -e
-#export
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: validate.sh
+# 
+#         USAGE: ./validate.sh 
+# 
+#   DESCRIPTION: 
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Patrick Westphal (), patrick.westphal@informatik.uni-leipzig.de
+#  ORGANIZATION: 
+#       CREATED: 05/03/2017 12:33:55 PM
+#      REVISION:  ---
+#===============================================================================
 
-start_dir="$(pwd)"
+set -o nounset                              # Treat unset variables as an error
+
+smlb_step="validate"
+
+# 0 --> off; 1 --> DEBUG; 2 --> TRACE
+smlb_log_level=1
+
 cd "$(dirname "$0")"
 program_dir="$(pwd)"
 
+
+############################################################
+# Source the commons file to make a bunch of functions available
 . ./common.sh
 
-add_conf cli.type '=' '"org.dllearner.cli.ExpressionValidation"'
+
+############################################################
+# Read in the main configuration file
+#read_config_ini_file "$1"
+read_property_file "$1"
+
+
+############################################################
+# Read learning problem-specific configuration
+lp_specific_config_file="../../$learning_tasks_dir_name/$smlb_learningtask/$kr_lang_dir_name/$learning_problems_dir_name/$smlb_learningproblem/$lp_specific_condif_file_name"
+if [ -f "$lp_specific_config_file" ]
+then
+    debug "Found $lp_specific_config_file. Will try read it."
+    read_lp_ini_file "$lp_specific_config_file"
+else
+    debug "No learning problem-specific file found under $lp_specific_config_file"
+fi
+
+
+############################################################
+# Write out gathered settings
+tmpdir="$smlb_filename__workdir"
+config_file="$tmpdir"/run.conf
+write_config "$config_file"
+
+
+############################################################
+# Add some additional settings
+add_to_config "cli.type = \"org.dllearner.cli.ExpressionValidation\"" "$config_file"
+
 # we need to escape \" with %22 for the dllearner config parser
-add_conf cli.expression '=' '"'"$(cat "$SMLB_FILENAME_INPUT" | sed -e 's.".%22.g')"'"'
-add_conf
+add_to_config "cli.expression = \"$(sed -e 's.".%22.g' < "$smlb_filename__input")\"" "$config_file"
 
-common_config
+add_to_config "$measure_const.type = \"gen_fmeasure\"" "$config_file"
 
-add_conf
-add_conf acc.type '=' '"gen_fmeasure"'
+# set knowledge source
+sources=$(add_knowledge_sources_to_config_and_get_sources "$smlb_learningtask" "$config_file")
 
-$dllearner_file "$conf" | tee "$tmpdir"/output.log
-#cp "$tmpdir"/output.log test.log
-# we only check the first result for the benchmark
+# set reasoner component if no reasoner component was set
+if [ $reasoner_is_set -eq 0 ]
+then
+    add_to_config "$reasoner_const.type = \"closed world reasoner\"" "$config_file"
+fi
+
+# add knowledge sources for reasoner component
+add_to_config "$reasoner_const.sources = { $sources }" "$config_file"
+
+# set learning problem if no learning problem was set
+if [ $lp_is_set -eq 0 ]
+then
+    add_to_config "$lp_const.type = \"posNegStandard\"" "$config_file"
+fi
+
+# load positive examples
+add_to_config "$lp_const.positiveExamples = {" "$config_file"
+add_to_config "$(read_examples $smlb_filename__pos)" "$config_file"
+add_to_config "}" "$config_file"
+
+# load negative examples
+add_to_config "$lp_const.negativeExamples = {" "$config_file"
+add_to_config "$(read_examples $smlb_filename__neg)" "$config_file"
+add_to_config "}" "$config_file"
+
+
+############################################################
+# find and invoke the DL-Learner
+dllearner=$(find_dllearner)
+
+if [ ! -x "$dllearner" ]; then
+    echo DL-Learner not found. Please download it from http://dl-learner.org
+    echo and unpack it into the learningsystems/dllearner directory.
+    exit 1
+fi
+
+
+$dllearner "$config_file" | tee "$tmpdir"/output.log
+
 grep '#EVAL#' "$tmpdir"/output.log \
-   | sed -e 's,^#EVAL# ,,' > "$result_output_file"
+        | sed -e 's,^#EVAL# ,,' > "$smlb_filename__output"
 
-#cat "$conf"

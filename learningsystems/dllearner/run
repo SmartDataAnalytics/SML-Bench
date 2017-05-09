@@ -1,33 +1,148 @@
-#!/bin/sh -e
-#export
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: run.sh
+# 
+#         USAGE: ./run.sh 
+# 
+#   DESCRIPTION: Wrapper script to read in all necessary settings, set up an
+#                execution environment and run the DL-Learner
+# 
+#       OPTIONS: A property file containing settings to be evaluated
+#===============================================================================
 
-start_dir="$(pwd)"
+set -o nounset                              # Treat unset variables as an error
+
+# runtime settings
+smlb_step="train"
+# 0 --> off; 1 --> DEBUG; 2 --> TRACE
+smlb_log_level=1
+
 cd "$(dirname "$0")"
 program_dir="$(pwd)"
 
+
+############################################################
+# Source the commons file to make a bunch of functions available
 . ./common.sh
 
-if [ -z "$SMLB_LOADINGTIME" ]; then
-    # default loading time, is substracted from maxExecutionTime
-    SMLB_LOADINGTIME=10
-fi
-if [ -n "$SMLB_TOOL_MAXEXECUTIONTIME" ]; then
-    maxExecutionTime="$SMLB_TOOL_MAXEXECUTIONTIME"
+
+############################################################
+# Read in the main configuration file
+read_property_file "$1"
+
+
+############################################################
+# Read task config
+# TODO: PW: really necessary? Documented nowhere
+
+
+############################################################
+# Read learning problem-specific configuration
+lp_specific_config_file="../../$learning_tasks_dir_name/$smlb_learningtask/$kr_lang_dir_name/$learning_problems_dir_name/$smlb_learningproblem/$lp_specific_condif_file_name"
+if [ -f "$lp_specific_config_file" ]
+then
+    debug "Found $lp_specific_config_file. Will try read it."
+    read_lp_ini_file "$lp_specific_config_file"
 else
-    maxExecutionTime="$(($SMLB_MAXEXECUTIONTIME-$SMLB_LOADINGTIME))"
+    debug "No learning problem-specific file found under $lp_specific_config_file"
 fi
 
-common_config
 
-add_conf
-add_conf "$algorithm_const.writeSearchTree" '=' false
+############################################################
+# Adjust max. execution time based on the loading time (if known)
 
-add_conf "$algorithm_const.maxExecutionTimeInSeconds" '=' "$maxExecutionTime"
+# if maxExecutionTimeInSeconds is not set in the settings
+if [ -z "${smlb_settings__algorithm__maxExecutionTimeInSeconds+'foo'}" ]
+then
+    # if smlb_loadingTime is not set
+    if [ -z "${smlb_loadingTime+'foo'}" ]
+    then
+        smlb_loadingTime=30
+    fi
+    
+    new_maxExecutionTime="$((smlb_maxExecutionTime-smlb_loadingTime))"
+    # Only assign the resulting max. execution time if it is greater than 0!
+    # If it is 0 the DL-Learner will run forever.
+    if [ "$new_maxExecutionTime" -gt 0 ]
+    then
+        smlb_maxExecutionTime=$new_maxExecutionTime
+    fi
+fi
 
-$dllearner_file "$conf" | tee "$tmpdir"/output.log
-#cp "$tmpdir"/output.log test.log
-# we only check the first result for the benchmark
+
+############################################################
+# Write out gathered settings
+tmpdir="$smlb_filename__workdir"
+config_file="$tmpdir"/run.conf
+write_config "$config_file"
+
+
+############################################################
+# Add some additional settings
+add_to_config "$algorithm_const.writeSearchTree = false" "$config_file"
+
+# only set the (calculated) maxExecutionTimeInSeconds if was not set
+# explicitly in the learning system settings
+if [ -z "${smlb_settings__algorithm__maxExecutionTimeInSeconds+'foo'}" ]
+then
+    add_to_config "$algorithm_const.maxExecutionTimeInSeconds = $smlb_maxExecutionTime" "$config_file"
+fi
+
+# set default algorithm if no algorithm was set
+if [ $algorithm_is_set -eq 0 ]
+then
+    add_to_config "$algorithm_const.type = \"celoe\"" "$config_file"
+fi
+
+# set default measure if no measure was set
+if [ $measure_is_set -eq 0 ]
+then
+    add_to_config "$measure_const.type = \"gen_fmeasure\"" "$config_file"
+fi
+
+# set knowledge source
+sources=$(add_knowledge_sources_to_config_and_get_sources "$smlb_learningtask" "$config_file")
+
+# set reasoner component if no reasoner component was set
+if [ $reasoner_is_set -eq 0 ]
+then
+    add_to_config "$reasoner_const.type = \"closed world reasoner\"" "$config_file"
+fi
+
+# add knowledge sources for reasoner component
+add_to_config "$reasoner_const.sources = { $sources }" "$config_file"
+
+# set learning problem if no learning problem was set
+if [ $lp_is_set -eq 0 ]
+then
+    add_to_config "$lp_const.type = \"posNegStandard\"" "$config_file"
+fi
+
+# load positive examples
+add_to_config "$lp_const.positiveExamples = {" "$config_file"
+add_to_config "$(read_examples $smlb_filename__pos)" "$config_file"
+add_to_config "}" "$config_file"
+
+# load negative examples
+add_to_config "$lp_const.negativeExamples = {" "$config_file"
+add_to_config "$(read_examples $smlb_filename__neg)" "$config_file"
+add_to_config "}" "$config_file"
+
+
+############################################################
+# find and invoke the DL-Learner
+dllearner=$(find_dllearner)
+
+if [ ! -x "$dllearner" ]; then
+    echo DL-Learner not found. Please download it from http://dl-learner.org
+    echo and unpack it into the learningsystems/dllearner directory.
+    exit 1
+fi
+
+$dllearner "$config_file" | tee "$tmpdir"/output.log
+
+# parse the best result
 sed '0,/^solutions.*:/d' "$tmpdir"/output.log | grep '^1: ' \
-   | sed -e 's,^1: ,,' -e 's, ([^)]*)$,,' > "$result_output_file"
+        | sed -e 's,^1: ,,' -e 's, ([^)]*)$,,' > "$smlb_filename__output"
 
-#cat "$conf"
