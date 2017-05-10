@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  * @author Lorenz Buehmann
- *
+ * The main entry point to SMLBench
  */
 public class Benchmark {
 	static {
@@ -22,6 +22,10 @@ public class Benchmark {
 
 	static final Logger logger = LoggerFactory.getLogger(Benchmark.class);
 
+	/**
+	 * create a new BenchmarkRunner and store the resultset, optionally cleaning up afterwards
+	 * @param args command line arguments: config file
+	 */
 	public static void main(String[] args) {
 		logger.info("Welcome to SML-Bench");
 
@@ -40,7 +44,8 @@ public class Benchmark {
 
 		runner.run();
 		try {
-			String resultOutput = runner.getConfig().getString("resultOutput", args[0].replaceAll("[.][^.]*$", "") + ".result.plist");
+                        // change the extension
+			String resultOutput = runner.getConfig().getResultOutputFile(args[0].replaceAll("[.][^.]*$", "") + ".result.plist");
 			File file = new File(resultOutput);
 			logger.info("writing results to " + file.getAbsolutePath());
 			ConfigLoader.write(runner.getResultset(), file);

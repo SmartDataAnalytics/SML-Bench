@@ -1,0 +1,5 @@
+http://dl-learner.org/benchmark/dataset/animals#lizard01
+http://dl-learner.org/benchmark/dataset/animals#croco01
+http://dl-learner.org/benchmark/dataset/animals#trex01
+http://dl-learner.org/benchmark/dataset/animals#snake01
+http://dl-learner.org/benchmark/dataset/animals#turtle01

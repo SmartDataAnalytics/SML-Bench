@@ -1,0 +1,4 @@
+http://dl-learner.org/benchmark/dataset/animals#dog01
+http://dl-learner.org/benchmark/dataset/animals#dolphin01
+http://dl-learner.org/benchmark/dataset/animals#platypus01
+http://dl-learner.org/benchmark/dataset/animals#bat01

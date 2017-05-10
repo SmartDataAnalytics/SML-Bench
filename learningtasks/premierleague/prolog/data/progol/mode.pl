@@ -28,7 +28,7 @@
 :- modeb(1,shotsonfrominsidebox(+action,#int))?
 :- modeb(1,shotsofffrominsidebox(+action,#int))?
 :- modeb(1,blockedshotsfrominsidebox(+action,#int))?
-:- modeb(1,goalsfromoutsidebox(+action,#integter))?
+:- modeb(1,goalsfromoutsidebox(+action,#int))?
 :- modeb(1,shotsontargetoutsidebox(+action,#int))?
 :- modeb(1,shotsofftargetoutsidebox(+action,#int))?
 :- modeb(1,blockedshotsoutsidebox(+action,#int))?

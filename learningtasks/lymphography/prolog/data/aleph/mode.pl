@@ -44,10 +44,6 @@
 :- modeb(1,regenerationof8(+lymph)).
 :- modeb(1,sf16_chalices(+lymph)).
 :- modeb(1,sf16_vesicles(+lymph)).
-:- modeb(1,target1_normalfind(+lymph)).
-:- modeb(1,target2_metastases(+lymph)).
-:- modeb(1,target3_malignlymph(+lymph)).
-:- modeb(1,target4_fibrosis(+lymph)).
 
 :- determination(ex/1,bl_of_lymph_c4/1).
 :- determination(ex/1,blockofaffere3/1).
@@ -94,7 +90,3 @@
 :- determination(ex/1,regenerationof8/1).
 :- determination(ex/1,sf16_chalices/1).
 :- determination(ex/1,sf16_vesicles/1).
-:- determination(ex/1,target1_normalfind/1).
-:- determination(ex/1,target2_metastases/1).
-:- determination(ex/1,target3_malignlymph/1).
-:- determination(ex/1,target4_fibrosis/1).

@@ -1,13 +1,5 @@
 package org.aksw.mlbenchmark.process;
 
-import org.apache.commons.configuration2.Configuration;
-import org.apache.commons.exec.CommandLine;
-import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.ExecuteWatchdog;
-import org.apache.commons.exec.PumpStreamHandler;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -16,6 +8,15 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import org.aksw.mlbenchmark.Constants;
+import org.apache.commons.configuration2.Configuration;
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.ExecuteWatchdog;
+import org.apache.commons.exec.PumpStreamHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class will run a shell script
@@ -36,11 +37,14 @@ public class ProcessRunner {
 		Map<String, String> environment = new ProcessBuilder().environment();
 		if (configuration != null) {
 			try {
-				e.setStreamHandler(new PumpStreamHandler(new FileOutputStream(configuration.getString("data.workdir")+"/"+"lsoutput.log")));
+				e.setStreamHandler(new PumpStreamHandler(new FileOutputStream(
+						new File(
+								configuration.getString(Constants.WORKDIR_KEY),
+								Constants.LEARNING_SYSTEM_OUTPUT_FILE_NAME))));
 			} catch (FileNotFoundException e1) {
 				logger.warn("could not set log file output");
 			}
-			updateEnvironment(environment, configuration);
+//			updateEnvironment(environment, configuration);
 		}
 		if (timeout > 0) {
 			e.setWatchdog(new ExecuteWatchdog(timeout * 1000)); // seconds -> milliseconds

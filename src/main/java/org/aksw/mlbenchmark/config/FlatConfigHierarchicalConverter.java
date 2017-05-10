@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -72,8 +73,19 @@ public class FlatConfigHierarchicalConverter {
 		return ret;
 	}
 
+	public static String convertAsString(Configuration config) {
+		PropertyListConfiguration convert = convert(config);
+		StringWriter out = new StringWriter();
+		try {
+			convert.write(out);
+		} catch (ConfigurationException e) {
+			e.printStackTrace();
+		}
+		return out.getBuffer().toString();
+	}
+
 	public static void main(String[] args) throws ConfigLoaderException, IOException, ConfigurationException {
-		HierarchicalConfiguration<ImmutableNode> config = new ConfigLoader("test.ini").load().config();
+		HierarchicalConfiguration<ImmutableNode> config = ConfigLoader.load("test.ini");
 		PropertyListConfiguration c1 = new PropertyListConfiguration(config);
 		PropertyListConfiguration c2 = new PropertyListConfiguration();
 		process(config, c2);

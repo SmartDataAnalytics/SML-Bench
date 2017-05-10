@@ -1,0 +1,376 @@
+#!/usr/bin/env python
+import argparse
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
+import logging
+import signal
+import subprocess
+import os
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+treeliker_jar = 'TreeLiker.jar'
+treeliker_bin_root_dir = 'binaries_treeliker'
+data_dir_name = 'data'
+tool_specific_data_dir = 'treeliker'
+lp_dir_name = 'lp'
+examples_file_name_template = '%s.examples'
+output_file_name_template = '%s.arff'
+batch_file_name_template = '%s.treeliker'
+mode_template = 'set(template, [%s])'
+setting_template = 'set(%s, %s)'
+batch_file_template = """
+%(settings)s
+work(yes)
+"""
+
+procs = []
+
+
+class TreeLikerJarNotFound(Exception):
+    """Raised when the TreeLiker jar could not be found."""
+
+
+class ArffFile(object):
+    """Implementation to handle TreeLiker result files in ARFF. Such a file
+    might look like this:
+
+        @relation propositionalization
+
+        @attribute 'animal(A), has_covering(A, feathers)' {'+','-'}
+        @attribute 'animal(A), has_covering(A, none)' {'+','-'}
+        @attribute 'animal(A), has_covering(A, scales)' {'+','-'}
+        @attribute 'animal(A), has_eggs(A)' {'+','-'}
+        @attribute 'animal(A), has_gills(A)' {'+','-'}
+        @attribute 'animal(A), has_milk(A)' {'+','-'}
+        @attribute 'classification' {'+','-'}
+
+
+        @data
+        '-', '-', '+', '+', '-', '-', '-'
+        '-', '-', '+', '+', '-', '-', '-'
+        '-', '-', '+', '+', '-', '-', '-'
+        '+', '-', '-', '+', '-', '-', '+'
+        '+', '-', '-', '+', '-', '-', '+'
+        '+', '-', '-', '+', '-', '-', '+'
+        '-', '-', '-', '-', '-', '+', '-'
+        '-', '+', '-', '-', '-', '+', '-'
+        '-', '-', '-', '+', '-', '+', '-'
+        '-', '-', '-', '-', '-', '+', '-'
+        '-', '-', '+', '+', '+', '-', '-'
+        '-', '-', '+', '+', '+', '-', '-'
+        '-', '+', '-', '+', '+', '-', '-'
+        '-', '-', '+', '+', '-', '-', '-'
+    """
+    _POS_MARKER = "'+'"
+    _NEG_MARKER = "'-'"
+
+    def __init__(self, attributes_array, data_matrix):
+        # e.g. ['animal(A), has_covering(A, feathers)',
+        #       'animal(A), has_covering(A, none)',
+        #       'animal(A), has_covering(A, scales)',
+        #       ... ]
+        self.attributes_array = attributes_array
+        # list of columns of @data section, e.g.
+        # [['-','-','-','+','+','+','-','-','-','-','-','-','-','-'],  # 1st col
+        #  ['-','-','-','-','-','-','-','+','-','-','-','-','+','-'],  # 2nd col
+        #  [...]
+        #  ... ]
+        self.data_matrix = data_matrix
+
+    def best_idx(self):
+        """Returns the index of the row of the data matrix which is closest to
+        the target column.
+        """
+        target = self.data_matrix[-1]
+        best_idx = -1
+        diff_val = 999999999
+
+        # iterate over all but the last data column
+        for i in range(len(self.data_matrix)-1):
+            col = self.data_matrix[i]
+            diff = self._diff(col, target)
+
+            if diff < diff_val:
+                diff_val = diff
+                best_idx = i
+
+        return best_idx
+
+    def best_attr(self):
+        best_idx = self.best_idx()
+        return self.attributes_array[best_idx]
+
+    @classmethod
+    def _diff(cls, res_col, target_col):
+        diff = 0
+        for i in range(len(target_col)):
+            r = res_col[i]
+            t = target_col[i]
+
+            if not r == t:
+                diff += 1
+
+        return diff
+
+    @classmethod
+    def _evaluate(cls, res_col, target_col):
+        """Currently not in use."""
+        tp = 0
+        tn = 0
+        fp = 0
+        fn = 0
+
+        for i in range(len(target_col)):
+            r = res_col[i]
+            t = target_col[i]
+            if r == cls._POS_MARKER and t == cls._POS_MARKER:
+                tp += 1
+            elif r == cls._POS_MARKER and t == cls._NEG_MARKER:
+                fp += 1
+            elif r == cls._NEG_MARKER and t == cls._POS_MARKER:
+                fn += 1
+            elif r == cls._NEG_MARKER and t == cls._NEG_MARKER:
+                tn += 1
+
+        return tp, tn, fp, fn
+
+
+def check_call_and_terminate(*args, **kwargs):
+    pp = subprocess.Popen(*args, **kwargs)
+    procs.append(pp)
+    retcode = pp.wait()
+    if retcode:
+        raise subprocess.CalledProcessError(retcode, args[0])
+    return retcode
+
+
+def copy_files_and_create_examples(task_id, lp_id, target_dir, file_name_base,
+                                   file_pos, file_neg, settings):
+    """Finds and generates all the files needed to run TreeLiker.
+    - file_pos              --> <target_dir>/<file_name_base>.examples
+    - file_neg              --> <target_dir>/<file_name_base>.examples
+    - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
+                            --> <target_dir>/<file_name_base>.examples
+    - ../../learningtasks/<task_id>/prolog/data/treeliker/*
+                            --> <target_dir>/<file_name_base>.treeliker
+
+    Format:
+    + <pos example>, <whole background data file with dots replaced by commas>
+    + <pos example>, <whole background data file with dots replaced by commas>
+    ...
+    - <neg example>, <whole background data file with dots replaced by commas>
+    - <neg example>, <whole background data file with dots replaced by commas>
+    ...
+    """
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            prolog_dir_name, data_dir_name)
+    cleaned_bg_knowledge = []
+
+    # get and clean the background knowledge
+    # iterate over all files found in data directory...
+    for mf_name in os.listdir(data_dir):
+        # ...if they are Prolog files
+        if mf_name.endswith('.pl'):
+            mf_path = os.path.join(data_dir, mf_name)
+            with open(mf_path) as bg_file:
+                for line in bg_file:
+                    # if         not comment...
+                    if not line.strip().startswith('%') \
+                            and not line.strip() == '':  # ...and not empty line
+                        cleaned_bg_knowledge.append(
+                            # line with clause dots replaced by commas and
+                            # without newlines
+                            line.replace(').', '),').strip())
+
+    # write examples file
+    examples_file_path = \
+        os.path.join(target_dir, examples_file_name_template % file_name_base)
+
+    with open(examples_file_path, 'w') as f:
+        # one entry for each positive example
+        with open(file_pos) as pos_file:
+            for line in pos_file:
+                # '+' + pos example + whole comma separated background knowledge
+                out_line = '+ ' \
+                           + line.replace(').', '),').strip() \
+                           + ''.join(cleaned_bg_knowledge)
+                # strip off trailing comma
+                out_line = out_line[:-1]
+                f.write(out_line + os.linesep)
+
+        # one entry for each negative example
+        with open(file_neg) as neg_file:
+            for line in neg_file:
+                out_line = '- ' \
+                           + line.replace(').', '),').strip() \
+                           + ''.join(cleaned_bg_knowledge)
+                # strip off trailing comma
+                out_line = out_line[:-1]
+                f.write(out_line + os.linesep)
+
+    # write batch file
+    batch_file = \
+        os.path.join(target_dir, batch_file_name_template % file_name_base)
+
+    # batch file usually looks like this
+    #
+    #   set(algorithm, relf)  % variable but required setting
+    #   set(output_type, single)  % fixed setting in our case
+    #   set(examples, 'examples3.txt')
+    #   set(template, [animal(-animal), ...)])  % generated
+    #   set(output, animls.arff)  % will be overriden with <file_name_base>.arff
+    #   work(yes)  % fixed setting in our case
+
+    # build general settings
+    settings['examples'] = examples_file_name_template % file_name_base
+    settings['output'] = output_file_name_template % file_name_base
+    settings['output_type'] = 'single'
+    settings_str = '\n'.join(
+        [setting_template % (k, v) for k, v in settings.items()])
+
+    # build template/mode declarations
+    mode_decl_file_path = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        data_dir_name, tool_specific_data_dir)
+
+    for mf_name in os.listdir(mode_decl_file_path):
+        mf_path = os.path.join(mode_decl_file_path, mf_name)
+        with open(mf_path) as mf:
+            modes_decls = [line.strip() for line in mf]
+        mode_decls_str = mode_template % ','.join(modes_decls)
+        settings_str += '\n' + mode_decls_str
+
+    with open(batch_file, 'w') as f:
+        f.write(batch_file_template % {'settings': settings_str})
+
+
+def read_config(file_path):
+    conf = configparser.ConfigParser()
+    conf.read(file_path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.' + setting] = raw_value
+
+    if conf.has_section('settings'):
+        for item in conf.items('settings'):
+            setting, raw_value = item
+            settings['settings.' + setting] = raw_value
+
+    return settings
+
+
+def parse_data_matrix(data_lines):
+    rows = []
+    for line in data_lines:
+        rows.append([a.strip() for a in line.split(',')])
+
+    cols = []
+
+    for i in range(len(rows[0])):
+        col = []
+        for row in rows:
+            col.append(row[i])
+        cols.append(col)
+
+    return cols
+
+
+def read_parts(file_path):
+    attribute_lines = []
+    data_lines = []
+    data_follows = False
+
+    with open(file_path) as f:
+        for line in f:
+            if data_follows:
+                line = line.strip()
+                if not line == '':
+                    data_lines.append(line)
+            else:
+                if line.startswith('@attribute '):
+                    attr_line = line.split('\'')[1]
+                    attribute_lines.append(attr_line)
+                elif line.startswith('@data'):
+                    data_follows = True
+
+    res_matrix = parse_data_matrix(data_lines)
+    return ArffFile(attribute_lines, res_matrix)
+
+
+def find_treeliker_jar():
+    jar_in_ls_root_path = os.path.join(os.getcwd(), treeliker_jar)
+    jar_in_bin_root_path = os.path.join(
+        os.getcwd(), treeliker_bin_root_dir, treeliker_jar)
+
+    if os.path.exists(jar_in_ls_root_path):
+        return jar_in_ls_root_path
+    elif os.path.exists(jar_in_bin_root_path):
+        return jar_in_bin_root_path
+    else:
+        try:
+            jar_path = subprocess.check_output(
+                ['locate', treeliker_jar])
+        except subprocess.CalledProcessError:
+            jar_path = ''
+
+        if jar_path == '':
+            msg = '%s could not be found. Please download it from ' \
+                  'http://ida.felk.cvut.cz/treeliker/download/ and put it ' \
+                  'into the learning system\'s directory' % treeliker_jar
+            raise TreeLikerJarNotFound(msg)
+        else:
+            return jar_path
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('config_file')
+    args = argparser.parse_args()
+
+    cfg = read_config(args.config_file)
+
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    output_file = cfg['filename.output']
+    _log.debug('Running learning task %s with learning problem %s' % (
+        learning_task_id, learning_problem_id))
+
+    file_name_base = learning_task_id + '_' + learning_problem_id
+    target_dir = cfg['filename.workdir']
+    _log.debug('Target dir is %s' % target_dir)
+
+    file_name_pos = cfg['filename.pos']
+    file_name_neg = cfg['filename.neg']
+
+    settings = dict(
+        {(k.split('.', 1)[1], v) for k, v in cfg.items() if k.startswith('settings.')})
+    copy_files_and_create_examples(
+        learning_task_id, learning_problem_id, target_dir, file_name_base,
+        cfg['filename.neg'], cfg['filename.pos'], settings)
+
+    jar_path = find_treeliker_jar()
+    executable_list = [
+        '/usr/bin/java', '-Xmx2G', '-cp', jar_path,
+        'ida.ilp.treeLiker.TreeLikerMain', '-batch',
+        os.path.join(target_dir, batch_file_name_template % file_name_base)]
+    check_call_and_terminate(executable_list, cwd=target_dir)
+
+    arr_file = read_parts(
+        os.path.join(target_dir, output_file_name_template % file_name_base))
+
+    with open(output_file, 'w') as o:
+        o.write(arr_file.best_attr())

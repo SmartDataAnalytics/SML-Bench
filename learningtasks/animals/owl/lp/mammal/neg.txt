@@ -1,0 +1,10 @@
+http://dl-learner.org/benchmark/dataset/animals#trout01
+http://dl-learner.org/benchmark/dataset/animals#herring01
+http://dl-learner.org/benchmark/dataset/animals#shark01
+http://dl-learner.org/benchmark/dataset/animals#lizard01
+http://dl-learner.org/benchmark/dataset/animals#croco01
+http://dl-learner.org/benchmark/dataset/animals#trex01
+http://dl-learner.org/benchmark/dataset/animals#turtle01
+http://dl-learner.org/benchmark/dataset/animals#eagle01
+http://dl-learner.org/benchmark/dataset/animals#ostrich01
+http://dl-learner.org/benchmark/dataset/animals#penguin01

@@ -1,0 +1,11 @@
+animal(dog). 
+animal(dolphin). 
+animal(platypus). 
+animal(bat). 
+animal(trout). 
+animal(herring). 
+animal(shark). 
+animal(lizard). 
+animal(crocodile). 
+animal(t_rex). 
+animal(turtle).

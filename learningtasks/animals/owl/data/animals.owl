@@ -1,0 +1,916 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://dl-learner.org/benchmark/dataset/animals#"
+     xml:base="http://dl-learner.org/benchmark/dataset/animals"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dl="http://dl-learner.org/benchmark/dataset/animals/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://dl-learner.org/benchmark/dataset/animals"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/habitat -->
+
+    <owl:ObjectProperty rdf:about="http://dl-learner.org/benchmark/dataset/animals/habitat">
+        <rdfs:domain rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:range rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Habitat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/hasCovering -->
+
+    <owl:ObjectProperty rdf:about="http://dl-learner.org/benchmark/dataset/animals/hasCovering">
+        <rdfs:domain rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:range rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Covering"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/hasLegs -->
+
+    <!-- Note (PW): This was supposed to be xsd:nonNegativeInteger, but changed to
+         xsd:decimal since Pellet will internally convert all integer values to decimals
+         which in turn would cause errors in the DL-Learner. -->
+    <owl:DatatypeProperty rdf:about="http://dl-learner.org/benchmark/dataset/animals/hasLegs">
+        <rdfs:domain rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Air -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Air">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Animal -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Bat -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Bat">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasMilk"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Air"/>
+                            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Caves"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Hair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Bird -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Bird"/>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Boy -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Boy">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Cat -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Cat">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasMilk"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Caves -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Caves">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Covering -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Covering"/>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Crocodile -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Crocodile">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Land"/>
+                            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Scales"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Dog -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Dog">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasMilk"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Land"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Hair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Dolphin -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Dolphin">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasMilk"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/None"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Dragon -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Dragon">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Eagle -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Eagle">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Air"/>
+                            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Land"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Feathers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Eel -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Eel">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasGills"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/None"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Feathers -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Feathers">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Covering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Fish -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Fish"/>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Girl -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Girl">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Habitat -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Habitat"/>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Hair -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Hair">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Covering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/HasEggs -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/HasEggs">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/HasGills -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/HasGills">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/HasMilk -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/HasMilk">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Herring -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Herring">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasGills"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Scales"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Homeothermic -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Homeothermic">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Land -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Land">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Lizard -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Lizard">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Lizard"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Land"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Scales"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Mammal -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Mammal"/>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/None -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/None">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Covering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Ostrich -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Ostrich">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Land"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Feathers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Penguin -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Penguin">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Feathers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Platypus -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Platypus">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasMilk"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Homeothermic"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Hair"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Reptile -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Reptile"/>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Scales -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Scales">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Covering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Shark -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Shark">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasGills"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/None"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Snake -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Snake">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Land"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Scales"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/T-Rex -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/T-Rex">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Land"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Scales"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Trout -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Trout">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasGills"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Scales"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Turtle -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Turtle">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Water"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasCovering"/>
+                <owl:someValuesFrom rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Scales"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/hasLegs"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals/Water -->
+
+    <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Water">
+        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#bat01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#bat01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Bat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#boy01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#boy01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Boy"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#cat01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#cat01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Cat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#croco01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#croco01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Crocodile"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#dog01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#dog01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Dog"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#dolphin01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#dolphin01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Dolphin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#dragon01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#dragon01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Dragon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#eagle01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#eagle01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Eagle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#eel01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#eel01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Eel"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#girl01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#girl01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Girl"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#herring01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#herring01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Herring"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#lizard01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#lizard01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Lizard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#ostrich01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#ostrich01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Ostrich"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#penguin01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#penguin01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Penguin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#platypus01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#platypus01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Platypus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#shark01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#shark01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Shark"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#snake01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#snake01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Snake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#trex01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#trex01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/T-Rex"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#trout01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#trout01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Trout"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dl-learner.org/benchmark/dataset/animals#turtle01 -->
+
+    <owl:NamedIndividual rdf:about="http://dl-learner.org/benchmark/dataset/animals#turtle01">
+        <rdf:type rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Turtle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
+            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Covering"/>
+            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Habitat"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Bird"/>
+            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Fish"/>
+            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Mammal"/>
+            <rdf:Description rdf:about="http://dl-learner.org/benchmark/dataset/animals/Reptile"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi -->
+

@@ -30,4 +30,7 @@ public class ResultLoaderBase {
 		reader.close();
 	}
 
+	public boolean isEmpty() {
+		return results.isEmpty();
+	}
 }
