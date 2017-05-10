@@ -157,7 +157,7 @@
         <dependency>
             <groupId>org.aksw.mex</groupId>
             <artifactId>log4mex</artifactId>
-            <version>1.0.3smlbench-SNAPSHOT</version>
+            <version>1.0.3smlbench</version>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
