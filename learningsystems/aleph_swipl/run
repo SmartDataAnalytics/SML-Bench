@@ -208,8 +208,8 @@ def find_swipl():
 
         if swipl_exec_path == '':
             msg = 'No SWI Prolog installation could be found. Please make ' \
-                  'sure you have Yap installed via your package manager or ' \
-                  'download and manually install it from ' \
+                  'sure you have SWI Prolog installed via your package ' \
+                  'manager or download and manually install it from ' \
                   'https://www.swi-prolog.org/Download.html'
             raise NoSWIPlInstallationFoundException(msg)
 
@@ -330,7 +330,7 @@ if __name__ == '__main__':
         output_file_path=output_file_path)
     script_path = os.path.join(target_dir, train_script_file_name)
 
-    _log.debug('Running Aleph')
+    _log.debug('Running Aleph (SWI Prolog)')
     check_call_and_terminate([script_path], cwd=target_dir)
 
     results = get_and_clean_results(output_file_path, pos_examples)
@@ -339,5 +339,5 @@ if __name__ == '__main__':
         for line in results:
             out.write(line + "\n")
 
-    _log.debug('Aleph run finished.')
+    _log.debug('Aleph (SWI Prolog) run finished.')
     _log.debug('Results written to %s' % output_file_path)
