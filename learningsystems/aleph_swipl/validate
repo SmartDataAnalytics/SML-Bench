@@ -18,7 +18,7 @@ _log = logging.getLogger()
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
-tool_specific_data_dir = 'aleph_swipl'
+tool_specific_data_dir_name = 'aleph_swipl'
 data_dir_name = 'data'
 lp_dir_name = 'lp'
 pos_examples_file_name = 'pos.pl'
@@ -48,30 +48,23 @@ class NoAlephScriptFound(Exception):
     """Raised when no Aleph script could be found"""
 
 
-def read_files(task_id, learning_problem_id):
-    data_dir_path = os.path.join('..', '..', learning_task_dir_name, task_id,
-                            prolog_dir_name, data_dir_name)
+def read_files(task_id, pos_examples_file_path, neg_examples_file_path):
+    data_dir_path = os.path.join(
+        '..',
+        '..',
+        learning_task_dir_name,
+        task_id,
+        prolog_dir_name,
+        data_dir_name)
+
     tool_specific_dir_path = os.path.join(
-        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
-        data_dir_name, tool_specific_data_dir)
-    pos_examples_file_path = os.path.join(
         '..',
         '..',
         learning_task_dir_name,
         task_id,
         prolog_dir_name,
-        lp_dir_name,
-        learning_problem_id,
-        pos_examples_file_name)
-    neg_examples_file_path = os.path.join(
-        '..',
-        '..',
-        learning_task_dir_name,
-        task_id,
-        prolog_dir_name,
-        lp_dir_name,
-        learning_problem_id,
-        neg_examples_file_name)
+        data_dir_name,
+        tool_specific_data_dir_name)
 
     # background kb
     with open(os.path.join(target_dir, 'bg_knowledge.pl'), 'w') as out:
@@ -120,7 +113,6 @@ def read_files(task_id, learning_problem_id):
 
 
 def get_vars_from_head(head):
-    """FIXME"""
     open_paren_pos = head.find('(')
     head_pred = head[:open_paren_pos]
     vars_str = head[open_paren_pos+1:-1]
@@ -297,6 +289,8 @@ def validate(results, res_dir, pos_examples, neg_examples):
     create_and_run_validation_script(
         rule_dicts, neg_examples, fp, tn, res_dir, swipl)
 
+    assert(len(tp) + len(fp) + len(tn) + len(fn) == len(pos_examples) + len(neg_examples))
+
     return len(tp), len(fp), len(tn), len(fn)
 
 
@@ -337,10 +331,13 @@ if __name__ == '__main__':
 
     file_name_base = learning_task_id + '_' + learning_problem_id
     target_dir = cfg['filename.workdir']
+    pos_examples_file_path = cfg['filename.pos']
+    neg_examples_file_path = cfg['filename.neg']
+
     _log.debug('Target dir is %s' % target_dir)
 
     pos_examples, neg_examples = read_files(
-        learning_task_id, learning_problem_id)
+        learning_task_id, pos_examples_file_path, neg_examples_file_path)
 
     num_tp, num_fp, num_tn, num_fn = validate(
         results, target_dir, pos_examples, neg_examples)
