@@ -262,8 +262,8 @@ def find_swipl():
         return gen_path
 
     else:
-        swipl_exec_path = subprocess.check_output(['which', swipl_executable_name])
-        swipl_exec_path = swipl_exec_path.strip()
+        swipl_exec_path = \
+            subprocess.check_output(['which', swipl_executable_name]).decode().strip()
 
         if swipl_exec_path == '':
             msg = 'No SWI Prolog installation could be found. Please make ' \
