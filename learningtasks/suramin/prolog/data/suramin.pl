@@ -4436,12 +4436,12 @@ bond(cpd9,cpd9_50,cpd9_84,2).
 
 
 
-active(cpd7).
-active(cpd8).
-active(cpd9).
-active(cpd10).
-active(cpd11).
-active(cpd12).
-active(cpd14).
+%%%% active(cpd7).
+%%%% active(cpd8).
+%%%% active(cpd9).
+%%%% active(cpd10).
+%%%% active(cpd11).
+%%%% active(cpd12).
+%%%% active(cpd14).
 
 
