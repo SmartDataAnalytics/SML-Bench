@@ -18,18 +18,21 @@ _log = logging.getLogger()
 
 learning_task_dir_name = 'learningtasks'
 prolog_dir_name = 'prolog'
-tool_specific_data_dir = 'aleph'
+tool_specific_data_dir_name = 'aleph_swipl'
 data_dir_name = 'data'
 lp_dir_name = 'lp'
-yap_executable_name = 'yap'
-validation_file_template = """#!%(yap)s -L --
+pos_examples_file_name = 'pos.pl'
+neg_examples_file_name = 'neg.pl'
+swipl_executable_name = 'swipl'
+aleph_mode_predicates = ['modeh(', 'modeb(', 'determination(', 'dynamic ']
+validation_file_template = """#!%(swipl)s
 
 :- initialization main.
 
 %(match)s
 
 main :-
-        consult('%(file_b)s'),
+        consult(bg_knowledge),
         match,
         halt.
 main :-
@@ -37,57 +40,76 @@ main :-
 """
 
 
-class NoYapInstallationFoundException(Exception):
-    """Raised when no installed Yap could be found."""
+class NoSWIPlInstallationFoundException(Exception):
+    """Raised when no installed SWI Prolog could be found."""
 
 
 class NoAlephScriptFound(Exception):
     """Raised when no Aleph script could be found"""
 
 
-def copy_files_around(task_id, lp_id, target_dir, file_name_base):
-    """Finds all the files necessary to run Aleph:
-    - ../../../learningtasks/<task_id>/prolog/data/aleph
-                            --> <target_dir>/<file_name_base>.b
-    - ../../../learningtasks/<task_id>/prolog/data/*.pl  # merged!
-                            --> <target_dir>/<file_name_base>.b
-    """
-    # <file_name_base>.b (background knowledge)
-    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
-                            prolog_dir_name, data_dir_name)
-    tool_specific_dir = os.path.join(
-        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
-        data_dir_name, tool_specific_data_dir)
+def read_files(task_id, pos_examples_file_path, neg_examples_file_path):
+    data_dir_path = os.path.join(
+        '..',
+        '..',
+        learning_task_dir_name,
+        task_id,
+        prolog_dir_name,
+        data_dir_name)
 
-    # install yap startup.yss if present
-    gen_path = os.path.join(os.getcwd(),
-                            '%s-%s' % (platform.system(), platform.machine()),
-                            'startup.yss')
-    if os.path.isfile(gen_path):
-        # yap startup file resides in the same directory
-        subprocess.call(['cp', gen_path, os.path.join(target_dir, 'startup.yss')])
+    tool_specific_dir_path = os.path.join(
+        '..',
+        '..',
+        learning_task_dir_name,
+        task_id,
+        prolog_dir_name,
+        data_dir_name,
+        tool_specific_data_dir_name)
 
-    # merge all kb files into one
-    with open(os.path.join(target_dir, file_name_base+'.b'), 'w') as out:
-        if os.path.isdir(tool_specific_dir):
-            for f_name in os.listdir(tool_specific_dir):
+    # background kb
+    with open(os.path.join(target_dir, 'bg_knowledge.pl'), 'w') as out:
+        if os.path.isdir(tool_specific_dir_path):
+            for f_name in os.listdir(tool_specific_dir_path):
                 if f_name.endswith('.pl'):
-                    # FIXME: some of the files loaded here cause errors since
-                    # without aleph being loaded
-                    subprocess.call(['cat', f_name], cwd=tool_specific_dir,
-                                    stdout=out)
+                    with open(os.path.join(tool_specific_dir_path, f_name)) as in_file:
+                        for line in in_file:
+                            line = line.strip()
+                            if not line:
+                                continue
 
-        for f_name in os.listdir(data_dir):
+                            is_mode_decl = False
+
+                            for pred in aleph_mode_predicates:
+                                if pred in line:
+                                    is_mode_decl = True
+
+                            if not is_mode_decl:
+                                out.write(line + '\n')
+
+        for f_name in os.listdir(data_dir_path):
             if f_name.endswith('.pl'):
-                subprocess.call(['cat', f_name], cwd=data_dir, stdout=out)
+                with open(os.path.join(data_dir_path, f_name)) as in_file:
+                    for line in in_file:
+                        out.write(line)
 
+        pos_examples = []
+        with open(pos_examples_file_path) as pos_examples_file:
+            for line in pos_examples_file:
+                line = line.strip()
 
-def read_examples(file_path):
-    with open(file_path) as f:
-        lines = [l.strip() for l in f.readlines()]
+                if line:
+                    pos_examples.append(line[:-1])  # without trailing dot
+                    out.write(line + '\n')
 
-    lines = [l for l in ''.join(lines).split('.') if not l == '']
-    return lines
+    neg_examples = []
+    with open(neg_examples_file_path) as neg_examples_file:
+        for line in neg_examples_file:
+            line = line.strip()
+
+            if line:
+                neg_examples.append(line[:-1])  # without trailing dot
+
+    return pos_examples, neg_examples
 
 
 def get_vars_from_head(head):
@@ -115,21 +137,21 @@ def get_vars_from_head(head):
 
 
 def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
-                                     results_dir, exmpl_file_suffix, yap):
-    """should create something like this:
+                                     results_dir, swipl):
+    """
+    should create something like this:
 
     '''
-    #!/usr/bin/yap -L --
+    #!/usr/bin/swipl
 
     :- initialization main.
 
-    match :- active(d190) = active(A), atm(A,B,c,21,C), gteq(C,-0.108),
-        bond(A,B,D,7), write(A), nl.
-    match :- active(d190) = active(A), atm(A,B,c,27,C), lteq(C,-0.084),
-        write(A), nl.
+    match :- active(d190) = active(_6848),atm(_6848,_6860,h,3,_6866),_6866=0.076, write(_6848), nl.
+    match :- active(d190) = active(_9476),atm(_9476,_9488,cl,93,_9494),
+        _9494= -0.124, write(_9476), nl.
 
     main :-
-            consult('mutagenesis_42.b'),
+            consult(bg_knowledge),
             consult('mutagenesis_42.f'),
             match,
             halt.
@@ -142,11 +164,11 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
     essence, whenever one of these equations '<example> = <learned rule>'
     can be matched:
     - the example is output
-    - YAP will exit with return value 0
+    - SWI Prolog will exit with return value 0
 
     otherwise:
     - nothing is output
-    - YAP will exit with return value 1 which raises a CalledProcessError
+    - SWI Prolog will exit with return value 1 which raises a CalledProcessError
       exception which is caught
 
     :param rule_dicts: list of dictionaries created by build_rule_dicts(.)
@@ -167,9 +189,8 @@ def create_and_run_validation_script(rule_dicts, exmpls, true_set, false_set,
             match_lines.append('match :- halt(1).')
 
         content = validation_file_template % {
-            'yap': yap,
-            'match': '\n'.join(match_lines),
-            'file_b': file_name_base + '.b'
+            'swipl': swipl,
+            'match': '\n'.join(match_lines)
         }
 
         validate_file_path = os.path.join(results_dir, 'validate.pl')
@@ -231,44 +252,42 @@ def build_rule_dicts(results):
     return ret
 
 
-def find_yap():
+def find_swipl():
     gen_path = os.path.join(os.getcwd(),
                             '%s-%s' % (platform.system(), platform.machine()),
-                            yap_executable_name)
+                            swipl_executable_name)
 
     if os.path.isfile(gen_path):
-        # yap executable resides in the same directory
+        # swipl executable resides in the same directory
         return gen_path
 
     else:
-        yap_exec_path = subprocess.check_output(['which', yap_executable_name])
-        yap_exec_path = yap_exec_path.strip()
+        swipl_exec_path = \
+            subprocess.check_output(['which', swipl_executable_name]).decode().strip()
 
-        if yap_exec_path == '':
-            msg = 'No Yap installation could be found. Please make sure you ' \
-                  'have Yap installed via your package manager or download ' \
-                  'and manually install it ' \
-                  'from https://www.dcc.fc.up.pt/~vsc/Yap/'
-            raise NoYapInstallationFoundException(msg)
+        if swipl_exec_path == '':
+            msg = 'No SWI Prolog installation could be found. Please make ' \
+                  'sure you have SWI Prolog installed via your package ' \
+                  'manager or download and manually install it from ' \
+                  'https://www.swi-prolog.org/Download.html'
+            raise NoSWIPlInstallationFoundException(msg)
 
-        return yap_exec_path
+        return swipl_exec_path
 
 
-def validate(results, res_dir, file_pos, file_neg):
-    pos_examples = read_examples(file_pos)
-    neg_examples = read_examples(file_neg)
-    yap = find_yap()
-
+def validate(results, res_dir, pos_examples, neg_examples):
     rule_dicts = build_rule_dicts(results)
     fp = []
     fn = pos_examples[:]
     tn = neg_examples[:]
     tp = []
 
+    swipl = find_swipl()
+
     create_and_run_validation_script(
-        rule_dicts, pos_examples, tp, fn, res_dir, '.f', yap)
+        rule_dicts, pos_examples, tp, fn, res_dir, swipl)
     create_and_run_validation_script(
-        rule_dicts, neg_examples, fp, tn, res_dir, '.n', yap)
+        rule_dicts, neg_examples, fp, tn, res_dir, swipl)
 
     assert(len(tp) + len(fp) + len(tn) + len(fn) == len(pos_examples) + len(neg_examples))
 
@@ -307,24 +326,27 @@ if __name__ == '__main__':
 
     results = []
     with open(input_file) as res:
-        for line in res.readlines():
+        for line in res:
             results.append(line.strip())
 
     file_name_base = learning_task_id + '_' + learning_problem_id
     target_dir = cfg['filename.workdir']
+    pos_examples_file_path = cfg['filename.pos']
+    neg_examples_file_path = cfg['filename.neg']
+
     _log.debug('Target dir is %s' % target_dir)
 
-    copy_files_around(learning_task_id, learning_problem_id, target_dir,
-                      file_name_base)
+    pos_examples, neg_examples = read_files(
+        learning_task_id, pos_examples_file_path, neg_examples_file_path)
 
-    num_tp, num_fp, num_tn, num_fn = validate(results, target_dir,
-                                              cfg['filename.pos'],
-                                              cfg['filename.neg'])
+    num_tp, num_fp, num_tn, num_fn = validate(
+        results, target_dir, pos_examples, neg_examples)
+
     with open(output_file_name, 'w') as f:
         f.write('tp: %i' % num_tp + os.linesep +
                 'fp: %i' % num_fp + os.linesep +
                 'tn: %i' % num_tn + os.linesep +
                 'fn: %i' % num_fn + os.linesep)
 
-    _log.debug('Aleph validation finished.')
+    _log.debug('Aleph (SWI Prolog) validation finished.')
     _log.debug('Results written to %s' % output_file_name)

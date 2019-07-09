@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.aksw.sml-bench</groupId>
     <artifactId>sml-bench-core</artifactId>
-    <version>0.2</version>
+    <version>0.3-SNAPSHOT</version>
     <name>SML-Bench</name>
     <description>Structured Machine Learning Benchmark</description>
     <url>https://github.com/AKSW/SML-Bench</url>

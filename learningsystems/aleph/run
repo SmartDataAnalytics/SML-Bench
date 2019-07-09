@@ -87,7 +87,7 @@ class NoAlephScriptFound(Exception):
 
 def copy_files_around(task_id, lp_id, target_dir, file_name_base, file_pos,
                       file_neg):
-    """Finds all the files necessary to run golem:
+    """Finds all the files necessary to run aleph:
     - ../../learningtasks/<task_id>/prolog/data/aleph/*.pl
                             --> <target_dir>/<file_name_base>.b
     - ../../learningtasks/<task_id>/prolog/data/*.pl  # merged!

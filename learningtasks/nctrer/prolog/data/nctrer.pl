@@ -26936,9 +26936,9 @@ bond(X) :- double_or_aromatic_bond(X).
 bond(X) :- single_or_aromatic_bond(X).
 bond(X) :- single_or_double_bond(X).
 bond(X) :- triple_bond(X).
-bond_made_or_broken_and_a_center(X) :- bond_made_or_broken(X), a_center(X).
-bond_made_or_broken_and_bond_order_changes(X) :- bond_made_or_broken(X), bond_order_changes(X).
-bond_made_or_broken_and_bond_order_changes_and_a_Center(X) :- bond_made_or_broken(X), bond_order_changes(X), a_center(X).
+%bond_made_or_broken_and_a_center(X) :- bond_made_or_broken(X), a_center(X).
+%bond_made_or_broken_and_bond_order_changes(X) :- bond_made_or_broken(X), bond_order_changes(X).
+%bond_made_or_broken_and_bond_order_changes_and_a_Center(X) :- bond_made_or_broken(X), bond_order_changes(X), a_center(X).
 bound_atom(bond1,atom_1_1).
 bound_atom(bond1,atom_1_2).
 bound_atom(bond10,atom_1_5).
@@ -43865,7 +43865,7 @@ double_bond_derive_cis_or_trans_isomerism_from_xyz_coords(bond962).
 double_bond_derive_cis_or_trans_isomerism_from_xyz_coords(bond965).
 double_bond_derive_cis_or_trans_isomerism_from_xyz_coords(bond975).
 double_bond_derive_cis_or_trans_isomerism_from_xyz_coords(bond988).
-double_or_aromatic_bond(X) :- aromatic_bond(X).
+%double_or_aromatic_bond(X) :- aromatic_bond(X).
 double_or_aromatic_bond(X) :- double_bond(X).
 dsstox_cid(molecule1,2308).
 dsstox_cid(molecule10,2317).
@@ -44795,8 +44795,8 @@ dsstox_rid(molecule96,22403).
 dsstox_rid(molecule97,22404).
 dsstox_rid(molecule98,22405).
 dsstox_rid(molecule99,22406).
-either_ring_or_chain_topology(X) :- chain_topology(X).
-either_ring_or_chain_topology(X) :- ring_topology(X).
+%either_ring_or_chain_topology(X) :- chain_topology(X).
+%either_ring_or_chain_topology(X) :- ring_topology(X).
 either_ring_or_chain_topology(bond1).
 either_ring_or_chain_topology(bond10).
 either_ring_or_chain_topology(bond100).
@@ -60734,7 +60734,8 @@ has_atom(molecule99,atom_99_6).
 has_atom(molecule99,atom_99_7).
 has_atom(molecule99,atom_99_8).
 has_atom(molecule99,atom_99_9).
-has_binding_with(X,Y) :- has_binding(Y,X).
+has_binding(X, Y) :- has_binding_with(X, Y).
+has_binding(X, Y) :- has_binding_with(Y, X).
 has_binding_with(atom_100_1,atom_100_2).
 has_binding_with(atom_100_11,atom_100_12).
 has_binding_with(atom_100_11,atom_100_16).
@@ -92527,7 +92528,7 @@ single_bond_up_stereochemistry(bond4696).
 single_bond_up_stereochemistry(bond490).
 single_bond_up_stereochemistry(bond496).
 single_bond_up_stereochemistry(bond503).
-single_or_aromatic_bond(X) :- aromatic_bond(X).
+%single_or_aromatic_bond(X) :- aromatic_bond(X).
 single_or_aromatic_bond(X) :- single_bond(X).
 single_or_double_bond(X) :- double_bond(X).
 single_or_double_bond(X) :- single_bond(X).
@@ -94175,7 +94176,7 @@ structure_parent_smiles(molecule113,'NCCC1=CC(O)=C(O)C=C1').
 structure_parent_smiles(molecule114,'O=C(C)NCCC1=CNC2=C1C=C(OC)C=C2').
 structure_parent_smiles(molecule115,'C1(N)C=CC(=CC=1)CC2=CC=C(C=C2)N').
 structure_parent_smiles(molecule116,'OC1=CC=CC=C1Cl').
-structure_parent_smiles(molecule117,'Cl\C2=C(/Cl)C3(Cl)C1C4CC(C1C2(Cl)C3(Cl)Cl)C5OC45').
+structure_parent_smiles(molecule117,'Cl\\C2=C(/Cl)C3(Cl)C1C4CC(C1C2(Cl)C3(Cl)Cl)C5OC45').
 structure_parent_smiles(molecule118,'C(C1=CC=C(C=C1)O)(C2=CC=C(C=C2)O)=O').
 structure_parent_smiles(molecule119,'ClC1=C(C=CC(=C1)Cl)OCC(=O)O').
 structure_parent_smiles(molecule12,'O[C@H]1CC3=C(C=C(O)C=C3O)O[C@@H]1[C@@]2=CC(O)=C(O)C=C2').
@@ -94229,7 +94230,7 @@ structure_parent_smiles(molecule162,'C(=C(/C1=CC=C(C=C1)OC)CC)(/C2C=CC(=CC=2)O)C
 structure_parent_smiles(molecule163,'O[C@H]2CC[C@H]3[C@@H]4CCc1ccccc1[C@H]4CC[C@]23C').
 structure_parent_smiles(molecule164,'[C@]12([C@]([C@@]3(CCC4=C([C@@](CC1)3[H])C=CC(O)=C4)[H])(CCC2)[H])C').
 structure_parent_smiles(molecule165,'C1(CCCC)C=CC=CC=1').
-structure_parent_smiles(molecule166,'OCC(=O)[C@@]4(O)[C@H](C)C[C@@H]1[C@]4(C)C[C@H](O)[C@]2(F)[C@@]3(C)/C=C\C(=O)/C=C3/CC[C@@H]12').
+structure_parent_smiles(molecule166,'OCC(=O)[C@@]4(O)[C@H](C)C[C@@H]1[C@]4(C)C[C@H](O)[C@]2(F)[C@@]3(C)/C=C\\C(=O)/C=C3/CC[C@@H]12').
 structure_parent_smiles(molecule167,'[C@]12([C@]([C@@]3(CCC4[C@@]([C@@]([C@H](C1)O)3[H])(CCC(=O)C=4)C)[H])(CC[C@H]2C(=O)CO)[H])C').
 structure_parent_smiles(molecule168,'O=C1C2=C(N=CN2C)N(C(=O)N1C)C').
 structure_parent_smiles(molecule169,'C1=CC=CC=C1OP(=O)(OC2=CC=CC=C2)OC3=CC=CC=C3').
@@ -94238,7 +94239,7 @@ structure_parent_smiles(molecule170,'C12=C(CC3C1=CC=CC=3)C=C4C(=C2)C=CC=C4').
 structure_parent_smiles(molecule171,'O=C2C(C(O)=C3)=C(O[C@H]([C@@](C=C4)=CC=C4O)C2)C=C3O[C@H]1[C@H](O[C@H]5[C@H](O)[C@H](O)[C@@H](O)[C@H](C)O5)[C@@H](O)[C@H](O)[C@@H](CO)O1').
 structure_parent_smiles(molecule172,'C1(=C(CC)C=CC=C1)O').
 structure_parent_smiles(molecule173,'C1=C(O)C=CC=C1CC').
-structure_parent_smiles(molecule174,'CC(C)[C@H](CC)CC[C@@H](C)[C@H]3CC[C@H]2[C@@H]4C\C=C1\C[C@@H](O)CC[C@]1(C)[C@H]4CC[C@@]23C').
+structure_parent_smiles(molecule174,'CC(C)[C@H](CC)CC[C@@H](C)[C@H]3CC[C@H]2[C@@H]4C\\C=C1\\C[C@@H](O)CC[C@]1(C)[C@H]4CC[C@@]23C').
 structure_parent_smiles(molecule175,'C(C(C1=CC=C(C=C1)OC)C2C=CC(=CC=2)O)(Cl)(Cl)Cl').
 structure_parent_smiles(molecule176,'C1(C=CC(=CC=1)OCCCCCCC)O').
 structure_parent_smiles(molecule177,'C(=C(Cl)Cl)(C1=CC=C(C=C1)OC)C2=CC=C(C=C2)O').
@@ -94251,7 +94252,7 @@ structure_parent_smiles(molecule182,'C(/C=C/C1C=CC=CC=1)(=O)O').
 structure_parent_smiles(molecule183,'OCC1=CC=CC=C1').
 structure_parent_smiles(molecule184,'O=CCCCCCC').
 structure_parent_smiles(molecule185,cccccco).
-structure_parent_smiles(molecule186,'OC(CC/C=C(C)/CC/C=C(C)\C)(C)C=C').
+structure_parent_smiles(molecule186,'OC(CC/C=C(C)/CC/C=C(C)\\C)(C)C=C').
 structure_parent_smiles(molecule187,'C(=C(/C1=CC=C(C=C1)OC)CC)(/C2C=CC(=CC=2)OC)CC').
 structure_parent_smiles(molecule188,'[C@]12([C@]([C@@]3(CCC4=C([C@@](CC1)3[H])C=CC(O)=C4)[H])(CC(C2)=O)[H])C').
 structure_parent_smiles(molecule189,'O=[C@](O)[C@]1(C)[C@@](CC)([H])C(C=C3)=C(C2=C3C=C(OC)C=C2)CC1').
@@ -94279,7 +94280,7 @@ structure_parent_smiles(molecule207,'C1(C2=CC(Cl)=C(C=C2)Cl)=CC(Cl)=C(C=C1)Cl').
 structure_parent_smiles(molecule208,'C1(C2=CC=C(C=C2)Cl)C=CC(=CC=1)Cl').
 structure_parent_smiles(molecule209,'[C@]12([C@]([C@@]3(C[C@@H](C4=C([C@@](CC1)3[H])C=CC(O)=C4)O)[H])(CC[C@H]2O)[H])C').
 structure_parent_smiles(molecule21,'O=C(C2=CC=C(O)C=C2O3)C=C3C1=CC=CC=C1').
-structure_parent_smiles(molecule210,'O=C4CC\C3=C(\CC[C@@H]2[C@@H]3CC[C@@]1(C)[C@H]2CC[C@@]1(O)C#C)C4').
+structure_parent_smiles(molecule210,'O=C4CC\\C3=C(\\CC[C@@H]2[C@@H]3CC[C@@]1(C)[C@H]2CC[C@@]1(O)C#C)C4').
 structure_parent_smiles(molecule211,'C(=C(Cl)Cl)(C1=CC=C(C=C1)OC)C2=CC=C(C=C2)OC').
 structure_parent_smiles(molecule212,'O=C1N=C(N)NC(N=C2)=C1N=C2CNC3=CC=C(C=C3)C(N[C@@H](CCC(O)=O)C(O)=O)=O').
 structure_parent_smiles(molecule213,'O=C(OCC)/C=C/C1=CC=CC=C1').
@@ -94289,7 +94290,7 @@ structure_parent_smiles(molecule216,'C(C1=CC=C(C=C1)O)(=O)OCCCCCCC').
 structure_parent_smiles(molecule217,'N1(C(C2=CC=CC=C(C1=O)2)=O)C3C(NC(CC3)=O)=O').
 structure_parent_smiles(molecule218,'C(C1C=CC(=CC=1)O)(OCC(CC)CCCC)=O').
 structure_parent_smiles(molecule219,'C(OCC1=CC=CC=C1)(C2C=CC(O)=CC=2)=O').
-structure_parent_smiles(molecule22,'C[C@]43CCC(=O)\C=C4\CC[C@@H]1[C@@H]3CC[C@]2(C)[C@H](O)CC[C@@H]12').
+structure_parent_smiles(molecule22,'C[C@]43CCC(=O)\\C=C4\\CC[C@@H]1[C@@H]3CC[C@]2(C)[C@H](O)CC[C@@H]12').
 structure_parent_smiles(molecule220,'C(C1=CC=C(C=C1)O)(=O)OCCC').
 structure_parent_smiles(molecule221,'C(C1=CC=C(C=C1)O)(=O)OCC').
 structure_parent_smiles(molecule222,'C(C1=CC=C(C=C1)O)(=O)OC').
@@ -94311,7 +94312,7 @@ structure_parent_smiles(molecule29,'ClC2(C(Cl)3Cl)C(Cl)=C(Cl)C3(Cl)C1CC(Cl)C(Cl)
 structure_parent_smiles(molecule3,'O=C1C(C3=CC=C(O)C=C3)=COC2=C1C=CC(O)=C2').
 structure_parent_smiles(molecule30,'ClC1=C(C=C(C(=C1)Cl)Cl)OCC(=O)O').
 structure_parent_smiles(molecule31,'ClC53C1(Cl)C4(Cl)C2(Cl)C1(Cl)C(Cl)(Cl)C5(Cl)C2(Cl)C3(Cl)C4(Cl)Cl').
-structure_parent_smiles(molecule32,'ClC1/C=C\C2C1C3(Cl)C(/Cl)=C(/Cl)C2(Cl)C3(Cl)Cl').
+structure_parent_smiles(molecule32,'ClC1/C=C\\C2C1C3(Cl)C(/Cl)=C(/Cl)C2(Cl)C3(Cl)Cl').
 structure_parent_smiles(molecule33,'ClC(C(C1=C(C=CC=C1)Cl)C2=CC=C(C=C2)Cl)Cl').
 structure_parent_smiles(molecule34,'C1(N=C(NC(C)C)N=C(N=1)OC)NC(C)C').
 structure_parent_smiles(molecule35,'ClC1=NC(=NC(=N1)NCC)NCC').
@@ -94331,7 +94332,7 @@ structure_parent_smiles(molecule47,'C1(C2=CC=C(C=C2)Cl)=CC=C(C=C1)O').
 structure_parent_smiles(molecule48,'C(C1=CC=C(O)C=C1)(C)(C)C').
 structure_parent_smiles(molecule49,'ClC1=NC(=NC(=N1)NC(C)C)NCC').
 structure_parent_smiles(molecule5,'OC1=CC=C(CCCCCCCC)C=C1').
-structure_parent_smiles(molecule50,'Cl\C2=C(/Cl)C3(Cl)C1COS(=O)OCC1C2(Cl)C3(Cl)Cl').
+structure_parent_smiles(molecule50,'Cl\\C2=C(/Cl)C3(Cl)C1COS(=O)OCC1C2(Cl)C3(Cl)Cl').
 structure_parent_smiles(molecule51,'ClC54C(=O)C1(Cl)C2(Cl)C5(Cl)C3(Cl)C4(Cl)C1(Cl)C2(Cl)C3(Cl)Cl').
 structure_parent_smiles(molecule52,'Cl[C@@H]1[C@@H](Cl)[C@H](Cl)[C@H](Cl)[C@@H](Cl)[C@@H]1Cl').
 structure_parent_smiles(molecule53,'C(C1=CC=C(C=C1)O)(CC(C)(C)C)(C)C').
@@ -94358,9 +94359,9 @@ structure_parent_smiles(molecule71,'[C@]12([C@]([C@@]3(CC[C@@]4([C@@]([C@@](CC1)
 structure_parent_smiles(molecule72,'[H][C@@]1(CC4)[C@]([C@]3(C)[C@]4([H])C[C@@H](O)CC3)([H])CC[C@@]2(C)[C@]([H])1CC[C@@H]2O').
 structure_parent_smiles(molecule73,'C1(=C(C=CC=C1)C(OCCCC)=O)C(OCC2=CC=CC=C2)=O').
 structure_parent_smiles(molecule74,'OC2=CC=C(C=C2)[C@@H](CC)[C@@H](CC)C(C=C1)=CC=C1O').
-structure_parent_smiles(molecule75,'OC(C=C1)=CC=C1/C(/C(C2=CC=C(O)C=C2)=C/C)=C\C').
-structure_parent_smiles(molecule76,'CN(C)CCOC3=CC=C(C=C3)\C(C2=CC=CC=C2)=C(CC)/C1=CC=CC=C1').
-structure_parent_smiles(molecule77,'OC3=CC=C(C=C3)/C(CC)=C(C1=CC=CC=C1)\C(C=C2)=CC=C2OCCN(C)C').
+structure_parent_smiles(molecule75,'OC(C=C1)=CC=C1/C(/C(C2=CC=C(O)C=C2)=C/C)=C\\C').
+structure_parent_smiles(molecule76,'CN(C)CCOC3=CC=C(C=C3)\\C(C2=CC=CC=C2)=C(CC)/C1=CC=CC=C1').
+structure_parent_smiles(molecule77,'OC3=CC=C(C=C3)/C(CC)=C(C1=CC=CC=C1)\\C(C=C2)=CC=C2OCCN(C)C').
 structure_parent_smiles(molecule78,'C(=C(/Cl)C1=CC=CC=C1)(/C2=CC=C(C=C2)OCCN(CC)CC)C3=CC=CC=C3').
 structure_parent_smiles(molecule79,'C1(=C(CCC2=C1C=CC(OC)=C2)C3=CC=CC=C3)C4C=CC(=CC=4)OCCN5CCCC5').
 structure_parent_smiles(molecule8,'Oc1cc(O)cc2CCCCC[C@@H](O)CCC[C@H](C)OC(=O)c12').
@@ -94637,7 +94638,7 @@ structure_smiles(molecule113,'NCCC1=CC(O)=C(O)C=C1').
 structure_smiles(molecule114,'O=C(C)NCCC1=CNC2=C1C=C(OC)C=C2').
 structure_smiles(molecule115,'C1(N)C=CC(=CC=1)CC2=CC=C(C=C2)N').
 structure_smiles(molecule116,'OC1=CC=CC=C1Cl').
-structure_smiles(molecule117,'Cl\C2=C(/Cl)C3(Cl)C1C4CC(C1C2(Cl)C3(Cl)Cl)C5OC45').
+structure_smiles(molecule117,'Cl\\C2=C(/Cl)C3(Cl)C1C4CC(C1C2(Cl)C3(Cl)Cl)C5OC45').
 structure_smiles(molecule118,'C(C1=CC=C(C=C1)O)(C2=CC=C(C=C2)O)=O').
 structure_smiles(molecule119,'ClC1=C(C=CC(=C1)Cl)OCC(=O)O').
 structure_smiles(molecule12,'O[C@H]1CC3=C(C=C(O)C=C3O)O[C@@H]1[C@@]2=CC(O)=C(O)C=C2').
@@ -94691,7 +94692,7 @@ structure_smiles(molecule162,'C(=C(/C1=CC=C(C=C1)OC)CC)(/C2C=CC(=CC=2)O)CC').
 structure_smiles(molecule163,'O[C@H]2CC[C@H]3[C@@H]4CCc1ccccc1[C@H]4CC[C@]23C').
 structure_smiles(molecule164,'[C@]12([C@]([C@@]3(CCC4=C([C@@](CC1)3[H])C=CC(O)=C4)[H])(CCC2)[H])C').
 structure_smiles(molecule165,'C1(CCCC)C=CC=CC=1').
-structure_smiles(molecule166,'OCC(=O)[C@@]4(O)[C@H](C)C[C@@H]1[C@]4(C)C[C@H](O)[C@]2(F)[C@@]3(C)/C=C\C(=O)/C=C3/CC[C@@H]12').
+structure_smiles(molecule166,'OCC(=O)[C@@]4(O)[C@H](C)C[C@@H]1[C@]4(C)C[C@H](O)[C@]2(F)[C@@]3(C)/C=C\\C(=O)/C=C3/CC[C@@H]12').
 structure_smiles(molecule167,'[C@]12([C@]([C@@]3(CCC4[C@@]([C@@]([C@H](C1)O)3[H])(CCC(=O)C=4)C)[H])(CC[C@H]2C(=O)CO)[H])C').
 structure_smiles(molecule168,'O=C1C2=C(N=CN2C)N(C(=O)N1C)C').
 structure_smiles(molecule169,'C1=CC=CC=C1OP(=O)(OC2=CC=CC=C2)OC3=CC=CC=C3').
@@ -94700,7 +94701,7 @@ structure_smiles(molecule170,'C12=C(CC3C1=CC=CC=3)C=C4C(=C2)C=CC=C4').
 structure_smiles(molecule171,'O=C2C(C(O)=C3)=C(O[C@H]([C@@](C=C4)=CC=C4O)C2)C=C3O[C@H]1[C@H](O[C@H]5[C@H](O)[C@H](O)[C@@H](O)[C@H](C)O5)[C@@H](O)[C@H](O)[C@@H](CO)O1').
 structure_smiles(molecule172,'C1(=C(CC)C=CC=C1)O').
 structure_smiles(molecule173,'C1=C(O)C=CC=C1CC').
-structure_smiles(molecule174,'CC(C)[C@H](CC)CC[C@@H](C)[C@H]3CC[C@H]2[C@@H]4C\C=C1\C[C@@H](O)CC[C@]1(C)[C@H]4CC[C@@]23C').
+structure_smiles(molecule174,'CC(C)[C@H](CC)CC[C@@H](C)[C@H]3CC[C@H]2[C@@H]4C\\C=C1\\C[C@@H](O)CC[C@]1(C)[C@H]4CC[C@@]23C').
 structure_smiles(molecule175,'C(C(C1=CC=C(C=C1)OC)C2C=CC(=CC=2)O)(Cl)(Cl)Cl').
 structure_smiles(molecule176,'C1(C=CC(=CC=1)OCCCCCCC)O').
 structure_smiles(molecule177,'C(=C(Cl)Cl)(C1=CC=C(C=C1)OC)C2=CC=C(C=C2)O').
@@ -94713,7 +94714,7 @@ structure_smiles(molecule182,'C(/C=C/C1C=CC=CC=1)(=O)O').
 structure_smiles(molecule183,'OCC1=CC=CC=C1').
 structure_smiles(molecule184,'O=CCCCCCC').
 structure_smiles(molecule185,cccccco).
-structure_smiles(molecule186,'OC(CC/C=C(C)/CC/C=C(C)\C)(C)C=C').
+structure_smiles(molecule186,'OC(CC/C=C(C)/CC/C=C(C)\\C)(C)C=C').
 structure_smiles(molecule187,'C(=C(/C1=CC=C(C=C1)OC)CC)(/C2C=CC(=CC=2)OC)CC').
 structure_smiles(molecule188,'[C@]12([C@]([C@@]3(CCC4=C([C@@](CC1)3[H])C=CC(O)=C4)[H])(CC(C2)=O)[H])C').
 structure_smiles(molecule189,'O=[C@](O)[C@]1(C)[C@@](CC)([H])C(C=C3)=C(C2=C3C=C(OC)C=C2)CC1').
@@ -94751,7 +94752,7 @@ structure_smiles(molecule216,'C(C1=CC=C(C=C1)O)(=O)OCCCCCCC').
 structure_smiles(molecule217,'N1(C(C2=CC=CC=C(C1=O)2)=O)C3C(NC(CC3)=O)=O').
 structure_smiles(molecule218,'C(C1C=CC(=CC=1)O)(OCC(CC)CCCC)=O').
 structure_smiles(molecule219,'C(OCC1=CC=CC=C1)(C2C=CC(O)=CC=2)=O').
-structure_smiles(molecule22,'C[C@]43CCC(=O)\C=C4\CC[C@@H]1[C@@H]3CC[C@]2(C)[C@H](O)CC[C@@H]12').
+structure_smiles(molecule22,'C[C@]43CCC(=O)\\C=C4\\CC[C@@H]1[C@@H]3CC[C@]2(C)[C@H](O)CC[C@@H]12').
 structure_smiles(molecule220,'C(C1=CC=C(C=C1)O)(=O)OCCC').
 structure_smiles(molecule221,'C(C1=CC=C(C=C1)O)(=O)OCC').
 structure_smiles(molecule222,'C(C1=CC=C(C=C1)O)(=O)OC').
@@ -94775,7 +94776,7 @@ structure_smiles(molecule29,'ClC2(C(Cl)3Cl)C(Cl)=C(Cl)C3(Cl)C1CC(Cl)C(Cl)C12').
 structure_smiles(molecule3,'O=C1C(C3=CC=C(O)C=C3)=COC2=C1C=CC(O)=C2').
 structure_smiles(molecule30,'ClC1=C(C=C(C(=C1)Cl)Cl)OCC(=O)O').
 structure_smiles(molecule31,'ClC53C1(Cl)C4(Cl)C2(Cl)C1(Cl)C(Cl)(Cl)C5(Cl)C2(Cl)C3(Cl)C4(Cl)Cl').
-structure_smiles(molecule32,'ClC1/C=C\C2C1C3(Cl)C(/Cl)=C(/Cl)C2(Cl)C3(Cl)Cl').
+structure_smiles(molecule32,'ClC1/C=C\\C2C1C3(Cl)C(/Cl)=C(/Cl)C2(Cl)C3(Cl)Cl').
 structure_smiles(molecule33,'ClC(C(C1=C(C=CC=C1)Cl)C2=CC=C(C=C2)Cl)Cl').
 structure_smiles(molecule34,'C1(N=C(NC(C)C)N=C(N=1)OC)NC(C)C').
 structure_smiles(molecule35,'ClC1=NC(=NC(=N1)NCC)NCC').
@@ -94795,7 +94796,7 @@ structure_smiles(molecule47,'C1(C2=CC=C(C=C2)Cl)=CC=C(C=C1)O').
 structure_smiles(molecule48,'C(C1=CC=C(O)C=C1)(C)(C)C').
 structure_smiles(molecule49,'ClC1=NC(=NC(=N1)NC(C)C)NCC').
 structure_smiles(molecule5,'OC1=CC=C(CCCCCCCC)C=C1').
-structure_smiles(molecule50,'Cl\C2=C(/Cl)C3(Cl)C1COS(=O)OCC1C2(Cl)C3(Cl)Cl').
+structure_smiles(molecule50,'Cl\\C2=C(/Cl)C3(Cl)C1COS(=O)OCC1C2(Cl)C3(Cl)Cl').
 structure_smiles(molecule51,'ClC54C(=O)C1(Cl)C2(Cl)C5(Cl)C3(Cl)C4(Cl)C1(Cl)C2(Cl)C3(Cl)Cl').
 structure_smiles(molecule52,'Cl[C@@H]1[C@@H](Cl)[C@H](Cl)[C@H](Cl)[C@@H](Cl)[C@@H]1Cl').
 structure_smiles(molecule53,'C(C1=CC=C(C=C1)O)(CC(C)(C)C)(C)C').
@@ -94822,9 +94823,9 @@ structure_smiles(molecule71,'[C@]12([C@]([C@@]3(CC[C@@]4([C@@]([C@@](CC1)3[H])(C
 structure_smiles(molecule72,'[H][C@@]1(CC4)[C@]([C@]3(C)[C@]4([H])C[C@@H](O)CC3)([H])CC[C@@]2(C)[C@]([H])1CC[C@@H]2O').
 structure_smiles(molecule73,'C1(=C(C=CC=C1)C(OCCCC)=O)C(OCC2=CC=CC=C2)=O').
 structure_smiles(molecule74,'OC2=CC=C(C=C2)[C@@H](CC)[C@@H](CC)C(C=C1)=CC=C1O').
-structure_smiles(molecule75,'OC(C=C1)=CC=C1/C(/C(C2=CC=C(O)C=C2)=C/C)=C\C').
+structure_smiles(molecule75,'OC(C=C1)=CC=C1/C(/C(C2=CC=C(O)C=C2)=C/C)=C\\C').
 structure_smiles(molecule76,'CC/C(C2=CC=CC=C2)=C(C1=CC=CC=C1)/C(C=C3)=CC=C3OCCN(C)C.OC(C(CC(O)=O)(O)CC(O)=O)=O').
-structure_smiles(molecule77,'OC3=CC=C(C=C3)/C(CC)=C(C1=CC=CC=C1)\C(C=C2)=CC=C2OCCN(C)C').
+structure_smiles(molecule77,'OC3=CC=C(C=C3)/C(CC)=C(C1=CC=CC=C1)\\C(C=C2)=CC=C2OCCN(C)C').
 structure_smiles(molecule78,'C(CC(=O)O)(CC(=O)O)(C(=O)O)O.C(=C(/Cl)C1=CC=CC=C1)(/C2=CC=C(C=C2)OCCN(CC)CC)C3=CC=CC=C3').
 structure_smiles(molecule79,'C1(=C(CCC2=C1C=CC(OC)=C2)C3=CC=CC=C3)C4C=CC(=CC=4)OCCN5CCCC5').
 structure_smiles(molecule8,'Oc1cc(O)cc2CCCCC[C@@H](O)CCC[C@H](C)OC(=O)c12').

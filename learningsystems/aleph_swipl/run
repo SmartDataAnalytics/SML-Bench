@@ -1,0 +1,344 @@
+#!/usr/bin/env python
+
+import argparse
+import time
+
+try:
+    import configparser
+except ImportError:
+    import ConfigParser as configparser
+
+import logging
+import os
+import sys
+import stat
+import subprocess
+import platform
+import atexit
+import signal
+import ctypes
+libc = ctypes.CDLL("libc.so.6")
+
+
+def set_pdeathsig(sig = signal.SIGTERM):
+    def callable():
+        return libc.prctl(1, sig)
+    return callable
+
+
+procs = []
+
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+
+@atexit.register
+def kill_subprocesses(*args, **kwargs):
+    for proc in procs:
+        if proc.returncode == None:
+            _log.debug('killing %s at exit', proc)
+        try:
+            proc.kill()
+            proc.terminate()
+        except:
+            pass
+
+
+def sig_term(*args, **kwargs):
+    # kill_subprocesses()
+    sys.exit(signal.SIGTERM | 0x80)
+
+
+signal.signal(signal.SIGTERM, sig_term)
+
+
+def check_call_and_terminate(*args, **kwargs):
+    pp = subprocess.Popen(*args, **kwargs)
+    procs.append(pp)
+    retcode = pp.wait()
+    if retcode:
+        raise subprocess.CalledProcessError(retcode, args[0])
+    return retcode
+
+
+learning_task_dir_name = 'learningtasks'
+prolog_dir_name = 'prolog'
+data_dir_name = 'data'
+tool_specific_data_dir = 'aleph_swipl'
+lp_dir_name = 'lp'
+config_file_name = 'aleph_swipl.conf'
+swi_executable_name = 'swipl'
+aleph_script_name = 'aleph.pl'
+aleph_mode_predicates = ['modeh(', 'modeb(', 'determination(', 'dynamic ']
+train_script_file_name = 'train.pl'
+train_script_file_template = """#!%(swipl)s
+
+:- use_module(library(aleph)).
+
+:- aleph.
+
+%(settings)s
+
+%(mode_declarations)s
+
+:- begin_bg.
+%(bg_knowledge)s
+:- end_bg.
+
+:- begin_in_pos.
+%(pos_examples)s
+:- end_in_pos.
+
+:- begin_in_neg.
+%(neg_examples)s
+:- end_in_neg.
+
+
+:- initialization(main).
+
+main :-
+    induce(Program),
+    open('%(output_file)s', write, Stream),
+    foreach(member(X, Program), (write(Stream, X), write(Stream, "\\n"))),
+    halt.
+"""
+
+
+class NoSWIPlInstallationFoundException(Exception):
+    """Raised when no installed SWI Prolog could be found."""
+
+
+class NoAlephScriptFound(Exception):
+    """Raised when no Aleph script could be found"""
+
+
+def read_files(task_id, file_pos, file_neg):
+    data_dir = os.path.join('..', '..', learning_task_dir_name, task_id,
+                            prolog_dir_name, data_dir_name)
+    tool_specific_dir = os.path.join(
+        '..', '..', learning_task_dir_name, task_id, prolog_dir_name,
+        data_dir_name, tool_specific_data_dir)
+
+    bg_knowledge = []
+    mode_declarations = []
+    pos = []
+    neg = []
+
+    # bg knowledge
+    for f_name in os.listdir(data_dir):
+        if f_name.endswith('.pl'):
+            with open(os.path.join(data_dir, f_name)) as in_file:
+                for line in in_file:
+                    line = line.strip()
+
+                    if line:
+                        bg_knowledge.append(line)
+
+    # mode declarations / bg knowledge
+    if os.path.isdir(tool_specific_dir):
+        for f_name in os.listdir(tool_specific_dir):
+            if f_name.endswith('.pl'):
+                with open(os.path.join(data_dir, tool_specific_data_dir, f_name)) as in_file:
+                    for line in in_file:
+                        line_is_mode_decl = False
+                        line = line.strip()
+
+                        if line:
+                            for mode_decl_pred in aleph_mode_predicates:
+                                if mode_decl_pred in line:
+                                    line_is_mode_decl = True
+                                    mode_declarations.append(line)
+                            if not line_is_mode_decl:
+                                bg_knowledge.append(line)
+
+    # pos
+    with open(file_pos) as in_file:
+        for line in in_file:
+            line = line.strip()
+
+            if line:
+                pos.append(line)
+
+    # neg
+    with open(file_neg) as in_file:
+        for line in in_file:
+            line = line.strip()
+
+            if line:
+                neg.append(line)
+
+    return mode_declarations, bg_knowledge, pos, neg
+
+
+def get_settings(learning_task, lp_id, cfg):
+    config_file_path = os.path.join('..', '..', learning_task_dir_name,
+                                    learning_task, prolog_dir_name,
+                                    lp_dir_name, lp_id, config_file_name)
+
+    settings = {}
+    if os.path.isfile(config_file_path):
+        conf = configparser.ConfigParser()
+        conf.read(config_file_path)
+
+        for item in conf.items('main'):
+            setting, raw_value = item
+            settings[setting] = raw_value
+
+    for k, v in cfg.items():
+        if k.startswith('settings'):
+            # 'settings.caching' --> 'caching'
+            k = k.split('.', 1)[1]
+            settings[k] = v
+
+    return settings
+
+
+def find_swipl():
+    gen_path = os.path.join(os.getcwd(),
+                            '%s-%s' % (platform.system(), platform.machine()),
+                            swi_executable_name)
+
+    if os.path.isfile(gen_path):
+        # swipl executable resides in the same directory
+        return gen_path
+
+    else:
+        swipl_exec_path = \
+            subprocess.check_output(['which', swi_executable_name]).decode().strip()
+
+        if swipl_exec_path == '':
+            msg = 'No SWI Prolog installation could be found. Please make ' \
+                  'sure you have SWI Prolog installed via your package ' \
+                  'manager or download and manually install it from ' \
+                  'https://www.swi-prolog.org/Download.html'
+            raise NoSWIPlInstallationFoundException(msg)
+
+        return swipl_exec_path
+
+
+def create_pl_script(
+        swipl_executable,
+        dir,
+        mode_declarations,
+        bg_knowledge,
+        pos_examples,
+        neg_examples,
+        settings,
+        output_file_path):
+
+    file_path = os.path.join(dir, train_script_file_name)
+
+    settings_str = ''
+
+    for key, val in settings.items():
+        if val.lower() in ['on', 'true']:
+            val = 'true'
+        elif val.lower() in ['off', 'false']:
+            val = 'false'
+        settings_str += 'set(%s,%s),' % (key, val)
+        settings_str += os.linesep
+
+    # mapping for filling the train script template
+    m = {
+        'swipl': swipl_executable,
+        'settings': settings_str,
+        'mode_declarations': '\n'.join(mode_declarations),
+        'bg_knowledge': '\n'.join(bg_knowledge),
+        'pos_examples': '\n'.join(pos_examples),
+        'neg_examples': '\n'.join(neg_examples),
+        'output_file': output_file_path
+    }
+
+    # write the train script
+    with open(file_path, 'w') as f:
+        f.write(train_script_file_template % m)
+
+    # make the train script executable
+    os.chmod(file_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IXUSR)
+
+
+def get_and_clean_results(output_file_path, pos_examples):
+    result_lines = []
+
+    # get all result lines from results file
+    with open(output_file_path) as res:
+        for line in res:
+            result_lines.append(line.strip() + '.')
+
+    # remove all pos examples that could not be generalized
+    for pos_example in pos_examples:
+        if pos_example in result_lines:
+            result_lines.remove(pos_example)
+
+    return result_lines
+
+
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    if conf.has_section('settings'):
+        for item in conf.items('settings'):
+            setting, raw_value = item
+            settings['settings.'+setting] = raw_value
+
+    return settings
+
+
+if __name__ == '__main__':
+    argparser = argparse.ArgumentParser()
+    argparser.add_argument('config_file')
+    args = argparser.parse_args()
+
+    cfg = read_config(args.config_file)
+
+    learning_task_id = cfg['learningtask']
+    learning_problem_id = cfg['learningproblem']
+    _log.debug('Running learning task %s with learning problem %s' % (
+        learning_task_id, learning_problem_id))
+
+    target_dir = cfg['filename.workdir']
+    output_file = cfg['filename.output']
+    output_file_path = os.path.join(target_dir, output_file)
+
+    _log.debug('Target dir is %s' % target_dir)
+
+    mode_declarations, bg_knowledge, pos_examples, neg_examples = read_files(
+        learning_task_id,
+        cfg['filename.pos'],
+        cfg['filename.neg'])
+
+    settings = get_settings(learning_task_id, learning_problem_id, cfg)
+    swipl_executable = find_swipl()
+    create_pl_script(
+        swipl_executable=swipl_executable,
+        dir=target_dir,
+        mode_declarations=mode_declarations,
+        bg_knowledge=bg_knowledge,
+        pos_examples=pos_examples,
+        neg_examples=neg_examples,
+        settings=settings,
+        output_file_path=output_file_path)
+    script_path = os.path.join(target_dir, train_script_file_name)
+
+    _log.debug('Running Aleph (SWI Prolog)')
+    check_call_and_terminate([script_path], cwd=target_dir)
+
+    results = get_and_clean_results(output_file_path, pos_examples)
+
+    with open(output_file_path, 'w') as out:
+        for line in results:
+            out.write(line + "\n")
+
+    _log.debug('Aleph (SWI Prolog) run finished.')
+    _log.debug('Results written to %s' % output_file_path)
