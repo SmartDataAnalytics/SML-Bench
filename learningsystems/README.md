@@ -8,6 +8,7 @@ Currently supported learning systems
 We currently support the following learning systems:
 
 - [Aleph](aleph/README.md)
+- [SWI Prolog port of Aleph](aleph_swipl/README.md)
 - [DL-Learner](dllearner/README.md)
 - the [GILPS](http://www.doc.ic.ac.uk/~jcs06/GILPS/) tools, i.e.
   - [FuncLog](funclog/README.md)

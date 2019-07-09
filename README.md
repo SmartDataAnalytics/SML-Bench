@@ -22,6 +22,9 @@ For Aleph:
 - aleph.pl in `learningsystems/aleph`
 - Python 2 as `python`
 
+For the SWI Prolog port of Aleph:
+- SWI Prolog as `swipl`
+
 For DL-Learner:
 - Version 1.3-SNAPSHOT or higher
 
