@@ -19,7 +19,7 @@
     dcterms:title "Suramin" ;
     dcterms:description "Dataset for finding a predictive description of suramin analogues for cancer treatment" ;
     dcterms:source <https://github.com/AKSW/DL-Learner> ;
-    dcterms:issued "2016-04-30"^^xsd:date ;
+    dcterms:issued "2019-07-04"^^xsd:date ;
     dcterms:subject <http://dbpedia.org/resource/Suramin> ;
     dcterms:subject <http://dbpedia.org/resource/Category:Benzanilides> ;
     dcterms:subject <http://dbpedia.org/resource/Category:Ureas> ;
@@ -27,6 +27,6 @@
     dcterms:subject <http://dbpedia.org/resource/Category:Anthelmintics> ;
     dcterms:subject <http://dbpedia.org/resource/Category:Antiprotozoal_agents> ;
     dcterms:subject <http://dbpedia.org/resource/Category:Naphthalenesulfonic_acids> ;
-    dcat:byteSize "118222"^^xsd:decimal ;
-    owl:versionInfo "0.1"^^xsd:string .
+    dcat:byteSize "118257"^^xsd:decimal ;
+    owl:versionInfo "0.2"^^xsd:string .
 
