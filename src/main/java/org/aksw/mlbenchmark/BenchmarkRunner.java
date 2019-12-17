@@ -352,7 +352,7 @@ public class BenchmarkRunner {
 	 * @param scn scenario
 	 */
 	private void runScenario(Scenario scn) {
-		logger.info("executing scenario " + scn.getTask() + "/" + scn.getProblem());
+		logger.info("executing scenario " + scn.toString());
 		Configuration baseConf = new BaseConfiguration();
 
 		baseConf.setProperty("framework.currentSeed", seed);

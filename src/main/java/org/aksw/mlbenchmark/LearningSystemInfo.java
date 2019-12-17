@@ -75,6 +75,11 @@ public class LearningSystemInfo {
 			return learningSystem + Constants.LEARNINGSYSTEM_ID_SEPARATOR + identifier;
 	}
 
+	@Override
+	public String toString() {
+		return this.asString();
+	}
+
 	/**
 	 * Returns the learning system name, e.g. "aleph", "dllearner", "funclog", ...
 	 * 

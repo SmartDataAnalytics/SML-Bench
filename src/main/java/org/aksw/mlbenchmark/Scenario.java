@@ -30,6 +30,16 @@ public class Scenario implements ScenarioAttributes {
 		return new ScenarioLang(this, lang);
 	}
 
+	/**
+	 * Gets the learning task and learning problem IDs from a string like, e.g.
+	 *
+	 *   carcinogenesis/42
+	 *
+	 * Here 'carcinogenesis' is the ID of the learning task (which determines
+	 * the background knowledge base and bias declarations to be used), and
+	 * '42' is the learning problem ID (which determines the sets of training
+	 * examples and optional, learning problem-specific settings).
+	 */
 	public static Scenario fromString(String scn) {
 		final String[] split = scn.split("/");
 		final String task = split[0];
