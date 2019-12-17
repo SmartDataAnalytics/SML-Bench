@@ -1,21 +1,6 @@
 package org.aksw.mlbenchmark.systemrunner;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Set;
-
-import org.aksw.mlbenchmark.BenchmarkLog;
-import org.aksw.mlbenchmark.ConfigLoader;
-import org.aksw.mlbenchmark.ConfigLoaderException;
-import org.aksw.mlbenchmark.Constants;
-import org.aksw.mlbenchmark.LearningSystemInfo;
-import org.aksw.mlbenchmark.MeasureMethod;
-import org.aksw.mlbenchmark.Scenario;
+import org.aksw.mlbenchmark.*;
 import org.aksw.mlbenchmark.examples.ExamplesSplit;
 import org.aksw.mlbenchmark.process.ProcessRunner;
 import org.aksw.mlbenchmark.resultloader.ResultLoaderBase;
@@ -31,6 +16,13 @@ import org.apache.commons.configuration2.tree.MergeCombiner;
 import org.apache.commons.exec.ExecuteException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 
 /**
  * Actions shared between several types of steps (Cross Validation etc.). Each
@@ -84,6 +76,9 @@ public abstract class CommonStep {
 	 * 1) the training examples have to be written to file
 	 * 2) a configuration file for the learning system has to be prepared
 	 * 3) the learning system has to be invoked
+	 *    a) The learning system's `prepare` executable has to be invoked if it
+	 *       exists. [OPTIONAL]
+	 *    b) The learning system's `run` executable has to be invoked.
 	 * 4) the results have to be collected
 	 * @return A config holding the training results, i.e. the learned classifiers
 	 */
@@ -110,6 +105,24 @@ public abstract class CommonStep {
 		// 3) invoke learning system ------------------------------------------
 		List<String> args = new LinkedList<>();
 		args.add(configFile.getAbsolutePath());
+
+		// 3a)
+		Path prepareExecutable = Paths.get(lsi.getDir() + File.separator + "prepare");
+		if (Files.exists(prepareExecutable)){
+			// There is an executable called `prepare` which will be called
+			// before the actual training is performed.
+			logger.info("Found prepare executable. Will be executed before the " +
+					"training run.");
+			state = simpleProcessRunner(
+					"./prepare",
+					args,
+					cc,
+					0,
+					null,
+					"preparation system");
+		}
+
+		// 3b)
 		long maxExecutionTime = runtimeConfig.getLong(Constants.MAX_EXECUTION_TIME_KEY);
 		
 		final long now = System.nanoTime();
