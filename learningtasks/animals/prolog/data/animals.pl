@@ -131,3 +131,14 @@ has_gills(eel).
 
 has_milk(cat).
 homeothermic(cat).
+
+animal(A) :- has_milk(A).
+animal(A) :- has_gills(A).
+animal(A) :- has_covering(A,_).
+animal(A) :- has_legs(A,_).
+animal(A) :- homeothermic(A).
+animal(A) :- has_eggs(A).
+animal(A) :- habitat(A,_).
+
+covering(C) :- has_covering(_,C).
+habitat(H) :- habitat(_,H).
