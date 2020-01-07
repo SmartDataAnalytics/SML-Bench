@@ -1,0 +1,395 @@
+#!/usr/bin/env python
+import configparser
+import logging
+import os
+import subprocess
+from argparse import ArgumentParser
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+_log = logging.getLogger()
+
+
+SWIPL_EXECUTABLE = '/usr/bin/swipl'
+LEARNING_TASK_DIR_NAME = 'learningtasks'
+PROLOG_DIR_NAME = 'prolog'
+DATA_DIR_NAME = 'data'
+TOOL_SPECIFIC_DATA_DIR = 'foil6'
+MODE_FILE_NAME = 'mode.pl'
+FOIL_KB_NAME = 'kb.d'
+
+
+def read_config(path):
+    conf = configparser.ConfigParser()
+    conf.read(path)
+
+    settings = {}
+    for item in conf.items('main'):
+        setting, raw_value = item
+        settings[setting] = raw_value
+
+    for item in conf.items('filename'):
+        setting, raw_value = item
+        settings['filename.'+setting] = raw_value
+
+    if conf.has_section('settings'):
+        for item in conf.items('settings'):
+            setting, raw_value = item
+            settings['settings.'+setting] = raw_value
+
+    return settings
+
+
+def read_examples(examples_file_path):
+    examples = []
+
+    with open(examples_file_path) as examples_file:
+        for line in examples_file:
+            line = line.strip()
+            parts = line.split('(', 1)
+            examples.append(parts[1][:-2].strip())
+
+    return examples
+
+
+def unwrap(predicate_str):
+    """
+    The predicate string may look like this: predicate(density/1,measure).
+    """
+    predicate_str = predicate_str.strip()
+    # 'predicate(density/1,measure).'
+    assert predicate_str.endswith('.')
+
+    def_parts = predicate_str.split('(', 1)[1][:-2].split(',')
+    # ['density/1', 'measure']
+
+    cleaned_parts = []
+    tmp = ''
+
+    # to handle the (unlikely) case that atoms/predicate names contained a
+    # comma. In this case they need to be quoted, e.g. 'a,b,c/2'.
+    for part in def_parts:
+        if part.strip().startswith("'") and part.strip().endswith("'"):
+            cleaned_parts.append(part)
+        elif part.startswith("'"):
+            tmp = part + ','
+
+        elif part.endswith("'"):
+            cleaned_parts.append(tmp + part)
+            tmp = ''
+
+        else:
+            if tmp == '':
+                cleaned_parts.append(part)
+            else:
+                tmp += part + ','
+
+    return cleaned_parts
+
+
+def clean_instance_vals(instance_vals):
+    cleaned_instance_vals = []
+    tmp = ''
+
+    # re-compile Prolog list expressions
+    for instance_val in instance_vals:
+        instance_val = instance_val.strip()
+        if instance_val.startswith('[') and not instance_val.endswith(']'):
+            tmp = instance_val + ','
+        elif instance_val.endswith(']') and not instance_val.startswith('['):
+            tmp += instance_val
+            cleaned_instance_vals.append(tmp)
+            tmp = ''
+        else:
+            if tmp == '':
+                cleaned_instance_vals.append(instance_val)
+            else:
+                tmp += instance_val + ','
+
+    tmp = ''
+    cleaned_instance_vals2 = []
+
+    # re-compile quoted Prolog atoms with
+    for part in cleaned_instance_vals:
+        if part.startswith("'") and not part.endswith("'"):
+            tmp = part + ','
+
+        elif part.endswith("'") and not part.startswith("'"):
+            cleaned_instance_vals2.append(tmp + part)
+            tmp = ''
+
+        else:
+            if tmp == '':
+                cleaned_instance_vals2.append(part)
+            else:
+                tmp += part + ','
+
+    return cleaned_instance_vals2
+
+
+def get_vars(arity):
+    variables = []
+
+    for i in range(arity):
+        variables.append('X%i' % i)
+
+    return variables
+
+
+def write_foil_kb(
+        foil_kb_path,
+        types,
+        predicates,
+        target_predicate,
+        pos_examples,
+        neg_examples):
+
+    with open(foil_kb_path, 'w') as out_file:
+        for type_name in types:
+            res_line = '%s: ' % type_name
+
+            if types[type_name]['param'] is not None:
+                if types[type_name]['param'] == 'continuous':
+                    res_line += 'continuous.%s' % os.linesep
+                    out_file.write(res_line)
+                    continue
+
+                else:
+                    res_line += types[type_name]['param']
+
+            res_line += ','.join(types[type_name]['instances'])
+            res_line += '.%s' % os.linesep
+            out_file.write(res_line)
+
+        out_file.write(os.linesep)
+
+        for predicate_name in predicates:
+            arity = predicates[predicate_name]['arity']
+            types = ','.join(predicates[predicate_name]['types'])
+            if predicate_name == target_predicate:
+                res_line = '%s(%s)%s' % (predicate_name, types, os.linesep)
+                out_file.write(res_line)
+                for pos_example in pos_examples:
+                    out_file.write(pos_example + os.linesep)
+                out_file.write(';%s' % os.linesep)
+                for neg_example in neg_examples:
+                    out_file.write(neg_example + os.linesep)
+                out_file.write('.%s' % os.linesep)
+            else:
+                if 'keys' in predicates[predicate_name]:
+                    res_line = '*%s(%s) %s%s' % (
+                        predicate_name,
+                        types,
+                        predicates[predicate_name]['keys'],
+                        os.linesep)
+                else:
+                    res_line = '*%s(%s)%s' % (predicate_name, types, os.linesep)
+                out_file.write(res_line)
+
+                for instance in predicates[predicate_name]['instances']:
+                    assert arity == len(instance)
+                    out_file.write(','.join(instance))
+                    out_file.write(os.linesep)
+                out_file.write('.%s' % os.linesep)
+
+
+def generate_foil_learning_scenario(
+        learning_task_id,
+        target_dir,
+        pos_examples_file_path,
+        neg_examples_file_path):
+
+    data_dir = os.path.join(
+        '..',
+        '..',
+        LEARNING_TASK_DIR_NAME,
+        learning_task_id,
+        PROLOG_DIR_NAME,
+        DATA_DIR_NAME)
+
+    tool_specific_dir = os.path.join(
+        '..',
+        '..',
+        LEARNING_TASK_DIR_NAME,
+        learning_task_id,
+        PROLOG_DIR_NAME,
+        DATA_DIR_NAME,
+        TOOL_SPECIFIC_DATA_DIR)
+
+    pos_examples = read_examples(pos_examples_file_path)
+    neg_examples = read_examples(neg_examples_file_path)
+
+    # tool specific
+    target_predicate = None
+    predicates = {}
+    types = {}
+
+    with open(os.path.join(tool_specific_dir, MODE_FILE_NAME)) as mode_file:
+        for line in mode_file:
+            line = line.strip()
+            if line.startswith('target'):
+                def_parts = unwrap(line)
+
+                assert len(def_parts) == 1
+                target_predicate = def_parts[0]
+
+            elif line.startswith('predicate'):
+                def_parts = unwrap(line)
+
+                predicate_name, arity = def_parts.pop(0).split('/')
+                arity = int(arity)
+
+                key_def = None
+                if len(def_parts) > arity:
+                    key_def = def_parts.pop(-1)
+                    assert key_def.startswith("'") and key_def.endswith("'")
+                    key_def = key_def[1:-1]
+                assert len(def_parts) == arity
+
+                predicates[predicate_name] = {}
+                predicates[predicate_name]['arity'] = arity
+                predicates[predicate_name]['types'] = tuple(def_parts)
+                if key_def is not None:
+                    predicates[predicate_name]['keys'] = key_def
+                predicates[predicate_name]['instances'] = set()
+
+            elif line.startswith('type'):
+                def_parts = unwrap(line)
+
+                type_name = def_parts.pop(0)
+                if len(def_parts) > 1:
+                    raise RuntimeError(
+                        'Too many parameters for type definition of type %s' %
+                        type_name)
+
+                type_param = None
+                if len(def_parts) > 0:
+                    # Well, then there are also some extra attributes describing
+                    # the type.
+                    param = def_parts[0].strip()
+                    if param == '*':
+                        # strict ordering
+                        type_param = param
+                    elif param == '#':
+                        # unordered
+                        type_param = param
+                    elif param == 'continuous':
+                        type_param = param
+                types[type_name] = {}
+                types[type_name]['param'] = type_param
+                types[type_name]['instances'] = set()
+
+    if target_predicate is None:
+        raise RuntimeError(
+            'No target predicate set in %s' %
+            os.path.join([TOOL_SPECIFIC_DATA_DIR, MODE_FILE_NAME]))
+
+    merged_file_name = 'all.pl'
+    merged_file_path = os.path.join(target_dir, merged_file_name)
+
+    with open(merged_file_path, 'w') as out_file:
+        for data_file_name in os.listdir(data_dir):
+            data_file_path = os.path.join(data_dir, data_file_name)
+            if os.path.isfile(data_file_path) and \
+                    data_file_path.endswith('.pl'):
+
+                with open(data_file_path) as data_file:
+                    lines = data_file.readlines()
+                    out_file.writelines(lines)
+
+    for type_name in types:
+        if types[type_name]['param'] == 'continuous':
+            continue
+
+        type_goal = '%s(X)' % type_name
+        goal = 'forall((Goal = %s, call(Goal)), ' \
+               '(write_term(Goal,[quoted(true)]), nl)).' % type_goal
+
+        cmd = [
+            SWIPL_EXECUTABLE,
+            '-q',
+            '-s', merged_file_path,
+            '-g', goal,
+            '-t', 'halt(0).']
+
+        res = subprocess.check_output(cmd)
+
+        for t in res.split('\n'):
+            if t.strip() == '':
+                continue
+            parts = t.split('(', 1)
+            t_name = parts[0]
+            assert type_name == t_name
+
+            instance = parts[1][:-1]
+            instance = clean_instance_vals([instance])[0]
+
+            types[type_name]['instances'].add(instance)
+
+    for predicate_name in predicates:
+        if predicate_name == target_predicate:
+            continue
+
+        arity = predicates[predicate_name]['arity']
+        predicate_goal = '%s(%s)' % (predicate_name, ','.join(get_vars(arity)))
+        goal = 'forall((Goal = %s, call(Goal)), ' \
+               '(write_term(Goal,[quoted(true)]), nl)).' % predicate_goal
+
+        cmd = [
+            SWIPL_EXECUTABLE,
+            '-q',
+            '-s', merged_file_path,
+            '-g', goal,
+            '-t', 'halt(0).']
+
+        res = subprocess.check_output(cmd)
+
+        for p in res.split('\n'):
+            if p.strip() == '':
+                continue
+            parts = p.split('(', 1)
+            p_name = parts[0]
+
+            assert predicate_name == p_name
+
+            instance = parts[1][:-1].split(',')
+            instance = clean_instance_vals(instance)
+            predicates[predicate_name]['instances'].add(tuple(instance))
+
+    foil_kb_path = os.path.join(target_dir, FOIL_KB_NAME)
+    write_foil_kb(
+        foil_kb_path,
+        types,
+        predicates,
+        target_predicate,
+        pos_examples,
+        neg_examples)
+    _log.info('Learning problem prepared. Wrote LP description to %s' %
+              foil_kb_path)
+
+
+def main(config_file_path):
+    settings = read_config(config_file_path)
+
+    learning_task_id = settings['learningtask']
+    learning_problem_id = settings['learningproblem']
+    target_dir = settings['filename.workdir']
+    file_name_pos_examples = settings['filename.pos']
+    file_name_neg_examples = settings['filename.neg']
+    _log.debug('Preparing learning task %s with learning problem %s' % (
+        learning_task_id, learning_problem_id))
+
+    generate_foil_learning_scenario(
+        learning_task_id,
+        target_dir,
+        file_name_pos_examples,
+        file_name_neg_examples)
+
+
+if __name__ == '__main__':
+    arg_parser = ArgumentParser()
+    arg_parser.add_argument('config_file')
+    arguments = arg_parser.parse_args()
+
+    main(arguments.config_file)
+
+    exit(0)
