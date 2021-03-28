@@ -431,7 +431,6 @@
     <owl:Class rdf:about="http://dl-learner.org/benchmark/dataset/animals/Lizard">
         <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Animal"/>
         <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/HasEggs"/>
-        <rdfs:subClassOf rdf:resource="http://dl-learner.org/benchmark/dataset/animals/Lizard"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://dl-learner.org/benchmark/dataset/animals/habitat"/>
