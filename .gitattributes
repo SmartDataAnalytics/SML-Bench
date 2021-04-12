@@ -1,0 +1,2 @@
+learningtasks/premierleague/owl/data/premierleague.owl filter=lfs diff=lfs merge=lfs -text
+learningtasks/premierleague/prolog/data/premierleague.pl filter=lfs diff=lfs merge=lfs -text
